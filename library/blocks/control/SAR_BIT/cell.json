@@ -26,6 +26,21 @@
     },
     "fast6": {
       "netlist": "fast6/netlist.scs"
+    },
+    "latch": {
+      "netlist": "latch/netlist.scs"
+    },
+    "drive": {
+      "netlist": "drive/netlist.scs"
+    },
+    "taper": {
+      "netlist": "taper/netlist.scs"
+    },
+    "strong2": {
+      "netlist": "strong2/netlist.scs"
+    },
+    "pullup": {
+      "netlist": "pullup/netlist.scs"
     }
   }
 }

@@ -47,6 +47,33 @@
     },
     "fast7": {
       "netlist": "fast7/netlist.scs"
+    },
+    "startup": {
+      "netlist": "startup/netlist.scs"
+    },
+    "direct": {
+      "netlist": "direct/netlist.scs"
+    },
+    "startup_direct": {
+      "netlist": "startup_direct/netlist.scs"
+    },
+    "direct_buffered": {
+      "netlist": "direct_buffered/netlist.scs"
+    },
+    "startup_buffered": {
+      "netlist": "startup_buffered/netlist.scs"
+    },
+    "startup_direct_buffered": {
+      "netlist": "startup_direct_buffered/netlist.scs"
+    },
+    "fastseq": {
+      "netlist": "fastseq/netlist.scs"
+    },
+    "weighted4": {
+      "netlist": "weighted4/netlist.scs"
+    },
+    "weighted5": {
+      "netlist": "weighted5/netlist.scs"
     }
   }
 }

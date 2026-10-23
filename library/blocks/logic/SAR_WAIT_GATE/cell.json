@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_WAIT_GATE",
+  "ports": [
+    "Hold",
+    "Valid",
+    "Done",
+    "Delayed",
+    "Early",
+    "Z",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "transistor": {
+      "netlist": "transistor/netlist.scs"
+    }
+  }
+}

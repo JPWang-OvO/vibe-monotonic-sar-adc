@@ -19,9 +19,9 @@ authoritative_sources:
 # 阶段
 
 1. Python 电荷模型与 FFT：已通过 30 个代表性及边界输入和两个指定频点。
-2. 模块化 Verilog-A：已实现比较完成事件驱动的逐位控制，待远端对齐验证。
-3. TSMC18 primitive enrichment：待完成原生参数报告、CDF 回调、原生导出与尺寸语义资格测试。
-4. 晶体管模块及混合替换：待启动。
+2. 模块化 Verilog-A：理想电荷及加入延迟的两个频点均已通过逐码、逐位和时序对齐。
+3. TSMC18 primitive enrichment：2 V/5 V MOS 映射、CDF 回调、原生导出、尺寸变化及反相器角落资格测试已通过。
+4. 晶体管模块及混合替换：前端模块已达到预算；TT 完整晶体管系统正在集成。SS 控制链时序仍在修正。
 5. 完整系统 20 个正式 case：待启动，依次执行 TT 无噪声、TT 有噪声、SS/FF 极端温度。
 6. OA schematic/symbol：全部电气验收通过后进入；当前未进入。
 

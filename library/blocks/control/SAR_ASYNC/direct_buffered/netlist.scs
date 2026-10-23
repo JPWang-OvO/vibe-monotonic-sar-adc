@@ -1,0 +1,44 @@
+simulator lang=spectre
+// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
+include "../../../logic/SAR_DFFR/transistor/netlist.scs"
+include "../../../logic/SAR_NOR3_FAST/transistor/netlist.scs"
+include "../../../logic/SAR_DRIVE/transistor/netlist.scs"
+include "../../../logic/SAR_DONE_DELAY/transistor/netlist.scs"
+include "../../../logic/SAR_SAMPLE_GUARD/transistor/netlist.scs"
+subckt SAR_ASYNC (Sample Valid ClkC Done Ck9 Ck8 Ck7 Ck6 Ck5 Ck4 Ck3 Ck2 Ck1 Ck0 VDD VSS)
+I_sample_inv (Sample ClearN VDD VSS) SAR_DRIVE scale=8
+I_seq0 (VDD Valid ClearN Raw9 VDD VSS) SAR_DFFR
+I_seq1 (Raw9 Valid ClearN Raw8 VDD VSS) SAR_DFFR
+I_seq2 (Raw8 Valid ClearN Raw7 VDD VSS) SAR_DFFR
+I_seq3 (Raw7 Valid ClearN Raw6 VDD VSS) SAR_DFFR
+I_seq4 (Raw6 Valid ClearN Raw5 VDD VSS) SAR_DFFR
+I_seq5 (Raw5 Valid ClearN Raw4 VDD VSS) SAR_DFFR
+I_seq6 (Raw4 Valid ClearN Raw3 VDD VSS) SAR_DFFR
+I_seq7 (Raw3 Valid ClearN Raw2 VDD VSS) SAR_DFFR
+I_seq8 (Raw2 Valid ClearN Raw1 VDD VSS) SAR_DFFR
+I_seq9 (Raw1 Valid ClearN Raw0 VDD VSS) SAR_DFFR
+I_sample_guard (Sample SampleGuard VDD VSS) SAR_SAMPLE_GUARD
+I_run_nor (SampleGuard Valid Ck0 CompareEnable VDD VSS) SAR_NOR3_FAST
+I_clock_drive (CompareEnable ClkC VDD VSS) SAR_DRIVE scale=4
+I_done_delay (Ck0 Done VDD VSS) SAR_DONE_DELAY
+I_cb0a (Raw0 CkB0 VDD VSS) SAR_DRIVE scale=1
+I_cb0b (CkB0 Ck0 VDD VSS) SAR_DRIVE scale=4
+I_cb1a (Raw1 CkB1 VDD VSS) SAR_DRIVE scale=1
+I_cb1b (CkB1 Ck1 VDD VSS) SAR_DRIVE scale=4
+I_cb2a (Raw2 CkB2 VDD VSS) SAR_DRIVE scale=1
+I_cb2b (CkB2 Ck2 VDD VSS) SAR_DRIVE scale=4
+I_cb3a (Raw3 CkB3 VDD VSS) SAR_DRIVE scale=1
+I_cb3b (CkB3 Ck3 VDD VSS) SAR_DRIVE scale=4
+I_cb4a (Raw4 CkB4 VDD VSS) SAR_DRIVE scale=1
+I_cb4b (CkB4 Ck4 VDD VSS) SAR_DRIVE scale=4
+I_cb5a (Raw5 CkB5 VDD VSS) SAR_DRIVE scale=1
+I_cb5b (CkB5 Ck5 VDD VSS) SAR_DRIVE scale=4
+I_cb6a (Raw6 CkB6 VDD VSS) SAR_DRIVE scale=1
+I_cb6b (CkB6 Ck6 VDD VSS) SAR_DRIVE scale=4
+I_cb7a (Raw7 CkB7 VDD VSS) SAR_DRIVE scale=1
+I_cb7b (CkB7 Ck7 VDD VSS) SAR_DRIVE scale=4
+I_cb8a (Raw8 CkB8 VDD VSS) SAR_DRIVE scale=1
+I_cb8b (CkB8 Ck8 VDD VSS) SAR_DRIVE scale=4
+I_cb9a (Raw9 CkB9 VDD VSS) SAR_DRIVE scale=1
+I_cb9b (CkB9 Ck9 VDD VSS) SAR_DRIVE scale=4
+ends SAR_ASYNC

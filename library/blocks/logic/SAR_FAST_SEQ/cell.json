@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_FAST_SEQ",
+  "ports": [
+    "D",
+    "CP",
+    "CPB",
+    "Reset",
+    "Q",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "transistor": {
+      "netlist": "transistor/netlist.scs"
+    }
+  }
+}
