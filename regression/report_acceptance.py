@@ -56,7 +56,7 @@ lines=['---','title: 晶体管 ADC 正式电气验收','type: verification-metho
     '| 工艺 | 温度 °C | 噪声 | k | SNDR dB | EOC 最小余量 ns | 逐位 RMS mV | 通过 |',
     '|---|---:|---|---:|---:|---:|---:|---|']
 def value(obj,key,scale=1):
-    return f'{obj[key]*scale:.3f}' if key in obj else '—'
+    return f'{obj[key]*scale:.3f}' if obj.get(key) is not None else '—'
 for r in rows:
     m=r['metrics'];lines.append(f'| {r["corner"].upper()} | {r["temp_c"]} | {"开启" if r["noise"] else "关闭"} | {r["k"]} | {value(m,"sndr_db")} | {value(m,"timing_margin_min_s",1e9)} | {value(m,"step_diff_error_rms_v",1e3)} | {"是" if r["passed"] else "否："+", ".join(r["failed_checks"])} |')
 lines+=['','## 稳态功耗','',
