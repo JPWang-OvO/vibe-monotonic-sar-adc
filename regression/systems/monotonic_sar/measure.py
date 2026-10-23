@@ -20,7 +20,10 @@ def fft_codes(codes,fs,k):
         value=sum(x*cmath.exp(-2j*math.pi*j*i/n) for i,x in enumerate(codes))/n
         power.append(abs(value)**2*(1 if j in (0,n//2) else 2))
     residual=sum(p for j,p in enumerate(power) if j not in (0,k))
-    return {'sndr_db':10*math.log10(power[k]/residual),'power':power,
+    # A stalled ADC can produce an all-zero window. Preserve that window and
+    # fail the existing numeric criterion instead of losing the entire report.
+    sndr=10*math.log10(power[k]/residual) if power[k]>0 and residual>0 else None
+    return {'sndr_db':sndr,'power':power,
         'frequency_hz':[j*fs/n for j in range(n//2+1)],'sample_rate_hz':fs}
 
 def integral(t,v,start,stop):
