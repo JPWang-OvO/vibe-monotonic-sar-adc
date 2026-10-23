@@ -25,6 +25,9 @@
   "views": {
     "spectre": {
       "netlist": "spectre/netlist.scs"
+    },
+    "early_save": {
+      "netlist": "early_save/netlist.scs"
     }
   }
 }

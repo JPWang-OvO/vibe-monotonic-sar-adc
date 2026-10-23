@@ -15,6 +15,9 @@
     },
     "transistor": {
       "netlist": "transistor/netlist.scs"
+    },
+    "fast": {
+      "netlist": "fast/netlist.scs"
     }
   }
 }

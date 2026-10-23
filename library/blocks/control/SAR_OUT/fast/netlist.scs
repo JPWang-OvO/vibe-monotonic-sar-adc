@@ -1,0 +1,9 @@
+simulator lang=spectre
+// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
+include "../../../logic/SAR_OUTPUT_FF/transistor/netlist.scs"
+include "../../../logic/SAR_DRIVE/transistor/netlist.scs"
+subckt SAR_OUT (D Done Q VDD VSS)
+I_latch (D Done Stored VDD VSS) SAR_OUTPUT_FF
+I_buf0 (Stored StoredB VDD VSS) SAR_DRIVE scale=1
+I_buf1 (StoredB Q VDD VSS) SAR_DRIVE scale=2
+ends SAR_OUT

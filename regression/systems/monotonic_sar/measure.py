@@ -38,7 +38,7 @@ def measure_sar(case,raw):
     discard=cfg['discard_cycles'];n=cfg['n'];period=cfg['expected_period_s']
     selected=ends[discard:discard+n]
     if len(selected)!=n:raise ValueError('Insufficient consecutive sampling events: '+str(len(selected)))
-    codes=[];invalid=incomplete=count_errors=mismatches=far_errors=0;details=[];traces=[];errors=[];margins=[]
+    codes=[];invalid=incomplete=count_errors=mismatches=far_errors=hold_errors=0;details=[];traces=[];errors=[];margins=[]
     physical=cfg.get('physical_frontend',False)
     physical_ref=None
     if physical:
@@ -70,6 +70,14 @@ def measure_sar(case,raw):
         expected=min(1023,max(0,math.floor(((vp-vn)+1.8)/3.6*1024)))
         mismatches+=int(code!=expected)
         codes.append(code);details.append(dict(index=index,sample_time_s=end,read_time_s=read,code=code,expected=expected,comparisons=len(valid_times),eoc=done_times))
+        if physical:
+            next_done_index=bisect.bisect_right(done,read)
+            if next_done_index==len(done):hold_errors+=1
+            else:
+                left=bisect.bisect_right(t,read);right=bisect.bisect_left(t,done[next_done_index])
+                for bit in range(cfg['bits']):
+                    held=wave['D'+str(bit)][left:right]
+                    if held:hold_errors+=int(min(held)<cfg['logic_high_v'] if code&(1<<bit) else max(held)>cfg['logic_low_v'])
         rp,rn=vp,vn
         if physical and valid_times:
             first_eval=evaluates[bisect.bisect_right(evaluates,valid_times[0])-1]
@@ -132,6 +140,7 @@ def measure_sar(case,raw):
         soa_warnings=len(re.findall(r'WARNING \(CMI-275[1-6]\)',(raw.parent/'logs/spectre.log').read_text()))
         metrics.update(step_diff_error_rms_v=math.sqrt(sum(e*e for e in diff_errors)/len(diff_errors)),
             wrong_bottom_states=switch_errors,output_capture_errors=code_capture_errors,
+            output_hold_errors=hold_errors,
             evaluation_count_errors=eval_count_errors,monotonic_switch_errors=monotonic_errors,
             bootstrap_gate_at_first_eval_max_v=max(gate_at_start),first_evaluate_delay_min_s=min(first_eval_delays),
             soa_warning_count=soa_warnings)

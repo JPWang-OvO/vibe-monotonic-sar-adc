@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_ARM",
+  "ports": [
+    "D",
+    "CP",
+    "CDN",
+    "Q",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "transistor": {
+      "netlist": "transistor/netlist.scs"
+    },
+    "quiet": {
+      "netlist": "quiet/netlist.scs"
+    }
+  }
+}
