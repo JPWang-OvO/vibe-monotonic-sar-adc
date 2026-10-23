@@ -33,13 +33,15 @@ analog begin
 end
 endmodule
 ''')
-    cell('sampling','SAR_SAMPLE',['Vin','Top','Sample','SampleB','VDD','VSS'],'''module SAR_SAMPLE_va(Vin,Top,Sample,SampleB,VDD,VSS);
-inout Vin,Top; input Sample,SampleB,VDD,VSS; electrical Vin,Top,Sample,SampleB,VDD,VSS;
+    cell('sampling','SAR_SAMPLE',['Vin','Top','Sample','SampleB','Gate','VDD','VSS'],'''module SAR_SAMPLE_va(Vin,Top,Sample,SampleB,Gate,VDD,VSS);
+inout Vin,Top; input Sample,SampleB,VDD,VSS; output Gate;
+electrical Vin,Top,Sample,SampleB,Gate,VDD,VSS;
 integer on;
 analog begin
  @(initial_step) on=0;
  @(cross(V(Sample,VSS)-0.9,+1)) on=1;
  @(cross(V(Sample,VSS)-0.9,-1)) on=0;
+ V(Gate,VSS)<+transition(on,0,20p,20p)*(V(Vin,VSS)+V(VDD,VSS));
  if(on) V(Vin,Top)<+0;
  else I(Vin,Top)<+0;
 end
@@ -134,7 +136,7 @@ endmodule
         view='spectre' if name=='SAR_CDAC' else 'veriloga'
         top+=f'include "../../../../blocks/{category}/{name}/{view}/netlist.scs"\n'
     top+='subckt MONOTONIC_SAR ('+' '.join(ports)+')\n'
-    top+='I_phase (Clks Sample VDD VSS) SAR_PHASE\nI_inv (Sample SampleB VDD VSS) SAR_INV\nI_sp (Vinp Vp Sample SampleB VDD VSS) SAR_SAMPLE\nI_sn (Vinn Vn Sample SampleB VDD VSS) SAR_SAMPLE\nI_bias (Bias VDD VSS) SAR_BIAS\nI_cmp (Vp Vn ClkC Outp Outn Valid Bias VDD VSS) SAR_CMP\n'
+    top+='I_phase (Clks Sample VDD VSS) SAR_PHASE\nI_inv (Sample SampleB VDD VSS) SAR_INV\nI_sp (Vinp Vp Sample SampleB Gp VDD VSS) SAR_SAMPLE\nI_sn (Vinn Vn Sample SampleB Gn VDD VSS) SAR_SAMPLE\nI_bias (Bias VDD VSS) SAR_BIAS\nI_cmp (Vp Vn ClkC Outp Outn Valid Bias VDD VSS) SAR_CMP\n'
     top+='I_async (Sample Valid ClkC EOC '+' '.join(ck)+' VDD VSS) SAR_ASYNC\n'
     for i in range(9,-1,-1):
         top+=f'I_bit{i} (Outp Ck{i} Sample Q{i} Bp{i} Bn{i} VDD VSS) SAR_BIT\nI_out{i} (Q{i} EOC D{i} VDD VSS) SAR_OUT\n'

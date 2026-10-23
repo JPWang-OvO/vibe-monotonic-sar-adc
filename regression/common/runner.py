@@ -139,7 +139,9 @@ def collect(folder):
     write_json(folder / "status.json", state)
     if state["state"] in ("completed", "failed"):
         # Repeated bit traces compress well; raw PSF files are excluded explicitly.
-        command=f'cd {shlex.quote(batch["remote"])} && tar -czf collected.tar.gz summary.json cases/*/results.json cases/*/logs/*.log'
+        # summary.json already contains each complete case result. Transfer it
+        # once; duplicating the per-case JSON doubled the observed slow download.
+        command=f'cd {shlex.quote(batch["remote"])} && tar -czf collected.tar.gz summary.json cases/*/logs/*.log'
         checked(runner.run_command(command,timeout=30))
         archive=folder/'collected.tar.gz'
         checked(runner.download(batch['remote']+'/collected.tar.gz',archive))
@@ -153,6 +155,8 @@ def collect(folder):
                 target=folder/member.name;target.parent.mkdir(parents=True,exist_ok=True)
                 with packed.extractfile(member) as source,target.open('wb') as dest:
                     shutil.copyfileobj(source,dest)
+        for result in read_json(folder/'summary.json')['cases']:
+            write_json(folder/'cases'/result['case']/'results.json',result)
     return state
 
 

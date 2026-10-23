@@ -9,7 +9,7 @@
       "corner": "ff",
       "enrichment": true,
       "cell_views": {
-        "SAR_PHASE": "clock16",
+        "SAR_PHASE": "short80",
         "SAR_INV": "drive2",
         "SAR_CMP": "current",
         "SAR_ASYNC": "weighted4_g2_quiet",
@@ -39,7 +39,7 @@
       "corner": "ff",
       "enrichment": true,
       "cell_views": {
-        "SAR_PHASE": "clock16",
+        "SAR_PHASE": "short80",
         "SAR_INV": "drive2",
         "SAR_CMP": "current",
         "SAR_ASYNC": "weighted4_g2_quiet",

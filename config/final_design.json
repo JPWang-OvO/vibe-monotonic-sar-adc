@@ -1,7 +1,7 @@
 {
-  "source_flow": "regression/systems/monotonic_sar/flows/physical_clock16_slow/flow.json",
+  "source_flow": "regression/systems/monotonic_sar/flows/physical_clock_short80/flow.json",
   "cell_views": {
-    "SAR_PHASE": "clock16",
+    "SAR_PHASE": "short80",
     "SAR_INV": "drive2",
     "SAR_CMP": "current",
     "SAR_ASYNC": "weighted4_g2_quiet",
@@ -36,5 +36,5 @@
     "regression/systems/monotonic_sar/flows/final_stage3_ff_125_k51/flow.json"
   ],
   "case_count": 20,
-  "status": "candidate_pending_all_stages"
+  "status": "electrical_acceptance_incomplete"
 }

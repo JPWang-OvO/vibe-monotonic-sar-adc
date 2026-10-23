@@ -2,19 +2,21 @@
   "all_electrical_pass": false,
   "dut_sources_equal": true,
   "required_cases": 20,
-  "completed_cases": 2,
-  "passed_cases": 1,
+  "completed_cases": 4,
+  "passed_cases": 4,
   "batches": [
-    "final_stage1_01"
+    "final_stage1_03",
+    "final_stage2_03"
   ],
   "cases": [
     {
-      "batch": "final_stage1_01",
+      "batch": "final_stage1_03",
       "case": "sar_stage1_tt_k3__quiet",
       "corner": "tt",
       "temp_c": 25,
       "noise": false,
       "k": 3,
+      "noise_actual": {},
       "passed": true,
       "execution_pass": true,
       "metrics": {
@@ -22,77 +24,168 @@
         "invalid_bits": 0,
         "incomplete_conversions": 0,
         "comparison_count_errors": 0,
-        "period_error_s": 9.397076705485006e-13,
-        "sample_window_min_s": 3.931602760894935e-09,
-        "sample_window_max_s": 3.933556227664501e-09,
-        "timing_margin_min_s": 6.167241364290347e-09,
-        "step_node_error_max_v": 0.0011223912302782968,
-        "sndr_db": 61.74899152168428,
+        "period_error_s": 4.6441638083217755e-14,
+        "sample_window_min_s": 3.948390337689234e-09,
+        "sample_window_max_s": 3.948446149097975e-09,
+        "timing_margin_min_s": 6.0726556271925835e-09,
+        "step_node_error_max_v": 0.0006822663442657001,
+        "sndr_db": 61.6212842143881,
         "decision_errors_far_boundary": 0,
-        "step_diff_error_rms_v": 0.0004790465409315772,
+        "step_diff_error_rms_v": 0.00042075334577392154,
         "wrong_bottom_states": 0,
         "output_capture_errors": 0,
         "output_hold_errors": 0,
         "evaluation_count_errors": 0,
         "monotonic_switch_errors": 0,
-        "bootstrap_gate_at_first_eval_max_v": 0.1638807600135495,
-        "first_evaluate_delay_min_s": 5.027149453802845e-10,
+        "bootstrap_gate_at_first_eval_max_v": 0.08564382285705766,
+        "first_evaluate_delay_min_s": 5.264255377599041e-10,
         "soa_warning_count": 0
       },
       "power": {
-        "VDD_w": 0.11261705409061505,
-        "VREFP_w": 0.002904058744348055,
+        "VDD_w": 0.18955804337255924,
+        "VREFP_w": 0.0029045236210439996,
         "VCM_w": -0.0,
-        "clock_input_w": 1.0506058757571138e-06,
-        "output_buffers_w": 1.7632654385141353e-05,
-        "total_with_buffers_w": 0.11552111283496311,
-        "total_without_output_buffers_w": 0.11550348018057796
+        "clock_input_w": 1.0754059194369594e-05,
+        "output_buffers_w": 1.7688786366430055e-05,
+        "total_with_buffers_w": 0.19246256699360323,
+        "total_without_output_buffers_w": 0.1924448782072368
       },
       "failed_checks": []
     },
     {
-      "batch": "final_stage1_01",
+      "batch": "final_stage1_03",
       "case": "sar_stage1_tt_k51__quiet",
       "corner": "tt",
       "temp_c": 25,
       "noise": false,
       "k": 51,
-      "passed": false,
+      "noise_actual": {},
+      "passed": true,
       "execution_pass": true,
       "metrics": {
         "sample_count": 256,
         "invalid_bits": 0,
         "incomplete_conversions": 0,
         "comparison_count_errors": 0,
-        "period_error_s": 1.4696668994416603e-12,
-        "sample_window_min_s": 3.931713086382355e-09,
-        "sample_window_max_s": 3.933500667234164e-09,
-        "timing_margin_min_s": 6.169137905962936e-09,
-        "step_node_error_max_v": 0.001121919034212493,
-        "sndr_db": 61.06219254391981,
+        "period_error_s": 1.1695201398301667e-14,
+        "sample_window_min_s": 3.948433766475785e-09,
+        "sample_window_max_s": 3.948446020502704e-09,
+        "timing_margin_min_s": 6.05584429463083e-09,
+        "step_node_error_max_v": 0.0006803054024130568,
+        "sndr_db": 61.66914616209482,
         "decision_errors_far_boundary": 0,
-        "step_diff_error_rms_v": 0.00048147818625901833,
+        "step_diff_error_rms_v": 0.0004219160646251013,
         "wrong_bottom_states": 0,
         "output_capture_errors": 0,
         "output_hold_errors": 0,
         "evaluation_count_errors": 0,
         "monotonic_switch_errors": 0,
-        "bootstrap_gate_at_first_eval_max_v": 0.16360770364218094,
-        "first_evaluate_delay_min_s": 5.027172412160777e-10,
+        "bootstrap_gate_at_first_eval_max_v": 0.08528527409769886,
+        "first_evaluate_delay_min_s": 5.266549965983765e-10,
         "soa_warning_count": 0
       },
       "power": {
-        "VDD_w": 0.11265302092605076,
-        "VREFP_w": 0.0028973661981767916,
+        "VDD_w": 0.1895684454690221,
+        "VREFP_w": 0.002897703883434115,
         "VCM_w": -0.0,
-        "clock_input_w": 1.049422066494898e-06,
-        "output_buffers_w": 2.3547592346711415e-05,
-        "total_with_buffers_w": 0.11555038712422755,
-        "total_without_output_buffers_w": 0.11552683953188084
+        "clock_input_w": 1.0749890912652315e-05,
+        "output_buffers_w": 2.417828973665509e-05,
+        "total_with_buffers_w": 0.1924661493524562,
+        "total_without_output_buffers_w": 0.19244197106271954
       },
-      "failed_checks": [
-        "period_error_s"
-      ]
+      "failed_checks": []
+    },
+    {
+      "batch": "final_stage2_03",
+      "case": "sar_stage2_tt_k3__noise",
+      "corner": "tt",
+      "temp_c": 25,
+      "noise": true,
+      "k": 3,
+      "noise_actual": {
+        "noisefmin_hz": 172414.0,
+        "noisefmax_hz": 50000000000.0
+      },
+      "passed": true,
+      "execution_pass": true,
+      "metrics": {
+        "sample_count": 256,
+        "invalid_bits": 0,
+        "incomplete_conversions": 0,
+        "comparison_count_errors": 0,
+        "period_error_s": 5.854967985063247e-13,
+        "sample_window_min_s": 3.947756176919234e-09,
+        "sample_window_max_s": 3.9491284828286775e-09,
+        "timing_margin_min_s": 6.0860822353836256e-09,
+        "step_node_error_max_v": 0.0007177843842331687,
+        "sndr_db": 61.08030521523809,
+        "decision_errors_far_boundary": 0,
+        "step_diff_error_rms_v": 0.00042087459306607537,
+        "wrong_bottom_states": 0,
+        "output_capture_errors": 0,
+        "output_hold_errors": 0,
+        "evaluation_count_errors": 0,
+        "monotonic_switch_errors": 0,
+        "bootstrap_gate_at_first_eval_max_v": 0.0859797303356828,
+        "first_evaluate_delay_min_s": 5.255476178172146e-10,
+        "soa_warning_count": 0
+      },
+      "power": {
+        "VDD_w": 0.1874100504113582,
+        "VREFP_w": 0.0029039190002359784,
+        "VCM_w": -0.0,
+        "clock_input_w": 1.0128723182464098e-05,
+        "output_buffers_w": 1.7631765098075587e-05,
+        "total_with_buffers_w": 0.19031396941159417,
+        "total_without_output_buffers_w": 0.1902963376464961
+      },
+      "failed_checks": []
+    },
+    {
+      "batch": "final_stage2_03",
+      "case": "sar_stage2_tt_k51__noise",
+      "corner": "tt",
+      "temp_c": 25,
+      "noise": true,
+      "k": 51,
+      "noise_actual": {
+        "noisefmin_hz": 172414.0,
+        "noisefmax_hz": 50000000000.0
+      },
+      "passed": true,
+      "execution_pass": true,
+      "metrics": {
+        "sample_count": 256,
+        "invalid_bits": 0,
+        "incomplete_conversions": 0,
+        "comparison_count_errors": 0,
+        "period_error_s": 5.885560089392518e-13,
+        "sample_window_min_s": 3.947761166277448e-09,
+        "sample_window_max_s": 3.949137882612485e-09,
+        "timing_margin_min_s": 6.058729597613334e-09,
+        "step_node_error_max_v": 0.0007094514805113129,
+        "sndr_db": 60.63276909272297,
+        "decision_errors_far_boundary": 0,
+        "step_diff_error_rms_v": 0.00042323014198539656,
+        "wrong_bottom_states": 0,
+        "output_capture_errors": 0,
+        "output_hold_errors": 0,
+        "evaluation_count_errors": 0,
+        "monotonic_switch_errors": 0,
+        "bootstrap_gate_at_first_eval_max_v": 0.0866619676612913,
+        "first_evaluate_delay_min_s": 5.255252315000188e-10,
+        "soa_warning_count": 0
+      },
+      "power": {
+        "VDD_w": 0.18741907832548108,
+        "VREFP_w": 0.002897019224579541,
+        "VCM_w": -0.0,
+        "clock_input_w": 1.0132001876363701e-05,
+        "output_buffers_w": 2.438270443868767e-05,
+        "total_with_buffers_w": 0.19031609755006063,
+        "total_without_output_buffers_w": 0.19029171484562193
+      },
+      "failed_checks": []
     }
   ],
   "missing_cases": [
@@ -189,18 +282,6 @@
     [
       "ss",
       125,
-      true,
-      51
-    ],
-    [
-      "tt",
-      25,
-      true,
-      3
-    ],
-    [
-      "tt",
-      25,
       true,
       51
     ]
