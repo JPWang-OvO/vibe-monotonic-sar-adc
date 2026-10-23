@@ -26,6 +26,7 @@ for case in summary['cases']:
     y=[10*math.log10(max(v,1e-30)/reference) for v in spectrum['power'][1:]]
     axes[1].vlines(x,-160,y,color='#167d8d',linewidth=.8);axes[1].plot(x,y,'.',color='#167d8d',markersize=2)
     axes[1].set(xlabel='Frequency (MHz)',ylabel='One-sided power (dBFS)',xlim=(0,spectrum['sample_rate_hz']/2e6),ylim=(-140,5));axes[1].grid(alpha=.18)
-    axes[1].text(.98,.96,f"SNDR {spectrum['sndr_db']:.3f} dB\nN={len(samples)}, rectangular window\nDC excluded from SNDR",transform=axes[1].transAxes,ha='right',va='top',fontsize=10)
+    sndr=f"{spectrum['sndr_db']:.3f} dB" if spectrum['sndr_db'] is not None else 'undefined (zero spectral power)'
+    axes[1].text(.98,.96,f"SNDR {sndr}\nN={len(samples)}, rectangular window\nDC excluded from SNDR",transform=axes[1].transAxes,ha='right',va='top',fontsize=10)
     fig.savefig(out/(name+'_fft.png'),dpi=160);plt.close(fig)
 print(out)
