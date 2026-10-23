@@ -13,6 +13,9 @@
     },
     "quiet20": {
       "netlist": "quiet20/netlist.scs"
+    },
+    "quiet15": {
+      "netlist": "quiet15/netlist.scs"
     }
   }
 }

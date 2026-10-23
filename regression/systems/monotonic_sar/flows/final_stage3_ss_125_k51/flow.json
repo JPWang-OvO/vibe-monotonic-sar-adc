@@ -9,7 +9,7 @@
       "corner": "ss",
       "enrichment": true,
       "cell_views": {
-        "SAR_PHASE": "drive16k",
+        "SAR_PHASE": "clock16",
         "SAR_INV": "drive2",
         "SAR_CMP": "current",
         "SAR_ASYNC": "weighted4_g2_quiet",
@@ -23,9 +23,10 @@
         "SAR_DONE_DELAY": "fastout",
         "SAR_STARTUP": "quiet_arm",
         "MONOTONIC_SAR": "spectre",
-        "SAR_WAIT_GATE": "damped_hold20",
+        "SAR_WAIT_GATE": "damped_hold22",
         "SAR_ARM": "quiet",
-        "SAR_SAMPLE_GUARD2": "quiet"
+        "SAR_SAMPLE_GUARD2": "quiet15",
+        "SAR_OUTPUT_FF": "fast3"
       },
       "tokens": {
         "FIN": 9960937.5,
@@ -38,7 +39,7 @@
       "corner": "ss",
       "enrichment": true,
       "cell_views": {
-        "SAR_PHASE": "drive16k",
+        "SAR_PHASE": "clock16",
         "SAR_INV": "drive2",
         "SAR_CMP": "current",
         "SAR_ASYNC": "weighted4_g2_quiet",
@@ -52,9 +53,10 @@
         "SAR_DONE_DELAY": "fastout",
         "SAR_STARTUP": "quiet_arm",
         "MONOTONIC_SAR": "spectre",
-        "SAR_WAIT_GATE": "damped_hold20",
+        "SAR_WAIT_GATE": "damped_hold22",
         "SAR_ARM": "quiet",
-        "SAR_SAMPLE_GUARD2": "quiet"
+        "SAR_SAMPLE_GUARD2": "quiet15",
+        "SAR_OUTPUT_FF": "fast3"
       },
       "tokens": {
         "FIN": 9960937.5,

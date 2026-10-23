@@ -38,6 +38,21 @@
     },
     "drive32k": {
       "netlist": "drive32k/netlist.scs"
+    },
+    "clock8": {
+      "netlist": "clock8/netlist.scs"
+    },
+    "clock8fast": {
+      "netlist": "clock8fast/netlist.scs"
+    },
+    "clock16": {
+      "netlist": "clock16/netlist.scs"
+    },
+    "short80": {
+      "netlist": "short80/netlist.scs"
+    },
+    "short160": {
+      "netlist": "short160/netlist.scs"
     }
   }
 }
