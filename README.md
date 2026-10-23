@@ -9,8 +9,11 @@ TSMC 180 nm、1.8 V、10 bit、50 MS/s 的全差分单调切换 SAR ADC。
 固定 seed=1 的 TT 瞬态噪声两项也全部通过，SNDR 为 61.080/60.633 dB。
 `final_*_03` 同一版本的 20 项已执行完毕，13 项通过。SS125 输出建立与含噪声周期偏差、
 SS 冷角含噪声内部节点越限、FF125 含噪声的一次远离边界判决错误仍需修正。
-新候选提高比较器偏置电流及内部时钟驱动，并在分频器已观察到馈通的节点加入阻尼电容；
-正在执行针对性验证并准备 `final_*_04`，结果见 [正式电气验收](docs/verification/electrical-acceptance.md)。
+提高比较器偏置电流后，SS125 完整窗口的输出建立和 FF125 判决检查已有通过结果。
+`final_stage1_04` 低频出现一次完成信号提前引起的捕获错误。当前候选加强比较器再生管，
+并加入分频器启动门控；SS125 短窗口已全部通过，`final_*_06` 正按阶段验收。
+分频器启动与额定条件修正的证据见 [开发结果](docs/verification/development-status.md)。
+各版本正式结果见 [电气验收](docs/verification/electrical-acceptance.md)。
 OA schematic/symbol 尚未进入收尾阶段。
 
 | 入口 | 内容 |

@@ -16,6 +16,12 @@
     },
     "fast": {
       "netlist": "fast/netlist.scs"
+    },
+    "fast36": {
+      "netlist": "fast36/netlist.scs"
+    },
+    "fast45": {
+      "netlist": "fast45/netlist.scs"
     }
   }
 }

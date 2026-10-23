@@ -34,6 +34,21 @@
     },
     "current": {
       "netlist": "current/netlist.scs"
+    },
+    "sense": {
+      "netlist": "sense/netlist.scs"
+    },
+    "sense2": {
+      "netlist": "sense2/netlist.scs"
+    },
+    "sense4": {
+      "netlist": "sense4/netlist.scs"
+    },
+    "regen8": {
+      "netlist": "regen8/netlist.scs"
+    },
+    "regen12": {
+      "netlist": "regen12/netlist.scs"
     }
   }
 }
