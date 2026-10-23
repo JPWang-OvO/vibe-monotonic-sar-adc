@@ -34,16 +34,16 @@ authoritative_sources:
 | SAR_CDAC | Vp/Vn 为顶板；Bp9…Bp1、Bn9…Bn1 为实际底板电压 |
 | SAR_CMP | ClkC 高电平复位，低电平比较；复位 Outp/Outn 同为高，完成后互补；Valid 高表示完成 |
 | SAR_ASYNC | Sample 结束后启动比较；每次 Valid 上升推进一位，复位比较器并等待 DAC 建立；十位后产生 Done |
-| SAR_BIT | Capture 上升锁存 Outp；Sample 高复位底板选择；Q 保持判决，Bp/Bn 仅一侧下降 |
+| SAR_BIT | Capture 低时锁存器透明且两侧底板预充；Capture 上升后保持 Outp 判决，Bp/Bn 仅一侧下降；Sample 为保留的未用接口 |
 | SAR_OUT | Done 上升锁存十位结果；输出保持至下次 Done |
 | SAR_BIAS | 由 VDD/VSS 产生比较器 PMOS 电流源的 Bias |
 
 全部数字节点电源域为 VDD/VSS。最终输入及偏置节点的工作范围按晶体管实测记录。
 行为层的理想偏置和理想开关仅用于逐模块替换过程。
 
-## 晶体管候选参数
+## 验收版本参数
 
-当前正式候选的 view 绑定由 `config/final_design.json` 固定。下表对应 `final_*_06`；
+验收版本的 view 绑定由 `config/final_design.json` 固定。下表对应 `final_*_06`；
 阶段结果按实际批次中的绑定和源文件核对。
 
 | 功能 | 实现与尺寸 |
@@ -81,12 +81,12 @@ LSB 为 3.515625 mV。量化噪声约为 0.289 LSB RMS，−1 dBFS 输入差分 
 初选转换预算：首比较准备 0.5 ns，十次比较及相邻 DAC 建立合计不超过 13 ns，输出保存 0.5 ns，
 留 2 ns 周期裕量。最终电路检查实际采样窗口和最慢一位的完成时间。
 
-# 当前开发激励
+# 正式验收激励
 
 VDD 从 0 V 在 10 ns 内线性升至 1.8 V；外部时钟在 20 ns 开始，周期 4 ns，
 上升/下降时间各 20 ps，平台高电平宽 1.98 ns，按 50% 电平交点测得占空比 50%。
-行为模型的首个 Sample 在首个 Clks 上升沿产生。正式验收前须用晶体管分频器验证启动并固定取码窗口。
-当前输出每位负载为 10 fF。丢弃前 16 个转换，在其后连续 256 个周期的采样结束后 14 ns 读取输出。
+晶体管分频器通过自身上电复位启动；全部 20 项已检查实际采样周期、窗口和十次比较。
+输出每位负载为 10 fF。丢弃前 16 个转换，在其后连续 256 个周期的采样结束后 14 ns 读取输出。
 数字低电平判据为 ≤0.18 V，高电平为 ≥1.62 V，中间电平计为无效位。
 正式测量设置已固定于 `config/acceptance.json`：瞬态噪声 1 Hz–50 GHz、seed=1，
 输出使用两级 SAR_DRIVE（scale=1/2）。频带依据和功耗边界见 `docs/verification/acceptance-method.md`。
