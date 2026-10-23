@@ -29,6 +29,12 @@
     },
     "timed": {
       "netlist": "timed/netlist.scs"
+    },
+    "fast": {
+      "netlist": "fast/netlist.scs"
+    },
+    "fast2": {
+      "netlist": "fast2/netlist.scs"
     }
   }
 }

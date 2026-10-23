@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_NAND2",
+  "ports": [
+    "A",
+    "B",
+    "Z",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "transistor": {
+      "netlist": "transistor/netlist.scs"
+    }
+  }
+}

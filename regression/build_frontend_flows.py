@@ -39,16 +39,19 @@ Vsb (SampleB 0) vsource type=pulse val0=1.8 val1=0 delay=20n rise=20p fall=20p w
             v=.9+sign*(p-.9);tm=50e-9+j*40e-9
             values.extend([tm,previous,tm+20e-12,v]);previous=v
         source+=f'Vin{side} (Vin{side} 0) vsource type=pwl wave=['+' '.join(f'{v:.14g}' for v in values)+']\n'
-    source+='''I_sp (Vinp Vp Sample SampleB VDD 0) SAR_SAMPLE
-I_sn (Vinn Vn Sample SampleB VDD 0) SAR_SAMPLE
+    source+='''I_sp (Vinp Vp Sample SampleB Gp VDD 0) SAR_SAMPLE
+I_sn (Vinn Vn Sample SampleB Gn VDD 0) SAR_SAMPLE
+Ccomp_p (Gp Vn) capacitor c=@CCOMP@
+Ccomp_n (Gn Vp) capacitor c=@CCOMP@
 Cp (Vp VDD) capacitor c=10.24p
 Cn (Vn VDD) capacitor c=10.24p
 simulatorOptions options temp=@TEMP@
 tran tran stop=242n
 saveOptions options save=selected
-save Sample SampleB Vinp Vinn Vp Vn I_sp.Gate I_sp.Ct I_sp.Cb I_sp.Q I_sp.ResetMid I_sn.Gate I_sn.Ct I_sn.Cb I_sn.Q I_sn.ResetMid VDD_SRC:p
+save Sample SampleB Vinp Vinn Vp Vn Gp Gn I_sp.Ct I_sp.Cb I_sp.Q I_sn.Ct I_sn.Cb I_sn.Q VDD_SRC:p
 '''
     write(tb+'/spectre/netlist.scs',source);js(tb+'/cell.json',dict(schema_version=1,cell='tb_SAR_SAMPLE',ports=[],views={'spectre':{'netlist':'spectre/netlist.scs'}}))
-    flow('sar_sampler',tb,dict(kind='sar_sampler',points=points),dict(sample_error_max_v={'max':.0003515625},hold_drift_max_v={'max':.00017578125},bootstrap_min_v={'min':1.6},bootstrap_max_v={'max':1.9}))
+    flow('sar_sampler',tb,dict(kind='sar_sampler',points=points),dict(sample_error_max_v={'max':.0003515625},hold_drift_max_v={'max':.00017578125},bootstrap_min_v={'min':1.6},bootstrap_max_v={'max':1.9}),
+        [dict(id='c'+str(c),corner='tt',tokens={'TEMP':25,'CCOMP':str(c)+'f'},cell_views={},enrichment=True) for c in (30,)])
 
 if __name__=='__main__':main()

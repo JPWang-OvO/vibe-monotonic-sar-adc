@@ -3,13 +3,13 @@ simulator lang=spectre
 include "../../../../support/standard_cells/DFQD1BWP7T/spectre/netlist.scs"
 include "../../../../support/standard_cells/ND2D1BWP7T/spectre/netlist.scs"
 include "../../../../support/standard_cells/INVD1BWP7T/spectre/netlist.scs"
-include "../../../logic/SAR_DELAY/transistor/netlist.scs"
+include "../../../logic/SAR_DELAY4/transistor/netlist.scs"
 include "../../../logic/SAR_DRIVE/transistor/netlist.scs"
 subckt SAR_BIT (Outp Capture Sample Q Bp Bn VDD VSS VREFP VREFN)
 parameters strength=1
 I_latch (Outp Capture Q VDD VSS) DFQD1BWP7T
 I_qbar (Q QB VDD VSS) INVD1BWP7T
-I_capture_delay (Capture CaptureD VDD VSS) SAR_DELAY
+I_capture_delay (Capture CaptureD VDD VSS) SAR_DELAY4
 I_select_p (Q CaptureD BpRaw VDD VSS) ND2D1BWP7T
 I_select_n (QB CaptureD BnRaw VDD VSS) ND2D1BWP7T
 I_buf_p0 (BpRaw BpBuf0 VDD VSS) SAR_DRIVE scale=max(1,strength*1)

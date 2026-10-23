@@ -1,0 +1,18 @@
+simulator lang=spectre
+@MODEL_SETUP@
+include "../../../../../blocks/sampling/SAR_SAMPLE/transistor/netlist.scs"
+VDD_SRC (VDD 0) vsource type=pwl wave=[0 0 10n 1.8]
+Vs (Sample 0) vsource type=pulse val0=0 val1=1.8 delay=20n rise=20p fall=20p width=3.98n period=20n
+Vsb (SampleB 0) vsource type=pulse val0=1.8 val1=0 delay=20n rise=20p fall=20p width=3.98n period=20n
+Vinp (Vinp 0) vsource type=pwl wave=[0 0.1 5e-08 0.1 5.002e-08 0.1 9e-08 0.1 9.002e-08 0.5 1.3e-07 0.5 1.3002e-07 0.9 1.7e-07 0.9 1.7002e-07 1.3 2.1e-07 1.3 2.1002e-07 1.7]
+Vinn (Vinn 0) vsource type=pwl wave=[0 1.7 5e-08 1.7 5.002e-08 1.7 9e-08 1.7 9.002e-08 1.3 1.3e-07 1.3 1.3002e-07 0.9 1.7e-07 0.9 1.7002e-07 0.5 2.1e-07 0.5 2.1002e-07 0.1]
+I_sp (Vinp Vp Sample SampleB Gp VDD 0) SAR_SAMPLE
+I_sn (Vinn Vn Sample SampleB Gn VDD 0) SAR_SAMPLE
+Ccomp_p (Gp Vn) capacitor c=@CCOMP@
+Ccomp_n (Gn Vp) capacitor c=@CCOMP@
+Cp (Vp VDD) capacitor c=@CLOAD@
+Cn (Vn VDD) capacitor c=@CLOAD@
+simulatorOptions options temp=@TEMP@
+tran tran stop=242n
+saveOptions options save=selected
+save Sample SampleB Vinp Vinn Vp Vn Gp Gn I_sp.Ct I_sp.Cb I_sp.Q I_sn.Ct I_sn.Cb I_sn.Q VDD_SRC:p

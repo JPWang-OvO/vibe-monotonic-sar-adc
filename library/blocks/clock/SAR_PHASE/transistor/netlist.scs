@@ -12,6 +12,7 @@ I_por1 (Por PorN VDD VSS) INVD1BWP7T
 I_clk0 (Clks ClksB VDD VSS) INVD1BWP7T
 Mn_clock_slew (Clock ClksB VSS VSS) nch w=0.5u l=0.72u nf=1 m=1
 Mp_clock_slew (Clock ClksB VDD VDD) pch w=1u l=0.72u nf=1 m=1
+C_clock_slew (Clock VSS) capacitor c=20f
 I_ring0 (R4 Clock PorN R0 VDD VSS) DFCNQD1BWP7T
 I_ring1 (R0 Clock PorN R1 VDD VSS) DFCNQD1BWP7T
 I_ring2 (R1 Clock PorN R2 VDD VSS) DFCNQD1BWP7T

@@ -38,6 +38,9 @@
     },
     "transistor": {
       "netlist": "transistor/netlist.scs"
+    },
+    "parametric": {
+      "netlist": "parametric/netlist.scs"
     }
   }
 }

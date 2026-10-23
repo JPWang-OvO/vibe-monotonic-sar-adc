@@ -19,7 +19,7 @@ def measure(case, raw):
     cfg = case["measurement"]
     kind = cfg["kind"]
     metrics = {}
-    if kind in ('sar_comparator','sar_phase','sar_sampler'):
+    if kind in ('sar_comparator','sar_phase','sar_sampler','sar_sampler_sine','sar_cdac'):
         from regression.systems.monotonic_sar import measure_modules
         result=getattr(measure_modules, 'measure_'+kind[4:])(case,raw)
         checks={name:criterion(result['metrics'][name],rule) for name,rule in case['criteria'].items()}
