@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_PHASE",
+  "ports": [
+    "Clks",
+    "Sample",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "veriloga": {
+      "source": "veriloga/SAR_PHASE.va",
+      "netlist": "veriloga/netlist.scs"
+    },
+    "transistor": {
+      "netlist": "transistor/netlist.scs"
+    }
+  }
+}

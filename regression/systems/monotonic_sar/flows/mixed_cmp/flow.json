@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "id": "sar_mixed_cmp",
+  "testbench": "library/testbenches/systems/monotonic_sar/tb_SAR_sine/spectre/netlist.scs",
+  "process": "tsmc18",
+  "conditions": [
+    {
+      "id": "k3",
+      "tokens": {
+        "FIN": 585937.5,
+        "TEMP": 25
+      },
+      "cell_views": {
+        "SAR_PHASE": "veriloga",
+        "SAR_INV": "veriloga",
+        "SAR_CMP": "transistor",
+        "SAR_ASYNC": "timed",
+        "SAR_BIT": "veriloga",
+        "SAR_OUT": "veriloga",
+        "SAR_BIAS": "transistor",
+        "SAR_FRONTEND": "veriloga"
+      },
+      "enrichment": true,
+      "corner": "tt"
+    },
+    {
+      "id": "k51",
+      "tokens": {
+        "FIN": 9960937.5,
+        "TEMP": 25
+      },
+      "cell_views": {
+        "SAR_PHASE": "veriloga",
+        "SAR_INV": "veriloga",
+        "SAR_CMP": "transistor",
+        "SAR_ASYNC": "timed",
+        "SAR_BIT": "veriloga",
+        "SAR_OUT": "veriloga",
+        "SAR_BIAS": "transistor",
+        "SAR_FRONTEND": "veriloga"
+      },
+      "enrichment": true,
+      "corner": "tt"
+    }
+  ],
+  "simulator": {
+    "arguments": [
+      "-64",
+      "+preset=ax"
+    ],
+    "threads": 8,
+    "timeout_s": 600,
+    "analyses": "Transient 5.50 us, 256 contiguous conversions after 16 startup cycles",
+    "precision": {
+      "preset": "AX"
+    }
+  },
+  "measurement": {
+    "kind": "sar",
+    "bits": 10,
+    "n": 256,
+    "discard_cycles": 16,
+    "read_offset_s": 1.4e-08,
+    "logic_low_v": 0.18,
+    "logic_high_v": 1.62,
+    "expected_period_s": 2e-08,
+    "behavioral_alignment": false,
+    "lsb_v": 0.003515625
+  },
+  "criteria": {
+    "sample_count": {
+      "min": 256,
+      "max": 256
+    },
+    "invalid_bits": {
+      "max": 0
+    },
+    "incomplete_conversions": {
+      "max": 0
+    },
+    "comparison_count_errors": {
+      "max": 0
+    },
+    "period_error_s": {
+      "max": 1e-12
+    },
+    "sndr_db": {
+      "min": 57.0
+    },
+    "decision_errors_far_boundary": {
+      "max": 0
+    },
+    "timing_margin_min_s": {
+      "min": 2e-09
+    }
+  }
+}

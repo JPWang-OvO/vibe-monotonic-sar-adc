@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "reference_libraries": [
+    "tsmc18"
+  ],
+  "metadata_parameter": "lxCDFCallbackParams",
+  "version_parameter": "pdkVersion",
+  "version": null,
+  "models": {
+    "nmos2v": "nch",
+    "pmos2v": "pch",
+    "nmos5v": "nch_5",
+    "pmos5v": "pch_5"
+  },
+  "callback_functions": {
+    "nmos2v": {
+      "wf": "tsmc18rf_bsim45_nmos2v_CB( 'wf )",
+      "fingers": "tsmc18rf_bsim45_nmos2v_CB( 'fingers )",
+      "simM": "tsmc18rf_bsim45_nmos2v_CB( 'simM )",
+      "l": "tsmc18rf_bsim45_nmos2v_CB( 'l )",
+      "model": "tsmc18rf_bsim45_nmos2v_CB( 'model )"
+    },
+    "pmos2v": {
+      "wf": "tsmc18rf_bsim45_pmos2v_CB( 'wf )",
+      "fingers": "tsmc18rf_bsim45_pmos2v_CB( 'fingers )",
+      "simM": "tsmc18rf_bsim45_pmos2v_CB( 'simM )",
+      "l": "tsmc18rf_bsim45_pmos2v_CB( 'l )",
+      "model": "tsmc18rf_bsim45_pmos2v_CB( 'model )"
+    },
+    "nmos5v": {
+      "wf": "tsmc18rf_bsim45_nmos5v_CB( 'wf )",
+      "fingers": "tsmc18rf_bsim45_nmos5v_CB( 'fingers )",
+      "simM": "tsmc18rf_bsim45_nmos5v_CB( 'simM )",
+      "l": "tsmc18rf_bsim45_nmos5v_CB( 'l )",
+      "model": "tsmc18rf_bsim45_nmos5v_CB( 'model )"
+    },
+    "pmos5v": {
+      "wf": "tsmc18rf_bsim45_pmos5v_CB( 'wf )",
+      "fingers": "tsmc18rf_bsim45_pmos5v_CB( 'fingers )",
+      "simM": "tsmc18rf_bsim45_pmos5v_CB( 'simM )",
+      "l": "tsmc18rf_bsim45_pmos5v_CB( 'l )",
+      "model": "tsmc18rf_bsim45_pmos5v_CB( 'model )"
+    }
+  },
+  "groups": [
+    {
+      "masters": [
+        [
+          "tsmc18",
+          "nmos2v"
+        ],
+        [
+          "tsmc18",
+          "pmos2v"
+        ],
+        [
+          "tsmc18",
+          "nmos5v"
+        ],
+        [
+          "tsmc18",
+          "pmos5v"
+        ]
+      ],
+      "parameters": [
+        "model"
+      ],
+      "input_parameters": [
+        "l",
+        "wf",
+        "fingers",
+        "simM"
+      ],
+      "input_modes": [
+        "number"
+      ],
+      "selectors": {},
+      "input_callbacks": [
+        "wf",
+        "fingers",
+        "simM",
+        "l"
+      ],
+      "call_init_proc": false
+    }
+  ]
+}

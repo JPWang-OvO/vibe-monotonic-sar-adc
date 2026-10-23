@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_OUT",
+  "ports": [
+    "D",
+    "Done",
+    "Q",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "veriloga": {
+      "source": "veriloga/SAR_OUT.va",
+      "netlist": "veriloga/netlist.scs"
+    },
+    "transistor": {
+      "netlist": "transistor/netlist.scs"
+    }
+  }
+}

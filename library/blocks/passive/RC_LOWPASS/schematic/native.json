@@ -1,0 +1,144 @@
+{
+  "schema": "native-oa-v1",
+  "source_library": "IC_TEMPLATE",
+  "circuit": {
+    "cell": "RC_LOWPASS",
+    "view": "schematic",
+    "view_type": "schematic",
+    "properties": [
+      {
+        "name": "connectivityLastUpdated",
+        "type": "int",
+        "value": 80
+      },
+      {
+        "name": "lastSchematicExtraction",
+        "type": "time",
+        "value": "Oct 21 16:42:59 2026"
+      },
+      {
+        "name": "pin#",
+        "type": "int",
+        "value": 3
+      },
+      {
+        "name": "schGeometryLastUpdated",
+        "type": "int",
+        "value": 80
+      },
+      {
+        "name": "schGeometryVersion",
+        "type": "string",
+        "value": "sch.ds.gm.1.4"
+      }
+    ],
+    "instances": [
+      {
+        "name": "C0",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {
+          "MINUS": "VSS",
+          "PLUS": "OUT"
+        }
+      },
+      {
+        "name": "PIN0",
+        "master": [
+          "basic",
+          "ipin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN1",
+        "master": [
+          "basic",
+          "opin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN2",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "R0",
+        "master": [
+          "analogLib",
+          "res",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {
+          "MINUS": "OUT",
+          "PLUS": "IN"
+        }
+      }
+    ],
+    "terminals": [
+      {
+        "name": "IN",
+        "direction": "input",
+        "net": "IN",
+        "properties": []
+      },
+      {
+        "name": "OUT",
+        "direction": "output",
+        "net": "OUT",
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "direction": "inputOutput",
+        "net": "VSS",
+        "properties": []
+      }
+    ],
+    "nets": [
+      {
+        "name": "IN",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "OUT",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      }
+    ]
+  }
+}

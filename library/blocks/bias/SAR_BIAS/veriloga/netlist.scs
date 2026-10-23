@@ -1,0 +1,4 @@
+ahdl_include "SAR_BIAS.va"
+subckt SAR_BIAS (Bias VDD VSS)
+I_model (Bias VDD VSS) SAR_BIAS_va
+ends SAR_BIAS

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "cell": "COUNTER_DEMO",
+  "ports": [
+    "CLK",
+    "RST",
+    "EN",
+    "Q<1>",
+    "Q<0>",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "spectre": {
+      "netlist": "spectre/netlist.scs"
+    }
+  }
+}

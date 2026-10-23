@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_ASYNC",
+  "ports": [
+    "Sample",
+    "Valid",
+    "ClkC",
+    "Done",
+    "Ck9",
+    "Ck8",
+    "Ck7",
+    "Ck6",
+    "Ck5",
+    "Ck4",
+    "Ck3",
+    "Ck2",
+    "Ck1",
+    "Ck0",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "veriloga": {
+      "source": "veriloga/SAR_ASYNC.va",
+      "netlist": "veriloga/netlist.scs"
+    },
+    "transistor": {
+      "netlist": "transistor/netlist.scs"
+    },
+    "timed": {
+      "netlist": "timed/netlist.scs"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+simulator lang=spectre
+// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
+include "../../../../support/standard_cells/INVD1BWP7T/spectre/netlist.scs"
+include "../../../../support/standard_cells/DFCNQD1BWP7T/spectre/netlist.scs"
+include "../../../../support/standard_cells/DFSNQD1BWP7T/spectre/netlist.scs"
+include "../../../logic/SAR_DRIVE/transistor/netlist.scs"
+subckt SAR_PHASE (Clks Sample VDD VSS)
+Mp_charge (PorRamp VSS VDD VDD) pch w=0.36u l=5u nf=1 m=1
+C_por (PorRamp VSS) capacitor c=200f
+I_por0 (PorRamp Por VDD VSS) INVD1BWP7T
+I_por1 (Por PorN VDD VSS) INVD1BWP7T
+I_clk0 (Clks ClksB VDD VSS) INVD1BWP7T
+Mn_clock_slew (Clock ClksB VSS VSS) nch w=0.5u l=0.72u nf=1 m=1
+Mp_clock_slew (Clock ClksB VDD VDD) pch w=1u l=0.72u nf=1 m=1
+I_ring0 (R4 Clock PorN R0 VDD VSS) DFCNQD1BWP7T
+I_ring1 (R0 Clock PorN R1 VDD VSS) DFCNQD1BWP7T
+I_ring2 (R1 Clock PorN R2 VDD VSS) DFCNQD1BWP7T
+I_ring3 (R2 Clock PorN R3 VDD VSS) DFCNQD1BWP7T
+I_ring4 (R3 Clock PorN R4 VDD VSS) DFSNQD1BWP7T
+I_buffer0 (R0 SampleB_int VDD VSS) SAR_DRIVE scale=1
+I_buffer1 (SampleB_int Sample VDD VSS) SAR_DRIVE scale=16
+ends SAR_PHASE

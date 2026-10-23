@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "id": "counter_sequence",
+  "testbench": "library/testbenches/systems/counter_demo/tb_COUNTER_sequence/spectre/netlist.scs",
+  "process": null,
+  "conditions": [
+    {
+      "id": "nominal",
+      "tokens": {},
+      "cell_views": {},
+      "enrichment": false
+    }
+  ],
+  "simulator": {
+    "arguments": [
+      "+aps"
+    ],
+    "threads": 8,
+    "timeout_s": 300,
+    "analyses": "Transient 20 ns; reset/count/hold/resume/reset/recount",
+    "precision": {
+      "reltol": 1e-05,
+      "vabstol_v": 1e-07,
+      "iabstol_a": 1e-12,
+      "errpreset": "conservative"
+    }
+  },
+  "measurement": {
+    "kind": "counter_sequence",
+    "signals_lsb_first": [
+      "Q<0>",
+      "Q<1>"
+    ],
+    "logic_low_v": 0.09,
+    "logic_high_v": 0.81,
+    "samples": [
+      {
+        "time_s": 2.5e-10,
+        "expected": 0
+      },
+      {
+        "time_s": 1.5000000000000002e-09,
+        "expected": 1
+      },
+      {
+        "time_s": 3.5000000000000003e-09,
+        "expected": 2
+      },
+      {
+        "time_s": 5.5000000000000004e-09,
+        "expected": 3
+      },
+      {
+        "time_s": 7.500000000000001e-09,
+        "expected": 0
+      },
+      {
+        "time_s": 9.5e-09,
+        "expected": 0
+      },
+      {
+        "time_s": 1.15e-08,
+        "expected": 0
+      },
+      {
+        "time_s": 1.35e-08,
+        "expected": 1
+      },
+      {
+        "time_s": 1.425e-08,
+        "expected": 0
+      },
+      {
+        "time_s": 1.55e-08,
+        "expected": 1
+      },
+      {
+        "time_s": 1.75e-08,
+        "expected": 2
+      },
+      {
+        "time_s": 1.9500000000000003e-08,
+        "expected": 3
+      }
+    ]
+  },
+  "criteria": {
+    "mismatches": {
+      "max": 0,
+      "unit": "events"
+    },
+    "invalid_bits": {
+      "max": 0,
+      "unit": "bits"
+    },
+    "sample_count": {
+      "min": 12,
+      "max": 12,
+      "unit": "samples"
+    }
+  }
+}

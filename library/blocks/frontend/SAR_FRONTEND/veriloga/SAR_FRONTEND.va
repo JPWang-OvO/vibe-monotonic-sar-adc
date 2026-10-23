@@ -1,0 +1,19 @@
+`include "constants.vams"
+`include "disciplines.vams"
+// Charge is stored at the falling sampling edge. DAC changes conserve it.
+module SAR_FRONTEND_va(Vinp,Vinn,Sample,SampleB,Vp,Vn,Bp9,Bp8,Bp7,Bp6,Bp5,Bp4,Bp3,Bp2,Bp1,Bn9,Bn8,Bn7,Bn6,Bn5,Bn4,Bn3,Bn2,Bn1,VREFP,VREFN,VDD,VSS);
+inout Vinp,Vinn,Sample,SampleB,Vp,Vn,Bp9,Bp8,Bp7,Bp6,Bp5,Bp4,Bp3,Bp2,Bp1,Bn9,Bn8,Bn7,Bn6,Bn5,Bn4,Bn3,Bn2,Bn1,VREFP,VREFN,VDD,VSS;
+electrical Vinp,Vinn,Sample,SampleB,Vp,Vn,Bp9,Bp8,Bp7,Bp6,Bp5,Bp4,Bp3,Bp2,Bp1,Bn9,Bn8,Bn7,Bn6,Bn5,Bn4,Bn3,Bn2,Bn1,VREFP,VREFN,VDD,VSS;
+integer tracking;
+real qp,qn,bp,bn,blend;
+analog begin
+ bp=256*V(Bp9,VSS) + 128*V(Bp8,VSS) + 64*V(Bp7,VSS) + 32*V(Bp6,VSS) + 16*V(Bp5,VSS) + 8*V(Bp4,VSS) + 4*V(Bp3,VSS) + 2*V(Bp2,VSS) + 1*V(Bp1,VSS) + V(VREFP,VSS);
+ bn=256*V(Bn9,VSS) + 128*V(Bn8,VSS) + 64*V(Bn7,VSS) + 32*V(Bn6,VSS) + 16*V(Bn5,VSS) + 8*V(Bn4,VSS) + 4*V(Bn3,VSS) + 2*V(Bn2,VSS) + 1*V(Bn1,VSS) + V(VREFP,VSS);
+ @(initial_step) begin tracking=0;qp=512*(V(Vinp,VSS)-V(VREFP,VSS));qn=512*(V(Vinn,VSS)-V(VREFP,VSS));end
+ @(cross(V(Sample,VSS)-0.9,+1)) tracking=1;
+ @(cross(V(Sample,VSS)-0.9,-1)) begin qp=512*V(Vinp,VSS)-bp;qn=512*V(Vinn,VSS)-bn;tracking=0;end
+ blend=transition(tracking,0,10p,10p);
+ V(Vp,VSS)<+blend*V(Vinp,VSS)+(1-blend)*(qp+bp)/512;
+ V(Vn,VSS)<+blend*V(Vinn,VSS)+(1-blend)*(qn+bn)/512;
+end
+endmodule

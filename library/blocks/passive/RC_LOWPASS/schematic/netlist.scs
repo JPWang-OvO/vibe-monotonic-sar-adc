@@ -1,0 +1,5 @@
+simulator lang=spectre
+subckt RC_LOWPASS (IN OUT VSS)
+R0 (IN OUT) resistor r=1K
+C0 (OUT VSS) capacitor c=1p
+ends RC_LOWPASS

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "cell": "DFSNQD1BWP7T",
+  "ports": [
+    "D",
+    "CP",
+    "SDN",
+    "Q",
+    "VDD",
+    "VSS"
+  ],
+  "reference_library": "standard_cells",
+  "views": {
+    "spectre": {
+      "netlist": "spectre/netlist.scs"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+simulator lang=spectre
+@MODEL_SETUP@
+include "../../../../../blocks/logic/INV/schematic/netlist.scs"
+parameters vdd=@VDD@
+VDD_SRC (VDD 0) vsource dc=vdd
+VIN (IN 0) vsource dc=0 type=pulse val0=0 val1=vdd delay=1n rise=20p fall=20p width=1n period=2n
+XINV (IN OUT VDD 0) INV
+CL (OUT 0) capacitor c=5f
+simulatorOptions options temp=@TEMP@ reltol=1e-5 vabstol=1e-7 iabstol=1e-12
+dc dc dev=VIN param=dc start=0 stop=vdd step=0.01
+tran tran stop=6n maxstep=5p errpreset=conservative
+save IN OUT VDD_SRC:p

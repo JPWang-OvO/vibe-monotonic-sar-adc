@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "sar_phase",
+  "testbench": "library/testbenches/blocks/clock/tb_SAR_PHASE/spectre/netlist.scs",
+  "process": "tsmc18",
+  "conditions": [
+    {
+      "id": "tt",
+      "corner": "tt",
+      "tokens": {
+        "TEMP": 25
+      },
+      "cell_views": {},
+      "enrichment": true
+    }
+  ],
+  "simulator": {
+    "arguments": [
+      "-64",
+      "+preset=ax"
+    ],
+    "threads": 8,
+    "timeout_s": 300,
+    "analyses": "sar_phase transistor module functional transient",
+    "precision": {
+      "preset": "AX"
+    }
+  },
+  "measurement": {
+    "kind": "sar_phase"
+  },
+  "criteria": {
+    "pulse_count": {
+      "min": 18,
+      "max": 20
+    },
+    "period_error_s": {
+      "max": 5e-11
+    },
+    "width_min_s": {
+      "min": 3.5e-09
+    },
+    "width_max_s": {
+      "max": 4.5e-09
+    }
+  }
+}

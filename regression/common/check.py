@@ -1,0 +1,89 @@
+"""Check maintained ownership, interfaces, references and documentation offline."""
+from __future__ import annotations
+
+import re
+from pathlib import Path
+
+from regression.common.project import ROOT, read_json
+from virtuoso.oa.comparison import spectre_document
+
+
+def check(root=ROOT):
+    problems, cells = [], {}
+    for path in sorted((root / "library").rglob("cell.json")):
+        record = read_json(path)
+        name = record["cell"]
+        if name in cells:
+            problems.append(f"Duplicate cell identity {name}")
+        cells[name] = path
+        if path.parent.name != name:
+            problems.append(f"Directory/cell mismatch: {path}")
+        for view, files in record["views"].items():
+            for kind, relative in files.items():
+                target = path.parent / relative
+                if not target.is_file():
+                    problems.append(f"Missing {view}/{kind}: {target}")
+            if "netlist" in files and record["ports"]:
+                source = path.parent / files["netlist"]
+                parsed = spectre_document(source.read_text(encoding="utf-8"))
+                if name not in parsed['subcircuits'] or (view != 'pex' and set(parsed['subcircuits']) != {name}):
+                    problems.append(f"Expected own cell definition (PEX may include extracted child subcircuits): {source}")
+                else:
+                    ports = [token.replace('\\<','<').replace('\\>','>') for token in parsed["subcircuits"][name]["ports"]]
+                    if ports != ["(", *record["ports"], ")"]:
+                        problems.append(f"Ordered ports differ: {source}")
+        recipe = path.parent / "schematic/circuit.json"
+        if recipe.exists():
+            spec = read_json(recipe)
+            if spec["ports"] != record["ports"]:
+                problems.append(f"Recipe ports differ: {recipe}")
+            native_path = path.parent / "schematic/native.json"
+            if native_path.exists():
+                native = read_json(native_path)["circuit"]
+                instances = {row["name"]: row for row in native["instances"]}
+                for row in spec["instances"]:
+                    saved = instances[row["name"]]
+                    if row["master"] != saved["master"] or row["connections"] != saved["connections"]:
+                        problems.append(f"Native/recipe circuit differs: {recipe}:{row['name']}")
+    project = read_json(root / "project.json")
+    for flow in project["flows"]:
+        path = root / flow
+        config = read_json(path)
+        if not (root / config["testbench"]).is_file():
+            problems.append(f"Missing TB in {path}")
+        for relative in ("run.py", "measure.py"):
+            if not (path.parent / relative).is_file():
+                problems.append(f"Missing flow entry: {path.parent / relative}")
+        if not config["criteria"]:
+            problems.append(f"Missing criteria: {path}")
+    for path in root.rglob("*.md"):
+        if any(p in (".git", "artifacts", ".pytest_cache") for p in path.parts):
+            continue
+        text = path.read_text(encoding="utf-8")
+        if path.is_relative_to(root / "docs"):
+            if not text.startswith("---\n"):
+                problems.append(f"Missing frontmatter: {path}")
+            else:
+                header = text.split("---", 2)[1]
+                for key in ("title", "type", "status", "last_reviewed", "authoritative_sources"):
+                    if not re.search(rf"(?m)^{key}:", header):
+                        problems.append(f"Missing {key}: {path}")
+        for match in re.finditer(r'\]\(([^)]+)\)', text):
+            link = match.group(1).strip("<>").split("#",1)[0]
+            if not link or "://" in link or link.startswith("mailto:"):
+                continue
+            if not (path.parent / link).exists():
+                problems.append(f"Broken link: {path.relative_to(root)} -> {link}")
+    return problems
+
+
+def main():
+    problems = check()
+    for problem in problems:
+        print(problem)
+    print(f"Project checks: {len(problems)} issue(s)")
+    return bool(problems)
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

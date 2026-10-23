@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "cell": "COUNTER2",
+  "ports": [
+    "CLK",
+    "RST",
+    "EN",
+    "Q<1>",
+    "Q<0>",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "veriloga": {
+      "source": "veriloga/COUNTER2.va"
+    }
+  }
+}

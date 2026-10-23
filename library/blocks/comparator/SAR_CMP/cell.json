@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_CMP",
+  "ports": [
+    "Vp",
+    "Vn",
+    "ClkC",
+    "Outp",
+    "Outn",
+    "Valid",
+    "Bias",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "veriloga": {
+      "source": "veriloga/SAR_CMP.va",
+      "netlist": "veriloga/netlist.scs"
+    },
+    "transistor": {
+      "netlist": "transistor/netlist.scs"
+    },
+    "timed": {
+      "netlist": "timed/netlist.scs"
+    }
+  }
+}

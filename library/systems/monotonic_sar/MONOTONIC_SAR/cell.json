@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "cell": "MONOTONIC_SAR",
+  "ports": [
+    "Vinp",
+    "Vinn",
+    "Clks",
+    "D9",
+    "D8",
+    "D7",
+    "D6",
+    "D5",
+    "D4",
+    "D3",
+    "D2",
+    "D1",
+    "D0",
+    "EOC",
+    "VDD",
+    "VSS",
+    "VCM",
+    "VREFP",
+    "VREFN"
+  ],
+  "views": {
+    "spectre": {
+      "netlist": "spectre/netlist.scs"
+    }
+  }
+}

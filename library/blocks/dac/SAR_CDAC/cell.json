@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_CDAC",
+  "ports": [
+    "Vp",
+    "Vn",
+    "Bp9",
+    "Bp8",
+    "Bp7",
+    "Bp6",
+    "Bp5",
+    "Bp4",
+    "Bp3",
+    "Bp2",
+    "Bp1",
+    "Bn9",
+    "Bn8",
+    "Bn7",
+    "Bn6",
+    "Bn5",
+    "Bn4",
+    "Bn3",
+    "Bn2",
+    "Bn1",
+    "VREFP",
+    "VREFN"
+  ],
+  "views": {
+    "spectre": {
+      "netlist": "spectre/netlist.scs"
+    }
+  }
+}
