@@ -12,6 +12,9 @@
   "views": {
     "transistor": {
       "netlist": "transistor/netlist.scs"
+    },
+    "quiet": {
+      "netlist": "quiet/netlist.scs"
     }
   }
 }

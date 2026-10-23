@@ -1,0 +1,7 @@
+simulator lang=spectre
+// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
+subckt SAR_BIAS (Bias VDD VSS)
+Mp_diode (Bias Bias VDD VDD) pch w=8u l=0.36u nf=1 m=1
+Mn_sink (Bias VDD VSS VSS) nch w=2.7u l=2u nf=1 m=1
+C_bias (Bias VSS) capacitor c=100f
+ends SAR_BIAS

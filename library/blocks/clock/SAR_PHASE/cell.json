@@ -53,6 +53,9 @@
     },
     "short160": {
       "netlist": "short160/netlist.scs"
+    },
+    "quiet320": {
+      "netlist": "quiet320/netlist.scs"
     }
   }
 }
