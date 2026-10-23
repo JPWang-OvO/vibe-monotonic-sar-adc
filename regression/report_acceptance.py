@@ -1,5 +1,5 @@
 """Collect the fixed electrical matrix and power results for one delivered DUT."""
-import argparse,json
+import argparse,json,re
 from pathlib import Path
 from regression.common.project import ROOT,read_json,write_json
 
@@ -25,7 +25,14 @@ for folder in a.batches:
         sources={name:(inputs/name).read_text() for name in c['sources']['sources'] if name!=c['sources']['entry']}
         if reference_sources is None:reference_sources=sources
         else:source_equal=source_equal and sources==reference_sources
-        rows.append(dict(batch=folder.name,case=c['id'],corner=key[0],temp_c=key[1],noise=noise,k=k,
+        noise_actual={}
+        if noise:
+            log=(folder/'cases'/c['id']/'logs/spectre.log').read_text(errors='replace')
+            for parameter in ('noisefmin','noisefmax'):
+                match=re.search(r'^\s*'+parameter+r'\s*=\s*([\d.eE+-]+)\s+(Hz|kHz|MHz|GHz)\s*$',log,re.M)
+                assert match,('Missing actual transient-noise setting',parameter,c['id'])
+                noise_actual[parameter+'_hz']=float(match[1])*{'Hz':1,'kHz':1e3,'MHz':1e6,'GHz':1e9}[match[2]]
+        rows.append(dict(batch=folder.name,case=c['id'],corner=key[0],temp_c=key[1],noise=noise,k=k,noise_actual=noise_actual,
             passed=bool(result.get('pass')),execution_pass=result.get('execution_pass'),
             metrics=result.get('metrics',{}),power=result.get('power',{}),
             failed_checks=[name for name,value in result.get('checks',{}).items() if not value]))
@@ -39,10 +46,13 @@ report=dict(all_electrical_pass=complete,dut_sources_equal=source_equal,required
 write_json(ROOT/'config/acceptance_results.json',report)
 final['status']='electrical_pass_oa_pending' if complete else 'electrical_acceptance_incomplete'
 write_json(ROOT/'config/final_design.json',final)
-lines=['# 晶体管 ADC 正式电气验收','',
+lines=['---','title: 晶体管 ADC 正式电气验收','type: verification-method','status: active',
+    'last_reviewed: 2026-10-23','authoritative_sources:',
+    '  - ../../config/acceptance_results.json','  - ../../config/final_design.json','---','',
+    '# 晶体管 ADC 正式电气验收','',
     f'同一 DUT 已完成 {len(rows)}/20 个 case，其中 {report["passed_cases"]} 个通过。'+('全部电气验收通过，可进入 OA 收尾。' if complete else '尚未完成全部电气验收。'),'',
     '各批次的 DUT 源文件一致性：'+('通过。' if source_equal else '失败，不能合并为同一版本。'),'',
-    '固定方法见 [验收与功耗测量](acceptance-method.md)。每项使用丢弃 16 周期后的连续 256 个实际输出码；含噪声频带为 1 Hz–50 GHz、seed=1。','',
+    '固定方法见 [验收与功耗测量](acceptance-method.md)。每项使用丢弃 16 周期后的连续 256 个实际输出码；含噪声请求 1 Hz–50 GHz、seed=1。Spectre 19.1 将下限自动设为 1/5.8 µs，实际约 172.414 kHz；上限保持 50 GHz。','',
     '| 工艺 | 温度 °C | 噪声 | k | SNDR dB | EOC 最小余量 ns | 逐位 RMS mV | 通过 |',
     '|---|---:|---|---:|---:|---:|---:|---|']
 def value(obj,key,scale=1):

@@ -26,6 +26,7 @@ for group,corner,temp,noises in groups:
         obj['simulator'].update(timeout_s=3600,analyses=f'Formal {group}, k={k}, fixed 256 consecutive codes; noise bandwidth 1 Hz–50 GHz and seed 1 when enabled')
         folder=f'regression/systems/monotonic_sar/flows/final_{group}_k{k}';js(folder+'/flow.json',obj)
         write(folder+'/run.py','from pathlib import Path\nfrom regression.common.runner import main\nif __name__=="__main__":main(Path(__file__).with_name("flow.json"))\n')
+        write(folder+'/measure.py','from regression.systems.monotonic_sar.measure import measure_sar\n')
         paths.append(folder+'/flow.json')
 assert case_count==20
 js('config/final_design.json',dict(source_flow=a.base_flow,cell_views=bindings,acceptance='config/acceptance.json',flows=paths,case_count=20,status='candidate_pending_all_stages'))
