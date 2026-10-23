@@ -30,7 +30,8 @@
 
 以上文件夹均位于 `regression/systems/monotonic_sar/flows/`，每个使用其中的 `flow.json`。
 阶段 3 每个 flow 同时包含关闭/开启瞬态噪声两个 case，总计 16 项。
-当前执行窗口和绝对截止时间记录于 `config/run_budget.json`，该批次不能在截止后继续启动新作业。
+执行窗口记录于 `config/run_budget.json`。用户已将本任务延长至目标完成，`deadline_utc` 为 null；
+每个批次仍受其 flow 的执行时限约束。配置了绝对截止时间的批次会在收集预留窗口前停止启动新作业。
 
 ## 输出与报告
 
