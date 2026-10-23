@@ -82,7 +82,11 @@ def run_case(root, case, stop_time):
 def control(root):
     batch = read_json(root / "batch.json")
     reports = []
-    remaining_wall = datetime.fromisoformat(batch['deadline_utc'].replace('Z','+00:00')).timestamp()-time.time()-900
+    remaining_wall = batch["batch_timeout_s"]
+    if batch['deadline_utc'] is not None:
+        remaining_wall = (datetime.fromisoformat(batch['deadline_utc'].replace('Z','+00:00')).timestamp()
+                          + batch.get('remote_clock_offset_s',0) - time.time()
+                          - batch.get('collect_reserve_seconds',600))
     if remaining_wall <= 0:
         raise ValueError('Project collection reserve has begun; no new jobs allowed')
     stop_time = time.monotonic() + min(batch["batch_timeout_s"], remaining_wall)

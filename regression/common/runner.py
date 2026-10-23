@@ -65,11 +65,16 @@ def prepare(flow_paths, env_path, batch_id, workers=1):
                     "enrichment": enrichment}
             cases.append(case)
             write_json(local_case / "settings.json", case)
+    batch_timeout = sum(c["timeout_s"] for c in cases) + 60
+    if budget['deadline_utc'] is not None:
+        remaining = (datetime.fromisoformat(budget['deadline_utc'].replace('Z','+00:00')).timestamp()
+                     - datetime.now(timezone.utc).timestamp() - budget['collect_reserve_seconds'])
+        batch_timeout = min(batch_timeout, int(remaining))
     batch = {"schema_version": 1, "batch_id": batch_id, "environment": env,
              "remote": remote, "workers": min(workers, len(cases)), "cases": cases,
-             "batch_timeout_s": min(sum(c["timeout_s"] for c in cases) + 60,
-                 int(datetime.fromisoformat(budget['deadline_utc'].replace('Z','+00:00')).timestamp()-datetime.now(timezone.utc).timestamp()-budget['collect_reserve_seconds'])),
+             "batch_timeout_s": batch_timeout,
              "deadline_utc": budget['deadline_utc'],
+             "collect_reserve_seconds": budget['collect_reserve_seconds'],
              "failure_policy": "Stop new jobs on execution/log/measurement error; finish running jobs and continue independent electrical failures"}
     write_json(destination / "batch.json", batch)
     for package in ("regression/__init__.py", "regression/common/__init__.py",
@@ -116,6 +121,11 @@ def submit(folder):
     checked(runner.upload(ROOT/'regression/common/resources.py',resource_script))
     snapshot=checked(runner.run_command(shlex.join([batch['environment']['server_python'],resource_script]),timeout=20))
     write_json(folder/'resources.json',json.loads(snapshot))
+    local_before=datetime.now(timezone.utc).timestamp()
+    remote_now=float(checked(runner.run_command('date +%s')))
+    local_after=datetime.now(timezone.utc).timestamp()
+    batch['remote_clock_offset_s']=remote_now-(local_before+local_after)/2
+    write_json(folder/'batch.json',batch)
     checked(runner.run_command(shlex.join(["mkdir", batch["remote"]])))
     files=[path for path in sorted(folder.rglob('*')) if path.is_file()
            and '__pycache__' not in path.parts and 'enrichment' not in path.relative_to(folder).parts
@@ -137,7 +147,11 @@ def collect(folder):
     runner = ssh(batch)
     state = json.loads(checked(runner.run_command(shlex.join(["cat", batch["remote"] + "/status.json"]))))
     write_json(folder / "status.json", state)
-    if state["state"] in ("completed", "failed"):
+    if state['state'] in ('cancelled','controller_error'):
+        checked(runner.upload(ROOT/'regression/common/partial.py',batch['remote']+'/collect_partial.py'))
+        checked(runner.run_command('cd '+shlex.quote(batch['remote'])+' && '+
+                                  shlex.join([batch['environment']['server_python'],'collect_partial.py']),timeout=30))
+    if state["state"] in ("completed", "failed", "cancelled", "controller_error"):
         # Repeated bit traces compress well; raw PSF files are excluded explicitly.
         # summary.json already contains each complete case result. Transfer it
         # once; duplicating the per-case JSON doubled the observed slow download.
