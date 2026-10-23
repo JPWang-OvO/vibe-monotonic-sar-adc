@@ -98,7 +98,13 @@ def enrich(client,inputs,staged,output,env,process,remote,arguments):
     remote=remote+'/primitive'
     runner=client.ssh_runner
     checked(runner.run_command(shlex.join(['mkdir','-p',remote+'/source']),timeout=30))
-    for name in staged['sources']:checked(runner.upload(inputs/name,remote+'/source/'+name,timeout=30))
+    # The complete staged include tree is small; one transfer avoids per-file
+    # SSH latency for every condition without reusing native characterization.
+    source_archive=output/'source_bundle.tar.gz'
+    with tarfile.open(source_archive,'w:gz') as archive:
+        for name in staged['sources']:archive.add(inputs/name,arcname=name,recursive=False)
+    checked(runner.upload(source_archive,remote+'/source_bundle.tar.gz',timeout=30))
+    checked(runner.run_command(shlex.join(['tar','-xzf',remote+'/source_bundle.tar.gz','-C',remote+'/source']),timeout=30))
     original=inspect(client,remote+'/source/'+staged['entry'],remote+'/original',output/'original',env,arguments)
     selected={}
     native=[]

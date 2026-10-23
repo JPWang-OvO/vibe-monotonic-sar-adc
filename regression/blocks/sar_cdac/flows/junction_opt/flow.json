@@ -1,0 +1,664 @@
+{
+  "schema_version": 1,
+  "id": "sar_cdac_junction_opt",
+  "testbench": "library/testbenches/blocks/dac/tb_SAR_CDAC_physical/spectre/netlist.scs",
+  "process": "tsmc18",
+  "conditions": [
+    {
+      "id": "p384",
+      "corner": "tt",
+      "tokens": {
+        "TEMP": 25,
+        "CUNIT": "20f"
+      },
+      "cell_views": {
+        "SAR_FRONTEND": "parametric",
+        "SAR_SAMPLE": "junction384",
+        "SAR_CDAC": "scaled"
+      },
+      "enrichment": true
+    }
+  ],
+  "simulator": {
+    "arguments": [
+      "-64",
+      "+preset=ax"
+    ],
+    "threads": 8,
+    "timeout_s": 300,
+    "analyses": "Physical sampler/CDAC charge redistribution: five fixed inputs, nine monotonic bottom steps; independent module diagnostic",
+    "precision": {
+      "preset": "AX"
+    }
+  },
+  "measurement": {
+    "kind": "sar_cdac",
+    "points": [
+      0.1,
+      0.5,
+      0.9,
+      1.3,
+      1.7
+    ],
+    "sequences": [
+      [
+        {
+          "bit": 9,
+          "vp": 0.1,
+          "vn": 1.7,
+          "differential": -1.6,
+          "common_mode": 0.9,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 256,
+          "charge_p": -1.7408e-11,
+          "charge_n": -1.024e-12
+        },
+        {
+          "bit": 8,
+          "vp": 0.1,
+          "vn": 0.8,
+          "differential": -0.7,
+          "common_mode": 0.45,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 128,
+          "charge_p": -1.7408e-11,
+          "charge_n": -1.024e-12
+        },
+        {
+          "bit": 7,
+          "vp": 0.1,
+          "vn": 0.35,
+          "differential": -0.25,
+          "common_mode": 0.225,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 64,
+          "charge_p": -1.7408e-11,
+          "charge_n": -1.024e-12
+        },
+        {
+          "bit": 6,
+          "vp": 0.1,
+          "vn": 0.125,
+          "differential": -0.025,
+          "common_mode": 0.1125,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 32,
+          "charge_p": -1.7408e-11,
+          "charge_n": -1.024e-12
+        },
+        {
+          "bit": 5,
+          "vp": 0.1,
+          "vn": 0.0125,
+          "differential": 0.0875,
+          "common_mode": 0.05625,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 16,
+          "charge_p": -1.7408e-11,
+          "charge_n": -1.024e-12
+        },
+        {
+          "bit": 4,
+          "vp": 0.04375,
+          "vn": 0.0125,
+          "differential": 0.03125,
+          "common_mode": 0.028125,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 8,
+          "charge_p": -1.7408e-11,
+          "charge_n": -1.024e-12
+        },
+        {
+          "bit": 3,
+          "vp": 0.015625,
+          "vn": 0.0125,
+          "differential": 0.003125,
+          "common_mode": 0.0140625,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 4,
+          "charge_p": -1.7408e-11,
+          "charge_n": -1.024e-12
+        },
+        {
+          "bit": 2,
+          "vp": 0.0015625,
+          "vn": 0.0125,
+          "differential": -0.0109375,
+          "common_mode": 0.00703125,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 2,
+          "charge_p": -1.7408e-11,
+          "charge_n": -1.024e-12
+        },
+        {
+          "bit": 1,
+          "vp": 0.0015625,
+          "vn": 0.00546875,
+          "differential": -0.00390625,
+          "common_mode": 0.003515625,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 1,
+          "charge_p": -1.7408e-11,
+          "charge_n": -1.024e-12
+        },
+        {
+          "bit": 0,
+          "vp": 0.0015625,
+          "vn": 0.001953125,
+          "differential": -0.000390625,
+          "common_mode": 0.0017578125,
+          "decision": 0,
+          "switched_side": "none",
+          "switched_weight": 0,
+          "charge_p": -1.7408e-11,
+          "charge_n": -1.024e-12
+        }
+      ],
+      [
+        {
+          "bit": 9,
+          "vp": 0.5,
+          "vn": 1.3,
+          "differential": -0.8,
+          "common_mode": 0.9,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 256,
+          "charge_p": -1.3312e-11,
+          "charge_n": -5.12e-12
+        },
+        {
+          "bit": 8,
+          "vp": 0.5,
+          "vn": 0.4,
+          "differential": 0.1,
+          "common_mode": 0.45,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 128,
+          "charge_p": -1.3312e-11,
+          "charge_n": -5.12e-12
+        },
+        {
+          "bit": 7,
+          "vp": 0.05,
+          "vn": 0.4,
+          "differential": -0.35,
+          "common_mode": 0.225,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 64,
+          "charge_p": -1.3312e-11,
+          "charge_n": -5.12e-12
+        },
+        {
+          "bit": 6,
+          "vp": 0.05,
+          "vn": 0.175,
+          "differential": -0.125,
+          "common_mode": 0.1125,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 32,
+          "charge_p": -1.3312e-11,
+          "charge_n": -5.12e-12
+        },
+        {
+          "bit": 5,
+          "vp": 0.05,
+          "vn": 0.0625,
+          "differential": -0.0125,
+          "common_mode": 0.05625,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 16,
+          "charge_p": -1.3312e-11,
+          "charge_n": -5.12e-12
+        },
+        {
+          "bit": 4,
+          "vp": 0.05,
+          "vn": 0.00625,
+          "differential": 0.04375,
+          "common_mode": 0.028125,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 8,
+          "charge_p": -1.3312e-11,
+          "charge_n": -5.12e-12
+        },
+        {
+          "bit": 3,
+          "vp": 0.021875,
+          "vn": 0.00625,
+          "differential": 0.015625,
+          "common_mode": 0.0140625,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 4,
+          "charge_p": -1.3312e-11,
+          "charge_n": -5.12e-12
+        },
+        {
+          "bit": 2,
+          "vp": 0.0078125,
+          "vn": 0.00625,
+          "differential": 0.0015625,
+          "common_mode": 0.00703125,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 2,
+          "charge_p": -1.3312e-11,
+          "charge_n": -5.12e-12
+        },
+        {
+          "bit": 1,
+          "vp": 0.00078125,
+          "vn": 0.00625,
+          "differential": -0.00546875,
+          "common_mode": 0.003515625,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 1,
+          "charge_p": -1.3312e-11,
+          "charge_n": -5.12e-12
+        },
+        {
+          "bit": 0,
+          "vp": 0.00078125,
+          "vn": 0.002734375,
+          "differential": -0.001953125,
+          "common_mode": 0.0017578125,
+          "decision": 0,
+          "switched_side": "none",
+          "switched_weight": 0,
+          "charge_p": -1.3312e-11,
+          "charge_n": -5.12e-12
+        }
+      ],
+      [
+        {
+          "bit": 9,
+          "vp": 0.9,
+          "vn": 0.9,
+          "differential": 0.0,
+          "common_mode": 0.9,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 256,
+          "charge_p": -9.216e-12,
+          "charge_n": -9.216e-12
+        },
+        {
+          "bit": 8,
+          "vp": 0.0,
+          "vn": 0.9,
+          "differential": -0.9,
+          "common_mode": 0.45,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 128,
+          "charge_p": -9.216e-12,
+          "charge_n": -9.216e-12
+        },
+        {
+          "bit": 7,
+          "vp": 0.0,
+          "vn": 0.45,
+          "differential": -0.45,
+          "common_mode": 0.225,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 64,
+          "charge_p": -9.216e-12,
+          "charge_n": -9.216e-12
+        },
+        {
+          "bit": 6,
+          "vp": 0.0,
+          "vn": 0.225,
+          "differential": -0.225,
+          "common_mode": 0.1125,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 32,
+          "charge_p": -9.216e-12,
+          "charge_n": -9.216e-12
+        },
+        {
+          "bit": 5,
+          "vp": 0.0,
+          "vn": 0.1125,
+          "differential": -0.1125,
+          "common_mode": 0.05625,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 16,
+          "charge_p": -9.216e-12,
+          "charge_n": -9.216e-12
+        },
+        {
+          "bit": 4,
+          "vp": 0.0,
+          "vn": 0.05625,
+          "differential": -0.05625,
+          "common_mode": 0.028125,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 8,
+          "charge_p": -9.216e-12,
+          "charge_n": -9.216e-12
+        },
+        {
+          "bit": 3,
+          "vp": 0.0,
+          "vn": 0.028125,
+          "differential": -0.028125,
+          "common_mode": 0.0140625,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 4,
+          "charge_p": -9.216e-12,
+          "charge_n": -9.216e-12
+        },
+        {
+          "bit": 2,
+          "vp": 0.0,
+          "vn": 0.0140625,
+          "differential": -0.0140625,
+          "common_mode": 0.00703125,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 2,
+          "charge_p": -9.216e-12,
+          "charge_n": -9.216e-12
+        },
+        {
+          "bit": 1,
+          "vp": 0.0,
+          "vn": 0.00703125,
+          "differential": -0.00703125,
+          "common_mode": 0.003515625,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 1,
+          "charge_p": -9.216e-12,
+          "charge_n": -9.216e-12
+        },
+        {
+          "bit": 0,
+          "vp": 0.0,
+          "vn": 0.003515625,
+          "differential": -0.003515625,
+          "common_mode": 0.0017578125,
+          "decision": 0,
+          "switched_side": "none",
+          "switched_weight": 0,
+          "charge_p": -9.216e-12,
+          "charge_n": -9.216e-12
+        }
+      ],
+      [
+        {
+          "bit": 9,
+          "vp": 1.3,
+          "vn": 0.5,
+          "differential": 0.8,
+          "common_mode": 0.9,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 256,
+          "charge_p": -5.12e-12,
+          "charge_n": -1.3312e-11
+        },
+        {
+          "bit": 8,
+          "vp": 0.4,
+          "vn": 0.5,
+          "differential": -0.1,
+          "common_mode": 0.45,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 128,
+          "charge_p": -5.12e-12,
+          "charge_n": -1.3312e-11
+        },
+        {
+          "bit": 7,
+          "vp": 0.4,
+          "vn": 0.05,
+          "differential": 0.35,
+          "common_mode": 0.225,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 64,
+          "charge_p": -5.12e-12,
+          "charge_n": -1.3312e-11
+        },
+        {
+          "bit": 6,
+          "vp": 0.175,
+          "vn": 0.05,
+          "differential": 0.125,
+          "common_mode": 0.1125,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 32,
+          "charge_p": -5.12e-12,
+          "charge_n": -1.3312e-11
+        },
+        {
+          "bit": 5,
+          "vp": 0.0625,
+          "vn": 0.05,
+          "differential": 0.0125,
+          "common_mode": 0.05625,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 16,
+          "charge_p": -5.12e-12,
+          "charge_n": -1.3312e-11
+        },
+        {
+          "bit": 4,
+          "vp": 0.00625,
+          "vn": 0.05,
+          "differential": -0.04375,
+          "common_mode": 0.028125,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 8,
+          "charge_p": -5.12e-12,
+          "charge_n": -1.3312e-11
+        },
+        {
+          "bit": 3,
+          "vp": 0.00625,
+          "vn": 0.021875,
+          "differential": -0.015625,
+          "common_mode": 0.0140625,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 4,
+          "charge_p": -5.12e-12,
+          "charge_n": -1.3312e-11
+        },
+        {
+          "bit": 2,
+          "vp": 0.00625,
+          "vn": 0.0078125,
+          "differential": -0.0015625,
+          "common_mode": 0.00703125,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 2,
+          "charge_p": -5.12e-12,
+          "charge_n": -1.3312e-11
+        },
+        {
+          "bit": 1,
+          "vp": 0.00625,
+          "vn": 0.00078125,
+          "differential": 0.00546875,
+          "common_mode": 0.003515625,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 1,
+          "charge_p": -5.12e-12,
+          "charge_n": -1.3312e-11
+        },
+        {
+          "bit": 0,
+          "vp": 0.002734375,
+          "vn": 0.00078125,
+          "differential": 0.001953125,
+          "common_mode": 0.0017578125,
+          "decision": 1,
+          "switched_side": "none",
+          "switched_weight": 0,
+          "charge_p": -5.12e-12,
+          "charge_n": -1.3312e-11
+        }
+      ],
+      [
+        {
+          "bit": 9,
+          "vp": 1.7,
+          "vn": 0.10000000000000009,
+          "differential": 1.5999999999999999,
+          "common_mode": 0.9,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 256,
+          "charge_p": -1.024e-12,
+          "charge_n": -1.7408e-11
+        },
+        {
+          "bit": 8,
+          "vp": 0.8,
+          "vn": 0.10000000000000009,
+          "differential": 0.7,
+          "common_mode": 0.45000000000000007,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 128,
+          "charge_p": -1.024e-12,
+          "charge_n": -1.7408e-11
+        },
+        {
+          "bit": 7,
+          "vp": 0.35,
+          "vn": 0.10000000000000009,
+          "differential": 0.24999999999999992,
+          "common_mode": 0.22500000000000003,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 64,
+          "charge_p": -1.024e-12,
+          "charge_n": -1.7408e-11
+        },
+        {
+          "bit": 6,
+          "vp": 0.125,
+          "vn": 0.10000000000000009,
+          "differential": 0.02499999999999991,
+          "common_mode": 0.11250000000000004,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 32,
+          "charge_p": -1.024e-12,
+          "charge_n": -1.7408e-11
+        },
+        {
+          "bit": 5,
+          "vp": 0.0125,
+          "vn": 0.10000000000000009,
+          "differential": -0.08750000000000009,
+          "common_mode": 0.05625000000000004,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 16,
+          "charge_p": -1.024e-12,
+          "charge_n": -1.7408e-11
+        },
+        {
+          "bit": 4,
+          "vp": 0.0125,
+          "vn": 0.04375000000000009,
+          "differential": -0.03125000000000009,
+          "common_mode": 0.028125000000000046,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 8,
+          "charge_p": -1.024e-12,
+          "charge_n": -1.7408e-11
+        },
+        {
+          "bit": 3,
+          "vp": 0.0125,
+          "vn": 0.01562500000000009,
+          "differential": -0.00312500000000009,
+          "common_mode": 0.014062500000000045,
+          "decision": 0,
+          "switched_side": "n",
+          "switched_weight": 4,
+          "charge_p": -1.024e-12,
+          "charge_n": -1.7408e-11
+        },
+        {
+          "bit": 2,
+          "vp": 0.0125,
+          "vn": 0.00156250000000009,
+          "differential": 0.01093749999999991,
+          "common_mode": 0.007031250000000045,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 2,
+          "charge_p": -1.024e-12,
+          "charge_n": -1.7408e-11
+        },
+        {
+          "bit": 1,
+          "vp": 0.00546875,
+          "vn": 0.00156250000000009,
+          "differential": 0.00390624999999991,
+          "common_mode": 0.003515625000000045,
+          "decision": 1,
+          "switched_side": "p",
+          "switched_weight": 1,
+          "charge_p": -1.024e-12,
+          "charge_n": -1.7408e-11
+        },
+        {
+          "bit": 0,
+          "vp": 0.001953125,
+          "vn": 0.00156250000000009,
+          "differential": 0.00039062499999991,
+          "common_mode": 0.001757812500000045,
+          "decision": 1,
+          "switched_side": "none",
+          "switched_weight": 0,
+          "charge_p": -1.024e-12,
+          "charge_n": -1.7408e-11
+        }
+      ]
+    ]
+  },
+  "criteria": {
+    "settling_error_max_v": {
+      "max": 0.0003515625
+    },
+    "nonlinear_residual_rms_v": {
+      "max": 0.0003515625
+    }
+  }
+}

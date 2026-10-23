@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_SAMPLE_GUARD",
+  "ports": [
+    "A",
+    "Z",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "transistor": {
+      "netlist": "transistor/netlist.scs"
+    }
+  }
+}

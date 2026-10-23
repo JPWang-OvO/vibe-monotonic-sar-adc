@@ -23,6 +23,9 @@
     },
     "fast2": {
       "netlist": "fast2/netlist.scs"
+    },
+    "fast6": {
+      "netlist": "fast6/netlist.scs"
     }
   }
 }

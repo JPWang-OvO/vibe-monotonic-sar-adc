@@ -34,6 +34,14 @@ if len(codes)==256:
 report['first_conversion_trace']=[dict(time=v,**{k:interpolate(t,w[k],v+5e-12) for k in ['I_adc.Vp','I_adc.Vn','I_adc.Outp','I_adc.Outn','I_adc.ClkC']}) for v in valid if selected[0]<v<selected[0]+16e-9]
 cr=edges(t,w['I_adc.ClkC'],.9,1);cf=edges(t,w['I_adc.ClkC'],.9,-1);vf=edges(t,w['I_adc.Valid'],.9,-1)
 report['loop_timing']=[]
+report['far_decisions']=[]
+for v in valid:
+ if not selected[0]<v<selected[-1]+16e-9:continue
+ e=max(x for x in cf if x<v)
+ d=interpolate(t,w['I_adc.Vp'],v)-interpolate(t,w['I_adc.Vn'],v)
+ op=interpolate(t,w['I_adc.Outp'],v+5e-12);on=interpolate(t,w['I_adc.Outn'],v+5e-12)
+ if abs(d)>.003515625/2 and (op>.9)!=(d>0):
+  report['far_decisions'].append(dict(valid=v,evaluate=e,diff_valid=d,diff_at_evaluate=interpolate(t,w['I_adc.Vp'],e)-interpolate(t,w['I_adc.Vn'],e),outp=op,outn=on,points=[dict(dt_ps=dt,**{k:interpolate(t,w[k],v+dt*1e-12) for k in ['I_adc.ClkC','I_adc.Valid','I_adc.Outp','I_adc.Outn','I_adc.Vp','I_adc.Vn']}) for dt in [-300,-200,-100,0,100,200]]))
 for v in valid:
  if not selected[0]<v<selected[0]+14e-9:continue
  r=next(x for x in cr if x>v);f=next(x for x in cf if x>r);lo=next(x for x in vf if x>v);nxt=next(x for x in valid if x>v)

@@ -1,0 +1,8 @@
+simulator lang=spectre
+// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
+subckt SAR_HANDSHAKE_SKEW (A Z VDD VSS)
+Mn0 (N0 A VSS VSS) nch w=4u l=0.18u nf=1 m=1
+Mp0 (N0 A VDD VDD) pch w=1u l=0.18u nf=1 m=1
+Mn1 (Z N0 VSS VSS) nch w=4u l=0.18u nf=1 m=1
+Mp1 (Z N0 VDD VDD) pch w=16u l=0.18u nf=2 m=1
+ends SAR_HANDSHAKE_SKEW

@@ -35,6 +35,12 @@
     },
     "junction320": {
       "netlist": "junction320/netlist.scs"
+    },
+    "junction384": {
+      "netlist": "junction384/netlist.scs"
+    },
+    "junction408": {
+      "netlist": "junction408/netlist.scs"
     }
   }
 }

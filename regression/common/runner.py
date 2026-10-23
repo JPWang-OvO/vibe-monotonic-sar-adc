@@ -117,10 +117,14 @@ def submit(folder):
     snapshot=checked(runner.run_command(shlex.join([batch['environment']['server_python'],resource_script]),timeout=20))
     write_json(folder/'resources.json',json.loads(snapshot))
     checked(runner.run_command(shlex.join(["mkdir", batch["remote"]])))
-    for path in sorted(folder.rglob("*")):
-        if path.is_file() and "__pycache__" not in path.parts and "enrichment" not in path.relative_to(folder).parts:
-            remote = str(PurePosixPath(batch["remote"]) / path.relative_to(folder).as_posix())
-            checked(runner.upload(path, remote))
+    files=[path for path in sorted(folder.rglob('*')) if path.is_file()
+           and '__pycache__' not in path.parts and 'enrichment' not in path.relative_to(folder).parts
+           and path.name!='submission_bundle.tar.gz']
+    bundle=folder/'submission_bundle.tar.gz'
+    with tarfile.open(bundle,'w:gz') as archive:
+        for path in files:archive.add(path,arcname=path.relative_to(folder).as_posix(),recursive=False)
+    checked(runner.upload(bundle,batch['remote']+'/submission_bundle.tar.gz'))
+    checked(runner.run_command(shlex.join(['tar','-xzf',batch['remote']+'/submission_bundle.tar.gz','-C',batch['remote']]),timeout=30))
     command = [batch["environment"]["server_python"], "-m", "regression.common.server", "submit", batch["remote"]]
     result = checked(runner.run_command(f'cd {shlex.quote(batch["remote"])} && {shlex.join(command)}', timeout=30))
     write_json(folder / "submission.json", {"receipt": json.loads(result)})

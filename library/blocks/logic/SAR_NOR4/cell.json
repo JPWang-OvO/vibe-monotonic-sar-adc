@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_NOR4",
+  "ports": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "Z",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "transistor": {
+      "netlist": "transistor/netlist.scs"
+    }
+  }
+}

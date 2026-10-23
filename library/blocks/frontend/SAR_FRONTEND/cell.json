@@ -41,6 +41,9 @@
     },
     "parametric": {
       "netlist": "parametric/netlist.scs"
+    },
+    "candidate": {
+      "netlist": "candidate/netlist.scs"
     }
   }
 }

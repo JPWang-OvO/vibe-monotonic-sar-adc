@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "id": "sar_frontend_refined_sine",
+  "testbench": "library/testbenches/blocks/sampling/tb_SAR_SAMPLE_sine_load/spectre/netlist.scs",
+  "process": "tsmc18",
+  "conditions": [
+    {
+      "id": "c34_k3",
+      "corner": "tt",
+      "tokens": {
+        "TEMP": 25,
+        "CLOAD": "10.24p",
+        "CCOMP": "34f",
+        "FIN": 585937.5
+      },
+      "cell_views": {
+        "SAR_SAMPLE": "junction408",
+        "SAR_PHASE": "drive3",
+        "SAR_INV": "drive2"
+      },
+      "enrichment": true
+    },
+    {
+      "id": "c34_k51",
+      "corner": "tt",
+      "tokens": {
+        "TEMP": 25,
+        "CLOAD": "10.24p",
+        "CCOMP": "34f",
+        "FIN": 9960937.5
+      },
+      "cell_views": {
+        "SAR_SAMPLE": "junction408",
+        "SAR_PHASE": "drive3",
+        "SAR_INV": "drive2"
+      },
+      "enrichment": true
+    }
+  ],
+  "simulator": {
+    "arguments": [
+      "-64",
+      "+preset=ax"
+    ],
+    "threads": 8,
+    "timeout_s": 600,
+    "analyses": "Sampler held-voltage FFT: 256 consecutive samples after 16 startup cycles, fixed 1 ns hold read",
+    "precision": {
+      "preset": "AX"
+    }
+  },
+  "measurement": {
+    "kind": "sar_sampler_sine",
+    "n": 256,
+    "discard_cycles": 16,
+    "read_offset_s": 1e-09
+  },
+  "criteria": {
+    "sample_count": {
+      "min": 256,
+      "max": 256
+    },
+    "sndr_db": {
+      "min": 70.17
+    },
+    "hold_feedthrough_max_v": {
+      "max": 0.00028125
+    },
+    "period_error_s": {
+      "max": 1e-12
+    }
+  }
+}
