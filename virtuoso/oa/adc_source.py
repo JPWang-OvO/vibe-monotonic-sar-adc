@@ -148,6 +148,9 @@ def flatten(definitions, top='MONOTONIC_SAR', qualified=None):
         for inst in data['instances']:
             model = inst['model']
             name = clean_name(inst['name']).replace('\\<', '<').replace('\\>', '>')
+            # Native netlisting expands I_out<9:0> into I_out<9> ... I_out<0>.
+            # These members retain the source I_out9 ... I_out0 hierarchy names.
+            name = re.sub(r'<(\d+)>$', r'\1', name)
             copies = 1
             array = re.fullmatch(r'(.*)<(\d+):(\d+)>', name)
             if array:

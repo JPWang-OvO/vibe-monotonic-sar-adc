@@ -1,0 +1,1021 @@
+{
+  "schema": "native-oa-v1",
+  "source_library": "MONOTONIC_SAR",
+  "circuit": {
+    "cell": "SAR_CDAC",
+    "view": "schematic",
+    "view_type": "schematic",
+    "properties": [
+      {
+        "name": "connectivityLastUpdated",
+        "type": "int",
+        "value": 2600
+      },
+      {
+        "name": "lastSchematicExtraction",
+        "type": "time",
+        "value": "Oct 24 03:57:22 2026"
+      },
+      {
+        "name": "net#",
+        "type": "int",
+        "value": 2
+      },
+      {
+        "name": "pin#",
+        "type": "int",
+        "value": 22
+      },
+      {
+        "name": "portOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Vp\" \"Vn\" \"Bp9\" \"Bp8\" \"Bp7\" \"Bp6\" \"Bp5\" \"Bp4\" \"Bp3\" \"Bp2\" \"Bp1\" \"Bn9\" \"Bn8\" \"Bn7\" \"Bn6\" \"Bn5\" \"Bn4\" \"Bn3\" \"Bn2\" \"Bn1\" \"VREFP\" \"VREFN\")"
+        }
+      },
+      {
+        "name": "schGeometryLastUpdated",
+        "type": "int",
+        "value": 2600
+      },
+      {
+        "name": "schGeometryVersion",
+        "type": "string",
+        "value": "sch.ds.gm.1.4"
+      },
+      {
+        "name": "schXtrVersion",
+        "type": "string",
+        "value": "sch.10.0"
+      }
+    ],
+    "instances": [
+      {
+        "name": "Cn1",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "1*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bn1",
+          "PLUS": "Vn"
+        }
+      },
+      {
+        "name": "Cn2",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "2*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bn2",
+          "PLUS": "Vn"
+        }
+      },
+      {
+        "name": "Cn3",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "4*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bn3",
+          "PLUS": "Vn"
+        }
+      },
+      {
+        "name": "Cn4",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "8*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bn4",
+          "PLUS": "Vn"
+        }
+      },
+      {
+        "name": "Cn5",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "16*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bn5",
+          "PLUS": "Vn"
+        }
+      },
+      {
+        "name": "Cn6",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "32*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bn6",
+          "PLUS": "Vn"
+        }
+      },
+      {
+        "name": "Cn7",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "64*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bn7",
+          "PLUS": "Vn"
+        }
+      },
+      {
+        "name": "Cn8",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "128*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bn8",
+          "PLUS": "Vn"
+        }
+      },
+      {
+        "name": "Cn9",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "256*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bn9",
+          "PLUS": "Vn"
+        }
+      },
+      {
+        "name": "Cn_dummy",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "VREFP",
+          "PLUS": "Vn"
+        }
+      },
+      {
+        "name": "Cp1",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "1*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bp1",
+          "PLUS": "Vp"
+        }
+      },
+      {
+        "name": "Cp2",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "2*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bp2",
+          "PLUS": "Vp"
+        }
+      },
+      {
+        "name": "Cp3",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "4*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bp3",
+          "PLUS": "Vp"
+        }
+      },
+      {
+        "name": "Cp4",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "8*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bp4",
+          "PLUS": "Vp"
+        }
+      },
+      {
+        "name": "Cp5",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "16*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bp5",
+          "PLUS": "Vp"
+        }
+      },
+      {
+        "name": "Cp6",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "32*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bp6",
+          "PLUS": "Vp"
+        }
+      },
+      {
+        "name": "Cp7",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "64*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bp7",
+          "PLUS": "Vp"
+        }
+      },
+      {
+        "name": "Cp8",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "128*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bp8",
+          "PLUS": "Vp"
+        }
+      },
+      {
+        "name": "Cp9",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "256*pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "Bp9",
+          "PLUS": "Vp"
+        }
+      },
+      {
+        "name": "Cp_dummy",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "pPar(\"unit_cap\")"
+          }
+        ],
+        "connections": {
+          "MINUS": "VREFP",
+          "PLUS": "Vp"
+        }
+      },
+      {
+        "name": "NC_VREFN",
+        "master": [
+          "basic",
+          "noConn",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {
+          "noConn": "VREFN"
+        }
+      },
+      {
+        "name": "PIN0",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN1",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN10",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN11",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN12",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN13",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN14",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN15",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN16",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN17",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN18",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN19",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN2",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN20",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN21",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN3",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN4",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN5",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN6",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN7",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN8",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN9",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      }
+    ],
+    "terminals": [
+      {
+        "name": "Bn1",
+        "direction": "inputOutput",
+        "net": "Bn1",
+        "properties": []
+      },
+      {
+        "name": "Bn2",
+        "direction": "inputOutput",
+        "net": "Bn2",
+        "properties": []
+      },
+      {
+        "name": "Bn3",
+        "direction": "inputOutput",
+        "net": "Bn3",
+        "properties": []
+      },
+      {
+        "name": "Bn4",
+        "direction": "inputOutput",
+        "net": "Bn4",
+        "properties": []
+      },
+      {
+        "name": "Bn5",
+        "direction": "inputOutput",
+        "net": "Bn5",
+        "properties": []
+      },
+      {
+        "name": "Bn6",
+        "direction": "inputOutput",
+        "net": "Bn6",
+        "properties": []
+      },
+      {
+        "name": "Bn7",
+        "direction": "inputOutput",
+        "net": "Bn7",
+        "properties": []
+      },
+      {
+        "name": "Bn8",
+        "direction": "inputOutput",
+        "net": "Bn8",
+        "properties": []
+      },
+      {
+        "name": "Bn9",
+        "direction": "inputOutput",
+        "net": "Bn9",
+        "properties": []
+      },
+      {
+        "name": "Bp1",
+        "direction": "inputOutput",
+        "net": "Bp1",
+        "properties": []
+      },
+      {
+        "name": "Bp2",
+        "direction": "inputOutput",
+        "net": "Bp2",
+        "properties": []
+      },
+      {
+        "name": "Bp3",
+        "direction": "inputOutput",
+        "net": "Bp3",
+        "properties": []
+      },
+      {
+        "name": "Bp4",
+        "direction": "inputOutput",
+        "net": "Bp4",
+        "properties": []
+      },
+      {
+        "name": "Bp5",
+        "direction": "inputOutput",
+        "net": "Bp5",
+        "properties": []
+      },
+      {
+        "name": "Bp6",
+        "direction": "inputOutput",
+        "net": "Bp6",
+        "properties": []
+      },
+      {
+        "name": "Bp7",
+        "direction": "inputOutput",
+        "net": "Bp7",
+        "properties": []
+      },
+      {
+        "name": "Bp8",
+        "direction": "inputOutput",
+        "net": "Bp8",
+        "properties": []
+      },
+      {
+        "name": "Bp9",
+        "direction": "inputOutput",
+        "net": "Bp9",
+        "properties": []
+      },
+      {
+        "name": "VREFN",
+        "direction": "inputOutput",
+        "net": "VREFN",
+        "properties": []
+      },
+      {
+        "name": "VREFP",
+        "direction": "inputOutput",
+        "net": "VREFP",
+        "properties": []
+      },
+      {
+        "name": "Vn",
+        "direction": "inputOutput",
+        "net": "Vn",
+        "properties": []
+      },
+      {
+        "name": "Vp",
+        "direction": "inputOutput",
+        "net": "Vp",
+        "properties": []
+      }
+    ],
+    "nets": [
+      {
+        "name": "Bn1",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bn2",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bn3",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bn4",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bn5",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bn6",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bn7",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bn8",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bn9",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp1",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp2",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp3",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp4",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp5",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp6",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp7",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp8",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp9",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VREFN",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VREFP",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Vn",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Vp",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      }
+    ]
+  }
+}

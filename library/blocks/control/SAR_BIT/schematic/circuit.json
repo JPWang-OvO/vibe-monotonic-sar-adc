@@ -1,0 +1,214 @@
+{
+  "cell": "SAR_BIT",
+  "ports": [
+    "Outp",
+    "Capture",
+    "Sample",
+    "Q",
+    "Bp",
+    "Bn",
+    "VDD",
+    "VSS",
+    "VREFP",
+    "VREFN"
+  ],
+  "parameters": {
+    "strength": "1"
+  },
+  "instances": [
+    {
+      "name": "I_latch",
+      "nodes": [
+        "Outp",
+        "Capture",
+        "Q",
+        "QB",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_CAPTURE_LATCH",
+      "parameters": {},
+      "connections": {
+        "D": "Outp",
+        "Hold": "Capture",
+        "Q": "Q",
+        "QB": "QB",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_CAPTURE_LATCH",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_select_p",
+      "nodes": [
+        "Q",
+        "Capture",
+        "BpRaw",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_SELECT",
+      "parameters": {
+        "factor": "max(1,strength*8)"
+      },
+      "connections": {
+        "A": "Q",
+        "B": "Capture",
+        "Z": "BpRaw",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_SELECT",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "factor": "max(1,pPar(\"strength\")*8)"
+      }
+    },
+    {
+      "name": "I_select_n",
+      "nodes": [
+        "QB",
+        "Capture",
+        "BnRaw",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_SELECT",
+      "parameters": {
+        "factor": "max(1,strength*8)"
+      },
+      "connections": {
+        "A": "QB",
+        "B": "Capture",
+        "Z": "BnRaw",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_SELECT",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "factor": "max(1,pPar(\"strength\")*8)"
+      }
+    },
+    {
+      "name": "I_buf_p0",
+      "nodes": [
+        "BpRaw",
+        "BpBuf",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "max(1,strength*32)"
+      },
+      "connections": {
+        "A": "BpRaw",
+        "Z": "BpBuf",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "max(1,pPar(\"strength\")*32)"
+      }
+    },
+    {
+      "name": "I_buf_p1",
+      "nodes": [
+        "BpBuf",
+        "Bp",
+        "VREFP",
+        "VREFN"
+      ],
+      "model": "SAR_DAC_DRIVE",
+      "parameters": {
+        "scale": "max(1,strength*256)"
+      },
+      "connections": {
+        "A": "BpBuf",
+        "Z": "Bp",
+        "VDD": "VREFP",
+        "VSS": "VREFN"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DAC_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "max(1,pPar(\"strength\")*256)"
+      }
+    },
+    {
+      "name": "I_buf_n0",
+      "nodes": [
+        "BnRaw",
+        "BnBuf",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "max(1,strength*32)"
+      },
+      "connections": {
+        "A": "BnRaw",
+        "Z": "BnBuf",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "max(1,pPar(\"strength\")*32)"
+      }
+    },
+    {
+      "name": "I_buf_n1",
+      "nodes": [
+        "BnBuf",
+        "Bn",
+        "VREFP",
+        "VREFN"
+      ],
+      "model": "SAR_DAC_DRIVE",
+      "parameters": {
+        "scale": "max(1,strength*256)"
+      },
+      "connections": {
+        "A": "BnBuf",
+        "Z": "Bn",
+        "VDD": "VREFP",
+        "VSS": "VREFN"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DAC_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "max(1,pPar(\"strength\")*256)"
+      }
+    }
+  ],
+  "staged_source": "library__blocks__control__SAR_BIT__pullup__netlist.scs"
+}

@@ -1,0 +1,366 @@
+{
+  "schema": "native-oa-v1",
+  "source_library": "MONOTONIC_SAR",
+  "circuit": {
+    "cell": "SAR_FRONTEND",
+    "view": "symbol",
+    "view_type": "schematicSymbol",
+    "properties": [
+      {
+        "name": "portOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Vinp\" \"Vinn\" \"Sample\" \"SampleB\" \"Vp\" \"Vn\" \"Bp9\" \"Bp8\" \"Bp7\" \"Bp6\" \"Bp5\" \"Bp4\" \"Bp3\" \"Bp2\" \"Bp1\" \"Bn9\" \"Bn8\" \"Bn7\" \"Bn6\" \"Bn5\" \"Bn4\" \"Bn3\" \"Bn2\" \"Bn1\" \"VREFP\" \"VREFN\" \"VDD\" \"VSS\")"
+        }
+      },
+      {
+        "name": "termOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Vinp\" \"Vinn\" \"Sample\" \"SampleB\" \"Vp\" \"Vn\" \"Bp9\" \"Bp8\" \"Bp7\" \"Bp6\" \"Bp5\" \"Bp4\" \"Bp3\" \"Bp2\" \"Bp1\" \"Bn9\" \"Bn8\" \"Bn7\" \"Bn6\" \"Bn5\" \"Bn4\" \"Bn3\" \"Bn2\" \"Bn1\" \"VREFP\" \"VREFN\" \"VDD\" \"VSS\")"
+        }
+      }
+    ],
+    "instances": [],
+    "terminals": [
+      {
+        "name": "Bn1",
+        "direction": "inputOutput",
+        "net": "Bn1",
+        "properties": []
+      },
+      {
+        "name": "Bn2",
+        "direction": "inputOutput",
+        "net": "Bn2",
+        "properties": []
+      },
+      {
+        "name": "Bn3",
+        "direction": "inputOutput",
+        "net": "Bn3",
+        "properties": []
+      },
+      {
+        "name": "Bn4",
+        "direction": "inputOutput",
+        "net": "Bn4",
+        "properties": []
+      },
+      {
+        "name": "Bn5",
+        "direction": "inputOutput",
+        "net": "Bn5",
+        "properties": []
+      },
+      {
+        "name": "Bn6",
+        "direction": "inputOutput",
+        "net": "Bn6",
+        "properties": []
+      },
+      {
+        "name": "Bn7",
+        "direction": "inputOutput",
+        "net": "Bn7",
+        "properties": []
+      },
+      {
+        "name": "Bn8",
+        "direction": "inputOutput",
+        "net": "Bn8",
+        "properties": []
+      },
+      {
+        "name": "Bn9",
+        "direction": "inputOutput",
+        "net": "Bn9",
+        "properties": []
+      },
+      {
+        "name": "Bp1",
+        "direction": "inputOutput",
+        "net": "Bp1",
+        "properties": []
+      },
+      {
+        "name": "Bp2",
+        "direction": "inputOutput",
+        "net": "Bp2",
+        "properties": []
+      },
+      {
+        "name": "Bp3",
+        "direction": "inputOutput",
+        "net": "Bp3",
+        "properties": []
+      },
+      {
+        "name": "Bp4",
+        "direction": "inputOutput",
+        "net": "Bp4",
+        "properties": []
+      },
+      {
+        "name": "Bp5",
+        "direction": "inputOutput",
+        "net": "Bp5",
+        "properties": []
+      },
+      {
+        "name": "Bp6",
+        "direction": "inputOutput",
+        "net": "Bp6",
+        "properties": []
+      },
+      {
+        "name": "Bp7",
+        "direction": "inputOutput",
+        "net": "Bp7",
+        "properties": []
+      },
+      {
+        "name": "Bp8",
+        "direction": "inputOutput",
+        "net": "Bp8",
+        "properties": []
+      },
+      {
+        "name": "Bp9",
+        "direction": "inputOutput",
+        "net": "Bp9",
+        "properties": []
+      },
+      {
+        "name": "Sample",
+        "direction": "input",
+        "net": "Sample",
+        "properties": []
+      },
+      {
+        "name": "SampleB",
+        "direction": "input",
+        "net": "SampleB",
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "direction": "inputOutput",
+        "net": "VDD",
+        "properties": []
+      },
+      {
+        "name": "VREFN",
+        "direction": "inputOutput",
+        "net": "VREFN",
+        "properties": []
+      },
+      {
+        "name": "VREFP",
+        "direction": "inputOutput",
+        "net": "VREFP",
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "direction": "inputOutput",
+        "net": "VSS",
+        "properties": []
+      },
+      {
+        "name": "Vinn",
+        "direction": "inputOutput",
+        "net": "Vinn",
+        "properties": []
+      },
+      {
+        "name": "Vinp",
+        "direction": "inputOutput",
+        "net": "Vinp",
+        "properties": []
+      },
+      {
+        "name": "Vn",
+        "direction": "inputOutput",
+        "net": "Vn",
+        "properties": []
+      },
+      {
+        "name": "Vp",
+        "direction": "inputOutput",
+        "net": "Vp",
+        "properties": []
+      }
+    ],
+    "nets": [
+      {
+        "name": "Bn1",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bn2",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bn3",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bn4",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bn5",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bn6",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bn7",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bn8",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bn9",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp1",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp2",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp3",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp4",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp5",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp6",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp7",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp8",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp9",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Sample",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "SampleB",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VREFN",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VREFP",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Vinn",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Vinp",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Vn",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Vp",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      }
+    ]
+  }
+}

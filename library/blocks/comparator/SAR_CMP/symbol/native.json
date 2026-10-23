@@ -1,0 +1,138 @@
+{
+  "schema": "native-oa-v1",
+  "source_library": "MONOTONIC_SAR",
+  "circuit": {
+    "cell": "SAR_CMP",
+    "view": "symbol",
+    "view_type": "schematicSymbol",
+    "properties": [
+      {
+        "name": "portOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Vp\" \"Vn\" \"ClkC\" \"Outp\" \"Outn\" \"Valid\" \"Bias\" \"VDD\" \"VSS\")"
+        }
+      },
+      {
+        "name": "termOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Vp\" \"Vn\" \"ClkC\" \"Outp\" \"Outn\" \"Valid\" \"Bias\" \"VDD\" \"VSS\")"
+        }
+      }
+    ],
+    "instances": [],
+    "terminals": [
+      {
+        "name": "Bias",
+        "direction": "input",
+        "net": "Bias",
+        "properties": []
+      },
+      {
+        "name": "ClkC",
+        "direction": "input",
+        "net": "ClkC",
+        "properties": []
+      },
+      {
+        "name": "Outn",
+        "direction": "output",
+        "net": "Outn",
+        "properties": []
+      },
+      {
+        "name": "Outp",
+        "direction": "output",
+        "net": "Outp",
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "direction": "inputOutput",
+        "net": "VDD",
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "direction": "inputOutput",
+        "net": "VSS",
+        "properties": []
+      },
+      {
+        "name": "Valid",
+        "direction": "output",
+        "net": "Valid",
+        "properties": []
+      },
+      {
+        "name": "Vn",
+        "direction": "input",
+        "net": "Vn",
+        "properties": []
+      },
+      {
+        "name": "Vp",
+        "direction": "input",
+        "net": "Vp",
+        "properties": []
+      }
+    ],
+    "nets": [
+      {
+        "name": "Bias",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "ClkC",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Outn",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Outp",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Valid",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Vn",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Vp",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      }
+    ]
+  }
+}

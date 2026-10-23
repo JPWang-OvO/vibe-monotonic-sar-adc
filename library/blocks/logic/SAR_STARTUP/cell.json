@@ -21,6 +21,15 @@
     },
     "quiet_arm": {
       "netlist": "quiet_arm/netlist.scs"
+    },
+    "schematic": {
+      "native": "schematic/native.json",
+      "drawing": "schematic/drawing.json",
+      "netlist": "schematic/netlist.scs"
+    },
+    "symbol": {
+      "native": "symbol/native.json",
+      "drawing": "symbol/drawing.json"
     }
   }
 }

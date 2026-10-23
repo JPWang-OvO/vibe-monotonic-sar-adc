@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 768">
+<rect width="100%" height="100%" fill="white"/>
+<desc>SAR_BIT; terminals follow the accepted Spectre declaration order.</desc>
+<g stroke="#287740" stroke-width="1.5" fill="none">
+<rect x="128" y="160" width="768" height="448"/>
+<polyline points="192,160 192,208"/>
+<polyline points="832,608 832,560"/>
+<rect x="256" y="240" width="160" height="160"/>
+<polyline points="128,288 256,288"/>
+<polyline points="336,608 336,416"/>
+<ellipse cx="336" cy="408" rx="8" ry="8"/>
+<polyline points="512,336 512,240 560,240"/>
+<path d="M560,336 A48,48 0 0 0 560,240"/>
+<polyline points="560,336 512,336"/>
+<ellipse cx="616" cy="288" rx="8" ry="8"/>
+<polyline points="480,264 512,264"/>
+<polyline points="480,312 512,312"/>
+<polyline points="416,288 448,288 448,264 480,264"/>
+<polyline points="448,288 448,208 896,208"/>
+<polyline points="444.8,288 451.2,288" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="464,312 480,312"/>
+<polyline points="648,320 696,288 648,256 648,320"/>
+<ellipse cx="704" cy="288" rx="8" ry="8"/>
+<polyline points="744,320 792,288 744,256 744,320"/>
+<ellipse cx="800" cy="288" rx="8" ry="8"/>
+<polyline points="624,288 648,288"/>
+<polyline points="712,288 744,288"/>
+<polyline points="896,288 808,288"/>
+<polyline points="512,464 512,368 560,368"/>
+<path d="M560,464 A48,48 0 0 0 560,368"/>
+<polyline points="560,464 512,464"/>
+<ellipse cx="616" cy="416" rx="8" ry="8"/>
+<polyline points="480,392 512,392"/>
+<polyline points="480,440 512,440"/>
+<polyline points="416,352 432,352 432,392 480,392"/>
+<polyline points="464,440 480,440"/>
+<polyline points="648,448 696,416 648,384 648,448"/>
+<ellipse cx="704" cy="416" rx="8" ry="8"/>
+<polyline points="744,448 792,416 744,384 744,448"/>
+<ellipse cx="800" cy="416" rx="8" ry="8"/>
+<polyline points="624,416 648,416"/>
+<polyline points="712,416 744,416"/>
+<polyline points="896,416 808,416"/>
+<polyline points="332.8,496 339.2,496" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="336,496 464,496"/>
+<polyline points="464,312 464,384"/>
+<path d="M464,400 A8,8 0 0 0 464,384"/>
+<polyline points="464,400 464,496"/>
+<polyline points="640,160 640,192"/>
+<polyline points="640,608 640,560"/>
+<polyline points="128,496 224,496"/>
+<polyline points="216,504 232,488"/>
+<polyline points="216,488 232,504"/>
+</g><g fill="#287740" font-family="Arial,sans-serif">
+<text x="336" y="320" font-size="16" text-anchor="middle" dominant-baseline="central">latch</text>
+<text x="336" y="368" font-size="16" text-anchor="middle" dominant-baseline="central">EN</text>
+<text x="672" y="528" font-size="16" text-anchor="middle" dominant-baseline="central">reference drive</text>
+<text x="512" y="112" font-size="16" text-anchor="middle" dominant-baseline="central">SAR_BIT</text>
+</g><g fill="#c53e32" font-family="Arial,sans-serif" font-size="16">
+<g data-port="VDD" data-side="top"><rect x="188.8" y="156.8" width="6.4" height="6.4"/><text x="208" y="192" text-anchor="start" dominant-baseline="central">VDD</text></g>
+<g data-port="VSS" data-side="bottom"><rect x="828.8" y="604.8" width="6.4" height="6.4"/><text x="848" y="576" text-anchor="start" dominant-baseline="central">VSS</text></g>
+<g data-port="Outp" data-side="left"><rect x="124.8" y="284.8" width="6.4" height="6.4"/><text x="144" y="272" text-anchor="start" dominant-baseline="central">Outp</text></g>
+<g data-port="Capture" data-side="bottom"><rect x="332.8" y="604.8" width="6.4" height="6.4"/><text x="352" y="576" text-anchor="start" dominant-baseline="central" transform="rotate(-90 352 576)">Capture</text></g>
+<g data-port="Q" data-side="right"><rect x="892.8" y="204.8" width="6.4" height="6.4"/><text x="880" y="192" text-anchor="end" dominant-baseline="central">Q</text></g>
+<g data-port="Bp" data-side="right"><rect x="892.8" y="284.8" width="6.4" height="6.4"/><text x="880" y="272" text-anchor="end" dominant-baseline="central">Bp</text></g>
+<g data-port="Bn" data-side="right"><rect x="892.8" y="412.8" width="6.4" height="6.4"/><text x="880" y="400" text-anchor="end" dominant-baseline="central">Bn</text></g>
+<g data-port="VREFP" data-side="top"><rect x="636.8" y="156.8" width="6.4" height="6.4"/><text x="656" y="192" text-anchor="start" dominant-baseline="central">VREFP</text></g>
+<g data-port="VREFN" data-side="bottom"><rect x="636.8" y="604.8" width="6.4" height="6.4"/><text x="656" y="576" text-anchor="start" dominant-baseline="central">VREFN</text></g>
+<g data-port="Sample" data-side="left"><rect x="124.8" y="492.8" width="6.4" height="6.4"/><text x="144" y="480" text-anchor="start" dominant-baseline="central">Sample</text></g>
+</g></svg>

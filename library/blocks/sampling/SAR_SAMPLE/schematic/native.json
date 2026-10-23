@@ -1,0 +1,487 @@
+{
+  "schema": "native-oa-v1",
+  "source_library": "MONOTONIC_SAR",
+  "circuit": {
+    "cell": "SAR_SAMPLE",
+    "view": "schematic",
+    "view_type": "schematic",
+    "properties": [
+      {
+        "name": "connectivityLastUpdated",
+        "type": "int",
+        "value": 1073
+      },
+      {
+        "name": "lastSchematicExtraction",
+        "type": "time",
+        "value": "Oct 24 03:57:20 2026"
+      },
+      {
+        "name": "net#",
+        "type": "int",
+        "value": 5
+      },
+      {
+        "name": "pin#",
+        "type": "int",
+        "value": 7
+      },
+      {
+        "name": "portOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Vin\" \"Top\" \"Sample\" \"SampleB\" \"Gate\" \"VDD\" \"VSS\")"
+        }
+      },
+      {
+        "name": "schGeometryLastUpdated",
+        "type": "int",
+        "value": 1073
+      },
+      {
+        "name": "schGeometryVersion",
+        "type": "string",
+        "value": "sch.ds.gm.1.4"
+      },
+      {
+        "name": "schXtrVersion",
+        "type": "string",
+        "value": "sch.10.0"
+      }
+    ],
+    "instances": [
+      {
+        "name": "I_boost1",
+        "master": [
+          "MONOTONIC_SAR",
+          "SAR_BOOST",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {
+          "VSS": "VSS",
+          "SampleB": "SampleB",
+          "Sample": "Sample",
+          "VDD": "VDD",
+          "Gate": "Lift",
+          "Vin": "Vin"
+        }
+      },
+      {
+        "name": "I_boost2",
+        "master": [
+          "MONOTONIC_SAR",
+          "SAR_BOOST_HI",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {
+          "VSS": "VSS",
+          "SampleB": "SampleB",
+          "Sample": "Sample",
+          "VDD": "VDD",
+          "Gate": "Gate",
+          "Vin": "Lift"
+        }
+      },
+      {
+        "name": "Mn_sample",
+        "master": [
+          "tsmc18",
+          "nmos5v",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "ad",
+            "type": "string",
+            "value": "6.912e-11"
+          },
+          {
+            "name": "as",
+            "type": "string",
+            "value": "7.248e-11"
+          },
+          {
+            "name": "fingers",
+            "type": "string",
+            "value": "32"
+          },
+          {
+            "name": "l",
+            "type": "string",
+            "value": "0.6u"
+          },
+          {
+            "name": "model",
+            "type": "string",
+            "value": "nch_5"
+          },
+          {
+            "name": "nrd",
+            "type": "string",
+            "value": "0.00105469"
+          },
+          {
+            "name": "nrs",
+            "type": "string",
+            "value": "0.00105469"
+          },
+          {
+            "name": "pd",
+            "type": "string",
+            "value": "273.28000000u"
+          },
+          {
+            "name": "ps",
+            "type": "string",
+            "value": "290.12000000u"
+          },
+          {
+            "name": "sa",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sb",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sca",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scb",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scc",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "sd",
+            "type": "string",
+            "value": "540.0n"
+          },
+          {
+            "name": "simM",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "w",
+            "type": "string",
+            "value": "0.000008"
+          },
+          {
+            "name": "wf",
+            "type": "string",
+            "value": "256u"
+          }
+        ],
+        "connections": {
+          "D": "Top",
+          "B": "VSS",
+          "G": "Gate",
+          "S": "Vin"
+        }
+      },
+      {
+        "name": "Mp_junction",
+        "master": [
+          "tsmc18",
+          "pmos5v",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "ad",
+            "type": "string",
+            "value": "1.0368e-10"
+          },
+          {
+            "name": "as",
+            "type": "string",
+            "value": "1.0704e-10"
+          },
+          {
+            "name": "fingers",
+            "type": "string",
+            "value": "48"
+          },
+          {
+            "name": "l",
+            "type": "string",
+            "value": "0.5u"
+          },
+          {
+            "name": "model",
+            "type": "string",
+            "value": "pch_5"
+          },
+          {
+            "name": "nrd",
+            "type": "string",
+            "value": "0.000703125"
+          },
+          {
+            "name": "nrs",
+            "type": "string",
+            "value": "0.000703125"
+          },
+          {
+            "name": "pd",
+            "type": "string",
+            "value": "409.92000000u"
+          },
+          {
+            "name": "ps",
+            "type": "string",
+            "value": "426.76000000u"
+          },
+          {
+            "name": "sa",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sb",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sca",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scb",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scc",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "sd",
+            "type": "string",
+            "value": "540.0n"
+          },
+          {
+            "name": "simM",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "w",
+            "type": "string",
+            "value": "0.000008"
+          },
+          {
+            "name": "wf",
+            "type": "string",
+            "value": "384u"
+          }
+        ],
+        "connections": {
+          "D": "Top",
+          "B": "VDD",
+          "G": "VDD",
+          "S": "VDD"
+        }
+      },
+      {
+        "name": "PIN0",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN1",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN2",
+        "master": [
+          "basic",
+          "ipin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN3",
+        "master": [
+          "basic",
+          "ipin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN4",
+        "master": [
+          "basic",
+          "opin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN5",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN6",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      }
+    ],
+    "terminals": [
+      {
+        "name": "Gate",
+        "direction": "output",
+        "net": "Gate",
+        "properties": []
+      },
+      {
+        "name": "Sample",
+        "direction": "input",
+        "net": "Sample",
+        "properties": []
+      },
+      {
+        "name": "SampleB",
+        "direction": "input",
+        "net": "SampleB",
+        "properties": []
+      },
+      {
+        "name": "Top",
+        "direction": "inputOutput",
+        "net": "Top",
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "direction": "inputOutput",
+        "net": "VDD",
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "direction": "inputOutput",
+        "net": "VSS",
+        "properties": []
+      },
+      {
+        "name": "Vin",
+        "direction": "inputOutput",
+        "net": "Vin",
+        "properties": []
+      }
+    ],
+    "nets": [
+      {
+        "name": "Gate",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Lift",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Sample",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "SampleB",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Top",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Vin",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      }
+    ]
+  }
+}

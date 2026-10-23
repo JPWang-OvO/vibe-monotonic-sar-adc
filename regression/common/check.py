@@ -43,7 +43,13 @@ def check(root=ROOT):
                 instances = {row["name"]: row for row in native["instances"]}
                 for row in spec["instances"]:
                     saved = instances[row["name"]]
-                    if row["master"] != saved["master"] or row["connections"] != saved["connections"]:
+                    connections=row['connections']
+                    array=re.fullmatch(r'.*<(\d+):(\d+)>',row['name'])
+                    if array:
+                        count=abs(int(array[1])-int(array[2]))+1
+                        connections={k:(v if ',' in v else f'<*{count}>'+v)
+                                     for k,v in connections.items()}
+                    if row["master"] != saved["master"] or connections != saved["connections"]:
                         problems.append(f"Native/recipe circuit differs: {recipe}:{row['name']}")
     project = read_json(root / "project.json")
     for flow in project["flows"]:

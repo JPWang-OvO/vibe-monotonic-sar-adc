@@ -1,0 +1,6 @@
+simulator lang=spectre
+subckt SAR_INV (A Z VDD VSS)
+I_b2 (N1 Z VDD VSS) SAR_DRIVE _par0=256
+I_b1 (N0 N1 VDD VSS) SAR_DRIVE _par0=48
+I_b0 (A N0 VDD VSS) SAR_DRIVE _par0=8
+ends SAR_INV

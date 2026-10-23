@@ -1,0 +1,7 @@
+simulator lang=spectre
+subckt SAR_SAMPLE (Vin Top Sample SampleB Gate VDD VSS)
+I_boost1 (Vin Lift Sample SampleB VDD VSS) SAR_BOOST
+I_boost2 (Lift Gate Sample SampleB VDD VSS) SAR_BOOST_HI
+Mn_sample (Top Gate Vin VSS) nch_5 l=0.6u w=256u m=1 nf=32 sd=540.0n ad=6.912e-11 as=7.248e-11 pd=273.28000000u ps=290.12000000u nrd=0.00105469 nrs=0.00105469 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_junction (Top VDD VDD VDD) pch_5 l=0.5u w=384u m=1 nf=48 sd=540.0n ad=1.0368e-10 as=1.0704e-10 pd=409.92000000u ps=426.76000000u nrd=0.000703125 nrs=0.000703125 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+ends SAR_SAMPLE

@@ -1,0 +1,25 @@
+simulator lang=spectre
+subckt SAR_FAST_SEQ (D CP CPB Reset Q VDD VSS)
+Mn_sf (S CPB SB VSS) nch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_sb (SB Q VSS VSS) nch l=0.18u w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_qb (Q Reset VSS VSS) nch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_qa (Q S VSS VSS) nch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_si (S CP MB VSS) nch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_mf (M CP MB VSS) nch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_master_buf (MB MD VSS VSS) nch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_mb (MD Reset VSS VSS) nch l=0.18u w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_ma (MD M VSS VSS) nch l=0.18u w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_mi (M CPB DB VSS) nch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_d (DB D VSS VSS) nch l=0.18u w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_sf (S CP SB VDD) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_sb (SB Q VDD VDD) pch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_qb (Q Reset Pq VDD) pch l=0.18u w=12u m=1 nf=2 sd=540.0n ad=3.24e-12 as=5.76e-12 pd=13.080u ps=25.920u nrd=0.0225 nrs=0.0225 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_qa (Pq S VDD VDD) pch l=0.18u w=12u m=1 nf=2 sd=540.0n ad=3.24e-12 as=5.76e-12 pd=13.080u ps=25.920u nrd=0.0225 nrs=0.0225 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_si (S CPB MB VDD) pch l=0.18u w=8u m=1 nf=1 sd=540.0n ad=3.84e-12 as=3.84e-12 pd=16.960u ps=16.960u nrd=0.03375 nrs=0.03375 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_mf (M CPB MB VDD) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_master_buf (MB MD VDD VDD) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_mb (MD Reset Pm VDD) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_ma (Pm M VDD VDD) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_mi (M CP DB VDD) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_d (DB D VDD VDD) pch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+ends SAR_FAST_SEQ

@@ -1,0 +1,328 @@
+{
+  "cell": "SAR_ASYNC",
+  "ports": [
+    "Sample",
+    "Valid",
+    "ClkC",
+    "Done",
+    "Ck9",
+    "Ck8",
+    "Ck7",
+    "Ck6",
+    "Ck5",
+    "Ck4",
+    "Ck3",
+    "Ck2",
+    "Ck1",
+    "Ck0",
+    "VDD",
+    "VSS"
+  ],
+  "parameters": {},
+  "instances": [
+    {
+      "name": "I_startup",
+      "nodes": [
+        "Sample",
+        "SampleGuard",
+        "Hold",
+        "ClearN",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_STARTUP",
+      "parameters": {},
+      "connections": {
+        "Sample": "Sample",
+        "Guard": "SampleGuard",
+        "Hold": "Hold",
+        "ClearN": "ClearN",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_STARTUP",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_cp0",
+      "nodes": [
+        "Valid",
+        "SeqB",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "16"
+      },
+      "connections": {
+        "A": "Valid",
+        "Z": "SeqB",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "16"
+      }
+    },
+    {
+      "name": "I_cp1",
+      "nodes": [
+        "SeqB",
+        "Seq",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "16"
+      },
+      "connections": {
+        "A": "SeqB",
+        "Z": "Seq",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "16"
+      }
+    },
+    {
+      "name": "I_reset",
+      "nodes": [
+        "ClearN",
+        "Reset",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "8"
+      },
+      "connections": {
+        "A": "ClearN",
+        "Z": "Reset",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "8"
+      }
+    },
+    {
+      "name": "I_sample_guard",
+      "nodes": [
+        "Sample",
+        "SampleGuard",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_SAMPLE_GUARD2",
+      "parameters": {},
+      "connections": {
+        "A": "Sample",
+        "Z": "SampleGuard",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_SAMPLE_GUARD2",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_feedback_delay",
+      "nodes": [
+        "Valid",
+        "ValidDelay",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_HANDSHAKE",
+      "parameters": {},
+      "connections": {
+        "A": "Valid",
+        "Z": "ValidDelay",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_HANDSHAKE",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_early",
+      "nodes": [
+        "Ck5",
+        "Early",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "1"
+      },
+      "connections": {
+        "A": "Ck5",
+        "Z": "Early",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "1"
+      }
+    },
+    {
+      "name": "I_run_nor",
+      "nodes": [
+        "Hold",
+        "Valid",
+        "Ck0",
+        "ValidDelay",
+        "Early",
+        "CompareEnable",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_WAIT_GATE",
+      "parameters": {},
+      "connections": {
+        "Hold": "Hold",
+        "Valid": "Valid",
+        "Done": "Ck0",
+        "Delayed": "ValidDelay",
+        "Early": "Early",
+        "Z": "CompareEnable",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_WAIT_GATE",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_clock_drive",
+      "nodes": [
+        "CompareEnable",
+        "ClkC",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "4"
+      },
+      "connections": {
+        "A": "CompareEnable",
+        "Z": "ClkC",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "4"
+      }
+    },
+    {
+      "name": "I_done_delay",
+      "nodes": [
+        "Ck0",
+        "Done",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DONE_DELAY",
+      "parameters": {},
+      "connections": {
+        "A": "Ck0",
+        "Z": "Done",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DONE_DELAY",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_seq<9:0>",
+      "nodes": [
+        "Ck1,Ck2,Ck3,Ck4,Ck5,Ck6,Ck7,Ck8,Ck9,VDD",
+        "Seq",
+        "SeqB",
+        "Reset",
+        "Ck0,Ck1,Ck2,Ck3,Ck4,Ck5,Ck6,Ck7,Ck8,Ck9",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_FAST_SEQ",
+      "parameters": {},
+      "connections": {
+        "D": "Ck1,Ck2,Ck3,Ck4,Ck5,Ck6,Ck7,Ck8,Ck9,VDD",
+        "CP": "Seq",
+        "CPB": "SeqB",
+        "Reset": "Reset",
+        "Q": "Ck0,Ck1,Ck2,Ck3,Ck4,Ck5,Ck6,Ck7,Ck8,Ck9",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_FAST_SEQ",
+        "symbol"
+      ],
+      "oa_parameters": {},
+      "array_members": [
+        "I_seq9",
+        "I_seq8",
+        "I_seq7",
+        "I_seq6",
+        "I_seq5",
+        "I_seq4",
+        "I_seq3",
+        "I_seq2",
+        "I_seq1",
+        "I_seq0"
+      ]
+    }
+  ],
+  "staged_source": "library__blocks__control__SAR_ASYNC__weighted4_g2_quiet__netlist.scs"
+}

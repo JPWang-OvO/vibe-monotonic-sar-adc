@@ -1,0 +1,126 @@
+{
+  "schema": "native-oa-v1",
+  "source_library": "MONOTONIC_SAR",
+  "circuit": {
+    "cell": "SAR_WAIT_GATE",
+    "view": "symbol",
+    "view_type": "schematicSymbol",
+    "properties": [
+      {
+        "name": "portOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Hold\" \"Valid\" \"Done\" \"Delayed\" \"Early\" \"Z\" \"VDD\" \"VSS\")"
+        }
+      },
+      {
+        "name": "termOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Hold\" \"Valid\" \"Done\" \"Delayed\" \"Early\" \"Z\" \"VDD\" \"VSS\")"
+        }
+      }
+    ],
+    "instances": [],
+    "terminals": [
+      {
+        "name": "Delayed",
+        "direction": "input",
+        "net": "Delayed",
+        "properties": []
+      },
+      {
+        "name": "Done",
+        "direction": "input",
+        "net": "Done",
+        "properties": []
+      },
+      {
+        "name": "Early",
+        "direction": "input",
+        "net": "Early",
+        "properties": []
+      },
+      {
+        "name": "Hold",
+        "direction": "input",
+        "net": "Hold",
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "direction": "inputOutput",
+        "net": "VDD",
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "direction": "inputOutput",
+        "net": "VSS",
+        "properties": []
+      },
+      {
+        "name": "Valid",
+        "direction": "input",
+        "net": "Valid",
+        "properties": []
+      },
+      {
+        "name": "Z",
+        "direction": "output",
+        "net": "Z",
+        "properties": []
+      }
+    ],
+    "nets": [
+      {
+        "name": "Delayed",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Done",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Early",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Hold",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Valid",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Z",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      }
+    ]
+  }
+}

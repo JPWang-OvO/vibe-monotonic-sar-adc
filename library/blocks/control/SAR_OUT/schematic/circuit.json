@@ -1,0 +1,93 @@
+{
+  "cell": "SAR_OUT",
+  "ports": [
+    "D",
+    "Done",
+    "Q",
+    "VDD",
+    "VSS"
+  ],
+  "parameters": {},
+  "instances": [
+    {
+      "name": "I_latch",
+      "nodes": [
+        "D",
+        "Done",
+        "Stored",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_OUTPUT_FF",
+      "parameters": {},
+      "connections": {
+        "D": "D",
+        "CP": "Done",
+        "Q": "Stored",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_OUTPUT_FF",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_buf0",
+      "nodes": [
+        "Stored",
+        "StoredB",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "1"
+      },
+      "connections": {
+        "A": "Stored",
+        "Z": "StoredB",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "1"
+      }
+    },
+    {
+      "name": "I_buf1",
+      "nodes": [
+        "StoredB",
+        "Q",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "2"
+      },
+      "connections": {
+        "A": "StoredB",
+        "Z": "Q",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "2"
+      }
+    }
+  ],
+  "staged_source": "library__blocks__control__SAR_OUT__fast__netlist.scs"
+}

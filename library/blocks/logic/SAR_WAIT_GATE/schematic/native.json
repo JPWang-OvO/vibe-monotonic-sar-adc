@@ -1,0 +1,1376 @@
+{
+  "schema": "native-oa-v1",
+  "source_library": "MONOTONIC_SAR",
+  "circuit": {
+    "cell": "SAR_WAIT_GATE",
+    "view": "schematic",
+    "view_type": "schematic",
+    "properties": [
+      {
+        "name": "connectivityLastUpdated",
+        "type": "int",
+        "value": 1966
+      },
+      {
+        "name": "lastSchematicExtraction",
+        "type": "time",
+        "value": "Oct 24 03:58:06 2026"
+      },
+      {
+        "name": "net#",
+        "type": "int",
+        "value": 9
+      },
+      {
+        "name": "pin#",
+        "type": "int",
+        "value": 8
+      },
+      {
+        "name": "portOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Hold\" \"Valid\" \"Done\" \"Delayed\" \"Early\" \"Z\" \"VDD\" \"VSS\")"
+        }
+      },
+      {
+        "name": "schGeometryLastUpdated",
+        "type": "int",
+        "value": 1966
+      },
+      {
+        "name": "schGeometryVersion",
+        "type": "string",
+        "value": "sch.ds.gm.1.4"
+      },
+      {
+        "name": "schXtrVersion",
+        "type": "string",
+        "value": "sch.10.0"
+      }
+    ],
+    "instances": [
+      {
+        "name": "C_stack",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "240f"
+          }
+        ],
+        "connections": {
+          "MINUS": "VDD",
+          "PLUS": "P2"
+        }
+      },
+      {
+        "name": "Mn_Done",
+        "master": [
+          "tsmc18",
+          "nmos2v",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "ad",
+            "type": "string",
+            "value": "1.92e-12"
+          },
+          {
+            "name": "as",
+            "type": "string",
+            "value": "1.92e-12"
+          },
+          {
+            "name": "fingers",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "l",
+            "type": "string",
+            "value": "0.18u"
+          },
+          {
+            "name": "model",
+            "type": "string",
+            "value": "nch"
+          },
+          {
+            "name": "nrd",
+            "type": "string",
+            "value": "0.0675"
+          },
+          {
+            "name": "nrs",
+            "type": "string",
+            "value": "0.0675"
+          },
+          {
+            "name": "pd",
+            "type": "string",
+            "value": "8.96u"
+          },
+          {
+            "name": "ps",
+            "type": "string",
+            "value": "8.96u"
+          },
+          {
+            "name": "sa",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sb",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sca",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scb",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scc",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "sd",
+            "type": "string",
+            "value": "540.0n"
+          },
+          {
+            "name": "simM",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "w",
+            "type": "string",
+            "value": "0.000004"
+          },
+          {
+            "name": "wf",
+            "type": "string",
+            "value": "4u"
+          }
+        ],
+        "connections": {
+          "D": "Z",
+          "B": "VSS",
+          "G": "Done",
+          "S": "VSS"
+        }
+      },
+      {
+        "name": "Mn_Hold",
+        "master": [
+          "tsmc18",
+          "nmos2v",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "ad",
+            "type": "string",
+            "value": "1.92e-12"
+          },
+          {
+            "name": "as",
+            "type": "string",
+            "value": "1.92e-12"
+          },
+          {
+            "name": "fingers",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "l",
+            "type": "string",
+            "value": "0.18u"
+          },
+          {
+            "name": "model",
+            "type": "string",
+            "value": "nch"
+          },
+          {
+            "name": "nrd",
+            "type": "string",
+            "value": "0.0675"
+          },
+          {
+            "name": "nrs",
+            "type": "string",
+            "value": "0.0675"
+          },
+          {
+            "name": "pd",
+            "type": "string",
+            "value": "8.96u"
+          },
+          {
+            "name": "ps",
+            "type": "string",
+            "value": "8.96u"
+          },
+          {
+            "name": "sa",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sb",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sca",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scb",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scc",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "sd",
+            "type": "string",
+            "value": "540.0n"
+          },
+          {
+            "name": "simM",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "w",
+            "type": "string",
+            "value": "0.000004"
+          },
+          {
+            "name": "wf",
+            "type": "string",
+            "value": "4u"
+          }
+        ],
+        "connections": {
+          "D": "Z",
+          "B": "VSS",
+          "G": "Hold",
+          "S": "VSS"
+        }
+      },
+      {
+        "name": "Mn_Valid",
+        "master": [
+          "tsmc18",
+          "nmos2v",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "ad",
+            "type": "string",
+            "value": "1.92e-12"
+          },
+          {
+            "name": "as",
+            "type": "string",
+            "value": "1.92e-12"
+          },
+          {
+            "name": "fingers",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "l",
+            "type": "string",
+            "value": "0.18u"
+          },
+          {
+            "name": "model",
+            "type": "string",
+            "value": "nch"
+          },
+          {
+            "name": "nrd",
+            "type": "string",
+            "value": "0.0675"
+          },
+          {
+            "name": "nrs",
+            "type": "string",
+            "value": "0.0675"
+          },
+          {
+            "name": "pd",
+            "type": "string",
+            "value": "8.96u"
+          },
+          {
+            "name": "ps",
+            "type": "string",
+            "value": "8.96u"
+          },
+          {
+            "name": "sa",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sb",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sca",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scb",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scc",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "sd",
+            "type": "string",
+            "value": "540.0n"
+          },
+          {
+            "name": "simM",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "w",
+            "type": "string",
+            "value": "0.000004"
+          },
+          {
+            "name": "wf",
+            "type": "string",
+            "value": "4u"
+          }
+        ],
+        "connections": {
+          "D": "Z",
+          "B": "VSS",
+          "G": "Valid",
+          "S": "VSS"
+        }
+      },
+      {
+        "name": "Mn_delay",
+        "master": [
+          "tsmc18",
+          "nmos2v",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "ad",
+            "type": "string",
+            "value": "5.94e-12"
+          },
+          {
+            "name": "as",
+            "type": "string",
+            "value": "8.25e-12"
+          },
+          {
+            "name": "fingers",
+            "type": "string",
+            "value": "4"
+          },
+          {
+            "name": "l",
+            "type": "string",
+            "value": "0.18u"
+          },
+          {
+            "name": "model",
+            "type": "string",
+            "value": "nch"
+          },
+          {
+            "name": "nrd",
+            "type": "string",
+            "value": "0.0122727"
+          },
+          {
+            "name": "nrs",
+            "type": "string",
+            "value": "0.0122727"
+          },
+          {
+            "name": "pd",
+            "type": "string",
+            "value": "24.160u"
+          },
+          {
+            "name": "ps",
+            "type": "string",
+            "value": "36.0u"
+          },
+          {
+            "name": "sa",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sb",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sca",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scb",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scc",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "sd",
+            "type": "string",
+            "value": "540.0n"
+          },
+          {
+            "name": "simM",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "w",
+            "type": "string",
+            "value": "0.0000055"
+          },
+          {
+            "name": "wf",
+            "type": "string",
+            "value": "22u"
+          }
+        ],
+        "connections": {
+          "D": "Z",
+          "B": "VSS",
+          "G": "Delayed",
+          "S": "Ndelay"
+        }
+      },
+      {
+        "name": "Mn_early",
+        "master": [
+          "tsmc18",
+          "nmos2v",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "ad",
+            "type": "string",
+            "value": "5.94e-12"
+          },
+          {
+            "name": "as",
+            "type": "string",
+            "value": "8.25e-12"
+          },
+          {
+            "name": "fingers",
+            "type": "string",
+            "value": "4"
+          },
+          {
+            "name": "l",
+            "type": "string",
+            "value": "0.18u"
+          },
+          {
+            "name": "model",
+            "type": "string",
+            "value": "nch"
+          },
+          {
+            "name": "nrd",
+            "type": "string",
+            "value": "0.0122727"
+          },
+          {
+            "name": "nrs",
+            "type": "string",
+            "value": "0.0122727"
+          },
+          {
+            "name": "pd",
+            "type": "string",
+            "value": "24.160u"
+          },
+          {
+            "name": "ps",
+            "type": "string",
+            "value": "36.0u"
+          },
+          {
+            "name": "sa",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sb",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sca",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scb",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scc",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "sd",
+            "type": "string",
+            "value": "540.0n"
+          },
+          {
+            "name": "simM",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "w",
+            "type": "string",
+            "value": "0.0000055"
+          },
+          {
+            "name": "wf",
+            "type": "string",
+            "value": "22u"
+          }
+        ],
+        "connections": {
+          "D": "Ndelay",
+          "B": "VSS",
+          "G": "Early",
+          "S": "VSS"
+        }
+      },
+      {
+        "name": "Mp_delay",
+        "master": [
+          "tsmc18",
+          "pmos2v",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "ad",
+            "type": "string",
+            "value": "8.16e-12"
+          },
+          {
+            "name": "as",
+            "type": "string",
+            "value": "8.16e-12"
+          },
+          {
+            "name": "fingers",
+            "type": "string",
+            "value": "3"
+          },
+          {
+            "name": "l",
+            "type": "string",
+            "value": "0.18u"
+          },
+          {
+            "name": "model",
+            "type": "string",
+            "value": "pch"
+          },
+          {
+            "name": "nrd",
+            "type": "string",
+            "value": "0.01125"
+          },
+          {
+            "name": "nrs",
+            "type": "string",
+            "value": "0.01125"
+          },
+          {
+            "name": "pd",
+            "type": "string",
+            "value": "34.040u"
+          },
+          {
+            "name": "ps",
+            "type": "string",
+            "value": "34.040u"
+          },
+          {
+            "name": "sa",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sb",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sca",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scb",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scc",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "sd",
+            "type": "string",
+            "value": "540.0n"
+          },
+          {
+            "name": "simM",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "w",
+            "type": "string",
+            "value": "0.000008"
+          },
+          {
+            "name": "wf",
+            "type": "string",
+            "value": "24u"
+          }
+        ],
+        "connections": {
+          "D": "P2",
+          "B": "VDD",
+          "G": "Delayed",
+          "S": "P1"
+        }
+      },
+      {
+        "name": "Mp_done",
+        "master": [
+          "tsmc18",
+          "pmos2v",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "ad",
+            "type": "string",
+            "value": "8.16e-12"
+          },
+          {
+            "name": "as",
+            "type": "string",
+            "value": "8.16e-12"
+          },
+          {
+            "name": "fingers",
+            "type": "string",
+            "value": "3"
+          },
+          {
+            "name": "l",
+            "type": "string",
+            "value": "0.18u"
+          },
+          {
+            "name": "model",
+            "type": "string",
+            "value": "pch"
+          },
+          {
+            "name": "nrd",
+            "type": "string",
+            "value": "0.01125"
+          },
+          {
+            "name": "nrs",
+            "type": "string",
+            "value": "0.01125"
+          },
+          {
+            "name": "pd",
+            "type": "string",
+            "value": "34.040u"
+          },
+          {
+            "name": "ps",
+            "type": "string",
+            "value": "34.040u"
+          },
+          {
+            "name": "sa",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sb",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sca",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scb",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scc",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "sd",
+            "type": "string",
+            "value": "540.0n"
+          },
+          {
+            "name": "simM",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "w",
+            "type": "string",
+            "value": "0.000008"
+          },
+          {
+            "name": "wf",
+            "type": "string",
+            "value": "24u"
+          }
+        ],
+        "connections": {
+          "D": "P1",
+          "B": "VDD",
+          "G": "Done",
+          "S": "P0"
+        }
+      },
+      {
+        "name": "Mp_early",
+        "master": [
+          "tsmc18",
+          "pmos2v",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "ad",
+            "type": "string",
+            "value": "8.16e-12"
+          },
+          {
+            "name": "as",
+            "type": "string",
+            "value": "8.16e-12"
+          },
+          {
+            "name": "fingers",
+            "type": "string",
+            "value": "3"
+          },
+          {
+            "name": "l",
+            "type": "string",
+            "value": "0.18u"
+          },
+          {
+            "name": "model",
+            "type": "string",
+            "value": "pch"
+          },
+          {
+            "name": "nrd",
+            "type": "string",
+            "value": "0.01125"
+          },
+          {
+            "name": "nrs",
+            "type": "string",
+            "value": "0.01125"
+          },
+          {
+            "name": "pd",
+            "type": "string",
+            "value": "34.040u"
+          },
+          {
+            "name": "ps",
+            "type": "string",
+            "value": "34.040u"
+          },
+          {
+            "name": "sa",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sb",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sca",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scb",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scc",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "sd",
+            "type": "string",
+            "value": "540.0n"
+          },
+          {
+            "name": "simM",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "w",
+            "type": "string",
+            "value": "0.000008"
+          },
+          {
+            "name": "wf",
+            "type": "string",
+            "value": "24u"
+          }
+        ],
+        "connections": {
+          "D": "P2",
+          "B": "VDD",
+          "G": "Early",
+          "S": "P1"
+        }
+      },
+      {
+        "name": "Mp_hold",
+        "master": [
+          "tsmc18",
+          "pmos2v",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "ad",
+            "type": "string",
+            "value": "8.16e-12"
+          },
+          {
+            "name": "as",
+            "type": "string",
+            "value": "8.16e-12"
+          },
+          {
+            "name": "fingers",
+            "type": "string",
+            "value": "3"
+          },
+          {
+            "name": "l",
+            "type": "string",
+            "value": "0.18u"
+          },
+          {
+            "name": "model",
+            "type": "string",
+            "value": "pch"
+          },
+          {
+            "name": "nrd",
+            "type": "string",
+            "value": "0.01125"
+          },
+          {
+            "name": "nrs",
+            "type": "string",
+            "value": "0.01125"
+          },
+          {
+            "name": "pd",
+            "type": "string",
+            "value": "34.040u"
+          },
+          {
+            "name": "ps",
+            "type": "string",
+            "value": "34.040u"
+          },
+          {
+            "name": "sa",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sb",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sca",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scb",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scc",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "sd",
+            "type": "string",
+            "value": "540.0n"
+          },
+          {
+            "name": "simM",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "w",
+            "type": "string",
+            "value": "0.000008"
+          },
+          {
+            "name": "wf",
+            "type": "string",
+            "value": "24u"
+          }
+        ],
+        "connections": {
+          "D": "P0",
+          "B": "VDD",
+          "G": "Hold",
+          "S": "VDD"
+        }
+      },
+      {
+        "name": "Mp_valid",
+        "master": [
+          "tsmc18",
+          "pmos2v",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "ad",
+            "type": "string",
+            "value": "8.16e-12"
+          },
+          {
+            "name": "as",
+            "type": "string",
+            "value": "8.16e-12"
+          },
+          {
+            "name": "fingers",
+            "type": "string",
+            "value": "3"
+          },
+          {
+            "name": "l",
+            "type": "string",
+            "value": "0.18u"
+          },
+          {
+            "name": "model",
+            "type": "string",
+            "value": "pch"
+          },
+          {
+            "name": "nrd",
+            "type": "string",
+            "value": "0.01125"
+          },
+          {
+            "name": "nrs",
+            "type": "string",
+            "value": "0.01125"
+          },
+          {
+            "name": "pd",
+            "type": "string",
+            "value": "34.040u"
+          },
+          {
+            "name": "ps",
+            "type": "string",
+            "value": "34.040u"
+          },
+          {
+            "name": "sa",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sb",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sca",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scb",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scc",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "sd",
+            "type": "string",
+            "value": "540.0n"
+          },
+          {
+            "name": "simM",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "w",
+            "type": "string",
+            "value": "0.000008"
+          },
+          {
+            "name": "wf",
+            "type": "string",
+            "value": "24u"
+          }
+        ],
+        "connections": {
+          "D": "Z",
+          "B": "VDD",
+          "G": "Valid",
+          "S": "P2"
+        }
+      },
+      {
+        "name": "PIN0",
+        "master": [
+          "basic",
+          "ipin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN1",
+        "master": [
+          "basic",
+          "ipin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN2",
+        "master": [
+          "basic",
+          "ipin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN3",
+        "master": [
+          "basic",
+          "ipin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN4",
+        "master": [
+          "basic",
+          "ipin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN5",
+        "master": [
+          "basic",
+          "opin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN6",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN7",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      }
+    ],
+    "terminals": [
+      {
+        "name": "Delayed",
+        "direction": "input",
+        "net": "Delayed",
+        "properties": []
+      },
+      {
+        "name": "Done",
+        "direction": "input",
+        "net": "Done",
+        "properties": []
+      },
+      {
+        "name": "Early",
+        "direction": "input",
+        "net": "Early",
+        "properties": []
+      },
+      {
+        "name": "Hold",
+        "direction": "input",
+        "net": "Hold",
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "direction": "inputOutput",
+        "net": "VDD",
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "direction": "inputOutput",
+        "net": "VSS",
+        "properties": []
+      },
+      {
+        "name": "Valid",
+        "direction": "input",
+        "net": "Valid",
+        "properties": []
+      },
+      {
+        "name": "Z",
+        "direction": "output",
+        "net": "Z",
+        "properties": []
+      }
+    ],
+    "nets": [
+      {
+        "name": "Delayed",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Done",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Early",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Hold",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Ndelay",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "P0",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "P1",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "P2",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Valid",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Z",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      }
+    ]
+  }
+}

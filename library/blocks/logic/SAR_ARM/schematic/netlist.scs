@@ -1,0 +1,35 @@
+simulator lang=spectre
+subckt SAR_ARM (D CP CDN Q VDD VSS)
+MI15 (net97 net67 net100 VSS) nch l=180.0n w=910.0n m=1 nf=1 sd=540.0n ad=4.368e-13 as=4.368e-13 pd=2.78u ps=2.78u nrd=0.296703 nrs=0.296703 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI47 (net5 net67 net25 VSS) nch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI13-M_u2 (net97 net5 VSS VSS) nch l=180.0n w=540.0n m=1 nf=1 sd=540.0n ad=2.592e-13 as=2.592e-13 pd=2.04u ps=2.04u nrd=0.5 nrs=0.5 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI21-M_u4 (net20 CDN VSS VSS) nch l=180.0n w=970.0n m=1 nf=1 sd=540.0n ad=4.656e-13 as=4.656e-13 pd=2.9u ps=2.9u nrd=0.278351 nrs=0.278351 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI21-M_u3 (net109 net100 net20 VSS) nch l=180.0n w=970.0n m=1 nf=1 sd=540.0n ad=4.656e-13 as=4.656e-13 pd=2.9u ps=2.9u nrd=0.278351 nrs=0.278351 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI27-M_u2 (Q net109 VSS VSS) nch l=180.0n w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI48 (net25 CDN net29 VSS) nch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI49 (net29 net97 VSS VSS) nch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI31-M_u2 (net79 CP VSS VSS) nch l=180.0n w=500n m=1 nf=1 sd=540.0n ad=2.4e-13 as=2.4e-13 pd=1.96u ps=1.96u nrd=0.54 nrs=0.54 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI5 (net5 D net49 VSS) nch l=180.0n w=940.0n m=1 nf=1 sd=540.0n ad=4.512e-13 as=4.512e-13 pd=2.84u ps=2.84u nrd=0.287234 nrs=0.287234 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI18 (net53 net79 net100 VSS) nch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI32-M_u2 (net67 net79 VSS VSS) nch l=180.0n w=500n m=1 nf=1 sd=540.0n ad=2.4e-13 as=2.4e-13 pd=1.96u ps=1.96u nrd=0.54 nrs=0.54 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI4 (net49 net79 VSS VSS) nch l=180.0n w=940.0n m=1 nf=1 sd=540.0n ad=4.512e-13 as=4.512e-13 pd=2.84u ps=2.84u nrd=0.287234 nrs=0.287234 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI14-M_u2 (net53 net109 VSS VSS) nch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI13-M_u3 (net97 net5 VDD VDD) pch l=180.0n w=620.0n m=1 nf=1 sd=540.0n ad=2.976e-13 as=2.976e-13 pd=2.2u ps=2.2u nrd=0.435484 nrs=0.435484 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI21-M_u2 (net109 CDN VDD VDD) pch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI7 (net92 net67 VDD VDD) pch l=180.0n w=1.37u m=1 nf=1 sd=540.0n ad=6.576e-13 as=6.576e-13 pd=3.7u ps=3.7u nrd=0.19708 nrs=0.19708 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI17 (net53 net67 net100 VDD) pch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI44 (net93 CDN VDD VDD) pch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI45 (net5 net79 net93 VDD) pch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI27-M_u3 (Q net109 VDD VDD) pch l=180.0n w=1.37u m=1 nf=1 sd=540.0n ad=6.576e-13 as=6.576e-13 pd=3.7u ps=3.7u nrd=0.19708 nrs=0.19708 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI31-M_u3 (net79 CP VDD VDD) pch l=180.0n w=685.00n m=1 nf=1 sd=540.0n ad=3.288e-13 as=3.288e-13 pd=2.33u ps=2.33u nrd=0.394161 nrs=0.394161 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI6 (net5 D net92 VDD) pch l=180.0n w=1.37u m=1 nf=1 sd=540.0n ad=6.576e-13 as=6.576e-13 pd=3.7u ps=3.7u nrd=0.19708 nrs=0.19708 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI43 (net93 net97 VDD VDD) pch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI16 (net97 net79 net100 VDD) pch l=180.0n w=620.0n m=1 nf=1 sd=540.0n ad=2.976e-13 as=2.976e-13 pd=2.2u ps=2.2u nrd=0.435484 nrs=0.435484 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI32-M_u3 (net67 net79 VDD VDD) pch l=180.0n w=685.00n m=1 nf=1 sd=540.0n ad=3.288e-13 as=3.288e-13 pd=2.33u ps=2.33u nrd=0.394161 nrs=0.394161 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI14-M_u3 (net53 net109 VDD VDD) pch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI21-M_u1 (net109 net100 VDD VDD) pch l=180.0n w=1.37u m=1 nf=1 sd=540.0n ad=6.576e-13 as=6.576e-13 pd=3.7u ps=3.7u nrd=0.19708 nrs=0.19708 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+C_pstack (net92 VDD) capacitor c=5f
+C_slave (net100 VSS) capacitor c=3f
+C_stack (net49 VSS) capacitor c=3f
+C_storage (net5 VSS) capacitor c=5f
+ends SAR_ARM

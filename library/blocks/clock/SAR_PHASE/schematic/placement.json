@@ -1,0 +1,135 @@
+{
+  "Mp_charge": {
+    "xy": [
+      0,
+      9
+    ],
+    "orient": "R0"
+  },
+  "C_por": {
+    "xy": [
+      2,
+      8.5
+    ],
+    "orient": "R0"
+  },
+  "I_por0": {
+    "xy": [
+      4,
+      9
+    ],
+    "orient": "R0"
+  },
+  "I_por1": {
+    "xy": [
+      6,
+      9
+    ],
+    "orient": "R0"
+  },
+  "I_enable": {
+    "xy": [
+      0,
+      5
+    ],
+    "orient": "R0"
+  },
+  "I_gate": {
+    "xy": [
+      4,
+      5
+    ],
+    "orient": "R0"
+  },
+  "I_gatebuf": {
+    "xy": [
+      8,
+      5
+    ],
+    "orient": "R0"
+  },
+  "I_clk0": {
+    "xy": [
+      12,
+      5
+    ],
+    "orient": "R0"
+  },
+  "Mp_clock_slew": {
+    "xy": [
+      16,
+      6
+    ],
+    "orient": "R0"
+  },
+  "Mn_clock_slew": {
+    "xy": [
+      16,
+      4
+    ],
+    "orient": "R0"
+  },
+  "C_clock_slew": {
+    "xy": [
+      18,
+      5
+    ],
+    "orient": "R0"
+  },
+  "I_ring<3:0>": {
+    "xy": [
+      4,
+      0
+    ],
+    "orient": "R0"
+  },
+  "I_ring4": {
+    "xy": [
+      10,
+      0
+    ],
+    "orient": "R0"
+  },
+  "I_buffer0": {
+    "xy": [
+      0.0,
+      -4
+    ],
+    "orient": "R0"
+  },
+  "I_buffer1": {
+    "xy": [
+      3.5,
+      -4
+    ],
+    "orient": "R0"
+  },
+  "I_buffer2": {
+    "xy": [
+      7.0,
+      -4
+    ],
+    "orient": "R0"
+  },
+  "I_buffer3": {
+    "xy": [
+      10.5,
+      -4
+    ],
+    "orient": "R0"
+  },
+  "I_pre<7:0>": {
+    "xy": [
+      14.0,
+      -4
+    ],
+    "orient": "R0"
+  },
+  "I_final<63:0>": {
+    "xy": [
+      17.5,
+      -4
+    ],
+    "orient": "R0"
+  }
+}

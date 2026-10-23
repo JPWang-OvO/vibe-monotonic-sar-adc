@@ -1,0 +1,150 @@
+{
+  "schema": "native-oa-v1",
+  "source_library": "MONOTONIC_SAR",
+  "circuit": {
+    "cell": "SAR_BIT",
+    "view": "symbol",
+    "view_type": "schematicSymbol",
+    "properties": [
+      {
+        "name": "portOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Outp\" \"Capture\" \"Sample\" \"Q\" \"Bp\" \"Bn\" \"VDD\" \"VSS\" \"VREFP\" \"VREFN\")"
+        }
+      },
+      {
+        "name": "termOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Outp\" \"Capture\" \"Sample\" \"Q\" \"Bp\" \"Bn\" \"VDD\" \"VSS\" \"VREFP\" \"VREFN\")"
+        }
+      }
+    ],
+    "instances": [],
+    "terminals": [
+      {
+        "name": "Bn",
+        "direction": "output",
+        "net": "Bn",
+        "properties": []
+      },
+      {
+        "name": "Bp",
+        "direction": "output",
+        "net": "Bp",
+        "properties": []
+      },
+      {
+        "name": "Capture",
+        "direction": "input",
+        "net": "Capture",
+        "properties": []
+      },
+      {
+        "name": "Outp",
+        "direction": "input",
+        "net": "Outp",
+        "properties": []
+      },
+      {
+        "name": "Q",
+        "direction": "output",
+        "net": "Q",
+        "properties": []
+      },
+      {
+        "name": "Sample",
+        "direction": "input",
+        "net": "Sample",
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "direction": "inputOutput",
+        "net": "VDD",
+        "properties": []
+      },
+      {
+        "name": "VREFN",
+        "direction": "inputOutput",
+        "net": "VREFN",
+        "properties": []
+      },
+      {
+        "name": "VREFP",
+        "direction": "inputOutput",
+        "net": "VREFP",
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "direction": "inputOutput",
+        "net": "VSS",
+        "properties": []
+      }
+    ],
+    "nets": [
+      {
+        "name": "Bn",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Capture",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Outp",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Q",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Sample",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VREFN",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VREFP",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      }
+    ]
+  }
+}

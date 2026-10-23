@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1152 800">
+<rect width="100%" height="100%" fill="white"/>
+<desc>SAR_WAIT_GATE; terminals follow the accepted Spectre declaration order.</desc>
+<g stroke="#287740" stroke-width="1.5" fill="none">
+<rect x="128" y="160" width="896" height="480"/>
+<polyline points="960,160 960,208"/>
+<polyline points="960,640 960,592"/>
+<path d="M512,480 A106.667,128 0 0 0 512,224"/>
+<polyline points="512,224 672,224"/>
+<polyline points="512,480 672,480"/>
+<path d="M832.637,351.718 A162.667,195.2 0 0 0 672,224.236"/>
+<path d="M672,479.573 A160,192 0 0 0 833.345,352.577"/>
+<ellipse cx="840" cy="352" rx="8" ry="8"/>
+<polyline points="480,256 582.4,256"/>
+<polyline points="480,320 616,320"/>
+<polyline points="480,384 616,384"/>
+<polyline points="480,448 582.4,448"/>
+<polyline points="128,256 480,256"/>
+<polyline points="128,320 480,320"/>
+<polyline points="128,384 480,384"/>
+<polyline points="320,608 320,480 384,480"/>
+<path d="M384,608 A64,64 0 0 0 384,480"/>
+<polyline points="384,608 320,608"/>
+<polyline points="288,512 320,512"/>
+<polyline points="288,576 320,576"/>
+<polyline points="128,512 288,512"/>
+<polyline points="128,576 288,576"/>
+<polyline points="448,544 480,544 480,448"/>
+<polyline points="1024,352 848,352"/>
+</g><g fill="#287740" font-family="Arial,sans-serif">
+<text x="576" y="112" font-size="16" text-anchor="middle" dominant-baseline="central">SAR_WAIT_GATE</text>
+</g><g fill="#c53e32" font-family="Arial,sans-serif" font-size="16">
+<g data-port="VDD" data-side="top"><rect x="956.8" y="156.8" width="6.4" height="6.4"/><text x="976" y="192" text-anchor="start" dominant-baseline="central">VDD</text></g>
+<g data-port="VSS" data-side="bottom"><rect x="956.8" y="636.8" width="6.4" height="6.4"/><text x="976" y="608" text-anchor="start" dominant-baseline="central">VSS</text></g>
+<g data-port="Hold" data-side="left"><rect x="124.8" y="252.8" width="6.4" height="6.4"/><text x="144" y="240" text-anchor="start" dominant-baseline="central">Hold</text></g>
+<g data-port="Valid" data-side="left"><rect x="124.8" y="316.8" width="6.4" height="6.4"/><text x="144" y="304" text-anchor="start" dominant-baseline="central">Valid</text></g>
+<g data-port="Done" data-side="left"><rect x="124.8" y="380.8" width="6.4" height="6.4"/><text x="144" y="368" text-anchor="start" dominant-baseline="central">Done</text></g>
+<g data-port="Delayed" data-side="left"><rect x="124.8" y="508.8" width="6.4" height="6.4"/><text x="144" y="496" text-anchor="start" dominant-baseline="central">Delayed</text></g>
+<g data-port="Early" data-side="left"><rect x="124.8" y="572.8" width="6.4" height="6.4"/><text x="144" y="560" text-anchor="start" dominant-baseline="central">Early</text></g>
+<g data-port="Z" data-side="right"><rect x="1020.8" y="348.8" width="6.4" height="6.4"/><text x="1008" y="336" text-anchor="end" dominant-baseline="central">Z</text></g>
+</g></svg>

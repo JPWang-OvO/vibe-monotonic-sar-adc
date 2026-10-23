@@ -1,0 +1,1736 @@
+{
+  "cell": "SAR_DFFS",
+  "ports": [
+    "D",
+    "CP",
+    "SDN",
+    "Q",
+    "VDD",
+    "VSS"
+  ],
+  "parameters": {},
+  "instances": [
+    {
+      "name": "MI32-M_u4",
+      "nodes": [
+        "net53",
+        "SDN",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "540.0n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "2.592e-13",
+        "as": "2.592e-13",
+        "pd": "2.04u",
+        "ps": "2.04u",
+        "nrd": "0.5",
+        "nrs": "0.5",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net53",
+        "G": "SDN",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "2.592e-13",
+        "as": "2.592e-13",
+        "pd": "2.04u",
+        "ps": "2.04u",
+        "nrd": "0.5",
+        "nrs": "0.5",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "540.0n",
+        "w": "5.400e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI25-M_u2",
+      "nodes": [
+        "net79",
+        "net20",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "1u",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "4.8e-13",
+        "as": "4.8e-13",
+        "pd": "2.96u",
+        "ps": "2.96u",
+        "nrd": "0.27",
+        "nrs": "0.27",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net79",
+        "G": "net20",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "4.8e-13",
+        "as": "4.8e-13",
+        "pd": "2.96u",
+        "ps": "2.96u",
+        "nrd": "0.27",
+        "nrs": "0.27",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "1u",
+        "w": "0.000001",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI55-M_u2",
+      "nodes": [
+        "net11",
+        "CP",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "500n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "2.4e-13",
+        "as": "2.4e-13",
+        "pd": "1.96u",
+        "ps": "1.96u",
+        "nrd": "0.54",
+        "nrs": "0.54",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net11",
+        "G": "CP",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "2.4e-13",
+        "as": "2.4e-13",
+        "pd": "1.96u",
+        "ps": "1.96u",
+        "nrd": "0.54",
+        "nrs": "0.54",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "500n",
+        "w": "5.00e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI60-M_u2",
+      "nodes": [
+        "Q",
+        "net79",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "1u",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "4.8e-13",
+        "as": "4.8e-13",
+        "pd": "2.96u",
+        "ps": "2.96u",
+        "nrd": "0.27",
+        "nrs": "0.27",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "Q",
+        "G": "net79",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "4.8e-13",
+        "as": "4.8e-13",
+        "pd": "2.96u",
+        "ps": "2.96u",
+        "nrd": "0.27",
+        "nrs": "0.27",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "1u",
+        "w": "0.000001",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI32-M_u3",
+      "nodes": [
+        "net97",
+        "net13",
+        "net53",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "540.0n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "2.592e-13",
+        "as": "2.592e-13",
+        "pd": "2.04u",
+        "ps": "2.04u",
+        "nrd": "0.5",
+        "nrs": "0.5",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net97",
+        "G": "net13",
+        "S": "net53",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "2.592e-13",
+        "as": "2.592e-13",
+        "pd": "2.04u",
+        "ps": "2.04u",
+        "nrd": "0.5",
+        "nrs": "0.5",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "540.0n",
+        "w": "5.400e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI19",
+      "nodes": [
+        "net33",
+        "net11",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "940.0n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "4.512e-13",
+        "as": "4.512e-13",
+        "pd": "2.84u",
+        "ps": "2.84u",
+        "nrd": "0.287234",
+        "nrs": "0.287234",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net33",
+        "G": "net11",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "4.512e-13",
+        "as": "4.512e-13",
+        "pd": "2.84u",
+        "ps": "2.84u",
+        "nrd": "0.287234",
+        "nrs": "0.287234",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "940.0n",
+        "w": "9.400e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI24",
+      "nodes": [
+        "net29",
+        "net97",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "420.0n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "2.016e-13",
+        "as": "2.016e-13",
+        "pd": "1.8u",
+        "ps": "1.8u",
+        "nrd": "0.642857",
+        "nrs": "0.642857",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net29",
+        "G": "net97",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "2.016e-13",
+        "as": "2.016e-13",
+        "pd": "1.8u",
+        "ps": "1.8u",
+        "nrd": "0.642857",
+        "nrs": "0.642857",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "420.0n",
+        "w": "4.200e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI31-M_u4",
+      "nodes": [
+        "net25",
+        "net79",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "500n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "2.4e-13",
+        "as": "2.4e-13",
+        "pd": "1.96u",
+        "ps": "1.96u",
+        "nrd": "0.54",
+        "nrs": "0.54",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net25",
+        "G": "net79",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "2.4e-13",
+        "as": "2.4e-13",
+        "pd": "1.96u",
+        "ps": "1.96u",
+        "nrd": "0.54",
+        "nrs": "0.54",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "500n",
+        "w": "5.00e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI31-M_u3",
+      "nodes": [
+        "net5",
+        "SDN",
+        "net25",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "500n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "2.4e-13",
+        "as": "2.4e-13",
+        "pd": "1.96u",
+        "ps": "1.96u",
+        "nrd": "0.54",
+        "nrs": "0.54",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net5",
+        "G": "SDN",
+        "S": "net25",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "2.4e-13",
+        "as": "2.4e-13",
+        "pd": "1.96u",
+        "ps": "1.96u",
+        "nrd": "0.54",
+        "nrs": "0.54",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "500n",
+        "w": "5.00e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI20",
+      "nodes": [
+        "net97",
+        "net9",
+        "net20",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "910.0n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "4.368e-13",
+        "as": "4.368e-13",
+        "pd": "2.78u",
+        "ps": "2.78u",
+        "nrd": "0.296703",
+        "nrs": "0.296703",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net97",
+        "G": "net9",
+        "S": "net20",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "4.368e-13",
+        "as": "4.368e-13",
+        "pd": "2.78u",
+        "ps": "2.78u",
+        "nrd": "0.296703",
+        "nrs": "0.296703",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "910.0n",
+        "w": "9.100e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI23",
+      "nodes": [
+        "net13",
+        "net9",
+        "net29",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "420.0n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "2.016e-13",
+        "as": "2.016e-13",
+        "pd": "1.8u",
+        "ps": "1.8u",
+        "nrd": "0.642857",
+        "nrs": "0.642857",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net13",
+        "G": "net9",
+        "S": "net29",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "2.016e-13",
+        "as": "2.016e-13",
+        "pd": "1.8u",
+        "ps": "1.8u",
+        "nrd": "0.642857",
+        "nrs": "0.642857",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "420.0n",
+        "w": "4.200e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI40-M_u2",
+      "nodes": [
+        "net9",
+        "net11",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "500n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "2.4e-13",
+        "as": "2.4e-13",
+        "pd": "1.96u",
+        "ps": "1.96u",
+        "nrd": "0.54",
+        "nrs": "0.54",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net9",
+        "G": "net11",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "2.4e-13",
+        "as": "2.4e-13",
+        "pd": "1.96u",
+        "ps": "1.96u",
+        "nrd": "0.54",
+        "nrs": "0.54",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "500n",
+        "w": "5.00e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI22",
+      "nodes": [
+        "net5",
+        "net11",
+        "net20",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "420.0n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "2.016e-13",
+        "as": "2.016e-13",
+        "pd": "1.8u",
+        "ps": "1.8u",
+        "nrd": "0.642857",
+        "nrs": "0.642857",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net5",
+        "G": "net11",
+        "S": "net20",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "2.016e-13",
+        "as": "2.016e-13",
+        "pd": "1.8u",
+        "ps": "1.8u",
+        "nrd": "0.642857",
+        "nrs": "0.642857",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "420.0n",
+        "w": "4.200e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI21",
+      "nodes": [
+        "net13",
+        "D",
+        "net33",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "940.0n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "4.512e-13",
+        "as": "4.512e-13",
+        "pd": "2.84u",
+        "ps": "2.84u",
+        "nrd": "0.287234",
+        "nrs": "0.287234",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net13",
+        "G": "D",
+        "S": "net33",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "4.512e-13",
+        "as": "4.512e-13",
+        "pd": "2.84u",
+        "ps": "2.84u",
+        "nrd": "0.287234",
+        "nrs": "0.287234",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "940.0n",
+        "w": "9.400e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI30",
+      "nodes": [
+        "net97",
+        "net11",
+        "net20",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "1.34u",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "6.432e-13",
+        "as": "6.432e-13",
+        "pd": "3.64u",
+        "ps": "3.64u",
+        "nrd": "0.201492",
+        "nrs": "0.201492",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net97",
+        "G": "net11",
+        "S": "net20",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "6.432e-13",
+        "as": "6.432e-13",
+        "pd": "3.64u",
+        "ps": "3.64u",
+        "nrd": "0.201492",
+        "nrs": "0.201492",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "1.34u",
+        "w": "0.00000134",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI55-M_u3",
+      "nodes": [
+        "net11",
+        "CP",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "685.00n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "3.288e-13",
+        "as": "3.288e-13",
+        "pd": "2.33u",
+        "ps": "2.33u",
+        "nrd": "0.394161",
+        "nrs": "0.394161",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net11",
+        "G": "CP",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "3.288e-13",
+        "as": "3.288e-13",
+        "pd": "2.33u",
+        "ps": "2.33u",
+        "nrd": "0.394161",
+        "nrs": "0.394161",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "685.00n",
+        "w": "6.8500e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI33",
+      "nodes": [
+        "net5",
+        "net9",
+        "net20",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "420.0n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "2.016e-13",
+        "as": "2.016e-13",
+        "pd": "1.8u",
+        "ps": "1.8u",
+        "nrd": "0.642857",
+        "nrs": "0.642857",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net5",
+        "G": "net9",
+        "S": "net20",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "2.016e-13",
+        "as": "2.016e-13",
+        "pd": "1.8u",
+        "ps": "1.8u",
+        "nrd": "0.642857",
+        "nrs": "0.642857",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "420.0n",
+        "w": "4.200e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI32-M_u1",
+      "nodes": [
+        "net97",
+        "net13",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "970.0n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "4.656e-13",
+        "as": "4.656e-13",
+        "pd": "2.9u",
+        "ps": "2.9u",
+        "nrd": "0.278351",
+        "nrs": "0.278351",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net97",
+        "G": "net13",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "4.656e-13",
+        "as": "4.656e-13",
+        "pd": "2.9u",
+        "ps": "2.9u",
+        "nrd": "0.278351",
+        "nrs": "0.278351",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "970.0n",
+        "w": "9.700e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI32-M_u2",
+      "nodes": [
+        "net97",
+        "SDN",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "420.0n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "2.016e-13",
+        "as": "2.016e-13",
+        "pd": "1.8u",
+        "ps": "1.8u",
+        "nrd": "0.642857",
+        "nrs": "0.642857",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net97",
+        "G": "SDN",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "2.016e-13",
+        "as": "2.016e-13",
+        "pd": "1.8u",
+        "ps": "1.8u",
+        "nrd": "0.642857",
+        "nrs": "0.642857",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "420.0n",
+        "w": "4.200e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI28",
+      "nodes": [
+        "net64",
+        "net9",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "920.0n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "4.416e-13",
+        "as": "4.416e-13",
+        "pd": "2.8u",
+        "ps": "2.8u",
+        "nrd": "0.293478",
+        "nrs": "0.293478",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net64",
+        "G": "net9",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "4.416e-13",
+        "as": "4.416e-13",
+        "pd": "2.8u",
+        "ps": "2.8u",
+        "nrd": "0.293478",
+        "nrs": "0.293478",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "920.0n",
+        "w": "9.200e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI40-M_u3",
+      "nodes": [
+        "net9",
+        "net11",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "685.00n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "3.288e-13",
+        "as": "3.288e-13",
+        "pd": "2.33u",
+        "ps": "2.33u",
+        "nrd": "0.394161",
+        "nrs": "0.394161",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net9",
+        "G": "net11",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "3.288e-13",
+        "as": "3.288e-13",
+        "pd": "2.33u",
+        "ps": "2.33u",
+        "nrd": "0.394161",
+        "nrs": "0.394161",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "685.00n",
+        "w": "6.8500e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI60-M_u3",
+      "nodes": [
+        "Q",
+        "net79",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "1.37u",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "6.576e-13",
+        "as": "6.576e-13",
+        "pd": "3.7u",
+        "ps": "3.7u",
+        "nrd": "0.19708",
+        "nrs": "0.19708",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "Q",
+        "G": "net79",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "6.576e-13",
+        "as": "6.576e-13",
+        "pd": "3.7u",
+        "ps": "3.7u",
+        "nrd": "0.19708",
+        "nrs": "0.19708",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "1.37u",
+        "w": "0.00000137",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI31-M_u2",
+      "nodes": [
+        "net5",
+        "net79",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "685.00n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "3.288e-13",
+        "as": "3.288e-13",
+        "pd": "2.33u",
+        "ps": "2.33u",
+        "nrd": "0.394161",
+        "nrs": "0.394161",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net5",
+        "G": "net79",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "3.288e-13",
+        "as": "3.288e-13",
+        "pd": "2.33u",
+        "ps": "2.33u",
+        "nrd": "0.394161",
+        "nrs": "0.394161",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "685.00n",
+        "w": "6.8500e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI35",
+      "nodes": [
+        "net60",
+        "net97",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "420.0n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "2.016e-13",
+        "as": "2.016e-13",
+        "pd": "1.8u",
+        "ps": "1.8u",
+        "nrd": "0.642857",
+        "nrs": "0.642857",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net60",
+        "G": "net97",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "2.016e-13",
+        "as": "2.016e-13",
+        "pd": "1.8u",
+        "ps": "1.8u",
+        "nrd": "0.642857",
+        "nrs": "0.642857",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "420.0n",
+        "w": "4.200e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI31-M_u1",
+      "nodes": [
+        "net5",
+        "SDN",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "685.00n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "3.288e-13",
+        "as": "3.288e-13",
+        "pd": "2.33u",
+        "ps": "2.33u",
+        "nrd": "0.394161",
+        "nrs": "0.394161",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net5",
+        "G": "SDN",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "3.288e-13",
+        "as": "3.288e-13",
+        "pd": "2.33u",
+        "ps": "2.33u",
+        "nrd": "0.394161",
+        "nrs": "0.394161",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "685.00n",
+        "w": "6.8500e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI25-M_u3",
+      "nodes": [
+        "net79",
+        "net20",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "1.37u",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "6.576e-13",
+        "as": "6.576e-13",
+        "pd": "3.7u",
+        "ps": "3.7u",
+        "nrd": "0.19708",
+        "nrs": "0.19708",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net79",
+        "G": "net20",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "6.576e-13",
+        "as": "6.576e-13",
+        "pd": "3.7u",
+        "ps": "3.7u",
+        "nrd": "0.19708",
+        "nrs": "0.19708",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "1.37u",
+        "w": "0.00000137",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI26",
+      "nodes": [
+        "net13",
+        "D",
+        "net64",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "920.0n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "4.416e-13",
+        "as": "4.416e-13",
+        "pd": "2.8u",
+        "ps": "2.8u",
+        "nrd": "0.293478",
+        "nrs": "0.293478",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net13",
+        "G": "D",
+        "S": "net64",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "4.416e-13",
+        "as": "4.416e-13",
+        "pd": "2.8u",
+        "ps": "2.8u",
+        "nrd": "0.293478",
+        "nrs": "0.293478",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "920.0n",
+        "w": "9.200e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "MI34",
+      "nodes": [
+        "net13",
+        "net11",
+        "net60",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "l": "180.0n",
+        "w": "420.0n",
+        "m": "4",
+        "nf": "1",
+        "sd": "540.0n",
+        "ad": "2.016e-13",
+        "as": "2.016e-13",
+        "pd": "1.8u",
+        "ps": "1.8u",
+        "nrd": "0.642857",
+        "nrs": "0.642857",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0"
+      },
+      "connections": {
+        "D": "net13",
+        "G": "net11",
+        "S": "net60",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "2.016e-13",
+        "as": "2.016e-13",
+        "pd": "1.8u",
+        "ps": "1.8u",
+        "nrd": "0.642857",
+        "nrs": "0.642857",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "420.0n",
+        "w": "4.200e-7",
+        "l": "180.0n",
+        "fingers": "1",
+        "simM": "4"
+      }
+    },
+    {
+      "name": "C_storage",
+      "nodes": [
+        "net13",
+        "VSS"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "12f"
+      },
+      "connections": {
+        "PLUS": "net13",
+        "MINUS": "VSS"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "12f"
+      }
+    },
+    {
+      "name": "C_stack",
+      "nodes": [
+        "net60",
+        "VDD"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "12f"
+      },
+      "connections": {
+        "PLUS": "net60",
+        "MINUS": "VDD"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "12f"
+      }
+    },
+    {
+      "name": "C_pstack",
+      "nodes": [
+        "net64",
+        "VDD"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "20f"
+      },
+      "connections": {
+        "PLUS": "net64",
+        "MINUS": "VDD"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "20f"
+      }
+    }
+  ],
+  "staged_source": "library__blocks__logic__SAR_DFFS__quadquiet__netlist.scs"
+}

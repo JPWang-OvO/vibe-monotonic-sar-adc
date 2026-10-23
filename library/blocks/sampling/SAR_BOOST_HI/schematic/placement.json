@@ -1,0 +1,65 @@
+{
+  "Mp_precharge": {
+    "xy": [
+      0.0,
+      2.5
+    ],
+    "orient": "R0"
+  },
+  "Mp_start": {
+    "xy": [
+      2.5,
+      2.5
+    ],
+    "orient": "R0"
+  },
+  "Mp_transfer": {
+    "xy": [
+      5.0,
+      2.5
+    ],
+    "orient": "R0"
+  },
+  "Mn_reset_bottom": {
+    "xy": [
+      0.0,
+      0
+    ],
+    "orient": "R0"
+  },
+  "Mn_start": {
+    "xy": [
+      2.5,
+      0
+    ],
+    "orient": "R0"
+  },
+  "Mn_trackq": {
+    "xy": [
+      5.0,
+      0
+    ],
+    "orient": "R0"
+  },
+  "C_boot": {
+    "xy": [
+      -2,
+      1.25
+    ],
+    "orient": "R0"
+  },
+  "Mn_reset_gate": {
+    "xy": [
+      7.5,
+      0
+    ],
+    "orient": "R0"
+  },
+  "Mp_bottom": {
+    "xy": [
+      2.5,
+      -2
+    ],
+    "orient": "R0"
+  }
+}

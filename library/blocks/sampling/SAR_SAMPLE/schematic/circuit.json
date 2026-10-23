@@ -1,0 +1,164 @@
+{
+  "cell": "SAR_SAMPLE",
+  "ports": [
+    "Vin",
+    "Top",
+    "Sample",
+    "SampleB",
+    "Gate",
+    "VDD",
+    "VSS"
+  ],
+  "parameters": {},
+  "instances": [
+    {
+      "name": "I_boost1",
+      "nodes": [
+        "Vin",
+        "Lift",
+        "Sample",
+        "SampleB",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_BOOST",
+      "parameters": {},
+      "connections": {
+        "Vin": "Vin",
+        "Gate": "Lift",
+        "Sample": "Sample",
+        "SampleB": "SampleB",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_BOOST",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_boost2",
+      "nodes": [
+        "Lift",
+        "Gate",
+        "Sample",
+        "SampleB",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_BOOST_HI",
+      "parameters": {},
+      "connections": {
+        "Vin": "Lift",
+        "Gate": "Gate",
+        "Sample": "Sample",
+        "SampleB": "SampleB",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_BOOST_HI",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "Mn_sample",
+      "nodes": [
+        "Top",
+        "Gate",
+        "Vin",
+        "VSS"
+      ],
+      "model": "nch_5",
+      "parameters": {
+        "w": "256u",
+        "l": "0.6u",
+        "nf": "32",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Top",
+        "G": "Gate",
+        "S": "Vin",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos5v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "6.912e-11",
+        "as": "7.248e-11",
+        "pd": "273.28000000u",
+        "ps": "290.12000000u",
+        "nrd": "0.00105469",
+        "nrs": "0.00105469",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch_5",
+        "wf": "256u",
+        "w": "0.000008",
+        "l": "0.6u",
+        "fingers": "32",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mp_junction",
+      "nodes": [
+        "Top",
+        "VDD",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch_5",
+      "parameters": {
+        "w": "384u",
+        "l": "0.5u",
+        "nf": "48",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Top",
+        "G": "VDD",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos5v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "1.0368e-10",
+        "as": "1.0704e-10",
+        "pd": "409.92000000u",
+        "ps": "426.76000000u",
+        "nrd": "0.000703125",
+        "nrs": "0.000703125",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch_5",
+        "wf": "384u",
+        "w": "0.000008",
+        "l": "0.5u",
+        "fingers": "48",
+        "simM": "1"
+      }
+    }
+  ],
+  "staged_source": "library__blocks__sampling__SAR_SAMPLE__junction384__netlist.scs"
+}

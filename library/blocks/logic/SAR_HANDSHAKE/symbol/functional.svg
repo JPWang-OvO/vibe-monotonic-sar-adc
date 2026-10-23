@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 704 544">
+<rect width="100%" height="100%" fill="white"/>
+<desc>SAR_HANDSHAKE; terminals follow the accepted Spectre declaration order.</desc>
+<g stroke="#287740" stroke-width="1.5" fill="none">
+<polyline points="248,304 296,272 248,240 248,304"/>
+<ellipse cx="304" cy="272" rx="8" ry="8"/>
+<polyline points="408,304 456,272 408,240 408,304"/>
+<ellipse cx="464" cy="272" rx="8" ry="8"/>
+<polyline points="128,272 248,272"/>
+<polyline points="312,272 408,272"/>
+<polyline points="576,272 472,272"/>
+<polyline points="352,160 352,208"/>
+<polyline points="352,384 352,336"/>
+</g><g fill="#287740" font-family="Arial,sans-serif">
+<text x="352" y="112" font-size="16" text-anchor="middle" dominant-baseline="central">SAR_HANDSHAKE</text>
+</g><g fill="#c53e32" font-family="Arial,sans-serif" font-size="16">
+<g data-port="A" data-side="left"><rect x="124.8" y="268.8" width="6.4" height="6.4"/><text x="144" y="256" text-anchor="start" dominant-baseline="central">A</text></g>
+<g data-port="Z" data-side="right"><rect x="572.8" y="268.8" width="6.4" height="6.4"/><text x="560" y="256" text-anchor="end" dominant-baseline="central">Z</text></g>
+<g data-port="VDD" data-side="top"><rect x="348.8" y="156.8" width="6.4" height="6.4"/><text x="368" y="192" text-anchor="start" dominant-baseline="central">VDD</text></g>
+<g data-port="VSS" data-side="bottom"><rect x="348.8" y="380.8" width="6.4" height="6.4"/><text x="368" y="352" text-anchor="start" dominant-baseline="central">VSS</text></g>
+</g></svg>

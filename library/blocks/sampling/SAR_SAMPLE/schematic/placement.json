@@ -1,0 +1,30 @@
+{
+  "I_boost1": {
+    "xy": [
+      0,
+      3
+    ],
+    "orient": "R0"
+  },
+  "I_boost2": {
+    "xy": [
+      4,
+      3
+    ],
+    "orient": "R0"
+  },
+  "Mn_sample": {
+    "xy": [
+      4,
+      -1
+    ],
+    "orient": "R0"
+  },
+  "Mp_junction": {
+    "xy": [
+      6.5,
+      -1
+    ],
+    "orient": "R0"
+  }
+}

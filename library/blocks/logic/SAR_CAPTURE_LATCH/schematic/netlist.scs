@@ -1,0 +1,13 @@
+simulator lang=spectre
+subckt SAR_CAPTURE_LATCH (D Hold Q QB VDD VSS)
+Mn_q (Q QB VSS VSS) nch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_qb (QB N VSS VSS) nch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_fb (N Hold Q VSS) nch l=0.18u w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_in (N HoldB D VSS) nch l=0.18u w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_h (HoldB Hold VSS VSS) nch l=0.18u w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_q (Q QB VDD VDD) pch l=0.18u w=8u m=1 nf=1 sd=540.0n ad=3.84e-12 as=3.84e-12 pd=16.960u ps=16.960u nrd=0.03375 nrs=0.03375 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_qb (QB N VDD VDD) pch l=0.18u w=8u m=1 nf=1 sd=540.0n ad=3.84e-12 as=3.84e-12 pd=16.960u ps=16.960u nrd=0.03375 nrs=0.03375 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_fb (N HoldB Q VDD) pch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_in (N Hold D VDD) pch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_h (HoldB Hold VDD VDD) pch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+ends SAR_CAPTURE_LATCH

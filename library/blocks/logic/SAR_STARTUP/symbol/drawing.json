@@ -1,0 +1,1435 @@
+{
+  "instances": {},
+  "pins": [
+    {
+      "terminal": "VDD",
+      "name": "VDD",
+      "figure_type": "rect",
+      "figure": 39,
+      "properties": []
+    },
+    {
+      "terminal": "VSS",
+      "name": "VSS",
+      "figure_type": "rect",
+      "figure": 41,
+      "properties": []
+    },
+    {
+      "terminal": "Sample",
+      "name": "Sample",
+      "figure_type": "rect",
+      "figure": 43,
+      "properties": []
+    },
+    {
+      "terminal": "Guard",
+      "name": "Guard",
+      "figure_type": "rect",
+      "figure": 45,
+      "properties": []
+    },
+    {
+      "terminal": "Hold",
+      "name": "Hold",
+      "figure_type": "rect",
+      "figure": 47,
+      "properties": []
+    },
+    {
+      "terminal": "ClearN",
+      "name": "ClearN",
+      "figure_type": "rect",
+      "figure": 49,
+      "properties": []
+    }
+  ],
+  "shapes": [
+    {
+      "type": "rect",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.5,
+          -1.125
+        ],
+        [
+          1.5,
+          1.125
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          1.25,
+          0.9375
+        ],
+        [
+          1.25,
+          1.125
+        ]
+      ],
+      "points": [
+        [
+          1.25,
+          1.125
+        ],
+        [
+          1.25,
+          0.9375
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          1.25,
+          -1.125
+        ],
+        [
+          1.25,
+          -0.9375
+        ]
+      ],
+      "points": [
+        [
+          1.25,
+          -1.125
+        ],
+        [
+          1.25,
+          -0.9375
+        ]
+      ]
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.0625,
+          0.6875
+        ],
+        [
+          -0.4375,
+          0.9375
+        ]
+      ]
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.85,
+          0.78125
+        ],
+        [
+          -0.65,
+          0.84375
+        ]
+      ],
+      "xy": [
+        -0.75,
+        0.8125
+      ],
+      "text": "POR",
+      "height": 0.0625,
+      "justify": "centerCenter",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.0,
+          -0.375
+        ],
+        [
+          -0.5,
+          0.375
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.0,
+          -0.1875
+        ],
+        [
+          -0.9375,
+          -0.0625
+        ]
+      ],
+      "points": [
+        [
+          -1.0,
+          -0.1875
+        ],
+        [
+          -0.9375,
+          -0.125
+        ],
+        [
+          -1.0,
+          -0.0625
+        ]
+      ]
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.85,
+          0.09375
+        ],
+        [
+          -0.65,
+          0.15625
+        ]
+      ],
+      "xy": [
+        -0.75,
+        0.125
+      ],
+      "text": "ARM",
+      "height": 0.0625,
+      "justify": "centerCenter",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "ellipse",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.78125,
+          0.375
+        ],
+        [
+          -0.71875,
+          0.4375
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.75,
+          0.4375
+        ],
+        [
+          -0.75,
+          0.6875
+        ]
+      ],
+      "points": [
+        [
+          -0.75,
+          0.4375
+        ],
+        [
+          -0.75,
+          0.6875
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.1875,
+          0.1875
+        ],
+        [
+          -1.0,
+          0.1875
+        ]
+      ],
+      "points": [
+        [
+          -1.0,
+          0.1875
+        ],
+        [
+          -1.1875,
+          0.1875
+        ]
+      ]
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.21875,
+          0.28125
+        ],
+        [
+          -1.15625,
+          0.34375
+        ]
+      ],
+      "xy": [
+        -1.1875,
+        0.3125
+      ],
+      "text": "1",
+      "height": 0.0625,
+      "justify": "centerCenter",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.5,
+          -0.125
+        ],
+        [
+          -1.0,
+          -0.125
+        ]
+      ],
+      "points": [
+        [
+          -1.5,
+          -0.125
+        ],
+        [
+          -1.0,
+          -0.125
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.21875,
+          0.125
+        ],
+        [
+          -0.03125,
+          0.375
+        ]
+      ],
+      "points": [
+        [
+          -0.21875,
+          0.125
+        ],
+        [
+          -0.03125,
+          0.25
+        ],
+        [
+          -0.21875,
+          0.375
+        ],
+        [
+          -0.21875,
+          0.125
+        ]
+      ]
+    },
+    {
+      "type": "ellipse",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.03125,
+          0.21875
+        ],
+        [
+          0.03125,
+          0.28125
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.5,
+          0.25
+        ],
+        [
+          -0.21875,
+          0.25
+        ]
+      ],
+      "points": [
+        [
+          -0.5,
+          0.25
+        ],
+        [
+          -0.21875,
+          0.25
+        ]
+      ]
+    },
+    {
+      "type": "arc",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.375,
+          0.125
+        ],
+        [
+          0.54375,
+          0.625
+        ]
+      ],
+      "ellipse_bbox": [
+        [
+          0.20625,
+          0.125
+        ],
+        [
+          0.54375,
+          0.625
+        ]
+      ],
+      "angles": [
+        -1.570796,
+        1.570796
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.375,
+          0.625
+        ],
+        [
+          0.625,
+          0.625
+        ]
+      ],
+      "points": [
+        [
+          0.375,
+          0.625
+        ],
+        [
+          0.625,
+          0.625
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.375,
+          0.125
+        ],
+        [
+          0.625,
+          0.125
+        ]
+      ],
+      "points": [
+        [
+          0.375,
+          0.125
+        ],
+        [
+          0.625,
+          0.125
+        ]
+      ]
+    },
+    {
+      "type": "arc",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.625,
+          0.375
+        ],
+        [
+          0.875,
+          0.625
+        ]
+      ],
+      "ellipse_bbox": [
+        [
+          0.38125,
+          -0.1375
+        ],
+        [
+          0.89375,
+          0.625
+        ]
+      ],
+      "angles": [
+        0.3529904,
+        1.619997
+      ]
+    },
+    {
+      "type": "arc",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.625,
+          0.125
+        ],
+        [
+          0.88125,
+          0.375
+        ]
+      ],
+      "ellipse_bbox": [
+        [
+          0.39375,
+          0.125
+        ],
+        [
+          0.89375,
+          0.875
+        ]
+      ],
+      "angles": [
+        -1.637512,
+        -0.3430239
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.25,
+          0.5
+        ],
+        [
+          0.51875,
+          0.5
+        ]
+      ],
+      "points": [
+        [
+          0.25,
+          0.5
+        ],
+        [
+          0.51875,
+          0.5
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.25,
+          0.25
+        ],
+        [
+          0.51875,
+          0.25
+        ]
+      ],
+      "points": [
+        [
+          0.25,
+          0.25
+        ],
+        [
+          0.51875,
+          0.25
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.03125,
+          0.25
+        ],
+        [
+          0.25,
+          0.25
+        ]
+      ],
+      "points": [
+        [
+          0.03125,
+          0.25
+        ],
+        [
+          0.25,
+          0.25
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.5,
+          0.5
+        ],
+        [
+          0.25,
+          0.5
+        ]
+      ],
+      "points": [
+        [
+          -1.5,
+          0.5
+        ],
+        [
+          0.25,
+          0.5
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.875,
+          0.375
+        ],
+        [
+          1.5,
+          0.375
+        ]
+      ],
+      "points": [
+        [
+          1.5,
+          0.375
+        ],
+        [
+          0.875,
+          0.375
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.375,
+          -0.625
+        ],
+        [
+          0.625,
+          -0.125
+        ]
+      ],
+      "points": [
+        [
+          0.375,
+          -0.625
+        ],
+        [
+          0.375,
+          -0.125
+        ],
+        [
+          0.625,
+          -0.125
+        ]
+      ]
+    },
+    {
+      "type": "arc",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.625,
+          -0.625
+        ],
+        [
+          0.875,
+          -0.125
+        ]
+      ],
+      "ellipse_bbox": [
+        [
+          0.375,
+          -0.625
+        ],
+        [
+          0.875,
+          -0.125
+        ]
+      ],
+      "angles": [
+        -1.570796,
+        1.570796
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.375,
+          -0.625
+        ],
+        [
+          0.625,
+          -0.625
+        ]
+      ],
+      "points": [
+        [
+          0.625,
+          -0.625
+        ],
+        [
+          0.375,
+          -0.625
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.25,
+          -0.25
+        ],
+        [
+          0.375,
+          -0.25
+        ]
+      ],
+      "points": [
+        [
+          0.25,
+          -0.25
+        ],
+        [
+          0.375,
+          -0.25
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.25,
+          -0.5
+        ],
+        [
+          0.375,
+          -0.5
+        ]
+      ],
+      "points": [
+        [
+          0.25,
+          -0.5
+        ],
+        [
+          0.375,
+          -0.5
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.375,
+          -0.25
+        ],
+        [
+          0.25,
+          0.25
+        ]
+      ],
+      "points": [
+        [
+          -0.375,
+          0.25
+        ],
+        [
+          -0.375,
+          -0.25
+        ],
+        [
+          0.25,
+          -0.25
+        ]
+      ]
+    },
+    {
+      "type": "path",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.3875,
+          0.2375
+        ],
+        [
+          -0.3625,
+          0.2625
+        ]
+      ],
+      "points": [
+        [
+          -0.3875,
+          0.25
+        ],
+        [
+          -0.3625,
+          0.25
+        ]
+      ],
+      "width": 0.025,
+      "style": "truncateExtend"
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.84375,
+          -0.625
+        ],
+        [
+          -0.65625,
+          -0.375
+        ]
+      ],
+      "points": [
+        [
+          -0.84375,
+          -0.625
+        ],
+        [
+          -0.65625,
+          -0.5
+        ],
+        [
+          -0.84375,
+          -0.375
+        ],
+        [
+          -0.84375,
+          -0.625
+        ]
+      ]
+    },
+    {
+      "type": "ellipse",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.65625,
+          -0.53125
+        ],
+        [
+          -0.59375,
+          -0.46875
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.25,
+          -0.5
+        ],
+        [
+          -0.84375,
+          -0.125
+        ]
+      ],
+      "points": [
+        [
+          -1.25,
+          -0.125
+        ],
+        [
+          -1.25,
+          -0.5
+        ],
+        [
+          -0.84375,
+          -0.5
+        ]
+      ]
+    },
+    {
+      "type": "path",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.2625,
+          -0.1375
+        ],
+        [
+          -1.2375,
+          -0.1125
+        ]
+      ],
+      "points": [
+        [
+          -1.2625,
+          -0.125
+        ],
+        [
+          -1.2375,
+          -0.125
+        ]
+      ],
+      "width": 0.025,
+      "style": "truncateExtend"
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.59375,
+          -0.5
+        ],
+        [
+          0.25,
+          -0.5
+        ]
+      ],
+      "points": [
+        [
+          -0.59375,
+          -0.5
+        ],
+        [
+          0.25,
+          -0.5
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.875,
+          -0.375
+        ],
+        [
+          1.5,
+          -0.375
+        ]
+      ],
+      "points": [
+        [
+          1.5,
+          -0.375
+        ],
+        [
+          0.875,
+          -0.375
+        ]
+      ]
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "pin",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          1.2375,
+          1.1125
+        ],
+        [
+          1.2625,
+          1.1375
+        ]
+      ],
+      "net": "VDD"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "pin",
+        "label"
+      ],
+      "bbox": [
+        [
+          1.3125,
+          0.96875
+        ],
+        [
+          1.5,
+          1.03125
+        ]
+      ],
+      "xy": [
+        1.3125,
+        1.0
+      ],
+      "text": "VDD",
+      "height": 0.0625,
+      "justify": "centerLeft",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "pin",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          1.2375,
+          -1.1375
+        ],
+        [
+          1.2625,
+          -1.1125
+        ]
+      ],
+      "net": "VSS"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "pin",
+        "label"
+      ],
+      "bbox": [
+        [
+          1.3125,
+          -1.03125
+        ],
+        [
+          1.49375,
+          -0.96875
+        ]
+      ],
+      "xy": [
+        1.3125,
+        -1.0
+      ],
+      "text": "VSS",
+      "height": 0.0625,
+      "justify": "centerLeft",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "pin",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.5125,
+          -0.1375
+        ],
+        [
+          -1.4875,
+          -0.1125
+        ]
+      ],
+      "net": "Sample"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "pin",
+        "label"
+      ],
+      "bbox": [
+        [
+          -1.4375,
+          -0.11875
+        ],
+        [
+          -1.09375,
+          -0.03125
+        ]
+      ],
+      "xy": [
+        -1.4375,
+        -0.0625
+      ],
+      "text": "Sample",
+      "height": 0.0625,
+      "justify": "centerLeft",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "pin",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.5125,
+          0.4875
+        ],
+        [
+          -1.4875,
+          0.5125
+        ]
+      ],
+      "net": "Guard"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "pin",
+        "label"
+      ],
+      "bbox": [
+        [
+          -1.4375,
+          0.53125
+        ],
+        [
+          -1.1625,
+          0.59375
+        ]
+      ],
+      "xy": [
+        -1.4375,
+        0.5625
+      ],
+      "text": "Guard",
+      "height": 0.0625,
+      "justify": "centerLeft",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "pin",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          1.4875,
+          0.3625
+        ],
+        [
+          1.5125,
+          0.3875
+        ]
+      ],
+      "net": "Hold"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "pin",
+        "label"
+      ],
+      "bbox": [
+        [
+          1.23125,
+          0.40625
+        ],
+        [
+          1.4375,
+          0.46875
+        ]
+      ],
+      "xy": [
+        1.4375,
+        0.4375
+      ],
+      "text": "Hold",
+      "height": 0.0625,
+      "justify": "centerRight",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "pin",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          1.4875,
+          -0.3875
+        ],
+        [
+          1.5125,
+          -0.3625
+        ]
+      ],
+      "net": "ClearN"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "pin",
+        "label"
+      ],
+      "bbox": [
+        [
+          1.13125,
+          -0.34375
+        ],
+        [
+          1.4375,
+          -0.28125
+        ]
+      ],
+      "xy": [
+        1.4375,
+        -0.3125
+      ],
+      "text": "ClearN",
+      "height": 0.0625,
+      "justify": "centerRight",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "instance",
+        "label"
+      ],
+      "bbox": [
+        [
+          -0.4,
+          1.275
+        ],
+        [
+          0.4,
+          1.35
+        ]
+      ],
+      "xy": [
+        0.0,
+        1.3125
+      ],
+      "text": "[@instanceName]",
+      "height": 0.0625,
+      "justify": "centerCenter",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "NLPLabel"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "device",
+        "label"
+      ],
+      "bbox": [
+        [
+          -0.2875,
+          -1.35
+        ],
+        [
+          0.2875,
+          -1.28125
+        ]
+      ],
+      "xy": [
+        0.0,
+        -1.3125
+      ],
+      "text": "[@cellName]",
+      "height": 0.0625,
+      "justify": "centerCenter",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "NLPLabel"
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "instance",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.625,
+          -1.25
+        ],
+        [
+          1.625,
+          1.25
+        ]
+      ]
+    }
+  ]
+}

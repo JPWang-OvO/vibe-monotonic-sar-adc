@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 704">
+<rect width="100%" height="100%" fill="white"/>
+<desc>SAR_BIAS; terminals follow the accepted Spectre declaration order.</desc>
+<g stroke="#287740" stroke-width="1.5" fill="none">
+<polyline points="320,160 320,240"/>
+<polyline points="320,240 336,240 336,320 320,320 320,336"/>
+<polyline points="288,256 288,304"/>
+<ellipse cx="280" cy="280" rx="8" ry="8"/>
+<polyline points="272,280 224,280 224,336 320,336"/>
+<polyline points="316.8,336 323.2,336" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="512,336 320,336"/>
+<ellipse cx="320" cy="416" rx="32" ry="32"/>
+<polyline points="320,336 320,384"/>
+<polyline points="320,448 320,544"/>
+<polyline points="320,400 320,432"/>
+<polyline points="310.4,422.4 320,432 329.6,422.4"/>
+<polyline points="400,408 432,408"/>
+<polyline points="400,424 432,424"/>
+<polyline points="416,384 416,408"/>
+<polyline points="416,424 416,448"/>
+<polyline points="416,384 416,336"/>
+<polyline points="412.8,336 419.2,336" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="416,448 416,496 320,496"/>
+<polyline points="316.8,496 323.2,496" stroke-width="6.4" stroke-linecap="butt"/>
+</g><g fill="#287740" font-family="Arial,sans-serif">
+<text x="240" y="416" font-size="16" text-anchor="middle" dominant-baseline="central">I bias</text>
+<text x="320" y="112" font-size="16" text-anchor="middle" dominant-baseline="central">SAR_BIAS</text>
+</g><g fill="#c53e32" font-family="Arial,sans-serif" font-size="16">
+<g data-port="VDD" data-side="top"><rect x="316.8" y="156.8" width="6.4" height="6.4"/><text x="336" y="192" text-anchor="start" dominant-baseline="central">VDD</text></g>
+<g data-port="Bias" data-side="right"><rect x="508.8" y="332.8" width="6.4" height="6.4"/><text x="496" y="320" text-anchor="end" dominant-baseline="central">Bias</text></g>
+<g data-port="VSS" data-side="bottom"><rect x="316.8" y="540.8" width="6.4" height="6.4"/><text x="336" y="512" text-anchor="start" dominant-baseline="central">VSS</text></g>
+</g></svg>
