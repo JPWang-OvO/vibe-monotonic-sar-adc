@@ -14,6 +14,9 @@
     },
     "transistor": {
       "netlist": "transistor/netlist.scs"
+    },
+    "drive": {
+      "netlist": "drive/netlist.scs"
     }
   }
 }

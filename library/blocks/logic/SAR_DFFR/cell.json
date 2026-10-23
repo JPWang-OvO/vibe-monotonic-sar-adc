@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_DFFR",
+  "ports": [
+    "D",
+    "CP",
+    "CDN",
+    "Q",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "transistor": {
+      "netlist": "transistor/netlist.scs"
+    }
+  }
+}

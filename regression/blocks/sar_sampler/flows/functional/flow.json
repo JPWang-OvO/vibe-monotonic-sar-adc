@@ -5,10 +5,11 @@
   "process": "tsmc18",
   "conditions": [
     {
-      "id": "tt",
+      "id": "c120",
       "corner": "tt",
       "tokens": {
-        "TEMP": 25
+        "TEMP": 25,
+        "CCOMP": "120f"
       },
       "cell_views": {},
       "enrichment": true

@@ -6,6 +6,7 @@
     "Top",
     "Sample",
     "SampleB",
+    "Gate",
     "VDD",
     "VSS"
   ],
@@ -16,6 +17,24 @@
     },
     "transistor": {
       "netlist": "transistor/netlist.scs"
+    },
+    "boost2": {
+      "netlist": "boost2/netlist.scs"
+    },
+    "single256": {
+      "netlist": "single256/netlist.scs"
+    },
+    "boost2p": {
+      "netlist": "boost2p/netlist.scs"
+    },
+    "junction192": {
+      "netlist": "junction192/netlist.scs"
+    },
+    "junction256": {
+      "netlist": "junction256/netlist.scs"
+    },
+    "junction320": {
+      "netlist": "junction320/netlist.scs"
     }
   }
 }

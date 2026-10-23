@@ -23,6 +23,6 @@ CL6 (D6 VSS) capacitor c=10f
 CL7 (D7 VSS) capacitor c=10f
 CL8 (D8 VSS) capacitor c=10f
 CL9 (D9 VSS) capacitor c=10f
-tran tran stop=5.50u
+tran tran stop=5.80u
 saveOptions options save=selected
 save Vinp Vinn Clks D0 D1 D2 D3 D4 D5 D6 D7 D8 D9 EOC I_adc.Sample I_adc.ClkC I_adc.Valid I_adc.Outp I_adc.Outn I_adc.Vp I_adc.Vn VDD:p VREFP:p VCM:p Vclock:p

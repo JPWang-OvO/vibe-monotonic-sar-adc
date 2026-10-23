@@ -47,7 +47,7 @@ def measure_sar(case,raw):
         valid_times=completes[bisect.bisect_right(completes,end):bisect.bisect_left(completes,stop)]
         done_times=done[bisect.bisect_right(done,end):bisect.bisect_left(done,stop)]
         if len(done_times)!=1 or done_times[0]>=read:incomplete+=1
-        else:margins.append(stop-done_times[0])
+        if len(done_times)==1:margins.append(stop-done_times[0])
         count_errors+=int(len(valid_times)!=cfg['bits'])
         vp=interpolate(t,wave['Vinp'],end);vn=interpolate(t,wave['Vinn'],end)
         expected=min(1023,max(0,math.floor(((vp-vn)+1.8)/3.6*1024)))
@@ -67,7 +67,7 @@ def measure_sar(case,raw):
                 else:rn-=delta
     fs=(len(selected)-1)/(selected[-1]-selected[0])
     fin=float(case['condition']['tokens']['FIN']);k=round(fin*n/fs)
-    spec=fft_codes(codes,fs,k)
+    spec=fft_codes(codes,fs,k) if cfg.get('fft',True) else None
     power={}
     begin=selected[0];end=begin+n/fs
     for supply,voltage in [('VDD',1.8),('VREFP',1.8),('VCM',.9)]:
@@ -77,9 +77,10 @@ def measure_sar(case,raw):
     metrics=dict(sample_count=len(codes),invalid_bits=invalid,incomplete_conversions=incomplete,
         comparison_count_errors=count_errors,code_mismatches=mismatches,
         period_error_s=max(abs(b-a-period) for a,b in zip(selected,selected[1:])),
-        sndr_db=spec['sndr_db'],sample_window_min_s=min(widths),sample_window_max_s=max(widths),
+        sample_window_min_s=min(widths),sample_window_max_s=max(widths),
         timing_margin_min_s=min(margins) if margins else -1,
         step_node_error_max_v=max(errors) if errors else 1e9)
+    if spec is not None:metrics['sndr_db']=spec['sndr_db']
     if not cfg.get('behavioral_alignment'):
         metrics.pop('code_mismatches')
         metrics['decision_errors_far_boundary']=far_errors

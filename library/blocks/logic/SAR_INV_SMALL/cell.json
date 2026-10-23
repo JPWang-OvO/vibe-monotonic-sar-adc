@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_INV_SMALL",
+  "ports": [
+    "A",
+    "Z",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "transistor": {
+      "netlist": "transistor/netlist.scs"
+    }
+  }
+}

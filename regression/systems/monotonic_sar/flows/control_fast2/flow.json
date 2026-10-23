@@ -1,0 +1,133 @@
+{
+  "schema_version": 1,
+  "id": "sar_control_fast2",
+  "testbench": "library/testbenches/systems/monotonic_sar/tb_SAR_smoke/spectre/netlist.scs",
+  "process": "tsmc18",
+  "conditions": [
+    {
+      "id": "tt_k3",
+      "tokens": {
+        "FIN": 585937.5,
+        "TEMP": 25
+      },
+      "cell_views": {
+        "SAR_PHASE": "drive",
+        "SAR_INV": "drive",
+        "SAR_CMP": "fast2",
+        "SAR_ASYNC": "fast2",
+        "SAR_BIT": "fast2",
+        "SAR_OUT": "transistor",
+        "SAR_BIAS": "transistor",
+        "SAR_FRONTEND": "veriloga"
+      },
+      "enrichment": true,
+      "corner": "tt"
+    },
+    {
+      "id": "tt_k51",
+      "tokens": {
+        "FIN": 9960937.5,
+        "TEMP": 25
+      },
+      "cell_views": {
+        "SAR_PHASE": "drive",
+        "SAR_INV": "drive",
+        "SAR_CMP": "fast2",
+        "SAR_ASYNC": "fast2",
+        "SAR_BIT": "fast2",
+        "SAR_OUT": "transistor",
+        "SAR_BIAS": "transistor",
+        "SAR_FRONTEND": "veriloga"
+      },
+      "enrichment": true,
+      "corner": "tt"
+    },
+    {
+      "id": "ss_k3",
+      "tokens": {
+        "FIN": 585937.5,
+        "TEMP": 125
+      },
+      "cell_views": {
+        "SAR_PHASE": "drive",
+        "SAR_INV": "drive",
+        "SAR_CMP": "fast2",
+        "SAR_ASYNC": "fast2",
+        "SAR_BIT": "fast2",
+        "SAR_OUT": "transistor",
+        "SAR_BIAS": "transistor",
+        "SAR_FRONTEND": "veriloga"
+      },
+      "enrichment": true,
+      "corner": "ss"
+    },
+    {
+      "id": "ss_k51",
+      "tokens": {
+        "FIN": 9960937.5,
+        "TEMP": 125
+      },
+      "cell_views": {
+        "SAR_PHASE": "drive",
+        "SAR_INV": "drive",
+        "SAR_CMP": "fast2",
+        "SAR_ASYNC": "fast2",
+        "SAR_BIT": "fast2",
+        "SAR_OUT": "transistor",
+        "SAR_BIAS": "transistor",
+        "SAR_FRONTEND": "veriloga"
+      },
+      "enrichment": true,
+      "corner": "ss"
+    }
+  ],
+  "simulator": {
+    "arguments": [
+      "-64",
+      "+preset=ax"
+    ],
+    "threads": 8,
+    "timeout_s": 600,
+    "analyses": "Development functional/timing smoke: 32 conversions after 16 startup cycles; no FFT acceptance",
+    "precision": {
+      "preset": "AX"
+    }
+  },
+  "measurement": {
+    "kind": "sar",
+    "bits": 10,
+    "n": 32,
+    "discard_cycles": 16,
+    "read_offset_s": 1.4e-08,
+    "logic_low_v": 0.18,
+    "logic_high_v": 1.62,
+    "expected_period_s": 2e-08,
+    "behavioral_alignment": false,
+    "lsb_v": 0.003515625,
+    "fft": false
+  },
+  "criteria": {
+    "sample_count": {
+      "min": 32,
+      "max": 32
+    },
+    "invalid_bits": {
+      "max": 0
+    },
+    "incomplete_conversions": {
+      "max": 0
+    },
+    "comparison_count_errors": {
+      "max": 0
+    },
+    "period_error_s": {
+      "max": 1e-12
+    },
+    "decision_errors_far_boundary": {
+      "max": 0
+    },
+    "timing_margin_min_s": {
+      "min": 2e-09
+    }
+  }
+}

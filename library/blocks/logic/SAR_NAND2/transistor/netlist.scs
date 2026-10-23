@@ -1,0 +1,8 @@
+simulator lang=spectre
+// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
+subckt SAR_NAND2 (A B Z VDD VSS)
+Mn0 (Z A N0 VSS) nch w=2u l=0.18u nf=1 m=1
+Mn1 (N0 B VSS VSS) nch w=2u l=0.18u nf=1 m=1
+Mp0 (Z A VDD VDD) pch w=2u l=0.18u nf=1 m=1
+Mp1 (Z B VDD VDD) pch w=2u l=0.18u nf=1 m=1
+ends SAR_NAND2
