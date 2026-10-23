@@ -4,11 +4,15 @@ from pathlib import Path
 from regression.common.project import read_json
 from regression.common.runner import ssh,checked
 folder=Path(sys.argv[1]);case_id=sys.argv[2];batch=read_json(folder/'batch.json');runner=ssh(batch)
-script='''import json,bisect
+script='''import json,bisect,re,subprocess
 from pathlib import Path
 from regression.common.psf import read_psf
 from regression.systems.monotonic_sar.measure import edges
-w=read_psf(Path('cases/'+CASE+'/raw/tran.tran.tran'));t=w['time'];s=w['I_adc.Sample']
+signals=['time','Clks','I_adc.Sample','I_adc.I_phase.Clock','I_adc.I_phase.R0']+['I_adc.I_phase.SampleN'+str(i) for i in range(5)]
+source=Path('cases/'+CASE+'/raw/tran.tran.tran');selected=source.parent.parent/'phase_diagnostic.psf'
+pattern='^(HEADER|TYPE|SWEEP|TRACE|VALUE|END|[)])$|^"('+'|'.join(re.escape(n) for n in signals)+')"'
+with selected.open('w') as out:subprocess.run(['grep','-E',pattern,str(source)],stdout=out,check=True)
+w=read_psf(selected);t=w['time'];s=w['I_adc.Sample']
 result=json.loads(Path('cases/'+CASE+'/results.json').read_text());ends=[r['sample_time_s'] for r in result['conversions']]
 j=max(range(1,len(ends)),key=lambda i:abs(ends[i]-ends[i-1]-20e-9));rows=[]
 for at in ends[j-1:j+1]:
@@ -24,5 +28,5 @@ if 'I_adc.I_phase.Clock' in w:
 print(json.dumps(report))
 '''.replace('CASE',repr(case_id))
 local=folder/(case_id+'_period_diagnostic.py');local.write_text(script,encoding='utf-8',newline='\n');checked(runner.upload(local,batch['remote']+'/'+local.name))
-result=checked(runner.run_command('cd '+shlex.quote(batch['remote'])+' && '+shlex.join([batch['environment']['server_python'],local.name]),timeout=90))
+result=checked(runner.run_command('cd '+shlex.quote(batch['remote'])+' && '+shlex.join([batch['environment']['server_python'],local.name]),timeout=180))
 (folder/(case_id+'_period_diagnostic.json')).write_text(result,encoding='utf-8');print(result)
