@@ -1,13 +1,13 @@
 {
-  "source_flow": "regression/systems/monotonic_sar/flows/physical_clock_short80/flow.json",
+  "source_flow": "regression/systems/monotonic_sar/flows/physical_noise_closure/flow.json",
   "cell_views": {
-    "SAR_PHASE": "short80",
+    "SAR_PHASE": "quiet320",
     "SAR_INV": "drive2",
     "SAR_CMP": "current",
     "SAR_ASYNC": "weighted4_g2_quiet",
     "SAR_BIT": "pullup",
     "SAR_OUT": "fast",
-    "SAR_BIAS": "transistor",
+    "SAR_BIAS": "fast",
     "SAR_FRONTEND": "candidate",
     "SAR_SAMPLE": "junction384",
     "SAR_CDAC": "scaled",
@@ -18,7 +18,8 @@
     "SAR_WAIT_GATE": "damped_hold22",
     "SAR_ARM": "quiet",
     "SAR_SAMPLE_GUARD2": "quiet15",
-    "SAR_OUTPUT_FF": "fast3"
+    "SAR_OUTPUT_FF": "fast3",
+    "SAR_DFFR": "quiet"
   },
   "acceptance": "config/acceptance.json",
   "flows": [
@@ -36,5 +37,5 @@
     "regression/systems/monotonic_sar/flows/final_stage3_ff_125_k51/flow.json"
   ],
   "case_count": 20,
-  "status": "electrical_acceptance_incomplete"
+  "status": "candidate_pending_all_stages"
 }

@@ -9,13 +9,13 @@
       "corner": "ff",
       "enrichment": true,
       "cell_views": {
-        "SAR_PHASE": "short80",
+        "SAR_PHASE": "quiet320",
         "SAR_INV": "drive2",
         "SAR_CMP": "current",
         "SAR_ASYNC": "weighted4_g2_quiet",
         "SAR_BIT": "pullup",
         "SAR_OUT": "fast",
-        "SAR_BIAS": "transistor",
+        "SAR_BIAS": "fast",
         "SAR_FRONTEND": "candidate",
         "SAR_SAMPLE": "junction384",
         "SAR_CDAC": "scaled",
@@ -26,7 +26,8 @@
         "SAR_WAIT_GATE": "damped_hold22",
         "SAR_ARM": "quiet",
         "SAR_SAMPLE_GUARD2": "quiet15",
-        "SAR_OUTPUT_FF": "fast3"
+        "SAR_OUTPUT_FF": "fast3",
+        "SAR_DFFR": "quiet"
       },
       "tokens": {
         "FIN": 585937.5,
@@ -39,13 +40,13 @@
       "corner": "ff",
       "enrichment": true,
       "cell_views": {
-        "SAR_PHASE": "short80",
+        "SAR_PHASE": "quiet320",
         "SAR_INV": "drive2",
         "SAR_CMP": "current",
         "SAR_ASYNC": "weighted4_g2_quiet",
         "SAR_BIT": "pullup",
         "SAR_OUT": "fast",
-        "SAR_BIAS": "transistor",
+        "SAR_BIAS": "fast",
         "SAR_FRONTEND": "candidate",
         "SAR_SAMPLE": "junction384",
         "SAR_CDAC": "scaled",
@@ -56,7 +57,8 @@
         "SAR_WAIT_GATE": "damped_hold22",
         "SAR_ARM": "quiet",
         "SAR_SAMPLE_GUARD2": "quiet15",
-        "SAR_OUTPUT_FF": "fast3"
+        "SAR_OUTPUT_FF": "fast3",
+        "SAR_DFFR": "quiet"
       },
       "tokens": {
         "FIN": 585937.5,

@@ -39,7 +39,7 @@ for folder in a.batches:
 expected={(c,t,n,k) for c,t in [('tt',25),('ss',-40),('ss',125),('ff',-40),('ff',125)] for n in (False,True) for k in (3,51)}
 assert seen<=expected,('Unexpected formal conditions',seen-expected)
 complete=seen==expected and source_equal and all(r['passed'] for r in rows)
-report=dict(all_electrical_pass=complete,dut_sources_equal=source_equal,required_cases=20,
+report=dict(all_electrical_pass=complete,dut_sources_equal=source_equal,cell_views=final['cell_views'],required_cases=20,
     completed_cases=len(rows),passed_cases=sum(r['passed'] for r in rows),
     batches=[str(p.resolve()) for p in a.batches],cases=rows,
     missing_cases=[list(k) for k in sorted(expected-seen)])
