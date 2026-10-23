@@ -1,0 +1,102 @@
+{
+  "schema": "native-oa-v1",
+  "source_library": "MONOTONIC_SAR",
+  "circuit": {
+    "cell": "SAR_STARTUP",
+    "view": "symbol",
+    "view_type": "schematicSymbol",
+    "properties": [
+      {
+        "name": "portOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Sample\" \"Guard\" \"Hold\" \"ClearN\" \"VDD\" \"VSS\")"
+        }
+      },
+      {
+        "name": "termOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Sample\" \"Guard\" \"Hold\" \"ClearN\" \"VDD\" \"VSS\")"
+        }
+      }
+    ],
+    "instances": [],
+    "terminals": [
+      {
+        "name": "ClearN",
+        "direction": "output",
+        "net": "ClearN",
+        "properties": []
+      },
+      {
+        "name": "Guard",
+        "direction": "input",
+        "net": "Guard",
+        "properties": []
+      },
+      {
+        "name": "Hold",
+        "direction": "output",
+        "net": "Hold",
+        "properties": []
+      },
+      {
+        "name": "Sample",
+        "direction": "input",
+        "net": "Sample",
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "direction": "inputOutput",
+        "net": "VDD",
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "direction": "inputOutput",
+        "net": "VSS",
+        "properties": []
+      }
+    ],
+    "nets": [
+      {
+        "name": "ClearN",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Guard",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Hold",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Sample",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      }
+    ]
+  }
+}

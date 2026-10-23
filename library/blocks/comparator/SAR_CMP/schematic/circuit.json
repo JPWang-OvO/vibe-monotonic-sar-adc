@@ -1,0 +1,627 @@
+{
+  "cell": "SAR_CMP",
+  "ports": [
+    "Vp",
+    "Vn",
+    "ClkC",
+    "Outp",
+    "Outn",
+    "Valid",
+    "Bias",
+    "VDD",
+    "VSS"
+  ],
+  "parameters": {},
+  "instances": [
+    {
+      "name": "Mp_bias",
+      "nodes": [
+        "BiasDrain",
+        "Bias",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "48u",
+        "l": "0.36u",
+        "nf": "6",
+        "m": "1"
+      },
+      "connections": {
+        "D": "BiasDrain",
+        "G": "Bias",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "1.296e-11",
+        "as": "1.632e-11",
+        "pd": "51.240u",
+        "ps": "68.080u",
+        "nrd": "0.005625",
+        "nrs": "0.005625",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "48u",
+        "w": "0.000008",
+        "l": "0.36u",
+        "fingers": "6",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mp_clock",
+      "nodes": [
+        "Tail",
+        "ClkC",
+        "BiasDrain",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "48u",
+        "l": "0.18u",
+        "nf": "6",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Tail",
+        "G": "ClkC",
+        "S": "BiasDrain",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "1.296e-11",
+        "as": "1.632e-11",
+        "pd": "51.240u",
+        "ps": "68.080u",
+        "nrd": "0.005625",
+        "nrs": "0.005625",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "48u",
+        "w": "0.000008",
+        "l": "0.18u",
+        "fingers": "6",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mp_input_p",
+      "nodes": [
+        "Xp",
+        "Vp",
+        "Tail",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "8u",
+        "l": "0.18u",
+        "nf": "2",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Xp",
+        "G": "Vp",
+        "S": "Tail",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "2.16e-12",
+        "as": "3.84e-12",
+        "pd": "9.08u",
+        "ps": "17.920u",
+        "nrd": "0.03375",
+        "nrs": "0.03375",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "8u",
+        "w": "0.000004",
+        "l": "0.18u",
+        "fingers": "2",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mp_input_n",
+      "nodes": [
+        "Xn",
+        "Vn",
+        "Tail",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "8u",
+        "l": "0.18u",
+        "nf": "2",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Xn",
+        "G": "Vn",
+        "S": "Tail",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "2.16e-12",
+        "as": "3.84e-12",
+        "pd": "9.08u",
+        "ps": "17.920u",
+        "nrd": "0.03375",
+        "nrs": "0.03375",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "8u",
+        "w": "0.000004",
+        "l": "0.18u",
+        "fingers": "2",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mn_latch_p",
+      "nodes": [
+        "Xp",
+        "Xn",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "8u",
+        "l": "0.18u",
+        "nf": "2",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Xp",
+        "G": "Xn",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "2.16e-12",
+        "as": "3.84e-12",
+        "pd": "9.08u",
+        "ps": "17.920u",
+        "nrd": "0.03375",
+        "nrs": "0.03375",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "8u",
+        "w": "0.000004",
+        "l": "0.18u",
+        "fingers": "2",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mn_latch_n",
+      "nodes": [
+        "Xn",
+        "Xp",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "8u",
+        "l": "0.18u",
+        "nf": "2",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Xn",
+        "G": "Xp",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "2.16e-12",
+        "as": "3.84e-12",
+        "pd": "9.08u",
+        "ps": "17.920u",
+        "nrd": "0.03375",
+        "nrs": "0.03375",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "8u",
+        "w": "0.000004",
+        "l": "0.18u",
+        "fingers": "2",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mn_reset_p",
+      "nodes": [
+        "Xp",
+        "ClkC",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "8u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Xp",
+        "G": "ClkC",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "3.84e-12",
+        "as": "3.84e-12",
+        "pd": "16.960u",
+        "ps": "16.960u",
+        "nrd": "0.03375",
+        "nrs": "0.03375",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "8u",
+        "w": "0.000008",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mn_reset_n",
+      "nodes": [
+        "Xn",
+        "ClkC",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "8u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Xn",
+        "G": "ClkC",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "3.84e-12",
+        "as": "3.84e-12",
+        "pd": "16.960u",
+        "ps": "16.960u",
+        "nrd": "0.03375",
+        "nrs": "0.03375",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "8u",
+        "w": "0.000008",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "I_outp",
+      "nodes": [
+        "Xp",
+        "Np0",
+        "VDD",
+        "VSS"
+      ],
+      "model": "INVD1BWP7T",
+      "parameters": {},
+      "connections": {
+        "I": "Xp",
+        "ZN": "Np0",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "INVD1BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_outp1",
+      "nodes": [
+        "Np0",
+        "Np1",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "1"
+      },
+      "connections": {
+        "A": "Np0",
+        "Z": "Np1",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "1"
+      }
+    },
+    {
+      "name": "I_outp2",
+      "nodes": [
+        "Np1",
+        "Outp",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "4"
+      },
+      "connections": {
+        "A": "Np1",
+        "Z": "Outp",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "4"
+      }
+    },
+    {
+      "name": "I_outn",
+      "nodes": [
+        "Xn",
+        "Nn0",
+        "VDD",
+        "VSS"
+      ],
+      "model": "INVD1BWP7T",
+      "parameters": {},
+      "connections": {
+        "I": "Xn",
+        "ZN": "Nn0",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "INVD1BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_outn1",
+      "nodes": [
+        "Nn0",
+        "Nn1",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "1"
+      },
+      "connections": {
+        "A": "Nn0",
+        "Z": "Nn1",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "1"
+      }
+    },
+    {
+      "name": "I_outn2",
+      "nodes": [
+        "Nn1",
+        "Outn",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "4"
+      },
+      "connections": {
+        "A": "Nn1",
+        "Z": "Outn",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "4"
+      }
+    },
+    {
+      "name": "I_valid",
+      "nodes": [
+        "Np0",
+        "Nn0",
+        "ValidRaw",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_NAND2",
+      "parameters": {},
+      "connections": {
+        "A": "Np0",
+        "B": "Nn0",
+        "Z": "ValidRaw",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_NAND2",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_vb0",
+      "nodes": [
+        "ValidRaw",
+        "ValidB",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "1"
+      },
+      "connections": {
+        "A": "ValidRaw",
+        "Z": "ValidB",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "1"
+      }
+    },
+    {
+      "name": "I_vb1",
+      "nodes": [
+        "ValidB",
+        "Valid",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "4"
+      },
+      "connections": {
+        "A": "ValidB",
+        "Z": "Valid",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "4"
+      }
+    }
+  ],
+  "staged_source": "library__blocks__comparator__SAR_CMP__regen8__netlist.scs"
+}

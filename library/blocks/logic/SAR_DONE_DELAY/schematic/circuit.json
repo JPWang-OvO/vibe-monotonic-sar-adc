@@ -1,0 +1,67 @@
+{
+  "cell": "SAR_DONE_DELAY",
+  "ports": [
+    "A",
+    "Z",
+    "VDD",
+    "VSS"
+  ],
+  "parameters": {},
+  "instances": [
+    {
+      "name": "I_b0",
+      "nodes": [
+        "A",
+        "N0",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "4"
+      },
+      "connections": {
+        "A": "A",
+        "Z": "N0",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "4"
+      }
+    },
+    {
+      "name": "I_b1",
+      "nodes": [
+        "N0",
+        "Z",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "16"
+      },
+      "connections": {
+        "A": "N0",
+        "Z": "Z",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "16"
+      }
+    }
+  ],
+  "staged_source": "library__blocks__logic__SAR_DONE_DELAY__fastout__netlist.scs"
+}

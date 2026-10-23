@@ -1,0 +1,255 @@
+{
+  "schema": "native-oa-v1",
+  "source_library": "MONOTONIC_SAR",
+  "circuit": {
+    "cell": "SAR_OUT",
+    "view": "schematic",
+    "view_type": "schematic",
+    "properties": [
+      {
+        "name": "connectivityLastUpdated",
+        "type": "int",
+        "value": 710
+      },
+      {
+        "name": "lastSchematicExtraction",
+        "type": "time",
+        "value": "Oct 24 03:58:35 2026"
+      },
+      {
+        "name": "net#",
+        "type": "int",
+        "value": 3
+      },
+      {
+        "name": "pin#",
+        "type": "int",
+        "value": 5
+      },
+      {
+        "name": "portOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"D\" \"Done\" \"Q\" \"VDD\" \"VSS\")"
+        }
+      },
+      {
+        "name": "schGeometryLastUpdated",
+        "type": "int",
+        "value": 710
+      },
+      {
+        "name": "schGeometryVersion",
+        "type": "string",
+        "value": "sch.ds.gm.1.4"
+      },
+      {
+        "name": "schXtrVersion",
+        "type": "string",
+        "value": "sch.10.0"
+      }
+    ],
+    "instances": [
+      {
+        "name": "I_buf0",
+        "master": [
+          "MONOTONIC_SAR",
+          "SAR_DRIVE",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "scale",
+            "type": "string",
+            "value": "1"
+          }
+        ],
+        "connections": {
+          "VSS": "VSS",
+          "VDD": "VDD",
+          "Z": "StoredB",
+          "A": "Stored"
+        }
+      },
+      {
+        "name": "I_buf1",
+        "master": [
+          "MONOTONIC_SAR",
+          "SAR_DRIVE",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "scale",
+            "type": "string",
+            "value": "2"
+          }
+        ],
+        "connections": {
+          "VSS": "VSS",
+          "VDD": "VDD",
+          "Z": "Q",
+          "A": "StoredB"
+        }
+      },
+      {
+        "name": "I_latch",
+        "master": [
+          "MONOTONIC_SAR",
+          "SAR_OUTPUT_FF",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {
+          "VSS": "VSS",
+          "VDD": "VDD",
+          "CP": "Done",
+          "Q": "Stored",
+          "D": "D"
+        }
+      },
+      {
+        "name": "PIN0",
+        "master": [
+          "basic",
+          "ipin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN1",
+        "master": [
+          "basic",
+          "ipin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN2",
+        "master": [
+          "basic",
+          "opin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN3",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN4",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      }
+    ],
+    "terminals": [
+      {
+        "name": "D",
+        "direction": "input",
+        "net": "D",
+        "properties": []
+      },
+      {
+        "name": "Done",
+        "direction": "input",
+        "net": "Done",
+        "properties": []
+      },
+      {
+        "name": "Q",
+        "direction": "output",
+        "net": "Q",
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "direction": "inputOutput",
+        "net": "VDD",
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "direction": "inputOutput",
+        "net": "VSS",
+        "properties": []
+      }
+    ],
+    "nets": [
+      {
+        "name": "D",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Done",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Q",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Stored",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "StoredB",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      }
+    ]
+  }
+}

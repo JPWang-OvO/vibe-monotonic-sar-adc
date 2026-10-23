@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 896 768">
+<rect width="100%" height="100%" fill="white"/>
+<desc>SAR_BOOST; terminals follow the accepted Spectre declaration order.</desc>
+<g stroke="#287740" stroke-width="1.5" fill="none">
+<rect x="128" y="160" width="640" height="448"/>
+<polyline points="440,336 440,304"/>
+<polyline points="456,336 456,304"/>
+<polyline points="416,320 440,320"/>
+<polyline points="456,320 480,320"/>
+<polyline points="256,320 272,320 304,304"/>
+<polyline points="304,320 320,320"/>
+<polyline points="576,320 592,320 624,304"/>
+<polyline points="624,320 640,320"/>
+<polyline points="128,320 256,320"/>
+<polyline points="320,320 416,320"/>
+<polyline points="480,320 576,320"/>
+<polyline points="768,320 640,320"/>
+<polyline points="512,160 512,208"/>
+<polyline points="512,208 512,224 528,256"/>
+<ellipse cx="512" cy="224" rx="3.2" ry="3.2"/>
+<ellipse cx="512" cy="272" rx="3.2" ry="3.2"/>
+<polyline points="512,272 512,320"/>
+<polyline points="508.8,320 515.2,320" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="368,320 368,400"/>
+<ellipse cx="368" cy="400" rx="3.2" ry="3.2"/>
+<polyline points="368,416 384,448"/>
+<ellipse cx="368" cy="464" rx="3.2" ry="3.2"/>
+<polyline points="368,464 368,496"/>
+<polyline points="352,496 384,496"/>
+<polyline points="358.4,505.6 377.6,505.6"/>
+<polyline points="364.8,515.2 371.2,515.2"/>
+<polyline points="364.8,320 371.2,320" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="688,320 688,400"/>
+<ellipse cx="688" cy="400" rx="3.2" ry="3.2"/>
+<polyline points="688,416 704,448"/>
+<ellipse cx="688" cy="464" rx="3.2" ry="3.2"/>
+<polyline points="688,464 688,496"/>
+<polyline points="672,496 704,496"/>
+<polyline points="678.4,505.6 697.6,505.6"/>
+<polyline points="684.8,515.2 691.2,515.2"/>
+<polyline points="684.8,320 691.2,320" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="128,496 224,496"/>
+<polyline points="128,560 224,560"/>
+<polyline points="704,608 704,560"/>
+</g><g fill="#287740" font-family="Arial,sans-serif">
+<text x="448" y="256" font-size="16" text-anchor="middle" dominant-baseline="central">Cboot</text>
+<text x="288" y="272" font-size="16" text-anchor="middle" dominant-baseline="central">Gate</text>
+<text x="608" y="272" font-size="16" text-anchor="middle" dominant-baseline="central">track</text>
+<text x="576" y="224" font-size="16" text-anchor="middle" dominant-baseline="central">reset</text>
+<text x="416" y="432" font-size="16" text-anchor="middle" dominant-baseline="central">SB</text>
+<text x="736" y="432" font-size="16" text-anchor="middle" dominant-baseline="central">SB</text>
+<text x="256" y="496" font-size="16" text-anchor="middle" dominant-baseline="central">S</text>
+<text x="256" y="560" font-size="16" text-anchor="middle" dominant-baseline="central">SB</text>
+<text x="496" y="560" font-size="16" text-anchor="middle" dominant-baseline="central">S: track   SB: reset</text>
+<text x="448" y="112" font-size="16" text-anchor="middle" dominant-baseline="central">SAR_BOOST</text>
+</g><g fill="#c53e32" font-family="Arial,sans-serif" font-size="16">
+<g data-port="Vin" data-side="left"><rect x="124.8" y="316.8" width="6.4" height="6.4"/><text x="144" y="304" text-anchor="start" dominant-baseline="central">Vin</text></g>
+<g data-port="Gate" data-side="right"><rect x="764.8" y="316.8" width="6.4" height="6.4"/><text x="752" y="304" text-anchor="end" dominant-baseline="central">Gate</text></g>
+<g data-port="VDD" data-side="top"><rect x="508.8" y="156.8" width="6.4" height="6.4"/><text x="528" y="192" text-anchor="start" dominant-baseline="central">VDD</text></g>
+<g data-port="Sample" data-side="left"><rect x="124.8" y="492.8" width="6.4" height="6.4"/><text x="144" y="480" text-anchor="start" dominant-baseline="central">Sample</text></g>
+<g data-port="SampleB" data-side="left"><rect x="124.8" y="556.8" width="6.4" height="6.4"/><text x="144" y="544" text-anchor="start" dominant-baseline="central">SampleB</text></g>
+<g data-port="VSS" data-side="bottom"><rect x="700.8" y="604.8" width="6.4" height="6.4"/><text x="720" y="576" text-anchor="start" dominant-baseline="central">VSS</text></g>
+</g></svg>

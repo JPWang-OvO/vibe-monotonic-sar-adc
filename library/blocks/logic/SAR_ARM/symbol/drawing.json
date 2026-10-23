@@ -1,0 +1,671 @@
+{
+  "instances": {},
+  "pins": [
+    {
+      "terminal": "D",
+      "name": "D",
+      "figure_type": "rect",
+      "figure": 11,
+      "properties": []
+    },
+    {
+      "terminal": "Q",
+      "name": "Q",
+      "figure_type": "rect",
+      "figure": 13,
+      "properties": []
+    },
+    {
+      "terminal": "CP",
+      "name": "CP",
+      "figure_type": "rect",
+      "figure": 15,
+      "properties": []
+    },
+    {
+      "terminal": "CDN",
+      "name": "CDN",
+      "figure_type": "rect",
+      "figure": 17,
+      "properties": []
+    },
+    {
+      "terminal": "VDD",
+      "name": "VDD",
+      "figure_type": "rect",
+      "figure": 19,
+      "properties": []
+    },
+    {
+      "terminal": "VSS",
+      "name": "VSS",
+      "figure_type": "rect",
+      "figure": 21,
+      "properties": []
+    }
+  ],
+  "shapes": [
+    {
+      "type": "rect",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.25,
+          -0.3125
+        ],
+        [
+          0.375,
+          0.3125
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.25,
+          -0.1875
+        ],
+        [
+          -0.1875,
+          -0.0625
+        ]
+      ],
+      "points": [
+        [
+          -0.25,
+          -0.1875
+        ],
+        [
+          -0.1875,
+          -0.125
+        ],
+        [
+          -0.25,
+          -0.0625
+        ]
+      ]
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.025,
+          0.09375
+        ],
+        [
+          0.15,
+          0.15625
+        ]
+      ],
+      "xy": [
+        0.0625,
+        0.125
+      ],
+      "text": "DFF",
+      "height": 0.0625,
+      "justify": "centerCenter",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.75,
+          0.1875
+        ],
+        [
+          -0.25,
+          0.1875
+        ]
+      ],
+      "points": [
+        [
+          -0.75,
+          0.1875
+        ],
+        [
+          -0.25,
+          0.1875
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.375,
+          0.1875
+        ],
+        [
+          0.75,
+          0.1875
+        ]
+      ],
+      "points": [
+        [
+          0.75,
+          0.1875
+        ],
+        [
+          0.375,
+          0.1875
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.75,
+          -0.125
+        ],
+        [
+          -0.25,
+          -0.125
+        ]
+      ],
+      "points": [
+        [
+          -0.75,
+          -0.125
+        ],
+        [
+          -0.25,
+          -0.125
+        ]
+      ]
+    },
+    {
+      "type": "ellipse",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.03125,
+          -0.375
+        ],
+        [
+          0.03125,
+          -0.3125
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.0,
+          -0.625
+        ],
+        [
+          0.0,
+          -0.375
+        ]
+      ],
+      "points": [
+        [
+          0.0,
+          -0.625
+        ],
+        [
+          0.0,
+          -0.375
+        ]
+      ]
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.15,
+          -0.28125
+        ],
+        [
+          0.225,
+          -0.21875
+        ]
+      ],
+      "xy": [
+        0.1875,
+        -0.25
+      ],
+      "text": "R",
+      "height": 0.0625,
+      "justify": "centerCenter",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.5625,
+          0.4375
+        ],
+        [
+          0.5625,
+          0.625
+        ]
+      ],
+      "points": [
+        [
+          0.5625,
+          0.625
+        ],
+        [
+          0.5625,
+          0.4375
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.5625,
+          -0.625
+        ],
+        [
+          0.5625,
+          -0.4375
+        ]
+      ],
+      "points": [
+        [
+          0.5625,
+          -0.625
+        ],
+        [
+          0.5625,
+          -0.4375
+        ]
+      ]
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "pin",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.7625,
+          0.175
+        ],
+        [
+          -0.7375,
+          0.2
+        ]
+      ],
+      "net": "D"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "pin",
+        "label"
+      ],
+      "bbox": [
+        [
+          -0.6875,
+          0.21875
+        ],
+        [
+          -0.61875,
+          0.28125
+        ]
+      ],
+      "xy": [
+        -0.6875,
+        0.25
+      ],
+      "text": "D",
+      "height": 0.0625,
+      "justify": "centerLeft",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "pin",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.7375,
+          0.175
+        ],
+        [
+          0.7625,
+          0.2
+        ]
+      ],
+      "net": "Q"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "pin",
+        "label"
+      ],
+      "bbox": [
+        [
+          0.61875,
+          0.2125
+        ],
+        [
+          0.6875,
+          0.28125
+        ]
+      ],
+      "xy": [
+        0.6875,
+        0.25
+      ],
+      "text": "Q",
+      "height": 0.0625,
+      "justify": "centerRight",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "pin",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.7625,
+          -0.1375
+        ],
+        [
+          -0.7375,
+          -0.1125
+        ]
+      ],
+      "net": "CP"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "pin",
+        "label"
+      ],
+      "bbox": [
+        [
+          -0.6875,
+          -0.09375
+        ],
+        [
+          -0.55625,
+          -0.03125
+        ]
+      ],
+      "xy": [
+        -0.6875,
+        -0.0625
+      ],
+      "text": "CP",
+      "height": 0.0625,
+      "justify": "centerLeft",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "pin",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.0125,
+          -0.6375
+        ],
+        [
+          0.0125,
+          -0.6125
+        ]
+      ],
+      "net": "CDN"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "pin",
+        "label"
+      ],
+      "bbox": [
+        [
+          0.0625,
+          -0.53125
+        ],
+        [
+          0.25625,
+          -0.46875
+        ]
+      ],
+      "xy": [
+        0.0625,
+        -0.5
+      ],
+      "text": "CDN",
+      "height": 0.0625,
+      "justify": "centerLeft",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "pin",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.55,
+          0.6125
+        ],
+        [
+          0.575,
+          0.6375
+        ]
+      ],
+      "net": "VDD"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "pin",
+        "label"
+      ],
+      "bbox": [
+        [
+          0.625,
+          0.46875
+        ],
+        [
+          0.8125,
+          0.53125
+        ]
+      ],
+      "xy": [
+        0.625,
+        0.5
+      ],
+      "text": "VDD",
+      "height": 0.0625,
+      "justify": "centerLeft",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "pin",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.55,
+          -0.6375
+        ],
+        [
+          0.575,
+          -0.6125
+        ]
+      ],
+      "net": "VSS"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "pin",
+        "label"
+      ],
+      "bbox": [
+        [
+          0.625,
+          -0.53125
+        ],
+        [
+          0.80625,
+          -0.46875
+        ]
+      ],
+      "xy": [
+        0.625,
+        -0.5
+      ],
+      "text": "VSS",
+      "height": 0.0625,
+      "justify": "centerLeft",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "instance",
+        "label"
+      ],
+      "bbox": [
+        [
+          -0.4,
+          0.775
+        ],
+        [
+          0.4,
+          0.85
+        ]
+      ],
+      "xy": [
+        0.0,
+        0.8125
+      ],
+      "text": "[@instanceName]",
+      "height": 0.0625,
+      "justify": "centerCenter",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "NLPLabel"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "device",
+        "label"
+      ],
+      "bbox": [
+        [
+          -0.2875,
+          -0.85
+        ],
+        [
+          0.2875,
+          -0.78125
+        ]
+      ],
+      "xy": [
+        0.0,
+        -0.8125
+      ],
+      "text": "[@cellName]",
+      "height": 0.0625,
+      "justify": "centerCenter",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "NLPLabel"
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "instance",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.875,
+          -0.75
+        ],
+        [
+          0.875,
+          0.75
+        ]
+      ]
+    }
+  ]
+}

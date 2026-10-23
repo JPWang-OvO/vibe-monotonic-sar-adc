@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1792 1088">
+<rect width="100%" height="100%" fill="white"/>
+<desc>MONOTONIC_SAR; terminals follow the accepted Spectre declaration order.</desc>
+<g stroke="#287740" stroke-width="1.5" fill="none">
+<rect x="128" y="160" width="1536" height="768"/>
+<polyline points="1600,160 1600,208"/>
+<polyline points="1600,928 1600,880"/>
+<rect x="320" y="304" width="128" height="192"/>
+<polyline points="128,352 352,352"/>
+<polyline points="352,352 368,352 400,336"/>
+<polyline points="400,352 416,352"/>
+<polyline points="416,352 576,352"/>
+<polyline points="128,448 352,448"/>
+<polyline points="352,448 368,448 400,432"/>
+<polyline points="400,448 416,448"/>
+<polyline points="416,448 576,448"/>
+<rect x="576" y="304" width="192" height="192"/>
+<polyline points="864,496 864,304 1056,400 864,496"/>
+<polyline points="768,352 864,352"/>
+<polyline points="768,448 864,448"/>
+<rect x="1072" y="304" width="160" height="192"/>
+<polyline points="1056,400 1072,400"/>
+<rect x="1312" y="304" width="128" height="192"/>
+<polyline points="1232,400 1312,400" stroke-width="3.2" stroke-linecap="butt"/>
+<polyline points="1264,416 1280,384"/>
+<polyline points="1440,400 1536,400" stroke-width="3.2" stroke-linecap="butt"/>
+<polyline points="1536,272 1536,704" stroke-width="3.2" stroke-linecap="butt"/>
+<polyline points="1664,288 1568,288 1536,272"/>
+<polyline points="1664,336 1568,336 1536,320"/>
+<polyline points="1664,384 1568,384 1536,368"/>
+<polyline points="1664,432 1568,432 1536,416"/>
+<polyline points="1664,480 1568,480 1536,464"/>
+<polyline points="1664,528 1568,528 1536,512"/>
+<polyline points="1664,576 1568,576 1536,560"/>
+<polyline points="1664,624 1568,624 1536,608"/>
+<polyline points="1664,672 1568,672 1536,656"/>
+<polyline points="1664,720 1568,720 1536,704"/>
+<polyline points="1152,304 1152,240 672,240 672,304" stroke-width="3.2" stroke-linecap="butt"/>
+<polyline points="1016,256 1032,224"/>
+<rect x="736" y="608" width="448" height="128"/>
+<polyline points="960,608 960,448"/>
+<polyline points="1024,416 1024,608"/>
+<polyline points="1152,608 1152,496" stroke-width="3.2" stroke-linecap="butt"/>
+<polyline points="1144,576 1160,544"/>
+<polyline points="1136,496 1152,480 1168,496"/>
+<polyline points="1184,672 1376,672 1376,496"/>
+<polyline points="1372.8,672 1379.2,672" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="1360,496 1376,480 1392,496"/>
+<polyline points="1664,832 1376,832 1376,672"/>
+<rect x="320" y="720" width="128" height="96"/>
+<polyline points="128,768 320,768"/>
+<polyline points="384,720 384,496"/>
+<polyline points="448,768 512,768 512,672 736,672"/>
+<polyline points="512,160 512,208"/>
+<polyline points="512,928 512,880"/>
+<polyline points="256,160 256,208"/>
+<polyline points="248,216 264,200"/>
+<polyline points="248,200 264,216"/>
+</g><g fill="#287740" font-family="Arial,sans-serif">
+<text x="384" y="400" font-size="16" text-anchor="middle" dominant-baseline="central">S/H</text>
+<text x="672" y="400" font-size="16" text-anchor="middle" dominant-baseline="central">CDAC</text>
+<text x="896" y="352" font-size="24" text-anchor="middle" dominant-baseline="central">+</text>
+<text x="896" y="448" font-size="24" text-anchor="middle" dominant-baseline="central">-</text>
+<text x="1152" y="400" font-size="16" text-anchor="middle" dominant-baseline="central">10 latches</text>
+<text x="1376" y="400" font-size="16" text-anchor="middle" dominant-baseline="central">10 FF</text>
+<text x="1272" y="368" font-size="16" text-anchor="middle" dominant-baseline="central">10</text>
+<text x="1024" y="208" font-size="16" text-anchor="middle" dominant-baseline="central">18</text>
+<text x="848" y="208" font-size="16" text-anchor="middle" dominant-baseline="central">bottom plates</text>
+<text x="960" y="672" font-size="16" text-anchor="middle" dominant-baseline="central">asynchronous control</text>
+<text x="976" y="576" font-size="16" text-anchor="middle" dominant-baseline="central" transform="rotate(-90 976 576)">ClkC</text>
+<text x="1040" y="576" font-size="16" text-anchor="middle" dominant-baseline="central" transform="rotate(-90 1040 576)">Valid</text>
+<text x="1152" y="528" font-size="16" text-anchor="middle" dominant-baseline="central">10</text>
+<text x="384" y="768" font-size="16" text-anchor="middle" dominant-baseline="central">/5</text>
+<text x="400" y="624" font-size="16" text-anchor="middle" dominant-baseline="central" transform="rotate(-90 400 624)">Sample</text>
+<text x="896" y="112" font-size="16" text-anchor="middle" dominant-baseline="central">MONOTONIC_SAR</text>
+</g><g fill="#c53e32" font-family="Arial,sans-serif" font-size="16">
+<g data-port="VDD" data-side="top"><rect x="1596.8" y="156.8" width="6.4" height="6.4"/><text x="1616" y="192" text-anchor="start" dominant-baseline="central">VDD</text></g>
+<g data-port="VSS" data-side="bottom"><rect x="1596.8" y="924.8" width="6.4" height="6.4"/><text x="1616" y="896" text-anchor="start" dominant-baseline="central">VSS</text></g>
+<g data-port="Vinp" data-side="left"><rect x="124.8" y="348.8" width="6.4" height="6.4"/><text x="144" y="336" text-anchor="start" dominant-baseline="central">Vinp</text></g>
+<g data-port="Vinn" data-side="left"><rect x="124.8" y="444.8" width="6.4" height="6.4"/><text x="144" y="432" text-anchor="start" dominant-baseline="central">Vinn</text></g>
+<g data-port="D9" data-side="right"><rect x="1660.8" y="284.8" width="6.4" height="6.4"/><text x="1648" y="272" text-anchor="end" dominant-baseline="central">D9</text></g>
+<g data-port="D8" data-side="right"><rect x="1660.8" y="332.8" width="6.4" height="6.4"/><text x="1648" y="320" text-anchor="end" dominant-baseline="central">D8</text></g>
+<g data-port="D7" data-side="right"><rect x="1660.8" y="380.8" width="6.4" height="6.4"/><text x="1648" y="368" text-anchor="end" dominant-baseline="central">D7</text></g>
+<g data-port="D6" data-side="right"><rect x="1660.8" y="428.8" width="6.4" height="6.4"/><text x="1648" y="416" text-anchor="end" dominant-baseline="central">D6</text></g>
+<g data-port="D5" data-side="right"><rect x="1660.8" y="476.8" width="6.4" height="6.4"/><text x="1648" y="464" text-anchor="end" dominant-baseline="central">D5</text></g>
+<g data-port="D4" data-side="right"><rect x="1660.8" y="524.8" width="6.4" height="6.4"/><text x="1648" y="512" text-anchor="end" dominant-baseline="central">D4</text></g>
+<g data-port="D3" data-side="right"><rect x="1660.8" y="572.8" width="6.4" height="6.4"/><text x="1648" y="560" text-anchor="end" dominant-baseline="central">D3</text></g>
+<g data-port="D2" data-side="right"><rect x="1660.8" y="620.8" width="6.4" height="6.4"/><text x="1648" y="608" text-anchor="end" dominant-baseline="central">D2</text></g>
+<g data-port="D1" data-side="right"><rect x="1660.8" y="668.8" width="6.4" height="6.4"/><text x="1648" y="656" text-anchor="end" dominant-baseline="central">D1</text></g>
+<g data-port="D0" data-side="right"><rect x="1660.8" y="716.8" width="6.4" height="6.4"/><text x="1648" y="704" text-anchor="end" dominant-baseline="central">D0</text></g>
+<g data-port="EOC" data-side="right"><rect x="1660.8" y="828.8" width="6.4" height="6.4"/><text x="1648" y="816" text-anchor="end" dominant-baseline="central">EOC</text></g>
+<g data-port="Clks" data-side="left"><rect x="124.8" y="764.8" width="6.4" height="6.4"/><text x="144" y="752" text-anchor="start" dominant-baseline="central">Clks</text></g>
+<g data-port="VREFP" data-side="top"><rect x="508.8" y="156.8" width="6.4" height="6.4"/><text x="528" y="192" text-anchor="start" dominant-baseline="central">VREFP</text></g>
+<g data-port="VREFN" data-side="bottom"><rect x="508.8" y="924.8" width="6.4" height="6.4"/><text x="528" y="896" text-anchor="start" dominant-baseline="central">VREFN</text></g>
+<g data-port="VCM" data-side="top"><rect x="252.8" y="156.8" width="6.4" height="6.4"/><text x="272" y="192" text-anchor="start" dominant-baseline="central">VCM</text></g>
+</g></svg>

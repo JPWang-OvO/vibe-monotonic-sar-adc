@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 896">
+<rect width="100%" height="100%" fill="white"/>
+<desc>SAR_STARTUP; terminals follow the accepted Spectre declaration order.</desc>
+<g stroke="#287740" stroke-width="1.5" fill="none">
+<rect x="128" y="160" width="768" height="576"/>
+<polyline points="832,160 832,208"/>
+<polyline points="832,736 832,688"/>
+<rect x="240" y="208" width="160" height="64"/>
+<rect x="256" y="352" width="128" height="192"/>
+<polyline points="256,496 272,480 256,464"/>
+<ellipse cx="320" cy="344" rx="8" ry="8"/>
+<polyline points="320,336 320,272"/>
+<polyline points="256,400 208,400"/>
+<polyline points="128,480 256,480"/>
+<polyline points="456,416 504,384 456,352 456,416"/>
+<ellipse cx="512" cy="384" rx="8" ry="8"/>
+<polyline points="384,384 456,384"/>
+<path d="M608,416 A42.6667,64 0 0 0 608,288"/>
+<polyline points="608,288 672,288"/>
+<polyline points="608,416 672,416"/>
+<path d="M736.255,351.859 A65.0667,97.6 0 0 0 672,288.118"/>
+<path d="M672,415.786 A64,96 0 0 0 736.538,352.288"/>
+<polyline points="576,320 644.8,320"/>
+<polyline points="576,384 644.8,384"/>
+<polyline points="520,384 576,384"/>
+<polyline points="128,320 576,320"/>
+<polyline points="896,352 736,352"/>
+<polyline points="608,608 608,480 672,480"/>
+<path d="M672,608 A64,64 0 0 0 672,480"/>
+<polyline points="672,608 608,608"/>
+<polyline points="576,512 608,512"/>
+<polyline points="576,576 608,576"/>
+<polyline points="416,384 416,512 576,512"/>
+<polyline points="412.8,384 419.2,384" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="296,608 344,576 296,544 296,608"/>
+<ellipse cx="352" cy="576" rx="8" ry="8"/>
+<polyline points="192,480 192,576 296,576"/>
+<polyline points="188.8,480 195.2,480" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="360,576 576,576"/>
+<polyline points="896,544 736,544"/>
+</g><g fill="#287740" font-family="Arial,sans-serif">
+<text x="320" y="240" font-size="16" text-anchor="middle" dominant-baseline="central">POR</text>
+<text x="320" y="416" font-size="16" text-anchor="middle" dominant-baseline="central">ARM</text>
+<text x="208" y="368" font-size="16" text-anchor="middle" dominant-baseline="central">1</text>
+<text x="512" y="112" font-size="16" text-anchor="middle" dominant-baseline="central">SAR_STARTUP</text>
+</g><g fill="#c53e32" font-family="Arial,sans-serif" font-size="16">
+<g data-port="VDD" data-side="top"><rect x="828.8" y="156.8" width="6.4" height="6.4"/><text x="848" y="192" text-anchor="start" dominant-baseline="central">VDD</text></g>
+<g data-port="VSS" data-side="bottom"><rect x="828.8" y="732.8" width="6.4" height="6.4"/><text x="848" y="704" text-anchor="start" dominant-baseline="central">VSS</text></g>
+<g data-port="Sample" data-side="left"><rect x="124.8" y="476.8" width="6.4" height="6.4"/><text x="144" y="464" text-anchor="start" dominant-baseline="central">Sample</text></g>
+<g data-port="Guard" data-side="left"><rect x="124.8" y="316.8" width="6.4" height="6.4"/><text x="144" y="304" text-anchor="start" dominant-baseline="central">Guard</text></g>
+<g data-port="Hold" data-side="right"><rect x="892.8" y="348.8" width="6.4" height="6.4"/><text x="880" y="336" text-anchor="end" dominant-baseline="central">Hold</text></g>
+<g data-port="ClearN" data-side="right"><rect x="892.8" y="540.8" width="6.4" height="6.4"/><text x="880" y="528" text-anchor="end" dominant-baseline="central">ClearN</text></g>
+</g></svg>

@@ -1,0 +1,485 @@
+{
+  "cell": "SAR_CAPTURE_LATCH",
+  "ports": [
+    "D",
+    "Hold",
+    "Q",
+    "QB",
+    "VDD",
+    "VSS"
+  ],
+  "parameters": {},
+  "instances": [
+    {
+      "name": "Mn_h",
+      "nodes": [
+        "HoldB",
+        "Hold",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "1u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "HoldB",
+        "G": "Hold",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "4.8e-13",
+        "as": "4.8e-13",
+        "pd": "2.96u",
+        "ps": "2.96u",
+        "nrd": "0.27",
+        "nrs": "0.27",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "1u",
+        "w": "0.000001",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mp_h",
+      "nodes": [
+        "HoldB",
+        "Hold",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "2u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "HoldB",
+        "G": "Hold",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "9.6e-13",
+        "as": "9.6e-13",
+        "pd": "4.96u",
+        "ps": "4.96u",
+        "nrd": "0.135",
+        "nrs": "0.135",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "2u",
+        "w": "0.000002",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mn_in",
+      "nodes": [
+        "N",
+        "HoldB",
+        "D",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "1u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "N",
+        "G": "HoldB",
+        "S": "D",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "4.8e-13",
+        "as": "4.8e-13",
+        "pd": "2.96u",
+        "ps": "2.96u",
+        "nrd": "0.27",
+        "nrs": "0.27",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "1u",
+        "w": "0.000001",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mp_in",
+      "nodes": [
+        "N",
+        "Hold",
+        "D",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "2u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "N",
+        "G": "Hold",
+        "S": "D",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "9.6e-13",
+        "as": "9.6e-13",
+        "pd": "4.96u",
+        "ps": "4.96u",
+        "nrd": "0.135",
+        "nrs": "0.135",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "2u",
+        "w": "0.000002",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mn_fb",
+      "nodes": [
+        "N",
+        "Hold",
+        "Q",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "1u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "N",
+        "G": "Hold",
+        "S": "Q",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "4.8e-13",
+        "as": "4.8e-13",
+        "pd": "2.96u",
+        "ps": "2.96u",
+        "nrd": "0.27",
+        "nrs": "0.27",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "1u",
+        "w": "0.000001",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mp_fb",
+      "nodes": [
+        "N",
+        "HoldB",
+        "Q",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "2u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "N",
+        "G": "HoldB",
+        "S": "Q",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "9.6e-13",
+        "as": "9.6e-13",
+        "pd": "4.96u",
+        "ps": "4.96u",
+        "nrd": "0.135",
+        "nrs": "0.135",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "2u",
+        "w": "0.000002",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mn_qb",
+      "nodes": [
+        "QB",
+        "N",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "4u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "QB",
+        "G": "N",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "1.92e-12",
+        "as": "1.92e-12",
+        "pd": "8.96u",
+        "ps": "8.96u",
+        "nrd": "0.0675",
+        "nrs": "0.0675",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "4u",
+        "w": "0.000004",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mp_qb",
+      "nodes": [
+        "QB",
+        "N",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "8u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "QB",
+        "G": "N",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "3.84e-12",
+        "as": "3.84e-12",
+        "pd": "16.960u",
+        "ps": "16.960u",
+        "nrd": "0.03375",
+        "nrs": "0.03375",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "8u",
+        "w": "0.000008",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mn_q",
+      "nodes": [
+        "Q",
+        "QB",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "4u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Q",
+        "G": "QB",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "1.92e-12",
+        "as": "1.92e-12",
+        "pd": "8.96u",
+        "ps": "8.96u",
+        "nrd": "0.0675",
+        "nrs": "0.0675",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "4u",
+        "w": "0.000004",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mp_q",
+      "nodes": [
+        "Q",
+        "QB",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "8u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Q",
+        "G": "QB",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "3.84e-12",
+        "as": "3.84e-12",
+        "pd": "16.960u",
+        "ps": "16.960u",
+        "nrd": "0.03375",
+        "nrs": "0.03375",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "8u",
+        "w": "0.000008",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    }
+  ],
+  "staged_source": "library__blocks__logic__SAR_CAPTURE_LATCH__drive__netlist.scs"
+}

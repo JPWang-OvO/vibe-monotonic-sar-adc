@@ -41,6 +41,16 @@
     },
     "pullup": {
       "netlist": "pullup/netlist.scs"
+    },
+    "schematic": {
+      "native": "schematic/native.json",
+      "drawing": "schematic/drawing.json",
+      "netlist": "schematic/netlist.scs"
+    },
+    "symbol": {
+      "native": "symbol/native.json",
+      "drawing": "symbol/drawing.json"
     }
-  }
+  },
+  "cdf": "cdf.il"
 }

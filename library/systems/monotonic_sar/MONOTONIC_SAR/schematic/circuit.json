@@ -1,0 +1,638 @@
+{
+  "cell": "MONOTONIC_SAR",
+  "ports": [
+    "Vinp",
+    "Vinn",
+    "Clks",
+    "D9",
+    "D8",
+    "D7",
+    "D6",
+    "D5",
+    "D4",
+    "D3",
+    "D2",
+    "D1",
+    "D0",
+    "EOC",
+    "VDD",
+    "VSS",
+    "VCM",
+    "VREFP",
+    "VREFN"
+  ],
+  "parameters": {},
+  "instances": [
+    {
+      "name": "I_phase",
+      "nodes": [
+        "Clks",
+        "Sample",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_PHASE",
+      "parameters": {},
+      "connections": {
+        "Clks": "Clks",
+        "Sample": "Sample",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_PHASE",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_inv",
+      "nodes": [
+        "Sample",
+        "SampleB",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_INV",
+      "parameters": {},
+      "connections": {
+        "A": "Sample",
+        "Z": "SampleB",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_INV",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_bias",
+      "nodes": [
+        "Bias",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_BIAS",
+      "parameters": {},
+      "connections": {
+        "Bias": "Bias",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_BIAS",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_cmp",
+      "nodes": [
+        "Vp",
+        "Vn",
+        "ClkC",
+        "Outp",
+        "Outn",
+        "Valid",
+        "Bias",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_CMP",
+      "parameters": {},
+      "connections": {
+        "Vp": "Vp",
+        "Vn": "Vn",
+        "ClkC": "ClkC",
+        "Outp": "Outp",
+        "Outn": "Outn",
+        "Valid": "Valid",
+        "Bias": "Bias",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_CMP",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_async",
+      "nodes": [
+        "Sample",
+        "Valid",
+        "ClkC",
+        "EOC",
+        "Ck9",
+        "Ck8",
+        "Ck7",
+        "Ck6",
+        "Ck5",
+        "Ck4",
+        "Ck3",
+        "Ck2",
+        "Ck1",
+        "Ck0",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_ASYNC",
+      "parameters": {},
+      "connections": {
+        "Sample": "Sample",
+        "Valid": "Valid",
+        "ClkC": "ClkC",
+        "Done": "EOC",
+        "Ck9": "Ck9",
+        "Ck8": "Ck8",
+        "Ck7": "Ck7",
+        "Ck6": "Ck6",
+        "Ck5": "Ck5",
+        "Ck4": "Ck4",
+        "Ck3": "Ck3",
+        "Ck2": "Ck2",
+        "Ck1": "Ck1",
+        "Ck0": "Ck0",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_ASYNC",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_bit9",
+      "nodes": [
+        "Outp",
+        "Ck9",
+        "Sample",
+        "Q9",
+        "Bp9",
+        "Bn9",
+        "VDD",
+        "VSS",
+        "VREFP",
+        "VREFN"
+      ],
+      "model": "SAR_BIT",
+      "parameters": {
+        "strength": "1"
+      },
+      "connections": {
+        "Outp": "Outp",
+        "Capture": "Ck9",
+        "Sample": "Sample",
+        "Q": "Q9",
+        "Bp": "Bp9",
+        "Bn": "Bn9",
+        "VDD": "VDD",
+        "VSS": "VSS",
+        "VREFP": "VREFP",
+        "VREFN": "VREFN"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_BIT",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "strength": "1"
+      }
+    },
+    {
+      "name": "I_bit8",
+      "nodes": [
+        "Outp",
+        "Ck8",
+        "Sample",
+        "Q8",
+        "Bp8",
+        "Bn8",
+        "VDD",
+        "VSS",
+        "VREFP",
+        "VREFN"
+      ],
+      "model": "SAR_BIT",
+      "parameters": {
+        "strength": "0.5"
+      },
+      "connections": {
+        "Outp": "Outp",
+        "Capture": "Ck8",
+        "Sample": "Sample",
+        "Q": "Q8",
+        "Bp": "Bp8",
+        "Bn": "Bn8",
+        "VDD": "VDD",
+        "VSS": "VSS",
+        "VREFP": "VREFP",
+        "VREFN": "VREFN"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_BIT",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "strength": "0.5"
+      }
+    },
+    {
+      "name": "I_bit7",
+      "nodes": [
+        "Outp",
+        "Ck7",
+        "Sample",
+        "Q7",
+        "Bp7",
+        "Bn7",
+        "VDD",
+        "VSS",
+        "VREFP",
+        "VREFN"
+      ],
+      "model": "SAR_BIT",
+      "parameters": {
+        "strength": "0.25"
+      },
+      "connections": {
+        "Outp": "Outp",
+        "Capture": "Ck7",
+        "Sample": "Sample",
+        "Q": "Q7",
+        "Bp": "Bp7",
+        "Bn": "Bn7",
+        "VDD": "VDD",
+        "VSS": "VSS",
+        "VREFP": "VREFP",
+        "VREFN": "VREFN"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_BIT",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "strength": "0.25"
+      }
+    },
+    {
+      "name": "I_bit6",
+      "nodes": [
+        "Outp",
+        "Ck6",
+        "Sample",
+        "Q6",
+        "Bp6",
+        "Bn6",
+        "VDD",
+        "VSS",
+        "VREFP",
+        "VREFN"
+      ],
+      "model": "SAR_BIT",
+      "parameters": {
+        "strength": "0.125"
+      },
+      "connections": {
+        "Outp": "Outp",
+        "Capture": "Ck6",
+        "Sample": "Sample",
+        "Q": "Q6",
+        "Bp": "Bp6",
+        "Bn": "Bn6",
+        "VDD": "VDD",
+        "VSS": "VSS",
+        "VREFP": "VREFP",
+        "VREFN": "VREFN"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_BIT",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "strength": "0.125"
+      }
+    },
+    {
+      "name": "I_bit5",
+      "nodes": [
+        "Outp",
+        "Ck5",
+        "Sample",
+        "Q5",
+        "Bp5",
+        "Bn5",
+        "VDD",
+        "VSS",
+        "VREFP",
+        "VREFN"
+      ],
+      "model": "SAR_BIT",
+      "parameters": {
+        "strength": "0.0625"
+      },
+      "connections": {
+        "Outp": "Outp",
+        "Capture": "Ck5",
+        "Sample": "Sample",
+        "Q": "Q5",
+        "Bp": "Bp5",
+        "Bn": "Bn5",
+        "VDD": "VDD",
+        "VSS": "VSS",
+        "VREFP": "VREFP",
+        "VREFN": "VREFN"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_BIT",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "strength": "0.0625"
+      }
+    },
+    {
+      "name": "I_bit4",
+      "nodes": [
+        "Outp",
+        "Ck4",
+        "Sample",
+        "Q4",
+        "Bp4",
+        "Bn4",
+        "VDD",
+        "VSS",
+        "VREFP",
+        "VREFN"
+      ],
+      "model": "SAR_BIT",
+      "parameters": {
+        "strength": "0.03125"
+      },
+      "connections": {
+        "Outp": "Outp",
+        "Capture": "Ck4",
+        "Sample": "Sample",
+        "Q": "Q4",
+        "Bp": "Bp4",
+        "Bn": "Bn4",
+        "VDD": "VDD",
+        "VSS": "VSS",
+        "VREFP": "VREFP",
+        "VREFN": "VREFN"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_BIT",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "strength": "0.03125"
+      }
+    },
+    {
+      "name": "I_bit3",
+      "nodes": [
+        "Outp",
+        "Ck3",
+        "Sample",
+        "Q3",
+        "Bp3",
+        "Bn3",
+        "VDD",
+        "VSS",
+        "VREFP",
+        "VREFN"
+      ],
+      "model": "SAR_BIT",
+      "parameters": {
+        "strength": "0.015625"
+      },
+      "connections": {
+        "Outp": "Outp",
+        "Capture": "Ck3",
+        "Sample": "Sample",
+        "Q": "Q3",
+        "Bp": "Bp3",
+        "Bn": "Bn3",
+        "VDD": "VDD",
+        "VSS": "VSS",
+        "VREFP": "VREFP",
+        "VREFN": "VREFN"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_BIT",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "strength": "0.015625"
+      }
+    },
+    {
+      "name": "I_bit2",
+      "nodes": [
+        "Outp",
+        "Ck2",
+        "Sample",
+        "Q2",
+        "Bp2",
+        "Bn2",
+        "VDD",
+        "VSS",
+        "VREFP",
+        "VREFN"
+      ],
+      "model": "SAR_BIT",
+      "parameters": {
+        "strength": "0.0078125"
+      },
+      "connections": {
+        "Outp": "Outp",
+        "Capture": "Ck2",
+        "Sample": "Sample",
+        "Q": "Q2",
+        "Bp": "Bp2",
+        "Bn": "Bn2",
+        "VDD": "VDD",
+        "VSS": "VSS",
+        "VREFP": "VREFP",
+        "VREFN": "VREFN"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_BIT",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "strength": "0.0078125"
+      }
+    },
+    {
+      "name": "I_frontend",
+      "nodes": [
+        "Vinp",
+        "Vinn",
+        "Sample",
+        "SampleB",
+        "Vp",
+        "Vn",
+        "Bp9",
+        "Bp8",
+        "Bp7",
+        "Bp6",
+        "Bp5",
+        "Bp4",
+        "Bp3",
+        "Bp2",
+        "Bp1",
+        "Bn9",
+        "Bn8",
+        "Bn7",
+        "Bn6",
+        "Bn5",
+        "Bn4",
+        "Bn3",
+        "Bn2",
+        "Bn1",
+        "VREFP",
+        "VREFN",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_FRONTEND",
+      "parameters": {},
+      "connections": {
+        "Vinp": "Vinp",
+        "Vinn": "Vinn",
+        "Sample": "Sample",
+        "SampleB": "SampleB",
+        "Vp": "Vp",
+        "Vn": "Vn",
+        "Bp9": "Bp9",
+        "Bp8": "Bp8",
+        "Bp7": "Bp7",
+        "Bp6": "Bp6",
+        "Bp5": "Bp5",
+        "Bp4": "Bp4",
+        "Bp3": "Bp3",
+        "Bp2": "Bp2",
+        "Bp1": "Bp1",
+        "Bn9": "Bn9",
+        "Bn8": "Bn8",
+        "Bn7": "Bn7",
+        "Bn6": "Bn6",
+        "Bn5": "Bn5",
+        "Bn4": "Bn4",
+        "Bn3": "Bn3",
+        "Bn2": "Bn2",
+        "Bn1": "Bn1",
+        "VREFP": "VREFP",
+        "VREFN": "VREFN",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_FRONTEND",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_out<9:0>",
+      "nodes": [
+        "Q9,Q8,Q7,Q6,Q5,Q4,Q3,Q2,Q1,Q0",
+        "EOC",
+        "D9,D8,D7,D6,D5,D4,D3,D2,D1,D0",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_OUT",
+      "parameters": {},
+      "connections": {
+        "D": "Q9,Q8,Q7,Q6,Q5,Q4,Q3,Q2,Q1,Q0",
+        "Done": "EOC",
+        "Q": "D9,D8,D7,D6,D5,D4,D3,D2,D1,D0",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_OUT",
+        "symbol"
+      ],
+      "oa_parameters": {},
+      "array_members": [
+        "I_out9",
+        "I_out8",
+        "I_out7",
+        "I_out6",
+        "I_out5",
+        "I_out4",
+        "I_out3",
+        "I_out2",
+        "I_out1",
+        "I_out0"
+      ]
+    },
+    {
+      "name": "I_bit<1:0>",
+      "nodes": [
+        "Outp",
+        "Ck1,Ck0",
+        "Sample",
+        "Q1,Q0",
+        "Bp1,Bp0",
+        "Bn1,Bn0",
+        "VDD",
+        "VSS",
+        "VREFP",
+        "VREFN"
+      ],
+      "model": "SAR_BIT",
+      "parameters": {
+        "strength": "0.00390625"
+      },
+      "connections": {
+        "Outp": "Outp",
+        "Capture": "Ck1,Ck0",
+        "Sample": "Sample",
+        "Q": "Q1,Q0",
+        "Bp": "Bp1,Bp0",
+        "Bn": "Bn1,Bn0",
+        "VDD": "VDD",
+        "VSS": "VSS",
+        "VREFP": "VREFP",
+        "VREFN": "VREFN"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_BIT",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "strength": "0.00390625"
+      },
+      "array_members": [
+        "I_bit1",
+        "I_bit0"
+      ]
+    }
+  ],
+  "staged_source": "library__systems__monotonic_sar__MONOTONIC_SAR__spectre__netlist.scs"
+}

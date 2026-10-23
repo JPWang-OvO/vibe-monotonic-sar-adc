@@ -1,0 +1,6 @@
+simulator lang=spectre
+subckt SAR_OUT (D Done Q VDD VSS)
+I_latch (D Done Stored VDD VSS) SAR_OUTPUT_FF
+I_buf1 (StoredB Q VDD VSS) SAR_DRIVE _par0=2
+I_buf0 (Stored StoredB VDD VSS) SAR_DRIVE _par0=1
+ends SAR_OUT

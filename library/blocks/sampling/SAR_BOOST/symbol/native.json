@@ -1,0 +1,102 @@
+{
+  "schema": "native-oa-v1",
+  "source_library": "MONOTONIC_SAR",
+  "circuit": {
+    "cell": "SAR_BOOST",
+    "view": "symbol",
+    "view_type": "schematicSymbol",
+    "properties": [
+      {
+        "name": "portOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Vin\" \"Gate\" \"Sample\" \"SampleB\" \"VDD\" \"VSS\")"
+        }
+      },
+      {
+        "name": "termOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Vin\" \"Gate\" \"Sample\" \"SampleB\" \"VDD\" \"VSS\")"
+        }
+      }
+    ],
+    "instances": [],
+    "terminals": [
+      {
+        "name": "Gate",
+        "direction": "output",
+        "net": "Gate",
+        "properties": []
+      },
+      {
+        "name": "Sample",
+        "direction": "input",
+        "net": "Sample",
+        "properties": []
+      },
+      {
+        "name": "SampleB",
+        "direction": "input",
+        "net": "SampleB",
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "direction": "inputOutput",
+        "net": "VDD",
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "direction": "inputOutput",
+        "net": "VSS",
+        "properties": []
+      },
+      {
+        "name": "Vin",
+        "direction": "inputOutput",
+        "net": "Vin",
+        "properties": []
+      }
+    ],
+    "nets": [
+      {
+        "name": "Gate",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Sample",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "SampleB",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Vin",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      }
+    ]
+  }
+}

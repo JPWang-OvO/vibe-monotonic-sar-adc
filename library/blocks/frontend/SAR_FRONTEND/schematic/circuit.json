@@ -1,0 +1,207 @@
+{
+  "cell": "SAR_FRONTEND",
+  "ports": [
+    "Vinp",
+    "Vinn",
+    "Sample",
+    "SampleB",
+    "Vp",
+    "Vn",
+    "Bp9",
+    "Bp8",
+    "Bp7",
+    "Bp6",
+    "Bp5",
+    "Bp4",
+    "Bp3",
+    "Bp2",
+    "Bp1",
+    "Bn9",
+    "Bn8",
+    "Bn7",
+    "Bn6",
+    "Bn5",
+    "Bn4",
+    "Bn3",
+    "Bn2",
+    "Bn1",
+    "VREFP",
+    "VREFN",
+    "VDD",
+    "VSS"
+  ],
+  "parameters": {
+    "ccross": "28f",
+    "unit_cap": "24f"
+  },
+  "instances": [
+    {
+      "name": "I_sp",
+      "nodes": [
+        "Vinp",
+        "Vp",
+        "Sample",
+        "SampleB",
+        "Gp",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_SAMPLE",
+      "parameters": {},
+      "connections": {
+        "Vin": "Vinp",
+        "Top": "Vp",
+        "Sample": "Sample",
+        "SampleB": "SampleB",
+        "Gate": "Gp",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_SAMPLE",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_sn",
+      "nodes": [
+        "Vinn",
+        "Vn",
+        "Sample",
+        "SampleB",
+        "Gn",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_SAMPLE",
+      "parameters": {},
+      "connections": {
+        "Vin": "Vinn",
+        "Top": "Vn",
+        "Sample": "Sample",
+        "SampleB": "SampleB",
+        "Gate": "Gn",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_SAMPLE",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "C_cross_p",
+      "nodes": [
+        "Gp",
+        "Vn"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "ccross"
+      },
+      "connections": {
+        "PLUS": "Gp",
+        "MINUS": "Vn"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "pPar(\"ccross\")"
+      }
+    },
+    {
+      "name": "C_cross_n",
+      "nodes": [
+        "Gn",
+        "Vp"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "ccross"
+      },
+      "connections": {
+        "PLUS": "Gn",
+        "MINUS": "Vp"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "pPar(\"ccross\")"
+      }
+    },
+    {
+      "name": "I_cdac",
+      "nodes": [
+        "Vp",
+        "Vn",
+        "Bp9",
+        "Bp8",
+        "Bp7",
+        "Bp6",
+        "Bp5",
+        "Bp4",
+        "Bp3",
+        "Bp2",
+        "Bp1",
+        "Bn9",
+        "Bn8",
+        "Bn7",
+        "Bn6",
+        "Bn5",
+        "Bn4",
+        "Bn3",
+        "Bn2",
+        "Bn1",
+        "VREFP",
+        "VREFN"
+      ],
+      "model": "SAR_CDAC",
+      "parameters": {
+        "unit_cap": "unit_cap"
+      },
+      "connections": {
+        "Vp": "Vp",
+        "Vn": "Vn",
+        "Bp9": "Bp9",
+        "Bp8": "Bp8",
+        "Bp7": "Bp7",
+        "Bp6": "Bp6",
+        "Bp5": "Bp5",
+        "Bp4": "Bp4",
+        "Bp3": "Bp3",
+        "Bp2": "Bp2",
+        "Bp1": "Bp1",
+        "Bn9": "Bn9",
+        "Bn8": "Bn8",
+        "Bn7": "Bn7",
+        "Bn6": "Bn6",
+        "Bn5": "Bn5",
+        "Bn4": "Bn4",
+        "Bn3": "Bn3",
+        "Bn2": "Bn2",
+        "Bn1": "Bn1",
+        "VREFP": "VREFP",
+        "VREFN": "VREFN"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_CDAC",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "unit_cap": "pPar(\"unit_cap\")"
+      }
+    }
+  ],
+  "staged_source": "library__blocks__frontend__SAR_FRONTEND__candidate__netlist.scs"
+}

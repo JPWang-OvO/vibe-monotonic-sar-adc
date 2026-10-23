@@ -52,7 +52,8 @@ def graphic(s):
         return (f'dbCreateLabel(cv {layer} {point(s["xy"])} {q(s["text"])} '
                 f'{q(s["justify"])} {q(s["orient"])} {q(s["font"])} {s["height"]})')
     if kind == 'path':
-        return f'dbCreatePath(cv {layer} {points(s["points"])} {s["width"]} {q(s["style"])})'
+        style=' '+q(s['style']) if 'style' in s else ''
+        return f'dbCreatePath(cv {layer} {points(s["points"])} {s["width"]}{style})'
     if kind == 'arc':
         (x0,y0),(x1,y1) = s['ellipse_bbox']
         xm,ym = (x0+x1)/2,(y0+y1)/2

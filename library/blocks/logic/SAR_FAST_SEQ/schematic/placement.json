@@ -1,0 +1,156 @@
+{
+  "Mn_d": {
+    "xy": [
+      0,
+      -1
+    ],
+    "orient": "R0"
+  },
+  "Mp_d": {
+    "xy": [
+      0,
+      1
+    ],
+    "orient": "R0"
+  },
+  "Mn_mi": {
+    "xy": [
+      3,
+      -1
+    ],
+    "orient": "R0"
+  },
+  "Mp_mi": {
+    "xy": [
+      3,
+      1
+    ],
+    "orient": "R0"
+  },
+  "Mn_ma": {
+    "xy": [
+      6,
+      -1
+    ],
+    "orient": "R0"
+  },
+  "Mp_ma": {
+    "xy": [
+      6,
+      1
+    ],
+    "orient": "R0"
+  },
+  "Mn_mb": {
+    "xy": [
+      9,
+      -1
+    ],
+    "orient": "R0"
+  },
+  "Mp_mb": {
+    "xy": [
+      9,
+      1
+    ],
+    "orient": "R0"
+  },
+  "Mn_master_buf": {
+    "xy": [
+      12,
+      -1
+    ],
+    "orient": "R0"
+  },
+  "Mp_master_buf": {
+    "xy": [
+      12,
+      1
+    ],
+    "orient": "R0"
+  },
+  "Mn_mf": {
+    "xy": [
+      15,
+      -1
+    ],
+    "orient": "R0"
+  },
+  "Mp_mf": {
+    "xy": [
+      15,
+      1
+    ],
+    "orient": "R0"
+  },
+  "Mn_si": {
+    "xy": [
+      0,
+      -6
+    ],
+    "orient": "R0"
+  },
+  "Mp_si": {
+    "xy": [
+      0,
+      -4
+    ],
+    "orient": "R0"
+  },
+  "Mn_qa": {
+    "xy": [
+      3,
+      -6
+    ],
+    "orient": "R0"
+  },
+  "Mp_qa": {
+    "xy": [
+      3,
+      -4
+    ],
+    "orient": "R0"
+  },
+  "Mn_qb": {
+    "xy": [
+      6,
+      -6
+    ],
+    "orient": "R0"
+  },
+  "Mp_qb": {
+    "xy": [
+      6,
+      -4
+    ],
+    "orient": "R0"
+  },
+  "Mn_sb": {
+    "xy": [
+      9,
+      -6
+    ],
+    "orient": "R0"
+  },
+  "Mp_sb": {
+    "xy": [
+      9,
+      -4
+    ],
+    "orient": "R0"
+  },
+  "Mn_sf": {
+    "xy": [
+      12,
+      -6
+    ],
+    "orient": "R0"
+  },
+  "Mp_sf": {
+    "xy": [
+      12,
+      -4
+    ],
+    "orient": "R0"
+  }
+}

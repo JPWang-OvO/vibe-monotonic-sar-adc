@@ -1,0 +1,121 @@
+{
+  "Mp_charge": {
+    "xy": [
+      0,
+      5
+    ],
+    "orient": "R0"
+  },
+  "C_por": {
+    "xy": [
+      2,
+      4.5
+    ],
+    "orient": "R0"
+  },
+  "I_por0": {
+    "xy": [
+      4,
+      5
+    ],
+    "orient": "R0"
+  },
+  "I_por1": {
+    "xy": [
+      6,
+      5
+    ],
+    "orient": "R0"
+  },
+  "I_arm": {
+    "xy": [
+      10,
+      4
+    ],
+    "orient": "R0"
+  },
+  "I_ready_inv": {
+    "xy": [
+      14,
+      4
+    ],
+    "orient": "R0"
+  },
+  "Mp0": {
+    "xy": [
+      7,
+      3
+    ],
+    "orient": "R0"
+  },
+  "Mp1": {
+    "xy": [
+      7,
+      1.5
+    ],
+    "orient": "R0"
+  },
+  "Mn0": {
+    "xy": [
+      7,
+      0
+    ],
+    "orient": "R0"
+  },
+  "Mn1": {
+    "xy": [
+      10,
+      0
+    ],
+    "orient": "R0"
+  },
+  "I_hold": {
+    "xy": [
+      14,
+      1
+    ],
+    "orient": "R0"
+  },
+  "I_sample_inv": {
+    "xy": [
+      0,
+      -3
+    ],
+    "orient": "R0"
+  },
+  "Mn_clear0": {
+    "xy": [
+      6,
+      -4
+    ],
+    "orient": "R0"
+  },
+  "Mn_clear1": {
+    "xy": [
+      6,
+      -5.5
+    ],
+    "orient": "R0"
+  },
+  "Mp_clear0": {
+    "xy": [
+      6,
+      -2
+    ],
+    "orient": "R0"
+  },
+  "Mp_clear1": {
+    "xy": [
+      8.5,
+      -2
+    ],
+    "orient": "R0"
+  },
+  "I_clear_drive": {
+    "xy": [
+      12,
+      -3
+    ],
+    "orient": "R0"
+  }
+}

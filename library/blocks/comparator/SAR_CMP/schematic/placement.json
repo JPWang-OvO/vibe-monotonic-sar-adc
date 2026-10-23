@@ -1,0 +1,121 @@
+{
+  "Mp_bias": {
+    "xy": [
+      2,
+      5
+    ],
+    "orient": "R0"
+  },
+  "Mp_clock": {
+    "xy": [
+      2,
+      3.5
+    ],
+    "orient": "R0"
+  },
+  "Mp_input_p": {
+    "xy": [
+      0,
+      2
+    ],
+    "orient": "R0"
+  },
+  "Mp_input_n": {
+    "xy": [
+      4.5,
+      2
+    ],
+    "orient": "MY"
+  },
+  "Mn_latch_p": {
+    "xy": [
+      0,
+      0
+    ],
+    "orient": "R0"
+  },
+  "Mn_latch_n": {
+    "xy": [
+      4.5,
+      0
+    ],
+    "orient": "MY"
+  },
+  "Mn_reset_p": {
+    "xy": [
+      -2,
+      0
+    ],
+    "orient": "R0"
+  },
+  "Mn_reset_n": {
+    "xy": [
+      6.5,
+      0
+    ],
+    "orient": "MY"
+  },
+  "I_outp": {
+    "xy": [
+      -2.0,
+      -3
+    ],
+    "orient": "R0"
+  },
+  "I_outp1": {
+    "xy": [
+      1.75,
+      -3
+    ],
+    "orient": "R0"
+  },
+  "I_outp2": {
+    "xy": [
+      5.5,
+      -3
+    ],
+    "orient": "R0"
+  },
+  "I_outn": {
+    "xy": [
+      -2.0,
+      -6
+    ],
+    "orient": "R0"
+  },
+  "I_outn1": {
+    "xy": [
+      1.75,
+      -6
+    ],
+    "orient": "R0"
+  },
+  "I_outn2": {
+    "xy": [
+      5.5,
+      -6
+    ],
+    "orient": "R0"
+  },
+  "I_valid": {
+    "xy": [
+      -2.0,
+      -9
+    ],
+    "orient": "R0"
+  },
+  "I_vb0": {
+    "xy": [
+      1.75,
+      -9
+    ],
+    "orient": "R0"
+  },
+  "I_vb1": {
+    "xy": [
+      5.5,
+      -9
+    ],
+    "orient": "R0"
+  }
+}

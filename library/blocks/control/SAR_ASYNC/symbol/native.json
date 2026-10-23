@@ -1,0 +1,222 @@
+{
+  "schema": "native-oa-v1",
+  "source_library": "MONOTONIC_SAR",
+  "circuit": {
+    "cell": "SAR_ASYNC",
+    "view": "symbol",
+    "view_type": "schematicSymbol",
+    "properties": [
+      {
+        "name": "portOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Sample\" \"Valid\" \"ClkC\" \"Done\" \"Ck9\" \"Ck8\" \"Ck7\" \"Ck6\" \"Ck5\" \"Ck4\" \"Ck3\" \"Ck2\" \"Ck1\" \"Ck0\" \"VDD\" \"VSS\")"
+        }
+      },
+      {
+        "name": "termOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Sample\" \"Valid\" \"ClkC\" \"Done\" \"Ck9\" \"Ck8\" \"Ck7\" \"Ck6\" \"Ck5\" \"Ck4\" \"Ck3\" \"Ck2\" \"Ck1\" \"Ck0\" \"VDD\" \"VSS\")"
+        }
+      }
+    ],
+    "instances": [],
+    "terminals": [
+      {
+        "name": "Ck0",
+        "direction": "output",
+        "net": "Ck0",
+        "properties": []
+      },
+      {
+        "name": "Ck1",
+        "direction": "output",
+        "net": "Ck1",
+        "properties": []
+      },
+      {
+        "name": "Ck2",
+        "direction": "output",
+        "net": "Ck2",
+        "properties": []
+      },
+      {
+        "name": "Ck3",
+        "direction": "output",
+        "net": "Ck3",
+        "properties": []
+      },
+      {
+        "name": "Ck4",
+        "direction": "output",
+        "net": "Ck4",
+        "properties": []
+      },
+      {
+        "name": "Ck5",
+        "direction": "output",
+        "net": "Ck5",
+        "properties": []
+      },
+      {
+        "name": "Ck6",
+        "direction": "output",
+        "net": "Ck6",
+        "properties": []
+      },
+      {
+        "name": "Ck7",
+        "direction": "output",
+        "net": "Ck7",
+        "properties": []
+      },
+      {
+        "name": "Ck8",
+        "direction": "output",
+        "net": "Ck8",
+        "properties": []
+      },
+      {
+        "name": "Ck9",
+        "direction": "output",
+        "net": "Ck9",
+        "properties": []
+      },
+      {
+        "name": "ClkC",
+        "direction": "output",
+        "net": "ClkC",
+        "properties": []
+      },
+      {
+        "name": "Done",
+        "direction": "output",
+        "net": "Done",
+        "properties": []
+      },
+      {
+        "name": "Sample",
+        "direction": "input",
+        "net": "Sample",
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "direction": "inputOutput",
+        "net": "VDD",
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "direction": "inputOutput",
+        "net": "VSS",
+        "properties": []
+      },
+      {
+        "name": "Valid",
+        "direction": "input",
+        "net": "Valid",
+        "properties": []
+      }
+    ],
+    "nets": [
+      {
+        "name": "Ck0",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Ck1",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Ck2",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Ck3",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Ck4",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Ck5",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Ck6",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Ck7",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Ck8",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Ck9",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "ClkC",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Done",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Sample",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Valid",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      }
+    ]
+  }
+}

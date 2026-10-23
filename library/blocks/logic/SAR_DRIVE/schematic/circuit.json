@@ -1,0 +1,109 @@
+{
+  "cell": "SAR_DRIVE",
+  "ports": [
+    "A",
+    "Z",
+    "VDD",
+    "VSS"
+  ],
+  "parameters": {
+    "scale": "1"
+  },
+  "instances": [
+    {
+      "name": "Mn",
+      "nodes": [
+        "Z",
+        "A",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "2u",
+        "l": "180n",
+        "nf": "1",
+        "m": "scale"
+      },
+      "connections": {
+        "D": "Z",
+        "G": "A",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "9.6e-13",
+        "as": "9.6e-13",
+        "pd": "4.96u",
+        "ps": "4.96u",
+        "nrd": "0.135",
+        "nrs": "0.135",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "2u",
+        "w": "0.000002",
+        "l": "180n",
+        "fingers": "1",
+        "simM": "pPar(\"scale\")"
+      }
+    },
+    {
+      "name": "Mp",
+      "nodes": [
+        "Z",
+        "A",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "4u",
+        "l": "180n",
+        "nf": "1",
+        "m": "scale"
+      },
+      "connections": {
+        "D": "Z",
+        "G": "A",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "1.92e-12",
+        "as": "1.92e-12",
+        "pd": "8.96u",
+        "ps": "8.96u",
+        "nrd": "0.0675",
+        "nrs": "0.0675",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "4u",
+        "w": "0.000004",
+        "l": "180n",
+        "fingers": "1",
+        "simM": "pPar(\"scale\")"
+      }
+    }
+  ],
+  "staged_source": "library__blocks__logic__SAR_DRIVE__transistor__netlist.scs"
+}

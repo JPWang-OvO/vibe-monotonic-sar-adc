@@ -1,0 +1,129 @@
+{
+  "cell": "SAR_BIAS",
+  "ports": [
+    "Bias",
+    "VDD",
+    "VSS"
+  ],
+  "parameters": {},
+  "instances": [
+    {
+      "name": "Mp_diode",
+      "nodes": [
+        "Bias",
+        "Bias",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "8u",
+        "l": "0.36u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Bias",
+        "G": "Bias",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "3.84e-12",
+        "as": "3.84e-12",
+        "pd": "16.960u",
+        "ps": "16.960u",
+        "nrd": "0.03375",
+        "nrs": "0.03375",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "8u",
+        "w": "0.000008",
+        "l": "0.36u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mn_sink",
+      "nodes": [
+        "Bias",
+        "VDD",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "3.6u",
+        "l": "2u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Bias",
+        "G": "VDD",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "1.728e-12",
+        "as": "1.728e-12",
+        "pd": "8.16u",
+        "ps": "8.16u",
+        "nrd": "0.075",
+        "nrs": "0.075",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "3.6u",
+        "w": "0.0000036",
+        "l": "2u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "C_bias",
+      "nodes": [
+        "Bias",
+        "VSS"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "100f"
+      },
+      "connections": {
+        "PLUS": "Bias",
+        "MINUS": "VSS"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "100f"
+      }
+    }
+  ],
+  "staged_source": "library__blocks__bias__SAR_BIAS__fast36__netlist.scs"
+}

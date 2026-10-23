@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1216 800">
+<rect width="100%" height="100%" fill="white"/>
+<desc>SAR_PHASE; terminals follow the accepted Spectre declaration order.</desc>
+<g stroke="#287740" stroke-width="1.5" fill="none">
+<rect x="128" y="160" width="960" height="480"/>
+<polyline points="1024,160 1024,208"/>
+<polyline points="1024,640 1024,592"/>
+<rect x="176" y="240" width="160" height="64"/>
+<rect x="192" y="448" width="128" height="96"/>
+<polyline points="256,304 256,448"/>
+<polyline points="128,496 192,496"/>
+<polyline points="320,496 864,496"/>
+<rect x="384" y="320" width="64" height="96"/>
+<polyline points="416,496 416,416"/>
+<polyline points="412.8,496 419.2,496" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="408,416 416,400 424,416"/>
+<polyline points="448,352 496,352"/>
+<rect x="496" y="320" width="64" height="96"/>
+<polyline points="528,496 528,416"/>
+<polyline points="524.8,496 531.2,496" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="520,416 528,400 536,416"/>
+<polyline points="560,352 608,352"/>
+<rect x="608" y="320" width="64" height="96"/>
+<polyline points="640,496 640,416"/>
+<polyline points="636.8,496 643.2,496" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="632,416 640,400 648,416"/>
+<polyline points="672,352 720,352"/>
+<rect x="720" y="320" width="64" height="96"/>
+<polyline points="752,496 752,416"/>
+<polyline points="748.8,496 755.2,496" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="744,416 752,400 760,416"/>
+<polyline points="784,352 832,352"/>
+<rect x="832" y="320" width="64" height="96"/>
+<polyline points="864,496 864,416"/>
+<polyline points="860.8,496 867.2,496" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="856,416 864,400 872,416"/>
+<polyline points="896,352 944,352 944,224 368,224 368,352 384,352"/>
+<polyline points="448,352 464,352"/>
+<polyline points="460.8,352 467.2,352" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="464,352 464,488"/>
+<path d="M464,504 A8,8 0 0 0 464,488"/>
+<polyline points="464,504 464,560"/>
+<polyline points="616,592 664,560 616,528 616,592"/>
+<ellipse cx="672" cy="560" rx="8" ry="8"/>
+<polyline points="808,592 856,560 808,528 808,592"/>
+<ellipse cx="864" cy="560" rx="8" ry="8"/>
+<polyline points="464,560 616,560"/>
+<polyline points="680,560 808,560"/>
+<polyline points="1088,560 872,560"/>
+</g><g fill="#287740" font-family="Arial,sans-serif">
+<text x="256" y="272" font-size="16" text-anchor="middle" dominant-baseline="central">POR</text>
+<text x="256" y="496" font-size="16" text-anchor="middle" dominant-baseline="central">gate</text>
+<text x="416" y="368" font-size="16" text-anchor="middle" dominant-baseline="central">R0</text>
+<text x="528" y="368" font-size="16" text-anchor="middle" dominant-baseline="central">R1</text>
+<text x="640" y="368" font-size="16" text-anchor="middle" dominant-baseline="central">R2</text>
+<text x="752" y="368" font-size="16" text-anchor="middle" dominant-baseline="central">R3</text>
+<text x="864" y="368" font-size="16" text-anchor="middle" dominant-baseline="central">R4</text>
+<text x="656" y="192" font-size="16" text-anchor="middle" dominant-baseline="central">00001</text>
+<text x="736" y="608" font-size="16" text-anchor="middle" dominant-baseline="central">6-stage drive</text>
+<text x="608" y="112" font-size="16" text-anchor="middle" dominant-baseline="central">SAR_PHASE</text>
+</g><g fill="#c53e32" font-family="Arial,sans-serif" font-size="16">
+<g data-port="VDD" data-side="top"><rect x="1020.8" y="156.8" width="6.4" height="6.4"/><text x="1040" y="192" text-anchor="start" dominant-baseline="central">VDD</text></g>
+<g data-port="VSS" data-side="bottom"><rect x="1020.8" y="636.8" width="6.4" height="6.4"/><text x="1040" y="608" text-anchor="start" dominant-baseline="central">VSS</text></g>
+<g data-port="Clks" data-side="left"><rect x="124.8" y="492.8" width="6.4" height="6.4"/><text x="144" y="480" text-anchor="start" dominant-baseline="central">Clks</text></g>
+<g data-port="Sample" data-side="right"><rect x="1084.8" y="556.8" width="6.4" height="6.4"/><text x="1072" y="544" text-anchor="end" dominant-baseline="central">Sample</text></g>
+</g></svg>

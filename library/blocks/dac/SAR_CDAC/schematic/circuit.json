@@ -1,0 +1,493 @@
+{
+  "cell": "SAR_CDAC",
+  "ports": [
+    "Vp",
+    "Vn",
+    "Bp9",
+    "Bp8",
+    "Bp7",
+    "Bp6",
+    "Bp5",
+    "Bp4",
+    "Bp3",
+    "Bp2",
+    "Bp1",
+    "Bn9",
+    "Bn8",
+    "Bn7",
+    "Bn6",
+    "Bn5",
+    "Bn4",
+    "Bn3",
+    "Bn2",
+    "Bn1",
+    "VREFP",
+    "VREFN"
+  ],
+  "parameters": {
+    "unit_cap": "20f"
+  },
+  "instances": [
+    {
+      "name": "Cp9",
+      "nodes": [
+        "Vp",
+        "Bp9"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "256*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vp",
+        "MINUS": "Bp9"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "256*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cp8",
+      "nodes": [
+        "Vp",
+        "Bp8"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "128*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vp",
+        "MINUS": "Bp8"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "128*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cp7",
+      "nodes": [
+        "Vp",
+        "Bp7"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "64*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vp",
+        "MINUS": "Bp7"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "64*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cp6",
+      "nodes": [
+        "Vp",
+        "Bp6"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "32*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vp",
+        "MINUS": "Bp6"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "32*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cp5",
+      "nodes": [
+        "Vp",
+        "Bp5"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "16*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vp",
+        "MINUS": "Bp5"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "16*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cp4",
+      "nodes": [
+        "Vp",
+        "Bp4"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "8*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vp",
+        "MINUS": "Bp4"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "8*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cp3",
+      "nodes": [
+        "Vp",
+        "Bp3"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "4*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vp",
+        "MINUS": "Bp3"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "4*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cp2",
+      "nodes": [
+        "Vp",
+        "Bp2"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "2*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vp",
+        "MINUS": "Bp2"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "2*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cp1",
+      "nodes": [
+        "Vp",
+        "Bp1"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "1*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vp",
+        "MINUS": "Bp1"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "1*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cp_dummy",
+      "nodes": [
+        "Vp",
+        "VREFP"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vp",
+        "MINUS": "VREFP"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cn9",
+      "nodes": [
+        "Vn",
+        "Bn9"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "256*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vn",
+        "MINUS": "Bn9"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "256*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cn8",
+      "nodes": [
+        "Vn",
+        "Bn8"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "128*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vn",
+        "MINUS": "Bn8"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "128*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cn7",
+      "nodes": [
+        "Vn",
+        "Bn7"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "64*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vn",
+        "MINUS": "Bn7"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "64*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cn6",
+      "nodes": [
+        "Vn",
+        "Bn6"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "32*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vn",
+        "MINUS": "Bn6"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "32*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cn5",
+      "nodes": [
+        "Vn",
+        "Bn5"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "16*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vn",
+        "MINUS": "Bn5"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "16*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cn4",
+      "nodes": [
+        "Vn",
+        "Bn4"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "8*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vn",
+        "MINUS": "Bn4"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "8*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cn3",
+      "nodes": [
+        "Vn",
+        "Bn3"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "4*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vn",
+        "MINUS": "Bn3"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "4*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cn2",
+      "nodes": [
+        "Vn",
+        "Bn2"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "2*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vn",
+        "MINUS": "Bn2"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "2*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cn1",
+      "nodes": [
+        "Vn",
+        "Bn1"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "1*unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vn",
+        "MINUS": "Bn1"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "1*pPar(\"unit_cap\")"
+      }
+    },
+    {
+      "name": "Cn_dummy",
+      "nodes": [
+        "Vn",
+        "VREFP"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "unit_cap"
+      },
+      "connections": {
+        "PLUS": "Vn",
+        "MINUS": "VREFP"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "pPar(\"unit_cap\")"
+      }
+    }
+  ],
+  "staged_source": "library__blocks__dac__SAR_CDAC__scaled__netlist.scs"
+}

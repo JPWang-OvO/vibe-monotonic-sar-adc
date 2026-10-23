@@ -1,0 +1,79 @@
+{
+  "Mn_Hold": {
+    "xy": [
+      0,
+      -1
+    ],
+    "orient": "R0"
+  },
+  "Mn_Valid": {
+    "xy": [
+      3,
+      -1
+    ],
+    "orient": "R0"
+  },
+  "Mn_Done": {
+    "xy": [
+      6,
+      -1
+    ],
+    "orient": "R0"
+  },
+  "Mn_delay": {
+    "xy": [
+      9,
+      -1
+    ],
+    "orient": "R0"
+  },
+  "Mp_delay": {
+    "xy": [
+      9,
+      1
+    ],
+    "orient": "R0"
+  },
+  "Mn_early": {
+    "xy": [
+      12,
+      -1
+    ],
+    "orient": "R0"
+  },
+  "Mp_early": {
+    "xy": [
+      12,
+      1
+    ],
+    "orient": "R0"
+  },
+  "Mp_hold": {
+    "xy": [
+      15,
+      1
+    ],
+    "orient": "R0"
+  },
+  "Mp_done": {
+    "xy": [
+      0,
+      -4
+    ],
+    "orient": "R0"
+  },
+  "Mp_valid": {
+    "xy": [
+      3,
+      -4
+    ],
+    "orient": "R0"
+  },
+  "C_stack": {
+    "xy": [
+      6,
+      -5
+    ],
+    "orient": "R0"
+  }
+}

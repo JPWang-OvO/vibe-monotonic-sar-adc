@@ -1,0 +1,654 @@
+{
+  "cell": "SAR_PHASE",
+  "ports": [
+    "Clks",
+    "Sample",
+    "VDD",
+    "VSS"
+  ],
+  "parameters": {},
+  "instances": [
+    {
+      "name": "Mp_charge",
+      "nodes": [
+        "PorRamp",
+        "VSS",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "0.36u",
+        "l": "5u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "PorRamp",
+        "G": "VSS",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "620.0n",
+        "ad": "2.124e-13",
+        "as": "2.124e-13",
+        "pd": "1.88u",
+        "ps": "1.88u",
+        "nrd": "0.861111",
+        "nrs": "0.861111",
+        "sa": "520.0n",
+        "sb": "520.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "0.36u",
+        "w": "3.6e-7",
+        "l": "5u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "C_por",
+      "nodes": [
+        "PorRamp",
+        "VSS"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "200f"
+      },
+      "connections": {
+        "PLUS": "PorRamp",
+        "MINUS": "VSS"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "200f"
+      }
+    },
+    {
+      "name": "I_por0",
+      "nodes": [
+        "PorRamp",
+        "Por",
+        "VDD",
+        "VSS"
+      ],
+      "model": "INVD1BWP7T",
+      "parameters": {},
+      "connections": {
+        "I": "PorRamp",
+        "ZN": "Por",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "INVD1BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_por1",
+      "nodes": [
+        "Por",
+        "PorN",
+        "VDD",
+        "VSS"
+      ],
+      "model": "INVD1BWP7T",
+      "parameters": {},
+      "connections": {
+        "I": "Por",
+        "ZN": "PorN",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "INVD1BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_enable",
+      "nodes": [
+        "PorN",
+        "Clks",
+        "ClockEnable",
+        "ClockEnableB",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_CAPTURE_LATCH",
+      "parameters": {},
+      "connections": {
+        "D": "PorN",
+        "Hold": "Clks",
+        "Q": "ClockEnable",
+        "QB": "ClockEnableB",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_CAPTURE_LATCH",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_gate",
+      "nodes": [
+        "Clks",
+        "ClockEnable",
+        "ClockGatedB",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_SELECT",
+      "parameters": {
+        "factor": "16"
+      },
+      "connections": {
+        "A": "Clks",
+        "B": "ClockEnable",
+        "Z": "ClockGatedB",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_SELECT",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "factor": "16"
+      }
+    },
+    {
+      "name": "I_gatebuf",
+      "nodes": [
+        "ClockGatedB",
+        "ClockGated",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "4"
+      },
+      "connections": {
+        "A": "ClockGatedB",
+        "Z": "ClockGated",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "4"
+      }
+    },
+    {
+      "name": "I_clk0",
+      "nodes": [
+        "ClockGated",
+        "ClksB",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "16"
+      },
+      "connections": {
+        "A": "ClockGated",
+        "Z": "ClksB",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "16"
+      }
+    },
+    {
+      "name": "Mn_clock_slew",
+      "nodes": [
+        "Clock",
+        "ClksB",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "8u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Clock",
+        "G": "ClksB",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "3.84e-12",
+        "as": "3.84e-12",
+        "pd": "16.960u",
+        "ps": "16.960u",
+        "nrd": "0.03375",
+        "nrs": "0.03375",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "8u",
+        "w": "0.000008",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mp_clock_slew",
+      "nodes": [
+        "Clock",
+        "ClksB",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "16u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Clock",
+        "G": "ClksB",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "7.68e-12",
+        "as": "7.68e-12",
+        "pd": "32.960u",
+        "ps": "32.960u",
+        "nrd": "0.016875",
+        "nrs": "0.016875",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "16u",
+        "w": "0.000016",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "C_clock_slew",
+      "nodes": [
+        "Clock",
+        "VSS"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "320f"
+      },
+      "connections": {
+        "PLUS": "Clock",
+        "MINUS": "VSS"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "320f"
+      }
+    },
+    {
+      "name": "I_ring4",
+      "nodes": [
+        "R3",
+        "Clock",
+        "PorN",
+        "R4",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DFFS",
+      "parameters": {},
+      "connections": {
+        "D": "R3",
+        "CP": "Clock",
+        "SDN": "PorN",
+        "Q": "R4",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DFFS",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_buffer0",
+      "nodes": [
+        "R0",
+        "SampleN0",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "1"
+      },
+      "connections": {
+        "A": "R0",
+        "Z": "SampleN0",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "1"
+      }
+    },
+    {
+      "name": "I_buffer1",
+      "nodes": [
+        "SampleN0",
+        "SampleN1",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "8"
+      },
+      "connections": {
+        "A": "SampleN0",
+        "Z": "SampleN1",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "8"
+      }
+    },
+    {
+      "name": "I_buffer2",
+      "nodes": [
+        "SampleN1",
+        "SampleN2",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "64"
+      },
+      "connections": {
+        "A": "SampleN1",
+        "Z": "SampleN2",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "64"
+      }
+    },
+    {
+      "name": "I_buffer3",
+      "nodes": [
+        "SampleN2",
+        "SampleN3",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "512"
+      },
+      "connections": {
+        "A": "SampleN2",
+        "Z": "SampleN3",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "512"
+      }
+    },
+    {
+      "name": "I_pre<7:0>",
+      "nodes": [
+        "SampleN3",
+        "SampleN4",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "512"
+      },
+      "connections": {
+        "A": "SampleN3",
+        "Z": "SampleN4",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "512"
+      },
+      "array_members": [
+        "I_pre7",
+        "I_pre6",
+        "I_pre5",
+        "I_pre4",
+        "I_pre3",
+        "I_pre2",
+        "I_pre1",
+        "I_pre0"
+      ]
+    },
+    {
+      "name": "I_final<63:0>",
+      "nodes": [
+        "SampleN4",
+        "Sample",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "512"
+      },
+      "connections": {
+        "A": "SampleN4",
+        "Z": "Sample",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "512"
+      },
+      "array_members": [
+        "I_final63",
+        "I_final62",
+        "I_final61",
+        "I_final60",
+        "I_final59",
+        "I_final58",
+        "I_final57",
+        "I_final56",
+        "I_final55",
+        "I_final54",
+        "I_final53",
+        "I_final52",
+        "I_final51",
+        "I_final50",
+        "I_final49",
+        "I_final48",
+        "I_final47",
+        "I_final46",
+        "I_final45",
+        "I_final44",
+        "I_final43",
+        "I_final42",
+        "I_final41",
+        "I_final40",
+        "I_final39",
+        "I_final38",
+        "I_final37",
+        "I_final36",
+        "I_final35",
+        "I_final34",
+        "I_final33",
+        "I_final32",
+        "I_final31",
+        "I_final30",
+        "I_final29",
+        "I_final28",
+        "I_final27",
+        "I_final26",
+        "I_final25",
+        "I_final24",
+        "I_final23",
+        "I_final22",
+        "I_final21",
+        "I_final20",
+        "I_final19",
+        "I_final18",
+        "I_final17",
+        "I_final16",
+        "I_final15",
+        "I_final14",
+        "I_final13",
+        "I_final12",
+        "I_final11",
+        "I_final10",
+        "I_final9",
+        "I_final8",
+        "I_final7",
+        "I_final6",
+        "I_final5",
+        "I_final4",
+        "I_final3",
+        "I_final2",
+        "I_final1",
+        "I_final0"
+      ]
+    },
+    {
+      "name": "I_ring<3:0>",
+      "nodes": [
+        "R2,R1,R0,R4",
+        "Clock",
+        "PorN",
+        "R3,R2,R1,R0",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DFFR",
+      "parameters": {},
+      "connections": {
+        "D": "R2,R1,R0,R4",
+        "CP": "Clock",
+        "CDN": "PorN",
+        "Q": "R3,R2,R1,R0",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DFFR",
+        "symbol"
+      ],
+      "oa_parameters": {},
+      "array_members": [
+        "I_ring3",
+        "I_ring2",
+        "I_ring1",
+        "I_ring0"
+      ]
+    }
+  ],
+  "staged_source": "library__blocks__clock__SAR_PHASE__gated320__netlist.scs"
+}

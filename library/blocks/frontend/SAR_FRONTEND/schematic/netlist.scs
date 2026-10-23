@@ -1,0 +1,9 @@
+simulator lang=spectre
+subckt SAR_FRONTEND (Vinp Vinn Sample SampleB Vp Vn Bp9 Bp8 Bp7 Bp6 Bp5 Bp4 Bp3 Bp2 Bp1 Bn9 Bn8 Bn7 Bn6 Bn5 Bn4 Bn3 Bn2 Bn1 VREFP VREFN VDD VSS)
+parameters ccross=28f unit_cap=24f
+I_sn (Vinn Vn Sample SampleB Gn VDD VSS) SAR_SAMPLE
+I_sp (Vinp Vp Sample SampleB Gp VDD VSS) SAR_SAMPLE
+C_cross_n (Gn Vp) capacitor c=ccross
+C_cross_p (Gp Vn) capacitor c=ccross
+I_cdac (Vp Vn Bp9 Bp8 Bp7 Bp6 Bp5 Bp4 Bp3 Bp2 Bp1 Bn9 Bn8 Bn7 Bn6 Bn5 Bn4 Bn3 Bn2 Bn1 VREFP VREFN) SAR_CDAC unit_cap=unit_cap
+ends SAR_FRONTEND

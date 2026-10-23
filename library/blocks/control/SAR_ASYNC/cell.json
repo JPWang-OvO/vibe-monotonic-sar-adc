@@ -95,6 +95,15 @@
     },
     "weighted5_g2_quiet": {
       "netlist": "weighted5_g2_quiet/netlist.scs"
+    },
+    "schematic": {
+      "native": "schematic/native.json",
+      "drawing": "schematic/drawing.json",
+      "netlist": "schematic/netlist.scs"
+    },
+    "symbol": {
+      "native": "symbol/native.json",
+      "drawing": "symbol/drawing.json"
     }
   }
 }

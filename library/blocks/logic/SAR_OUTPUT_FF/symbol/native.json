@@ -1,0 +1,90 @@
+{
+  "schema": "native-oa-v1",
+  "source_library": "MONOTONIC_SAR",
+  "circuit": {
+    "cell": "SAR_OUTPUT_FF",
+    "view": "symbol",
+    "view_type": "schematicSymbol",
+    "properties": [
+      {
+        "name": "portOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"D\" \"CP\" \"Q\" \"VDD\" \"VSS\")"
+        }
+      },
+      {
+        "name": "termOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"D\" \"CP\" \"Q\" \"VDD\" \"VSS\")"
+        }
+      }
+    ],
+    "instances": [],
+    "terminals": [
+      {
+        "name": "CP",
+        "direction": "input",
+        "net": "CP",
+        "properties": []
+      },
+      {
+        "name": "D",
+        "direction": "input",
+        "net": "D",
+        "properties": []
+      },
+      {
+        "name": "Q",
+        "direction": "output",
+        "net": "Q",
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "direction": "inputOutput",
+        "net": "VDD",
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "direction": "inputOutput",
+        "net": "VSS",
+        "properties": []
+      }
+    ],
+    "nets": [
+      {
+        "name": "CP",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "D",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Q",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      }
+    ]
+  }
+}

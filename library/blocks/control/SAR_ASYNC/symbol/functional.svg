@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1088">
+<rect width="100%" height="100%" fill="white"/>
+<desc>SAR_ASYNC; terminals follow the accepted Spectre declaration order.</desc>
+<g stroke="#287740" stroke-width="1.5" fill="none">
+<rect x="128" y="160" width="1024" height="768"/>
+<polyline points="1088,160 1088,208"/>
+<polyline points="1088,928 1088,880"/>
+<rect x="400" y="352" width="96" height="128"/>
+<polyline points="448,528 448,480"/>
+<polyline points="444.8,528 451.2,528" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="440,480 448,464 456,480"/>
+<polyline points="416,352 416,304"/>
+<polyline points="496,416 512,416 512,272 528,256"/>
+<rect x="592" y="352" width="96" height="128"/>
+<polyline points="640,528 640,480"/>
+<polyline points="636.8,528 643.2,528" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="632,480 640,464 648,480"/>
+<polyline points="608,352 608,304"/>
+<polyline points="688,416 704,416 704,272 720,256"/>
+<rect x="784" y="352" width="96" height="128"/>
+<polyline points="832,528 832,480"/>
+<polyline points="828.8,528 835.2,528" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="824,480 832,464 840,480"/>
+<polyline points="800,352 800,304"/>
+<polyline points="880,416 896,416 896,272 912,256"/>
+<polyline points="400,416 352,416"/>
+<polyline points="496,416 592,416"/>
+<polyline points="688,416 720,416"/>
+<polyline points="768,416 784,416"/>
+<polyline points="512,256 1024,256 1024,736" stroke-width="3.2" stroke-linecap="butt"/>
+<polyline points="952,272 968,240"/>
+<polyline points="1152,320 1056,320 1024,304"/>
+<polyline points="1152,368 1056,368 1024,352"/>
+<polyline points="1152,416 1056,416 1024,400"/>
+<polyline points="1152,464 1056,464 1024,448"/>
+<polyline points="1152,512 1056,512 1024,496"/>
+<polyline points="1152,560 1056,560 1024,544"/>
+<polyline points="1152,608 1056,608 1024,592"/>
+<polyline points="1152,656 1056,656 1024,640"/>
+<polyline points="1152,704 1056,704 1024,688"/>
+<polyline points="1152,752 1056,752 1024,736"/>
+<polyline points="128,528 832,528"/>
+<rect x="224" y="672" width="192" height="128"/>
+<polyline points="128,736 224,736"/>
+<polyline points="320,672 320,640"/>
+<rect x="240" y="560" width="160" height="64"/>
+<polyline points="192,528 192,592 240,592"/>
+<polyline points="188.8,528 195.2,528" stroke-width="6.4" stroke-linecap="butt"/>
+<rect x="464" y="720" width="224" height="96"/>
+<polyline points="416,736 464,736"/>
+<polyline points="400,592 576,592 576,720"/>
+<polyline points="512,528 512,584"/>
+<path d="M512,600 A8,8 0 0 0 512,584"/>
+<polyline points="512,600 512,720"/>
+<polyline points="508.8,528 515.2,528" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="656,720 656,672"/>
+<polyline points="880,416 928,416 928,704 720,704 720,752 688,752"/>
+<polyline points="876.8,416 883.2,416" stroke-width="6.4" stroke-linecap="butt"/>
+<rect x="736" y="736" width="192" height="64"/>
+<polyline points="832,704 832,736"/>
+<polyline points="828.8,704 835.2,704" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="832,928 832,800"/>
+<polyline points="576,816 576,832"/>
+<polyline points="544,832 608,832 576,880 544,832"/>
+<ellipse cx="576" cy="888" rx="8" ry="8"/>
+<polyline points="576,928 576,896"/>
+</g><g fill="#287740" font-family="Arial,sans-serif">
+<text x="448" y="416" font-size="16" text-anchor="middle" dominant-baseline="central">9</text>
+<text x="416" y="288" font-size="16" text-anchor="middle" dominant-baseline="central">R</text>
+<text x="640" y="416" font-size="16" text-anchor="middle" dominant-baseline="central">8</text>
+<text x="608" y="288" font-size="16" text-anchor="middle" dominant-baseline="central">R</text>
+<text x="832" y="416" font-size="16" text-anchor="middle" dominant-baseline="central">0</text>
+<text x="800" y="288" font-size="16" text-anchor="middle" dominant-baseline="central">R</text>
+<text x="352" y="368" font-size="16" text-anchor="middle" dominant-baseline="central">1</text>
+<text x="752" y="416" font-size="16" text-anchor="middle" dominant-baseline="central">...</text>
+<text x="960" y="224" font-size="16" text-anchor="middle" dominant-baseline="central">10</text>
+<text x="320" y="736" font-size="16" text-anchor="middle" dominant-baseline="central">start / reset</text>
+<text x="368" y="640" font-size="16" text-anchor="middle" dominant-baseline="central">R</text>
+<text x="320" y="592" font-size="16" text-anchor="middle" dominant-baseline="central">delay</text>
+<text x="576" y="768" font-size="16" text-anchor="middle" dominant-baseline="central">wait</text>
+<text x="656" y="656" font-size="16" text-anchor="middle" dominant-baseline="central">Ck5</text>
+<text x="832" y="768" font-size="16" text-anchor="middle" dominant-baseline="central">delay</text>
+<text x="640" y="112" font-size="16" text-anchor="middle" dominant-baseline="central">SAR_ASYNC</text>
+</g><g fill="#c53e32" font-family="Arial,sans-serif" font-size="16">
+<g data-port="VDD" data-side="top"><rect x="1084.8" y="156.8" width="6.4" height="6.4"/><text x="1104" y="192" text-anchor="start" dominant-baseline="central">VDD</text></g>
+<g data-port="VSS" data-side="bottom"><rect x="1084.8" y="924.8" width="6.4" height="6.4"/><text x="1104" y="896" text-anchor="start" dominant-baseline="central">VSS</text></g>
+<g data-port="Ck9" data-side="right"><rect x="1148.8" y="316.8" width="6.4" height="6.4"/><text x="1136" y="304" text-anchor="end" dominant-baseline="central">Ck9</text></g>
+<g data-port="Ck8" data-side="right"><rect x="1148.8" y="364.8" width="6.4" height="6.4"/><text x="1136" y="352" text-anchor="end" dominant-baseline="central">Ck8</text></g>
+<g data-port="Ck7" data-side="right"><rect x="1148.8" y="412.8" width="6.4" height="6.4"/><text x="1136" y="400" text-anchor="end" dominant-baseline="central">Ck7</text></g>
+<g data-port="Ck6" data-side="right"><rect x="1148.8" y="460.8" width="6.4" height="6.4"/><text x="1136" y="448" text-anchor="end" dominant-baseline="central">Ck6</text></g>
+<g data-port="Ck5" data-side="right"><rect x="1148.8" y="508.8" width="6.4" height="6.4"/><text x="1136" y="496" text-anchor="end" dominant-baseline="central">Ck5</text></g>
+<g data-port="Ck4" data-side="right"><rect x="1148.8" y="556.8" width="6.4" height="6.4"/><text x="1136" y="544" text-anchor="end" dominant-baseline="central">Ck4</text></g>
+<g data-port="Ck3" data-side="right"><rect x="1148.8" y="604.8" width="6.4" height="6.4"/><text x="1136" y="592" text-anchor="end" dominant-baseline="central">Ck3</text></g>
+<g data-port="Ck2" data-side="right"><rect x="1148.8" y="652.8" width="6.4" height="6.4"/><text x="1136" y="640" text-anchor="end" dominant-baseline="central">Ck2</text></g>
+<g data-port="Ck1" data-side="right"><rect x="1148.8" y="700.8" width="6.4" height="6.4"/><text x="1136" y="688" text-anchor="end" dominant-baseline="central">Ck1</text></g>
+<g data-port="Ck0" data-side="right"><rect x="1148.8" y="748.8" width="6.4" height="6.4"/><text x="1136" y="736" text-anchor="end" dominant-baseline="central">Ck0</text></g>
+<g data-port="Valid" data-side="left"><rect x="124.8" y="524.8" width="6.4" height="6.4"/><text x="144" y="512" text-anchor="start" dominant-baseline="central">Valid</text></g>
+<g data-port="Sample" data-side="left"><rect x="124.8" y="732.8" width="6.4" height="6.4"/><text x="144" y="720" text-anchor="start" dominant-baseline="central">Sample</text></g>
+<g data-port="Done" data-side="bottom"><rect x="828.8" y="924.8" width="6.4" height="6.4"/><text x="848" y="896" text-anchor="start" dominant-baseline="central">Done</text></g>
+<g data-port="ClkC" data-side="bottom"><rect x="572.8" y="924.8" width="6.4" height="6.4"/><text x="592" y="912" text-anchor="start" dominant-baseline="central">ClkC</text></g>
+</g></svg>

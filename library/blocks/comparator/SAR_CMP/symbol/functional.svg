@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1344 832">
+<rect width="100%" height="100%" fill="white"/>
+<desc>SAR_CMP; terminals follow the accepted Spectre declaration order.</desc>
+<g stroke="#287740" stroke-width="1.5" fill="none">
+<rect x="128" y="160" width="1088" height="512"/>
+<polyline points="1152,160 1152,208"/>
+<polyline points="1152,672 1152,624"/>
+<polyline points="288,544 288,224 544,384 288,544"/>
+<polyline points="128,320 288,320"/>
+<polyline points="584,352 632,320 584,288 584,352"/>
+<ellipse cx="640" cy="320" rx="8" ry="8"/>
+<polyline points="776,352 824,320 776,288 776,352"/>
+<ellipse cx="832" cy="320" rx="8" ry="8"/>
+<polyline points="904,352 952,320 904,288 904,352"/>
+<ellipse cx="960" cy="320" rx="8" ry="8"/>
+<polyline points="441.6,320 584,320"/>
+<polyline points="648,320 776,320"/>
+<polyline points="840,320 904,320"/>
+<polyline points="1216,320 968,320"/>
+<polyline points="128,448 288,448"/>
+<polyline points="584,480 632,448 584,416 584,480"/>
+<ellipse cx="640" cy="448" rx="8" ry="8"/>
+<polyline points="776,480 824,448 776,416 776,480"/>
+<ellipse cx="832" cy="448" rx="8" ry="8"/>
+<polyline points="904,480 952,448 904,416 904,480"/>
+<ellipse cx="960" cy="448" rx="8" ry="8"/>
+<polyline points="441.6,448 584,448"/>
+<polyline points="648,448 776,448"/>
+<polyline points="840,448 904,448"/>
+<polyline points="1216,448 968,448"/>
+<polyline points="128,576 352,576 352,504"/>
+<polyline points="416,672 416,464"/>
+<polyline points="800,640 800,512 832,512"/>
+<path d="M832,640 A64,64 0 0 0 832,512"/>
+<polyline points="832,640 800,640"/>
+<ellipse cx="904" cy="576" rx="8" ry="8"/>
+<polyline points="768,544 800,544"/>
+<polyline points="768,608 800,608"/>
+<polyline points="704,320 704,440"/>
+<path d="M704,456 A8,8 0 0 0 704,440"/>
+<polyline points="704,456 704,544"/>
+<polyline points="700.8,320 707.2,320" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="704,544 768,544"/>
+<polyline points="672,448 672,608 768,608"/>
+<polyline points="668.8,448 675.2,448" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="936,608 984,576 936,544 936,608"/>
+<ellipse cx="992" cy="576" rx="8" ry="8"/>
+<polyline points="1032,608 1080,576 1032,544 1032,608"/>
+<ellipse cx="1088" cy="576" rx="8" ry="8"/>
+<polyline points="912,576 936,576"/>
+<polyline points="1000,576 1032,576"/>
+<polyline points="1216,576 1096,576"/>
+</g><g fill="#287740" font-family="Arial,sans-serif">
+<text x="320" y="320" font-size="24" text-anchor="middle" dominant-baseline="central">+</text>
+<text x="320" y="448" font-size="24" text-anchor="middle" dominant-baseline="central">-</text>
+<text x="368" y="384" font-size="16" text-anchor="middle" dominant-baseline="central">regen</text>
+<text x="352" y="272" font-size="16" text-anchor="middle" dominant-baseline="central">PMOS</text>
+<text x="672" y="112" font-size="16" text-anchor="middle" dominant-baseline="central">SAR_CMP</text>
+</g><g fill="#c53e32" font-family="Arial,sans-serif" font-size="16">
+<g data-port="VDD" data-side="top"><rect x="1148.8" y="156.8" width="6.4" height="6.4"/><text x="1168" y="192" text-anchor="start" dominant-baseline="central">VDD</text></g>
+<g data-port="VSS" data-side="bottom"><rect x="1148.8" y="668.8" width="6.4" height="6.4"/><text x="1168" y="640" text-anchor="start" dominant-baseline="central">VSS</text></g>
+<g data-port="Vp" data-side="left"><rect x="124.8" y="316.8" width="6.4" height="6.4"/><text x="144" y="304" text-anchor="start" dominant-baseline="central">Vp</text></g>
+<g data-port="Outp" data-side="right"><rect x="1212.8" y="316.8" width="6.4" height="6.4"/><text x="1200" y="304" text-anchor="end" dominant-baseline="central">Outp</text></g>
+<g data-port="Vn" data-side="left"><rect x="124.8" y="444.8" width="6.4" height="6.4"/><text x="144" y="432" text-anchor="start" dominant-baseline="central">Vn</text></g>
+<g data-port="Outn" data-side="right"><rect x="1212.8" y="444.8" width="6.4" height="6.4"/><text x="1200" y="432" text-anchor="end" dominant-baseline="central">Outn</text></g>
+<g data-port="Bias" data-side="left"><rect x="124.8" y="572.8" width="6.4" height="6.4"/><text x="144" y="560" text-anchor="start" dominant-baseline="central">Bias</text></g>
+<g data-port="ClkC" data-side="bottom"><rect x="412.8" y="668.8" width="6.4" height="6.4"/><text x="432" y="640" text-anchor="start" dominant-baseline="central" transform="rotate(-90 432 640)">ClkC</text></g>
+<g data-port="Valid" data-side="right"><rect x="1212.8" y="572.8" width="6.4" height="6.4"/><text x="1200" y="560" text-anchor="end" dominant-baseline="central">Valid</text></g>
+</g></svg>

@@ -1,0 +1,1020 @@
+{
+  "schema": "native-oa-v1",
+  "source_library": "MONOTONIC_SAR",
+  "circuit": {
+    "cell": "SAR_PHASE",
+    "view": "schematic",
+    "view_type": "schematic",
+    "properties": [
+      {
+        "name": "connectivityLastUpdated",
+        "type": "int",
+        "value": 3031
+      },
+      {
+        "name": "lastSchematicExtraction",
+        "type": "time",
+        "value": "Oct 24 04:03:42 2026"
+      },
+      {
+        "name": "net#",
+        "type": "int",
+        "value": 17
+      },
+      {
+        "name": "pin#",
+        "type": "int",
+        "value": 4
+      },
+      {
+        "name": "portOrder",
+        "type": "ILList",
+        "value": {
+          "skill": "(\"Clks\" \"Sample\" \"VDD\" \"VSS\")"
+        }
+      },
+      {
+        "name": "schGeometryLastUpdated",
+        "type": "int",
+        "value": 3031
+      },
+      {
+        "name": "schGeometryVersion",
+        "type": "string",
+        "value": "sch.ds.gm.1.4"
+      },
+      {
+        "name": "schXtrVersion",
+        "type": "string",
+        "value": "sch.10.0"
+      }
+    ],
+    "instances": [
+      {
+        "name": "C_clock_slew",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "320f"
+          }
+        ],
+        "connections": {
+          "MINUS": "VSS",
+          "PLUS": "Clock"
+        }
+      },
+      {
+        "name": "C_por",
+        "master": [
+          "analogLib",
+          "cap",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "c",
+            "type": "string",
+            "value": "200f"
+          }
+        ],
+        "connections": {
+          "MINUS": "VSS",
+          "PLUS": "PorRamp"
+        }
+      },
+      {
+        "name": "I_buffer0",
+        "master": [
+          "MONOTONIC_SAR",
+          "SAR_DRIVE",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "scale",
+            "type": "string",
+            "value": "1"
+          }
+        ],
+        "connections": {
+          "VSS": "VSS",
+          "VDD": "VDD",
+          "Z": "SampleN0",
+          "A": "R0"
+        }
+      },
+      {
+        "name": "I_buffer1",
+        "master": [
+          "MONOTONIC_SAR",
+          "SAR_DRIVE",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "scale",
+            "type": "string",
+            "value": "8"
+          }
+        ],
+        "connections": {
+          "VSS": "VSS",
+          "VDD": "VDD",
+          "Z": "SampleN1",
+          "A": "SampleN0"
+        }
+      },
+      {
+        "name": "I_buffer2",
+        "master": [
+          "MONOTONIC_SAR",
+          "SAR_DRIVE",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "scale",
+            "type": "string",
+            "value": "64"
+          }
+        ],
+        "connections": {
+          "VSS": "VSS",
+          "VDD": "VDD",
+          "Z": "SampleN2",
+          "A": "SampleN1"
+        }
+      },
+      {
+        "name": "I_buffer3",
+        "master": [
+          "MONOTONIC_SAR",
+          "SAR_DRIVE",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "scale",
+            "type": "string",
+            "value": "512"
+          }
+        ],
+        "connections": {
+          "VSS": "VSS",
+          "VDD": "VDD",
+          "Z": "SampleN3",
+          "A": "SampleN2"
+        }
+      },
+      {
+        "name": "I_clk0",
+        "master": [
+          "MONOTONIC_SAR",
+          "SAR_DRIVE",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "scale",
+            "type": "string",
+            "value": "16"
+          }
+        ],
+        "connections": {
+          "VSS": "VSS",
+          "VDD": "VDD",
+          "Z": "ClksB",
+          "A": "ClockGated"
+        }
+      },
+      {
+        "name": "I_enable",
+        "master": [
+          "MONOTONIC_SAR",
+          "SAR_CAPTURE_LATCH",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {
+          "Hold": "Clks",
+          "QB": "ClockEnableB",
+          "Q": "ClockEnable",
+          "D": "PorN",
+          "VSS": "VSS",
+          "VDD": "VDD"
+        }
+      },
+      {
+        "name": "I_final<63:0>",
+        "master": [
+          "MONOTONIC_SAR",
+          "SAR_DRIVE",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 64,
+        "properties": [
+          {
+            "name": "scale",
+            "type": "string",
+            "value": "512"
+          }
+        ],
+        "connections": {
+          "VSS": "<*64>VSS",
+          "VDD": "<*64>VDD",
+          "Z": "<*64>Sample",
+          "A": "<*64>SampleN4"
+        }
+      },
+      {
+        "name": "I_gate",
+        "master": [
+          "MONOTONIC_SAR",
+          "SAR_SELECT",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "factor",
+            "type": "string",
+            "value": "16"
+          }
+        ],
+        "connections": {
+          "VSS": "VSS",
+          "VDD": "VDD",
+          "Z": "ClockGatedB",
+          "B": "ClockEnable",
+          "A": "Clks"
+        }
+      },
+      {
+        "name": "I_gatebuf",
+        "master": [
+          "MONOTONIC_SAR",
+          "SAR_DRIVE",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "scale",
+            "type": "string",
+            "value": "4"
+          }
+        ],
+        "connections": {
+          "VSS": "VSS",
+          "VDD": "VDD",
+          "Z": "ClockGated",
+          "A": "ClockGatedB"
+        }
+      },
+      {
+        "name": "I_por0",
+        "master": [
+          "standard_cells",
+          "INVD1BWP7T",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {
+          "I": "PorRamp",
+          "ZN": "Por",
+          "VDD": "VDD",
+          "VSS": "VSS"
+        }
+      },
+      {
+        "name": "I_por1",
+        "master": [
+          "standard_cells",
+          "INVD1BWP7T",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {
+          "I": "Por",
+          "ZN": "PorN",
+          "VDD": "VDD",
+          "VSS": "VSS"
+        }
+      },
+      {
+        "name": "I_pre<7:0>",
+        "master": [
+          "MONOTONIC_SAR",
+          "SAR_DRIVE",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 8,
+        "properties": [
+          {
+            "name": "scale",
+            "type": "string",
+            "value": "512"
+          }
+        ],
+        "connections": {
+          "VSS": "<*8>VSS",
+          "VDD": "<*8>VDD",
+          "Z": "<*8>SampleN4",
+          "A": "<*8>SampleN3"
+        }
+      },
+      {
+        "name": "I_ring4",
+        "master": [
+          "MONOTONIC_SAR",
+          "SAR_DFFS",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {
+          "VSS": "VSS",
+          "VDD": "VDD",
+          "SDN": "PorN",
+          "CP": "Clock",
+          "Q": "R4",
+          "D": "R3"
+        }
+      },
+      {
+        "name": "I_ring<3:0>",
+        "master": [
+          "MONOTONIC_SAR",
+          "SAR_DFFR",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 4,
+        "properties": [],
+        "connections": {
+          "VSS": "<*4>VSS",
+          "VDD": "<*4>VDD",
+          "CDN": "<*4>PorN",
+          "CP": "<*4>Clock",
+          "Q": "R3,R2,R1,R0",
+          "D": "R2,R1,R0,R4"
+        }
+      },
+      {
+        "name": "Mn_clock_slew",
+        "master": [
+          "tsmc18",
+          "nmos2v",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "ad",
+            "type": "string",
+            "value": "3.84e-12"
+          },
+          {
+            "name": "as",
+            "type": "string",
+            "value": "3.84e-12"
+          },
+          {
+            "name": "fingers",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "l",
+            "type": "string",
+            "value": "0.18u"
+          },
+          {
+            "name": "model",
+            "type": "string",
+            "value": "nch"
+          },
+          {
+            "name": "nrd",
+            "type": "string",
+            "value": "0.03375"
+          },
+          {
+            "name": "nrs",
+            "type": "string",
+            "value": "0.03375"
+          },
+          {
+            "name": "pd",
+            "type": "string",
+            "value": "16.960u"
+          },
+          {
+            "name": "ps",
+            "type": "string",
+            "value": "16.960u"
+          },
+          {
+            "name": "sa",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sb",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sca",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scb",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scc",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "sd",
+            "type": "string",
+            "value": "540.0n"
+          },
+          {
+            "name": "simM",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "w",
+            "type": "string",
+            "value": "0.000008"
+          },
+          {
+            "name": "wf",
+            "type": "string",
+            "value": "8u"
+          }
+        ],
+        "connections": {
+          "D": "Clock",
+          "B": "VSS",
+          "G": "ClksB",
+          "S": "VSS"
+        }
+      },
+      {
+        "name": "Mp_charge",
+        "master": [
+          "tsmc18",
+          "pmos2v",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "ad",
+            "type": "string",
+            "value": "2.124e-13"
+          },
+          {
+            "name": "as",
+            "type": "string",
+            "value": "2.124e-13"
+          },
+          {
+            "name": "fingers",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "l",
+            "type": "string",
+            "value": "5u"
+          },
+          {
+            "name": "model",
+            "type": "string",
+            "value": "pch"
+          },
+          {
+            "name": "nrd",
+            "type": "string",
+            "value": "0.861111"
+          },
+          {
+            "name": "nrs",
+            "type": "string",
+            "value": "0.861111"
+          },
+          {
+            "name": "pd",
+            "type": "string",
+            "value": "1.88u"
+          },
+          {
+            "name": "ps",
+            "type": "string",
+            "value": "1.88u"
+          },
+          {
+            "name": "sa",
+            "type": "string",
+            "value": "520.0n"
+          },
+          {
+            "name": "sb",
+            "type": "string",
+            "value": "520.0n"
+          },
+          {
+            "name": "sca",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scb",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scc",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "sd",
+            "type": "string",
+            "value": "620.0n"
+          },
+          {
+            "name": "simM",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "w",
+            "type": "string",
+            "value": "3.6e-7"
+          },
+          {
+            "name": "wf",
+            "type": "string",
+            "value": "0.36u"
+          }
+        ],
+        "connections": {
+          "D": "PorRamp",
+          "B": "VDD",
+          "G": "VSS",
+          "S": "VDD"
+        }
+      },
+      {
+        "name": "Mp_clock_slew",
+        "master": [
+          "tsmc18",
+          "pmos2v",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "ad",
+            "type": "string",
+            "value": "7.68e-12"
+          },
+          {
+            "name": "as",
+            "type": "string",
+            "value": "7.68e-12"
+          },
+          {
+            "name": "fingers",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "l",
+            "type": "string",
+            "value": "0.18u"
+          },
+          {
+            "name": "model",
+            "type": "string",
+            "value": "pch"
+          },
+          {
+            "name": "nrd",
+            "type": "string",
+            "value": "0.016875"
+          },
+          {
+            "name": "nrs",
+            "type": "string",
+            "value": "0.016875"
+          },
+          {
+            "name": "pd",
+            "type": "string",
+            "value": "32.960u"
+          },
+          {
+            "name": "ps",
+            "type": "string",
+            "value": "32.960u"
+          },
+          {
+            "name": "sa",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sb",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sca",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scb",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scc",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "sd",
+            "type": "string",
+            "value": "540.0n"
+          },
+          {
+            "name": "simM",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "w",
+            "type": "string",
+            "value": "0.000016"
+          },
+          {
+            "name": "wf",
+            "type": "string",
+            "value": "16u"
+          }
+        ],
+        "connections": {
+          "D": "Clock",
+          "B": "VDD",
+          "G": "ClksB",
+          "S": "VDD"
+        }
+      },
+      {
+        "name": "NC_ClockEnableB",
+        "master": [
+          "basic",
+          "noConn",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {
+          "noConn": "ClockEnableB"
+        }
+      },
+      {
+        "name": "PIN0",
+        "master": [
+          "basic",
+          "ipin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN1",
+        "master": [
+          "basic",
+          "opin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN2",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      },
+      {
+        "name": "PIN3",
+        "master": [
+          "basic",
+          "iopin",
+          "symbol"
+        ],
+        "purpose": "pin",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {}
+      }
+    ],
+    "terminals": [
+      {
+        "name": "Clks",
+        "direction": "input",
+        "net": "Clks",
+        "properties": []
+      },
+      {
+        "name": "Sample",
+        "direction": "output",
+        "net": "Sample",
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "direction": "inputOutput",
+        "net": "VDD",
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "direction": "inputOutput",
+        "net": "VSS",
+        "properties": []
+      }
+    ],
+    "nets": [
+      {
+        "name": "<*4>Clock",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*4>PorN",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*4>VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*4>VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*64>Sample",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*64>SampleN4",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*64>VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*64>VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*8>SampleN3",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*8>SampleN4",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*8>VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*8>VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Clks",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "ClksB",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Clock",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "ClockEnable",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "ClockEnableB",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "ClockGated",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "ClockGatedB",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Por",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "PorN",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "PorRamp",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "R0",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "R2,R1,R0,R4",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "R3",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "R3,R2,R1,R0",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "R4",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Sample",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "SampleN0",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "SampleN1",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "SampleN2",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "SampleN3",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "SampleN4",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      }
+    ]
+  }
+}

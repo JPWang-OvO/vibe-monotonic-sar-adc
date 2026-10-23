@@ -1,0 +1,525 @@
+{
+  "instances": {},
+  "pins": [
+    {
+      "terminal": "A",
+      "name": "A",
+      "figure_type": "rect",
+      "figure": 9,
+      "properties": []
+    },
+    {
+      "terminal": "Z",
+      "name": "Z",
+      "figure_type": "rect",
+      "figure": 11,
+      "properties": []
+    },
+    {
+      "terminal": "VDD",
+      "name": "VDD",
+      "figure_type": "rect",
+      "figure": 13,
+      "properties": []
+    },
+    {
+      "terminal": "VSS",
+      "name": "VSS",
+      "figure_type": "rect",
+      "figure": 15,
+      "properties": []
+    }
+  ],
+  "shapes": [
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.40625,
+          -0.125
+        ],
+        [
+          -0.21875,
+          0.125
+        ]
+      ],
+      "points": [
+        [
+          -0.40625,
+          -0.125
+        ],
+        [
+          -0.21875,
+          0.0
+        ],
+        [
+          -0.40625,
+          0.125
+        ],
+        [
+          -0.40625,
+          -0.125
+        ]
+      ]
+    },
+    {
+      "type": "ellipse",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.21875,
+          -0.03125
+        ],
+        [
+          -0.15625,
+          0.03125
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.21875,
+          -0.125
+        ],
+        [
+          0.40625,
+          0.125
+        ]
+      ],
+      "points": [
+        [
+          0.21875,
+          -0.125
+        ],
+        [
+          0.40625,
+          0.0
+        ],
+        [
+          0.21875,
+          0.125
+        ],
+        [
+          0.21875,
+          -0.125
+        ]
+      ]
+    },
+    {
+      "type": "ellipse",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.40625,
+          -0.03125
+        ],
+        [
+          0.46875,
+          0.03125
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.875,
+          0.0
+        ],
+        [
+          -0.40625,
+          0.0
+        ]
+      ],
+      "points": [
+        [
+          -0.875,
+          0.0
+        ],
+        [
+          -0.40625,
+          0.0
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.15625,
+          0.0
+        ],
+        [
+          0.21875,
+          0.0
+        ]
+      ],
+      "points": [
+        [
+          -0.15625,
+          0.0
+        ],
+        [
+          0.21875,
+          0.0
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.46875,
+          0.0
+        ],
+        [
+          0.875,
+          0.0
+        ]
+      ],
+      "points": [
+        [
+          0.875,
+          0.0
+        ],
+        [
+          0.46875,
+          0.0
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.0,
+          0.25
+        ],
+        [
+          0.0,
+          0.4375
+        ]
+      ],
+      "points": [
+        [
+          0.0,
+          0.4375
+        ],
+        [
+          0.0,
+          0.25
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.0,
+          -0.4375
+        ],
+        [
+          0.0,
+          -0.25
+        ]
+      ],
+      "points": [
+        [
+          0.0,
+          -0.4375
+        ],
+        [
+          0.0,
+          -0.25
+        ]
+      ]
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "pin",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.8875,
+          -0.0125
+        ],
+        [
+          -0.8625,
+          0.0125
+        ]
+      ],
+      "net": "A"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "pin",
+        "label"
+      ],
+      "bbox": [
+        [
+          -0.8125,
+          0.03125
+        ],
+        [
+          -0.75,
+          0.09375
+        ]
+      ],
+      "xy": [
+        -0.8125,
+        0.0625
+      ],
+      "text": "A",
+      "height": 0.0625,
+      "justify": "centerLeft",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "pin",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          0.8625,
+          -0.0125
+        ],
+        [
+          0.8875,
+          0.0125
+        ]
+      ],
+      "net": "Z"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "pin",
+        "label"
+      ],
+      "bbox": [
+        [
+          0.74375,
+          0.03125
+        ],
+        [
+          0.8125,
+          0.09375
+        ]
+      ],
+      "xy": [
+        0.8125,
+        0.0625
+      ],
+      "text": "Z",
+      "height": 0.0625,
+      "justify": "centerRight",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "pin",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.0125,
+          0.425
+        ],
+        [
+          0.0125,
+          0.45
+        ]
+      ],
+      "net": "VDD"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "pin",
+        "label"
+      ],
+      "bbox": [
+        [
+          0.0625,
+          0.28125
+        ],
+        [
+          0.25,
+          0.34375
+        ]
+      ],
+      "xy": [
+        0.0625,
+        0.3125
+      ],
+      "text": "VDD",
+      "height": 0.0625,
+      "justify": "centerLeft",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "pin",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.0125,
+          -0.45
+        ],
+        [
+          0.0125,
+          -0.425
+        ]
+      ],
+      "net": "VSS"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "pin",
+        "label"
+      ],
+      "bbox": [
+        [
+          0.0625,
+          -0.34375
+        ],
+        [
+          0.24375,
+          -0.28125
+        ]
+      ],
+      "xy": [
+        0.0625,
+        -0.3125
+      ],
+      "text": "VSS",
+      "height": 0.0625,
+      "justify": "centerLeft",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "instance",
+        "label"
+      ],
+      "bbox": [
+        [
+          -0.4,
+          0.5875
+        ],
+        [
+          0.4,
+          0.6625
+        ]
+      ],
+      "xy": [
+        0.0,
+        0.625
+      ],
+      "text": "[@instanceName]",
+      "height": 0.0625,
+      "justify": "centerCenter",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "NLPLabel"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "device",
+        "label"
+      ],
+      "bbox": [
+        [
+          -0.2875,
+          -0.6625
+        ],
+        [
+          0.2875,
+          -0.59375
+        ]
+      ],
+      "xy": [
+        0.0,
+        -0.625
+      ],
+      "text": "[@cellName]",
+      "height": 0.0625,
+      "justify": "centerCenter",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "NLPLabel"
+    },
+    {
+      "type": "rect",
+      "lpp": [
+        "instance",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.0,
+          -0.5625
+        ],
+        [
+          1.0,
+          0.5625
+        ]
+      ]
+    }
+  ]
+}

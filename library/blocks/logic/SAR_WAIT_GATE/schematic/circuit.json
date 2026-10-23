@@ -1,0 +1,510 @@
+{
+  "cell": "SAR_WAIT_GATE",
+  "ports": [
+    "Hold",
+    "Valid",
+    "Done",
+    "Delayed",
+    "Early",
+    "Z",
+    "VDD",
+    "VSS"
+  ],
+  "parameters": {},
+  "instances": [
+    {
+      "name": "Mn_Hold",
+      "nodes": [
+        "Z",
+        "Hold",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "4u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Z",
+        "G": "Hold",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "1.92e-12",
+        "as": "1.92e-12",
+        "pd": "8.96u",
+        "ps": "8.96u",
+        "nrd": "0.0675",
+        "nrs": "0.0675",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "4u",
+        "w": "0.000004",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mn_Valid",
+      "nodes": [
+        "Z",
+        "Valid",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "4u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Z",
+        "G": "Valid",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "1.92e-12",
+        "as": "1.92e-12",
+        "pd": "8.96u",
+        "ps": "8.96u",
+        "nrd": "0.0675",
+        "nrs": "0.0675",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "4u",
+        "w": "0.000004",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mn_Done",
+      "nodes": [
+        "Z",
+        "Done",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "4u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Z",
+        "G": "Done",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "1.92e-12",
+        "as": "1.92e-12",
+        "pd": "8.96u",
+        "ps": "8.96u",
+        "nrd": "0.0675",
+        "nrs": "0.0675",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "4u",
+        "w": "0.000004",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mn_delay",
+      "nodes": [
+        "Z",
+        "Delayed",
+        "Ndelay",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "22u",
+        "l": "0.18u",
+        "nf": "4",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Z",
+        "G": "Delayed",
+        "S": "Ndelay",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "5.94e-12",
+        "as": "8.25e-12",
+        "pd": "24.160u",
+        "ps": "36.0u",
+        "nrd": "0.0122727",
+        "nrs": "0.0122727",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "22u",
+        "w": "0.0000055",
+        "l": "0.18u",
+        "fingers": "4",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mn_early",
+      "nodes": [
+        "Ndelay",
+        "Early",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "22u",
+        "l": "0.18u",
+        "nf": "4",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Ndelay",
+        "G": "Early",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "5.94e-12",
+        "as": "8.25e-12",
+        "pd": "24.160u",
+        "ps": "36.0u",
+        "nrd": "0.0122727",
+        "nrs": "0.0122727",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "22u",
+        "w": "0.0000055",
+        "l": "0.18u",
+        "fingers": "4",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mp_hold",
+      "nodes": [
+        "P0",
+        "Hold",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "24u",
+        "l": "0.18u",
+        "nf": "3",
+        "m": "1"
+      },
+      "connections": {
+        "D": "P0",
+        "G": "Hold",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "8.16e-12",
+        "as": "8.16e-12",
+        "pd": "34.040u",
+        "ps": "34.040u",
+        "nrd": "0.01125",
+        "nrs": "0.01125",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "24u",
+        "w": "0.000008",
+        "l": "0.18u",
+        "fingers": "3",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mp_done",
+      "nodes": [
+        "P1",
+        "Done",
+        "P0",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "24u",
+        "l": "0.18u",
+        "nf": "3",
+        "m": "1"
+      },
+      "connections": {
+        "D": "P1",
+        "G": "Done",
+        "S": "P0",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "8.16e-12",
+        "as": "8.16e-12",
+        "pd": "34.040u",
+        "ps": "34.040u",
+        "nrd": "0.01125",
+        "nrs": "0.01125",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "24u",
+        "w": "0.000008",
+        "l": "0.18u",
+        "fingers": "3",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mp_delay",
+      "nodes": [
+        "P2",
+        "Delayed",
+        "P1",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "24u",
+        "l": "0.18u",
+        "nf": "3",
+        "m": "1"
+      },
+      "connections": {
+        "D": "P2",
+        "G": "Delayed",
+        "S": "P1",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "8.16e-12",
+        "as": "8.16e-12",
+        "pd": "34.040u",
+        "ps": "34.040u",
+        "nrd": "0.01125",
+        "nrs": "0.01125",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "24u",
+        "w": "0.000008",
+        "l": "0.18u",
+        "fingers": "3",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mp_early",
+      "nodes": [
+        "P2",
+        "Early",
+        "P1",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "24u",
+        "l": "0.18u",
+        "nf": "3",
+        "m": "1"
+      },
+      "connections": {
+        "D": "P2",
+        "G": "Early",
+        "S": "P1",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "8.16e-12",
+        "as": "8.16e-12",
+        "pd": "34.040u",
+        "ps": "34.040u",
+        "nrd": "0.01125",
+        "nrs": "0.01125",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "24u",
+        "w": "0.000008",
+        "l": "0.18u",
+        "fingers": "3",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mp_valid",
+      "nodes": [
+        "Z",
+        "Valid",
+        "P2",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "24u",
+        "l": "0.18u",
+        "nf": "3",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Z",
+        "G": "Valid",
+        "S": "P2",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "8.16e-12",
+        "as": "8.16e-12",
+        "pd": "34.040u",
+        "ps": "34.040u",
+        "nrd": "0.01125",
+        "nrs": "0.01125",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "24u",
+        "w": "0.000008",
+        "l": "0.18u",
+        "fingers": "3",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "C_stack",
+      "nodes": [
+        "P2",
+        "VDD"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "240f"
+      },
+      "connections": {
+        "PLUS": "P2",
+        "MINUS": "VDD"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "240f"
+      }
+    }
+  ],
+  "staged_source": "library__blocks__logic__SAR_WAIT_GATE__damped_hold22__netlist.scs"
+}

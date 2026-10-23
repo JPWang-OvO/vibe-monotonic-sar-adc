@@ -38,5 +38,6 @@
     "regression/systems/monotonic_sar/flows/final_stage3_ff_125_k51/flow.json"
   ],
   "case_count": 20,
-  "status": "candidate_pending_all_stages"
+  "status": "electrical_pass_oa_visual_review_pending",
+  "oa_electrical_comparison": "oa_delivery\\electrical_comparison.json"
 }
