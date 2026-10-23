@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "cell": "tb_SAR_sine",
+  "ports": [],
+  "views": {
+    "spectre": {
+      "netlist": "spectre/netlist.scs"
+    }
+  }
+}

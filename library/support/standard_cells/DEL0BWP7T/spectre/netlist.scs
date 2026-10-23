@@ -1,0 +1,33 @@
+// Native standard_cells schematic export. MOS terminal order: D G S B.
+simulator lang=spectre
+subckt DEL0BWP7T (I Z VDD VSS)
+
+// Library name: standard_cells
+// Cell name: DEL0BWP7T
+// View name: schematic
+MU7\-M_u2 (net11 net27 VSS VSS) nch l=280.0n w=700n m=1 nf=1 sd=540.0n \
+        ad=3.36e-13 as=3.36e-13 pd=2.36u ps=2.36u nrd=0.385714 \
+        nrs=0.385714 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI2\-M_u2 (Z net11 VSS VSS) nch l=180.0n w=1u m=1 nf=1 sd=540.0n \
+        ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 \
+        sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI1\-M_u2 (net5 I VSS VSS) nch l=180.0n w=500n m=1 nf=1 sd=540.0n \
+        ad=2.4e-13 as=2.4e-13 pd=1.96u ps=1.96u nrd=0.54 nrs=0.54 \
+        sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU5\-M_u2 (net27 net5 VSS VSS) nch l=280.0n w=670.0n m=1 nf=1 sd=540.0n \
+        ad=3.216e-13 as=3.216e-13 pd=2.3u ps=2.3u nrd=0.402985 \
+        nrs=0.402985 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI2\-M_u3 (Z net11 VDD VDD) pch l=180.0n w=1.37u m=1 nf=1 sd=540.0n \
+        ad=6.576e-13 as=6.576e-13 pd=3.7u ps=3.7u nrd=0.19708 nrs=0.19708 \
+        sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU7\-M_u3 (net11 net27 VDD VDD) pch l=280.0n w=900n m=1 nf=1 sd=540.0n \
+        ad=4.32e-13 as=4.32e-13 pd=2.76u ps=2.76u nrd=0.3 nrs=0.3 \
+        sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU5\-M_u3 (net27 net5 VDD VDD) pch l=280.0n w=790.0n m=1 nf=1 sd=540.0n \
+        ad=3.792e-13 as=3.792e-13 pd=2.54u ps=2.54u nrd=0.341772 \
+        nrs=0.341772 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI1\-M_u3 (net5 I VDD VDD) pch l=180.0n w=685.00n m=1 nf=1 sd=540.0n \
+        ad=3.288e-13 as=3.288e-13 pd=2.33u ps=2.33u nrd=0.394161 \
+        nrs=0.394161 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+
+ends DEL0BWP7T

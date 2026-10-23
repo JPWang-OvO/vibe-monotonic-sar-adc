@@ -1,0 +1,112 @@
+simulator lang=spectre
+subckt INV (IN OUT VDD VSS)
+
+// Library name: IC_TEMPLATE
+// Cell name: INV
+// View name: calibre
+// View type: maskLayout
+cc_11 (IN_21 OUT_37) capacitor c=6.1542e-18
+cc_10 (IN_21 OUT_14) capacitor c=7.6312e-18
+cc_9 (IN_21 OUT) capacitor c=2.04814e-17
+cc_8 (IN_15 OUT_37) capacitor c=1.07418e-18
+cc_7 (IN_10 OUT_32) capacitor c=9.33494e-19
+cc_6 (IN_10 OUT) capacitor c=1.99111e-18
+cc_5 (MMP_g OUT_37) capacitor c=5.05968e-17
+cc_4 (MMN_g OUT_32) capacitor c=3.19773e-17
+cc_3 (IN_10 MMN_s) capacitor c=9.33494e-19
+cc_2 (MMN_g MMN_s) capacitor c=3.19773e-17
+ciIN_6 (IN_35 VSS) capacitor c=1.33435e-17
+ciIN_5 (IN_30 VSS) capacitor c=1.41753e-17
+ciIN_4 (IN_21 VSS) capacitor c=1.2552e-16
+ciIN_3 (IN_15 VSS) capacitor c=1.8472e-17
+ciIN_2 (IN_10 VSS) capacitor c=1.45152e-17
+ciIN_1 (MMP_g VSS) capacitor c=6.74342e-17
+ciIN_0 (MMN_g VSS) capacitor c=1.46531e-17
+cc_1 (OUT_32 MMN_s) capacitor c=2.10992e-17
+ciOUT_8 (OUT_37 VSS) capacitor c=7.9466e-17
+ciOUT_7 (OUT_32 VSS) capacitor c=1.85003e-17
+ciOUT_6 (OUT_27 VSS) capacitor c=6.32948e-18
+ciOUT_5 (OUT_22 VSS) capacitor c=5.75599e-17
+ciOUT_4 (OUT_20 VSS) capacitor c=5.62717e-17
+ciOUT_3 (OUT_18 VSS) capacitor c=1.59854e-17
+ciOUT_2 (OUT_14 VSS) capacitor c=1.12585e-17
+ciOUT_1 (OUT_8 VSS) capacitor c=7.9736e-18
+ciOUT_0 (OUT VSS) capacitor c=1.24927e-16
+ciVSS_6 (MMN_s VSS) capacitor c=1.8492e-17
+ciVSS_5 (VSS_24 VSS) capacitor c=7.24766e-18
+ciVSS_4 (VSS_18 VSS) capacitor c=7.24766e-18
+ciVSS_3 (VSS_15 VSS) capacitor c=4.9035e-18
+ciVSS_2 (VSS_14 VSS) capacitor c=3.55371e-17
+ciVSS_1 (VSS_11 VSS) capacitor c=1.39543e-17
+ciVSS_0 (MMN_b VSS) capacitor c=5.36458e-18
+rIN_16 (IN IN_25) resistor r=4.75704
+rIN_15 (IN IN_21) resistor r=2.97525
+rIN_14 (IN_15 IN_25) resistor r=8
+rIN_13 (IN_15 IN_35) resistor r=133.333
+rIN_12 (IN_10 IN_21) resistor r=8
+rIN_11 (IN_10 IN_30) resistor r=133.333
+rIN_10 (IN_4 IN_35) resistor r=297.825
+rIN_9 (IN_4 MMP_g) resistor r=776.936
+rIN_8 (IN_2 IN_30) resistor r=194.283
+rIN_7 (IN_2 MMN_g) resistor r=253.412
+rOUT_29 (OUT_23 OUT_28) resistor r=0.0490964
+rOUT_28 (OUT_22 OUT_25) resistor r=0.249274
+rOUT_27 (OUT_22 OUT_23) resistor r=2.61036
+rOUT_26 (OUT_21 OUT_27) resistor r=0.0490964
+rOUT_25 (OUT_20 OUT_24) resistor r=0.249274
+rOUT_24 (OUT_20 OUT_21) resistor r=2.61036
+rOUT_23 (OUT_18 OUT_37) resistor r=45
+rOUT_22 (OUT_16 OUT_28) resistor r=0.188918
+rOUT_21 (OUT_16 OUT_18) resistor r=0.387396
+rOUT_20 (OUT_14 OUT_37) resistor r=30
+rOUT_19 (OUT_12 OUT_28) resistor r=0.188918
+rOUT_18 (OUT_12 OUT_14) resistor r=0.387396
+rOUT_17 (OUT_8 OUT_32) resistor r=40
+rOUT_16 (OUT_6 OUT_27) resistor r=0.188918
+rOUT_15 (OUT_6 OUT_8) resistor r=0.290547
+rOUT_14 (OUT OUT_25) resistor r=3.79866
+rOUT_13 (OUT OUT_24) resistor r=4.38306
+rOUT_12 (OUT_2 OUT_37) resistor r=0.46875
+rOUT_11 (OUT_2 MMP_d) resistor r=1.3125
+rOUT_10 (OUT_1 OUT_32) resistor r=0.770833
+rOUT_9 (OUT_1 MMN_d) resistor r=2.15833
+rVSS_17 (VSS_18 VSS_28) resistor r=40
+rVSS_16 (VSS_16 VSS_24) resistor r=0.188918
+rVSS_15 (VSS_16 VSS_18) resistor r=0.290547
+rVSS_14 (VSS_15 VSS_23) resistor r=0.171721
+rVSS_13 (VSS_14 VSS_24) resistor r=0.0490964
+rVSS_12 (VSS_14 VSS_15) resistor r=1.65582
+rVSS_11 (VSS_11 VSS_23) resistor r=0.171721
+rVSS_10 (VSS VSS_11) resistor r=0.779211
+rVSS_9 (MMN_b VSS_23) resistor r=90
+rVSS_8 (VSS_3 MMN_s) resistor r=2.15833
+rVSS_7 (VSS_3 VSS_28) resistor r=0.770833
+MMN (MMN_d MMN_g MMN_s MMN_b) nch_mac l=3e-08 w=3e-07 multi=1 nf=1 sd=100n \
+        ad=2.25e-14 as=2.25e-14 pd=7.5e-07 ps=7.5e-07 nrd=1.41444 \
+        nrs=1.41444 sa=7.5e-08 sb=7.5e-08 sca=22.4155 scb=0.0202454 \
+        scc=0.00227744 sa1=7.5e-08 sa2=7.5e-08 sa3=7.5e-08 sa4=7.5e-08 \
+        sb1=7.5e-08 sb2=7.5e-08 sb3=7.5e-08 spa=1e-07 spa1=1e-07 \
+        spa2=1e-07 spa3=1e-07 sap=9.19776e-08 sapb=1.14444e-07 \
+        spba=1.15715e-07 spba1=1.17043e-07 enx=8.02594e-07 \
+        enx1=8.02592e-07 eny=3.06649e-07 eny1=1.89365e-07 eny2=2.84304e-07 \
+        rex=2.0497e-06 rey=1.27107e-06 sa5=7.5e-08 sa6=7.5e-08 \
+        sodx=1.94576e-06 sodxa=7.24378e-07 sodxb=1.4925e-05 \
+        sodx1=4.06953e-07 sodx2=1.20476e-06 sody=2.4919e-06 dfm_flag=1 \
+        _ccoflag=0 _rcoflag=0 _rgflag=0 dw1=-1.34151e-20 dw=0 sa7=7.5e-08 \
+        sodx4=1.20932e-07 dvt_dfm=0 spmt=1.11111e+15 spomt=0 \
+        spomt1=1.11111e+60 spmb=1.11111e+15 spomb=0 spomb1=1.11111e+60
+MMP (MMP_d MMP_g VDD VDD) pch_mac l=3e-08 w=6e-07 multi=1 nf=1 sd=100n \
+        ad=4.5e-14 as=4.5e-14 pd=1.35e-06 ps=1.35e-06 nrd=0.303287 \
+        nrs=0.303287 sa=7.5e-08 sb=7.5e-08 sca=46.5049 scb=0.0484514 \
+        scc=0.00540051 sa1=7.5e-08 sa2=7.5e-08 sa3=7.5e-08 sa4=7.5e-08 \
+        sb1=7.5e-08 sb2=7.5e-08 sb3=7.5e-08 spa=1e-07 spa1=1e-07 \
+        spa2=1e-07 spa3=1e-07 sap=9.19776e-08 sapb=1.14444e-07 \
+        spba=1.15715e-07 spba1=1.17043e-07 enx=8.02594e-07 \
+        enx1=8.02592e-07 eny=4.89677e-07 eny1=3.34057e-07 eny2=4.72519e-07 \
+        rex=2.0497e-06 rey=1.60992e-06 sa5=7.5e-08 sa6=7.5e-08 \
+        sodx=4.20136e-06 sodxa=1.94576e-06 sodxb=1.4925e-05 \
+        sodx1=5.25991e-07 sodx2=1.3448e-06 sody=2.4919e-06 dfm_flag=1 \
+        _ccoflag=0 _rcoflag=0 _rgflag=0 dw1=-1.4923e-20 dw=0 sa7=7.5e-08 \
+        sodx4=1.34989e-07 dvt_dfm=0 spmt=1.11111e+15 spomt=0 \
+        spomt1=1.11111e+60 spmb=1.11111e+15 spomb=0 spomb1=1.11111e+60
+ends INV

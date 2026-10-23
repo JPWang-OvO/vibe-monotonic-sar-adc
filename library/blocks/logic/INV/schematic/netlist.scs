@@ -1,0 +1,6 @@
+simulator lang=spectre
+subckt INV (IN OUT VDD VSS)
+// MOS terminal order: D G S B (drain gate source bulk/body)
+MP (OUT IN VDD VDD) pch_mac l=30n w=600n multi=1 nf=1
+MN (OUT IN VSS VSS) nch_mac l=30n w=300n multi=1 nf=1
+ends INV

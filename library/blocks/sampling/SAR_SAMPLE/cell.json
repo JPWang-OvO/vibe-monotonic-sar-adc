@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_SAMPLE",
+  "ports": [
+    "Vin",
+    "Top",
+    "Sample",
+    "SampleB",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "veriloga": {
+      "source": "veriloga/SAR_SAMPLE.va",
+      "netlist": "veriloga/netlist.scs"
+    },
+    "transistor": {
+      "netlist": "transistor/netlist.scs"
+    }
+  }
+}

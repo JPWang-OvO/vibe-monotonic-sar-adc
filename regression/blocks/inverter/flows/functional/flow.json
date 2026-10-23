@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "id": "inverter_logic",
+  "testbench": "library/testbenches/blocks/inverter/tb_INV/spectre/netlist.scs",
+  "process": "tsmc28",
+  "conditions": [
+    {
+      "id": "schematic_tt",
+      "corner": "tt",
+      "tokens": {
+        "VDD": 0.9,
+        "TEMP": 25
+      },
+      "cell_views": {
+        "INV": "schematic"
+      },
+      "enrichment": true
+    },
+    {
+      "id": "pex_tt",
+      "corner": "tt",
+      "tokens": {
+        "VDD": 0.9,
+        "TEMP": 25
+      },
+      "cell_views": {
+        "INV": "pex"
+      },
+      "enrichment": false
+    }
+  ],
+  "simulator": {
+    "arguments": [
+      "+aps"
+    ],
+    "threads": 8,
+    "timeout_s": 300,
+    "analyses": "DC 0–0.9 V; transient 6 ns",
+    "precision": {
+      "reltol": 1e-05,
+      "vabstol_v": 1e-07,
+      "iabstol_a": 1e-12,
+      "errpreset": "conservative"
+    }
+  },
+  "measurement": {
+    "kind": "inverter",
+    "samples": [
+      {
+        "time_s": 5e-10,
+        "expected": 1
+      },
+      {
+        "time_s": 1.5000000000000002e-09,
+        "expected": 0
+      },
+      {
+        "time_s": 2.5e-09,
+        "expected": 1
+      },
+      {
+        "time_s": 3.5000000000000003e-09,
+        "expected": 0
+      },
+      {
+        "time_s": 4.500000000000001e-09,
+        "expected": 1
+      },
+      {
+        "time_s": 5.5000000000000004e-09,
+        "expected": 0
+      }
+    ]
+  },
+  "criteria": {
+    "vol_max_v": {
+      "max": 0.09,
+      "unit": "V"
+    },
+    "voh_min_v": {
+      "min": 0.81,
+      "unit": "V"
+    },
+    "dc_low_input_output_v": {
+      "min": 0.81,
+      "unit": "V"
+    },
+    "dc_high_input_output_v": {
+      "max": 0.09,
+      "unit": "V"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+artifacts/
+*.local.json
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.venv*/
+*.egg-info/
+build/
+dist/
+*.oa
+*.cdslck*
+*.raw/
+*.psf/
+.env
+.env.*
+!.env.example

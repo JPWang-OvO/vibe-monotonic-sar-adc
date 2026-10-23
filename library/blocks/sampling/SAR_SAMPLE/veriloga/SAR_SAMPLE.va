@@ -1,0 +1,13 @@
+`include "constants.vams"
+`include "disciplines.vams"
+module SAR_SAMPLE_va(Vin,Top,Sample,SampleB,VDD,VSS);
+inout Vin,Top; input Sample,SampleB,VDD,VSS; electrical Vin,Top,Sample,SampleB,VDD,VSS;
+integer on;
+analog begin
+ @(initial_step) on=0;
+ @(cross(V(Sample,VSS)-0.9,+1)) on=1;
+ @(cross(V(Sample,VSS)-0.9,-1)) on=0;
+ if(on) V(Vin,Top)<+0;
+ else I(Vin,Top)<+0;
+end
+endmodule

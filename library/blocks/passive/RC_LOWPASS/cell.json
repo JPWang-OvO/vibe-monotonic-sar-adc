@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "cell": "RC_LOWPASS",
+  "ports": [
+    "IN",
+    "OUT",
+    "VSS"
+  ],
+  "views": {
+    "schematic": {
+      "netlist": "schematic/netlist.scs",
+      "circuit": "schematic/circuit.json",
+      "native": "schematic/native.json",
+      "drawing": "schematic/drawing.json"
+    },
+    "symbol": {
+      "native": "symbol/native.json",
+      "drawing": "symbol/drawing.json"
+    }
+  }
+}

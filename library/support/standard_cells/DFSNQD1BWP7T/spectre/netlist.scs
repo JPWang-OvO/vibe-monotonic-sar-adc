@@ -1,0 +1,93 @@
+// Native standard_cells schematic export. MOS terminal order: D G S B.
+simulator lang=spectre
+subckt DFSNQD1BWP7T (D CP SDN Q VDD VSS)
+
+// Library name: standard_cells
+// Cell name: DFSNQD1BWP7T
+// View name: schematic
+MI32\-M_u4 (net53 SDN VSS VSS) nch l=180.0n w=540.0n m=1 nf=1 sd=540.0n \
+        ad=2.592e-13 as=2.592e-13 pd=2.04u ps=2.04u nrd=0.5 nrs=0.5 \
+        sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI25\-M_u2 (net79 net20 VSS VSS) nch l=180.0n w=1u m=1 nf=1 sd=540.0n \
+        ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 \
+        sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI55\-M_u2 (net11 CP VSS VSS) nch l=180.0n w=500n m=1 nf=1 sd=540.0n \
+        ad=2.4e-13 as=2.4e-13 pd=1.96u ps=1.96u nrd=0.54 nrs=0.54 \
+        sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI60\-M_u2 (Q net79 VSS VSS) nch l=180.0n w=1u m=1 nf=1 sd=540.0n \
+        ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 \
+        sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI32\-M_u3 (net97 net13 net53 VSS) nch l=180.0n w=540.0n m=1 nf=1 \
+        sd=540.0n ad=2.592e-13 as=2.592e-13 pd=2.04u ps=2.04u nrd=0.5 \
+        nrs=0.5 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI19 (net33 net11 VSS VSS) nch l=180.0n w=940.0n m=1 nf=1 sd=540.0n \
+        ad=4.512e-13 as=4.512e-13 pd=2.84u ps=2.84u nrd=0.287234 \
+        nrs=0.287234 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI24 (net29 net97 VSS VSS) nch l=180.0n w=420.0n m=1 nf=1 sd=540.0n \
+        ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 \
+        nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI31\-M_u4 (net25 net79 VSS VSS) nch l=180.0n w=500n m=1 nf=1 sd=540.0n \
+        ad=2.4e-13 as=2.4e-13 pd=1.96u ps=1.96u nrd=0.54 nrs=0.54 \
+        sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI31\-M_u3 (net5 SDN net25 VSS) nch l=180.0n w=500n m=1 nf=1 sd=540.0n \
+        ad=2.4e-13 as=2.4e-13 pd=1.96u ps=1.96u nrd=0.54 nrs=0.54 \
+        sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI20 (net97 net9 net20 VSS) nch l=180.0n w=910.0n m=1 nf=1 sd=540.0n \
+        ad=4.368e-13 as=4.368e-13 pd=2.78u ps=2.78u nrd=0.296703 \
+        nrs=0.296703 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI23 (net13 net9 net29 VSS) nch l=180.0n w=420.0n m=1 nf=1 sd=540.0n \
+        ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 \
+        nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI40\-M_u2 (net9 net11 VSS VSS) nch l=180.0n w=500n m=1 nf=1 sd=540.0n \
+        ad=2.4e-13 as=2.4e-13 pd=1.96u ps=1.96u nrd=0.54 nrs=0.54 \
+        sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI22 (net5 net11 net20 VSS) nch l=180.0n w=420.0n m=1 nf=1 sd=540.0n \
+        ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 \
+        nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI21 (net13 D net33 VSS) nch l=180.0n w=940.0n m=1 nf=1 sd=540.0n \
+        ad=4.512e-13 as=4.512e-13 pd=2.84u ps=2.84u nrd=0.287234 \
+        nrs=0.287234 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI30 (net97 net11 net20 VDD) pch l=180.0n w=1.34u m=1 nf=1 sd=540.0n \
+        ad=6.432e-13 as=6.432e-13 pd=3.64u ps=3.64u nrd=0.201492 \
+        nrs=0.201492 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI55\-M_u3 (net11 CP VDD VDD) pch l=180.0n w=685.00n m=1 nf=1 sd=540.0n \
+        ad=3.288e-13 as=3.288e-13 pd=2.33u ps=2.33u nrd=0.394161 \
+        nrs=0.394161 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI33 (net5 net9 net20 VDD) pch l=180.0n w=420.0n m=1 nf=1 sd=540.0n \
+        ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 \
+        nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI32\-M_u1 (net97 net13 VDD VDD) pch l=180.0n w=970.0n m=1 nf=1 sd=540.0n \
+        ad=4.656e-13 as=4.656e-13 pd=2.9u ps=2.9u nrd=0.278351 \
+        nrs=0.278351 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI32\-M_u2 (net97 SDN VDD VDD) pch l=180.0n w=420.0n m=1 nf=1 sd=540.0n \
+        ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 \
+        nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI28 (net64 net9 VDD VDD) pch l=180.0n w=920.0n m=1 nf=1 sd=540.0n \
+        ad=4.416e-13 as=4.416e-13 pd=2.8u ps=2.8u nrd=0.293478 \
+        nrs=0.293478 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI40\-M_u3 (net9 net11 VDD VDD) pch l=180.0n w=685.00n m=1 nf=1 sd=540.0n \
+        ad=3.288e-13 as=3.288e-13 pd=2.33u ps=2.33u nrd=0.394161 \
+        nrs=0.394161 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI60\-M_u3 (Q net79 VDD VDD) pch l=180.0n w=1.37u m=1 nf=1 sd=540.0n \
+        ad=6.576e-13 as=6.576e-13 pd=3.7u ps=3.7u nrd=0.19708 nrs=0.19708 \
+        sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI31\-M_u2 (net5 net79 VDD VDD) pch l=180.0n w=685.00n m=1 nf=1 sd=540.0n \
+        ad=3.288e-13 as=3.288e-13 pd=2.33u ps=2.33u nrd=0.394161 \
+        nrs=0.394161 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI35 (net60 net97 VDD VDD) pch l=180.0n w=420.0n m=1 nf=1 sd=540.0n \
+        ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 \
+        nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI31\-M_u1 (net5 SDN VDD VDD) pch l=180.0n w=685.00n m=1 nf=1 sd=540.0n \
+        ad=3.288e-13 as=3.288e-13 pd=2.33u ps=2.33u nrd=0.394161 \
+        nrs=0.394161 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI25\-M_u3 (net79 net20 VDD VDD) pch l=180.0n w=1.37u m=1 nf=1 sd=540.0n \
+        ad=6.576e-13 as=6.576e-13 pd=3.7u ps=3.7u nrd=0.19708 nrs=0.19708 \
+        sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI26 (net13 D net64 VDD) pch l=180.0n w=920.0n m=1 nf=1 sd=540.0n \
+        ad=4.416e-13 as=4.416e-13 pd=2.8u ps=2.8u nrd=0.293478 \
+        nrs=0.293478 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI34 (net13 net11 net60 VDD) pch l=180.0n w=420.0n m=1 nf=1 sd=540.0n \
+        ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 \
+        nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+
+ends DFSNQD1BWP7T

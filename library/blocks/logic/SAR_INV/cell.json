@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_INV",
+  "ports": [
+    "A",
+    "Z",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "veriloga": {
+      "source": "veriloga/SAR_INV.va",
+      "netlist": "veriloga/netlist.scs"
+    },
+    "transistor": {
+      "netlist": "transistor/netlist.scs"
+    }
+  }
+}

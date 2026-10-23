@@ -1,0 +1,67 @@
+{
+  "schema": "native-oa-v1",
+  "source_library": "IC_TEMPLATE",
+  "circuit": {
+    "cell": "RC_LOWPASS",
+    "view": "symbol",
+    "view_type": "schematicSymbol",
+    "properties": [
+      {
+        "name": "partName",
+        "type": "string",
+        "value": "RC_LOWPASS"
+      },
+      {
+        "name": "pin#",
+        "type": "int",
+        "value": 3
+      },
+      {
+        "name": "vendorName",
+        "type": "string",
+        "value": ""
+      }
+    ],
+    "instances": [],
+    "terminals": [
+      {
+        "name": "IN",
+        "direction": "input",
+        "net": "IN",
+        "properties": []
+      },
+      {
+        "name": "OUT",
+        "direction": "output",
+        "net": "OUT",
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "direction": "inputOutput",
+        "net": "VSS",
+        "properties": []
+      }
+    ],
+    "nets": [
+      {
+        "name": "IN",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "OUT",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      }
+    ]
+  }
+}

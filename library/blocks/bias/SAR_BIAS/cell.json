@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_BIAS",
+  "ports": [
+    "Bias",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "veriloga": {
+      "source": "veriloga/SAR_BIAS.va",
+      "netlist": "veriloga/netlist.scs"
+    },
+    "transistor": {
+      "netlist": "transistor/netlist.scs"
+    }
+  }
+}

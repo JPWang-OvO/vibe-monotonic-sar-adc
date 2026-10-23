@@ -1,0 +1,21 @@
+`include "constants.vams"
+`include "disciplines.vams"
+module COUNTER2(CLK, RST, EN, Q, VDD, VSS);
+input CLK, RST, EN;
+output [1:0] Q;
+inout VDD, VSS;
+electrical CLK, RST, EN, VDD, VSS;
+electrical [1:0] Q;
+parameter real tr=10p from (0:inf);
+integer count;
+analog begin
+  @(initial_step) count=0;
+  @(cross(V(RST,VSS)-0.5*V(VDD,VSS), +1)) count=0;
+  @(cross(V(CLK,VSS)-0.5*V(VDD,VSS), +1)) begin
+    if (V(RST,VSS)>0.5*V(VDD,VSS)) count=0;
+    else if (V(EN,VSS)>0.5*V(VDD,VSS)) count=(count+1)%4;
+  end
+  V(Q[0],VSS) <+ V(VDD,VSS)*transition(count%2,0,tr,tr);
+  V(Q[1],VSS) <+ V(VDD,VSS)*transition((count/2)%2,0,tr,tr);
+end
+endmodule

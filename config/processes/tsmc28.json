@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "id": "tsmc28",
+  "technology_library": "tsmcN28",
+  "model_sections": {
+    "tt": [
+      "top_tt",
+      "pre_simu"
+    ],
+    "ff": [
+      "top_ff",
+      "pre_simu"
+    ],
+    "ss": [
+      "top_ss",
+      "pre_simu"
+    ]
+  },
+  "nominal": {
+    "vdd_v": 0.9,
+    "temperature_c": 25
+  },
+  "devices": {
+    "nmos": {
+      "master": [
+        "tsmcN28",
+        "nch_mac",
+        "symbol"
+      ],
+      "ports": [
+        "D",
+        "G",
+        "S",
+        "B"
+      ]
+    },
+    "pmos": {
+      "master": [
+        "tsmcN28",
+        "pch_mac",
+        "symbol"
+      ],
+      "ports": [
+        "D",
+        "G",
+        "S",
+        "B"
+      ]
+    }
+  },
+  "calibre_baselines": {
+    "drc": "tsmc28-drc",
+    "lvs": "tsmc28-lvs",
+    "pex": "tsmc28-pex"
+  },
+  "enrichment": {
+    "reference_libraries": [
+      "tsmcN28",
+      "analogLib",
+      "basic"
+    ],
+    "device_map": "config/processes/tsmc28_device_map.txt",
+    "callbacks": "config/processes/tsmc28_callbacks.json",
+    "timeout_s": 300
+  }
+}

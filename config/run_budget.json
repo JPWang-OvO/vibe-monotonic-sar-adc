@@ -1,0 +1,7 @@
+{
+  "start_utc": "2026-10-23T06:40:35Z",
+  "deadline_utc": "2026-10-23T18:40:35Z",
+  "max_workers": 14,
+  "threads_per_worker": 8,
+  "collect_reserve_seconds": 900
+}

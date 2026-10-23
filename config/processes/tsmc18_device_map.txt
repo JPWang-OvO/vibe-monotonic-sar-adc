@@ -1,0 +1,25 @@
+# Spectre primitive -> OA master; native Spectre CDF propMapping verified.
+# The project adapter instantiates these isolated masters directly.
+# Spectre w and CDF wf are total width; CDF w is width per finger.
+devselect := nch nmos2v
+propMap := w wf
+propMap := l l
+propMap := nf fingers
+propMap := m simM
+
+devselect := nch_5 nmos5v
+propMap := w wf
+propMap := l l
+propMap := nf fingers
+propMap := m simM
+
+devselect := pch_5 pmos5v
+propMap := w wf
+propMap := l l
+propMap := nf fingers
+propMap := m simM
+devselect := pch pmos2v
+propMap := w wf
+propMap := l l
+propMap := nf fingers
+propMap := m simM

@@ -1,0 +1,29 @@
+---
+title: ADC 执行状态与时间预算
+type: plan
+status: active
+last_reviewed: 2026-10-23
+authoritative_sources:
+  - ../../config/run_budget.json
+  - ../../config/architecture.json
+  - ../../regression/systems/monotonic_sar/validate_python.py
+---
+
+# 执行窗口
+
+开始：2026-10-23 06:40:35 UTC（日本时间 15:40:35）。
+截止：2026-10-23 18:40:35 UTC（日本时间次日 03:40:35）。恢复任务沿用该截止时间。
+预留末尾 15 分钟收集结果；每个仿真使用 8 线程，总计最多 14 worker。
+用户已授权自主审阅 preview、启动测试、修改设计和重跑受影响条件。
+
+# 阶段
+
+1. Python 电荷模型与 FFT：已通过 30 个代表性及边界输入和两个指定频点。
+2. 模块化 Verilog-A：已实现比较完成事件驱动的逐位控制，待远端对齐验证。
+3. TSMC18 primitive enrichment：待完成原生参数报告、CDF 回调、原生导出与尺寸语义资格测试。
+4. 晶体管模块及混合替换：待启动。
+5. 完整系统 20 个正式 case：待启动，依次执行 TT 无噪声、TT 有噪声、SS/FF 极端温度。
+6. OA schematic/symbol：全部电气验收通过后进入；当前未进入。
+
+现有 `artifacts/pdk_smoke_20261023` 属于任务开始前的环境预检，只作为环境证据。
+新仿真批次存放于运行时解析的 artifact 根目录。原始波形保留在服务器。

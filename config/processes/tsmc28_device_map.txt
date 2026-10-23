@@ -1,0 +1,4 @@
+devselect := nch_mac nch_mac
+propMap := l l
+devselect := pch_mac pch_mac
+propMap := l l

@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_BIT",
+  "ports": [
+    "Outp",
+    "Capture",
+    "Sample",
+    "Q",
+    "Bp",
+    "Bn",
+    "VDD",
+    "VSS",
+    "VREFP",
+    "VREFN"
+  ],
+  "views": {
+    "veriloga": {
+      "source": "veriloga/SAR_BIT.va",
+      "netlist": "veriloga/netlist.scs"
+    },
+    "transistor": {
+      "netlist": "transistor/netlist.scs"
+    }
+  }
+}

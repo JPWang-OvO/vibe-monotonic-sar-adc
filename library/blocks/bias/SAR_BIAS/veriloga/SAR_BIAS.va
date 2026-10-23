@@ -1,0 +1,6 @@
+`include "constants.vams"
+`include "disciplines.vams"
+module SAR_BIAS_va(Bias,VDD,VSS);
+input VDD,VSS;output Bias;electrical Bias,VDD,VSS;
+analog V(Bias,VSS)<+0.9;
+endmodule

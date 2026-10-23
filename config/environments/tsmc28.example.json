@@ -1,0 +1,16 @@
+{
+  "profile": "<bridge-profile>",
+  "remote_runs": "<absolute-remote-project-scratch>",
+  "server_python": "<absolute-remote-python3>",
+  "spectre": "<absolute-spectre-executable>",
+  "cadence_setup": "<absolute-cadence-csh-setup>",
+  "model_files": {
+    "tsmc28": "<absolute-model-file>"
+  },
+  "oa_library_path": "<absolute-new-oa-library-path>",
+  "calibre": {
+    "python": "<python-path-relative-to-CALIBRE_BRIDGE_ROOT>",
+    "config": "<absolute-local-calibre-config>",
+    "profile": "<calibre-profile>"
+  }
+}
