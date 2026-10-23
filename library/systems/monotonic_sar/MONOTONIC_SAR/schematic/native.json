@@ -9,12 +9,12 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 5823
+        "value": 5459
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 04:03:50 2026"
+        "value": "Oct 24 05:21:12 2026"
       },
       {
         "name": "net#",
@@ -24,19 +24,19 @@
       {
         "name": "pin#",
         "type": "int",
-        "value": 19
+        "value": 10
       },
       {
         "name": "portOrder",
         "type": "ILList",
         "value": {
-          "skill": "(\"Vinp\" \"Vinn\" \"Clks\" \"D9\" \"D8\" \"D7\" \"D6\" \"D5\" \"D4\" \"D3\" \"D2\" \"D1\" \"D0\" \"EOC\" \"VDD\" \"VSS\" \"VCM\" \"VREFP\" \"VREFN\")"
+          "skill": "(\"Vinp\" \"Vinn\" \"Clks\" \"D<9:0>\" \"EOC\" \"VDD\" \"VSS\" \"VCM\" \"VREFP\" \"VREFN\")"
         }
       },
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 5823
+        "value": 5459
       },
       {
         "name": "schGeometryVersion",
@@ -447,7 +447,7 @@
         "multiplicity": 10,
         "properties": [],
         "connections": {
-          "Q": "D9,D8,D7,D6,D5,D4,D3,D2,D1,D0",
+          "Q": "D<9:0>",
           "Done": "<*10>EOC",
           "D": "Q9,Q8,Q7,Q6,Q5,Q4,Q3,Q2,Q1,Q0",
           "VSS": "<*10>VSS",
@@ -552,114 +552,6 @@
         "connections": {}
       },
       {
-        "name": "PIN10",
-        "master": [
-          "basic",
-          "opin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN11",
-        "master": [
-          "basic",
-          "opin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN12",
-        "master": [
-          "basic",
-          "opin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN13",
-        "master": [
-          "basic",
-          "opin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN14",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN15",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN16",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN17",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN18",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
         "name": "PIN2",
         "master": [
           "basic",
@@ -699,7 +591,7 @@
         "name": "PIN5",
         "master": [
           "basic",
-          "opin",
+          "iopin",
           "symbol"
         ],
         "purpose": "pin",
@@ -711,7 +603,7 @@
         "name": "PIN6",
         "master": [
           "basic",
-          "opin",
+          "iopin",
           "symbol"
         ],
         "purpose": "pin",
@@ -723,7 +615,7 @@
         "name": "PIN7",
         "master": [
           "basic",
-          "opin",
+          "iopin",
           "symbol"
         ],
         "purpose": "pin",
@@ -735,7 +627,7 @@
         "name": "PIN8",
         "master": [
           "basic",
-          "opin",
+          "iopin",
           "symbol"
         ],
         "purpose": "pin",
@@ -747,7 +639,7 @@
         "name": "PIN9",
         "master": [
           "basic",
-          "opin",
+          "iopin",
           "symbol"
         ],
         "purpose": "pin",
@@ -764,63 +656,9 @@
         "properties": []
       },
       {
-        "name": "D0",
+        "name": "D<9:0>",
         "direction": "output",
-        "net": "D0",
-        "properties": []
-      },
-      {
-        "name": "D1",
-        "direction": "output",
-        "net": "D1",
-        "properties": []
-      },
-      {
-        "name": "D2",
-        "direction": "output",
-        "net": "D2",
-        "properties": []
-      },
-      {
-        "name": "D3",
-        "direction": "output",
-        "net": "D3",
-        "properties": []
-      },
-      {
-        "name": "D4",
-        "direction": "output",
-        "net": "D4",
-        "properties": []
-      },
-      {
-        "name": "D5",
-        "direction": "output",
-        "net": "D5",
-        "properties": []
-      },
-      {
-        "name": "D6",
-        "direction": "output",
-        "net": "D6",
-        "properties": []
-      },
-      {
-        "name": "D7",
-        "direction": "output",
-        "net": "D7",
-        "properties": []
-      },
-      {
-        "name": "D8",
-        "direction": "output",
-        "net": "D8",
-        "properties": []
-      },
-      {
-        "name": "D9",
-        "direction": "output",
-        "net": "D9",
+        "net": "D<9:0>",
         "properties": []
       },
       {
@@ -1144,67 +982,7 @@
         "properties": []
       },
       {
-        "name": "D0",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "D1",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "D2",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "D3",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "D4",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "D5",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "D6",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "D7",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "D8",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "D9",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "D9,D8,D7,D6,D5,D4,D3,D2,D1,D0",
+        "name": "D<9:0>",
         "signal_type": "signal",
         "global_": false,
         "properties": []

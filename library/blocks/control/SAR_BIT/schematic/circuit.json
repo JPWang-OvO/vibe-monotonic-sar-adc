@@ -44,11 +44,11 @@
       "oa_parameters": {}
     },
     {
-      "name": "I_select_p",
+      "name": "I_select<1:0>",
       "nodes": [
-        "Q",
+        "Q,QB",
         "Capture",
-        "BpRaw",
+        "BpRaw,BnRaw",
         "VDD",
         "VSS"
       ],
@@ -57,9 +57,9 @@
         "factor": "max(1,strength*8)"
       },
       "connections": {
-        "A": "Q",
+        "A": "Q,QB",
         "B": "Capture",
-        "Z": "BpRaw",
+        "Z": "BpRaw,BnRaw",
         "VDD": "VDD",
         "VSS": "VSS"
       },
@@ -70,42 +70,17 @@
       ],
       "oa_parameters": {
         "factor": "max(1,pPar(\"strength\")*8)"
-      }
+      },
+      "array_members": [
+        "I_select_p",
+        "I_select_n"
+      ]
     },
     {
-      "name": "I_select_n",
+      "name": "I_buf0<1:0>",
       "nodes": [
-        "QB",
-        "Capture",
-        "BnRaw",
-        "VDD",
-        "VSS"
-      ],
-      "model": "SAR_SELECT",
-      "parameters": {
-        "factor": "max(1,strength*8)"
-      },
-      "connections": {
-        "A": "QB",
-        "B": "Capture",
-        "Z": "BnRaw",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_SELECT",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "factor": "max(1,pPar(\"strength\")*8)"
-      }
-    },
-    {
-      "name": "I_buf_p0",
-      "nodes": [
-        "BpRaw",
-        "BpBuf",
+        "BpRaw,BnRaw",
+        "BpBuf,BnBuf",
         "VDD",
         "VSS"
       ],
@@ -114,8 +89,8 @@
         "scale": "max(1,strength*32)"
       },
       "connections": {
-        "A": "BpRaw",
-        "Z": "BpBuf",
+        "A": "BpRaw,BnRaw",
+        "Z": "BpBuf,BnBuf",
         "VDD": "VDD",
         "VSS": "VSS"
       },
@@ -126,13 +101,17 @@
       ],
       "oa_parameters": {
         "scale": "max(1,pPar(\"strength\")*32)"
-      }
+      },
+      "array_members": [
+        "I_buf_p0",
+        "I_buf_n0"
+      ]
     },
     {
-      "name": "I_buf_p1",
+      "name": "I_buf1<1:0>",
       "nodes": [
-        "BpBuf",
-        "Bp",
+        "BpBuf,BnBuf",
+        "Bp,Bn",
         "VREFP",
         "VREFN"
       ],
@@ -141,8 +120,8 @@
         "scale": "max(1,strength*256)"
       },
       "connections": {
-        "A": "BpBuf",
-        "Z": "Bp",
+        "A": "BpBuf,BnBuf",
+        "Z": "Bp,Bn",
         "VDD": "VREFP",
         "VSS": "VREFN"
       },
@@ -153,61 +132,11 @@
       ],
       "oa_parameters": {
         "scale": "max(1,pPar(\"strength\")*256)"
-      }
-    },
-    {
-      "name": "I_buf_n0",
-      "nodes": [
-        "BnRaw",
-        "BnBuf",
-        "VDD",
-        "VSS"
-      ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "max(1,strength*32)"
       },
-      "connections": {
-        "A": "BnRaw",
-        "Z": "BnBuf",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "scale": "max(1,pPar(\"strength\")*32)"
-      }
-    },
-    {
-      "name": "I_buf_n1",
-      "nodes": [
-        "BnBuf",
-        "Bn",
-        "VREFP",
-        "VREFN"
-      ],
-      "model": "SAR_DAC_DRIVE",
-      "parameters": {
-        "scale": "max(1,strength*256)"
-      },
-      "connections": {
-        "A": "BnBuf",
-        "Z": "Bn",
-        "VDD": "VREFP",
-        "VSS": "VREFN"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_DAC_DRIVE",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "scale": "max(1,pPar(\"strength\")*256)"
-      }
+      "array_members": [
+        "I_buf_p1",
+        "I_buf_n1"
+      ]
     }
   ],
   "staged_source": "library__blocks__control__SAR_BIT__pullup__netlist.scs"

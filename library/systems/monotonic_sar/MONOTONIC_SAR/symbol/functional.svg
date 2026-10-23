@@ -23,18 +23,8 @@
 <rect x="1312" y="304" width="128" height="192"/>
 <polyline points="1232,400 1312,400" stroke-width="3.2" stroke-linecap="butt"/>
 <polyline points="1264,416 1280,384"/>
-<polyline points="1440,400 1536,400" stroke-width="3.2" stroke-linecap="butt"/>
-<polyline points="1536,272 1536,704" stroke-width="3.2" stroke-linecap="butt"/>
-<polyline points="1664,288 1568,288 1536,272"/>
-<polyline points="1664,336 1568,336 1536,320"/>
-<polyline points="1664,384 1568,384 1536,368"/>
-<polyline points="1664,432 1568,432 1536,416"/>
-<polyline points="1664,480 1568,480 1536,464"/>
-<polyline points="1664,528 1568,528 1536,512"/>
-<polyline points="1664,576 1568,576 1536,560"/>
-<polyline points="1664,624 1568,624 1536,608"/>
-<polyline points="1664,672 1568,672 1536,656"/>
-<polyline points="1664,720 1568,720 1536,704"/>
+<polyline points="1440,400 1664,400" stroke-width="3.2" stroke-linecap="butt"/>
+<polyline points="1528,416 1544,384"/>
 <polyline points="1152,304 1152,240 672,240 672,304" stroke-width="3.2" stroke-linecap="butt"/>
 <polyline points="1016,256 1032,224"/>
 <rect x="736" y="608" width="448" height="128"/>
@@ -64,6 +54,7 @@
 <text x="1152" y="400" font-size="16" text-anchor="middle" dominant-baseline="central">10 latches</text>
 <text x="1376" y="400" font-size="16" text-anchor="middle" dominant-baseline="central">10 FF</text>
 <text x="1272" y="368" font-size="16" text-anchor="middle" dominant-baseline="central">10</text>
+<text x="1536" y="368" font-size="16" text-anchor="middle" dominant-baseline="central">10</text>
 <text x="1024" y="208" font-size="16" text-anchor="middle" dominant-baseline="central">18</text>
 <text x="848" y="208" font-size="16" text-anchor="middle" dominant-baseline="central">bottom plates</text>
 <text x="960" y="672" font-size="16" text-anchor="middle" dominant-baseline="central">asynchronous control</text>
@@ -78,16 +69,7 @@
 <g data-port="VSS" data-side="bottom"><rect x="1596.8" y="924.8" width="6.4" height="6.4"/><text x="1616" y="896" text-anchor="start" dominant-baseline="central">VSS</text></g>
 <g data-port="Vinp" data-side="left"><rect x="124.8" y="348.8" width="6.4" height="6.4"/><text x="144" y="336" text-anchor="start" dominant-baseline="central">Vinp</text></g>
 <g data-port="Vinn" data-side="left"><rect x="124.8" y="444.8" width="6.4" height="6.4"/><text x="144" y="432" text-anchor="start" dominant-baseline="central">Vinn</text></g>
-<g data-port="D9" data-side="right"><rect x="1660.8" y="284.8" width="6.4" height="6.4"/><text x="1648" y="272" text-anchor="end" dominant-baseline="central">D9</text></g>
-<g data-port="D8" data-side="right"><rect x="1660.8" y="332.8" width="6.4" height="6.4"/><text x="1648" y="320" text-anchor="end" dominant-baseline="central">D8</text></g>
-<g data-port="D7" data-side="right"><rect x="1660.8" y="380.8" width="6.4" height="6.4"/><text x="1648" y="368" text-anchor="end" dominant-baseline="central">D7</text></g>
-<g data-port="D6" data-side="right"><rect x="1660.8" y="428.8" width="6.4" height="6.4"/><text x="1648" y="416" text-anchor="end" dominant-baseline="central">D6</text></g>
-<g data-port="D5" data-side="right"><rect x="1660.8" y="476.8" width="6.4" height="6.4"/><text x="1648" y="464" text-anchor="end" dominant-baseline="central">D5</text></g>
-<g data-port="D4" data-side="right"><rect x="1660.8" y="524.8" width="6.4" height="6.4"/><text x="1648" y="512" text-anchor="end" dominant-baseline="central">D4</text></g>
-<g data-port="D3" data-side="right"><rect x="1660.8" y="572.8" width="6.4" height="6.4"/><text x="1648" y="560" text-anchor="end" dominant-baseline="central">D3</text></g>
-<g data-port="D2" data-side="right"><rect x="1660.8" y="620.8" width="6.4" height="6.4"/><text x="1648" y="608" text-anchor="end" dominant-baseline="central">D2</text></g>
-<g data-port="D1" data-side="right"><rect x="1660.8" y="668.8" width="6.4" height="6.4"/><text x="1648" y="656" text-anchor="end" dominant-baseline="central">D1</text></g>
-<g data-port="D0" data-side="right"><rect x="1660.8" y="716.8" width="6.4" height="6.4"/><text x="1648" y="704" text-anchor="end" dominant-baseline="central">D0</text></g>
+<g data-port="D&lt;9:0&gt;" data-side="right"><rect x="1660.8" y="396.8" width="6.4" height="6.4"/><text x="1648" y="384" text-anchor="end" dominant-baseline="central">D&lt;9:0&gt;</text></g>
 <g data-port="EOC" data-side="right"><rect x="1660.8" y="828.8" width="6.4" height="6.4"/><text x="1648" y="816" text-anchor="end" dominant-baseline="central">EOC</text></g>
 <g data-port="Clks" data-side="left"><rect x="124.8" y="764.8" width="6.4" height="6.4"/><text x="144" y="752" text-anchor="start" dominant-baseline="central">Clks</text></g>
 <g data-port="VREFP" data-side="top"><rect x="508.8" y="156.8" width="6.4" height="6.4"/><text x="528" y="192" text-anchor="start" dominant-baseline="central">VREFP</text></g>

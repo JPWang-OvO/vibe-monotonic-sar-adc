@@ -104,6 +104,14 @@ def prepare_source(batch_folder):
     for name, data in definitions.items():
         for inst in data['instances']:
             inst['master'], inst['oa_parameters'] = qualified.device(inst, data['parameters'])
+    # The OA output interface groups the ten accepted scalar bits into one bus.
+    top=definitions['MONOTONIC_SAR']
+    outputs={f'D{bit}':f'D<{bit}>' for bit in range(9,-1,-1)}
+    top['ports']=[p for p in top['ports'] if p not in outputs]
+    top['ports'].insert(3,'D<9:0>')
+    for inst in top['instances']:
+        inst['nodes']=[outputs.get(n,n) for n in inst['nodes']]
+        inst['connections']={k:outputs.get(v,v) for k,v in inst['connections'].items()}
     return definitions
 
 
@@ -130,7 +138,7 @@ def expression_value(expression, scope):
     return float(visit(ast.parse(expression, mode='eval').body))
 
 
-def flatten(definitions, top='MONOTONIC_SAR', qualified=None):
+def flatten(definitions, top='MONOTONIC_SAR', qualified=None, instance_aliases=None):
     """Canonical primitive connectivity and effective parameters.
 
     Parallel driver arrays are expanded electrically and summed by multiplicity;
@@ -150,6 +158,7 @@ def flatten(definitions, top='MONOTONIC_SAR', qualified=None):
             name = clean_name(inst['name']).replace('\\<', '<').replace('\\>', '>')
             # Native netlisting expands I_out<9:0> into I_out<9> ... I_out<0>.
             # These members retain the source I_out9 ... I_out0 hierarchy names.
+            name = (instance_aliases or {}).get(cell,{}).get(name,name)
             name = re.sub(r'<(\d+)>$', r'\1', name)
             copies = 1
             array = re.fullmatch(r'(.*)<(\d+):(\d+)>', name)

@@ -55,66 +55,45 @@
     ],
     "orient": "MY"
   },
-  "I_outp": {
+  "I_out<1:0>": {
     "xy": [
       -2.0,
       -3
     ],
     "orient": "R0"
   },
-  "I_outp1": {
+  "I_out1<1:0>": {
     "xy": [
       1.75,
       -3
     ],
     "orient": "R0"
   },
-  "I_outp2": {
+  "I_out2<1:0>": {
     "xy": [
       5.5,
       -3
-    ],
-    "orient": "R0"
-  },
-  "I_outn": {
-    "xy": [
-      -2.0,
-      -6
-    ],
-    "orient": "R0"
-  },
-  "I_outn1": {
-    "xy": [
-      1.75,
-      -6
-    ],
-    "orient": "R0"
-  },
-  "I_outn2": {
-    "xy": [
-      5.5,
-      -6
     ],
     "orient": "R0"
   },
   "I_valid": {
     "xy": [
       -2.0,
-      -9
+      -6
     ],
     "orient": "R0"
   },
   "I_vb0": {
     "xy": [
       1.75,
-      -9
+      -6
     ],
     "orient": "R0"
   },
   "I_vb1": {
     "xy": [
       5.5,
-      -9
+      -6
     ],
     "orient": "R0"
   }

@@ -9,12 +9,12 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 2600
+        "value": 2109
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 03:57:22 2026"
+        "value": "Oct 24 05:20:56 2026"
       },
       {
         "name": "net#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 2600
+        "value": 2109
       },
       {
         "name": "schGeometryVersion",
@@ -51,203 +51,14 @@
     ],
     "instances": [
       {
-        "name": "Cn1",
+        "name": "C_dummy<1:0>",
         "master": [
           "analogLib",
           "cap",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "c",
-            "type": "string",
-            "value": "1*pPar(\"unit_cap\")"
-          }
-        ],
-        "connections": {
-          "MINUS": "Bn1",
-          "PLUS": "Vn"
-        }
-      },
-      {
-        "name": "Cn2",
-        "master": [
-          "analogLib",
-          "cap",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "c",
-            "type": "string",
-            "value": "2*pPar(\"unit_cap\")"
-          }
-        ],
-        "connections": {
-          "MINUS": "Bn2",
-          "PLUS": "Vn"
-        }
-      },
-      {
-        "name": "Cn3",
-        "master": [
-          "analogLib",
-          "cap",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "c",
-            "type": "string",
-            "value": "4*pPar(\"unit_cap\")"
-          }
-        ],
-        "connections": {
-          "MINUS": "Bn3",
-          "PLUS": "Vn"
-        }
-      },
-      {
-        "name": "Cn4",
-        "master": [
-          "analogLib",
-          "cap",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "c",
-            "type": "string",
-            "value": "8*pPar(\"unit_cap\")"
-          }
-        ],
-        "connections": {
-          "MINUS": "Bn4",
-          "PLUS": "Vn"
-        }
-      },
-      {
-        "name": "Cn5",
-        "master": [
-          "analogLib",
-          "cap",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "c",
-            "type": "string",
-            "value": "16*pPar(\"unit_cap\")"
-          }
-        ],
-        "connections": {
-          "MINUS": "Bn5",
-          "PLUS": "Vn"
-        }
-      },
-      {
-        "name": "Cn6",
-        "master": [
-          "analogLib",
-          "cap",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "c",
-            "type": "string",
-            "value": "32*pPar(\"unit_cap\")"
-          }
-        ],
-        "connections": {
-          "MINUS": "Bn6",
-          "PLUS": "Vn"
-        }
-      },
-      {
-        "name": "Cn7",
-        "master": [
-          "analogLib",
-          "cap",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "c",
-            "type": "string",
-            "value": "64*pPar(\"unit_cap\")"
-          }
-        ],
-        "connections": {
-          "MINUS": "Bn7",
-          "PLUS": "Vn"
-        }
-      },
-      {
-        "name": "Cn8",
-        "master": [
-          "analogLib",
-          "cap",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "c",
-            "type": "string",
-            "value": "128*pPar(\"unit_cap\")"
-          }
-        ],
-        "connections": {
-          "MINUS": "Bn8",
-          "PLUS": "Vn"
-        }
-      },
-      {
-        "name": "Cn9",
-        "master": [
-          "analogLib",
-          "cap",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "c",
-            "type": "string",
-            "value": "256*pPar(\"unit_cap\")"
-          }
-        ],
-        "connections": {
-          "MINUS": "Bn9",
-          "PLUS": "Vn"
-        }
-      },
-      {
-        "name": "Cn_dummy",
-        "master": [
-          "analogLib",
-          "cap",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [
           {
             "name": "c",
@@ -256,19 +67,19 @@
           }
         ],
         "connections": {
-          "MINUS": "VREFP",
-          "PLUS": "Vn"
+          "MINUS": "<*2>VREFP",
+          "PLUS": "Vp,Vn"
         }
       },
       {
-        "name": "Cp1",
+        "name": "C_weight1<1:0>",
         "master": [
           "analogLib",
           "cap",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [
           {
             "name": "c",
@@ -277,19 +88,19 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp1",
-          "PLUS": "Vp"
+          "MINUS": "Bp1,Bn1",
+          "PLUS": "Vp,Vn"
         }
       },
       {
-        "name": "Cp2",
+        "name": "C_weight2<1:0>",
         "master": [
           "analogLib",
           "cap",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [
           {
             "name": "c",
@@ -298,19 +109,19 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp2",
-          "PLUS": "Vp"
+          "MINUS": "Bp2,Bn2",
+          "PLUS": "Vp,Vn"
         }
       },
       {
-        "name": "Cp3",
+        "name": "C_weight3<1:0>",
         "master": [
           "analogLib",
           "cap",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [
           {
             "name": "c",
@@ -319,19 +130,19 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp3",
-          "PLUS": "Vp"
+          "MINUS": "Bp3,Bn3",
+          "PLUS": "Vp,Vn"
         }
       },
       {
-        "name": "Cp4",
+        "name": "C_weight4<1:0>",
         "master": [
           "analogLib",
           "cap",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [
           {
             "name": "c",
@@ -340,19 +151,19 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp4",
-          "PLUS": "Vp"
+          "MINUS": "Bp4,Bn4",
+          "PLUS": "Vp,Vn"
         }
       },
       {
-        "name": "Cp5",
+        "name": "C_weight5<1:0>",
         "master": [
           "analogLib",
           "cap",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [
           {
             "name": "c",
@@ -361,19 +172,19 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp5",
-          "PLUS": "Vp"
+          "MINUS": "Bp5,Bn5",
+          "PLUS": "Vp,Vn"
         }
       },
       {
-        "name": "Cp6",
+        "name": "C_weight6<1:0>",
         "master": [
           "analogLib",
           "cap",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [
           {
             "name": "c",
@@ -382,19 +193,19 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp6",
-          "PLUS": "Vp"
+          "MINUS": "Bp6,Bn6",
+          "PLUS": "Vp,Vn"
         }
       },
       {
-        "name": "Cp7",
+        "name": "C_weight7<1:0>",
         "master": [
           "analogLib",
           "cap",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [
           {
             "name": "c",
@@ -403,19 +214,19 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp7",
-          "PLUS": "Vp"
+          "MINUS": "Bp7,Bn7",
+          "PLUS": "Vp,Vn"
         }
       },
       {
-        "name": "Cp8",
+        "name": "C_weight8<1:0>",
         "master": [
           "analogLib",
           "cap",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [
           {
             "name": "c",
@@ -424,19 +235,19 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp8",
-          "PLUS": "Vp"
+          "MINUS": "Bp8,Bn8",
+          "PLUS": "Vp,Vn"
         }
       },
       {
-        "name": "Cp9",
+        "name": "C_weight9<1:0>",
         "master": [
           "analogLib",
           "cap",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [
           {
             "name": "c",
@@ -445,29 +256,8 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp9",
-          "PLUS": "Vp"
-        }
-      },
-      {
-        "name": "Cp_dummy",
-        "master": [
-          "analogLib",
-          "cap",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "c",
-            "type": "string",
-            "value": "pPar(\"unit_cap\")"
-          }
-        ],
-        "connections": {
-          "MINUS": "VREFP",
-          "PLUS": "Vp"
+          "MINUS": "Bp9,Bn9",
+          "PLUS": "Vp,Vn"
         }
       },
       {
@@ -885,6 +675,12 @@
     ],
     "nets": [
       {
+        "name": "<*2>VREFP",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
         "name": "Bn1",
         "signal_type": "signal",
         "global_": false,
@@ -945,7 +741,19 @@
         "properties": []
       },
       {
+        "name": "Bp1,Bn1",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
         "name": "Bp2",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp2,Bn2",
         "signal_type": "signal",
         "global_": false,
         "properties": []
@@ -957,7 +765,19 @@
         "properties": []
       },
       {
+        "name": "Bp3,Bn3",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
         "name": "Bp4",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp4,Bn4",
         "signal_type": "signal",
         "global_": false,
         "properties": []
@@ -969,7 +789,19 @@
         "properties": []
       },
       {
+        "name": "Bp5,Bn5",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
         "name": "Bp6",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp6,Bn6",
         "signal_type": "signal",
         "global_": false,
         "properties": []
@@ -981,13 +813,31 @@
         "properties": []
       },
       {
+        "name": "Bp7,Bn7",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
         "name": "Bp8",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
+        "name": "Bp8,Bn8",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
         "name": "Bp9",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Bp9,Bn9",
         "signal_type": "signal",
         "global_": false,
         "properties": []
@@ -1012,6 +862,12 @@
       },
       {
         "name": "Vp",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Vp,Vn",
         "signal_type": "signal",
         "global_": false,
         "properties": []

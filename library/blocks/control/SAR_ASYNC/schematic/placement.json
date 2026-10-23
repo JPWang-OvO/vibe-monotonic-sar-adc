@@ -2,35 +2,35 @@
   "I_sample_guard": {
     "xy": [
       0,
-      5
+      3
     ],
     "orient": "R0"
   },
   "I_startup": {
     "xy": [
       4,
-      5
+      3
     ],
     "orient": "R0"
   },
   "I_reset": {
     "xy": [
       8,
-      5
+      3
     ],
     "orient": "R0"
   },
   "I_cp0": {
     "xy": [
       13.0,
-      5
+      3
     ],
     "orient": "R0"
   },
   "I_cp1": {
     "xy": [
       16.5,
-      5
+      3
     ],
     "orient": "R0"
   },
@@ -44,35 +44,35 @@
   "I_feedback_delay": {
     "xy": [
       0,
-      -8
+      -3
     ],
     "orient": "R0"
   },
   "I_early": {
     "xy": [
       4,
-      -8
+      -3
     ],
     "orient": "R0"
   },
   "I_run_nor": {
     "xy": [
       8,
-      -8
+      -3
     ],
     "orient": "R0"
   },
   "I_clock_drive": {
     "xy": [
       12,
-      -8
+      -3
     ],
     "orient": "R0"
   },
   "I_done_delay": {
     "xy": [
       16,
-      -8
+      -3
     ],
     "orient": "R0"
   }

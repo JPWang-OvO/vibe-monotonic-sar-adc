@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 
 from regression.common.project import ROOT, read_json
-from virtuoso.oa.comparison import spectre_document
+from virtuoso.oa.comparison import spectre_document,expand_signals
 
 
 def check(root=ROOT):
@@ -30,7 +30,7 @@ def check(root=ROOT):
                     problems.append(f"Expected own cell definition (PEX may include extracted child subcircuits): {source}")
                 else:
                     ports = [token.replace('\\<','<').replace('\\>','>') for token in parsed["subcircuits"][name]["ports"]]
-                    if ports != ["(", *record["ports"], ")"]:
+                    if ports != ["(", *expand_signals(record["ports"]), ")"]:
                         problems.append(f"Ordered ports differ: {source}")
         recipe = path.parent / "schematic/circuit.json"
         if recipe.exists():
@@ -47,7 +47,7 @@ def check(root=ROOT):
                     array=re.fullmatch(r'.*<(\d+):(\d+)>',row['name'])
                     if array:
                         count=abs(int(array[1])-int(array[2]))+1
-                        connections={k:(v if ',' in v else f'<*{count}>'+v)
+                        connections={k:(v if len(expand_signals([v]))>1 else f'<*{count}>'+v)
                                      for k,v in connections.items()}
                     if row["master"] != saved["master"] or connections != saved["connections"]:
                         problems.append(f"Native/recipe circuit differs: {recipe}:{row['name']}")

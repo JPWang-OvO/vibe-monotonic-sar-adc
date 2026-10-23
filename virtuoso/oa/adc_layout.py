@@ -10,19 +10,32 @@ def fold_drivers(data):
         'SAR_ASYNC': [('I_seq', 9, 0)],
         'MONOTONIC_SAR': [('I_out', 9, 0), ('I_bit', 1, 0)],
     }
-    for stem, high, low in groups.get(data['cell'], []):
+    specifications=[(stem+f'<{high}:{low}>',[stem+str(i) for i in range(high,low-1,-1)])
+                    for stem,high,low in groups.get(data['cell'],[])]
+    paired={
+        'SAR_BIT': [('I_select',['I_select_p','I_select_n']),
+                    ('I_buf0',['I_buf_p0','I_buf_n0']),('I_buf1',['I_buf_p1','I_buf_n1'])],
+        'SAR_FRONTEND': [('I_sample',['I_sp','I_sn']),('C_cross',['C_cross_p','C_cross_n'])],
+        'SAR_CMP': [('I_out',['I_outp','I_outn']),('I_out1',['I_outp1','I_outn1']),
+                    ('I_out2',['I_outp2','I_outn2'])],
+        'SAR_CDAC': [(f'C_weight{bit}',[f'Cp{bit}',f'Cn{bit}']) for bit in range(9,0,-1)]
+                    + [('C_dummy',['Cp_dummy','Cn_dummy'])],
+    }
+    specifications += [(stem+'<1:0>',members) for stem,members in paired.get(data['cell'],[])]
+    for array_name, member_names in specifications:
         by_name = {i['name']: i for i in data['instances']}
-        members = [by_name[stem+str(i)] for i in range(high, low-1, -1)]
+        members = [by_name[name] for name in member_names]
         first = deepcopy(members[0])
         assert all((i['model'], i['parameters'], i['oa_parameters']) ==
                    (first['model'], first['parameters'], first['oa_parameters']) for i in members)
-        first['name'] = stem+f'<{high}:{low}>'
+        first['name'] = array_name
         first['array_members'] = [i['name'] for i in members]
         first['connections'] = {
             term: values[0] if len(set(values)) == 1 else ','.join(values)
             for term in first['connections']
             for values in [[i['connections'][term] for i in members]]
         }
+        if array_name=='I_out<9:0>':first['connections']['Q']='D<9:0>'
         first['nodes'] = list(first['connections'].values())
         removed = set(first['array_members'])
         data['instances'] = [i for i in data['instances'] if i['name'] not in removed] + [first]
@@ -48,9 +61,8 @@ def placements(data):
         put('Mp_input_p', 0, 2); put('Mp_input_n', 4.5, 2, 'MY')
         put('Mn_latch_p', 0, 0); put('Mn_latch_n', 4.5, 0, 'MY')
         put('Mn_reset_p', -2, 0); put('Mn_reset_n', 6.5, 0, 'MY')
-        row('I_outp I_outp1 I_outp2', -3, -2, 3.75)
-        row('I_outn I_outn1 I_outn2', -6, -2, 3.75)
-        row('I_valid I_vb0 I_vb1', -9, -2, 3.75)
+        row('I_out<1:0> I_out1<1:0> I_out2<1:0>', -3, -2, 3.75)
+        row('I_valid I_vb0 I_vb1', -6, -2, 3.75)
     elif cell in ('SAR_BOOST', 'SAR_BOOST_HI'):
         row('Mp_precharge Mp_start Mp_transfer', 2.5, 0, 2.5)
         row('Mn_reset_bottom Mn_start Mn_trackq', 0, 0, 2.5)
@@ -60,31 +72,30 @@ def placements(data):
         row('I_boost1 I_boost2', 3, 0, 4)
         put('Mn_sample', 4, -1); put('Mp_junction', 6.5, -1)
     elif cell == 'SAR_CDAC':
-        row(' '.join('Cp'+str(i) for i in range(9, 0, -1))+' Cp_dummy', 2, 0, 1.25)
-        row(' '.join('Cn'+str(i) for i in range(9, 0, -1))+' Cn_dummy', -2, 0, 1.25)
+        row(' '.join(f'C_weight{i}<1:0>' for i in range(9,4,-1)), 2, 0, 1.5)
+        row(' '.join(f'C_weight{i}<1:0>' for i in range(4,0,-1))+' C_dummy<1:0>', -1, 0, 1.5)
     elif cell == 'SAR_FRONTEND':
-        put('I_sp', 0, 4); put('I_sn', 0, -4); put('I_cdac', 6, 0)
-        put('C_cross_p', 3, 2); put('C_cross_n', 3, -2)
+        put('I_sample<1:0>', 0, 0); put('I_cdac', 5, 0)
+        put('C_cross<1:0>', 2.75, 1.5)
     elif cell in ('SAR_INV', 'SAR_HANDSHAKE', 'SAR_DONE_DELAY'):
         row(' '.join(i['name'] for i in data['instances']), 0, 0, 3.5)
     elif cell == 'SAR_OUT':
         row('I_latch I_buf0 I_buf1', 0, 0, 3.5)
     elif cell == 'SAR_BIT':
         put('I_latch', 0, 0)
-        row('I_select_p I_buf_p0 I_buf_p1', 2, 4, 3.5)
-        row('I_select_n I_buf_n0 I_buf_n1', -2, 4, 3.5)
+        row('I_select<1:0> I_buf0<1:0> I_buf1<1:0>', 0, 3.5, 2.5)
     elif cell == 'SAR_PHASE':
-        put('Mp_charge', 0, 9); put('C_por', 2, 8.5)
-        row('I_por0 I_por1', 9, 4, 2)
-        row('I_enable I_gate I_gatebuf I_clk0', 5, 0, 4)
-        put('Mp_clock_slew', 16, 6); put('Mn_clock_slew', 16, 4); put('C_clock_slew', 18, 5)
+        put('Mp_charge', 0, 6); put('C_por', 2, 5.5)
+        row('I_por0 I_por1', 6, 4, 2)
+        row('I_enable I_gate I_gatebuf I_clk0', 3, 0, 4)
+        put('Mp_clock_slew', 16, 4); put('Mn_clock_slew', 16, 2); put('C_clock_slew', 18, 3)
         row('I_ring<3:0> I_ring4', 0, 4, 6)
-        row('I_buffer0 I_buffer1 I_buffer2 I_buffer3 I_pre<7:0> I_final<63:0>', -4, 0, 3.5)
+        row('I_buffer0 I_buffer1 I_buffer2 I_buffer3 I_pre<7:0> I_final<63:0>', -3, 0, 3.5)
     elif cell == 'SAR_ASYNC':
-        row('I_sample_guard I_startup I_reset', 5, 0, 4)
-        row('I_cp0 I_cp1', 5, 13, 3.5)
+        row('I_sample_guard I_startup I_reset', 3, 0, 4)
+        row('I_cp0 I_cp1', 3, 13, 3.5)
         put('I_seq<9:0>', 8, 0)
-        row('I_feedback_delay I_early I_run_nor I_clock_drive I_done_delay', -8, 0, 4)
+        row('I_feedback_delay I_early I_run_nor I_clock_drive I_done_delay', -3, 0, 4)
     elif cell == 'SAR_STARTUP':
         put('Mp_charge',0,5);put('C_por',2,4.5)
         row('I_por0 I_por1',5,4,2)
@@ -119,7 +130,7 @@ def placements(data):
     elif cell == 'MONOTONIC_SAR':
         put('I_frontend', 0, 8); put('I_cmp', 6, 9); put('I_bias', 6, 13)
         row('I_phase I_inv', 4, -6, 5)
-        put('I_async', 6, 4); put('I_out<9:0>', 20.5, 6)
+        put('I_async', 6, 4); put('I_out<9:0>', 13, 9)
         for index, name in enumerate([f'I_bit{bit}' for bit in range(9,1,-1)]+['I_bit<1:0>']):
             put(name, (index%5)*4.5, -(index//5)*4)
     else:

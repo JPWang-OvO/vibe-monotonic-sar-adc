@@ -2,7 +2,7 @@
 title: 电路源与原生视图约定
 type: architecture
 status: current
-last_reviewed: 2026-10-21
+last_reviewed: 2026-10-24
 authoritative_sources:
   - ../../virtuoso/oa/cells.py
   - ../../virtuoso/oa/native.py
@@ -12,6 +12,9 @@ authoritative_sources:
 # 电路源与原生视图
 
 `cell.json` 索引一个 cell 的各个 view，`ports` 给出网表接口顺序。
+`ports` 可包含 `D<9:0>` 形式的总线；核对 Spectre 接口时按声明方向展开为有序标量端口。
+Spectre 文件将尖括号转义为 `D\<9\>`；顶层测试台仍按位置连接各位信号。
+实例阵列在 `array_members` 中保存成员顺序，公共标量连接广播到每个成员。
 `netlist` 等源路径相对 cell 目录。
 View 按实际需要登记；行为电路可只提供 Verilog-A，纯网表电路可只提供 Spectre 源。
 

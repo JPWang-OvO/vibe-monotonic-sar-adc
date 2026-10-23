@@ -12,7 +12,7 @@ TT 无噪声总供电功耗约 193.7 mW，包含输出缓冲，主时钟输入�
 正式绑定、逐项指标和功耗见 [电气验收](docs/verification/electrical-acceptance.md)，
 分层实现及修正依据见 [开发结果](docs/verification/development-status.md)。
 28 个自研 cell 的 OA schematic/symbol 已生成并完成原生网表等价核对，
-功能图和重复实例阵列已重绘；原生窗口截图审阅仍在进行。
+功能图和重复实例阵列已重绘，原生窗口图面审阅完成；输出接口为 `D<9:0>`。
 
 | 入口 | 内容 |
 |---|---|

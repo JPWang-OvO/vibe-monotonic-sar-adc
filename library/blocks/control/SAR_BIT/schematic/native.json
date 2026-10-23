@@ -9,17 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 1576
+        "value": 1270
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 03:58:29 2026"
+        "value": "Oct 24 05:20:50 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 6
+        "value": 2
       },
       {
         "name": "pin#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 1576
+        "value": 1270
       },
       {
         "name": "schGeometryVersion",
@@ -51,14 +51,14 @@
     ],
     "instances": [
       {
-        "name": "I_buf_n0",
+        "name": "I_buf0<1:0>",
         "master": [
           "MONOTONIC_SAR",
           "SAR_DRIVE",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [
           {
             "name": "scale",
@@ -67,21 +67,21 @@
           }
         ],
         "connections": {
-          "VSS": "VSS",
-          "VDD": "VDD",
-          "Z": "BnBuf",
-          "A": "BnRaw"
+          "VSS": "<*2>VSS",
+          "VDD": "<*2>VDD",
+          "Z": "BpBuf,BnBuf",
+          "A": "BpRaw,BnRaw"
         }
       },
       {
-        "name": "I_buf_n1",
+        "name": "I_buf1<1:0>",
         "master": [
           "MONOTONIC_SAR",
           "SAR_DAC_DRIVE",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [
           {
             "name": "scale",
@@ -90,56 +90,10 @@
           }
         ],
         "connections": {
-          "VSS": "VREFN",
-          "VDD": "VREFP",
-          "Z": "Bn",
-          "A": "BnBuf"
-        }
-      },
-      {
-        "name": "I_buf_p0",
-        "master": [
-          "MONOTONIC_SAR",
-          "SAR_DRIVE",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "max(1,pPar(\"strength\")*32)"
-          }
-        ],
-        "connections": {
-          "VSS": "VSS",
-          "VDD": "VDD",
-          "Z": "BpBuf",
-          "A": "BpRaw"
-        }
-      },
-      {
-        "name": "I_buf_p1",
-        "master": [
-          "MONOTONIC_SAR",
-          "SAR_DAC_DRIVE",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "max(1,pPar(\"strength\")*256)"
-          }
-        ],
-        "connections": {
-          "VSS": "VREFN",
-          "VDD": "VREFP",
-          "Z": "Bp",
-          "A": "BpBuf"
+          "VSS": "<*2>VREFN",
+          "VDD": "<*2>VREFP",
+          "Z": "Bp,Bn",
+          "A": "BpBuf,BnBuf"
         }
       },
       {
@@ -162,14 +116,14 @@
         }
       },
       {
-        "name": "I_select_n",
+        "name": "I_select<1:0>",
         "master": [
           "MONOTONIC_SAR",
           "SAR_SELECT",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [
           {
             "name": "factor",
@@ -178,35 +132,11 @@
           }
         ],
         "connections": {
-          "VSS": "VSS",
-          "VDD": "VDD",
-          "Z": "BnRaw",
-          "B": "Capture",
-          "A": "QB"
-        }
-      },
-      {
-        "name": "I_select_p",
-        "master": [
-          "MONOTONIC_SAR",
-          "SAR_SELECT",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "factor",
-            "type": "string",
-            "value": "max(1,pPar(\"strength\")*8)"
-          }
-        ],
-        "connections": {
-          "VSS": "VSS",
-          "VDD": "VDD",
-          "Z": "BpRaw",
-          "B": "Capture",
-          "A": "Q"
+          "VSS": "<*2>VSS",
+          "VDD": "<*2>VDD",
+          "Z": "BpRaw,BnRaw",
+          "B": "<*2>Capture",
+          "A": "Q,QB"
         }
       },
       {
@@ -408,19 +338,37 @@
     ],
     "nets": [
       {
+        "name": "<*2>Capture",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*2>VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*2>VREFN",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*2>VREFP",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*2>VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
         "name": "Bn",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "BnBuf",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "BnRaw",
         "signal_type": "signal",
         "global_": false,
         "properties": []
@@ -432,13 +380,19 @@
         "properties": []
       },
       {
-        "name": "BpBuf",
+        "name": "Bp,Bn",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "BpRaw",
+        "name": "BpBuf,BnBuf",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "BpRaw,BnRaw",
         "signal_type": "signal",
         "global_": false,
         "properties": []
@@ -457,6 +411,12 @@
       },
       {
         "name": "Q",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Q,QB",
         "signal_type": "signal",
         "global_": false,
         "properties": []
