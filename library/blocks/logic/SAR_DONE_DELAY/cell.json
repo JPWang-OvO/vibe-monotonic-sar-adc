@@ -13,6 +13,9 @@
     },
     "short": {
       "netlist": "short/netlist.scs"
+    },
+    "fastout": {
+      "netlist": "fastout/netlist.scs"
     }
   }
 }

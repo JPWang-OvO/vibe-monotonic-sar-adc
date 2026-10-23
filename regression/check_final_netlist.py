@@ -23,4 +23,4 @@ for case in batch['cases']:
         cfg=case['measurement'];assert cfg['n']==256 and cfg['fft'] and cfg['physical_frontend']
         for key in ['discard_cycles','read_offset_s','logic_low_v','logic_high_v']:assert cfg[key]==fixed[key],key
     print(json.dumps(dict(case=case['id'],boundary_pass=True,formal=a.formal,source_files=len(sources['sources']),
-        ideal_testbench_sources=supplies,expanded_mos_count=enrichment['inspected_mos_count'],cell_views=sources['cell_views'])))
+        ideal_testbench_sources=supplies,inspected_mos_count=enrichment['inspected_mos_count'],cell_views=sources['cell_views'])))

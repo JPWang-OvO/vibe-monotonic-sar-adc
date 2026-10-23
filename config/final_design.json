@@ -1,0 +1,39 @@
+{
+  "source_flow": "regression/systems/monotonic_sar/flows/physical_guard_g2/flow.json",
+  "cell_views": {
+    "SAR_PHASE": "drive16k",
+    "SAR_INV": "drive2",
+    "SAR_CMP": "current",
+    "SAR_ASYNC": "weighted4_g2_quiet",
+    "SAR_BIT": "pullup",
+    "SAR_OUT": "fast",
+    "SAR_BIAS": "transistor",
+    "SAR_FRONTEND": "candidate",
+    "SAR_SAMPLE": "junction384",
+    "SAR_CDAC": "scaled",
+    "SAR_CAPTURE_LATCH": "drive",
+    "SAR_DONE_DELAY": "fastout",
+    "SAR_STARTUP": "quiet_arm",
+    "MONOTONIC_SAR": "spectre",
+    "SAR_WAIT_GATE": "damped_hold20",
+    "SAR_ARM": "quiet",
+    "SAR_SAMPLE_GUARD2": "quiet"
+  },
+  "acceptance": "config/acceptance.json",
+  "flows": [
+    "regression/systems/monotonic_sar/flows/final_stage1_tt_k3/flow.json",
+    "regression/systems/monotonic_sar/flows/final_stage1_tt_k51/flow.json",
+    "regression/systems/monotonic_sar/flows/final_stage2_tt_k3/flow.json",
+    "regression/systems/monotonic_sar/flows/final_stage2_tt_k51/flow.json",
+    "regression/systems/monotonic_sar/flows/final_stage3_ss_m40_k3/flow.json",
+    "regression/systems/monotonic_sar/flows/final_stage3_ss_m40_k51/flow.json",
+    "regression/systems/monotonic_sar/flows/final_stage3_ss_125_k3/flow.json",
+    "regression/systems/monotonic_sar/flows/final_stage3_ss_125_k51/flow.json",
+    "regression/systems/monotonic_sar/flows/final_stage3_ff_m40_k3/flow.json",
+    "regression/systems/monotonic_sar/flows/final_stage3_ff_m40_k51/flow.json",
+    "regression/systems/monotonic_sar/flows/final_stage3_ff_125_k3/flow.json",
+    "regression/systems/monotonic_sar/flows/final_stage3_ff_125_k51/flow.json"
+  ],
+  "case_count": 20,
+  "status": "electrical_acceptance_incomplete"
+}

@@ -14,6 +14,36 @@
   "views": {
     "transistor": {
       "netlist": "transistor/netlist.scs"
+    },
+    "ordered": {
+      "netlist": "ordered/netlist.scs"
+    },
+    "damped": {
+      "netlist": "damped/netlist.scs"
+    },
+    "damped60": {
+      "netlist": "damped60/netlist.scs"
+    },
+    "damped240": {
+      "netlist": "damped240/netlist.scs"
+    },
+    "rated96": {
+      "netlist": "rated96/netlist.scs"
+    },
+    "damped_hold32": {
+      "netlist": "damped_hold32/netlist.scs"
+    },
+    "damped_hold64": {
+      "netlist": "damped_hold64/netlist.scs"
+    },
+    "damped_hold16": {
+      "netlist": "damped_hold16/netlist.scs"
+    },
+    "damped_hold20": {
+      "netlist": "damped_hold20/netlist.scs"
+    },
+    "damped_hold22": {
+      "netlist": "damped_hold22/netlist.scs"
     }
   }
 }

@@ -1,0 +1,31 @@
+simulator lang=spectre
+include "../../../logic/SAR_HANDSHAKE/transistor/netlist.scs"
+// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
+include "../../../logic/SAR_FAST_SEQ/transistor/netlist.scs"
+include "../../../logic/SAR_WAIT_GATE/transistor/netlist.scs"
+include "../../../logic/SAR_DRIVE/transistor/netlist.scs"
+include "../../../logic/SAR_DONE_DELAY/transistor/netlist.scs"
+include "../../../logic/SAR_SAMPLE_GUARD8/transistor/netlist.scs"
+include "../../../logic/SAR_STARTUP/transistor/netlist.scs"
+subckt SAR_ASYNC (Sample Valid ClkC Done Ck9 Ck8 Ck7 Ck6 Ck5 Ck4 Ck3 Ck2 Ck1 Ck0 VDD VSS)
+I_startup (Sample SampleGuard Hold ClearN VDD VSS) SAR_STARTUP
+I_cp0 (Valid SeqB VDD VSS) SAR_DRIVE scale=16
+I_cp1 (SeqB Seq VDD VSS) SAR_DRIVE scale=16
+I_reset (ClearN Reset VDD VSS) SAR_DRIVE scale=8
+I_seq0 (VDD Seq SeqB Reset Ck9 VDD VSS) SAR_FAST_SEQ
+I_seq1 (Ck9 Seq SeqB Reset Ck8 VDD VSS) SAR_FAST_SEQ
+I_seq2 (Ck8 Seq SeqB Reset Ck7 VDD VSS) SAR_FAST_SEQ
+I_seq3 (Ck7 Seq SeqB Reset Ck6 VDD VSS) SAR_FAST_SEQ
+I_seq4 (Ck6 Seq SeqB Reset Ck5 VDD VSS) SAR_FAST_SEQ
+I_seq5 (Ck5 Seq SeqB Reset Ck4 VDD VSS) SAR_FAST_SEQ
+I_seq6 (Ck4 Seq SeqB Reset Ck3 VDD VSS) SAR_FAST_SEQ
+I_seq7 (Ck3 Seq SeqB Reset Ck2 VDD VSS) SAR_FAST_SEQ
+I_seq8 (Ck2 Seq SeqB Reset Ck1 VDD VSS) SAR_FAST_SEQ
+I_seq9 (Ck1 Seq SeqB Reset Ck0 VDD VSS) SAR_FAST_SEQ
+I_sample_guard (Sample SampleGuard VDD VSS) SAR_SAMPLE_GUARD8
+I_feedback_delay (Valid ValidDelay VDD VSS) SAR_HANDSHAKE
+I_early (Ck5 Early VDD VSS) SAR_DRIVE scale=1
+I_run_nor (Hold Valid Ck0 ValidDelay Early CompareEnable VDD VSS) SAR_WAIT_GATE
+I_clock_drive (CompareEnable ClkC VDD VSS) SAR_DRIVE scale=4
+I_done_delay (Ck0 Done VDD VSS) SAR_DONE_DELAY
+ends SAR_ASYNC

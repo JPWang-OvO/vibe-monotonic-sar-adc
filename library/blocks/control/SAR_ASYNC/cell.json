@@ -74,6 +74,24 @@
     },
     "weighted5": {
       "netlist": "weighted5/netlist.scs"
+    },
+    "weighted4_fast": {
+      "netlist": "weighted4_fast/netlist.scs"
+    },
+    "weighted4_g6": {
+      "netlist": "weighted4_g6/netlist.scs"
+    },
+    "weighted4_g8": {
+      "netlist": "weighted4_g8/netlist.scs"
+    },
+    "weighted4_g4": {
+      "netlist": "weighted4_g4/netlist.scs"
+    },
+    "weighted4_g2_quiet": {
+      "netlist": "weighted4_g2_quiet/netlist.scs"
+    },
+    "weighted4_g4_quiet": {
+      "netlist": "weighted4_g4_quiet/netlist.scs"
     }
   }
 }

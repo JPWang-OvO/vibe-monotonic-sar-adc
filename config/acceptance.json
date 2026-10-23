@@ -12,7 +12,7 @@
   "clock_high_plateau_s": 1.98e-9,
   "clock_width_definition": "50% crossings; plateau plus one edge gives a 2 ns high interval",
   "output_load_f_per_bit": 1e-14,
-  "output_buffer_view": "SAR_OUT/transistor: two SAR_DRIVE stages with scale 1 and 2",
+  "output_buffer_view": "Two SAR_DRIVE/transistor stages with scale 1 and 2, following each output register",
   "noise": {
     "noisefmin_hz": 1,
     "noisefmax_hz": 50000000000,

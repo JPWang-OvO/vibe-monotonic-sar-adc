@@ -15,6 +15,12 @@
     },
     "ordered": {
       "netlist": "ordered/netlist.scs"
+    },
+    "quiet": {
+      "netlist": "quiet/netlist.scs"
+    },
+    "quiet_arm": {
+      "netlist": "quiet_arm/netlist.scs"
     }
   }
 }

@@ -1,0 +1,208 @@
+{
+  "all_electrical_pass": false,
+  "dut_sources_equal": true,
+  "required_cases": 20,
+  "completed_cases": 2,
+  "passed_cases": 1,
+  "batches": [
+    "final_stage1_01"
+  ],
+  "cases": [
+    {
+      "batch": "final_stage1_01",
+      "case": "sar_stage1_tt_k3__quiet",
+      "corner": "tt",
+      "temp_c": 25,
+      "noise": false,
+      "k": 3,
+      "passed": true,
+      "execution_pass": true,
+      "metrics": {
+        "sample_count": 256,
+        "invalid_bits": 0,
+        "incomplete_conversions": 0,
+        "comparison_count_errors": 0,
+        "period_error_s": 9.397076705485006e-13,
+        "sample_window_min_s": 3.931602760894935e-09,
+        "sample_window_max_s": 3.933556227664501e-09,
+        "timing_margin_min_s": 6.167241364290347e-09,
+        "step_node_error_max_v": 0.0011223912302782968,
+        "sndr_db": 61.74899152168428,
+        "decision_errors_far_boundary": 0,
+        "step_diff_error_rms_v": 0.0004790465409315772,
+        "wrong_bottom_states": 0,
+        "output_capture_errors": 0,
+        "output_hold_errors": 0,
+        "evaluation_count_errors": 0,
+        "monotonic_switch_errors": 0,
+        "bootstrap_gate_at_first_eval_max_v": 0.1638807600135495,
+        "first_evaluate_delay_min_s": 5.027149453802845e-10,
+        "soa_warning_count": 0
+      },
+      "power": {
+        "VDD_w": 0.11261705409061505,
+        "VREFP_w": 0.002904058744348055,
+        "VCM_w": -0.0,
+        "clock_input_w": 1.0506058757571138e-06,
+        "output_buffers_w": 1.7632654385141353e-05,
+        "total_with_buffers_w": 0.11552111283496311,
+        "total_without_output_buffers_w": 0.11550348018057796
+      },
+      "failed_checks": []
+    },
+    {
+      "batch": "final_stage1_01",
+      "case": "sar_stage1_tt_k51__quiet",
+      "corner": "tt",
+      "temp_c": 25,
+      "noise": false,
+      "k": 51,
+      "passed": false,
+      "execution_pass": true,
+      "metrics": {
+        "sample_count": 256,
+        "invalid_bits": 0,
+        "incomplete_conversions": 0,
+        "comparison_count_errors": 0,
+        "period_error_s": 1.4696668994416603e-12,
+        "sample_window_min_s": 3.931713086382355e-09,
+        "sample_window_max_s": 3.933500667234164e-09,
+        "timing_margin_min_s": 6.169137905962936e-09,
+        "step_node_error_max_v": 0.001121919034212493,
+        "sndr_db": 61.06219254391981,
+        "decision_errors_far_boundary": 0,
+        "step_diff_error_rms_v": 0.00048147818625901833,
+        "wrong_bottom_states": 0,
+        "output_capture_errors": 0,
+        "output_hold_errors": 0,
+        "evaluation_count_errors": 0,
+        "monotonic_switch_errors": 0,
+        "bootstrap_gate_at_first_eval_max_v": 0.16360770364218094,
+        "first_evaluate_delay_min_s": 5.027172412160777e-10,
+        "soa_warning_count": 0
+      },
+      "power": {
+        "VDD_w": 0.11265302092605076,
+        "VREFP_w": 0.0028973661981767916,
+        "VCM_w": -0.0,
+        "clock_input_w": 1.049422066494898e-06,
+        "output_buffers_w": 2.3547592346711415e-05,
+        "total_with_buffers_w": 0.11555038712422755,
+        "total_without_output_buffers_w": 0.11552683953188084
+      },
+      "failed_checks": [
+        "period_error_s"
+      ]
+    }
+  ],
+  "missing_cases": [
+    [
+      "ff",
+      -40,
+      false,
+      3
+    ],
+    [
+      "ff",
+      -40,
+      false,
+      51
+    ],
+    [
+      "ff",
+      -40,
+      true,
+      3
+    ],
+    [
+      "ff",
+      -40,
+      true,
+      51
+    ],
+    [
+      "ff",
+      125,
+      false,
+      3
+    ],
+    [
+      "ff",
+      125,
+      false,
+      51
+    ],
+    [
+      "ff",
+      125,
+      true,
+      3
+    ],
+    [
+      "ff",
+      125,
+      true,
+      51
+    ],
+    [
+      "ss",
+      -40,
+      false,
+      3
+    ],
+    [
+      "ss",
+      -40,
+      false,
+      51
+    ],
+    [
+      "ss",
+      -40,
+      true,
+      3
+    ],
+    [
+      "ss",
+      -40,
+      true,
+      51
+    ],
+    [
+      "ss",
+      125,
+      false,
+      3
+    ],
+    [
+      "ss",
+      125,
+      false,
+      51
+    ],
+    [
+      "ss",
+      125,
+      true,
+      3
+    ],
+    [
+      "ss",
+      125,
+      true,
+      51
+    ],
+    [
+      "tt",
+      25,
+      true,
+      3
+    ],
+    [
+      "tt",
+      25,
+      true,
+      51
+    ]
+  ]
+}

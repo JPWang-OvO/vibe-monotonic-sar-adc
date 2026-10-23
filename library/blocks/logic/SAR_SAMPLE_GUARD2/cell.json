@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "cell": "SAR_SAMPLE_GUARD2",
+  "ports": [
+    "A",
+    "Z",
+    "VDD",
+    "VSS"
+  ],
+  "views": {
+    "quiet": {
+      "netlist": "quiet/netlist.scs"
+    },
+    "quiet20": {
+      "netlist": "quiet20/netlist.scs"
+    }
+  }
+}

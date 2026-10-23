@@ -29,6 +29,15 @@
     },
     "drive4": {
       "netlist": "drive4/netlist.scs"
+    },
+    "drive8k": {
+      "netlist": "drive8k/netlist.scs"
+    },
+    "drive16k": {
+      "netlist": "drive16k/netlist.scs"
+    },
+    "drive32k": {
+      "netlist": "drive32k/netlist.scs"
     }
   }
 }
