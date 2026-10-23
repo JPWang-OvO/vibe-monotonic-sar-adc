@@ -12,6 +12,12 @@
   "views": {
     "transistor": {
       "netlist": "transistor/netlist.scs"
+    },
+    "quad": {
+      "netlist": "quad/netlist.scs"
+    },
+    "quadquiet": {
+      "netlist": "quadquiet/netlist.scs"
     }
   }
 }

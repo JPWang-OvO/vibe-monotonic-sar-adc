@@ -92,6 +92,9 @@
     },
     "weighted4_g4_quiet": {
       "netlist": "weighted4_g4_quiet/netlist.scs"
+    },
+    "weighted5_g2_quiet": {
+      "netlist": "weighted5_g2_quiet/netlist.scs"
     }
   }
 }

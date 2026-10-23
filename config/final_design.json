@@ -1,13 +1,13 @@
 {
-  "source_flow": "regression/systems/monotonic_sar/flows/physical_noise_closure/flow.json",
+  "source_flow": "regression/systems/monotonic_sar/flows/physical_regen8/flow.json",
   "cell_views": {
-    "SAR_PHASE": "quiet320",
+    "SAR_PHASE": "gated320",
     "SAR_INV": "drive2",
-    "SAR_CMP": "current",
+    "SAR_CMP": "regen8",
     "SAR_ASYNC": "weighted4_g2_quiet",
     "SAR_BIT": "pullup",
     "SAR_OUT": "fast",
-    "SAR_BIAS": "fast",
+    "SAR_BIAS": "fast36",
     "SAR_FRONTEND": "candidate",
     "SAR_SAMPLE": "junction384",
     "SAR_CDAC": "scaled",
@@ -19,7 +19,8 @@
     "SAR_ARM": "quiet",
     "SAR_SAMPLE_GUARD2": "quiet15",
     "SAR_OUTPUT_FF": "fast3",
-    "SAR_DFFR": "quiet"
+    "SAR_DFFR": "quad",
+    "SAR_DFFS": "quadquiet"
   },
   "acceptance": "config/acceptance.json",
   "flows": [

@@ -56,6 +56,9 @@
     },
     "quiet320": {
       "netlist": "quiet320/netlist.scs"
+    },
+    "gated320": {
+      "netlist": "gated320/netlist.scs"
     }
   }
 }
