@@ -32,3 +32,5 @@ save I_adc.I_frontend.Gp I_adc.I_frontend.Gn I_adc.SampleB I_adc.Bp9 I_adc.Bp8 I
 save I_adc.Ck0 I_adc.Ck1 I_adc.Ck2 I_adc.Ck3 I_adc.Ck4 I_adc.Ck5 I_adc.Ck6 I_adc.Ck7 I_adc.Ck8 I_adc.Ck9
 
 save I_adc.I_async.I_run_nor.P2 I_adc.I_async.CompareEnable I_adc.I_async.ValidDelay I_adc.I_async.Early
+
+save I_adc.I_phase.Clock I_adc.I_phase.R0 I_adc.I_phase.SampleN0 I_adc.I_phase.SampleN1 I_adc.I_phase.SampleN2 I_adc.I_phase.SampleN3 I_adc.I_phase.SampleN4
