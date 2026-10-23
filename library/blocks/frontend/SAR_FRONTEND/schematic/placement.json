@@ -1,36 +1,22 @@
 {
-  "I_sp": {
+  "I_sample<1:0>": {
     "xy": [
       0,
-      4
-    ],
-    "orient": "R0"
-  },
-  "I_sn": {
-    "xy": [
-      0,
-      -4
+      0
     ],
     "orient": "R0"
   },
   "I_cdac": {
     "xy": [
-      6,
+      5,
       0
     ],
     "orient": "R0"
   },
-  "C_cross_p": {
+  "C_cross<1:0>": {
     "xy": [
-      3,
-      2
-    ],
-    "orient": "R0"
-  },
-  "C_cross_n": {
-    "xy": [
-      3,
-      -2
+      2.75,
+      1.5
     ],
     "orient": "R0"
   }

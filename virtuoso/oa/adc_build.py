@@ -19,6 +19,16 @@ from .adc_layout import fold_drivers, placements
 from .native import execute, evaluate, q, load_reader, read_view
 from .replay import props, points
 from .cells import check, capture
+from .comparison import expand_signals
+
+
+def array_connections(inst):
+    connections=inst['connections'];array=re.fullmatch(r'.*<(\d+):(\d+)>',inst['name'])
+    if array:
+        count=abs(int(array[1])-int(array[2]))+1
+        connections={k:(v if len(expand_signals([v]))>1 else f'<*{count}>'+v)
+                     for k,v in connections.items()}
+    return connections
 
 
 def transform(point, place):
@@ -76,7 +86,7 @@ def four_way(existing, path):
 
 
 def schematic(data, symbols):
-    pos=placements(data); commands=[]; ends=defaultdict(list); uses=defaultdict(int); lines=[]; bodies=[]
+    pos=placements(data); commands=[]; ends=defaultdict(list); labels=defaultdict(list); uses=defaultdict(int); lines=[]; bodies=[]
     for inst in data['instances']:
         name=inst['name']; p=pos[name]; x,y=p['xy']; model=inst['model']
         commands.append('let((obj) obj='+instance(*inst['master'],name,x,y,p['orient'])+' '+
@@ -92,11 +102,15 @@ def schematic(data, symbols):
             net=inst['connections'][term]
             array=re.fullmatch(r'.*<(\d+):(\d+)>',name)
             count=abs(int(array[1])-int(array[2]))+1 if array else 1
-            for member in net.split(','):
-                uses[member]+=1 if ',' in net else count
+            members=expand_signals([net])
+            for member in members:
+                uses[member]+=1 if len(members)>1 else count
             commands.append(wire([a,b])); lines.append((net,a,b)); ends[net].append(b)
             mx,my=(a[0]+b[0])/2,(a[1]+b[1])/2
-            commands.append(label(mx,my,net,'lowerLeft','R0' if a[1]==b[1] else 'R90'))
+            justify='lowerRight' if b[0]<a[0] or b[1]<a[1] else 'lowerLeft'
+            rotation='R0' if a[1]==b[1] else 'R90'
+            labels[net].append((len(commands),mx,my,justify,rotation))
+            commands.append(label(mx,my,net,justify,rotation))
     for index,(net,a,b) in enumerate(lines):
         for other,c,d in lines[index+1:]:
             assert other==net or not intersect(a,b,c,d),(data['cell'],'Overlapping terminal stubs',net,other,a,b,c,d)
@@ -118,6 +132,14 @@ def schematic(data, symbols):
                 if any(intersect(u,v,(r[0],r[1]),(r[2],r[3])) for u,v in segments(path) for r in bodies):continue
                 commands.append(wire(path));lines.extend((net,u,v) for u,v in segments(path))
                 roots[root(j)]=root(i);break
+        # Every array pin needs its explicit ordered label before routing.
+        # Separate labels above/below short shared bus wires to avoid overlap.
+        labelled=set()
+        for index,(command_index,mx,my,justify,rotation) in enumerate(labels[net]):
+            component=root(index)
+            if component in labelled and len(expand_signals([net]))>1 and rotation=='R0':
+                commands[command_index]=label(mx,my,net,justify.replace('lower','upper'),rotation)
+            labelled.add(component)
     xmin=min(p['xy'][0] for p in pos.values())-3
     ymax=max(p['xy'][1] for p in pos.values())+3
     # Explicit external interface in grouped columns keeps every terminal visible.
@@ -125,17 +147,17 @@ def schematic(data, symbols):
         x=xmin-2*(index//16);y=ymax-.375*(index%16)
         commands.append(pin(port,x,y,'R0',direction=direction(data['cell'],port)))
         commands.append(wire([(x,y),(x+.75,y)]));commands.append(label(x+.25,y,port,'lowerLeft','R0'))
-        if port not in uses:
+        if not any(member in uses for member in expand_signals([port])):
             # Unused interface entries are retained to match the frozen netlist.
             commands.append(instance('basic','noConn','symbol','NC_'+port,x+.75,y,'R90'))
     unused_index=0
     for net,count in uses.items():
-        if count==1 and net not in data['ports']:
+        if count==1 and net not in expand_signals(data['ports']):
             if net in ends:
                 x,y=ends[net][0]
             else:
                 # A scalar member of an array bus needs its own named stub.
-                x=xmin-6;y=ymax-.5*unused_index;unused_index+=1
+                x=xmin+2;y=ymax-.5*unused_index;unused_index+=1
                 commands.append(wire([(x-.75,y),(x,y)]))
                 commands.append(label(x-.5,y,net,'lowerLeft','R0'))
             commands.append(instance('basic','noConn','symbol','NC_'+net,x,y,'R0'))
@@ -215,11 +237,7 @@ def main():
         actual=client.schematic.read('MONOTONIC_SAR',name,include_positions=True,param_filters=None)
         observed={i['name']:i for i in actual['instances']}
         for expected in data[name]['instances']:
-            connections=expected['connections']
-            array=re.fullmatch(r'.*<(\d+):(\d+)>',expected['name'])
-            if array:
-                count=abs(int(array[1])-int(array[2]))+1
-                connections={k:(v if ',' in v else f'<*{count}>'+v) for k,v in connections.items()}
+            connections=array_connections(expected)
             assert observed[expected['name']]['terms']==connections,(name,expected['name'],observed[expected['name']]['terms'],connections)
         assert set(actual['pins'])==set(data[name]['ports']),name
         write_json(run/(name+'_readback.json'),actual)

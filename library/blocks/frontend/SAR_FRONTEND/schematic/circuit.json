@@ -36,110 +36,6 @@
   },
   "instances": [
     {
-      "name": "I_sp",
-      "nodes": [
-        "Vinp",
-        "Vp",
-        "Sample",
-        "SampleB",
-        "Gp",
-        "VDD",
-        "VSS"
-      ],
-      "model": "SAR_SAMPLE",
-      "parameters": {},
-      "connections": {
-        "Vin": "Vinp",
-        "Top": "Vp",
-        "Sample": "Sample",
-        "SampleB": "SampleB",
-        "Gate": "Gp",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_SAMPLE",
-        "symbol"
-      ],
-      "oa_parameters": {}
-    },
-    {
-      "name": "I_sn",
-      "nodes": [
-        "Vinn",
-        "Vn",
-        "Sample",
-        "SampleB",
-        "Gn",
-        "VDD",
-        "VSS"
-      ],
-      "model": "SAR_SAMPLE",
-      "parameters": {},
-      "connections": {
-        "Vin": "Vinn",
-        "Top": "Vn",
-        "Sample": "Sample",
-        "SampleB": "SampleB",
-        "Gate": "Gn",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_SAMPLE",
-        "symbol"
-      ],
-      "oa_parameters": {}
-    },
-    {
-      "name": "C_cross_p",
-      "nodes": [
-        "Gp",
-        "Vn"
-      ],
-      "model": "capacitor",
-      "parameters": {
-        "c": "ccross"
-      },
-      "connections": {
-        "PLUS": "Gp",
-        "MINUS": "Vn"
-      },
-      "master": [
-        "analogLib",
-        "cap",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "c": "pPar(\"ccross\")"
-      }
-    },
-    {
-      "name": "C_cross_n",
-      "nodes": [
-        "Gn",
-        "Vp"
-      ],
-      "model": "capacitor",
-      "parameters": {
-        "c": "ccross"
-      },
-      "connections": {
-        "PLUS": "Gn",
-        "MINUS": "Vp"
-      },
-      "master": [
-        "analogLib",
-        "cap",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "c": "pPar(\"ccross\")"
-      }
-    },
-    {
       "name": "I_cdac",
       "nodes": [
         "Vp",
@@ -201,6 +97,66 @@
       "oa_parameters": {
         "unit_cap": "pPar(\"unit_cap\")"
       }
+    },
+    {
+      "name": "I_sample<1:0>",
+      "nodes": [
+        "Vinp,Vinn",
+        "Vp,Vn",
+        "Sample",
+        "SampleB",
+        "Gp,Gn",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_SAMPLE",
+      "parameters": {},
+      "connections": {
+        "Vin": "Vinp,Vinn",
+        "Top": "Vp,Vn",
+        "Sample": "Sample",
+        "SampleB": "SampleB",
+        "Gate": "Gp,Gn",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_SAMPLE",
+        "symbol"
+      ],
+      "oa_parameters": {},
+      "array_members": [
+        "I_sp",
+        "I_sn"
+      ]
+    },
+    {
+      "name": "C_cross<1:0>",
+      "nodes": [
+        "Gp,Gn",
+        "Vn,Vp"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "ccross"
+      },
+      "connections": {
+        "PLUS": "Gp,Gn",
+        "MINUS": "Vn,Vp"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "pPar(\"ccross\")"
+      },
+      "array_members": [
+        "C_cross_p",
+        "C_cross_n"
+      ]
     }
   ],
   "staged_source": "library__blocks__frontend__SAR_FRONTEND__candidate__netlist.scs"

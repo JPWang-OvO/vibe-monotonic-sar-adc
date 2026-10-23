@@ -23,7 +23,7 @@ authoritative_sources:
 3. TSMC18 primitive enrichment：2 V/5 V MOS 映射、CDF 回调、原生导出、尺寸变化及反相器角落资格测试已通过。
 4. 晶体管模块及混合替换：已完成全部有源功能替换，功能、逐位建立、输出保存/保持及额定条件通过。
 5. 完整系统 20 个正式 case：`final_*_06` 同一电路全部通过。两项 FF/125 °C 无噪声测试因磁盘配额中断，迁移旧波形后以相同输入和判据重跑通过。
-6. OA schematic/symbol：已进入收尾，生成 28 个自研 cell，核对原生连接、导出网表和图面后交付。
+6. OA schematic/symbol：完成 28 个自研 cell；原生连接、阵列展开网表、总线位序及图面审阅通过，见 [OA 交付](../verification/oa-delivery.md)。
 
 现有 `artifacts/pdk_smoke_20261023` 属于任务开始前的环境预检，只作为环境证据。
 新仿真批次存放于运行时解析的 artifact 根目录。原始波形保留在服务器。

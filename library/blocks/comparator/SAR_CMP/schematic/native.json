@@ -9,17 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 2841
+        "value": 2554
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 03:57:56 2026"
+        "value": "Oct 24 05:20:22 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 15
+        "value": 12
       },
       {
         "name": "pin#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 2841
+        "value": 2554
       },
       {
         "name": "schGeometryVersion",
@@ -51,31 +51,14 @@
     ],
     "instances": [
       {
-        "name": "I_outn",
-        "master": [
-          "standard_cells",
-          "INVD1BWP7T",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {
-          "I": "Xn",
-          "ZN": "Nn0",
-          "VDD": "VDD",
-          "VSS": "VSS"
-        }
-      },
-      {
-        "name": "I_outn1",
+        "name": "I_out1<1:0>",
         "master": [
           "MONOTONIC_SAR",
           "SAR_DRIVE",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [
           {
             "name": "scale",
@@ -84,21 +67,21 @@
           }
         ],
         "connections": {
-          "VSS": "VSS",
-          "VDD": "VDD",
-          "Z": "Nn1",
-          "A": "Nn0"
+          "VSS": "<*2>VSS",
+          "VDD": "<*2>VDD",
+          "Z": "Np1,Nn1",
+          "A": "Np0,Nn0"
         }
       },
       {
-        "name": "I_outn2",
+        "name": "I_out2<1:0>",
         "master": [
           "MONOTONIC_SAR",
           "SAR_DRIVE",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [
           {
             "name": "scale",
@@ -107,73 +90,27 @@
           }
         ],
         "connections": {
-          "VSS": "VSS",
-          "VDD": "VDD",
-          "Z": "Outn",
-          "A": "Nn1"
+          "VSS": "<*2>VSS",
+          "VDD": "<*2>VDD",
+          "Z": "Outp,Outn",
+          "A": "Np1,Nn1"
         }
       },
       {
-        "name": "I_outp",
+        "name": "I_out<1:0>",
         "master": [
           "standard_cells",
           "INVD1BWP7T",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [],
         "connections": {
-          "I": "Xp",
-          "ZN": "Np0",
-          "VDD": "VDD",
-          "VSS": "VSS"
-        }
-      },
-      {
-        "name": "I_outp1",
-        "master": [
-          "MONOTONIC_SAR",
-          "SAR_DRIVE",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "1"
-          }
-        ],
-        "connections": {
-          "VSS": "VSS",
-          "VDD": "VDD",
-          "Z": "Np1",
-          "A": "Np0"
-        }
-      },
-      {
-        "name": "I_outp2",
-        "master": [
-          "MONOTONIC_SAR",
-          "SAR_DRIVE",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "4"
-          }
-        ],
-        "connections": {
-          "VSS": "VSS",
-          "VDD": "VDD",
-          "Z": "Outp",
-          "A": "Np1"
+          "I": "Xp,Xn",
+          "ZN": "Np0,Nn0",
+          "VDD": "<*2>VDD",
+          "VSS": "<*2>VSS"
         }
       },
       {
@@ -1271,6 +1208,18 @@
     ],
     "nets": [
       {
+        "name": "<*2>VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*2>VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
         "name": "Bias",
         "signal_type": "signal",
         "global_": false,
@@ -1295,19 +1244,19 @@
         "properties": []
       },
       {
-        "name": "Nn1",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
         "name": "Np0",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Np1",
+        "name": "Np0,Nn0",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Np1,Nn1",
         "signal_type": "signal",
         "global_": false,
         "properties": []
@@ -1320,6 +1269,12 @@
       },
       {
         "name": "Outp",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Outp,Outn",
         "signal_type": "signal",
         "global_": false,
         "properties": []
@@ -1380,6 +1335,12 @@
       },
       {
         "name": "Xp",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Xp,Xn",
         "signal_type": "signal",
         "global_": false,
         "properties": []

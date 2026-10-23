@@ -1,11 +1,15 @@
 """Compare the native OA export with the electrically accepted ADC hierarchy."""
 import argparse
 import json
+import re
+from copy import deepcopy
 from pathlib import Path
 
 from regression.common.project import ROOT, read_json, write_json, artifact_root
-from .adc_source import hierarchy, QualifiedProperties, flatten, assignments, clean_name, source_folders
-from .comparison import spectre_document
+from .adc_source import hierarchy, QualifiedProperties, flatten, assignments, clean_name, source_folders,prepare_source
+from .adc_layout import fold_drivers
+from .comparison import spectre_document,expand_signals
+from .native import port_order
 
 
 def native_hierarchy(text, top_ports):
@@ -27,22 +31,40 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--batch',type=Path,required=True)
     p.add_argument('--native',type=Path,required=True);a=p.parse_args()
     expected,enrichment=hierarchy(a.batch)
-    actual=native_hierarchy(a.native.read_text(),expected['MONOTONIC_SAR']['ports'])
+    folders=source_folders()
+    native_ports=port_order(read_json(folders['MONOTONIC_SAR']/'schematic/native.json')['circuit'])
+    actual=native_hierarchy(a.native.read_text(),expand_signals(native_ports))
     assert set(expected)==set(actual),(set(expected)-set(actual),set(actual)-set(expected))
-    interfaces={name:expected[name]['ports']==actual[name]['ports'] for name in expected}
+    output_map={f'D<{bit}>':f'D{bit}' for bit in range(9,-1,-1)}
+    normalized=deepcopy(actual)
+    normalized['MONOTONIC_SAR']['ports']=[output_map.get(p,p) for p in actual['MONOTONIC_SAR']['ports']]
+    for inst in normalized['MONOTONIC_SAR']['instances']:
+        inst['nodes']=[output_map.get(n.replace('\\<','<').replace('\\>','>'),n) for n in inst['nodes']]
+    interfaces={name:expected[name]['ports']==normalized[name]['ports'] for name in expected}
+    aliases={}
+    for name,data in prepare_source(a.batch).items():
+        if name=='INVD1BWP7T':continue
+        aliases[name]={}
+        for inst in fold_drivers(data)['instances']:
+            if 'array_members' not in inst:continue
+            array=re.fullmatch(r'(.*)<(\d+):(\d+)>',inst['name'])
+            first,last=int(array[2]),int(array[3]);step=1 if last>=first else -1
+            for bit,member in zip(range(first,last+step,step),inst['array_members'],strict=True):
+                aliases[name][f'{array[1]}<{bit}>']=member
     qualified=QualifiedProperties(enrichment)
-    left=flatten(expected,qualified=qualified);right=flatten(actual)
+    left=flatten(expected,qualified=qualified);right=flatten(normalized,instance_aliases=aliases)
     missing={str(k):v for k,v in left.items() if right.get(k)!=v}
     extra={str(k):v for k,v in right.items() if left.get(k)!=v}
     passed=all(interfaces.values()) and not missing and not extra
     result=dict(passed=passed,interfaces=interfaces,expected_primitive_groups=len(left),native_primitive_groups=len(right),
-                missing_or_changed=missing,extra_or_changed=extra,native_netlist=str(a.native.resolve()),accepted_batch=str(a.batch.resolve()))
+                missing_or_changed=missing,extra_or_changed=extra,native_netlist=str(a.native.resolve()),accepted_batch=str(a.batch.resolve()),
+                native_top_terminals=native_ports,output_bit_mapping=output_map)
     write_json(artifact_root()/'oa_delivery/electrical_comparison.json',result)
     assert passed,json.dumps(result,ensure_ascii=False)[:12000]
-    folders=source_folders()
     for name,data in actual.items():
         if name=='INVD1BWP7T':continue
-        lines=['simulator lang=spectre','subckt '+name+' ('+' '.join(data['ports'])+')']
+        ports=[p.replace('<','\\<').replace('>','\\>') if '\\' not in p else p for p in data['ports']]
+        lines=['simulator lang=spectre','subckt '+name+' ('+' '.join(ports)+')']
         if data['parameters']:lines.append('parameters '+' '.join(k+'='+v for k,v in data['parameters'].items()))
         lines += [i['name']+' ('+' '.join(i['nodes'])+') '+i['model']+' '+
                   ' '.join(k+'='+v for k,v in i['parameters'].items()) for i in data['instances']]

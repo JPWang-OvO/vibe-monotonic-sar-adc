@@ -13,6 +13,19 @@ GENERATED_PROPERTIES = {
 }
 
 
+def expand_signals(names):
+    """Expand ordered scalar, comma-list and <msb:lsb> signal expressions."""
+    result=[]
+    for expression in names:
+        for name in expression.split(','):
+            bus=re.fullmatch(r'(.+)<(\d+):(\d+)>',name)
+            if bus:
+                first,last=int(bus[2]),int(bus[3]);step=1 if last>=first else -1
+                result.extend(f'{bus[1]}<{bit}>' for bit in range(first,last+step,step))
+            else:result.append(name)
+    return result
+
+
 def circuit_semantics(circuit, library_map):
     result=deepcopy(circuit)
     result['properties']=[p for p in result['properties']

@@ -390,160 +390,6 @@
       }
     },
     {
-      "name": "I_outp",
-      "nodes": [
-        "Xp",
-        "Np0",
-        "VDD",
-        "VSS"
-      ],
-      "model": "INVD1BWP7T",
-      "parameters": {},
-      "connections": {
-        "I": "Xp",
-        "ZN": "Np0",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "standard_cells",
-        "INVD1BWP7T",
-        "symbol"
-      ],
-      "oa_parameters": {}
-    },
-    {
-      "name": "I_outp1",
-      "nodes": [
-        "Np0",
-        "Np1",
-        "VDD",
-        "VSS"
-      ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "1"
-      },
-      "connections": {
-        "A": "Np0",
-        "Z": "Np1",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "scale": "1"
-      }
-    },
-    {
-      "name": "I_outp2",
-      "nodes": [
-        "Np1",
-        "Outp",
-        "VDD",
-        "VSS"
-      ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "4"
-      },
-      "connections": {
-        "A": "Np1",
-        "Z": "Outp",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "scale": "4"
-      }
-    },
-    {
-      "name": "I_outn",
-      "nodes": [
-        "Xn",
-        "Nn0",
-        "VDD",
-        "VSS"
-      ],
-      "model": "INVD1BWP7T",
-      "parameters": {},
-      "connections": {
-        "I": "Xn",
-        "ZN": "Nn0",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "standard_cells",
-        "INVD1BWP7T",
-        "symbol"
-      ],
-      "oa_parameters": {}
-    },
-    {
-      "name": "I_outn1",
-      "nodes": [
-        "Nn0",
-        "Nn1",
-        "VDD",
-        "VSS"
-      ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "1"
-      },
-      "connections": {
-        "A": "Nn0",
-        "Z": "Nn1",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "scale": "1"
-      }
-    },
-    {
-      "name": "I_outn2",
-      "nodes": [
-        "Nn1",
-        "Outn",
-        "VDD",
-        "VSS"
-      ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "4"
-      },
-      "connections": {
-        "A": "Nn1",
-        "Z": "Outn",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "scale": "4"
-      }
-    },
-    {
       "name": "I_valid",
       "nodes": [
         "Np0",
@@ -621,6 +467,95 @@
       "oa_parameters": {
         "scale": "4"
       }
+    },
+    {
+      "name": "I_out<1:0>",
+      "nodes": [
+        "Xp,Xn",
+        "Np0,Nn0",
+        "VDD",
+        "VSS"
+      ],
+      "model": "INVD1BWP7T",
+      "parameters": {},
+      "connections": {
+        "I": "Xp,Xn",
+        "ZN": "Np0,Nn0",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "INVD1BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {},
+      "array_members": [
+        "I_outp",
+        "I_outn"
+      ]
+    },
+    {
+      "name": "I_out1<1:0>",
+      "nodes": [
+        "Np0,Nn0",
+        "Np1,Nn1",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "1"
+      },
+      "connections": {
+        "A": "Np0,Nn0",
+        "Z": "Np1,Nn1",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "1"
+      },
+      "array_members": [
+        "I_outp1",
+        "I_outn1"
+      ]
+    },
+    {
+      "name": "I_out2<1:0>",
+      "nodes": [
+        "Np1,Nn1",
+        "Outp,Outn",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "4"
+      },
+      "connections": {
+        "A": "Np1,Nn1",
+        "Z": "Outp,Outn",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "4"
+      },
+      "array_members": [
+        "I_outp2",
+        "I_outn2"
+      ]
     }
   ],
   "staged_source": "library__blocks__comparator__SAR_CMP__regen8__netlist.scs"

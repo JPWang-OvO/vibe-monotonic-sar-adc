@@ -19,7 +19,7 @@ OUTPUTS = {
     'SAR_CMP':'Outp Outn Valid', 'SAR_BIAS':'Bias', 'SAR_BOOST':'Gate', 'SAR_BOOST_HI':'Gate',
     'SAR_SAMPLE':'Gate', 'SAR_BIT':'Q Bp Bn',
     'SAR_ASYNC':'ClkC Done Ck9 Ck8 Ck7 Ck6 Ck5 Ck4 Ck3 Ck2 Ck1 Ck0',
-    'MONOTONIC_SAR':'D9 D8 D7 D6 D5 D4 D3 D2 D1 D0 EOC',
+    'MONOTONIC_SAR':'D<9:0> EOC',
 }
 
 

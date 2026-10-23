@@ -9,17 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 2803
+        "value": 2635
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 03:57:26 2026"
+        "value": "Oct 24 05:12:25 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 1
+        "value": 0
       },
       {
         "name": "pin#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 2803
+        "value": 2635
       },
       {
         "name": "schGeometryVersion",
@@ -51,14 +51,14 @@
     ],
     "instances": [
       {
-        "name": "C_cross_n",
+        "name": "C_cross<1:0>",
         "master": [
           "analogLib",
           "cap",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [
           {
             "name": "c",
@@ -67,29 +67,8 @@
           }
         ],
         "connections": {
-          "MINUS": "Vp",
-          "PLUS": "Gn"
-        }
-      },
-      {
-        "name": "C_cross_p",
-        "master": [
-          "analogLib",
-          "cap",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "c",
-            "type": "string",
-            "value": "pPar(\"ccross\")"
-          }
-        ],
-        "connections": {
-          "MINUS": "Vn",
-          "PLUS": "Gp"
+          "MINUS": "Vn,Vp",
+          "PLUS": "Gp,Gn"
         }
       },
       {
@@ -134,43 +113,23 @@
         }
       },
       {
-        "name": "I_sn",
+        "name": "I_sample<1:0>",
         "master": [
           "MONOTONIC_SAR",
           "SAR_SAMPLE",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [],
         "connections": {
-          "SampleB": "SampleB",
-          "Sample": "Sample",
-          "Gate": "Gn",
-          "Top": "Vn",
-          "Vin": "Vinn",
-          "VSS": "VSS",
-          "VDD": "VDD"
-        }
-      },
-      {
-        "name": "I_sp",
-        "master": [
-          "MONOTONIC_SAR",
-          "SAR_SAMPLE",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {
-          "SampleB": "SampleB",
-          "Sample": "Sample",
-          "Gate": "Gp",
-          "Top": "Vp",
-          "Vin": "Vinp",
-          "VSS": "VSS",
-          "VDD": "VDD"
+          "SampleB": "<*2>SampleB",
+          "Sample": "<*2>Sample",
+          "Gate": "Gp,Gn",
+          "Top": "Vp,Vn",
+          "Vin": "Vinp,Vinn",
+          "VSS": "<*2>VSS",
+          "VDD": "<*2>VDD"
         }
       },
       {
@@ -682,6 +641,30 @@
     ],
     "nets": [
       {
+        "name": "<*2>Sample",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*2>SampleB",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*2>VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*2>VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
         "name": "Bn1",
         "signal_type": "signal",
         "global_": false,
@@ -790,13 +773,7 @@
         "properties": []
       },
       {
-        "name": "Gn",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Gp",
+        "name": "Gp,Gn",
         "signal_type": "signal",
         "global_": false,
         "properties": []
@@ -850,13 +827,31 @@
         "properties": []
       },
       {
+        "name": "Vinp,Vinn",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
         "name": "Vn",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
+        "name": "Vn,Vp",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
         "name": "Vp",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Vp,Vn",
         "signal_type": "signal",
         "global_": false,
         "properties": []

@@ -1,7 +1,7 @@
 """Functional drawings derived from the accepted ADC hierarchy.
 
-Ports are placed with their functional objects. Scalar interfaces are preserved;
-thick lines and diagonal taps denote graphical buses inside complex symbols.
+Ports are placed with their functional objects. Thick lines denote buses;
+the top-level output has one native D<9:0> terminal.
 """
 import math
 from .adc_drawing import Picture
@@ -449,10 +449,8 @@ def adc(data):
     p.line((.625,.5625),(.6875,.5625))
     p.block(1.875,.5625,.5,.75,'10 FF')
     p.bus((1.3125,.5625),(1.625,.5625));busmark(p,1.46875,.5625,10)
-    p.bus((2.125,.5625),(2.5,.5625));p.bus((2.5,1.0625),(2.5,-.625))
-    for bit in range(9,-1,-1):
-        y=1-(9-bit)*.1875
-        port(p,'D'+str(bit),(3,y),'right',(2.625,y),(2.5,y+.0625))
+    p.bus((2.125,.5625),(3,.5625));busmark(p,2.5,.5625,10)
+    port(p,'D<9:0>',(3,.5625),'right')
     # Bottom-plate selection returns above the analog path; clocks stay below it.
     p.bus((1,.9375),(1,1.1875),(-.875,1.1875),(-.875,.9375))
     busmark(p,.5,1.1875,18);p.text(-.1875,1.3125,'bottom plates')

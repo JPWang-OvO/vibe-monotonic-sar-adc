@@ -7,31 +7,31 @@ include "../../../../blocks/control/SAR_ASYNC/veriloga/netlist.scs"
 include "../../../../blocks/control/SAR_BIT/veriloga/netlist.scs"
 include "../../../../blocks/control/SAR_OUT/veriloga/netlist.scs"
 include "../../../../blocks/bias/SAR_BIAS/veriloga/netlist.scs"
-subckt MONOTONIC_SAR (Vinp Vinn Clks D9 D8 D7 D6 D5 D4 D3 D2 D1 D0 EOC VDD VSS VCM VREFP VREFN)
+subckt MONOTONIC_SAR (Vinp Vinn Clks D\<9\> D\<8\> D\<7\> D\<6\> D\<5\> D\<4\> D\<3\> D\<2\> D\<1\> D\<0\> EOC VDD VSS VCM VREFP VREFN)
 I_phase (Clks Sample VDD VSS) SAR_PHASE
 I_inv (Sample SampleB VDD VSS) SAR_INV
 I_bias (Bias VDD VSS) SAR_BIAS
 I_cmp (Vp Vn ClkC Outp Outn Valid Bias VDD VSS) SAR_CMP
 I_async (Sample Valid ClkC EOC Ck9 Ck8 Ck7 Ck6 Ck5 Ck4 Ck3 Ck2 Ck1 Ck0 VDD VSS) SAR_ASYNC
 I_bit9 (Outp Ck9 Sample Q9 Bp9 Bn9 VDD VSS VREFP VREFN) SAR_BIT strength=1
-I_out9 (Q9 Ck0 D9 VDD VSS) SAR_OUT
+I_out9 (Q9 Ck0 D\<9\> VDD VSS) SAR_OUT
 I_bit8 (Outp Ck8 Sample Q8 Bp8 Bn8 VDD VSS VREFP VREFN) SAR_BIT strength=0.5
-I_out8 (Q8 Ck0 D8 VDD VSS) SAR_OUT
+I_out8 (Q8 Ck0 D\<8\> VDD VSS) SAR_OUT
 I_bit7 (Outp Ck7 Sample Q7 Bp7 Bn7 VDD VSS VREFP VREFN) SAR_BIT strength=0.25
-I_out7 (Q7 Ck0 D7 VDD VSS) SAR_OUT
+I_out7 (Q7 Ck0 D\<7\> VDD VSS) SAR_OUT
 I_bit6 (Outp Ck6 Sample Q6 Bp6 Bn6 VDD VSS VREFP VREFN) SAR_BIT strength=0.125
-I_out6 (Q6 Ck0 D6 VDD VSS) SAR_OUT
+I_out6 (Q6 Ck0 D\<6\> VDD VSS) SAR_OUT
 I_bit5 (Outp Ck5 Sample Q5 Bp5 Bn5 VDD VSS VREFP VREFN) SAR_BIT strength=0.0625
-I_out5 (Q5 Ck0 D5 VDD VSS) SAR_OUT
+I_out5 (Q5 Ck0 D\<5\> VDD VSS) SAR_OUT
 I_bit4 (Outp Ck4 Sample Q4 Bp4 Bn4 VDD VSS VREFP VREFN) SAR_BIT strength=0.03125
-I_out4 (Q4 Ck0 D4 VDD VSS) SAR_OUT
+I_out4 (Q4 Ck0 D\<4\> VDD VSS) SAR_OUT
 I_bit3 (Outp Ck3 Sample Q3 Bp3 Bn3 VDD VSS VREFP VREFN) SAR_BIT strength=0.015625
-I_out3 (Q3 Ck0 D3 VDD VSS) SAR_OUT
+I_out3 (Q3 Ck0 D\<3\> VDD VSS) SAR_OUT
 I_bit2 (Outp Ck2 Sample Q2 Bp2 Bn2 VDD VSS VREFP VREFN) SAR_BIT strength=0.0078125
-I_out2 (Q2 Ck0 D2 VDD VSS) SAR_OUT
+I_out2 (Q2 Ck0 D\<2\> VDD VSS) SAR_OUT
 I_bit1 (Outp Ck1 Sample Q1 Bp1 Bn1 VDD VSS VREFP VREFN) SAR_BIT strength=0.00390625
-I_out1 (Q1 Ck0 D1 VDD VSS) SAR_OUT
+I_out1 (Q1 Ck0 D\<1\> VDD VSS) SAR_OUT
 I_bit0 (Outp Ck0 Sample Q0 Bp0 Bn0 VDD VSS VREFP VREFN) SAR_BIT strength=0.00390625
-I_out0 (Q0 Ck0 D0 VDD VSS) SAR_OUT
+I_out0 (Q0 Ck0 D\<0\> VDD VSS) SAR_OUT
 I_frontend (Vinp Vinn Sample SampleB Vp Vn Bp9 Bp8 Bp7 Bp6 Bp5 Bp4 Bp3 Bp2 Bp1 Bn9 Bn8 Bn7 Bn6 Bn5 Bn4 Bn3 Bn2 Bn1 VREFP VREFN VDD VSS) SAR_FRONTEND
 ends MONOTONIC_SAR
