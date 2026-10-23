@@ -1,0 +1,12 @@
+simulator lang=spectre
+// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
+include "../../../../support/standard_cells/INVD1BWP7T/spectre/netlist.scs"
+include "../../../logic/SAR_DRIVE/transistor/netlist.scs"
+subckt SAR_DONE_DELAY (A Z VDD VSS)
+I_d0 (A N0 VDD VSS) INVD1BWP7T
+I_d1 (N0 N1 VDD VSS) INVD1BWP7T
+I_d2 (N1 N2 VDD VSS) INVD1BWP7T
+I_d3 (N2 N3 VDD VSS) INVD1BWP7T
+I_d4 (N3 N4 VDD VSS) SAR_DRIVE scale=1
+I_d5 (N4 Z VDD VSS) SAR_DRIVE scale=4
+ends SAR_DONE_DELAY

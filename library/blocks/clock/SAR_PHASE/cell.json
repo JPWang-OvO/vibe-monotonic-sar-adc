@@ -20,6 +20,15 @@
     },
     "drive": {
       "netlist": "drive/netlist.scs"
+    },
+    "drive2": {
+      "netlist": "drive2/netlist.scs"
+    },
+    "drive3": {
+      "netlist": "drive3/netlist.scs"
+    },
+    "drive4": {
+      "netlist": "drive4/netlist.scs"
     }
   }
 }

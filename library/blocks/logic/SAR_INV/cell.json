@@ -17,6 +17,9 @@
     },
     "drive": {
       "netlist": "drive/netlist.scs"
+    },
+    "drive2": {
+      "netlist": "drive2/netlist.scs"
     }
   }
 }
