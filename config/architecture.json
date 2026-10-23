@@ -28,7 +28,7 @@
     1
   ],
   "dummy_weight": 1,
-  "unit_cap_f": 2e-14,
+  "unit_cap_f": 2.4e-14,
   "equal_decision": 1,
   "code_format": "offset_binary",
   "bit_order": "MSB_first",

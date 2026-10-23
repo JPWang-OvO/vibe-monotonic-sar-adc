@@ -31,6 +31,9 @@
     },
     "fast4": {
       "netlist": "fast4/netlist.scs"
+    },
+    "current": {
+      "netlist": "current/netlist.scs"
     }
   }
 }

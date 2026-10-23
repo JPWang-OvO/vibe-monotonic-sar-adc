@@ -3,11 +3,13 @@ from pathlib import Path
 import csv
 import json
 import math
+import argparse
 from .model import PARAMS,ROOT,convert,ideal_reference
 from .fft import spectrum,validate_known_signals
 
 def main():
-    out=ROOT/'artifacts/python_reference'
+    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,default=ROOT/'artifacts/python_reference')
+    out=parser.parse_args().output
     out.mkdir(parents=True,exist_ok=True)
     lsb=Fraction(36,10)/1024
     diffs=[Fraction(str(v)) for v in (-1.8,-1.7,-.9,-.1,0,.1,.9,1.7,1.8)]

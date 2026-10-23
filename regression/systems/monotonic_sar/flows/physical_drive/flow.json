@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "id": "sar_physical_drive",
+  "testbench": "library/testbenches/systems/monotonic_sar/tb_SAR_physical_buffered/spectre/netlist.scs",
+  "process": "tsmc18",
+  "conditions": [
+    {
+      "id": "tt_k3",
+      "tokens": {
+        "FIN": 585937.5,
+        "TEMP": 25
+      },
+      "cell_views": {
+        "SAR_PHASE": "drive4",
+        "SAR_INV": "drive2",
+        "SAR_CMP": "fast4",
+        "SAR_ASYNC": "startup_buffered",
+        "SAR_BIT": "drive",
+        "SAR_OUT": "transistor",
+        "SAR_BIAS": "transistor",
+        "SAR_FRONTEND": "candidate",
+        "SAR_SAMPLE": "junction384",
+        "SAR_CDAC": "scaled"
+      },
+      "enrichment": true,
+      "corner": "tt"
+    },
+    {
+      "id": "tt_k51",
+      "tokens": {
+        "FIN": 9960937.5,
+        "TEMP": 25
+      },
+      "cell_views": {
+        "SAR_PHASE": "drive4",
+        "SAR_INV": "drive2",
+        "SAR_CMP": "fast4",
+        "SAR_ASYNC": "startup_buffered",
+        "SAR_BIT": "drive",
+        "SAR_OUT": "transistor",
+        "SAR_BIAS": "transistor",
+        "SAR_FRONTEND": "candidate",
+        "SAR_SAMPLE": "junction384",
+        "SAR_CDAC": "scaled"
+      },
+      "enrichment": true,
+      "corner": "tt"
+    }
+  ],
+  "simulator": {
+    "arguments": [
+      "-64",
+      "+preset=ax"
+    ],
+    "threads": 8,
+    "timeout_s": 1800,
+    "analyses": "Physical ADC development: 32 consecutive conversions after 16 startup cycles; raw output codes",
+    "precision": {
+      "preset": "AX"
+    }
+  },
+  "measurement": {
+    "kind": "sar",
+    "bits": 10,
+    "n": 32,
+    "discard_cycles": 16,
+    "read_offset_s": 1.4e-08,
+    "logic_low_v": 0.18,
+    "logic_high_v": 1.62,
+    "expected_period_s": 2e-08,
+    "behavioral_alignment": false,
+    "lsb_v": 0.003515625,
+    "fft": false,
+    "physical_frontend": true,
+    "charge_gain": 0.9631620205560272,
+    "charge_gain_source": "frontend_cap24c28_17/sar_frontend_cap24c28_loaded__tt",
+    "output_buffer_currents": [
+      "I_adc.I_out0.I_buf0:3",
+      "I_adc.I_out0.I_buf1:3",
+      "I_adc.I_out1.I_buf0:3",
+      "I_adc.I_out1.I_buf1:3",
+      "I_adc.I_out2.I_buf0:3",
+      "I_adc.I_out2.I_buf1:3",
+      "I_adc.I_out3.I_buf0:3",
+      "I_adc.I_out3.I_buf1:3",
+      "I_adc.I_out4.I_buf0:3",
+      "I_adc.I_out4.I_buf1:3",
+      "I_adc.I_out5.I_buf0:3",
+      "I_adc.I_out5.I_buf1:3",
+      "I_adc.I_out6.I_buf0:3",
+      "I_adc.I_out6.I_buf1:3",
+      "I_adc.I_out7.I_buf0:3",
+      "I_adc.I_out7.I_buf1:3",
+      "I_adc.I_out8.I_buf0:3",
+      "I_adc.I_out8.I_buf1:3",
+      "I_adc.I_out9.I_buf0:3",
+      "I_adc.I_out9.I_buf1:3"
+    ]
+  },
+  "criteria": {
+    "sample_count": {
+      "min": 32,
+      "max": 32
+    },
+    "invalid_bits": {
+      "max": 0
+    },
+    "incomplete_conversions": {
+      "max": 0
+    },
+    "comparison_count_errors": {
+      "max": 0
+    },
+    "period_error_s": {
+      "max": 1e-12
+    },
+    "decision_errors_far_boundary": {
+      "max": 0
+    },
+    "timing_margin_min_s": {
+      "min": 2e-09
+    },
+    "step_diff_error_rms_v": {
+      "max": 0.0007766269465209793
+    },
+    "wrong_bottom_states": {
+      "max": 0
+    },
+    "output_capture_errors": {
+      "max": 0
+    },
+    "bootstrap_gate_at_first_eval_max_v": {
+      "max": 0.2
+    },
+    "sample_window_min_s": {
+      "min": 3.5e-09
+    },
+    "sample_window_max_s": {
+      "max": 4.5e-09
+    },
+    "evaluation_count_errors": {
+      "max": 0
+    },
+    "monotonic_switch_errors": {
+      "max": 0
+    }
+  }
+}

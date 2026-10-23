@@ -49,7 +49,7 @@ def inspect(client,remote_file,remote,out,env,arguments,alter_names=()):
     # Large expanded standard-cell inventories are highly repetitive. Compress
     # the three native reports before transfer, without transferring raw PSF.
     checked(runner.run_command('cd '+shlex.quote(remote)+' && tar -czf inspection.tar.gz instances.txt nodes.txt spectre.log',timeout=30))
-    checked(runner.download(remote+'/inspection.tar.gz',out/'inspection.tar.gz',timeout=30))
+    checked(runner.download(remote+'/inspection.tar.gz',out/'inspection.tar.gz',timeout=120))
     with tarfile.open(out/'inspection.tar.gz') as archive:
         for member in archive:
             if not member.isfile() or member.name not in ('instances.txt','nodes.txt','spectre.log'):

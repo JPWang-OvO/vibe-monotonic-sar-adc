@@ -2,6 +2,7 @@
 import bisect
 import cmath
 import math
+import re
 from regression.common.psf import read_psf,interpolate
 
 def edges(t,v,level,direction):
@@ -39,7 +40,19 @@ def measure_sar(case,raw):
     if len(selected)!=n:raise ValueError('Insufficient consecutive sampling events: '+str(len(selected)))
     codes=[];invalid=incomplete=count_errors=mismatches=far_errors=0;details=[];traces=[];errors=[];margins=[]
     physical=cfg.get('physical_frontend',False)
-    diff_errors=[];switch_errors=code_capture_errors=0;gate_at_start=[];first_eval_delays=[]
+    physical_ref=None
+    if physical:
+        if 'charge_reference_by_condition' in cfg:
+            key=case['condition']['corner']+'_'+str(case['condition']['tokens']['TEMP'])
+            physical_ref=cfg['charge_reference_by_condition'][key]
+        else:physical_ref={'charge_gain':cfg['charge_gain'],'source':cfg['charge_gain_source']}
+    diff_errors=[];switch_errors=code_capture_errors=eval_count_errors=monotonic_errors=0;gate_at_start=[];first_eval_delays=[]
+    bottom_edges={}
+    if physical:
+        for side in ('p','n'):
+            for bit in range(9,0,-1):
+                name=f'B{side}{bit}';values=wave['I_adc.'+name]
+                bottom_edges[name]={direction:edges(t,values,.9,direction) for direction in (-1,1)}
     for index,end in enumerate(selected):
         read=end+cfg['read_offset_s'];code=0
         for bit in range(cfg['bits']):
@@ -48,6 +61,7 @@ def measure_sar(case,raw):
             elif v>cfg['logic_low_v']:invalid+=1
         stop=starts[bisect.bisect_right(starts,end)]
         valid_times=completes[bisect.bisect_right(completes,end):bisect.bisect_left(completes,stop)]
+        eval_count_errors+=int(bisect.bisect_left(evaluates,stop)-bisect.bisect_right(evaluates,end)!=cfg['bits'])
         done_times=done[bisect.bisect_right(done,end):bisect.bisect_left(done,stop)]
         if len(done_times)!=1 or done_times[0]>=read:incomplete+=1
         if len(done_times)==1:margins.append(stop-done_times[0])
@@ -77,13 +91,20 @@ def measure_sar(case,raw):
                 before_p=interpolate(t,wave['I_adc.Vp'],evaluate-10e-12)
                 before_n=interpolate(t,wave['I_adc.Vn'],evaluate-10e-12)
                 diff_errors.append((before_p-before_n)-(rp-rn))
-                switch_errors+=int(any(abs(interpolate(t,wave['I_adc.'+name],evaluate-10e-12)-value)>.18 for name,value in bottoms.items()))
+                pending={name:interpolate(t,wave['I_adc.'+name],evaluate-10e-12) for name,value in bottoms.items() if abs(interpolate(t,wave['I_adc.'+name],evaluate-10e-12)-value)>.18}
+                switch_errors+=int(bool(pending))
+                traces[-1].update(evaluate_time_s=evaluate,before_evaluate_vp=before_p,before_evaluate_vn=before_n,pending_bottoms=pending)
             if j<9:
-                delta=1.8/(2**(j+1))*(cfg['charge_gain'] if physical else 1)
+                delta=1.8/(2**(j+1))*(physical_ref['charge_gain'] if physical else 1)
                 if (ideal if cfg.get('behavioral_alignment') else decision):rp-=delta
                 else:rn-=delta
                 bottoms[f'B{"p" if decision else "n"}{9-j}']=0
-        if physical and len(valid_times)==10:code_capture_errors+=int(code!=decision_code)
+        if physical and len(valid_times)==10:
+            code_capture_errors+=int(code!=decision_code)
+            details[-1]['decision_code']=decision_code
+            for name,value in bottoms.items():
+                counts={d:bisect.bisect_left(v,stop)-bisect.bisect_right(v,end) for d,v in bottom_edges[name].items()}
+                monotonic_errors+=int(counts[-1]!=int(value==0) or counts[1]!=0)
     fs=(len(selected)-1)/(selected[-1]-selected[0])
     fin=float(case['condition']['tokens']['FIN']);k=round(fin*n/fs)
     spec=fft_codes(codes,fs,k) if cfg.get('fft',True) else None
@@ -108,14 +129,17 @@ def measure_sar(case,raw):
         metrics.pop('code_mismatches')
         metrics['decision_errors_far_boundary']=far_errors
     if physical:
+        soa_warnings=len(re.findall(r'WARNING \(CMI-275[1-6]\)',(raw.parent/'logs/spectre.log').read_text()))
         metrics.update(step_diff_error_rms_v=math.sqrt(sum(e*e for e in diff_errors)/len(diff_errors)),
             wrong_bottom_states=switch_errors,output_capture_errors=code_capture_errors,
-            bootstrap_gate_at_first_eval_max_v=max(gate_at_start),first_evaluate_delay_min_s=min(first_eval_delays))
+            evaluation_count_errors=eval_count_errors,monotonic_switch_errors=monotonic_errors,
+            bootstrap_gate_at_first_eval_max_v=max(gate_at_start),first_evaluate_delay_min_s=min(first_eval_delays),
+            soa_warning_count=soa_warnings)
     trace_start=starts[bisect.bisect_right(starts,selected[0])-1]
     trace_stop=starts[bisect.bisect_right(starts,selected[0])]
     left=bisect.bisect_left(t,trace_start);right=bisect.bisect_right(t,trace_stop)
     timing={name:wave[name][left:right] for name in ('I_adc.Sample','I_adc.ClkC','I_adc.Valid','EOC','I_adc.Vp','I_adc.Vn','D9','D0')}
     timing['time']=t[left:right]
     return dict(metrics=metrics,codes=codes,conversions=details,bit_traces=traces,spectrum=spec,power=power,
-        timing_trace=timing,physical_reference=({'initial_state':'observed top plates before first evaluation','charge_gain':cfg['charge_gain'],'source':cfg['charge_gain_source']} if physical else None),
+        timing_trace=timing,physical_reference=({'initial_state':'observed top plates before first evaluation',**physical_ref} if physical else None),
         power_convention='Delivered power = -Vsource * I(positive terminal); VSS/VREFN at 0 V deliver zero power')

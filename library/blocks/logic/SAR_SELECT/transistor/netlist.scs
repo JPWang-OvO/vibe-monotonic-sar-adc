@@ -1,0 +1,9 @@
+simulator lang=spectre
+// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
+subckt SAR_SELECT (A B Z VDD VSS)
+parameters factor=1
+Mn0 (Z A N0 VSS) nch w=2u l=0.18u nf=1 m=factor
+Mn1 (N0 B VSS VSS) nch w=2u l=0.18u nf=1 m=factor
+Mp0 (Z A VDD VDD) pch w=2u l=0.18u nf=1 m=factor
+Mp1 (Z B VDD VDD) pch w=2u l=0.18u nf=1 m=factor
+ends SAR_SELECT
