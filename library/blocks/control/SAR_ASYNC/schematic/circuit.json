@@ -46,24 +46,20 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "8"
-      },
+      "model": "INVD4BWP7T",
+      "parameters": {},
       "connections": {
-        "A": "ClearN",
-        "Z": "Reset",
+        "I": "ClearN",
+        "ZN": "Reset",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
+        "standard_cells",
+        "INVD4BWP7T",
         "symbol"
       ],
-      "oa_parameters": {
-        "scale": "8"
-      }
+      "oa_parameters": {}
     },
     {
       "name": "I_sample_guard",
@@ -119,24 +115,20 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "1"
-      },
+      "model": "INVD1BWP7T",
+      "parameters": {},
       "connections": {
-        "A": "Ck<5>",
-        "Z": "Early",
+        "I": "Ck<5>",
+        "ZN": "Early",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
+        "standard_cells",
+        "INVD1BWP7T",
         "symbol"
       ],
-      "oa_parameters": {
-        "scale": "1"
-      }
+      "oa_parameters": {}
     },
     {
       "name": "I_run_nor",
@@ -177,24 +169,20 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "4"
-      },
+      "model": "INVD2BWP7T",
+      "parameters": {},
       "connections": {
-        "A": "CompareEnable",
-        "Z": "ClkC",
+        "I": "CompareEnable",
+        "ZN": "ClkC",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
+        "standard_cells",
+        "INVD2BWP7T",
         "symbol"
       ],
-      "oa_parameters": {
-        "scale": "4"
-      }
+      "oa_parameters": {}
     },
     {
       "name": "I_done_delay",
@@ -223,8 +211,8 @@
       "name": "I_seq<9:0>",
       "nodes": [
         "Ck<1:9>,VDD",
-        "Seq",
-        "SeqB",
+        "Valid",
+        "VSS",
         "Reset",
         "Ck<0:9>",
         "VDD",
@@ -234,8 +222,8 @@
       "parameters": {},
       "connections": {
         "D": "Ck<1:9>,VDD",
-        "CP": "Seq",
-        "CPB": "SeqB",
+        "CP": "Valid",
+        "CPB": "VSS",
         "Reset": "Reset",
         "Q": "Ck<0:9>",
         "VDD": "VDD",
@@ -259,38 +247,7 @@
         "I_seq1",
         "I_seq0"
       ]
-    },
-    {
-      "name": "I_cp<1:0>",
-      "nodes": [
-        "Valid,SeqB",
-        "SeqB,Seq",
-        "VDD",
-        "VSS"
-      ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "16"
-      },
-      "connections": {
-        "A": "Valid,SeqB",
-        "Z": "SeqB,Seq",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "scale": "16"
-      },
-      "array_members": [
-        "I_cp0",
-        "I_cp1"
-      ]
     }
   ],
-  "staged_source": "library__blocks__control__SAR_ASYNC__weighted4_g2_quiet__netlist.scs"
+  "staged_source": "library__blocks__control__SAR_ASYNC__netlist_direct_small__netlist.scs"
 }

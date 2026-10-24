@@ -12,11 +12,13 @@ authoritative_sources:
 # 执行窗口
 
 开始：2026-10-23 06:40:35 UTC（日本时间 15:40:35）。
-用户于 2026-10-23 18:32:32 UTC 将时间限制延长至目标完成；`deadline_utc` 设为 null。
+`config/run_budget.json` 的 `deadline_utc` 为 null，未设置绝对截止时间。
 每个仿真仍使用 8 线程，总计最多 14 worker；每个作业保留其 flow 规定的执行时限。
-用户已授权自主审阅 preview、启动测试、修改设计和重跑受影响条件。
 
-# 阶段
+# Checkpoint 完成范围
+
+以下阶段对应优化前的 `final_*_06` 设计。当前低功耗版本的验证与交付见
+[低功耗验收](../verification/lowpower-acceptance.md)和[低功耗 OA 交付](../verification/lowpower-oa-delivery.md)。
 
 1. Python 电荷模型与 FFT：已通过 30 个代表性及边界输入和两个指定频点。
 2. 模块化 Verilog-A：理想电荷及加入延迟的两个频点均已通过逐码、逐位和时序对齐。

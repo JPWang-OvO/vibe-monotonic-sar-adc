@@ -50,6 +50,15 @@
     "symbol": {
       "native": "symbol/native.json",
       "drawing": "symbol/drawing.json"
+    },
+    "netlist_lowpower8": {
+      "netlist": "netlist_lowpower8/netlist.scs"
+    },
+    "netlist_lowpower16": {
+      "netlist": "netlist_lowpower16/netlist.scs"
+    },
+    "netlist_lowpower32": {
+      "netlist": "netlist_lowpower32/netlist.scs"
     }
   }
 }

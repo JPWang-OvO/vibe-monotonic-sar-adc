@@ -1,23 +1,4 @@
 simulator lang=spectre
 subckt SAR_OUTPUT_FF (D CP Q VDD VSS)
-Mn_sf (S CPB SB VSS) nch l=0.18u w=0.5u m=1 nf=1 sd=540.0n ad=2.4e-13 as=2.4e-13 pd=1.96u ps=1.96u nrd=0.54 nrs=0.54 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mn_sb (SB Q VSS VSS) nch l=0.18u w=0.5u m=1 nf=1 sd=540.0n ad=2.4e-13 as=2.4e-13 pd=1.96u ps=1.96u nrd=0.54 nrs=0.54 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mn_q (Q S VSS VSS) nch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mn_si (S CP MB VSS) nch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mn_mf (M CP MB VSS) nch l=0.18u w=0.5u m=1 nf=1 sd=540.0n ad=2.4e-13 as=2.4e-13 pd=1.96u ps=1.96u nrd=0.54 nrs=0.54 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mn_mb (MB MD VSS VSS) nch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mn_md (MD M VSS VSS) nch l=0.18u w=0.5u m=1 nf=1 sd=540.0n ad=2.4e-13 as=2.4e-13 pd=1.96u ps=1.96u nrd=0.54 nrs=0.54 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mn_mi (M CPB DB VSS) nch l=0.18u w=0.5u m=1 nf=1 sd=540.0n ad=2.4e-13 as=2.4e-13 pd=1.96u ps=1.96u nrd=0.54 nrs=0.54 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mn_d (DB D VSS VSS) nch l=0.18u w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mn_cp (CPB CP VSS VSS) nch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mp_sf (S CP SB VDD) pch l=0.18u w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mp_sb (SB Q VDD VDD) pch l=0.18u w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mp_q (Q S VDD VDD) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mp_si (S CPB MB VDD) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mp_mf (M CPB MB VDD) pch l=0.18u w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mp_mb (MB MD VDD VDD) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mp_md (MD M VDD VDD) pch l=0.18u w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mp_mi (M CP DB VDD) pch l=0.18u w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mp_d (DB D VDD VDD) pch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mp_cp (CPB CP VDD VDD) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+I_cell (D CP Q VDD VSS) DFQD1BWP7T
 ends SAR_OUTPUT_FF

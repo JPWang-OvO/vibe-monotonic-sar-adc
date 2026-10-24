@@ -9,22 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 955
+        "value": 532
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 21:07:42 2026"
+        "value": "Oct 25 06:07:03 2026"
       },
       {
         "name": "net#",
         "type": "int",
         "value": 1
-      },
-      {
-        "name": "pin#",
-        "type": "int",
-        "value": 4
       },
       {
         "name": "portOrder",
@@ -36,7 +31,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 955
+        "value": 532
       },
       {
         "name": "schGeometryVersion",
@@ -63,12 +58,12 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "9.6e-13"
+            "value": "2.4e-13"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "9.6e-13"
+            "value": "2.4e-13"
           },
           {
             "name": "fingers",
@@ -88,22 +83,22 @@
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.135"
+            "value": "0.54"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.135"
+            "value": "0.54"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "4.96u"
+            "value": "1.96u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "4.96u"
+            "value": "1.96u"
           },
           {
             "name": "sa",
@@ -138,24 +133,24 @@
           {
             "name": "simM",
             "type": "string",
-            "value": "pPar(\"scale\")"
+            "value": "4*pPar(\"scale\")"
           },
           {
             "name": "w",
             "type": "string",
-            "value": "0.000002"
+            "value": "5e-7"
           },
           {
             "name": "wf",
             "type": "string",
-            "value": "2u"
+            "value": "0.5u"
           }
         ],
         "connections": {
-          "D": "Z",
-          "B": "VSS",
+          "S": "VSS",
           "G": "A",
-          "S": "VSS"
+          "B": "VSS",
+          "D": "Z"
         }
       },
       {
@@ -171,12 +166,12 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "1.92e-12"
+            "value": "4.8e-13"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "1.92e-12"
+            "value": "4.8e-13"
           },
           {
             "name": "fingers",
@@ -196,22 +191,22 @@
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.0675"
+            "value": "0.27"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.0675"
+            "value": "0.27"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "8.96u"
+            "value": "2.96u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "8.96u"
+            "value": "2.96u"
           },
           {
             "name": "sa",
@@ -246,24 +241,24 @@
           {
             "name": "simM",
             "type": "string",
-            "value": "pPar(\"scale\")"
+            "value": "4*pPar(\"scale\")"
           },
           {
             "name": "w",
             "type": "string",
-            "value": "0.000004"
+            "value": "0.000001"
           },
           {
             "name": "wf",
             "type": "string",
-            "value": "4u"
+            "value": "1u"
           }
         ],
         "connections": {
-          "D": "Z",
-          "B": "VDD",
+          "S": "VDD",
           "G": "A",
-          "S": "VDD"
+          "B": "VDD",
+          "D": "Z"
         }
       },
       {

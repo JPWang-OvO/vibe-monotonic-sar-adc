@@ -1,6 +1,6 @@
 simulator lang=spectre
 subckt SAR_DRIVE (A Z VDD VSS)
 parameters _par0=1
-Mn (Z A VSS VSS) nch l=180n w=2u m=_par0 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mp (Z A VDD VDD) pch l=180n w=4u m=_par0 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn (Z A VSS VSS) nch l=180n w=0.5u m=4*_par0 nf=1 sd=540.0n ad=2.4e-13 as=2.4e-13 pd=1.96u ps=1.96u nrd=0.54 nrs=0.54 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp (Z A VDD VDD) pch l=180n w=1u m=4*_par0 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 ends SAR_DRIVE

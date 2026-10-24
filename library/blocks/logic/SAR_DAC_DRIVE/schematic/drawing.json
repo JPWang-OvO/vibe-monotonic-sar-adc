@@ -52,13 +52,6 @@
       "properties": []
     },
     {
-      "terminal": "Z",
-      "name": "P__1",
-      "figure_type": "inst",
-      "figure": "PIN1",
-      "properties": []
-    },
-    {
       "terminal": "VDD",
       "name": "P__2",
       "figure_type": "inst",
@@ -70,6 +63,13 @@
       "name": "P__3",
       "figure_type": "inst",
       "figure": "PIN3",
+      "properties": []
+    },
+    {
+      "terminal": "Z",
+      "name": "P__1",
+      "figure_type": "inst",
+      "figure": "PIN1",
       "properties": []
     }
   ],

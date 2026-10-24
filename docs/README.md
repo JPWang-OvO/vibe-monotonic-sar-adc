@@ -1,8 +1,8 @@
 ---
-title: 工程模板文档
+title: MONOTONIC_SAR 工程文档
 type: index
 status: current
-last_reviewed: 2026-10-21
+last_reviewed: 2026-10-25
 authoritative_sources:
   - ../project.json
   - ../library/README.md
@@ -15,6 +15,10 @@ authoritative_sources:
 
 | 任务 | 入口 |
 |---|---|
+| 当前 ADC 尺寸、接口与时序 | [设计约定](architecture/adc.md) |
+| 当前低功耗版本的 20 项系统结果 | [低功耗验收](verification/lowpower-acceptance.md) |
+| SNDR 限制、DAC 建立与独立比较器噪声 | [SNDR 诊断](verification/sndr-diagnosis.md) |
+| 优化前的冻结版本 | [Checkpoint](history/2026-10-24-ai-autonomous-human-polish-r1.md) |
 | 了解目录与职责 | [工程架构](architecture/workspace.md) |
 | 理解 cell/view 文件格式 | [源表示约定](architecture/source-contract.md) |
 | 增加模块、TB 或 flow | [设计与验证流程](architecture/workflow.md) |

@@ -15,17 +15,9 @@ let( ( libId cellId cdfId )
 
     ;;; Parameters
     cdfCreateParam( cdfId
-        ?name           "ccross"
-        ?prompt         "ccross"
-        ?defValue       "28f"
-        ?type           "string"
-        ?parseAsNumber  "yes"
-        ?parseAsCEL     "yes"
-    )
-    cdfCreateParam( cdfId
         ?name           "unit_cap"
         ?prompt         "unit_cap"
-        ?defValue       "24f"
+        ?defValue       "4.8f"
         ?type           "string"
         ?parseAsNumber  "yes"
         ?parseAsCEL     "yes"

@@ -16,24 +16,20 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "4"
-      },
+      "model": "INVD1BWP7T",
+      "parameters": {},
       "connections": {
-        "A": "A",
-        "Z": "N0",
+        "I": "A",
+        "ZN": "N0",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
+        "standard_cells",
+        "INVD1BWP7T",
         "symbol"
       ],
-      "oa_parameters": {
-        "scale": "4"
-      }
+      "oa_parameters": {}
     },
     {
       "name": "I_b1",
@@ -43,25 +39,21 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "16"
-      },
+      "model": "INVD4BWP7T",
+      "parameters": {},
       "connections": {
-        "A": "N0",
-        "Z": "Z",
+        "I": "N0",
+        "ZN": "Z",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
+        "standard_cells",
+        "INVD4BWP7T",
         "symbol"
       ],
-      "oa_parameters": {
-        "scale": "16"
-      }
+      "oa_parameters": {}
     }
   ],
-  "staged_source": "library__blocks__logic__SAR_DONE_DELAY__fastout__netlist.scs"
+  "staged_source": "library__blocks__logic__SAR_DONE_DELAY__netlist_library__netlist.scs"
 }

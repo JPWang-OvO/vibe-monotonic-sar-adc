@@ -9,17 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 617
+        "value": 356
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 03:57:50 2026"
+        "value": "Oct 25 06:06:46 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 2
+        "value": 0
       },
       {
         "name": "pin#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 617
+        "value": 356
       },
       {
         "name": "schGeometryVersion",
@@ -51,72 +51,20 @@
     ],
     "instances": [
       {
-        "name": "I_b0",
+        "name": "I_cell",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_DRIVE",
+          "standard_cells",
+          "INVD4BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 1,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "8"
-          }
-        ],
+        "properties": [],
         "connections": {
-          "VSS": "VSS",
+          "I": "A",
+          "ZN": "Z",
           "VDD": "VDD",
-          "Z": "N0",
-          "A": "A"
-        }
-      },
-      {
-        "name": "I_b1",
-        "master": [
-          "MONOTONIC_SAR",
-          "SAR_DRIVE",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "48"
-          }
-        ],
-        "connections": {
-          "VSS": "VSS",
-          "VDD": "VDD",
-          "Z": "N1",
-          "A": "N0"
-        }
-      },
-      {
-        "name": "I_b2",
-        "master": [
-          "MONOTONIC_SAR",
-          "SAR_DRIVE",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "256"
-          }
-        ],
-        "connections": {
-          "VSS": "VSS",
-          "VDD": "VDD",
-          "Z": "Z",
-          "A": "N1"
+          "VSS": "VSS"
         }
       },
       {
@@ -197,18 +145,6 @@
     "nets": [
       {
         "name": "A",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "N0",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "N1",
         "signal_type": "signal",
         "global_": false,
         "properties": []

@@ -2,16 +2,10 @@
 <rect width="100%" height="100%" fill="white"/>
 <desc>SAR_INV; terminals follow the accepted Spectre declaration order.</desc>
 <g stroke="#287740" stroke-width="1.5" fill="none">
-<polyline points="232,304 280,272 232,240 232,304"/>
-<ellipse cx="288" cy="272" rx="8" ry="8"/>
 <polyline points="392,304 440,272 392,240 392,304"/>
 <ellipse cx="448" cy="272" rx="8" ry="8"/>
-<polyline points="552,304 600,272 552,240 552,304"/>
-<ellipse cx="608" cy="272" rx="8" ry="8"/>
-<polyline points="128,272 232,272"/>
-<polyline points="296,272 392,272"/>
-<polyline points="456,272 552,272"/>
-<polyline points="704,272 616,272"/>
+<polyline points="128,272 392,272"/>
+<polyline points="704,272 456,272"/>
 <polyline points="416,160 416,208"/>
 <polyline points="416,384 416,336"/>
 </g><g fill="#287740" font-family="Arial,sans-serif">

@@ -9,17 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 4076
+        "value": 2320
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 23:18:21 2026"
+        "value": "Oct 25 06:06:51 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 7
+        "value": 10
       },
       {
         "name": "pin#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 4076
+        "value": 2320
       },
       {
         "name": "schGeometryVersion",
@@ -53,47 +53,35 @@
       {
         "name": "I_out1<1:0>",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_DRIVE",
+          "standard_cells",
+          "INVD2BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 2,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "1"
-          }
-        ],
+        "properties": [],
         "connections": {
-          "VSS": "<*2>VSS",
+          "I": "Np0,Nn0",
+          "ZN": "Np1,Nn1",
           "VDD": "<*2>VDD",
-          "Z": "Np1,Nn1",
-          "A": "Np0,Nn0"
+          "VSS": "<*2>VSS"
         }
       },
       {
         "name": "I_out2<1:0>",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_DRIVE",
+          "standard_cells",
+          "INVD2BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 2,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "4"
-          }
-        ],
+        "properties": [],
         "connections": {
-          "VSS": "<*2>VSS",
+          "I": "Np1,Nn1",
+          "ZN": "Outp,Outn",
           "VDD": "<*2>VDD",
-          "Z": "Outp,Outn",
-          "A": "Np1,Nn1"
+          "VSS": "<*2>VSS"
         }
       },
       {
@@ -134,47 +122,35 @@
       {
         "name": "I_vb0",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_DRIVE",
+          "standard_cells",
+          "INVD2BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 1,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "1"
-          }
-        ],
+        "properties": [],
         "connections": {
-          "VSS": "VSS",
+          "I": "ValidRaw",
+          "ZN": "ValidB",
           "VDD": "VDD",
-          "Z": "ValidB",
-          "A": "ValidRaw"
+          "VSS": "VSS"
         }
       },
       {
         "name": "I_vb1",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_DRIVE",
+          "standard_cells",
+          "INVD2BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 1,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "4"
-          }
-        ],
+        "properties": [],
         "connections": {
-          "VSS": "VSS",
+          "I": "ValidB",
+          "ZN": "Valid",
           "VDD": "VDD",
-          "Z": "Valid",
-          "A": "ValidB"
+          "VSS": "VSS"
         }
       },
       {
@@ -190,17 +166,17 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "2.16e-12"
+            "value": "9.6e-13"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "3.84e-12"
+            "value": "9.6e-13"
           },
           {
             "name": "fingers",
             "type": "string",
-            "value": "2"
+            "value": "1"
           },
           {
             "name": "l",
@@ -215,22 +191,22 @@
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.03375"
+            "value": "0.135"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.03375"
+            "value": "0.135"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "9.08u"
+            "value": "4.96u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "17.920u"
+            "value": "4.96u"
           },
           {
             "name": "sa",
@@ -270,12 +246,12 @@
           {
             "name": "w",
             "type": "string",
-            "value": "0.000004"
+            "value": "0.000002"
           },
           {
             "name": "wf",
             "type": "string",
-            "value": "8u"
+            "value": "2u"
           }
         ],
         "connections": {
@@ -298,17 +274,17 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "2.16e-12"
+            "value": "9.6e-13"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "3.84e-12"
+            "value": "9.6e-13"
           },
           {
             "name": "fingers",
             "type": "string",
-            "value": "2"
+            "value": "1"
           },
           {
             "name": "l",
@@ -323,22 +299,22 @@
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.03375"
+            "value": "0.135"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.03375"
+            "value": "0.135"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "9.08u"
+            "value": "4.96u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "17.920u"
+            "value": "4.96u"
           },
           {
             "name": "sa",
@@ -378,12 +354,12 @@
           {
             "name": "w",
             "type": "string",
-            "value": "0.000004"
+            "value": "0.000002"
           },
           {
             "name": "wf",
             "type": "string",
-            "value": "8u"
+            "value": "2u"
           }
         ],
         "connections": {
@@ -406,12 +382,12 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "3.84e-12"
+            "value": "4.8e-13"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "3.84e-12"
+            "value": "4.8e-13"
           },
           {
             "name": "fingers",
@@ -431,22 +407,22 @@
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.03375"
+            "value": "0.27"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.03375"
+            "value": "0.27"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "16.960u"
+            "value": "2.96u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "16.960u"
+            "value": "2.96u"
           },
           {
             "name": "sa",
@@ -486,12 +462,12 @@
           {
             "name": "w",
             "type": "string",
-            "value": "0.000008"
+            "value": "0.000001"
           },
           {
             "name": "wf",
             "type": "string",
-            "value": "8u"
+            "value": "1u"
           }
         ],
         "connections": {
@@ -514,12 +490,12 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "3.84e-12"
+            "value": "4.8e-13"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "3.84e-12"
+            "value": "4.8e-13"
           },
           {
             "name": "fingers",
@@ -539,22 +515,22 @@
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.03375"
+            "value": "0.27"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.03375"
+            "value": "0.27"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "16.960u"
+            "value": "2.96u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "16.960u"
+            "value": "2.96u"
           },
           {
             "name": "sa",
@@ -594,12 +570,12 @@
           {
             "name": "w",
             "type": "string",
-            "value": "0.000008"
+            "value": "0.000001"
           },
           {
             "name": "wf",
             "type": "string",
-            "value": "8u"
+            "value": "1u"
           }
         ],
         "connections": {
@@ -622,17 +598,17 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "1.296e-11"
+            "value": "2.04e-12"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "1.632e-11"
+            "value": "2.04e-12"
           },
           {
             "name": "fingers",
             "type": "string",
-            "value": "6"
+            "value": "3"
           },
           {
             "name": "l",
@@ -647,22 +623,22 @@
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.005625"
+            "value": "0.045"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.005625"
+            "value": "0.045"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "51.240u"
+            "value": "10.040u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "68.080u"
+            "value": "10.040u"
           },
           {
             "name": "sa",
@@ -702,12 +678,12 @@
           {
             "name": "w",
             "type": "string",
-            "value": "0.000008"
+            "value": "0.000002"
           },
           {
             "name": "wf",
             "type": "string",
-            "value": "48u"
+            "value": "6u"
           }
         ],
         "connections": {
@@ -730,17 +706,17 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "1.296e-11"
+            "value": "2.04e-12"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "1.632e-11"
+            "value": "2.04e-12"
           },
           {
             "name": "fingers",
             "type": "string",
-            "value": "6"
+            "value": "3"
           },
           {
             "name": "l",
@@ -755,22 +731,22 @@
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.005625"
+            "value": "0.045"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.005625"
+            "value": "0.045"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "51.240u"
+            "value": "10.040u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "68.080u"
+            "value": "10.040u"
           },
           {
             "name": "sa",
@@ -810,12 +786,12 @@
           {
             "name": "w",
             "type": "string",
-            "value": "0.000008"
+            "value": "0.000002"
           },
           {
             "name": "wf",
             "type": "string",
-            "value": "48u"
+            "value": "6u"
           }
         ],
         "connections": {
@@ -838,17 +814,17 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "2.16e-12"
+            "value": "1.92e-12"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "3.84e-12"
+            "value": "1.92e-12"
           },
           {
             "name": "fingers",
             "type": "string",
-            "value": "2"
+            "value": "1"
           },
           {
             "name": "l",
@@ -863,22 +839,22 @@
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.03375"
+            "value": "0.0675"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.03375"
+            "value": "0.0675"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "9.08u"
+            "value": "8.96u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "17.920u"
+            "value": "8.96u"
           },
           {
             "name": "sa",
@@ -923,7 +899,7 @@
           {
             "name": "wf",
             "type": "string",
-            "value": "8u"
+            "value": "4u"
           }
         ],
         "connections": {
@@ -946,17 +922,17 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "2.16e-12"
+            "value": "1.92e-12"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "3.84e-12"
+            "value": "1.92e-12"
           },
           {
             "name": "fingers",
             "type": "string",
-            "value": "2"
+            "value": "1"
           },
           {
             "name": "l",
@@ -971,22 +947,22 @@
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.03375"
+            "value": "0.0675"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.03375"
+            "value": "0.0675"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "9.08u"
+            "value": "8.96u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "17.920u"
+            "value": "8.96u"
           },
           {
             "name": "sa",
@@ -1031,7 +1007,7 @@
           {
             "name": "wf",
             "type": "string",
-            "value": "8u"
+            "value": "4u"
           }
         ],
         "connections": {

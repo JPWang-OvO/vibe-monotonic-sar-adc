@@ -16,20 +16,6 @@
 <polyline points="368,400 384,400"/>
 <polyline points="128,400 320,400"/>
 <polyline points="1088,400 384,400"/>
-<polyline points="592,232 624,232"/>
-<polyline points="592,248 624,248"/>
-<polyline points="608,208 608,232"/>
-<polyline points="608,248 608,272"/>
-<polyline points="720,232 752,232"/>
-<polyline points="720,248 752,248"/>
-<polyline points="736,208 736,232"/>
-<polyline points="736,248 736,272"/>
-<polyline points="608,272 608,320"/>
-<polyline points="604.8,320 611.2,320" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="736,272 736,312"/>
-<path d="M736,328 A8,8 0 0 0 736,312"/>
-<polyline points="736,328 736,400"/>
-<polyline points="732.8,400 739.2,400" stroke-width="6.4" stroke-linecap="butt"/>
 <polyline points="864,160 864,224"/>
 <polyline points="544,320 544,392"/>
 <path d="M544,408 A8,8 0 0 0 544,392"/>
@@ -186,9 +172,6 @@
 <text x="352" y="432" font-size="16" text-anchor="middle" dominant-baseline="central">boot</text>
 <text x="352" y="272" font-size="16" text-anchor="middle" dominant-baseline="central">Gp</text>
 <text x="352" y="352" font-size="16" text-anchor="middle" dominant-baseline="central">Gn</text>
-<text x="608" y="192" font-size="16" text-anchor="middle" dominant-baseline="central">Gn</text>
-<text x="736" y="192" font-size="16" text-anchor="middle" dominant-baseline="central">Gp</text>
-<text x="800" y="240" font-size="16" text-anchor="middle" dominant-baseline="central">Cx</text>
 <text x="864" y="240" font-size="16" text-anchor="middle" dominant-baseline="central">VR</text>
 <text x="480" y="528" font-size="16" text-anchor="middle" dominant-baseline="central">256</text>
 <text x="480" y="576" font-size="16" text-anchor="middle" dominant-baseline="central">128</text>

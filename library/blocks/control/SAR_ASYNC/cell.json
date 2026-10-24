@@ -95,6 +95,24 @@
     "symbol": {
       "native": "symbol/native.json",
       "drawing": "symbol/drawing.json"
+    },
+    "netlist_library": {
+      "netlist": "netlist_library/netlist.scs"
+    },
+    "netlist_cells": {
+      "netlist": "netlist_cells/netlist.scs"
+    },
+    "netlist_early3": {
+      "netlist": "netlist_early3/netlist.scs"
+    },
+    "netlist_bank2": {
+      "netlist": "netlist_bank2/netlist.scs"
+    },
+    "netlist_direct_small": {
+      "netlist": "netlist_direct_small/netlist.scs"
+    },
+    "netlist_direct_small_early6": {
+      "netlist": "netlist_direct_small_early6/netlist.scs"
     }
   }
 }

@@ -234,20 +234,25 @@ def prune(lines, terminals):
     return components
 
 
-def schematic(data, base, master_drawings, symbols):
+def schematic(data, base, master_drawings, symbols, *, layout=None, qualified=False, functional_routes=True):
     """Route the selected view from its current native semantic/drawing base."""
     initial={n:p for n,p in base['drawing']['instances'].items() if n in {i['name'] for i in data['instances']}}
-    pos,notes=functional_placement(data,initial)
+    pos,notes=functional_placement(data,initial) if layout is None else deepcopy(layout)
+    assert set(pos)=={i['name'] for i in data['instances']},data['cell']
     commands=[]; stubs=defaultdict(list); lines=[]; bodies=[];uses=defaultdict(int)
     def create_wire(path):
         return wire(path,route_style='draw',route_mode='direct') if data['cell']=='SAR_CMP' else wire(path)
     native={i['name']:i for i in base['circuit']['instances']}
     for inst in data['instances']:
         name=inst['name'];p=pos[name];model=inst['model'];x,y=p['xy']
-        old=native.get(name)
-        if old is None:
-            stem=re.sub(r'_[pn]$','',name);old=native[stem+'<1:0>']
-        commands.append('let((obj) obj='+instance(*inst['master'],name,x,y,p['orient'])+' '+props('obj',old['properties'])+')')
+        if qualified:
+            values=[dict(name=k,type='string',value=v) for k,v in inst['oa_parameters'].items()]
+        else:
+            old=native.get(name)
+            if old is None:
+                stem=re.sub(r'_[pn]$','',name);old=native[stem+'<1:0>']
+            values=old['properties']
+        commands.append('let((obj) obj='+instance(*inst['master'],name,x,y,p['orient'])+' '+props('obj',values)+')')
         if model in master_drawings:
             pinmap=symbol_anchors(master_drawings[model])
             coords=[a for a,d in pinmap.values()]
@@ -270,7 +275,7 @@ def schematic(data, base, master_drawings, symbols):
     for i,(net,a,b) in enumerate(lines):
         for other,c,d in lines[i+1:]:
             assert net==other or not intersect(a,b,c,d),(data['cell'],'terminal overlap',net,other,a,b,c,d)
-    for net,path in storage_paths(data['cell']):
+    for net,path in (storage_paths(data['cell']) if functional_routes else []):
         for a,b in segments(path):
             def crossover(other,c,d):
                 if data['cell']!='SAR_CMP' or {net,other}!={'Xp','Xn'}:return False
@@ -339,10 +344,14 @@ def schematic(data, base, master_drawings, symbols):
         commands.append(create_wire([(x,y),(x+.75,y)]));commands.append(label(x+.25,y,port,'lowerLeft','R0'))
         if not any(v in uses for v in expand_signals([port])):
             commands.append(instance('basic','noConn','symbol','NC_'+port,x+.75,y,'R90'))
-    for net,count in uses.items():
-        if count==1 and net not in expand_signals(data['ports']):
-            a,b,_,_=stubs[net][0]
-            commands.append(instance('basic','noConn','symbol','NC_'+net,*b,'R90' if a[1]==b[1] else 'R0'))
+    ports=expand_signals(data['ports'])
+    for net,items in stubs.items():
+        if all(uses[n]==1 and n not in ports for n in expand_signals([net])):
+            a,b,_,_=items[0]
+            name='NC_'+net.replace(',','_')
+            width=len(expand_signals([net]))
+            if width>1:name+=f'<{width-1}:0>'
+            commands.append(instance('basic','noConn','symbol',name,*b,'R90' if a[1]==b[1] else 'R0'))
     commands.append('cv~>portOrder=list('+' '.join(q(n) for n in data['ports'])+')')
     notes.insert(0,(xmin,ymax+1,data['cell']))
     for x,y,text in notes:

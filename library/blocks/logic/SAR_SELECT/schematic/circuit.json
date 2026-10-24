@@ -7,198 +7,33 @@
     "VDD",
     "VSS"
   ],
-  "parameters": {
-    "factor": "1"
-  },
+  "parameters": {},
   "instances": [
     {
-      "name": "Mn0",
+      "name": "I_cell",
       "nodes": [
-        "Z",
         "A",
-        "N0",
+        "B",
+        "Z",
+        "VDD",
         "VSS"
       ],
-      "model": "nch",
-      "parameters": {
-        "w": "2u",
-        "l": "0.18u",
-        "nf": "1",
-        "m": "factor"
-      },
+      "model": "ND2D1BWP7T",
+      "parameters": {},
       "connections": {
-        "D": "Z",
-        "G": "A",
-        "S": "N0",
-        "B": "VSS"
+        "A1": "A",
+        "A2": "B",
+        "ZN": "Z",
+        "VDD": "VDD",
+        "VSS": "VSS"
       },
       "master": [
-        "tsmc18",
-        "nmos2v",
+        "standard_cells",
+        "ND2D1BWP7T",
         "symbol"
       ],
-      "oa_parameters": {
-        "sd": "540.0n",
-        "ad": "9.6e-13",
-        "as": "9.6e-13",
-        "pd": "4.96u",
-        "ps": "4.96u",
-        "nrd": "0.135",
-        "nrs": "0.135",
-        "sa": "480.0n",
-        "sb": "480.0n",
-        "sca": "0",
-        "scb": "0",
-        "scc": "0",
-        "model": "nch",
-        "wf": "2u",
-        "w": "0.000002",
-        "l": "0.18u",
-        "fingers": "1",
-        "simM": "pPar(\"factor\")"
-      }
-    },
-    {
-      "name": "Mn1",
-      "nodes": [
-        "N0",
-        "B",
-        "VSS",
-        "VSS"
-      ],
-      "model": "nch",
-      "parameters": {
-        "w": "2u",
-        "l": "0.18u",
-        "nf": "1",
-        "m": "factor"
-      },
-      "connections": {
-        "D": "N0",
-        "G": "B",
-        "S": "VSS",
-        "B": "VSS"
-      },
-      "master": [
-        "tsmc18",
-        "nmos2v",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "sd": "540.0n",
-        "ad": "9.6e-13",
-        "as": "9.6e-13",
-        "pd": "4.96u",
-        "ps": "4.96u",
-        "nrd": "0.135",
-        "nrs": "0.135",
-        "sa": "480.0n",
-        "sb": "480.0n",
-        "sca": "0",
-        "scb": "0",
-        "scc": "0",
-        "model": "nch",
-        "wf": "2u",
-        "w": "0.000002",
-        "l": "0.18u",
-        "fingers": "1",
-        "simM": "pPar(\"factor\")"
-      }
-    },
-    {
-      "name": "Mp0",
-      "nodes": [
-        "Z",
-        "A",
-        "VDD",
-        "VDD"
-      ],
-      "model": "pch",
-      "parameters": {
-        "w": "2u",
-        "l": "0.18u",
-        "nf": "1",
-        "m": "factor"
-      },
-      "connections": {
-        "D": "Z",
-        "G": "A",
-        "S": "VDD",
-        "B": "VDD"
-      },
-      "master": [
-        "tsmc18",
-        "pmos2v",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "sd": "540.0n",
-        "ad": "9.6e-13",
-        "as": "9.6e-13",
-        "pd": "4.96u",
-        "ps": "4.96u",
-        "nrd": "0.135",
-        "nrs": "0.135",
-        "sa": "480.0n",
-        "sb": "480.0n",
-        "sca": "0",
-        "scb": "0",
-        "scc": "0",
-        "model": "pch",
-        "wf": "2u",
-        "w": "0.000002",
-        "l": "0.18u",
-        "fingers": "1",
-        "simM": "pPar(\"factor\")"
-      }
-    },
-    {
-      "name": "Mp1",
-      "nodes": [
-        "Z",
-        "B",
-        "VDD",
-        "VDD"
-      ],
-      "model": "pch",
-      "parameters": {
-        "w": "2u",
-        "l": "0.18u",
-        "nf": "1",
-        "m": "factor"
-      },
-      "connections": {
-        "D": "Z",
-        "G": "B",
-        "S": "VDD",
-        "B": "VDD"
-      },
-      "master": [
-        "tsmc18",
-        "pmos2v",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "sd": "540.0n",
-        "ad": "9.6e-13",
-        "as": "9.6e-13",
-        "pd": "4.96u",
-        "ps": "4.96u",
-        "nrd": "0.135",
-        "nrs": "0.135",
-        "sa": "480.0n",
-        "sb": "480.0n",
-        "sca": "0",
-        "scb": "0",
-        "scc": "0",
-        "model": "pch",
-        "wf": "2u",
-        "w": "0.000002",
-        "l": "0.18u",
-        "fingers": "1",
-        "simM": "pPar(\"factor\")"
-      }
+      "oa_parameters": {}
     }
   ],
-  "staged_source": "library__blocks__logic__SAR_SELECT__transistor__netlist.scs"
+  "staged_source": "library__blocks__logic__SAR_SELECT__netlist_library__netlist.scs"
 }

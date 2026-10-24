@@ -5,8 +5,9 @@ from regression.common.project import ROOT,read_json
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('batch',type=Path);p.add_argument('--formal',action='store_true');a=p.parse_args()
-    batch=read_json(a.batch/'batch.json');fixed=read_json(ROOT/'config/acceptance.json')
+    p=argparse.ArgumentParser();p.add_argument('batch',type=Path);p.add_argument('--formal',action='store_true')
+    p.add_argument('--acceptance',type=Path,default=ROOT/'config/acceptance.json');a=p.parse_args()
+    batch=read_json(a.batch/'batch.json');fixed=read_json(a.acceptance)
     for case in batch['cases']:
         sources=case['sources'];folder=a.batch/'cases'/case['id']/'inputs';supplies=[]
         for name in sources['sources']:

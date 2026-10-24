@@ -1,0 +1,13 @@
+simulator lang=spectre
+// Single 1.8 V bootstrap; W is total width, nf is finger count.
+subckt SAR_BOOST (Vin Gate Sample SampleB VDD VSS)
+C_boot (Ct Cb) capacitor c=500f
+Mp_precharge (Ct Gate VDD Ct) pch w=4u l=0.18u nf=1 m=1
+Mp_transfer (Gate Q Ct Ct) pch w=4u l=0.18u nf=1 m=1
+Mp_start (Q Sample VDD Ct) pch w=2u l=0.18u nf=1 m=1
+Mn_start (Q Sample Cb VSS) nch w=1u l=0.18u nf=1 m=1
+Mn_trackq (Q Gate Cb VSS) nch w=1u l=0.18u nf=1 m=1
+Mn_bottom (Cb Gate Vin VSS) nch w=8u l=0.18u nf=2 m=1
+Mn_reset_bottom (Cb SampleB VSS VSS) nch w=2u l=0.18u nf=1 m=1
+Mn_reset_gate (Gate SampleB VSS VSS) nch w=2u l=0.18u nf=1 m=1
+ends SAR_BOOST

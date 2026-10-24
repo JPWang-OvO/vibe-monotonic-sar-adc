@@ -4,7 +4,7 @@
   "design_library": "MONOTONIC_SAR",
   "process": "config/processes/tsmc18.json",
   "flows": [
-    "regression/systems/monotonic_sar/flows/final_stage1_tt_k3/flow.json",
-    "regression/systems/monotonic_sar/flows/final_stage1_tt_k51/flow.json"
+    "regression/systems/monotonic_sar/flows/lowpower_reused_tt_25_k3_quiet/flow.json",
+    "regression/systems/monotonic_sar/flows/lowpower_final_s1_tt_25_k51/flow.json"
   ]
 }

@@ -5,49 +5,49 @@
       "terminal": "D",
       "name": "D",
       "figure_type": "rect",
-      "figure": 11,
+      "figure": 13,
       "properties": []
     },
     {
       "terminal": "Q",
       "name": "Q",
       "figure_type": "rect",
-      "figure": 13,
+      "figure": 15,
       "properties": []
     },
     {
       "terminal": "CP",
       "name": "CP",
       "figure_type": "rect",
-      "figure": 15,
+      "figure": 17,
       "properties": []
     },
     {
       "terminal": "CPB",
       "name": "CPB",
       "figure_type": "rect",
-      "figure": 17,
+      "figure": 19,
       "properties": []
     },
     {
       "terminal": "Reset",
       "name": "Reset",
       "figure_type": "rect",
-      "figure": 19,
+      "figure": 21,
       "properties": []
     },
     {
       "terminal": "VDD",
       "name": "VDD",
       "figure_type": "rect",
-      "figure": 21,
+      "figure": 23,
       "properties": []
     },
     {
       "terminal": "VSS",
       "name": "VSS",
       "figure_type": "rect",
-      "figure": 23,
+      "figure": 25,
       "properties": []
     }
   ],
@@ -221,7 +221,7 @@
         ],
         [
           -0.1875,
-          -0.3125
+          -0.4375
         ]
       ],
       "points": [
@@ -231,7 +231,61 @@
         ],
         [
           -0.1875,
-          -0.3125
+          -0.4375
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.21875,
+          -0.46875
+        ],
+        [
+          -0.15625,
+          -0.40625
+        ]
+      ],
+      "points": [
+        [
+          -0.21875,
+          -0.46875
+        ],
+        [
+          -0.15625,
+          -0.40625
+        ]
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.21875,
+          -0.46875
+        ],
+        [
+          -0.15625,
+          -0.40625
+        ]
+      ],
+      "points": [
+        [
+          -0.21875,
+          -0.40625
+        ],
+        [
+          -0.15625,
+          -0.46875
         ]
       ]
     },

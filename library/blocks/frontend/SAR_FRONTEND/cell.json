@@ -37,6 +37,9 @@
     "symbol": {
       "native": "symbol/native.json",
       "drawing": "symbol/drawing.json"
+    },
+    "netlist_paper": {
+      "netlist": "netlist_paper/netlist.scs"
     }
   },
   "cdf": "cdf.il"

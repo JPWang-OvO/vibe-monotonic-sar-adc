@@ -1,0 +1,5 @@
+simulator lang=spectre
+include "../../../../support/standard_cells/ND2D1BWP7T/netlist/netlist.scs"
+subckt SAR_SELECT (A B Z VDD VSS)
+I_cell (A B Z VDD VSS) ND2D1BWP7T
+ends SAR_SELECT

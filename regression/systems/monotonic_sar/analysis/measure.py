@@ -128,6 +128,10 @@ def measure_sar(case,raw):
         power['output_buffers_w']=1.8*sum(integral(t,wave[name],begin,end) for name in cfg['output_buffer_currents'])/(end-begin)
         power['total_with_buffers_w']=power['VDD_w']+power['VREFP_w']+power['VCM_w']
         power['total_without_output_buffers_w']=power['total_with_buffers_w']-power['output_buffers_w']
+    if cfg.get('module_power_currents'):
+        power['modules_w']={name:group['voltage_v']*sum(
+            integral(t,wave[current],begin,end) for current in group['currents'])/(end-begin)
+            for name,group in cfg['module_power_currents'].items()}
     widths=[b-starts[bisect.bisect_right(starts,b)-1] for b in selected]
     metrics=dict(sample_count=len(codes),invalid_bits=invalid,incomplete_conversions=incomplete,
         comparison_count_errors=count_errors,code_mismatches=mismatches,
@@ -135,6 +139,9 @@ def measure_sar(case,raw):
         sample_window_min_s=min(widths),sample_window_max_s=max(widths),
         timing_margin_min_s=min(margins) if margins else -1,
         step_node_error_max_v=max(errors) if errors else 1e9)
+    if cfg.get('output_buffer_currents'):
+        metrics['core_power_w']=power['total_without_output_buffers_w']
+    metrics['sample_rate_hz']=fs
     if spec is not None:metrics['sndr_db']=spec['sndr_db']
     if not cfg.get('behavioral_alignment'):
         metrics.pop('code_mismatches')

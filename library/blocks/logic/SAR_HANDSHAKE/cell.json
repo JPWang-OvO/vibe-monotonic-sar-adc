@@ -19,6 +19,18 @@
     "symbol": {
       "native": "symbol/native.json",
       "drawing": "symbol/drawing.json"
+    },
+    "netlist_library": {
+      "netlist": "netlist_library/netlist.scs"
+    },
+    "netlist_delay4": {
+      "netlist": "netlist_delay4/netlist.scs"
+    },
+    "netlist_delay6": {
+      "netlist": "netlist_delay6/netlist.scs"
+    },
+    "netlist_delay8": {
+      "netlist": "netlist_delay8/netlist.scs"
     }
   }
 }

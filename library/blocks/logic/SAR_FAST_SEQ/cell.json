@@ -22,6 +22,12 @@
     "symbol": {
       "native": "symbol/native.json",
       "drawing": "symbol/drawing.json"
+    },
+    "netlist_library": {
+      "netlist": "netlist_library/netlist.scs"
+    },
+    "netlist_gated": {
+      "netlist": "netlist_gated/netlist.scs"
     }
   }
 }

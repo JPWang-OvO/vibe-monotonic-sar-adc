@@ -1,5 +1,19 @@
 {
   "instances": {
+    "I_buf0<1:0>": {
+      "xy": [
+        6.0,
+        0.0
+      ],
+      "orient": "R0"
+    },
+    "I_buf1<1:0>": {
+      "xy": [
+        8.5,
+        0.0
+      ],
+      "orient": "R0"
+    },
     "I_latch": {
       "xy": [
         0.0,
@@ -14,19 +28,12 @@
       ],
       "orient": "R0"
     },
-    "I_buf0<1:0>": {
+    "NC_Sample": {
       "xy": [
-        6.0,
-        0.0
+        -2.25,
+        2.25
       ],
-      "orient": "R0"
-    },
-    "I_buf1<1:0>": {
-      "xy": [
-        8.5,
-        0.0
-      ],
-      "orient": "R0"
+      "orient": "R90"
     },
     "PIN2": {
       "xy": [
@@ -48,13 +55,6 @@
         3.0
       ],
       "orient": "R0"
-    },
-    "NC_Sample": {
-      "xy": [
-        -2.25,
-        2.25
-      ],
-      "orient": "R90"
     },
     "PIN5": {
       "xy": [
@@ -108,31 +108,10 @@
   },
   "pins": [
     {
-      "terminal": "Outp",
-      "name": "P__0",
+      "terminal": "Bn",
+      "name": "P__5",
       "figure_type": "inst",
-      "figure": "PIN0",
-      "properties": []
-    },
-    {
-      "terminal": "Capture",
-      "name": "P__1",
-      "figure_type": "inst",
-      "figure": "PIN1",
-      "properties": []
-    },
-    {
-      "terminal": "Sample",
-      "name": "P__2",
-      "figure_type": "inst",
-      "figure": "PIN2",
-      "properties": []
-    },
-    {
-      "terminal": "Q",
-      "name": "P__3",
-      "figure_type": "inst",
-      "figure": "PIN3",
+      "figure": "PIN5",
       "properties": []
     },
     {
@@ -143,10 +122,31 @@
       "properties": []
     },
     {
-      "terminal": "Bn",
-      "name": "P__5",
+      "terminal": "Capture",
+      "name": "P__1",
       "figure_type": "inst",
-      "figure": "PIN5",
+      "figure": "PIN1",
+      "properties": []
+    },
+    {
+      "terminal": "Outp",
+      "name": "P__0",
+      "figure_type": "inst",
+      "figure": "PIN0",
+      "properties": []
+    },
+    {
+      "terminal": "Q",
+      "name": "P__3",
+      "figure_type": "inst",
+      "figure": "PIN3",
+      "properties": []
+    },
+    {
+      "terminal": "Sample",
+      "name": "P__2",
+      "figure_type": "inst",
+      "figure": "PIN2",
       "properties": []
     },
     {
@@ -157,10 +157,10 @@
       "properties": []
     },
     {
-      "terminal": "VSS",
-      "name": "P__7",
+      "terminal": "VREFN",
+      "name": "P__9",
       "figure_type": "inst",
-      "figure": "PIN7",
+      "figure": "PIN9",
       "properties": []
     },
     {
@@ -171,10 +171,10 @@
       "properties": []
     },
     {
-      "terminal": "VREFN",
-      "name": "P__9",
+      "terminal": "VSS",
+      "name": "P__7",
       "figure_type": "inst",
-      "figure": "PIN9",
+      "figure": "PIN7",
       "properties": []
     }
   ],

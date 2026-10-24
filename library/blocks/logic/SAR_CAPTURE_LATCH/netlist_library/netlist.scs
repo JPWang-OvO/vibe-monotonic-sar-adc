@@ -1,0 +1,7 @@
+simulator lang=spectre
+include "../../../../support/standard_cells/LNQD1BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/INVD1BWP7T/netlist/netlist.scs"
+subckt SAR_CAPTURE_LATCH (D Hold Q QB VDD VSS)
+I_latch (D Hold Q VDD VSS) LNQD1BWP7T
+I_qb (Q QB VDD VSS) INVD1BWP7T
+ends SAR_CAPTURE_LATCH

@@ -9,22 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 2544
+        "value": 2190
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 23:18:21 2026"
+        "value": "Oct 25 06:06:24 2026"
       },
       {
         "name": "net#",
         "type": "int",
         "value": 8
-      },
-      {
-        "name": "pin#",
-        "type": "int",
-        "value": 6
       },
       {
         "name": "portOrder",
@@ -36,7 +31,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 2544
+        "value": 2190
       },
       {
         "name": "schGeometryVersion",
@@ -63,19 +58,19 @@
           {
             "name": "c",
             "type": "string",
-            "value": "80p"
+            "value": "500f"
           }
         ],
         "connections": {
-          "MINUS": "Cb",
-          "PLUS": "Ct"
+          "PLUS": "Ct",
+          "MINUS": "Cb"
         }
       },
       {
         "name": "Mn_bottom",
         "master": [
           "tsmc18",
-          "nmos5v",
+          "nmos2v",
           "symbol"
         ],
         "purpose": "cell",
@@ -84,47 +79,47 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "5.5296e-10"
+            "value": "2.16e-12"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "5.5632e-10"
+            "value": "3.84e-12"
           },
           {
             "name": "fingers",
             "type": "string",
-            "value": "256"
+            "value": "2"
           },
           {
             "name": "l",
             "type": "string",
-            "value": "0.6u"
+            "value": "0.18u"
           },
           {
             "name": "model",
             "type": "string",
-            "value": "nch_5"
+            "value": "nch"
           },
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.000131836"
+            "value": "0.03375"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.000131836"
+            "value": "0.03375"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "2.18624000m"
+            "value": "9.08u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "2.20308000m"
+            "value": "17.920u"
           },
           {
             "name": "sa",
@@ -164,26 +159,26 @@
           {
             "name": "w",
             "type": "string",
-            "value": "0.000008"
+            "value": "0.000004"
           },
           {
             "name": "wf",
             "type": "string",
-            "value": "2048u"
+            "value": "8u"
           }
         ],
         "connections": {
-          "D": "Cb",
-          "B": "VSS",
+          "S": "Vin",
           "G": "Gate",
-          "S": "Vin"
+          "B": "VSS",
+          "D": "Cb"
         }
       },
       {
         "name": "Mn_reset_bottom",
         "master": [
           "tsmc18",
-          "nmos5v",
+          "nmos2v",
           "symbol"
         ],
         "purpose": "cell",
@@ -192,47 +187,47 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "5.5296e-10"
+            "value": "9.6e-13"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "5.5632e-10"
+            "value": "9.6e-13"
           },
           {
             "name": "fingers",
             "type": "string",
-            "value": "256"
+            "value": "1"
           },
           {
             "name": "l",
             "type": "string",
-            "value": "0.6u"
+            "value": "0.18u"
           },
           {
             "name": "model",
             "type": "string",
-            "value": "nch_5"
+            "value": "nch"
           },
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.000131836"
+            "value": "0.135"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.000131836"
+            "value": "0.135"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "2.18624000m"
+            "value": "4.96u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "2.20308000m"
+            "value": "4.96u"
           },
           {
             "name": "sa",
@@ -272,26 +267,26 @@
           {
             "name": "w",
             "type": "string",
-            "value": "0.000008"
+            "value": "0.000002"
           },
           {
             "name": "wf",
             "type": "string",
-            "value": "2048u"
+            "value": "2u"
           }
         ],
         "connections": {
-          "D": "Cb",
-          "B": "VSS",
+          "S": "VSS",
           "G": "SampleB",
-          "S": "VSS"
+          "B": "VSS",
+          "D": "Cb"
         }
       },
       {
         "name": "Mn_reset_gate",
         "master": [
           "tsmc18",
-          "nmos5v",
+          "nmos2v",
           "symbol"
         ],
         "purpose": "cell",
@@ -300,47 +295,47 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "2.7648e-10"
+            "value": "9.6e-13"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "2.7984e-10"
+            "value": "9.6e-13"
           },
           {
             "name": "fingers",
             "type": "string",
-            "value": "128"
+            "value": "1"
           },
           {
             "name": "l",
             "type": "string",
-            "value": "0.6u"
+            "value": "0.18u"
           },
           {
             "name": "model",
             "type": "string",
-            "value": "nch_5"
+            "value": "nch"
           },
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.000263672"
+            "value": "0.135"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.000263672"
+            "value": "0.135"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "1.09312000m"
+            "value": "4.96u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "1.10996000m"
+            "value": "4.96u"
           },
           {
             "name": "sa",
@@ -380,26 +375,26 @@
           {
             "name": "w",
             "type": "string",
-            "value": "0.000008"
+            "value": "0.000002"
           },
           {
             "name": "wf",
             "type": "string",
-            "value": "1024u"
+            "value": "2u"
           }
         ],
         "connections": {
-          "D": "Gate",
-          "B": "VSS",
+          "S": "VSS",
           "G": "SampleB",
-          "S": "VSS"
+          "B": "VSS",
+          "D": "Gate"
         }
       },
       {
         "name": "Mn_start",
         "master": [
           "tsmc18",
-          "nmos5v",
+          "nmos2v",
           "symbol"
         ],
         "purpose": "cell",
@@ -408,47 +403,47 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "6.912e-11"
+            "value": "4.8e-13"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "7.248e-11"
+            "value": "4.8e-13"
           },
           {
             "name": "fingers",
             "type": "string",
-            "value": "32"
+            "value": "1"
           },
           {
             "name": "l",
             "type": "string",
-            "value": "0.6u"
+            "value": "0.18u"
           },
           {
             "name": "model",
             "type": "string",
-            "value": "nch_5"
+            "value": "nch"
           },
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.00105469"
+            "value": "0.27"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.00105469"
+            "value": "0.27"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "273.28000000u"
+            "value": "2.96u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "290.12000000u"
+            "value": "2.96u"
           },
           {
             "name": "sa",
@@ -488,26 +483,26 @@
           {
             "name": "w",
             "type": "string",
-            "value": "0.000008"
+            "value": "0.000001"
           },
           {
             "name": "wf",
             "type": "string",
-            "value": "256u"
+            "value": "1u"
           }
         ],
         "connections": {
-          "D": "Q",
-          "B": "VSS",
+          "S": "Cb",
           "G": "Sample",
-          "S": "Cb"
+          "B": "VSS",
+          "D": "Q"
         }
       },
       {
         "name": "Mn_trackq",
         "master": [
           "tsmc18",
-          "nmos5v",
+          "nmos2v",
           "symbol"
         ],
         "purpose": "cell",
@@ -516,47 +511,47 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "6.912e-11"
+            "value": "4.8e-13"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "7.248e-11"
+            "value": "4.8e-13"
           },
           {
             "name": "fingers",
             "type": "string",
-            "value": "32"
+            "value": "1"
           },
           {
             "name": "l",
             "type": "string",
-            "value": "0.6u"
+            "value": "0.18u"
           },
           {
             "name": "model",
             "type": "string",
-            "value": "nch_5"
+            "value": "nch"
           },
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.00105469"
+            "value": "0.27"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.00105469"
+            "value": "0.27"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "273.28000000u"
+            "value": "2.96u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "290.12000000u"
+            "value": "2.96u"
           },
           {
             "name": "sa",
@@ -596,26 +591,26 @@
           {
             "name": "w",
             "type": "string",
-            "value": "0.000008"
+            "value": "0.000001"
           },
           {
             "name": "wf",
             "type": "string",
-            "value": "256u"
+            "value": "1u"
           }
         ],
         "connections": {
-          "D": "Q",
-          "B": "VSS",
+          "S": "Cb",
           "G": "Gate",
-          "S": "Cb"
+          "B": "VSS",
+          "D": "Q"
         }
       },
       {
         "name": "Mp_precharge",
         "master": [
           "tsmc18",
-          "pmos5v",
+          "pmos2v",
           "symbol"
         ],
         "purpose": "cell",
@@ -624,47 +619,47 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "2.7648e-10"
+            "value": "1.92e-12"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "2.7984e-10"
+            "value": "1.92e-12"
           },
           {
             "name": "fingers",
             "type": "string",
-            "value": "128"
+            "value": "1"
           },
           {
             "name": "l",
             "type": "string",
-            "value": "0.5u"
+            "value": "0.18u"
           },
           {
             "name": "model",
             "type": "string",
-            "value": "pch_5"
+            "value": "pch"
           },
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.000263672"
+            "value": "0.0675"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.000263672"
+            "value": "0.0675"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "1.09312000m"
+            "value": "8.96u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "1.10996000m"
+            "value": "8.96u"
           },
           {
             "name": "sa",
@@ -704,26 +699,26 @@
           {
             "name": "w",
             "type": "string",
-            "value": "0.000008"
+            "value": "0.000004"
           },
           {
             "name": "wf",
             "type": "string",
-            "value": "1024u"
+            "value": "4u"
           }
         ],
         "connections": {
-          "D": "Ct",
-          "B": "Ct",
+          "S": "VDD",
           "G": "Gate",
-          "S": "VDD"
+          "B": "Ct",
+          "D": "Ct"
         }
       },
       {
         "name": "Mp_start",
         "master": [
           "tsmc18",
-          "pmos5v",
+          "pmos2v",
           "symbol"
         ],
         "purpose": "cell",
@@ -732,47 +727,47 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "6.912e-11"
+            "value": "9.6e-13"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "7.248e-11"
+            "value": "9.6e-13"
           },
           {
             "name": "fingers",
             "type": "string",
-            "value": "32"
+            "value": "1"
           },
           {
             "name": "l",
             "type": "string",
-            "value": "0.5u"
+            "value": "0.18u"
           },
           {
             "name": "model",
             "type": "string",
-            "value": "pch_5"
+            "value": "pch"
           },
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.00105469"
+            "value": "0.135"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.00105469"
+            "value": "0.135"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "273.28000000u"
+            "value": "4.96u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "290.12000000u"
+            "value": "4.96u"
           },
           {
             "name": "sa",
@@ -812,26 +807,26 @@
           {
             "name": "w",
             "type": "string",
-            "value": "0.000008"
+            "value": "0.000002"
           },
           {
             "name": "wf",
             "type": "string",
-            "value": "256u"
+            "value": "2u"
           }
         ],
         "connections": {
-          "D": "Q",
-          "B": "Ct",
+          "S": "VDD",
           "G": "Sample",
-          "S": "VDD"
+          "B": "Ct",
+          "D": "Q"
         }
       },
       {
         "name": "Mp_transfer",
         "master": [
           "tsmc18",
-          "pmos5v",
+          "pmos2v",
           "symbol"
         ],
         "purpose": "cell",
@@ -840,47 +835,47 @@
           {
             "name": "ad",
             "type": "string",
-            "value": "2.7648e-10"
+            "value": "1.92e-12"
           },
           {
             "name": "as",
             "type": "string",
-            "value": "2.7984e-10"
+            "value": "1.92e-12"
           },
           {
             "name": "fingers",
             "type": "string",
-            "value": "128"
+            "value": "1"
           },
           {
             "name": "l",
             "type": "string",
-            "value": "0.5u"
+            "value": "0.18u"
           },
           {
             "name": "model",
             "type": "string",
-            "value": "pch_5"
+            "value": "pch"
           },
           {
             "name": "nrd",
             "type": "string",
-            "value": "0.000263672"
+            "value": "0.0675"
           },
           {
             "name": "nrs",
             "type": "string",
-            "value": "0.000263672"
+            "value": "0.0675"
           },
           {
             "name": "pd",
             "type": "string",
-            "value": "1.09312000m"
+            "value": "8.96u"
           },
           {
             "name": "ps",
             "type": "string",
-            "value": "1.10996000m"
+            "value": "8.96u"
           },
           {
             "name": "sa",
@@ -920,19 +915,19 @@
           {
             "name": "w",
             "type": "string",
-            "value": "0.000008"
+            "value": "0.000004"
           },
           {
             "name": "wf",
             "type": "string",
-            "value": "1024u"
+            "value": "4u"
           }
         ],
         "connections": {
-          "D": "Gate",
-          "B": "Ct",
+          "S": "Ct",
           "G": "Q",
-          "S": "Ct"
+          "B": "Ct",
+          "D": "Gate"
         }
       },
       {

@@ -29,10 +29,15 @@ def fold_drivers(data):
     specifications += [(stem+'<1:0>',members) for stem,members in paired.get(data['cell'],[])]
     for array_name, member_names in specifications:
         by_name = {i['name']: i for i in data['instances']}
+        # Candidate topologies can remove an entire old parallel bank or pair.
+        if not set(member_names).intersection(by_name):
+            continue
         members = [by_name[name] for name in member_names]
         first = deepcopy(members[0])
-        assert all((i['model'], i['parameters'], i['oa_parameters']) ==
-                   (first['model'], first['parameters'], first['oa_parameters']) for i in members)
+        # Differently sized library stages remain separate instances.
+        if not all((i['model'], i['parameters'], i['oa_parameters']) ==
+                   (first['model'], first['parameters'], first['oa_parameters']) for i in members):
+            continue
         first['name'] = array_name
         first['array_members'] = [i['name'] for i in members]
         first['connections'] = {

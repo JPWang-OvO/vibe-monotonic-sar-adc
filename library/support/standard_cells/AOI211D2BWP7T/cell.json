@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "cell": "AOI211D2BWP7T",
+  "ports": [
+    "A1",
+    "A2",
+    "B",
+    "C",
+    "ZN",
+    "VDD",
+    "VSS"
+  ],
+  "reference_library": "standard_cells",
+  "views": {
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
+    }
+  }
+}

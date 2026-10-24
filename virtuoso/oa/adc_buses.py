@@ -14,6 +14,7 @@ FAMILIES = {
 
 
 def signal_name(cell, name):
+    name = name.replace('\\<', '<').replace('\\>', '>')
     match = re.fullmatch(r'([A-Za-z_]\w*?)(\d+)', name)
     return f'{match[1]}<{match[2]}>' if match and match[1] in FAMILIES.get(cell, ()) else name
 

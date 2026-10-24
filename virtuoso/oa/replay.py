@@ -68,13 +68,14 @@ def graphic(s):
     return f'{function}(cv {layer} {points(s.get("points",s["bbox"]))})'
 
 
-def view_code(library, source_library, circuit, drawing):
+def view_code(library, source_library, circuit, drawing, *, within_editor=False):
     cell,view = circuit['cell'],circuit['view']
-    code = [f'let((cv ns ts ins figs obj master pin) '
+    opening = ['let((ns ts ins figs obj master pin)'] if within_editor else [f'let((cv ns ts ins figs obj master pin) '
             f'when(ddGetObj({q(library)} {q(cell)} {q(view)}) error("Destination view already exists"))',
             'unwindProtect(progn(',
             f'cv=dbOpenCellViewByType({q(library)} {q(cell)} {q(view)} {q(circuit["view_type"])} "w")',
-            'unless(cv error("Cannot create view"))',
+            'unless(cv error("Cannot create view"))']
+    code = opening + [
             "ns=makeTable('nets nil) ts=makeTable('terms nil) ins=makeTable('instances nil) figs=makeTable('figures nil)",
             props('cv',circuit['properties'],cellview=True)]
     for n in circuit['nets']:
@@ -137,7 +138,7 @@ def view_code(library, source_library, circuit, drawing):
         fig=f'ins[{q(pin["figure"])}]' if pin['figure_type']=='inst' else f'figs[{pin["figure"]}]'
         term=f'ts[{q(pin["terminal"])}]'
         code += [f'pin=dbCreatePin({term}~>net {fig} {q(pin["name"])} {term})',props('pin',pin['properties'])]
-    code += ['dbSave(cv) t) when(cv dbClose(cv))))']
+    code += ['t)'] if within_editor else ['dbSave(cv) t) when(cv dbClose(cv))))']
     return '\n'.join(code)
 
 

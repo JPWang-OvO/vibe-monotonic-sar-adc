@@ -1,0 +1,5 @@
+simulator lang=spectre
+include "../../../../support/standard_cells/DFSNQD1BWP7T/netlist/netlist.scs"
+subckt SAR_DFFS (D CP SDN Q VDD VSS)
+I_cell (D CP SDN Q VDD VSS) DFSNQD1BWP7T
+ends SAR_DFFS

@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "architecture": "config/architecture.json",
+  "discard_cycles": 16,
+  "read_offset_s": 1.8e-08,
+  "logic_low_v": 0.18,
+  "logic_high_v": 1.62,
+  "transient_stop_s": 5.8e-06,
+  "supply_ramp_s": 1e-08,
+  "clock_start_s": 2e-08,
+  "clock_edge_s": 2e-11,
+  "clock_high_plateau_s": 1.98e-09,
+  "clock_width_definition": "50% crossings; plateau plus one edge gives a 2 ns high interval",
+  "output_load_f_per_bit": 1e-14,
+  "output_buffer_view": "Two SAR_DRIVE/transistor stages with scale 1 and 2, following each output register",
+  "noise": {
+    "noisefmin_hz": 1,
+    "noisefmax_hz": 50000000000,
+    "seed": 1,
+    "enabled_from_start": true,
+    "basis": "50 GHz includes the sampling and regeneration bandwidths and exceeds the 17.5 GHz edge bandwidth associated with the fixed 20 ps clock transition; folding is retained. No manual integration-step or accuracy override is used."
+  },
+  "stages": [
+    {
+      "name": "tt_noiseless",
+      "conditions": [
+        {
+          "corner": "tt",
+          "temp_c": 25,
+          "noise": false
+        }
+      ]
+    },
+    {
+      "name": "tt_noise",
+      "conditions": [
+        {
+          "corner": "tt",
+          "temp_c": 25,
+          "noise": true
+        }
+      ]
+    },
+    {
+      "name": "extremes",
+      "corners": [
+        "ss",
+        "ff"
+      ],
+      "temperatures_c": [
+        -40,
+        125
+      ],
+      "noise": [
+        false,
+        true
+      ]
+    }
+  ],
+  "status": "candidate",
+  "checkpoint": "checkpoint/ai-autonomous-human-polish-r1-20261024",
+  "unit_cap_f": 4.8e-15,
+  "cap_per_side_f": 2.4576e-12,
+  "tt_core_power_max_w": 0.003,
+  "functional_criteria": [
+    "sample_count",
+    "invalid_bits",
+    "incomplete_conversions",
+    "comparison_count_errors",
+    "output_capture_errors",
+    "evaluation_count_errors",
+    "monotonic_switch_errors",
+    "output_hold_errors"
+  ],
+  "sndr_min_db": {
+    "k3": 57.0,
+    "k51": 56.5
+  },
+  "core_power_definition": "VDD plus reference supply power minus output buffer power; check both TT frequencies",
+  "timing_interface": "Read 18 ns after Sample falling edge, common to every case, while the output register holds the preceding conversion during the next sampling window; all ten comparisons and the unique EOC must precede that next sampling window",
+  "diagnostic_only": [
+    "period_error_s",
+    "sample_window_min_s",
+    "sample_window_max_s",
+    "decision_errors_far_boundary",
+    "timing_margin_min_s",
+    "step_diff_error_rms_v",
+    "wrong_bottom_states",
+    "bootstrap_gate_at_first_eval_max_v",
+    "soa_warning_count"
+  ],
+  "optimization_sndr_target_range_db": [
+    59.0,
+    60.0
+  ]
+}

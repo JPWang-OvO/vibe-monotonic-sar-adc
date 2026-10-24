@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "cell": "LNQD1BWP7T",
+  "ports": [
+    "D",
+    "EN",
+    "Q",
+    "VDD",
+    "VSS"
+  ],
+  "reference_library": "standard_cells",
+  "views": {
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
+    }
+  }
+}

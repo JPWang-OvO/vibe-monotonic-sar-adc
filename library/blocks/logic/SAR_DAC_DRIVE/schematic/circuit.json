@@ -20,10 +20,10 @@
       ],
       "model": "nch",
       "parameters": {
-        "w": "2u",
+        "w": "1u",
         "l": "180n",
         "nf": "1",
-        "m": "scale"
+        "m": "2*scale"
       },
       "connections": {
         "D": "Z",
@@ -38,23 +38,23 @@
       ],
       "oa_parameters": {
         "sd": "540.0n",
-        "ad": "9.6e-13",
-        "as": "9.6e-13",
-        "pd": "4.96u",
-        "ps": "4.96u",
-        "nrd": "0.135",
-        "nrs": "0.135",
+        "ad": "4.8e-13",
+        "as": "4.8e-13",
+        "pd": "2.96u",
+        "ps": "2.96u",
+        "nrd": "0.27",
+        "nrs": "0.27",
         "sa": "480.0n",
         "sb": "480.0n",
         "sca": "0",
         "scb": "0",
         "scc": "0",
         "model": "nch",
-        "wf": "2u",
-        "w": "0.000002",
+        "wf": "1u",
+        "w": "0.000001",
         "l": "180n",
         "fingers": "1",
-        "simM": "pPar(\"scale\")"
+        "simM": "2*pPar(\"scale\")"
       }
     },
     {
@@ -67,10 +67,10 @@
       ],
       "model": "pch",
       "parameters": {
-        "w": "6u",
+        "w": "3u",
         "l": "180n",
         "nf": "1",
-        "m": "scale"
+        "m": "2*scale"
       },
       "connections": {
         "D": "Z",
@@ -85,25 +85,25 @@
       ],
       "oa_parameters": {
         "sd": "540.0n",
-        "ad": "2.88e-12",
-        "as": "2.88e-12",
-        "pd": "12.960u",
-        "ps": "12.960u",
-        "nrd": "0.045",
-        "nrs": "0.045",
+        "ad": "1.44e-12",
+        "as": "1.44e-12",
+        "pd": "6.96u",
+        "ps": "6.96u",
+        "nrd": "0.09",
+        "nrs": "0.09",
         "sa": "480.0n",
         "sb": "480.0n",
         "sca": "0",
         "scb": "0",
         "scc": "0",
         "model": "pch",
-        "wf": "6u",
-        "w": "0.000006",
+        "wf": "3u",
+        "w": "0.000003",
         "l": "180n",
         "fingers": "1",
-        "simM": "pPar(\"scale\")"
+        "simM": "2*pPar(\"scale\")"
       }
     }
   ],
-  "staged_source": "library__blocks__logic__SAR_DAC_DRIVE__transistor__netlist.scs"
+  "staged_source": "library__blocks__logic__SAR_DAC_DRIVE__netlist_taper__netlist.scs"
 }

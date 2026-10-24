@@ -1,0 +1,24 @@
+simulator lang=spectre
+// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
+include "../../../../support/standard_cells/INVD1BWP7T/netlist/netlist.scs"
+include "../../../logic/SAR_NAND2/netlist/netlist.scs"
+include "../../../../support/standard_cells/INVD2BWP7T/netlist/netlist.scs"
+subckt SAR_CMP (Vp Vn ClkC Outp Outn Valid Bias VDD VSS)
+Mp_bias (BiasDrain Bias VDD VDD) pch w=6u l=0.36u nf=3 m=1
+Mp_clock (Tail ClkC BiasDrain VDD) pch w=6u l=0.18u nf=3 m=1
+Mp_input_p (Xp Vp Tail VDD) pch w=4u l=0.18u nf=1 m=1
+Mp_input_n (Xn Vn Tail VDD) pch w=4u l=0.18u nf=1 m=1
+Mn_latch_p (Xp Xn VSS VSS) nch w=2u l=0.18u nf=1 m=1
+Mn_latch_n (Xn Xp VSS VSS) nch w=2u l=0.18u nf=1 m=1
+Mn_reset_p (Xp ClkC VSS VSS) nch w=1u l=0.18u nf=1 m=1
+Mn_reset_n (Xn ClkC VSS VSS) nch w=1u l=0.18u nf=1 m=1
+I_outp (Xp Np0 VDD VSS) INVD1BWP7T
+I_outp1 (Np0 Np1 VDD VSS) INVD2BWP7T
+I_outp2 (Np1 Outp VDD VSS) INVD2BWP7T
+I_outn (Xn Nn0 VDD VSS) INVD1BWP7T
+I_outn1 (Nn0 Nn1 VDD VSS) INVD2BWP7T
+I_outn2 (Nn1 Outn VDD VSS) INVD2BWP7T
+I_valid (Np0 Nn0 ValidRaw VDD VSS) SAR_NAND2
+I_vb0 (ValidRaw ValidB VDD VSS) INVD2BWP7T
+I_vb1 (ValidB Valid VDD VSS) INVD2BWP7T
+ends SAR_CMP

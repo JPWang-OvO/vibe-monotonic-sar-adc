@@ -117,10 +117,11 @@ def primitive(data):
         for name,y in zip(('A','B'),ys):port(p,name,(-.75,y),'left',(a,y))
         port(p,'Z',(.75,0),'right',(z,0));supplies(p,0);return p
     if n in ('SAR_INV','SAR_HANDSHAKE','SAR_DONE_DELAY'):
-        count=3 if n=='SAR_INV' else 2
-        p=Picture(n,ports,2.25 if count==3 else 1.75,.875)
-        centers=[(i-(count-1)/2)*.625 for i in range(count)]
-        ends=[inv(p,x,0) for x in centers]
+        count=len(data['instances']) if n in ('SAR_INV','SAR_HANDSHAKE') else 2
+        p=Picture(n,ports,2.25 if n=='SAR_INV' else 1.75,.875)
+        spacing=min(.625,1.5/count)
+        centers=[(i-(count-1)/2)*spacing for i in range(count)]
+        ends=[inv(p,x,0,min(1,spacing/.375)) for x in centers]
         port(p,'A',(-p.width/2,0),'left',(ends[0][0],0))
         for a,b in zip(ends,ends[1:]):p.line((a[1],0),(b[0],0))
         port(p,'Z',(p.width/2,0),'right',(ends[-1][1],0))
@@ -137,7 +138,12 @@ def primitive(data):
                 port(p,name,(0,-.625),'bottom',(0,-.375))
                 p.text(.1875,-.25,'S' if name=='SDN' else 'R')
         if fast:
-            port(p,'CPB',(-.1875,-.75),'bottom',(-.1875,-.3125),label_xy=(-.125,-.6875),label_orient='R90')
+            cpb_used=any('CPB' in i['nodes'] for i in data['instances'])
+            y=-.3125 if cpb_used else -.4375
+            port(p,'CPB',(-.1875,-.75),'bottom',(-.1875,y),label_xy=(-.125,-.6875),label_orient='R90')
+            if not cpb_used:
+                p.line((-.21875,y-.03125),(-.15625,y+.03125))
+                p.line((-.21875,y+.03125),(-.15625,y-.03125))
             port(p,'Reset',(.1875,-.75),'bottom',(.1875,-.3125),label_xy=(.25,-.6875),label_orient='R90')
             p.text(.1875,-.25,'R')
         supplies(p,p.width/2-.1875);return p
@@ -305,6 +311,14 @@ def sample(data):
     p.line((.25,.1875),(.5,.1875));p.line((.375,.1875),(.375,.0625))
     port(p,'Top',(1.375,.375),'right',(.5,.375))
     p.text(.375,.5625,'NMOS')
+    if any(i['name']=='I_boost' for i in data['instances']):
+        p.block(-.5,-.1875,1,.375,'BOOTSTRAP')
+        p.line((-1.1875,.375),(-1.1875,-.1875),(-1,-.1875));p.dot(-1.1875,.375)
+        p.line((0,-.1875),(.5625,-.1875),(.5625,.0625),(.375,.0625))
+        port(p,'Gate',(1.375,-.1875),'right',(.5625,-.1875));p.dot(.5625,-.1875)
+        for name,x in [('Sample',-.875),('SampleB',-.625)]:
+            port(p,name,(x,-.875),'bottom',(x,-.375),label_xy=(x+.0625,-.8125),label_orient='R90')
+        return p
     p.block(-.75,-.1875,.625,.375,'BOOST 1')
     p.block(.125,-.1875,.625,.375,'BOOST 2')
     p.line((-1.1875,-.1875),(-1.0625,-.1875))
@@ -371,7 +385,9 @@ def phase(data):
     a,b=inv(p,.125,-.625);c,d=inv(p,.875,-.625)
     p.line((-.5625,-.625),(a,-.625));p.line((b,-.625),(c,-.625))
     port(p,'Sample',(1.875,-.625),'right',(d,-.625))
-    p.text(.5,-.8125,'6-stage drive')
+    stages=sum(i['name'].startswith('I_buffer') for i in data['instances'])
+    stages+=sum(any(i['name'].startswith(prefix) for i in data['instances']) for prefix in ('I_pre','I_final'))
+    p.text(.5,-.8125,f'{stages}-stage drive')
     return p
 
 
@@ -422,11 +438,12 @@ def frontend(data):
         port(p,vin,(-1.875,y),'left',(-1.125,y))
         port(p,vout,(1.875,y),'right',(-.875,y))
         p.text(-1,y+.1875,gate)
-    # The two charge-injection compensation capacitors connect to opposite tops.
-    for x,gate in [(0,'Gn'),(.5,'Gp')]:
-        cap(p,x,1.4375);p.text(x,1.625,gate)
-    p.line((0,1.3125),(0,1.125));p.dot(0,1.125)
-    bridge_v(p,.5,1.3125,.8125,1.125);p.dot(.5,.8125);p.text(.75,1.4375,'Cx')
+    if any(i['name'].startswith('C_cross') for i in data['instances']):
+        # Cross-coupled charge-injection compensation is present only in the old frontend.
+        for x,gate in [(0,'Gn'),(.5,'Gp')]:
+            cap(p,x,1.4375);p.text(x,1.625,gate)
+        p.line((0,1.3125),(0,1.125));p.dot(0,1.125)
+        bridge_v(p,.5,1.3125,.8125,1.125);p.dot(.5,.8125);p.text(.75,1.4375,'Cx')
     port(p,'VREFP',(1,1.75),'top',(1,1.5));p.text(1,1.4375,'VR')
     bridge_v(p,-.25,1.125,-1.4375,.8125);p.dot(-.25,1.125)
     p.line((.25,.8125),(.25,-1.4375));p.dot(.25,.8125)

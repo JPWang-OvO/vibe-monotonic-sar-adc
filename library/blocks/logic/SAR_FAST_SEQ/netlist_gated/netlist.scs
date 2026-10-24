@@ -1,0 +1,14 @@
+simulator lang=spectre
+include "../../../../support/standard_cells/INVD1BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/NR2D1BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/CKLNQD1BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/DFCNQD1BWP7T/netlist/netlist.scs"
+subckt SAR_FAST_SEQ (D CP CPB Reset Q VDD VSS)
+// The integrated clock gate captures enable only while CP is low.
+// D & !Q selects the next thermometer stage for one comparison edge.
+I_reset (Reset ResetN VDD VSS) INVD1BWP7T
+I_db (D DB VDD VSS) INVD1BWP7T
+I_enable (DB Q Enable VDD VSS) NR2D1BWP7T
+I_gate (VSS Enable CP GatedCP VDD VSS) CKLNQD1BWP7T
+I_cell (D GatedCP ResetN Q VDD VSS) DFCNQD1BWP7T
+ends SAR_FAST_SEQ

@@ -81,7 +81,7 @@ Spectre 层的总线节点使用转义形式，位序以 cell 索引和测量配
 历史条件、日志与结果保留在 artifact 根目录的 `legacy-validation/`、原始批次目录和 `baseline_candidates/`。
 候选结果等待用户审核后再成为正式 baseline。
 
-本次重组已完成四个 case 的实际输入准备和原生 PDK 参数补全，批次为 `refactor_prepare_20261021`。
+`refactor_prepare_20261021` 完成了重组后四个 case 的实际输入准备和原生 PDK 参数补全。
 电气结果仍引用重组前的运行；当前结构的正式分析需按生成的 preview 确认后执行。
 `calibre_restore_20261021` 已从现有 layout 完成 GDS/CDL 导出、LVS、CalibreView 提取与 OA 导入，
 并由 OA view 发布当前 Git 中的 PEX 网表。该提取包含 2 个 MOS、42 个电阻和 34 个电容，

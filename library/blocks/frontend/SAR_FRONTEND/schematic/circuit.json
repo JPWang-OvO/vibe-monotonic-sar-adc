@@ -15,8 +15,7 @@
     "VSS"
   ],
   "parameters": {
-    "ccross": "28f",
-    "unit_cap": "24f"
+    "unit_cap": "4.8f"
   },
   "instances": [
     {
@@ -98,34 +97,7 @@
         "I_sp",
         "I_sn"
       ]
-    },
-    {
-      "name": "C_cross<1:0>",
-      "nodes": [
-        "Gp,Gn",
-        "Vn,Vp"
-      ],
-      "model": "capacitor",
-      "parameters": {
-        "c": "ccross"
-      },
-      "connections": {
-        "PLUS": "Gp,Gn",
-        "MINUS": "Vn,Vp"
-      },
-      "master": [
-        "analogLib",
-        "cap",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "c": "pPar(\"ccross\")"
-      },
-      "array_members": [
-        "C_cross_p",
-        "C_cross_n"
-      ]
     }
   ],
-  "staged_source": "library__blocks__frontend__SAR_FRONTEND__candidate__netlist.scs"
+  "staged_source": "library__blocks__frontend__SAR_FRONTEND__netlist_paper__netlist.scs"
 }

@@ -2,13 +2,19 @@
 <rect width="100%" height="100%" fill="white"/>
 <desc>SAR_HANDSHAKE; terminals follow the accepted Spectre declaration order.</desc>
 <g stroke="#287740" stroke-width="1.5" fill="none">
-<polyline points="248,304 296,272 248,240 248,304"/>
-<ellipse cx="304" cy="272" rx="8" ry="8"/>
-<polyline points="408,304 456,272 408,240 408,304"/>
-<ellipse cx="464" cy="272" rx="8" ry="8"/>
-<polyline points="128,272 248,272"/>
-<polyline points="312,272 408,272"/>
-<polyline points="576,272 472,272"/>
+<polyline points="184,304 232,272 184,240 184,304"/>
+<ellipse cx="240" cy="272" rx="8" ry="8"/>
+<polyline points="280,304 328,272 280,240 280,304"/>
+<ellipse cx="336" cy="272" rx="8" ry="8"/>
+<polyline points="376,304 424,272 376,240 376,304"/>
+<ellipse cx="432" cy="272" rx="8" ry="8"/>
+<polyline points="472,304 520,272 472,240 472,304"/>
+<ellipse cx="528" cy="272" rx="8" ry="8"/>
+<polyline points="128,272 184,272"/>
+<polyline points="248,272 280,272"/>
+<polyline points="344,272 376,272"/>
+<polyline points="440,272 472,272"/>
+<polyline points="576,272 536,272"/>
 <polyline points="352,160 352,208"/>
 <polyline points="352,384 352,336"/>
 </g><g fill="#287740" font-family="Arial,sans-serif">

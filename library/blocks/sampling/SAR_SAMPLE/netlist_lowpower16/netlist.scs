@@ -1,0 +1,6 @@
+simulator lang=spectre
+include "../../SAR_BOOST/netlist/netlist.scs"
+subckt SAR_SAMPLE (Vin Top Sample SampleB Gate VDD VSS)
+I_boost (Vin Gate Sample SampleB VDD VSS) SAR_BOOST
+Mn_sample (Top Gate Vin VSS) nch w=16u l=0.18u nf=4 m=1
+ends SAR_SAMPLE

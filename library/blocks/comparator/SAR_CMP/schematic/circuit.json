@@ -23,9 +23,9 @@
       ],
       "model": "pch",
       "parameters": {
-        "w": "48u",
+        "w": "6u",
         "l": "0.36u",
-        "nf": "6",
+        "nf": "3",
         "m": "1"
       },
       "connections": {
@@ -41,22 +41,22 @@
       ],
       "oa_parameters": {
         "sd": "540.0n",
-        "ad": "1.296e-11",
-        "as": "1.632e-11",
-        "pd": "51.240u",
-        "ps": "68.080u",
-        "nrd": "0.005625",
-        "nrs": "0.005625",
+        "ad": "2.04e-12",
+        "as": "2.04e-12",
+        "pd": "10.040u",
+        "ps": "10.040u",
+        "nrd": "0.045",
+        "nrs": "0.045",
         "sa": "480.0n",
         "sb": "480.0n",
         "sca": "0",
         "scb": "0",
         "scc": "0",
         "model": "pch",
-        "wf": "48u",
-        "w": "0.000008",
+        "wf": "6u",
+        "w": "0.000002",
         "l": "0.36u",
-        "fingers": "6",
+        "fingers": "3",
         "simM": "1"
       }
     },
@@ -70,9 +70,9 @@
       ],
       "model": "pch",
       "parameters": {
-        "w": "48u",
+        "w": "6u",
         "l": "0.18u",
-        "nf": "6",
+        "nf": "3",
         "m": "1"
       },
       "connections": {
@@ -88,22 +88,22 @@
       ],
       "oa_parameters": {
         "sd": "540.0n",
-        "ad": "1.296e-11",
-        "as": "1.632e-11",
-        "pd": "51.240u",
-        "ps": "68.080u",
-        "nrd": "0.005625",
-        "nrs": "0.005625",
+        "ad": "2.04e-12",
+        "as": "2.04e-12",
+        "pd": "10.040u",
+        "ps": "10.040u",
+        "nrd": "0.045",
+        "nrs": "0.045",
         "sa": "480.0n",
         "sb": "480.0n",
         "sca": "0",
         "scb": "0",
         "scc": "0",
         "model": "pch",
-        "wf": "48u",
-        "w": "0.000008",
+        "wf": "6u",
+        "w": "0.000002",
         "l": "0.18u",
-        "fingers": "6",
+        "fingers": "3",
         "simM": "1"
       }
     },
@@ -117,9 +117,9 @@
       ],
       "model": "pch",
       "parameters": {
-        "w": "8u",
+        "w": "4u",
         "l": "0.18u",
-        "nf": "2",
+        "nf": "1",
         "m": "1"
       },
       "connections": {
@@ -135,22 +135,22 @@
       ],
       "oa_parameters": {
         "sd": "540.0n",
-        "ad": "2.16e-12",
-        "as": "3.84e-12",
-        "pd": "9.08u",
-        "ps": "17.920u",
-        "nrd": "0.03375",
-        "nrs": "0.03375",
+        "ad": "1.92e-12",
+        "as": "1.92e-12",
+        "pd": "8.96u",
+        "ps": "8.96u",
+        "nrd": "0.0675",
+        "nrs": "0.0675",
         "sa": "480.0n",
         "sb": "480.0n",
         "sca": "0",
         "scb": "0",
         "scc": "0",
         "model": "pch",
-        "wf": "8u",
+        "wf": "4u",
         "w": "0.000004",
         "l": "0.18u",
-        "fingers": "2",
+        "fingers": "1",
         "simM": "1"
       }
     },
@@ -164,9 +164,9 @@
       ],
       "model": "pch",
       "parameters": {
-        "w": "8u",
+        "w": "4u",
         "l": "0.18u",
-        "nf": "2",
+        "nf": "1",
         "m": "1"
       },
       "connections": {
@@ -182,22 +182,22 @@
       ],
       "oa_parameters": {
         "sd": "540.0n",
-        "ad": "2.16e-12",
-        "as": "3.84e-12",
-        "pd": "9.08u",
-        "ps": "17.920u",
-        "nrd": "0.03375",
-        "nrs": "0.03375",
+        "ad": "1.92e-12",
+        "as": "1.92e-12",
+        "pd": "8.96u",
+        "ps": "8.96u",
+        "nrd": "0.0675",
+        "nrs": "0.0675",
         "sa": "480.0n",
         "sb": "480.0n",
         "sca": "0",
         "scb": "0",
         "scc": "0",
         "model": "pch",
-        "wf": "8u",
+        "wf": "4u",
         "w": "0.000004",
         "l": "0.18u",
-        "fingers": "2",
+        "fingers": "1",
         "simM": "1"
       }
     },
@@ -211,9 +211,9 @@
       ],
       "model": "nch",
       "parameters": {
-        "w": "8u",
+        "w": "2u",
         "l": "0.18u",
-        "nf": "2",
+        "nf": "1",
         "m": "1"
       },
       "connections": {
@@ -229,22 +229,22 @@
       ],
       "oa_parameters": {
         "sd": "540.0n",
-        "ad": "2.16e-12",
-        "as": "3.84e-12",
-        "pd": "9.08u",
-        "ps": "17.920u",
-        "nrd": "0.03375",
-        "nrs": "0.03375",
+        "ad": "9.6e-13",
+        "as": "9.6e-13",
+        "pd": "4.96u",
+        "ps": "4.96u",
+        "nrd": "0.135",
+        "nrs": "0.135",
         "sa": "480.0n",
         "sb": "480.0n",
         "sca": "0",
         "scb": "0",
         "scc": "0",
         "model": "nch",
-        "wf": "8u",
-        "w": "0.000004",
+        "wf": "2u",
+        "w": "0.000002",
         "l": "0.18u",
-        "fingers": "2",
+        "fingers": "1",
         "simM": "1"
       }
     },
@@ -258,9 +258,9 @@
       ],
       "model": "nch",
       "parameters": {
-        "w": "8u",
+        "w": "2u",
         "l": "0.18u",
-        "nf": "2",
+        "nf": "1",
         "m": "1"
       },
       "connections": {
@@ -276,22 +276,22 @@
       ],
       "oa_parameters": {
         "sd": "540.0n",
-        "ad": "2.16e-12",
-        "as": "3.84e-12",
-        "pd": "9.08u",
-        "ps": "17.920u",
-        "nrd": "0.03375",
-        "nrs": "0.03375",
+        "ad": "9.6e-13",
+        "as": "9.6e-13",
+        "pd": "4.96u",
+        "ps": "4.96u",
+        "nrd": "0.135",
+        "nrs": "0.135",
         "sa": "480.0n",
         "sb": "480.0n",
         "sca": "0",
         "scb": "0",
         "scc": "0",
         "model": "nch",
-        "wf": "8u",
-        "w": "0.000004",
+        "wf": "2u",
+        "w": "0.000002",
         "l": "0.18u",
-        "fingers": "2",
+        "fingers": "1",
         "simM": "1"
       }
     },
@@ -305,7 +305,7 @@
       ],
       "model": "nch",
       "parameters": {
-        "w": "8u",
+        "w": "1u",
         "l": "0.18u",
         "nf": "1",
         "m": "1"
@@ -323,20 +323,20 @@
       ],
       "oa_parameters": {
         "sd": "540.0n",
-        "ad": "3.84e-12",
-        "as": "3.84e-12",
-        "pd": "16.960u",
-        "ps": "16.960u",
-        "nrd": "0.03375",
-        "nrs": "0.03375",
+        "ad": "4.8e-13",
+        "as": "4.8e-13",
+        "pd": "2.96u",
+        "ps": "2.96u",
+        "nrd": "0.27",
+        "nrs": "0.27",
         "sa": "480.0n",
         "sb": "480.0n",
         "sca": "0",
         "scb": "0",
         "scc": "0",
         "model": "nch",
-        "wf": "8u",
-        "w": "0.000008",
+        "wf": "1u",
+        "w": "0.000001",
         "l": "0.18u",
         "fingers": "1",
         "simM": "1"
@@ -352,7 +352,7 @@
       ],
       "model": "nch",
       "parameters": {
-        "w": "8u",
+        "w": "1u",
         "l": "0.18u",
         "nf": "1",
         "m": "1"
@@ -370,20 +370,20 @@
       ],
       "oa_parameters": {
         "sd": "540.0n",
-        "ad": "3.84e-12",
-        "as": "3.84e-12",
-        "pd": "16.960u",
-        "ps": "16.960u",
-        "nrd": "0.03375",
-        "nrs": "0.03375",
+        "ad": "4.8e-13",
+        "as": "4.8e-13",
+        "pd": "2.96u",
+        "ps": "2.96u",
+        "nrd": "0.27",
+        "nrs": "0.27",
         "sa": "480.0n",
         "sb": "480.0n",
         "sca": "0",
         "scb": "0",
         "scc": "0",
         "model": "nch",
-        "wf": "8u",
-        "w": "0.000008",
+        "wf": "1u",
+        "w": "0.000001",
         "l": "0.18u",
         "fingers": "1",
         "simM": "1"
@@ -422,24 +422,20 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "1"
-      },
+      "model": "INVD2BWP7T",
+      "parameters": {},
       "connections": {
-        "A": "ValidRaw",
-        "Z": "ValidB",
+        "I": "ValidRaw",
+        "ZN": "ValidB",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
+        "standard_cells",
+        "INVD2BWP7T",
         "symbol"
       ],
-      "oa_parameters": {
-        "scale": "1"
-      }
+      "oa_parameters": {}
     },
     {
       "name": "I_vb1",
@@ -449,24 +445,20 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "4"
-      },
+      "model": "INVD2BWP7T",
+      "parameters": {},
       "connections": {
-        "A": "ValidB",
-        "Z": "Valid",
+        "I": "ValidB",
+        "ZN": "Valid",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
+        "standard_cells",
+        "INVD2BWP7T",
         "symbol"
       ],
-      "oa_parameters": {
-        "scale": "4"
-      }
+      "oa_parameters": {}
     },
     {
       "name": "I_out<1:0>",
@@ -503,24 +495,20 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "1"
-      },
+      "model": "INVD2BWP7T",
+      "parameters": {},
       "connections": {
-        "A": "Np0,Nn0",
-        "Z": "Np1,Nn1",
+        "I": "Np0,Nn0",
+        "ZN": "Np1,Nn1",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
+        "standard_cells",
+        "INVD2BWP7T",
         "symbol"
       ],
-      "oa_parameters": {
-        "scale": "1"
-      },
+      "oa_parameters": {},
       "array_members": [
         "I_outp1",
         "I_outn1"
@@ -534,29 +522,25 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "4"
-      },
+      "model": "INVD2BWP7T",
+      "parameters": {},
       "connections": {
-        "A": "Np1,Nn1",
-        "Z": "Outp,Outn",
+        "I": "Np1,Nn1",
+        "ZN": "Outp,Outn",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
+        "standard_cells",
+        "INVD2BWP7T",
         "symbol"
       ],
-      "oa_parameters": {
-        "scale": "4"
-      },
+      "oa_parameters": {},
       "array_members": [
         "I_outp2",
         "I_outn2"
       ]
     }
   ],
-  "staged_source": "library__blocks__comparator__SAR_CMP__regen8__netlist.scs"
+  "staged_source": "library__blocks__comparator__SAR_CMP__netlist_lowpower1_in4_regen2__netlist.scs"
 }

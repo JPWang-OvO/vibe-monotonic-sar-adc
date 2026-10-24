@@ -83,6 +83,7 @@ def prepare(flow_paths, env_path, batch_id, workers=1):
                     "regression/systems/__init__.py", "regression/systems/monotonic_sar/__init__.py",
                     "regression/systems/monotonic_sar/analysis/__init__.py",
                     "regression/systems/monotonic_sar/analysis/measure.py",
+                    "regression/systems/monotonic_sar/analysis/measure_cmp_noise.py",
                     "regression/systems/monotonic_sar/analysis/measure_modules.py"):
         target = destination / package
         target.parent.mkdir(parents=True, exist_ok=True)

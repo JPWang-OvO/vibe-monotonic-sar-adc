@@ -9,86 +9,28 @@
   "parameters": {},
   "instances": [
     {
-      "name": "I_b0",
+      "name": "I_cell",
       "nodes": [
         "A",
-        "N0",
-        "VDD",
-        "VSS"
-      ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "8"
-      },
-      "connections": {
-        "A": "A",
-        "Z": "N0",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "scale": "8"
-      }
-    },
-    {
-      "name": "I_b1",
-      "nodes": [
-        "N0",
-        "N1",
-        "VDD",
-        "VSS"
-      ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "48"
-      },
-      "connections": {
-        "A": "N0",
-        "Z": "N1",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "scale": "48"
-      }
-    },
-    {
-      "name": "I_b2",
-      "nodes": [
-        "N1",
         "Z",
         "VDD",
         "VSS"
       ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "256"
-      },
+      "model": "INVD4BWP7T",
+      "parameters": {},
       "connections": {
-        "A": "N1",
-        "Z": "Z",
+        "I": "A",
+        "ZN": "Z",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
+        "standard_cells",
+        "INVD4BWP7T",
         "symbol"
       ],
-      "oa_parameters": {
-        "scale": "256"
-      }
+      "oa_parameters": {}
     }
   ],
-  "staged_source": "library__blocks__logic__SAR_INV__drive2__netlist.scs"
+  "staged_source": "library__blocks__logic__SAR_INV__netlist_library__netlist.scs"
 }

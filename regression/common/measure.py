@@ -19,6 +19,12 @@ def measure(case, raw):
     cfg = case["measurement"]
     kind = cfg["kind"]
     metrics = {}
+    if kind == 'sar_comparator_noise':
+        from regression.systems.monotonic_sar.analysis.measure_cmp_noise import measure_comparator_noise
+        result=measure_comparator_noise(case,raw)
+        result.update(checks={},functional_pass=True,performance_pass=None,
+                      performance_scope='Standalone noise characterization; no added ADC acceptance threshold')
+        return result
     if kind in ('sar_comparator','sar_phase','sar_sampler','sar_sampler_sine','sar_cdac'):
         from regression.systems.monotonic_sar.analysis import measure_modules
         result=getattr(measure_modules, 'measure_'+kind[4:])(case,raw)

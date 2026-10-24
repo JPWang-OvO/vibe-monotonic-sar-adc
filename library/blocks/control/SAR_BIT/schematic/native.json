@@ -9,22 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 1807
+        "value": 1480
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 21:21:50 2026"
+        "value": "Oct 25 06:07:13 2026"
       },
       {
         "name": "net#",
         "type": "int",
         "value": 2
-      },
-      {
-        "name": "pin#",
-        "type": "int",
-        "value": 10
       },
       {
         "name": "portOrder",
@@ -36,7 +31,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 1807
+        "value": 1480
       },
       {
         "name": "schGeometryVersion",
@@ -63,14 +58,14 @@
           {
             "name": "scale",
             "type": "string",
-            "value": "max(1,pPar(\"strength\")*32)"
+            "value": "max(0.25,pPar(\"strength\")*4)"
           }
         ],
         "connections": {
-          "VSS": "<*2>VSS",
-          "VDD": "<*2>VDD",
+          "A": "BpRaw,BnRaw",
           "Z": "BpBuf,BnBuf",
-          "A": "BpRaw,BnRaw"
+          "VDD": "<*2>VDD",
+          "VSS": "<*2>VSS"
         }
       },
       {
@@ -86,14 +81,14 @@
           {
             "name": "scale",
             "type": "string",
-            "value": "max(1,pPar(\"strength\")*256)"
+            "value": "max(0.5,pPar(\"strength\")*16)"
           }
         ],
         "connections": {
-          "VSS": "<*2>VREFN",
-          "VDD": "<*2>VREFP",
+          "A": "BpBuf,BnBuf",
           "Z": "Bp,Bn",
-          "A": "BpBuf,BnBuf"
+          "VDD": "<*2>VREFP",
+          "VSS": "<*2>VREFN"
         }
       },
       {
@@ -107,12 +102,12 @@
         "multiplicity": 1,
         "properties": [],
         "connections": {
-          "Hold": "Capture",
-          "QB": "QB",
-          "Q": "Q",
-          "D": "Outp",
+          "VDD": "VDD",
           "VSS": "VSS",
-          "VDD": "VDD"
+          "D": "Outp",
+          "Q": "Q",
+          "QB": "QB",
+          "Hold": "Capture"
         }
       },
       {
@@ -124,19 +119,13 @@
         ],
         "purpose": "cell",
         "multiplicity": 2,
-        "properties": [
-          {
-            "name": "factor",
-            "type": "string",
-            "value": "max(1,pPar(\"strength\")*8)"
-          }
-        ],
+        "properties": [],
         "connections": {
-          "VSS": "<*2>VSS",
-          "VDD": "<*2>VDD",
-          "Z": "BpRaw,BnRaw",
+          "A": "Q,QB",
           "B": "<*2>Capture",
-          "A": "Q,QB"
+          "Z": "BpRaw,BnRaw",
+          "VDD": "<*2>VDD",
+          "VSS": "<*2>VSS"
         }
       },
       {

@@ -17,7 +17,7 @@
       ],
       "model": "pch",
       "parameters": {
-        "w": "8u",
+        "w": "0.25u",
         "l": "0.36u",
         "nf": "1",
         "m": "1"
@@ -34,21 +34,21 @@
         "symbol"
       ],
       "oa_parameters": {
-        "sd": "540.0n",
-        "ad": "3.84e-12",
-        "as": "3.84e-12",
-        "pd": "16.960u",
-        "ps": "16.960u",
-        "nrd": "0.03375",
-        "nrs": "0.03375",
-        "sa": "480.0n",
-        "sb": "480.0n",
+        "sd": "620.0n",
+        "ad": "2.014e-13",
+        "as": "2.014e-13",
+        "pd": "1.88u",
+        "ps": "1.88u",
+        "nrd": "1.24",
+        "nrs": "1.24",
+        "sa": "520.0n",
+        "sb": "520.0n",
         "sca": "0",
         "scb": "0",
         "scc": "0",
         "model": "pch",
-        "wf": "8u",
-        "w": "0.000008",
+        "wf": "0.25u",
+        "w": "2.5e-7",
         "l": "0.36u",
         "fingers": "1",
         "simM": "1"
@@ -64,8 +64,8 @@
       ],
       "model": "nch",
       "parameters": {
-        "w": "3.6u",
-        "l": "2u",
+        "w": "0.3u",
+        "l": "8u",
         "nf": "1",
         "m": "1"
       },
@@ -81,22 +81,22 @@
         "symbol"
       ],
       "oa_parameters": {
-        "sd": "540.0n",
-        "ad": "1.728e-12",
-        "as": "1.728e-12",
-        "pd": "8.16u",
-        "ps": "8.16u",
-        "nrd": "0.075",
-        "nrs": "0.075",
-        "sa": "480.0n",
-        "sb": "480.0n",
+        "sd": "620.0n",
+        "ad": "2.064e-13",
+        "as": "2.064e-13",
+        "pd": "1.88u",
+        "ps": "1.88u",
+        "nrd": "1.03333",
+        "nrs": "1.03333",
+        "sa": "520.0n",
+        "sb": "520.0n",
         "sca": "0",
         "scb": "0",
         "scc": "0",
         "model": "nch",
-        "wf": "3.6u",
-        "w": "0.0000036",
-        "l": "2u",
+        "wf": "0.3u",
+        "w": "3e-7",
+        "l": "8u",
         "fingers": "1",
         "simM": "1"
       }
@@ -125,5 +125,5 @@
       }
     }
   ],
-  "staged_source": "library__blocks__bias__SAR_BIAS__fast36__netlist.scs"
+  "staged_source": "library__blocks__bias__SAR_BIAS__netlist_lowpower1_mirror__netlist.scs"
 }

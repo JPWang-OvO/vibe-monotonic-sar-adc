@@ -21,6 +21,9 @@
     "symbol": {
       "native": "symbol/native.json",
       "drawing": "symbol/drawing.json"
+    },
+    "netlist_lowpower": {
+      "netlist": "netlist_lowpower/netlist.scs"
     }
   }
 }

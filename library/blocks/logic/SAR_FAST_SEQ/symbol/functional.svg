@@ -7,7 +7,9 @@
 <polyline points="128,304 288,304"/>
 <polyline points="576,304 448,304"/>
 <polyline points="128,384 288,384"/>
-<polyline points="304,544 304,432"/>
+<polyline points="304,544 304,464"/>
+<polyline points="296,472 312,456"/>
+<polyline points="296,456 312,472"/>
 <polyline points="400,544 400,432"/>
 <polyline points="528,160 528,208"/>
 <polyline points="528,544 528,496"/>

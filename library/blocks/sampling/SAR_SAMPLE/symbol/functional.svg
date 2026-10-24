@@ -10,38 +10,17 @@
 <polyline points="544,336 608,336"/>
 <polyline points="576,336 576,368"/>
 <polyline points="832,288 608,288"/>
-<rect x="208" y="384" width="160" height="96"/>
-<rect x="432" y="384" width="160" height="96"/>
-<polyline points="176,432 208,432"/>
-<polyline points="368,432 432,432"/>
-<polyline points="592,432 624,432 624,368 576,368"/>
-<polyline points="572.8,368 579.2,368" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="176,288 176,432"/>
+<rect x="224" y="384" width="256" height="96"/>
+<polyline points="176,288 176,432 224,432"/>
 <polyline points="172.8,288 179.2,288" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="480,432 624,432 624,368 576,368"/>
 <polyline points="832,432 624,432"/>
 <polyline points="620.8,432 627.2,432" stroke-width="6.4" stroke-linecap="butt"/>
 <polyline points="256,608 256,480"/>
-<polyline points="384,608 384,528 320,528 320,480"/>
-<polyline points="480,480 480,512"/>
-<polyline points="544,480 544,512"/>
-<polyline points="688,344 720,344"/>
-<polyline points="688,360 720,360"/>
-<polyline points="704,320 704,344"/>
-<polyline points="704,360 704,384"/>
-<polyline points="704,320 704,288"/>
-<polyline points="700.8,288 707.2,288" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="704,384 704,400"/>
+<polyline points="320,608 320,480"/>
 </g><g fill="#287740" font-family="Arial,sans-serif">
 <text x="576" y="240" font-size="16" text-anchor="middle" dominant-baseline="central">NMOS</text>
-<text x="288" y="432" font-size="16" text-anchor="middle" dominant-baseline="central">BOOST 1</text>
-<text x="512" y="432" font-size="16" text-anchor="middle" dominant-baseline="central">BOOST 2</text>
-<text x="400" y="400" font-size="16" text-anchor="middle" dominant-baseline="central">Lift</text>
-<text x="256" y="496" font-size="16" text-anchor="end" dominant-baseline="central">S</text>
-<text x="320" y="496" font-size="16" text-anchor="start" dominant-baseline="central">SB</text>
-<text x="480" y="528" font-size="16" text-anchor="middle" dominant-baseline="central">S</text>
-<text x="544" y="528" font-size="16" text-anchor="middle" dominant-baseline="central">SB</text>
-<text x="704" y="416" font-size="16" text-anchor="middle" dominant-baseline="central">VDD</text>
-<text x="656" y="352" font-size="16" text-anchor="middle" dominant-baseline="central">Cj</text>
+<text x="352" y="432" font-size="16" text-anchor="middle" dominant-baseline="central">BOOTSTRAP</text>
 <text x="480" y="112" font-size="16" text-anchor="middle" dominant-baseline="central">SAR_SAMPLE</text>
 </g><g fill="#c53e32" font-family="Arial,sans-serif" font-size="16">
 <g data-port="VDD" data-side="top"><rect x="764.8" y="156.8" width="6.4" height="6.4"/><text x="784" y="192" text-anchor="start" dominant-baseline="central">VDD</text></g>
@@ -50,5 +29,5 @@
 <g data-port="Top" data-side="right"><rect x="828.8" y="284.8" width="6.4" height="6.4"/><text x="816" y="272" text-anchor="end" dominant-baseline="central">Top</text></g>
 <g data-port="Gate" data-side="right"><rect x="828.8" y="428.8" width="6.4" height="6.4"/><text x="816" y="416" text-anchor="end" dominant-baseline="central">Gate</text></g>
 <g data-port="Sample" data-side="bottom"><rect x="252.8" y="604.8" width="6.4" height="6.4"/><text x="272" y="592" text-anchor="start" dominant-baseline="central" transform="rotate(-90 272 592)">Sample</text></g>
-<g data-port="SampleB" data-side="bottom"><rect x="380.8" y="604.8" width="6.4" height="6.4"/><text x="400" y="592" text-anchor="start" dominant-baseline="central" transform="rotate(-90 400 592)">SampleB</text></g>
+<g data-port="SampleB" data-side="bottom"><rect x="316.8" y="604.8" width="6.4" height="6.4"/><text x="336" y="592" text-anchor="start" dominant-baseline="central" transform="rotate(-90 336 592)">SampleB</text></g>
 </g></svg>

@@ -53,9 +53,7 @@
         "VSS"
       ],
       "model": "SAR_SELECT",
-      "parameters": {
-        "factor": "max(1,strength*8)"
-      },
+      "parameters": {},
       "connections": {
         "A": "Q,QB",
         "B": "Capture",
@@ -68,9 +66,7 @@
         "SAR_SELECT",
         "symbol"
       ],
-      "oa_parameters": {
-        "factor": "max(1,pPar(\"strength\")*8)"
-      },
+      "oa_parameters": {},
       "array_members": [
         "I_select_p",
         "I_select_n"
@@ -86,7 +82,7 @@
       ],
       "model": "SAR_DRIVE",
       "parameters": {
-        "scale": "max(1,strength*32)"
+        "scale": "max(0.25,strength*4)"
       },
       "connections": {
         "A": "BpRaw,BnRaw",
@@ -100,7 +96,7 @@
         "symbol"
       ],
       "oa_parameters": {
-        "scale": "max(1,pPar(\"strength\")*32)"
+        "scale": "max(0.25,pPar(\"strength\")*4)"
       },
       "array_members": [
         "I_buf_p0",
@@ -117,7 +113,7 @@
       ],
       "model": "SAR_DAC_DRIVE",
       "parameters": {
-        "scale": "max(1,strength*256)"
+        "scale": "max(0.5,strength*16)"
       },
       "connections": {
         "A": "BpBuf,BnBuf",
@@ -131,7 +127,7 @@
         "symbol"
       ],
       "oa_parameters": {
-        "scale": "max(1,pPar(\"strength\")*256)"
+        "scale": "max(0.5,pPar(\"strength\")*16)"
       },
       "array_members": [
         "I_buf_p1",
@@ -139,5 +135,5 @@
       ]
     }
   ],
-  "staged_source": "library__blocks__control__SAR_BIT__pullup__netlist.scs"
+  "staged_source": "library__blocks__control__SAR_BIT__netlist_taper16__netlist.scs"
 }

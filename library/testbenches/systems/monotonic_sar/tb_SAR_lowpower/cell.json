@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "cell": "tb_SAR_lowpower",
+  "ports": [],
+  "views": {
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
+    }
+  }
+}

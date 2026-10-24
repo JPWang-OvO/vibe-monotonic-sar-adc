@@ -13,6 +13,11 @@ authoritative_sources:
   - ../../virtuoso/oa/adc_compare.py
 ---
 
+# 适用版本
+
+本文记录优化前 checkpoint 的 28-cell OA 交付及其复现方法，电气绑定由 `config/final_design.json` 固定。
+当前低功耗版本见 [低功耗 OA 交付](lowpower-oa-delivery.md)。复现本记录时使用 checkpoint 源文件。
+
 # 原生库与源文件
 
 交付库名为 `MONOTONIC_SAR`，包含 28 个自研 cell 的 schematic 和 symbol。
@@ -23,7 +28,7 @@ authoritative_sources:
 ```
 
 原生库绑定 `tsmc18`，PDK 器件和标准单元引用其既有库。
-本次 CIW 使用的 `cds.lib` 映射及原映射记录位于产物目录 `oa_delivery/library_mapping.json`；
+交付时 CIW 使用的 `cds.lib` 映射及原映射记录位于产物目录 `oa_delivery/library_mapping.json`；
 其余库的映射保持原值。切换 CIW 时，按该记录加载映射后打开顶层 `MONOTONIC_SAR/schematic`。
 
 每个 cell 在 `library/` 中保存以下文件，`cell.json` 声明对应 view：
@@ -120,6 +125,6 @@ SVG 渲染及原生窗口截图分别放在 `symbol_previews/` 和 `native_previ
 
 # 适用范围
 
-本次完成原理图级实现与固定条件的电气验收。TT 总供电功耗约 193.7 mW，包含输出缓冲。
-CDAC 使用理想电容；固定 seed=1 的瞬态噪声通过结果不代表统计良率。
-本次未完成版图、寄生提取或 Monte Carlo 失配验证。
+该版本完成了原理图级实现与固定条件的电气验收。TT 总供电功耗约 193.7 mW，包含输出缓冲。
+CDAC 使用理想电容，瞬态噪声采用固定 seed=1。验证范围为原理图级固定条件仿真；
+版图、寄生提取、Monte Carlo 失配和统计良率尚未验证。

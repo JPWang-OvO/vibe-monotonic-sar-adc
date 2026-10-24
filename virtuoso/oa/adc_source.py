@@ -61,6 +61,12 @@ def source_folders():
     return {read_json(p)['cell']: p.parent for p in (ROOT/'library').rglob('cell.json')}
 
 
+def reference_libraries():
+    return {record['cell']: record['reference_library']
+            for path in (ROOT/'library/support/standard_cells').glob('*/cell.json')
+            for record in [read_json(path)]}
+
+
 class QualifiedProperties:
     """Reuse properties computed by the accepted batch's PDK callbacks.
 
@@ -70,6 +76,7 @@ class QualifiedProperties:
     """
     def __init__(self, enrichment):
         self.masters = {v: k for k, v in read_json(ROOT/'config/processes/tsmc18_callbacks.json')['models'].items()}
+        self.reference_libraries = reference_libraries()
         self.by_geometry = {}
         for inst in read_json(Path(enrichment)/'prototype_readback.json')['instances']:
             p = inst['params']
@@ -89,7 +96,7 @@ class QualifiedProperties:
         if model == 'capacitor':
             return ['analogLib', 'cap', 'symbol'], {'c': cel(p['c'], parent_parameters)}
         if model not in self.masters:
-            return ['standard_cells' if model == 'INVD1BWP7T' else 'MONOTONIC_SAR', model, 'symbol'], {
+            return [self.reference_libraries.get(model, 'MONOTONIC_SAR'), model, 'symbol'], {
                 k: cel(v, parent_parameters) for k, v in p.items()}
         key = self.key(model, p['w'], p['l'], p.get('nf', '1'))
         tails = {k: p[k] for k in TAIL} if all(k in p for k in TAIL) else self.by_geometry[key]

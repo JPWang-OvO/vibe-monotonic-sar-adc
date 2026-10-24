@@ -115,9 +115,7 @@
         "VSS"
       ],
       "model": "SAR_SELECT",
-      "parameters": {
-        "factor": "16"
-      },
+      "parameters": {},
       "connections": {
         "A": "Clks",
         "B": "ClockEnable",
@@ -130,9 +128,7 @@
         "SAR_SELECT",
         "symbol"
       ],
-      "oa_parameters": {
-        "factor": "16"
-      }
+      "oa_parameters": {}
     },
     {
       "name": "I_gatebuf",
@@ -142,24 +138,20 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "4"
-      },
+      "model": "INVD2BWP7T",
+      "parameters": {},
       "connections": {
-        "A": "ClockGatedB",
-        "Z": "ClockGated",
+        "I": "ClockGatedB",
+        "ZN": "ClockGated",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
+        "standard_cells",
+        "INVD2BWP7T",
         "symbol"
       ],
-      "oa_parameters": {
-        "scale": "4"
-      }
+      "oa_parameters": {}
     },
     {
       "name": "I_clk0",
@@ -169,141 +161,43 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "16"
-      },
+      "model": "INVD2BWP7T",
+      "parameters": {},
       "connections": {
-        "A": "ClockGated",
-        "Z": "ClksB",
+        "I": "ClockGated",
+        "ZN": "ClksB",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
+        "standard_cells",
+        "INVD2BWP7T",
         "symbol"
       ],
-      "oa_parameters": {
-        "scale": "16"
-      }
+      "oa_parameters": {}
     },
     {
-      "name": "Mn_clock_slew",
+      "name": "I_clock",
       "nodes": [
-        "Clock",
         "ClksB",
-        "VSS",
-        "VSS"
-      ],
-      "model": "nch",
-      "parameters": {
-        "w": "8u",
-        "l": "0.18u",
-        "nf": "1",
-        "m": "1"
-      },
-      "connections": {
-        "D": "Clock",
-        "G": "ClksB",
-        "S": "VSS",
-        "B": "VSS"
-      },
-      "master": [
-        "tsmc18",
-        "nmos2v",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "sd": "540.0n",
-        "ad": "3.84e-12",
-        "as": "3.84e-12",
-        "pd": "16.960u",
-        "ps": "16.960u",
-        "nrd": "0.03375",
-        "nrs": "0.03375",
-        "sa": "480.0n",
-        "sb": "480.0n",
-        "sca": "0",
-        "scb": "0",
-        "scc": "0",
-        "model": "nch",
-        "wf": "8u",
-        "w": "0.000008",
-        "l": "0.18u",
-        "fingers": "1",
-        "simM": "1"
-      }
-    },
-    {
-      "name": "Mp_clock_slew",
-      "nodes": [
         "Clock",
-        "ClksB",
         "VDD",
-        "VDD"
-      ],
-      "model": "pch",
-      "parameters": {
-        "w": "16u",
-        "l": "0.18u",
-        "nf": "1",
-        "m": "1"
-      },
-      "connections": {
-        "D": "Clock",
-        "G": "ClksB",
-        "S": "VDD",
-        "B": "VDD"
-      },
-      "master": [
-        "tsmc18",
-        "pmos2v",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "sd": "540.0n",
-        "ad": "7.68e-12",
-        "as": "7.68e-12",
-        "pd": "32.960u",
-        "ps": "32.960u",
-        "nrd": "0.016875",
-        "nrs": "0.016875",
-        "sa": "480.0n",
-        "sb": "480.0n",
-        "sca": "0",
-        "scb": "0",
-        "scc": "0",
-        "model": "pch",
-        "wf": "16u",
-        "w": "0.000016",
-        "l": "0.18u",
-        "fingers": "1",
-        "simM": "1"
-      }
-    },
-    {
-      "name": "C_clock_slew",
-      "nodes": [
-        "Clock",
         "VSS"
       ],
-      "model": "capacitor",
-      "parameters": {
-        "c": "320f"
-      },
+      "model": "INVD2BWP7T",
+      "parameters": {},
       "connections": {
-        "PLUS": "Clock",
-        "MINUS": "VSS"
+        "I": "ClksB",
+        "ZN": "Clock",
+        "VDD": "VDD",
+        "VSS": "VSS"
       },
       "master": [
-        "analogLib",
-        "cap",
+        "standard_cells",
+        "INVD2BWP7T",
         "symbol"
       ],
-      "oa_parameters": {
-        "c": "320f"
-      }
+      "oa_parameters": {}
     },
     {
       "name": "I_ring4",
@@ -340,235 +234,43 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "1"
-      },
+      "model": "INVD2BWP7T",
+      "parameters": {},
       "connections": {
-        "A": "R<0>",
-        "Z": "SampleN0",
+        "I": "R<0>",
+        "ZN": "SampleN0",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
+        "standard_cells",
+        "INVD2BWP7T",
         "symbol"
       ],
-      "oa_parameters": {
-        "scale": "1"
-      }
+      "oa_parameters": {}
     },
     {
       "name": "I_buffer1",
       "nodes": [
         "SampleN0",
-        "SampleN1",
-        "VDD",
-        "VSS"
-      ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "8"
-      },
-      "connections": {
-        "A": "SampleN0",
-        "Z": "SampleN1",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "scale": "8"
-      }
-    },
-    {
-      "name": "I_buffer2",
-      "nodes": [
-        "SampleN1",
-        "SampleN2",
-        "VDD",
-        "VSS"
-      ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "64"
-      },
-      "connections": {
-        "A": "SampleN1",
-        "Z": "SampleN2",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "scale": "64"
-      }
-    },
-    {
-      "name": "I_buffer3",
-      "nodes": [
-        "SampleN2",
-        "SampleN3",
-        "VDD",
-        "VSS"
-      ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "512"
-      },
-      "connections": {
-        "A": "SampleN2",
-        "Z": "SampleN3",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "scale": "512"
-      }
-    },
-    {
-      "name": "I_pre<7:0>",
-      "nodes": [
-        "SampleN3",
-        "SampleN4",
-        "VDD",
-        "VSS"
-      ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "512"
-      },
-      "connections": {
-        "A": "SampleN3",
-        "Z": "SampleN4",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "scale": "512"
-      },
-      "array_members": [
-        "I_pre7",
-        "I_pre6",
-        "I_pre5",
-        "I_pre4",
-        "I_pre3",
-        "I_pre2",
-        "I_pre1",
-        "I_pre0"
-      ]
-    },
-    {
-      "name": "I_final<63:0>",
-      "nodes": [
-        "SampleN4",
         "Sample",
         "VDD",
         "VSS"
       ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "512"
-      },
+      "model": "INVD8BWP7T",
+      "parameters": {},
       "connections": {
-        "A": "SampleN4",
-        "Z": "Sample",
+        "I": "SampleN0",
+        "ZN": "Sample",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
+        "standard_cells",
+        "INVD8BWP7T",
         "symbol"
       ],
-      "oa_parameters": {
-        "scale": "512"
-      },
-      "array_members": [
-        "I_final63",
-        "I_final62",
-        "I_final61",
-        "I_final60",
-        "I_final59",
-        "I_final58",
-        "I_final57",
-        "I_final56",
-        "I_final55",
-        "I_final54",
-        "I_final53",
-        "I_final52",
-        "I_final51",
-        "I_final50",
-        "I_final49",
-        "I_final48",
-        "I_final47",
-        "I_final46",
-        "I_final45",
-        "I_final44",
-        "I_final43",
-        "I_final42",
-        "I_final41",
-        "I_final40",
-        "I_final39",
-        "I_final38",
-        "I_final37",
-        "I_final36",
-        "I_final35",
-        "I_final34",
-        "I_final33",
-        "I_final32",
-        "I_final31",
-        "I_final30",
-        "I_final29",
-        "I_final28",
-        "I_final27",
-        "I_final26",
-        "I_final25",
-        "I_final24",
-        "I_final23",
-        "I_final22",
-        "I_final21",
-        "I_final20",
-        "I_final19",
-        "I_final18",
-        "I_final17",
-        "I_final16",
-        "I_final15",
-        "I_final14",
-        "I_final13",
-        "I_final12",
-        "I_final11",
-        "I_final10",
-        "I_final9",
-        "I_final8",
-        "I_final7",
-        "I_final6",
-        "I_final5",
-        "I_final4",
-        "I_final3",
-        "I_final2",
-        "I_final1",
-        "I_final0"
-      ]
+      "oa_parameters": {}
     },
     {
       "name": "I_ring<3:0>",
@@ -631,5 +333,5 @@
       ]
     }
   ],
-  "staged_source": "library__blocks__clock__SAR_PHASE__gated320__netlist.scs"
+  "staged_source": "library__blocks__clock__SAR_PHASE__netlist_cells__netlist.scs"
 }

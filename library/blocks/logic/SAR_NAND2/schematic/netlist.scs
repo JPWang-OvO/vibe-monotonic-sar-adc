@@ -1,7 +1,4 @@
 simulator lang=spectre
 subckt SAR_NAND2 (A B Z VDD VSS)
-Mn1 (N0 B VSS VSS) nch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mn0 (Z A N0 VSS) nch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mp1 (Z B VDD VDD) pch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mp0 (Z A VDD VDD) pch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+I_cell (A B Z VDD VSS) ND2D1BWP7T
 ends SAR_NAND2

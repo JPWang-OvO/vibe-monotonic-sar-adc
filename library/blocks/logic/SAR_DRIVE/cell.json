@@ -19,6 +19,9 @@
     "symbol": {
       "native": "symbol/native.json",
       "drawing": "symbol/drawing.json"
+    },
+    "netlist_taper": {
+      "netlist": "netlist_taper/netlist.scs"
     }
   },
   "cdf": "cdf.il"

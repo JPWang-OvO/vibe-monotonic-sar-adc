@@ -58,6 +58,24 @@
     "symbol": {
       "native": "symbol/native.json",
       "drawing": "symbol/drawing.json"
+    },
+    "netlist_lowpower4": {
+      "netlist": "netlist_lowpower4/netlist.scs"
+    },
+    "netlist_lowpower2": {
+      "netlist": "netlist_lowpower2/netlist.scs"
+    },
+    "netlist_lowpower1": {
+      "netlist": "netlist_lowpower1/netlist.scs"
+    },
+    "netlist_lowpower1_in2": {
+      "netlist": "netlist_lowpower1_in2/netlist.scs"
+    },
+    "netlist_lowpower1_in4": {
+      "netlist": "netlist_lowpower1_in4/netlist.scs"
+    },
+    "netlist_lowpower1_in4_regen2": {
+      "netlist": "netlist_lowpower1_in4_regen2/netlist.scs"
     }
   }
 }

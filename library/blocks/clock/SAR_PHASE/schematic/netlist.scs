@@ -1,91 +1,15 @@
 simulator lang=spectre
 subckt SAR_PHASE (Clks Sample VDD VSS)
-Mp_clock_slew (Clock ClksB VDD VDD) pch l=0.18u w=16u m=1 nf=1 sd=540.0n ad=7.68e-12 as=7.68e-12 pd=32.960u ps=32.960u nrd=0.016875 nrs=0.016875 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 Mp_charge (PorRamp VSS VDD VDD) pch l=5u w=0.36u m=1 nf=1 sd=620.0n ad=2.124e-13 as=2.124e-13 pd=1.88u ps=1.88u nrd=0.861111 nrs=0.861111 sa=520.0n sb=520.0n sca=0 scb=0 scc=0
-C_clock_slew (Clock VSS) capacitor c=320f
 C_por (PorRamp VSS) capacitor c=200f
 I_enable (PorN Clks ClockEnable ClockEnableB VDD VSS) SAR_CAPTURE_LATCH
-I_gate (Clks ClockEnable ClockGatedB VDD VSS) SAR_SELECT factor=16
-I_final\<63\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<62\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<61\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<60\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<59\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<58\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<57\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<56\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<55\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<54\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<53\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<52\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<51\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<50\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<49\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<48\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<47\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<46\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<45\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<44\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<43\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<42\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<41\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<40\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<39\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<38\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<37\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<36\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<35\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<34\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<33\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<32\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<31\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<30\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<29\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<28\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<27\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<26\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<25\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<24\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<23\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<22\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<21\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<20\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<19\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<18\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<17\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<16\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<15\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<14\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<13\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<12\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<11\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<10\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<9\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<8\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<7\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<6\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<5\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<4\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<3\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<2\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<1\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_final\<0\> (SampleN4 Sample VDD VSS) SAR_DRIVE _par0=512
-I_pre\<7\> (SampleN3 SampleN4 VDD VSS) SAR_DRIVE _par0=512
-I_pre\<6\> (SampleN3 SampleN4 VDD VSS) SAR_DRIVE _par0=512
-I_pre\<5\> (SampleN3 SampleN4 VDD VSS) SAR_DRIVE _par0=512
-I_pre\<4\> (SampleN3 SampleN4 VDD VSS) SAR_DRIVE _par0=512
-I_pre\<3\> (SampleN3 SampleN4 VDD VSS) SAR_DRIVE _par0=512
-I_pre\<2\> (SampleN3 SampleN4 VDD VSS) SAR_DRIVE _par0=512
-I_pre\<1\> (SampleN3 SampleN4 VDD VSS) SAR_DRIVE _par0=512
-I_pre\<0\> (SampleN3 SampleN4 VDD VSS) SAR_DRIVE _par0=512
-I_buffer3 (SampleN2 SampleN3 VDD VSS) SAR_DRIVE _par0=512
-I_buffer2 (SampleN1 SampleN2 VDD VSS) SAR_DRIVE _par0=64
-I_buffer1 (SampleN0 SampleN1 VDD VSS) SAR_DRIVE _par0=8
-I_buffer0 (R\<0\> SampleN0 VDD VSS) SAR_DRIVE _par0=1
-I_clk0 (ClockGated ClksB VDD VSS) SAR_DRIVE _par0=16
-I_gatebuf (ClockGatedB ClockGated VDD VSS) SAR_DRIVE _par0=4
-Mn_clock_slew (Clock ClksB VSS VSS) nch l=0.18u w=8u m=1 nf=1 sd=540.0n ad=3.84e-12 as=3.84e-12 pd=16.960u ps=16.960u nrd=0.03375 nrs=0.03375 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+I_gate (Clks ClockEnable ClockGatedB VDD VSS) SAR_SELECT
+I_buffer0 (R\<0\> SampleN0 VDD VSS) INVD2BWP7T
+I_clock (ClksB Clock VDD VSS) INVD2BWP7T
+I_clk0 (ClockGated ClksB VDD VSS) INVD2BWP7T
+I_gatebuf (ClockGatedB ClockGated VDD VSS) INVD2BWP7T
 I_ring4 (R\<3\> Clock PorN R\<4\> VDD VSS) SAR_DFFS
+I_buffer1 (SampleN0 Sample VDD VSS) INVD8BWP7T
 I_ring\<3\> (R\<2\> Clock PorN R\<3\> VDD VSS) SAR_DFFR
 I_ring\<2\> (R\<1\> Clock PorN R\<2\> VDD VSS) SAR_DFFR
 I_ring\<1\> (R\<0\> Clock PorN R\<1\> VDD VSS) SAR_DFFR

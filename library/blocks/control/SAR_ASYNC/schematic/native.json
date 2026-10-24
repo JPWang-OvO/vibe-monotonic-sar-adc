@@ -9,17 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 13522
+        "value": 2786
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 21:05:07 2026"
+        "value": "Oct 25 06:12:15 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 0
+        "value": 5
       },
       {
         "name": "pin#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 13522
+        "value": 2786
       },
       {
         "name": "schGeometryVersion",
@@ -53,47 +53,18 @@
       {
         "name": "I_clock_drive",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_DRIVE",
+          "standard_cells",
+          "INVD2BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 1,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "4"
-          }
-        ],
+        "properties": [],
         "connections": {
-          "VSS": "VSS",
+          "I": "CompareEnable",
+          "ZN": "ClkC",
           "VDD": "VDD",
-          "Z": "ClkC",
-          "A": "CompareEnable"
-        }
-      },
-      {
-        "name": "I_cp<1:0>",
-        "master": [
-          "MONOTONIC_SAR",
-          "SAR_DRIVE",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 2,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "16"
-          }
-        ],
-        "connections": {
-          "VSS": "<*2>VSS",
-          "VDD": "<*2>VDD",
-          "Z": "SeqB,Seq",
-          "A": "Valid,SeqB"
+          "VSS": "VSS"
         }
       },
       {
@@ -116,24 +87,18 @@
       {
         "name": "I_early",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_DRIVE",
+          "standard_cells",
+          "INVD1BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 1,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "1"
-          }
-        ],
+        "properties": [],
         "connections": {
-          "VSS": "VSS",
+          "I": "Ck<5>",
+          "ZN": "Early",
           "VDD": "VDD",
-          "Z": "Early",
-          "A": "Ck<5>"
+          "VSS": "VSS"
         }
       },
       {
@@ -156,24 +121,18 @@
       {
         "name": "I_reset",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_DRIVE",
+          "standard_cells",
+          "INVD4BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 1,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "8"
-          }
-        ],
+        "properties": [],
         "connections": {
-          "VSS": "VSS",
+          "I": "ClearN",
+          "ZN": "Reset",
           "VDD": "VDD",
-          "Z": "Reset",
-          "A": "ClearN"
+          "VSS": "VSS"
         }
       },
       {
@@ -228,8 +187,8 @@
           "VSS": "<*10>VSS",
           "VDD": "<*10>VDD",
           "Reset": "<*10>Reset",
-          "CPB": "<*10>SeqB",
-          "CP": "<*10>Seq",
+          "CPB": "<*10>VSS",
+          "CP": "<*10>Valid",
           "Q": "Ck<0:9>",
           "D": "Ck<1:9>,VDD"
         }
@@ -390,18 +349,6 @@
         "properties": []
       },
       {
-        "name": "<*10>Seq",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "<*10>SeqB",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
         "name": "<*10>VDD",
         "signal_type": "signal",
         "global_": false,
@@ -414,13 +361,7 @@
         "properties": []
       },
       {
-        "name": "<*2>VDD",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "<*2>VSS",
+        "name": "<*10>Valid",
         "signal_type": "signal",
         "global_": false,
         "properties": []
@@ -510,24 +451,6 @@
         "properties": []
       },
       {
-        "name": "Seq",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "SeqB",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "SeqB,Seq",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
         "name": "VDD",
         "signal_type": "signal",
         "global_": false,
@@ -541,12 +464,6 @@
       },
       {
         "name": "Valid",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Valid,SeqB",
         "signal_type": "signal",
         "global_": false,
         "properties": []

@@ -9,17 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 496
+        "value": 614
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 03:57:59 2026"
+        "value": "Oct 25 06:06:54 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 2
+        "value": 0
       },
       {
         "name": "pin#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 496
+        "value": 614
       },
       {
         "name": "schGeometryVersion",
@@ -53,47 +53,69 @@
       {
         "name": "I_b0",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_DRIVE",
+          "standard_cells",
+          "INVD1BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 1,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "1"
-          }
-        ],
+        "properties": [],
         "connections": {
-          "VSS": "VSS",
+          "I": "A",
+          "ZN": "N0",
           "VDD": "VDD",
-          "Z": "N0",
-          "A": "A"
+          "VSS": "VSS"
         }
       },
       {
         "name": "I_b1",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_DRIVE",
+          "standard_cells",
+          "INVD1BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 1,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "4"
-          }
-        ],
+        "properties": [],
         "connections": {
-          "VSS": "VSS",
+          "I": "N0",
+          "ZN": "N1",
           "VDD": "VDD",
-          "Z": "Z",
-          "A": "N0"
+          "VSS": "VSS"
+        }
+      },
+      {
+        "name": "I_b2",
+        "master": [
+          "standard_cells",
+          "INVD1BWP7T",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {
+          "I": "N1",
+          "ZN": "N2",
+          "VDD": "VDD",
+          "VSS": "VSS"
+        }
+      },
+      {
+        "name": "I_b3",
+        "master": [
+          "standard_cells",
+          "INVD1BWP7T",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {
+          "I": "N2",
+          "ZN": "Z",
+          "VDD": "VDD",
+          "VSS": "VSS"
         }
       },
       {
@@ -180,6 +202,18 @@
       },
       {
         "name": "N0",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "N1",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "N2",
         "signal_type": "signal",
         "global_": false,
         "properties": []

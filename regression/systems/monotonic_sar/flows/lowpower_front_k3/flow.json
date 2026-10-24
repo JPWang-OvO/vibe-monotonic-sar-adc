@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "id": "sar_lowpower_front_k3",
+  "testbench": "library/testbenches/systems/monotonic_sar/tb_SAR_lowpower_acceptance/netlist/netlist.scs",
+  "process": "tsmc18",
+  "conditions": [
+    {
+      "id": "tt",
+      "corner": "tt",
+      "enrichment": true,
+      "cell_views": {
+        "SAR_PHASE": "netlist_lowpower",
+        "SAR_INV": "netlist_lowpower",
+        "SAR_CMP": "netlist_regen8",
+        "SAR_ASYNC": "netlist_weighted4_g2_quiet",
+        "SAR_BIT": "netlist_pullup",
+        "SAR_OUT": "netlist_fast",
+        "SAR_BIAS": "netlist_fast36",
+        "SAR_FRONTEND": "netlist_paper",
+        "SAR_SAMPLE": "netlist_lowpower16",
+        "SAR_CDAC": "netlist_scaled",
+        "SAR_CAPTURE_LATCH": "netlist_drive",
+        "SAR_DONE_DELAY": "netlist_fastout",
+        "SAR_STARTUP": "netlist_quiet_arm",
+        "MONOTONIC_SAR": "netlist",
+        "SAR_WAIT_GATE": "netlist_damped_hold22",
+        "SAR_ARM": "netlist_quiet",
+        "SAR_SAMPLE_GUARD2": "netlist_quiet15",
+        "SAR_OUTPUT_FF": "netlist_fast3",
+        "SAR_DFFR": "netlist_quad",
+        "SAR_DFFS": "netlist_quadquiet",
+        "SAR_BOOST": "netlist_lowpower"
+      },
+      "tokens": {
+        "FIN": 585937.5,
+        "TEMP": 25,
+        "NOISE": ""
+      }
+    }
+  ],
+  "simulator": {
+    "arguments": [
+      "-64",
+      "+preset=ax"
+    ],
+    "threads": 8,
+    "timeout_s": 3600,
+    "analyses": "TT front-end 256-code k=3 SNDR; power reported during sizing",
+    "precision": {
+      "preset": "AX"
+    }
+  },
+  "measurement": {
+    "kind": "sar",
+    "bits": 10,
+    "n": 256,
+    "discard_cycles": 16,
+    "read_offset_s": 1.4e-08,
+    "logic_low_v": 0.18,
+    "logic_high_v": 1.62,
+    "expected_period_s": 2e-08,
+    "behavioral_alignment": false,
+    "lsb_v": 0.003515625,
+    "fft": true,
+    "physical_frontend": true,
+    "charge_gain": 1,
+    "charge_gain_source": "Nominal paper CDAC ratio; diagnostic only, no output correction",
+    "output_buffer_currents": [
+      "I_adc.I_out0.I_buf0:3",
+      "I_adc.I_out0.I_buf1:3",
+      "I_adc.I_out1.I_buf0:3",
+      "I_adc.I_out1.I_buf1:3",
+      "I_adc.I_out2.I_buf0:3",
+      "I_adc.I_out2.I_buf1:3",
+      "I_adc.I_out3.I_buf0:3",
+      "I_adc.I_out3.I_buf1:3",
+      "I_adc.I_out4.I_buf0:3",
+      "I_adc.I_out4.I_buf1:3",
+      "I_adc.I_out5.I_buf0:3",
+      "I_adc.I_out5.I_buf1:3",
+      "I_adc.I_out6.I_buf0:3",
+      "I_adc.I_out6.I_buf1:3",
+      "I_adc.I_out7.I_buf0:3",
+      "I_adc.I_out7.I_buf1:3",
+      "I_adc.I_out8.I_buf0:3",
+      "I_adc.I_out8.I_buf1:3",
+      "I_adc.I_out9.I_buf0:3",
+      "I_adc.I_out9.I_buf1:3"
+    ],
+    "module_power_currents": {
+      "phase": {
+        "voltage_v": 1.8,
+        "currents": [
+          "I_adc.I_phase:3"
+        ]
+      },
+      "complement": {
+        "voltage_v": 1.8,
+        "currents": [
+          "I_adc.I_inv:3"
+        ]
+      },
+      "bias": {
+        "voltage_v": 1.8,
+        "currents": [
+          "I_adc.I_bias:2"
+        ]
+      },
+      "comparator": {
+        "voltage_v": 1.8,
+        "currents": [
+          "I_adc.I_cmp:8"
+        ]
+      },
+      "async": {
+        "voltage_v": 1.8,
+        "currents": [
+          "I_adc.I_async:15"
+        ]
+      },
+      "bit_control": {
+        "voltage_v": 1.8,
+        "currents": [
+          "I_adc.I_bit0:7",
+          "I_adc.I_bit1:7",
+          "I_adc.I_bit2:7",
+          "I_adc.I_bit3:7",
+          "I_adc.I_bit4:7",
+          "I_adc.I_bit5:7",
+          "I_adc.I_bit6:7",
+          "I_adc.I_bit7:7",
+          "I_adc.I_bit8:7",
+          "I_adc.I_bit9:7"
+        ]
+      },
+      "dac_reference": {
+        "voltage_v": 1.8,
+        "currents": [
+          "I_adc.I_bit0:9",
+          "I_adc.I_bit1:9",
+          "I_adc.I_bit2:9",
+          "I_adc.I_bit3:9",
+          "I_adc.I_bit4:9",
+          "I_adc.I_bit5:9",
+          "I_adc.I_bit6:9",
+          "I_adc.I_bit7:9",
+          "I_adc.I_bit8:9",
+          "I_adc.I_bit9:9",
+          "I_adc.I_frontend:25"
+        ]
+      },
+      "output_registers_and_buffers": {
+        "voltage_v": 1.8,
+        "currents": [
+          "I_adc.I_out0:4",
+          "I_adc.I_out1:4",
+          "I_adc.I_out2:4",
+          "I_adc.I_out3:4",
+          "I_adc.I_out4:4",
+          "I_adc.I_out5:4",
+          "I_adc.I_out6:4",
+          "I_adc.I_out7:4",
+          "I_adc.I_out8:4",
+          "I_adc.I_out9:4"
+        ]
+      },
+      "frontend": {
+        "voltage_v": 1.8,
+        "currents": [
+          "I_adc.I_frontend:27"
+        ]
+      }
+    }
+  },
+  "criteria": {
+    "sample_count": {
+      "min": 256,
+      "max": 256
+    },
+    "invalid_bits": {
+      "max": 0
+    },
+    "incomplete_conversions": {
+      "max": 0
+    },
+    "comparison_count_errors": {
+      "max": 0
+    },
+    "output_capture_errors": {
+      "max": 0
+    },
+    "evaluation_count_errors": {
+      "max": 0
+    },
+    "monotonic_switch_errors": {
+      "max": 0
+    },
+    "output_hold_errors": {
+      "max": 0
+    },
+    "sndr_db": {
+      "min": 57.0
+    }
+  }
+}

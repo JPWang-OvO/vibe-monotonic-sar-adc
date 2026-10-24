@@ -53,6 +53,15 @@
     "symbol": {
       "native": "symbol/native.json",
       "drawing": "symbol/drawing.json"
+    },
+    "netlist_library": {
+      "netlist": "netlist_library/netlist.scs"
+    },
+    "netlist_aoi1": {
+      "netlist": "netlist_aoi1/netlist.scs"
+    },
+    "netlist_aoi2": {
+      "netlist": "netlist_aoi2/netlist.scs"
     }
   }
 }

@@ -9,17 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 789
+        "value": 446
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 22:25:00 2026"
+        "value": "Oct 25 06:06:49 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 3
+        "value": 0
       },
       {
         "name": "pin#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 789
+        "value": 446
       },
       {
         "name": "schGeometryVersion",
@@ -51,435 +51,21 @@
     ],
     "instances": [
       {
-        "name": "Mn0",
+        "name": "I_cell",
         "master": [
-          "tsmc18",
-          "nmos2v",
+          "standard_cells",
+          "ND2D1BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 1,
-        "properties": [
-          {
-            "name": "ad",
-            "type": "string",
-            "value": "9.6e-13"
-          },
-          {
-            "name": "as",
-            "type": "string",
-            "value": "9.6e-13"
-          },
-          {
-            "name": "fingers",
-            "type": "string",
-            "value": "1"
-          },
-          {
-            "name": "l",
-            "type": "string",
-            "value": "0.18u"
-          },
-          {
-            "name": "model",
-            "type": "string",
-            "value": "nch"
-          },
-          {
-            "name": "nrd",
-            "type": "string",
-            "value": "0.135"
-          },
-          {
-            "name": "nrs",
-            "type": "string",
-            "value": "0.135"
-          },
-          {
-            "name": "pd",
-            "type": "string",
-            "value": "4.96u"
-          },
-          {
-            "name": "ps",
-            "type": "string",
-            "value": "4.96u"
-          },
-          {
-            "name": "sa",
-            "type": "string",
-            "value": "480.0n"
-          },
-          {
-            "name": "sb",
-            "type": "string",
-            "value": "480.0n"
-          },
-          {
-            "name": "sca",
-            "type": "string",
-            "value": "0"
-          },
-          {
-            "name": "scb",
-            "type": "string",
-            "value": "0"
-          },
-          {
-            "name": "scc",
-            "type": "string",
-            "value": "0"
-          },
-          {
-            "name": "sd",
-            "type": "string",
-            "value": "540.0n"
-          },
-          {
-            "name": "simM",
-            "type": "string",
-            "value": "1"
-          },
-          {
-            "name": "w",
-            "type": "string",
-            "value": "0.000002"
-          },
-          {
-            "name": "wf",
-            "type": "string",
-            "value": "2u"
-          }
-        ],
+        "properties": [],
         "connections": {
-          "D": "Z",
-          "B": "VSS",
-          "G": "A",
-          "S": "N0"
-        }
-      },
-      {
-        "name": "Mn1",
-        "master": [
-          "tsmc18",
-          "nmos2v",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "ad",
-            "type": "string",
-            "value": "9.6e-13"
-          },
-          {
-            "name": "as",
-            "type": "string",
-            "value": "9.6e-13"
-          },
-          {
-            "name": "fingers",
-            "type": "string",
-            "value": "1"
-          },
-          {
-            "name": "l",
-            "type": "string",
-            "value": "0.18u"
-          },
-          {
-            "name": "model",
-            "type": "string",
-            "value": "nch"
-          },
-          {
-            "name": "nrd",
-            "type": "string",
-            "value": "0.135"
-          },
-          {
-            "name": "nrs",
-            "type": "string",
-            "value": "0.135"
-          },
-          {
-            "name": "pd",
-            "type": "string",
-            "value": "4.96u"
-          },
-          {
-            "name": "ps",
-            "type": "string",
-            "value": "4.96u"
-          },
-          {
-            "name": "sa",
-            "type": "string",
-            "value": "480.0n"
-          },
-          {
-            "name": "sb",
-            "type": "string",
-            "value": "480.0n"
-          },
-          {
-            "name": "sca",
-            "type": "string",
-            "value": "0"
-          },
-          {
-            "name": "scb",
-            "type": "string",
-            "value": "0"
-          },
-          {
-            "name": "scc",
-            "type": "string",
-            "value": "0"
-          },
-          {
-            "name": "sd",
-            "type": "string",
-            "value": "540.0n"
-          },
-          {
-            "name": "simM",
-            "type": "string",
-            "value": "1"
-          },
-          {
-            "name": "w",
-            "type": "string",
-            "value": "0.000002"
-          },
-          {
-            "name": "wf",
-            "type": "string",
-            "value": "2u"
-          }
-        ],
-        "connections": {
-          "D": "N0",
-          "B": "VSS",
-          "G": "B",
-          "S": "VSS"
-        }
-      },
-      {
-        "name": "Mp0",
-        "master": [
-          "tsmc18",
-          "pmos2v",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "ad",
-            "type": "string",
-            "value": "9.6e-13"
-          },
-          {
-            "name": "as",
-            "type": "string",
-            "value": "9.6e-13"
-          },
-          {
-            "name": "fingers",
-            "type": "string",
-            "value": "1"
-          },
-          {
-            "name": "l",
-            "type": "string",
-            "value": "0.18u"
-          },
-          {
-            "name": "model",
-            "type": "string",
-            "value": "pch"
-          },
-          {
-            "name": "nrd",
-            "type": "string",
-            "value": "0.135"
-          },
-          {
-            "name": "nrs",
-            "type": "string",
-            "value": "0.135"
-          },
-          {
-            "name": "pd",
-            "type": "string",
-            "value": "4.96u"
-          },
-          {
-            "name": "ps",
-            "type": "string",
-            "value": "4.96u"
-          },
-          {
-            "name": "sa",
-            "type": "string",
-            "value": "480.0n"
-          },
-          {
-            "name": "sb",
-            "type": "string",
-            "value": "480.0n"
-          },
-          {
-            "name": "sca",
-            "type": "string",
-            "value": "0"
-          },
-          {
-            "name": "scb",
-            "type": "string",
-            "value": "0"
-          },
-          {
-            "name": "scc",
-            "type": "string",
-            "value": "0"
-          },
-          {
-            "name": "sd",
-            "type": "string",
-            "value": "540.0n"
-          },
-          {
-            "name": "simM",
-            "type": "string",
-            "value": "1"
-          },
-          {
-            "name": "w",
-            "type": "string",
-            "value": "0.000002"
-          },
-          {
-            "name": "wf",
-            "type": "string",
-            "value": "2u"
-          }
-        ],
-        "connections": {
-          "D": "Z",
-          "B": "VDD",
-          "G": "A",
-          "S": "VDD"
-        }
-      },
-      {
-        "name": "Mp1",
-        "master": [
-          "tsmc18",
-          "pmos2v",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "ad",
-            "type": "string",
-            "value": "9.6e-13"
-          },
-          {
-            "name": "as",
-            "type": "string",
-            "value": "9.6e-13"
-          },
-          {
-            "name": "fingers",
-            "type": "string",
-            "value": "1"
-          },
-          {
-            "name": "l",
-            "type": "string",
-            "value": "0.18u"
-          },
-          {
-            "name": "model",
-            "type": "string",
-            "value": "pch"
-          },
-          {
-            "name": "nrd",
-            "type": "string",
-            "value": "0.135"
-          },
-          {
-            "name": "nrs",
-            "type": "string",
-            "value": "0.135"
-          },
-          {
-            "name": "pd",
-            "type": "string",
-            "value": "4.96u"
-          },
-          {
-            "name": "ps",
-            "type": "string",
-            "value": "4.96u"
-          },
-          {
-            "name": "sa",
-            "type": "string",
-            "value": "480.0n"
-          },
-          {
-            "name": "sb",
-            "type": "string",
-            "value": "480.0n"
-          },
-          {
-            "name": "sca",
-            "type": "string",
-            "value": "0"
-          },
-          {
-            "name": "scb",
-            "type": "string",
-            "value": "0"
-          },
-          {
-            "name": "scc",
-            "type": "string",
-            "value": "0"
-          },
-          {
-            "name": "sd",
-            "type": "string",
-            "value": "540.0n"
-          },
-          {
-            "name": "simM",
-            "type": "string",
-            "value": "1"
-          },
-          {
-            "name": "w",
-            "type": "string",
-            "value": "0.000002"
-          },
-          {
-            "name": "wf",
-            "type": "string",
-            "value": "2u"
-          }
-        ],
-        "connections": {
-          "D": "Z",
-          "B": "VDD",
-          "G": "B",
-          "S": "VDD"
+          "A2": "B",
+          "A1": "A",
+          "VDD": "VDD",
+          "VSS": "VSS",
+          "ZN": "Z"
         }
       },
       {
@@ -584,12 +170,6 @@
       },
       {
         "name": "B",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "N0",
         "signal_type": "signal",
         "global_": false,
         "properties": []

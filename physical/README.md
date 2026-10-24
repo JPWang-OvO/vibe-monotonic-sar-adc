@@ -1,6 +1,6 @@
 # 从已有版图提取 PEX
 
-用户完成并保存 layout 后，项目通过 Virtuoso Bridge 导出 GDS/CDL，调用 Calibre Bridge 执行 DRC、LVS 和 PEX。
+layout 完成并保存后，项目通过 Virtuoso Bridge 导出 GDS/CDL，调用 Calibre Bridge 执行 DRC、LVS 和 PEX。
 主要路径是生成 CalibreView、导入 OA，再由原生 netlister 导出 `pex/netlist.scs` 纳入 Git。
 Flow 通过 cell/view 选择这个网表，沿用已有 TB 和测量。
 
@@ -13,7 +13,7 @@ Flow 通过 cell/view 选择这个网表，沿用已有 TB 和测量。
 |---|---|
 | `cell_directory` | 仓库中的 cell 目录，接收发布后的 PEX view |
 | `inputs` | `kind: oa` 时指定 library、cell、layout_view、source_view；`kind: files` 时指定远端 layout_file、layout_top_cell、source_file、source_top_cell |
-| `operations` | 本次需要的 `drc`、`lvs`、`pex` |
+| `operations` | 任务需要的 `drc`、`lvs`、`pex` |
 | `power_names`、`ground_names` | LVS 的电源、地网络识别 |
 | `cores` | 每个 Calibre 作业使用的核数 |
 | `pex` | 引擎、R/RC/RCC、参考地、输出格式、约简与精度 |

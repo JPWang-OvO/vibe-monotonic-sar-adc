@@ -13,16 +13,6 @@ let( ( libId cellId cdfId )
     )
     cdfId  = cdfCreateBaseCellCDF( cellId )
 
-    ;;; Parameters
-    cdfCreateParam( cdfId
-        ?name           "factor"
-        ?prompt         "factor"
-        ?defValue       "1"
-        ?type           "string"
-        ?parseAsNumber  "yes"
-        ?parseAsCEL     "yes"
-    )
-
     ;;; Properties
     cdfId->formInitProc            = ""
     cdfId->doneProc                = ""
