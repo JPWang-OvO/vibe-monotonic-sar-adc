@@ -1,78 +1,99 @@
 {
-  "Mp_bias": {
+  "Mp_input_n": {
     "xy": [
-      2,
-      5
+      6.5,
+      3
+    ],
+    "orient": "MY"
+  },
+  "Mp_input_p": {
+    "xy": [
+      0,
+      3
     ],
     "orient": "R0"
   },
   "Mp_clock": {
     "xy": [
-      2,
-      3.5
+      3,
+      4.5
     ],
     "orient": "R0"
   },
-  "Mp_input<1:0>": {
+  "Mp_bias": {
     "xy": [
-      2,
-      2
+      3,
+      5.75
     ],
     "orient": "R0"
   },
-  "Mn_latch<1:0>": {
+  "Mn_reset_n": {
     "xy": [
-      2,
-      0
+      8.5,
+      0.5
+    ],
+    "orient": "MY"
+  },
+  "Mn_reset_p": {
+    "xy": [
+      -2,
+      0.5
     ],
     "orient": "R0"
   },
-  "Mn_reset<1:0>": {
+  "Mn_latch_n": {
     "xy": [
-      5,
-      0
+      6,
+      0.5
     ],
     "orient": "R0"
   },
-  "I_out<1:0>": {
+  "Mn_latch_p": {
     "xy": [
-      -2.0,
-      -3
+      0.5,
+      0.5
     ],
-    "orient": "R0"
+    "orient": "MY"
   },
-  "I_out1<1:0>": {
+  "I_valid": {
     "xy": [
-      1.75,
-      -3
+      0,
+      -4
     ],
     "orient": "R0"
   },
   "I_out2<1:0>": {
     "xy": [
-      5.5,
-      -3
+      7.5,
+      -2
     ],
     "orient": "R0"
   },
-  "I_valid": {
+  "I_out1<1:0>": {
     "xy": [
-      -2.0,
-      -6
-    ],
-    "orient": "R0"
-  },
-  "I_vb0": {
-    "xy": [
-      1.75,
-      -6
+      3.75,
+      -2
     ],
     "orient": "R0"
   },
   "I_vb1": {
     "xy": [
-      5.5,
-      -6
+      7.5,
+      -4
+    ],
+    "orient": "R0"
+  },
+  "I_vb0": {
+    "xy": [
+      3.75,
+      -4
+    ],
+    "orient": "R0"
+  },
+  "I_out<1:0>": {
+    "xy": [
+      0,
+      -2
     ],
     "orient": "R0"
   }

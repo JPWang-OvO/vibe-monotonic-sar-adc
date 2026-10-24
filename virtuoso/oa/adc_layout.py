@@ -18,10 +18,7 @@ def fold_drivers(data):
                     ('I_buf0',['I_buf_p0','I_buf_n0']),('I_buf1',['I_buf_p1','I_buf_n1'])],
         'SAR_FRONTEND': [('I_sample',['I_sp','I_sn']),('C_cross',['C_cross_p','C_cross_n'])],
         'SAR_CMP': [('I_out',['I_outp','I_outn']),('I_out1',['I_outp1','I_outn1']),
-                    ('I_out2',['I_outp2','I_outn2']),
-                    ('Mp_input',['Mp_input_p','Mp_input_n']),
-                    ('Mn_latch',['Mn_latch_p','Mn_latch_n']),
-                    ('Mn_reset',['Mn_reset_p','Mn_reset_n'])],
+                    ('I_out2',['I_outp2','I_outn2'])],
         'SAR_PHASE': [('I_por',['I_por0','I_por1'])],
         'SAR_STARTUP': [('I_por',['I_por0','I_por1'])],
         'SAR_ASYNC': [('I_cp',['I_cp0','I_cp1'])],
@@ -65,8 +62,9 @@ def placements(data):
         put('Mp_diode', 0, 1); put('Mn_sink', 0, -1); put('C_bias', 2, 0)
     elif cell == 'SAR_CMP':
         put('Mp_bias', 2, 5); put('Mp_clock', 2, 3.5)
-        put('Mp_input<1:0>', 2, 2)
-        put('Mn_latch<1:0>', 2, 0); put('Mn_reset<1:0>', 5, 0)
+        put('Mp_input_p', 0, 2);put('Mp_input_n', 6, 2,'MY')
+        put('Mn_latch_p', 0, 0);put('Mn_latch_n', 6, 0,'MY')
+        put('Mn_reset_p', -2, 0);put('Mn_reset_n', 8, 0,'MY')
         row('I_out<1:0> I_out1<1:0> I_out2<1:0>', -3, -2, 3.75)
         row('I_valid I_vb0 I_vb1', -6, -2, 3.75)
     elif cell in ('SAR_BOOST', 'SAR_BOOST_HI'):
