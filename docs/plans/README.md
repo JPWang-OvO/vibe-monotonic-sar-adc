@@ -10,3 +10,5 @@ authoritative_sources:
 # 待完成工作
 
 计划说明目标、边界、依赖和验收条件。完成后先报告结果，取得批准再更新对应当前文档或归档。
+
+- [SAR ADC 降低功耗与消除过设计方案](power-and-sizing.md)
