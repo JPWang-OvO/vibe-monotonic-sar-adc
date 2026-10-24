@@ -12,7 +12,8 @@ authoritative_sources:
 
 # 冻结版本
 
-Tag：`checkpoint/ai-autonomous-human-polish-r1-20261025`。
+Tag：`checkpoint/ai-autonomous-human-polish-r1-20261024`。
+Checkpoint 日期标记按用户指定为 2026-10-24；本次视图捕获与核对完成于 2026-10-25。
 
 该 checkpoint 是 **AI 纯自主设计的电路 + 人工迭代一轮原理图美化后的结果**。
 电路拓扑、器件尺寸和此前的电气迭代由 AI 自主完成；人工审阅和修改了 schematic、symbol 的图面。
