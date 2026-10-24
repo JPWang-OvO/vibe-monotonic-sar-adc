@@ -7,6 +7,7 @@ authoritative_sources:
   - ../../config/final_design.json
   - ../../config/acceptance_results.json
   - ../../virtuoso/oa/adc_source.py
+  - ../../virtuoso/oa/adc_buses.py
   - ../../virtuoso/oa/adc_build.py
   - ../../virtuoso/oa/adc_compare.py
 ---
@@ -56,11 +57,18 @@ Schematic 将同 master、同有效参数的重复结构改为以下实例阵列
 | SAR_FRONTEND | `I_sample<1:0>`、`C_cross<1:0>` | 差分采样器及交叉补偿电容 |
 | SAR_CMP | `I_out<1:0>`、`I_out1<1:0>`、`I_out2<1:0>` | 差分输出的三级缓冲 |
 | SAR_CDAC | `C_weight9<1:0>` 至 `C_weight1<1:0>`、`C_dummy<1:0>` | 每个权重的正负电容配对 |
+| SAR_CMP | `Mp_input<1:0>`、`Mn_latch<1:0>`、`Mn_reset<1:0>` | 差分输入、再生及复位器件逐支路连接 |
+| SAR_PHASE、SAR_STARTUP | `I_por<1:0>` | 两级 POR 缓冲 |
+| SAR_ASYNC | `I_cp<1:0>` | 公共时钟的两级缓冲 |
+| SAR_SAMPLE_GUARD2 | `I_d<1:0>` | 两级延时缓冲 |
 
-顶层 schematic 和 symbol 的十个输出合为 `D<9:0>` 总线，`D<9>` 为 MSB。
-其余阵列连接保留标量网名，通过有序列表表达逐位连接，通过广播表达公共连接。
-本轮新增 18 组双实例阵列，导出后逐成员展开，核对连接、参数和位序。
-悬空标记按展开后的标量连接计数；仅出现在总线中的未使用低位底板输出单独引出命名短线。
+顶层输出接口为 `D<9:0>`，`D<9>` 为 MSB。CDAC 和前端的底板接口为
+`Bp<9:1>`、`Bn<9:1>`；异步控制器输出为 `Ck<9:0>`。
+顶层内部的锁存结果、底板和逐位控制网络分别使用 `Q<9:0>`、`Bp<9:0>`、
+`Bn<9:0>`、`Ck<9:0>`；相位发生器的环形状态使用 `R<4:0>`。
+连续位段按实际顺序压缩为总线，差分支路使用有序网名列表，公共控制使用广播连接。
+每个阵列保存原实例到成员的映射，原生网表逐成员展开核对。
+悬空标记按展开后的连接计数；未使用的 `Bp<0>`、`Bn<0>` 由一个双实例 noConn 阵列终结。
 
 # 核对结果
 
@@ -70,7 +78,7 @@ SAR_PHASE 的两条 shorted-output 警告来自上述两组并联驱动器。
 
 原生网表与 `final_stage1_06` 的已验收电路完成以下比较：
 
-- 29 个层次定义的端口顺序一致，包括引用的标准反相器；顶层先展开总线，并将 `D<9>` 至 `D<0>` 对应到验收版本的 `D9` 至 `D0`。
+- 29 个层次定义的端口顺序一致，包括引用的标准反相器；总线按声明顺序展开，并按 cell 中声明的信号族映射到验收版本的标量名称。
 - 阵列展开后的 1111 组 primitive 连接、模型和有效参数一致。
 - 缺失、增加及参数改变的 primitive 组均为零。
 
@@ -94,6 +102,7 @@ python -m regression.common.check
 ```
 
 单独重绘指定 schematic 可使用 `adc_redraw --schematics-only --cells CELL ...`。
+重绘 symbol 后，工具对其直接父级执行 Check/Save 并核对实际连接，再导出原生网表。
 `oa_delivery/electrical_comparison.json` 保存等价比较结果，`redraw_checks.json` 保存逐 cell 检查结果。
 SVG 渲染及原生窗口截图分别放在 `symbol_previews/` 和 `native_previews/`，大型产物留在 Git 外。
 

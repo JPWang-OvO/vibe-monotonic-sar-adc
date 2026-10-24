@@ -23,12 +23,16 @@ def main():
     assert read_json(ROOT/'config/acceptance_results.json')['all_electrical_pass']
     env=read_json(ROOT/'config/environments/tsmc18.local.json')
     data={n:fold_drivers(d) for n,d in prepare_source(args.batch).items() if n!='INVD1BWP7T'}
+    all_data=data
     pictures={n:functional_symbol(d) for n,d in data.items()}
     if args.cells:
         assert set(args.cells)<=set(data),'Unknown cell selection'
         data={n:data[n] for n in args.cells}
     symbol_cells=[] if args.schematics_only else (args.symbols if args.symbols is not None else list(data))
     assert set(symbol_cells)<=set(data)
+    parents={n:d for n,d in all_data.items() if n not in data and
+             any(i['model'] in symbol_cells for i in d['instances'])}
+    checked_data={**data,**parents}
     plans={n:schematic(d,pictures) for n,d in data.items()}
     load_bridge_environment();client=VirtuosoClient.from_env(profile=env['profile'],log_to_ciw=False)
     assert client.library.get('MONOTONIC_SAR').path==env['oa_library_path']
@@ -36,7 +40,7 @@ def main():
     previous={}
     # Read every owned native view before the first mutation. A mismatch requires
     # capturing and incorporating the user's edits before this command is used.
-    for n in data:
+    for n in checked_data:
         previous[n]={}
         for view in (('symbol','schematic') if n in symbol_cells else ('schematic',)):
             circuit,drawing=read_view(client,'MONOTONIC_SAR',n,view)
@@ -52,20 +56,23 @@ def main():
         (folders[n]/'symbol/functional.svg').write_text(svg(p),encoding='utf-8',newline='\n')
         print('Symbol',n,flush=True)
     checks=read_json(run/'redraw_checks.json') if args.cells else {}
-    for n,(commands,positions) in plans.items():
-        with client.schematic.create('MONOTONIC_SAR',n,timeout=180) as editor:
-            for command in commands:editor.add(command)
+    for n in checked_data:
+        if n in plans:
+            commands,positions=plans[n]
+            with client.schematic.create('MONOTONIC_SAR',n,timeout=180) as editor:
+                for command in commands:editor.add(command)
         result=check(client,'MONOTONIC_SAR',n)
         actual=client.schematic.read('MONOTONIC_SAR',n,include_positions=True,param_filters=None)
         observed={i['name']:i for i in actual['instances']}
-        for inst in data[n]['instances']:
+        for inst in checked_data[n]['instances']:
             expected=array_connections(inst)
             assert observed[inst['name']]['terms']==expected,(n,inst['name'],observed[inst['name']]['terms'],expected)
-        assert set(actual['pins'])==set(data[n]['ports']),n
+        assert set(actual['pins'])==set(checked_data[n]['ports']),n
         messages=evaluate(client,f'let((cv result) cv=dbOpenCellViewByType("MONOTONIC_SAR" {q(n)} "schematic" "" "r") '
                           'result=mapcar(lambda((m) list(m~>severity m~>msg)) cv~>markers) dbClose(cv) result)')
         checks[n]=dict(errors=int(result[0]),warnings=int(result[1]),messages=messages or [])
-        write_json(folders[n]/'schematic/circuit.json',data[n]);write_json(folders[n]/'schematic/placement.json',positions)
+        if n in plans:
+            write_json(folders[n]/'schematic/circuit.json',data[n]);write_json(folders[n]/'schematic/placement.json',positions)
         write_json(run/(n+'_readback.json'),actual)
         capture(client,'MONOTONIC_SAR',folders[n],run,read_json(args.batch/'batch.json')['remote'])
         print('Schematic',n,result,flush=True)

@@ -9,12 +9,12 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 2657
+        "value": 2245
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 05:21:07 2026"
+        "value": "Oct 24 15:43:06 2026"
       },
       {
         "name": "net#",
@@ -24,19 +24,19 @@
       {
         "name": "pin#",
         "type": "int",
-        "value": 16
+        "value": 7
       },
       {
         "name": "portOrder",
         "type": "ILList",
         "value": {
-          "skill": "(\"Sample\" \"Valid\" \"ClkC\" \"Done\" \"Ck9\" \"Ck8\" \"Ck7\" \"Ck6\" \"Ck5\" \"Ck4\" \"Ck3\" \"Ck2\" \"Ck1\" \"Ck0\" \"VDD\" \"VSS\")"
+          "skill": "(\"Sample\" \"Valid\" \"ClkC\" \"Done\" \"Ck<9:0>\" \"VDD\" \"VSS\")"
         }
       },
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 2657
+        "value": 2245
       },
       {
         "name": "schGeometryVersion",
@@ -74,14 +74,14 @@
         }
       },
       {
-        "name": "I_cp0",
+        "name": "I_cp<1:0>",
         "master": [
           "MONOTONIC_SAR",
           "SAR_DRIVE",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [
           {
             "name": "scale",
@@ -90,33 +90,10 @@
           }
         ],
         "connections": {
-          "VSS": "VSS",
-          "VDD": "VDD",
-          "Z": "SeqB",
-          "A": "Valid"
-        }
-      },
-      {
-        "name": "I_cp1",
-        "master": [
-          "MONOTONIC_SAR",
-          "SAR_DRIVE",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [
-          {
-            "name": "scale",
-            "type": "string",
-            "value": "16"
-          }
-        ],
-        "connections": {
-          "VSS": "VSS",
-          "VDD": "VDD",
-          "Z": "Seq",
-          "A": "SeqB"
+          "VSS": "<*2>VSS",
+          "VDD": "<*2>VDD",
+          "Z": "SeqB,Seq",
+          "A": "Valid,SeqB"
         }
       },
       {
@@ -133,7 +110,7 @@
           "VSS": "VSS",
           "VDD": "VDD",
           "Z": "Done",
-          "A": "Ck0"
+          "A": "Ck<0>"
         }
       },
       {
@@ -156,7 +133,7 @@
           "VSS": "VSS",
           "VDD": "VDD",
           "Z": "Early",
-          "A": "Ck5"
+          "A": "Ck<5>"
         }
       },
       {
@@ -213,7 +190,7 @@
           "Z": "CompareEnable",
           "Early": "Early",
           "Delayed": "ValidDelay",
-          "Done": "Ck0",
+          "Done": "Ck<0>",
           "Valid": "Valid",
           "Hold": "Hold",
           "VSS": "VSS",
@@ -253,8 +230,8 @@
           "Reset": "<*10>Reset",
           "CPB": "<*10>SeqB",
           "CP": "<*10>Seq",
-          "Q": "Ck0,Ck1,Ck2,Ck3,Ck4,Ck5,Ck6,Ck7,Ck8,Ck9",
-          "D": "Ck1,Ck2,Ck3,Ck4,Ck5,Ck6,Ck7,Ck8,Ck9,VDD"
+          "Q": "Ck<0:9>",
+          "D": "Ck<1:9>,VDD"
         }
       },
       {
@@ -293,78 +270,6 @@
         "master": [
           "basic",
           "ipin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN10",
-        "master": [
-          "basic",
-          "opin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN11",
-        "master": [
-          "basic",
-          "opin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN12",
-        "master": [
-          "basic",
-          "opin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN13",
-        "master": [
-          "basic",
-          "opin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN14",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN15",
-        "master": [
-          "basic",
-          "iopin",
           "symbol"
         ],
         "purpose": "pin",
@@ -412,7 +317,7 @@
         "name": "PIN5",
         "master": [
           "basic",
-          "opin",
+          "iopin",
           "symbol"
         ],
         "purpose": "pin",
@@ -424,43 +329,7 @@
         "name": "PIN6",
         "master": [
           "basic",
-          "opin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN7",
-        "master": [
-          "basic",
-          "opin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN8",
-        "master": [
-          "basic",
-          "opin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN9",
-        "master": [
-          "basic",
-          "opin",
+          "iopin",
           "symbol"
         ],
         "purpose": "pin",
@@ -471,63 +340,9 @@
     ],
     "terminals": [
       {
-        "name": "Ck0",
+        "name": "Ck<9:0>",
         "direction": "output",
-        "net": "Ck0",
-        "properties": []
-      },
-      {
-        "name": "Ck1",
-        "direction": "output",
-        "net": "Ck1",
-        "properties": []
-      },
-      {
-        "name": "Ck2",
-        "direction": "output",
-        "net": "Ck2",
-        "properties": []
-      },
-      {
-        "name": "Ck3",
-        "direction": "output",
-        "net": "Ck3",
-        "properties": []
-      },
-      {
-        "name": "Ck4",
-        "direction": "output",
-        "net": "Ck4",
-        "properties": []
-      },
-      {
-        "name": "Ck5",
-        "direction": "output",
-        "net": "Ck5",
-        "properties": []
-      },
-      {
-        "name": "Ck6",
-        "direction": "output",
-        "net": "Ck6",
-        "properties": []
-      },
-      {
-        "name": "Ck7",
-        "direction": "output",
-        "net": "Ck7",
-        "properties": []
-      },
-      {
-        "name": "Ck8",
-        "direction": "output",
-        "net": "Ck8",
-        "properties": []
-      },
-      {
-        "name": "Ck9",
-        "direction": "output",
-        "net": "Ck9",
+        "net": "Ck<9:0>",
         "properties": []
       },
       {
@@ -599,73 +414,43 @@
         "properties": []
       },
       {
-        "name": "Ck0",
+        "name": "<*2>VDD",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Ck0,Ck1,Ck2,Ck3,Ck4,Ck5,Ck6,Ck7,Ck8,Ck9",
+        "name": "<*2>VSS",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Ck1",
+        "name": "Ck<0:9>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Ck1,Ck2,Ck3,Ck4,Ck5,Ck6,Ck7,Ck8,Ck9,VDD",
+        "name": "Ck<0>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Ck2",
+        "name": "Ck<1:9>,VDD",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Ck3",
+        "name": "Ck<5>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Ck4",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Ck5",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Ck6",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Ck7",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Ck8",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Ck9",
+        "name": "Ck<9:0>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
@@ -737,6 +522,12 @@
         "properties": []
       },
       {
+        "name": "SeqB,Seq",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
         "name": "VDD",
         "signal_type": "signal",
         "global_": false,
@@ -750,6 +541,12 @@
       },
       {
         "name": "Valid",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "Valid,SeqB",
         "signal_type": "signal",
         "global_": false,
         "properties": []

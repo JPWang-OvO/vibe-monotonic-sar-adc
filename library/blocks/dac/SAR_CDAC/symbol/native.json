@@ -10,125 +10,29 @@
         "name": "portOrder",
         "type": "ILList",
         "value": {
-          "skill": "(\"Vp\" \"Vn\" \"Bp9\" \"Bp8\" \"Bp7\" \"Bp6\" \"Bp5\" \"Bp4\" \"Bp3\" \"Bp2\" \"Bp1\" \"Bn9\" \"Bn8\" \"Bn7\" \"Bn6\" \"Bn5\" \"Bn4\" \"Bn3\" \"Bn2\" \"Bn1\" \"VREFP\" \"VREFN\")"
+          "skill": "(\"Vp\" \"Vn\" \"Bp<9:1>\" \"Bn<9:1>\" \"VREFP\" \"VREFN\")"
         }
       },
       {
         "name": "termOrder",
         "type": "ILList",
         "value": {
-          "skill": "(\"Vp\" \"Vn\" \"Bp9\" \"Bp8\" \"Bp7\" \"Bp6\" \"Bp5\" \"Bp4\" \"Bp3\" \"Bp2\" \"Bp1\" \"Bn9\" \"Bn8\" \"Bn7\" \"Bn6\" \"Bn5\" \"Bn4\" \"Bn3\" \"Bn2\" \"Bn1\" \"VREFP\" \"VREFN\")"
+          "skill": "(\"Vp\" \"Vn\" \"Bp<9:1>\" \"Bn<9:1>\" \"VREFP\" \"VREFN\")"
         }
       }
     ],
     "instances": [],
     "terminals": [
       {
-        "name": "Bn1",
+        "name": "Bn<9:1>",
         "direction": "inputOutput",
-        "net": "Bn1",
+        "net": "Bn<9:1>",
         "properties": []
       },
       {
-        "name": "Bn2",
+        "name": "Bp<9:1>",
         "direction": "inputOutput",
-        "net": "Bn2",
-        "properties": []
-      },
-      {
-        "name": "Bn3",
-        "direction": "inputOutput",
-        "net": "Bn3",
-        "properties": []
-      },
-      {
-        "name": "Bn4",
-        "direction": "inputOutput",
-        "net": "Bn4",
-        "properties": []
-      },
-      {
-        "name": "Bn5",
-        "direction": "inputOutput",
-        "net": "Bn5",
-        "properties": []
-      },
-      {
-        "name": "Bn6",
-        "direction": "inputOutput",
-        "net": "Bn6",
-        "properties": []
-      },
-      {
-        "name": "Bn7",
-        "direction": "inputOutput",
-        "net": "Bn7",
-        "properties": []
-      },
-      {
-        "name": "Bn8",
-        "direction": "inputOutput",
-        "net": "Bn8",
-        "properties": []
-      },
-      {
-        "name": "Bn9",
-        "direction": "inputOutput",
-        "net": "Bn9",
-        "properties": []
-      },
-      {
-        "name": "Bp1",
-        "direction": "inputOutput",
-        "net": "Bp1",
-        "properties": []
-      },
-      {
-        "name": "Bp2",
-        "direction": "inputOutput",
-        "net": "Bp2",
-        "properties": []
-      },
-      {
-        "name": "Bp3",
-        "direction": "inputOutput",
-        "net": "Bp3",
-        "properties": []
-      },
-      {
-        "name": "Bp4",
-        "direction": "inputOutput",
-        "net": "Bp4",
-        "properties": []
-      },
-      {
-        "name": "Bp5",
-        "direction": "inputOutput",
-        "net": "Bp5",
-        "properties": []
-      },
-      {
-        "name": "Bp6",
-        "direction": "inputOutput",
-        "net": "Bp6",
-        "properties": []
-      },
-      {
-        "name": "Bp7",
-        "direction": "inputOutput",
-        "net": "Bp7",
-        "properties": []
-      },
-      {
-        "name": "Bp8",
-        "direction": "inputOutput",
-        "net": "Bp8",
-        "properties": []
-      },
-      {
-        "name": "Bp9",
-        "direction": "inputOutput",
-        "net": "Bp9",
+        "net": "Bp<9:1>",
         "properties": []
       },
       {
@@ -158,109 +62,13 @@
     ],
     "nets": [
       {
-        "name": "Bn1",
+        "name": "Bn<9:1>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Bn2",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bn3",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bn4",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bn5",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bn6",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bn7",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bn8",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bn9",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp1",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp2",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp3",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp4",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp5",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp6",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp7",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp8",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp9",
+        "name": "Bp<9:1>",
         "signal_type": "signal",
         "global_": false,
         "properties": []

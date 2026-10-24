@@ -5,16 +5,7 @@
     "Valid",
     "ClkC",
     "Done",
-    "Ck9",
-    "Ck8",
-    "Ck7",
-    "Ck6",
-    "Ck5",
-    "Ck4",
-    "Ck3",
-    "Ck2",
-    "Ck1",
-    "Ck0",
+    "Ck<9:0>",
     "VDD",
     "VSS"
   ],
@@ -46,60 +37,6 @@
         "symbol"
       ],
       "oa_parameters": {}
-    },
-    {
-      "name": "I_cp0",
-      "nodes": [
-        "Valid",
-        "SeqB",
-        "VDD",
-        "VSS"
-      ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "16"
-      },
-      "connections": {
-        "A": "Valid",
-        "Z": "SeqB",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "scale": "16"
-      }
-    },
-    {
-      "name": "I_cp1",
-      "nodes": [
-        "SeqB",
-        "Seq",
-        "VDD",
-        "VSS"
-      ],
-      "model": "SAR_DRIVE",
-      "parameters": {
-        "scale": "16"
-      },
-      "connections": {
-        "A": "SeqB",
-        "Z": "Seq",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "MONOTONIC_SAR",
-        "SAR_DRIVE",
-        "symbol"
-      ],
-      "oa_parameters": {
-        "scale": "16"
-      }
     },
     {
       "name": "I_reset",
@@ -177,7 +114,7 @@
     {
       "name": "I_early",
       "nodes": [
-        "Ck5",
+        "Ck<5>",
         "Early",
         "VDD",
         "VSS"
@@ -187,7 +124,7 @@
         "scale": "1"
       },
       "connections": {
-        "A": "Ck5",
+        "A": "Ck<5>",
         "Z": "Early",
         "VDD": "VDD",
         "VSS": "VSS"
@@ -206,7 +143,7 @@
       "nodes": [
         "Hold",
         "Valid",
-        "Ck0",
+        "Ck<0>",
         "ValidDelay",
         "Early",
         "CompareEnable",
@@ -218,7 +155,7 @@
       "connections": {
         "Hold": "Hold",
         "Valid": "Valid",
-        "Done": "Ck0",
+        "Done": "Ck<0>",
         "Delayed": "ValidDelay",
         "Early": "Early",
         "Z": "CompareEnable",
@@ -262,7 +199,7 @@
     {
       "name": "I_done_delay",
       "nodes": [
-        "Ck0",
+        "Ck<0>",
         "Done",
         "VDD",
         "VSS"
@@ -270,7 +207,7 @@
       "model": "SAR_DONE_DELAY",
       "parameters": {},
       "connections": {
-        "A": "Ck0",
+        "A": "Ck<0>",
         "Z": "Done",
         "VDD": "VDD",
         "VSS": "VSS"
@@ -285,22 +222,22 @@
     {
       "name": "I_seq<9:0>",
       "nodes": [
-        "Ck1,Ck2,Ck3,Ck4,Ck5,Ck6,Ck7,Ck8,Ck9,VDD",
+        "Ck<1:9>,VDD",
         "Seq",
         "SeqB",
         "Reset",
-        "Ck0,Ck1,Ck2,Ck3,Ck4,Ck5,Ck6,Ck7,Ck8,Ck9",
+        "Ck<0:9>",
         "VDD",
         "VSS"
       ],
       "model": "SAR_FAST_SEQ",
       "parameters": {},
       "connections": {
-        "D": "Ck1,Ck2,Ck3,Ck4,Ck5,Ck6,Ck7,Ck8,Ck9,VDD",
+        "D": "Ck<1:9>,VDD",
         "CP": "Seq",
         "CPB": "SeqB",
         "Reset": "Reset",
-        "Q": "Ck0,Ck1,Ck2,Ck3,Ck4,Ck5,Ck6,Ck7,Ck8,Ck9",
+        "Q": "Ck<0:9>",
         "VDD": "VDD",
         "VSS": "VSS"
       },
@@ -321,6 +258,37 @@
         "I_seq2",
         "I_seq1",
         "I_seq0"
+      ]
+    },
+    {
+      "name": "I_cp<1:0>",
+      "nodes": [
+        "Valid,SeqB",
+        "SeqB,Seq",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "16"
+      },
+      "connections": {
+        "A": "Valid,SeqB",
+        "Z": "SeqB,Seq",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "16"
+      },
+      "array_members": [
+        "I_cp0",
+        "I_cp1"
       ]
     }
   ],

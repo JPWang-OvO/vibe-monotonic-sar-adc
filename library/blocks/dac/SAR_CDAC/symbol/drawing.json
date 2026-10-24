@@ -5,154 +5,42 @@
       "terminal": "Vp",
       "name": "Vp",
       "figure_type": "rect",
-      "figure": 167,
-      "properties": []
-    },
-    {
-      "terminal": "Bp9",
-      "name": "Bp9",
-      "figure_type": "rect",
-      "figure": 169,
-      "properties": []
-    },
-    {
-      "terminal": "Bp8",
-      "name": "Bp8",
-      "figure_type": "rect",
-      "figure": 171,
-      "properties": []
-    },
-    {
-      "terminal": "Bp7",
-      "name": "Bp7",
-      "figure_type": "rect",
       "figure": 173,
       "properties": []
     },
     {
-      "terminal": "Bp6",
-      "name": "Bp6",
+      "terminal": "Bp<9:1>",
+      "name": "Bp<9:1>",
       "figure_type": "rect",
       "figure": 175,
-      "properties": []
-    },
-    {
-      "terminal": "Bp5",
-      "name": "Bp5",
-      "figure_type": "rect",
-      "figure": 177,
-      "properties": []
-    },
-    {
-      "terminal": "Bp4",
-      "name": "Bp4",
-      "figure_type": "rect",
-      "figure": 179,
-      "properties": []
-    },
-    {
-      "terminal": "Bp3",
-      "name": "Bp3",
-      "figure_type": "rect",
-      "figure": 181,
-      "properties": []
-    },
-    {
-      "terminal": "Bp2",
-      "name": "Bp2",
-      "figure_type": "rect",
-      "figure": 183,
-      "properties": []
-    },
-    {
-      "terminal": "Bp1",
-      "name": "Bp1",
-      "figure_type": "rect",
-      "figure": 185,
       "properties": []
     },
     {
       "terminal": "Vn",
       "name": "Vn",
       "figure_type": "rect",
-      "figure": 187,
+      "figure": 177,
       "properties": []
     },
     {
-      "terminal": "Bn9",
-      "name": "Bn9",
+      "terminal": "Bn<9:1>",
+      "name": "Bn<9:1>",
       "figure_type": "rect",
-      "figure": 189,
-      "properties": []
-    },
-    {
-      "terminal": "Bn8",
-      "name": "Bn8",
-      "figure_type": "rect",
-      "figure": 191,
-      "properties": []
-    },
-    {
-      "terminal": "Bn7",
-      "name": "Bn7",
-      "figure_type": "rect",
-      "figure": 193,
-      "properties": []
-    },
-    {
-      "terminal": "Bn6",
-      "name": "Bn6",
-      "figure_type": "rect",
-      "figure": 195,
-      "properties": []
-    },
-    {
-      "terminal": "Bn5",
-      "name": "Bn5",
-      "figure_type": "rect",
-      "figure": 197,
-      "properties": []
-    },
-    {
-      "terminal": "Bn4",
-      "name": "Bn4",
-      "figure_type": "rect",
-      "figure": 199,
-      "properties": []
-    },
-    {
-      "terminal": "Bn3",
-      "name": "Bn3",
-      "figure_type": "rect",
-      "figure": 201,
-      "properties": []
-    },
-    {
-      "terminal": "Bn2",
-      "name": "Bn2",
-      "figure_type": "rect",
-      "figure": 203,
-      "properties": []
-    },
-    {
-      "terminal": "Bn1",
-      "name": "Bn1",
-      "figure_type": "rect",
-      "figure": 205,
+      "figure": 179,
       "properties": []
     },
     {
       "terminal": "VREFP",
       "name": "VREFP",
       "figure_type": "rect",
-      "figure": 207,
+      "figure": 181,
       "properties": []
     },
     {
       "terminal": "VREFN",
       "name": "VREFN",
       "figure_type": "rect",
-      "figure": 209,
+      "figure": 183,
       "properties": []
     }
   ],
@@ -165,11 +53,11 @@
       ],
       "bbox": [
         [
-          -1.25,
+          -1.5,
           -1.375
         ],
         [
-          1.25,
+          1.5,
           1.375
         ]
       ]
@@ -317,22 +205,26 @@
       ],
       "bbox": [
         [
-          -1.25,
+          -1.0625,
           0.75
         ],
         [
           -0.75,
-          0.75
+          0.8125
         ]
       ],
       "points": [
         [
-          -1.25,
+          -0.75,
           0.75
         ],
         [
-          -0.75,
+          -1.0,
           0.75
+        ],
+        [
+          -1.0625,
+          0.8125
         ]
       ]
     },
@@ -535,22 +427,26 @@
       ],
       "bbox": [
         [
-          -1.25,
+          -1.0625,
           0.5625
         ],
         [
           -0.75,
-          0.5625
+          0.625
         ]
       ],
       "points": [
         [
-          -1.25,
+          -0.75,
           0.5625
         ],
         [
-          -0.75,
+          -1.0,
           0.5625
+        ],
+        [
+          -1.0625,
+          0.625
         ]
       ]
     },
@@ -753,22 +649,26 @@
       ],
       "bbox": [
         [
-          -1.25,
+          -1.0625,
           0.375
         ],
         [
           -0.75,
-          0.375
+          0.4375
         ]
       ],
       "points": [
         [
-          -1.25,
+          -0.75,
           0.375
         ],
         [
-          -0.75,
+          -1.0,
           0.375
+        ],
+        [
+          -1.0625,
+          0.4375
         ]
       ]
     },
@@ -971,22 +871,26 @@
       ],
       "bbox": [
         [
-          -1.25,
+          -1.0625,
           0.1875
         ],
         [
           -0.75,
-          0.1875
+          0.25
         ]
       ],
       "points": [
         [
-          -1.25,
+          -0.75,
           0.1875
         ],
         [
-          -0.75,
+          -1.0,
           0.1875
+        ],
+        [
+          -1.0625,
+          0.25
         ]
       ]
     },
@@ -1189,22 +1093,26 @@
       ],
       "bbox": [
         [
-          -1.25,
+          -1.0625,
           0.0
         ],
         [
           -0.75,
-          0.0
+          0.0625
         ]
       ],
       "points": [
         [
-          -1.25,
+          -0.75,
           0.0
         ],
         [
-          -0.75,
+          -1.0,
           0.0
+        ],
+        [
+          -1.0625,
+          0.0625
         ]
       ]
     },
@@ -1407,22 +1315,26 @@
       ],
       "bbox": [
         [
-          -1.25,
+          -1.0625,
           -0.1875
         ],
         [
           -0.75,
-          -0.1875
+          -0.125
         ]
       ],
       "points": [
         [
-          -1.25,
+          -0.75,
           -0.1875
         ],
         [
-          -0.75,
+          -1.0,
           -0.1875
+        ],
+        [
+          -1.0625,
+          -0.125
         ]
       ]
     },
@@ -1625,22 +1537,26 @@
       ],
       "bbox": [
         [
-          -1.25,
+          -1.0625,
           -0.375
         ],
         [
           -0.75,
-          -0.375
+          -0.3125
         ]
       ],
       "points": [
         [
-          -1.25,
+          -0.75,
           -0.375
         ],
         [
-          -0.75,
+          -1.0,
           -0.375
+        ],
+        [
+          -1.0625,
+          -0.3125
         ]
       ]
     },
@@ -1843,22 +1759,26 @@
       ],
       "bbox": [
         [
-          -1.25,
+          -1.0625,
           -0.5625
         ],
         [
           -0.75,
-          -0.5625
+          -0.5
         ]
       ],
       "points": [
         [
-          -1.25,
+          -0.75,
           -0.5625
         ],
         [
-          -0.75,
+          -1.0,
           -0.5625
+        ],
+        [
+          -1.0625,
+          -0.5
         ]
       ]
     },
@@ -2061,22 +1981,26 @@
       ],
       "bbox": [
         [
-          -1.25,
+          -1.0625,
           -0.75
         ],
         [
           -0.75,
-          -0.75
+          -0.6875
         ]
       ],
       "points": [
         [
-          -1.25,
+          -0.75,
           -0.75
         ],
         [
-          -0.75,
+          -1.0,
           -0.75
+        ],
+        [
+          -1.0625,
+          -0.6875
         ]
       ]
     },
@@ -2157,6 +2081,93 @@
         -0.6875
       ],
       "text": "1",
+      "height": 0.0625,
+      "justify": "centerCenter",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "path",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.5,
+          -0.6875
+        ],
+        [
+          -1.05625,
+          0.94375
+        ]
+      ],
+      "points": [
+        [
+          -1.0625,
+          -0.6875
+        ],
+        [
+          -1.0625,
+          0.9375
+        ],
+        [
+          -1.5,
+          0.9375
+        ]
+      ],
+      "width": 0.0125,
+      "style": "truncateExtend"
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.125,
+          -0.28125
+        ],
+        [
+          -1.0,
+          -0.21875
+        ]
+      ],
+      "points": [
+        [
+          -1.125,
+          -0.28125
+        ],
+        [
+          -1.0,
+          -0.21875
+        ]
+      ]
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.2875,
+          -0.28125
+        ],
+        [
+          -1.2125,
+          -0.21875
+        ]
+      ],
+      "xy": [
+        -1.25,
+        -0.25
+      ],
+      "text": "9",
       "height": 0.0625,
       "justify": "centerCenter",
       "orient": "R0",
@@ -2507,18 +2518,22 @@
           0.75
         ],
         [
-          1.25,
-          0.75
+          1.0625,
+          0.8125
         ]
       ],
       "points": [
         [
-          1.25,
+          0.75,
           0.75
         ],
         [
-          0.75,
+          1.0,
           0.75
+        ],
+        [
+          1.0625,
+          0.8125
         ]
       ]
     },
@@ -2725,18 +2740,22 @@
           0.5625
         ],
         [
-          1.25,
-          0.5625
+          1.0625,
+          0.625
         ]
       ],
       "points": [
         [
-          1.25,
+          0.75,
           0.5625
         ],
         [
-          0.75,
+          1.0,
           0.5625
+        ],
+        [
+          1.0625,
+          0.625
         ]
       ]
     },
@@ -2943,18 +2962,22 @@
           0.375
         ],
         [
-          1.25,
-          0.375
+          1.0625,
+          0.4375
         ]
       ],
       "points": [
         [
-          1.25,
+          0.75,
           0.375
         ],
         [
-          0.75,
+          1.0,
           0.375
+        ],
+        [
+          1.0625,
+          0.4375
         ]
       ]
     },
@@ -3161,18 +3184,22 @@
           0.1875
         ],
         [
-          1.25,
-          0.1875
+          1.0625,
+          0.25
         ]
       ],
       "points": [
         [
-          1.25,
+          0.75,
           0.1875
         ],
         [
-          0.75,
+          1.0,
           0.1875
+        ],
+        [
+          1.0625,
+          0.25
         ]
       ]
     },
@@ -3379,18 +3406,22 @@
           0.0
         ],
         [
-          1.25,
-          0.0
+          1.0625,
+          0.0625
         ]
       ],
       "points": [
         [
-          1.25,
+          0.75,
           0.0
         ],
         [
-          0.75,
+          1.0,
           0.0
+        ],
+        [
+          1.0625,
+          0.0625
         ]
       ]
     },
@@ -3597,18 +3628,22 @@
           -0.1875
         ],
         [
-          1.25,
-          -0.1875
+          1.0625,
+          -0.125
         ]
       ],
       "points": [
         [
-          1.25,
+          0.75,
           -0.1875
         ],
         [
-          0.75,
+          1.0,
           -0.1875
+        ],
+        [
+          1.0625,
+          -0.125
         ]
       ]
     },
@@ -3815,18 +3850,22 @@
           -0.375
         ],
         [
-          1.25,
-          -0.375
+          1.0625,
+          -0.3125
         ]
       ],
       "points": [
         [
-          1.25,
+          0.75,
           -0.375
         ],
         [
-          0.75,
+          1.0,
           -0.375
+        ],
+        [
+          1.0625,
+          -0.3125
         ]
       ]
     },
@@ -4033,18 +4072,22 @@
           -0.5625
         ],
         [
-          1.25,
-          -0.5625
+          1.0625,
+          -0.5
         ]
       ],
       "points": [
         [
-          1.25,
+          0.75,
           -0.5625
         ],
         [
-          0.75,
+          1.0,
           -0.5625
+        ],
+        [
+          1.0625,
+          -0.5
         ]
       ]
     },
@@ -4251,18 +4294,22 @@
           -0.75
         ],
         [
-          1.25,
-          -0.75
+          1.0625,
+          -0.6875
         ]
       ],
       "points": [
         [
-          1.25,
+          0.75,
           -0.75
         ],
         [
-          0.75,
+          1.0,
           -0.75
+        ],
+        [
+          1.0625,
+          -0.6875
         ]
       ]
     },
@@ -4343,6 +4390,93 @@
         -0.6875
       ],
       "text": "1",
+      "height": 0.0625,
+      "justify": "centerCenter",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
+    },
+    {
+      "type": "path",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          1.05625,
+          -0.6875
+        ],
+        [
+          1.5,
+          0.94375
+        ]
+      ],
+      "points": [
+        [
+          1.0625,
+          -0.6875
+        ],
+        [
+          1.0625,
+          0.9375
+        ],
+        [
+          1.5,
+          0.9375
+        ]
+      ],
+      "width": 0.0125,
+      "style": "truncateExtend"
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          1.0,
+          -0.28125
+        ],
+        [
+          1.125,
+          -0.21875
+        ]
+      ],
+      "points": [
+        [
+          1.0,
+          -0.28125
+        ],
+        [
+          1.125,
+          -0.21875
+        ]
+      ]
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          1.2125,
+          -0.28125
+        ],
+        [
+          1.2875,
+          -0.21875
+        ]
+      ],
+      "xy": [
+        1.25,
+        -0.25
+      ],
+      "text": "9",
       "height": 0.0625,
       "justify": "centerCenter",
       "orient": "R0",
@@ -4763,15 +4897,15 @@
       ],
       "bbox": [
         [
-          -1.2625,
-          0.7375
+          -1.5125,
+          0.925
         ],
         [
-          -1.2375,
-          0.7625
+          -1.4875,
+          0.95
         ]
       ],
-      "net": "Bp9"
+      "net": "Bp<9:1>"
     },
     {
       "type": "label",
@@ -4781,379 +4915,19 @@
       ],
       "bbox": [
         [
-          -1.1875,
-          0.75625
+          -1.4375,
+          0.94375
         ],
         [
-          -1.0,
-          0.84375
+          -1.03125,
+          1.03125
         ]
       ],
       "xy": [
-        -1.1875,
-        0.8125
+        -1.4375,
+        1.0
       ],
-      "text": "Bp9",
-      "height": 0.0625,
-      "justify": "centerLeft",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel"
-    },
-    {
-      "type": "rect",
-      "lpp": [
-        "pin",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          -1.2625,
-          0.55
-        ],
-        [
-          -1.2375,
-          0.575
-        ]
-      ],
-      "net": "Bp8"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "pin",
-        "label"
-      ],
-      "bbox": [
-        [
-          -1.1875,
-          0.56875
-        ],
-        [
-          -1.0,
-          0.65625
-        ]
-      ],
-      "xy": [
-        -1.1875,
-        0.625
-      ],
-      "text": "Bp8",
-      "height": 0.0625,
-      "justify": "centerLeft",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel"
-    },
-    {
-      "type": "rect",
-      "lpp": [
-        "pin",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          -1.2625,
-          0.3625
-        ],
-        [
-          -1.2375,
-          0.3875
-        ]
-      ],
-      "net": "Bp7"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "pin",
-        "label"
-      ],
-      "bbox": [
-        [
-          -1.1875,
-          0.38125
-        ],
-        [
-          -1.0,
-          0.46875
-        ]
-      ],
-      "xy": [
-        -1.1875,
-        0.4375
-      ],
-      "text": "Bp7",
-      "height": 0.0625,
-      "justify": "centerLeft",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel"
-    },
-    {
-      "type": "rect",
-      "lpp": [
-        "pin",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          -1.2625,
-          0.175
-        ],
-        [
-          -1.2375,
-          0.2
-        ]
-      ],
-      "net": "Bp6"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "pin",
-        "label"
-      ],
-      "bbox": [
-        [
-          -1.1875,
-          0.19375
-        ],
-        [
-          -1.0,
-          0.28125
-        ]
-      ],
-      "xy": [
-        -1.1875,
-        0.25
-      ],
-      "text": "Bp6",
-      "height": 0.0625,
-      "justify": "centerLeft",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel"
-    },
-    {
-      "type": "rect",
-      "lpp": [
-        "pin",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          -1.2625,
-          -0.0125
-        ],
-        [
-          -1.2375,
-          0.0125
-        ]
-      ],
-      "net": "Bp5"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "pin",
-        "label"
-      ],
-      "bbox": [
-        [
-          -1.1875,
-          0.00625
-        ],
-        [
-          -1.0,
-          0.09375
-        ]
-      ],
-      "xy": [
-        -1.1875,
-        0.0625
-      ],
-      "text": "Bp5",
-      "height": 0.0625,
-      "justify": "centerLeft",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel"
-    },
-    {
-      "type": "rect",
-      "lpp": [
-        "pin",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          -1.2625,
-          -0.2
-        ],
-        [
-          -1.2375,
-          -0.175
-        ]
-      ],
-      "net": "Bp4"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "pin",
-        "label"
-      ],
-      "bbox": [
-        [
-          -1.1875,
-          -0.18125
-        ],
-        [
-          -1.0,
-          -0.09375
-        ]
-      ],
-      "xy": [
-        -1.1875,
-        -0.125
-      ],
-      "text": "Bp4",
-      "height": 0.0625,
-      "justify": "centerLeft",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel"
-    },
-    {
-      "type": "rect",
-      "lpp": [
-        "pin",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          -1.2625,
-          -0.3875
-        ],
-        [
-          -1.2375,
-          -0.3625
-        ]
-      ],
-      "net": "Bp3"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "pin",
-        "label"
-      ],
-      "bbox": [
-        [
-          -1.1875,
-          -0.36875
-        ],
-        [
-          -1.0,
-          -0.28125
-        ]
-      ],
-      "xy": [
-        -1.1875,
-        -0.3125
-      ],
-      "text": "Bp3",
-      "height": 0.0625,
-      "justify": "centerLeft",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel"
-    },
-    {
-      "type": "rect",
-      "lpp": [
-        "pin",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          -1.2625,
-          -0.575
-        ],
-        [
-          -1.2375,
-          -0.55
-        ]
-      ],
-      "net": "Bp2"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "pin",
-        "label"
-      ],
-      "bbox": [
-        [
-          -1.1875,
-          -0.55625
-        ],
-        [
-          -1.0,
-          -0.46875
-        ]
-      ],
-      "xy": [
-        -1.1875,
-        -0.5
-      ],
-      "text": "Bp2",
-      "height": 0.0625,
-      "justify": "centerLeft",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel"
-    },
-    {
-      "type": "rect",
-      "lpp": [
-        "pin",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          -1.2625,
-          -0.7625
-        ],
-        [
-          -1.2375,
-          -0.7375
-        ]
-      ],
-      "net": "Bp1"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "pin",
-        "label"
-      ],
-      "bbox": [
-        [
-          -1.1875,
-          -0.74375
-        ],
-        [
-          -1.0125,
-          -0.65625
-        ]
-      ],
-      "xy": [
-        -1.1875,
-        -0.6875
-      ],
-      "text": "Bp1",
+      "text": "Bp<9:1>",
       "height": 0.0625,
       "justify": "centerLeft",
       "orient": "R0",
@@ -5213,15 +4987,15 @@
       ],
       "bbox": [
         [
-          1.2375,
-          0.7375
+          1.4875,
+          0.925
         ],
         [
-          1.2625,
-          0.7625
+          1.5125,
+          0.95
         ]
       ],
-      "net": "Bn9"
+      "net": "Bn<9:1>"
     },
     {
       "type": "label",
@@ -5231,379 +5005,19 @@
       ],
       "bbox": [
         [
-          1.0,
-          0.78125
+          1.03125,
+          0.96875
         ],
         [
-          1.1875,
-          0.84375
+          1.4375,
+          1.03125
         ]
       ],
       "xy": [
-        1.1875,
-        0.8125
+        1.4375,
+        1.0
       ],
-      "text": "Bn9",
-      "height": 0.0625,
-      "justify": "centerRight",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel"
-    },
-    {
-      "type": "rect",
-      "lpp": [
-        "pin",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          1.2375,
-          0.55
-        ],
-        [
-          1.2625,
-          0.575
-        ]
-      ],
-      "net": "Bn8"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "pin",
-        "label"
-      ],
-      "bbox": [
-        [
-          1.0,
-          0.59375
-        ],
-        [
-          1.1875,
-          0.65625
-        ]
-      ],
-      "xy": [
-        1.1875,
-        0.625
-      ],
-      "text": "Bn8",
-      "height": 0.0625,
-      "justify": "centerRight",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel"
-    },
-    {
-      "type": "rect",
-      "lpp": [
-        "pin",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          1.2375,
-          0.3625
-        ],
-        [
-          1.2625,
-          0.3875
-        ]
-      ],
-      "net": "Bn7"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "pin",
-        "label"
-      ],
-      "bbox": [
-        [
-          1.0,
-          0.40625
-        ],
-        [
-          1.1875,
-          0.46875
-        ]
-      ],
-      "xy": [
-        1.1875,
-        0.4375
-      ],
-      "text": "Bn7",
-      "height": 0.0625,
-      "justify": "centerRight",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel"
-    },
-    {
-      "type": "rect",
-      "lpp": [
-        "pin",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          1.2375,
-          0.175
-        ],
-        [
-          1.2625,
-          0.2
-        ]
-      ],
-      "net": "Bn6"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "pin",
-        "label"
-      ],
-      "bbox": [
-        [
-          1.0,
-          0.21875
-        ],
-        [
-          1.1875,
-          0.28125
-        ]
-      ],
-      "xy": [
-        1.1875,
-        0.25
-      ],
-      "text": "Bn6",
-      "height": 0.0625,
-      "justify": "centerRight",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel"
-    },
-    {
-      "type": "rect",
-      "lpp": [
-        "pin",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          1.2375,
-          -0.0125
-        ],
-        [
-          1.2625,
-          0.0125
-        ]
-      ],
-      "net": "Bn5"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "pin",
-        "label"
-      ],
-      "bbox": [
-        [
-          1.0,
-          0.03125
-        ],
-        [
-          1.1875,
-          0.09375
-        ]
-      ],
-      "xy": [
-        1.1875,
-        0.0625
-      ],
-      "text": "Bn5",
-      "height": 0.0625,
-      "justify": "centerRight",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel"
-    },
-    {
-      "type": "rect",
-      "lpp": [
-        "pin",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          1.2375,
-          -0.2
-        ],
-        [
-          1.2625,
-          -0.175
-        ]
-      ],
-      "net": "Bn4"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "pin",
-        "label"
-      ],
-      "bbox": [
-        [
-          1.0,
-          -0.15625
-        ],
-        [
-          1.1875,
-          -0.09375
-        ]
-      ],
-      "xy": [
-        1.1875,
-        -0.125
-      ],
-      "text": "Bn4",
-      "height": 0.0625,
-      "justify": "centerRight",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel"
-    },
-    {
-      "type": "rect",
-      "lpp": [
-        "pin",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          1.2375,
-          -0.3875
-        ],
-        [
-          1.2625,
-          -0.3625
-        ]
-      ],
-      "net": "Bn3"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "pin",
-        "label"
-      ],
-      "bbox": [
-        [
-          1.0,
-          -0.34375
-        ],
-        [
-          1.1875,
-          -0.28125
-        ]
-      ],
-      "xy": [
-        1.1875,
-        -0.3125
-      ],
-      "text": "Bn3",
-      "height": 0.0625,
-      "justify": "centerRight",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel"
-    },
-    {
-      "type": "rect",
-      "lpp": [
-        "pin",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          1.2375,
-          -0.575
-        ],
-        [
-          1.2625,
-          -0.55
-        ]
-      ],
-      "net": "Bn2"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "pin",
-        "label"
-      ],
-      "bbox": [
-        [
-          1.0,
-          -0.53125
-        ],
-        [
-          1.1875,
-          -0.46875
-        ]
-      ],
-      "xy": [
-        1.1875,
-        -0.5
-      ],
-      "text": "Bn2",
-      "height": 0.0625,
-      "justify": "centerRight",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel"
-    },
-    {
-      "type": "rect",
-      "lpp": [
-        "pin",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          1.2375,
-          -0.7625
-        ],
-        [
-          1.2625,
-          -0.7375
-        ]
-      ],
-      "net": "Bn1"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "pin",
-        "label"
-      ],
-      "bbox": [
-        [
-          1.0125,
-          -0.71875
-        ],
-        [
-          1.1875,
-          -0.65625
-        ]
-      ],
-      "xy": [
-        1.1875,
-        -0.6875
-      ],
-      "text": "Bn1",
+      "text": "Bn<9:1>",
       "height": 0.0625,
       "justify": "centerRight",
       "orient": "R0",
@@ -5762,11 +5176,11 @@
       ],
       "bbox": [
         [
-          -1.375,
+          -1.625,
           -1.5
         ],
         [
-          1.375,
+          1.625,
           1.5
         ]
       ]

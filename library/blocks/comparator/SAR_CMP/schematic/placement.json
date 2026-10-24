@@ -13,47 +13,26 @@
     ],
     "orient": "R0"
   },
-  "Mp_input_p": {
+  "Mp_input<1:0>": {
     "xy": [
-      0,
+      2,
       2
     ],
     "orient": "R0"
   },
-  "Mp_input_n": {
+  "Mn_latch<1:0>": {
     "xy": [
-      4.5,
-      2
-    ],
-    "orient": "MY"
-  },
-  "Mn_latch_p": {
-    "xy": [
-      0,
+      2,
       0
     ],
     "orient": "R0"
   },
-  "Mn_latch_n": {
+  "Mn_reset<1:0>": {
     "xy": [
-      4.5,
-      0
-    ],
-    "orient": "MY"
-  },
-  "Mn_reset_p": {
-    "xy": [
-      -2,
+      5,
       0
     ],
     "orient": "R0"
-  },
-  "Mn_reset_n": {
-    "xy": [
-      6.5,
-      0
-    ],
-    "orient": "MY"
   },
   "I_out<1:0>": {
     "xy": [

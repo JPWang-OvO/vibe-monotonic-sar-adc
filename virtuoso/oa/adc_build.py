@@ -146,21 +146,28 @@ def schematic(data, symbols):
     for index,port in enumerate(data['ports']):
         x=xmin-2*(index//16);y=ymax-.375*(index%16)
         commands.append(pin(port,x,y,'R0',direction=direction(data['cell'],port)))
-        commands.append(wire([(x,y),(x+.75,y)]));commands.append(label(x+.25,y,port,'lowerLeft','R0'))
+        output_bus=direction(data['cell'],port)=='output' and len(expand_signals([port]))>1
+        length=1.5 if output_bus else .75
+        commands.append(wire([(x,y),(x+length,y)]))
+        commands.append(label(x+(.75 if output_bus else .25),y,port,'lowerLeft','R0'))
         if not any(member in uses for member in expand_signals([port])):
             # Unused interface entries are retained to match the frozen netlist.
-            commands.append(instance('basic','noConn','symbol','NC_'+port,x+.75,y,'R90'))
-    unused_index=0
+            commands.append(instance('basic','noConn','symbol','NC_'+port,x+length,y,'R90'))
+    unused_bus=[]
     for net,count in uses.items():
         if count==1 and net not in expand_signals(data['ports']):
             if net in ends:
                 x,y=ends[net][0]
             else:
-                # A scalar member of an array bus needs its own named stub.
-                x=xmin+2;y=ymax-.5*unused_index;unused_index+=1
-                commands.append(wire([(x-.75,y),(x,y)]))
-                commands.append(label(x-.5,y,net,'lowerLeft','R0'))
+                unused_bus.append(net)
+                continue
             commands.append(instance('basic','noConn','symbol','NC_'+net,x,y,'R0'))
+    if unused_bus:
+        x=xmin+2;y=ymax
+        commands.append(wire([(x-.75,y),(x,y)]))
+        commands.append(label(x-.5,y,','.join(unused_bus),'lowerLeft','R0'))
+        name='NC_unused'+(f'<{len(unused_bus)-1}:0>' if len(unused_bus)>1 else '')
+        commands.append(instance('basic','noConn','symbol',name,x,y,'R90'))
     commands.append('cv~>portOrder=list('+' '.join(q(n) for n in data['ports'])+')')
     commands.append(f'schCreateNoteLabel(cv {xmin}:{ymax+.75} {q(data["cell"])} "lowerLeft" "R0" "stick" 0.125 "normalLabel")')
     return commands,pos

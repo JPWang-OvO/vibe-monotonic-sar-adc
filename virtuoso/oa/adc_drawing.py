@@ -18,7 +18,7 @@ OUTPUTS = {
     'SAR_CAPTURE_LATCH':'Q QB', 'SAR_OUTPUT_FF':'Q', 'SAR_OUT':'Q',
     'SAR_CMP':'Outp Outn Valid', 'SAR_BIAS':'Bias', 'SAR_BOOST':'Gate', 'SAR_BOOST_HI':'Gate',
     'SAR_SAMPLE':'Gate', 'SAR_BIT':'Q Bp Bn',
-    'SAR_ASYNC':'ClkC Done Ck9 Ck8 Ck7 Ck6 Ck5 Ck4 Ck3 Ck2 Ck1 Ck0',
+    'SAR_ASYNC':'ClkC Done Ck<9:0>',
     'MONOTONIC_SAR':'D<9:0> EOC',
 }
 

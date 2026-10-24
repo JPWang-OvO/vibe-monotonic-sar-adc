@@ -1,6 +1,7 @@
 """Placement for the accepted ADC hierarchy; no OA operations are performed here."""
 from copy import deepcopy
 import re
+from .adc_buses import compact_signals
 
 
 def fold_drivers(data):
@@ -17,7 +18,14 @@ def fold_drivers(data):
                     ('I_buf0',['I_buf_p0','I_buf_n0']),('I_buf1',['I_buf_p1','I_buf_n1'])],
         'SAR_FRONTEND': [('I_sample',['I_sp','I_sn']),('C_cross',['C_cross_p','C_cross_n'])],
         'SAR_CMP': [('I_out',['I_outp','I_outn']),('I_out1',['I_outp1','I_outn1']),
-                    ('I_out2',['I_outp2','I_outn2'])],
+                    ('I_out2',['I_outp2','I_outn2']),
+                    ('Mp_input',['Mp_input_p','Mp_input_n']),
+                    ('Mn_latch',['Mn_latch_p','Mn_latch_n']),
+                    ('Mn_reset',['Mn_reset_p','Mn_reset_n'])],
+        'SAR_PHASE': [('I_por',['I_por0','I_por1'])],
+        'SAR_STARTUP': [('I_por',['I_por0','I_por1'])],
+        'SAR_ASYNC': [('I_cp',['I_cp0','I_cp1'])],
+        'SAR_SAMPLE_GUARD2': [('I_d',['I_d0','I_d1'])],
         'SAR_CDAC': [(f'C_weight{bit}',[f'Cp{bit}',f'Cn{bit}']) for bit in range(9,0,-1)]
                     + [('C_dummy',['Cp_dummy','Cn_dummy'])],
     }
@@ -31,11 +39,10 @@ def fold_drivers(data):
         first['name'] = array_name
         first['array_members'] = [i['name'] for i in members]
         first['connections'] = {
-            term: values[0] if len(set(values)) == 1 else ','.join(values)
+            term: values[0] if len(set(values)) == 1 else ','.join(compact_signals(values))
             for term in first['connections']
             for values in [[i['connections'][term] for i in members]]
         }
-        if array_name=='I_out<9:0>':first['connections']['Q']='D<9:0>'
         first['nodes'] = list(first['connections'].values())
         removed = set(first['array_members'])
         data['instances'] = [i for i in data['instances'] if i['name'] not in removed] + [first]
@@ -58,9 +65,8 @@ def placements(data):
         put('Mp_diode', 0, 1); put('Mn_sink', 0, -1); put('C_bias', 2, 0)
     elif cell == 'SAR_CMP':
         put('Mp_bias', 2, 5); put('Mp_clock', 2, 3.5)
-        put('Mp_input_p', 0, 2); put('Mp_input_n', 4.5, 2, 'MY')
-        put('Mn_latch_p', 0, 0); put('Mn_latch_n', 4.5, 0, 'MY')
-        put('Mn_reset_p', -2, 0); put('Mn_reset_n', 6.5, 0, 'MY')
+        put('Mp_input<1:0>', 2, 2)
+        put('Mn_latch<1:0>', 2, 0); put('Mn_reset<1:0>', 5, 0)
         row('I_out<1:0> I_out1<1:0> I_out2<1:0>', -3, -2, 3.75)
         row('I_valid I_vb0 I_vb1', -6, -2, 3.75)
     elif cell in ('SAR_BOOST', 'SAR_BOOST_HI'):
@@ -84,21 +90,25 @@ def placements(data):
     elif cell == 'SAR_BIT':
         put('I_latch', 0, 0)
         row('I_select<1:0> I_buf0<1:0> I_buf1<1:0>', 0, 3.5, 2.5)
+    elif cell == 'SAR_SAMPLE_GUARD2':
+        put('I_d<1:0>',0,1);put('C_delay',0,-1)
+        put('Mp0',3,3);put('Mp1',3,1.5)
+        put('Mn0',3,-1);put('Mn1',5.5,-1);put('I_drive',8,0)
     elif cell == 'SAR_PHASE':
         put('Mp_charge', 0, 6); put('C_por', 2, 5.5)
-        row('I_por0 I_por1', 6, 4, 2)
+        put('I_por<1:0>', 4, 6)
         row('I_enable I_gate I_gatebuf I_clk0', 3, 0, 4)
         put('Mp_clock_slew', 16, 4); put('Mn_clock_slew', 16, 2); put('C_clock_slew', 18, 3)
         row('I_ring<3:0> I_ring4', 0, 4, 6)
         row('I_buffer0 I_buffer1 I_buffer2 I_buffer3 I_pre<7:0> I_final<63:0>', -3, 0, 3.5)
     elif cell == 'SAR_ASYNC':
         row('I_sample_guard I_startup I_reset', 3, 0, 4)
-        row('I_cp0 I_cp1', 3, 13, 3.5)
+        put('I_cp<1:0>', 13, 3)
         put('I_seq<9:0>', 8, 0)
         row('I_feedback_delay I_early I_run_nor I_clock_drive I_done_delay', -3, 0, 4)
     elif cell == 'SAR_STARTUP':
         put('Mp_charge',0,5);put('C_por',2,4.5)
-        row('I_por0 I_por1',5,4,2)
+        put('I_por<1:0>',4,5)
         put('I_arm',10,4);put('I_ready_inv',14,4)
         put('Mp0',7,3);put('Mp1',7,1.5)
         put('Mn0',7,0);put('Mn1',10,0);put('I_hold',14,1)

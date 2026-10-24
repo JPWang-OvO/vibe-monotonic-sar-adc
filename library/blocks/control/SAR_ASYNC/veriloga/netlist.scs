@@ -1,4 +1,4 @@
 ahdl_include "SAR_ASYNC.va"
-subckt SAR_ASYNC (Sample Valid ClkC Done Ck9 Ck8 Ck7 Ck6 Ck5 Ck4 Ck3 Ck2 Ck1 Ck0 VDD VSS)
-I_model (Sample Valid ClkC Done Ck9 Ck8 Ck7 Ck6 Ck5 Ck4 Ck3 Ck2 Ck1 Ck0 VDD VSS) SAR_ASYNC_va
+subckt SAR_ASYNC (Sample Valid ClkC Done Ck\<9\> Ck\<8\> Ck\<7\> Ck\<6\> Ck\<5\> Ck\<4\> Ck\<3\> Ck\<2\> Ck\<1\> Ck\<0\> VDD VSS)
+I_model (Sample Valid ClkC Done Ck\<9\> Ck\<8\> Ck\<7\> Ck\<6\> Ck\<5\> Ck\<4\> Ck\<3\> Ck\<2\> Ck\<1\> Ck\<0\> VDD VSS) SAR_ASYNC_va
 ends SAR_ASYNC

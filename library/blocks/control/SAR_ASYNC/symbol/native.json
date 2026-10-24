@@ -10,77 +10,23 @@
         "name": "portOrder",
         "type": "ILList",
         "value": {
-          "skill": "(\"Sample\" \"Valid\" \"ClkC\" \"Done\" \"Ck9\" \"Ck8\" \"Ck7\" \"Ck6\" \"Ck5\" \"Ck4\" \"Ck3\" \"Ck2\" \"Ck1\" \"Ck0\" \"VDD\" \"VSS\")"
+          "skill": "(\"Sample\" \"Valid\" \"ClkC\" \"Done\" \"Ck<9:0>\" \"VDD\" \"VSS\")"
         }
       },
       {
         "name": "termOrder",
         "type": "ILList",
         "value": {
-          "skill": "(\"Sample\" \"Valid\" \"ClkC\" \"Done\" \"Ck9\" \"Ck8\" \"Ck7\" \"Ck6\" \"Ck5\" \"Ck4\" \"Ck3\" \"Ck2\" \"Ck1\" \"Ck0\" \"VDD\" \"VSS\")"
+          "skill": "(\"Sample\" \"Valid\" \"ClkC\" \"Done\" \"Ck<9:0>\" \"VDD\" \"VSS\")"
         }
       }
     ],
     "instances": [],
     "terminals": [
       {
-        "name": "Ck0",
+        "name": "Ck<9:0>",
         "direction": "output",
-        "net": "Ck0",
-        "properties": []
-      },
-      {
-        "name": "Ck1",
-        "direction": "output",
-        "net": "Ck1",
-        "properties": []
-      },
-      {
-        "name": "Ck2",
-        "direction": "output",
-        "net": "Ck2",
-        "properties": []
-      },
-      {
-        "name": "Ck3",
-        "direction": "output",
-        "net": "Ck3",
-        "properties": []
-      },
-      {
-        "name": "Ck4",
-        "direction": "output",
-        "net": "Ck4",
-        "properties": []
-      },
-      {
-        "name": "Ck5",
-        "direction": "output",
-        "net": "Ck5",
-        "properties": []
-      },
-      {
-        "name": "Ck6",
-        "direction": "output",
-        "net": "Ck6",
-        "properties": []
-      },
-      {
-        "name": "Ck7",
-        "direction": "output",
-        "net": "Ck7",
-        "properties": []
-      },
-      {
-        "name": "Ck8",
-        "direction": "output",
-        "net": "Ck8",
-        "properties": []
-      },
-      {
-        "name": "Ck9",
-        "direction": "output",
-        "net": "Ck9",
+        "net": "Ck<9:0>",
         "properties": []
       },
       {
@@ -122,61 +68,7 @@
     ],
     "nets": [
       {
-        "name": "Ck0",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Ck1",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Ck2",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Ck3",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Ck4",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Ck5",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Ck6",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Ck7",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Ck8",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Ck9",
+        "name": "Ck<9:0>",
         "signal_type": "signal",
         "global_": false,
         "properties": []

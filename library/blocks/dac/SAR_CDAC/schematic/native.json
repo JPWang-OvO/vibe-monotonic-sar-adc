@@ -9,12 +9,12 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 2109
+        "value": 1479
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 05:20:56 2026"
+        "value": "Oct 24 15:40:47 2026"
       },
       {
         "name": "net#",
@@ -24,19 +24,19 @@
       {
         "name": "pin#",
         "type": "int",
-        "value": 22
+        "value": 6
       },
       {
         "name": "portOrder",
         "type": "ILList",
         "value": {
-          "skill": "(\"Vp\" \"Vn\" \"Bp9\" \"Bp8\" \"Bp7\" \"Bp6\" \"Bp5\" \"Bp4\" \"Bp3\" \"Bp2\" \"Bp1\" \"Bn9\" \"Bn8\" \"Bn7\" \"Bn6\" \"Bn5\" \"Bn4\" \"Bn3\" \"Bn2\" \"Bn1\" \"VREFP\" \"VREFN\")"
+          "skill": "(\"Vp\" \"Vn\" \"Bp<9:1>\" \"Bn<9:1>\" \"VREFP\" \"VREFN\")"
         }
       },
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 2109
+        "value": 1479
       },
       {
         "name": "schGeometryVersion",
@@ -88,7 +88,7 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp1,Bn1",
+          "MINUS": "Bp<1>,Bn<1>",
           "PLUS": "Vp,Vn"
         }
       },
@@ -109,7 +109,7 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp2,Bn2",
+          "MINUS": "Bp<2>,Bn<2>",
           "PLUS": "Vp,Vn"
         }
       },
@@ -130,7 +130,7 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp3,Bn3",
+          "MINUS": "Bp<3>,Bn<3>",
           "PLUS": "Vp,Vn"
         }
       },
@@ -151,7 +151,7 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp4,Bn4",
+          "MINUS": "Bp<4>,Bn<4>",
           "PLUS": "Vp,Vn"
         }
       },
@@ -172,7 +172,7 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp5,Bn5",
+          "MINUS": "Bp<5>,Bn<5>",
           "PLUS": "Vp,Vn"
         }
       },
@@ -193,7 +193,7 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp6,Bn6",
+          "MINUS": "Bp<6>,Bn<6>",
           "PLUS": "Vp,Vn"
         }
       },
@@ -214,7 +214,7 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp7,Bn7",
+          "MINUS": "Bp<7>,Bn<7>",
           "PLUS": "Vp,Vn"
         }
       },
@@ -235,7 +235,7 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp8,Bn8",
+          "MINUS": "Bp<8>,Bn<8>",
           "PLUS": "Vp,Vn"
         }
       },
@@ -256,7 +256,7 @@
           }
         ],
         "connections": {
-          "MINUS": "Bp9,Bn9",
+          "MINUS": "Bp<9>,Bn<9>",
           "PLUS": "Vp,Vn"
         }
       },
@@ -299,151 +299,7 @@
         "connections": {}
       },
       {
-        "name": "PIN10",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN11",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN12",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN13",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN14",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN15",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN16",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN17",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN18",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN19",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
         "name": "PIN2",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN20",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN21",
         "master": [
           "basic",
           "iopin",
@@ -489,163 +345,19 @@
         "multiplicity": 1,
         "properties": [],
         "connections": {}
-      },
-      {
-        "name": "PIN6",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN7",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN8",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
-      },
-      {
-        "name": "PIN9",
-        "master": [
-          "basic",
-          "iopin",
-          "symbol"
-        ],
-        "purpose": "pin",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {}
       }
     ],
     "terminals": [
       {
-        "name": "Bn1",
+        "name": "Bn<9:1>",
         "direction": "inputOutput",
-        "net": "Bn1",
+        "net": "Bn<9:1>",
         "properties": []
       },
       {
-        "name": "Bn2",
+        "name": "Bp<9:1>",
         "direction": "inputOutput",
-        "net": "Bn2",
-        "properties": []
-      },
-      {
-        "name": "Bn3",
-        "direction": "inputOutput",
-        "net": "Bn3",
-        "properties": []
-      },
-      {
-        "name": "Bn4",
-        "direction": "inputOutput",
-        "net": "Bn4",
-        "properties": []
-      },
-      {
-        "name": "Bn5",
-        "direction": "inputOutput",
-        "net": "Bn5",
-        "properties": []
-      },
-      {
-        "name": "Bn6",
-        "direction": "inputOutput",
-        "net": "Bn6",
-        "properties": []
-      },
-      {
-        "name": "Bn7",
-        "direction": "inputOutput",
-        "net": "Bn7",
-        "properties": []
-      },
-      {
-        "name": "Bn8",
-        "direction": "inputOutput",
-        "net": "Bn8",
-        "properties": []
-      },
-      {
-        "name": "Bn9",
-        "direction": "inputOutput",
-        "net": "Bn9",
-        "properties": []
-      },
-      {
-        "name": "Bp1",
-        "direction": "inputOutput",
-        "net": "Bp1",
-        "properties": []
-      },
-      {
-        "name": "Bp2",
-        "direction": "inputOutput",
-        "net": "Bp2",
-        "properties": []
-      },
-      {
-        "name": "Bp3",
-        "direction": "inputOutput",
-        "net": "Bp3",
-        "properties": []
-      },
-      {
-        "name": "Bp4",
-        "direction": "inputOutput",
-        "net": "Bp4",
-        "properties": []
-      },
-      {
-        "name": "Bp5",
-        "direction": "inputOutput",
-        "net": "Bp5",
-        "properties": []
-      },
-      {
-        "name": "Bp6",
-        "direction": "inputOutput",
-        "net": "Bp6",
-        "properties": []
-      },
-      {
-        "name": "Bp7",
-        "direction": "inputOutput",
-        "net": "Bp7",
-        "properties": []
-      },
-      {
-        "name": "Bp8",
-        "direction": "inputOutput",
-        "net": "Bp8",
-        "properties": []
-      },
-      {
-        "name": "Bp9",
-        "direction": "inputOutput",
-        "net": "Bp9",
+        "net": "Bp<9:1>",
         "properties": []
       },
       {
@@ -681,163 +393,67 @@
         "properties": []
       },
       {
-        "name": "Bn1",
+        "name": "Bn<9:1>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Bn2",
+        "name": "Bp<1>,Bn<1>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Bn3",
+        "name": "Bp<2>,Bn<2>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Bn4",
+        "name": "Bp<3>,Bn<3>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Bn5",
+        "name": "Bp<4>,Bn<4>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Bn6",
+        "name": "Bp<5>,Bn<5>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Bn7",
+        "name": "Bp<6>,Bn<6>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Bn8",
+        "name": "Bp<7>,Bn<7>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Bn9",
+        "name": "Bp<8>,Bn<8>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Bp1",
+        "name": "Bp<9:1>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "Bp1,Bn1",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp2",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp2,Bn2",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp3",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp3,Bn3",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp4",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp4,Bn4",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp5",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp5,Bn5",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp6",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp6,Bn6",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp7",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp7,Bn7",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp8",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp8,Bn8",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp9",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp9,Bn9",
+        "name": "Bp<9>,Bn<9>",
         "signal_type": "signal",
         "global_": false,
         "properties": []

@@ -43,6 +43,11 @@ def busmark(p,x,y,count):
     p.line((x-.03125,y-.0625),(x+.03125,y+.0625));p.text(x,y+.125,str(count))
 
 
+def vertical_busmark(p,x,y,count):
+    p.line((x-.0625,y-.03125),(x+.0625,y+.03125))
+    p.text(x+(.1875 if x>0 else -.1875),y,str(count))
+
+
 def ground(p,x,y):
     for k,w in enumerate((.125,.075,.025)):p.line((x-w/2,y-k*.0375),(x+w/2,y-k*.0375))
 
@@ -244,15 +249,18 @@ def comparator(data):
 
 
 def cdac(data):
-    p=Picture(data['cell'],data['ports'],2.5,2.75);frame(p)
+    p=Picture(data['cell'],data['ports'],3,2.75);frame(p)
     for sign,prefix,top in [(-1,'Bp','Vp'),(1,'Bn','Vn')]:
         rail=sign*.1875;x=sign*.625
         port(p,top,(rail,1.375),'top',(rail,-.9375))
         for bit in range(9,0,-1):
             y=.75-(9-bit)*.1875;cap(p,x,y,True)
-            port(p,prefix+str(bit),(sign*1.25,y),'left' if sign<0 else 'right',(x+sign*.125,y))
+            p.line((x+sign*.125,y),(sign*1,y),(sign*1.0625,y+.0625))
             p.line((x-sign*.125,y),(rail,y));p.dot(rail,y)
             p.text(sign*.375,y+.0625,str(2**(bit-1)))
+        p.bus((sign*1.0625,-.6875),(sign*1.0625,.9375),(sign*1.5,.9375))
+        port(p,prefix+'<9:1>',(sign*1.5,.9375),'left' if sign<0 else 'right')
+        vertical_busmark(p,sign*1.0625,-.25,9)
         cap(p,x,-.9375,True);p.line((x-sign*.125,-.9375),(rail,-.9375))
         p.text(sign*.375,-.875,'1')
         p.line((x+sign*.125,-.9375),(sign*1,-.9375),(sign*1,-1.125),(0,-1.125))
@@ -376,10 +384,8 @@ def async_control(data):
     p.line((-.9375,.5),(-1.125,.5));p.text(-1.125,.6875,'1')
     p.line((-.5625,.5),(-.1875,.5))
     p.line((.1875,.5),(.3125,.5));p.text(.4375,.5,'...');p.line((.5,.5),(.5625,.5))
-    p.bus((-.5,1.125),(1.5,1.125),(1.5,-.75));busmark(p,1.25,1.125,10)
-    for bit in range(9,-1,-1):
-        y=.875-(9-bit)*.1875
-        port(p,'Ck'+str(bit),(2,y),'right',(1.625,y),(1.5,y+.0625))
+    p.bus((-.5,1.125),(2,1.125));busmark(p,1.25,1.125,10)
+    port(p,'Ck<9:0>',(2,1.125),'right')
     port(p,'Valid',(-2,.0625),'left',(.75,.0625))
     p.block(-1.25,-.75,.75,.5,'start / reset')
     port(p,'Sample',(-2,-.75),'left',(-1.625,-.75))
@@ -390,7 +396,7 @@ def async_control(data):
     p.line((-.875,-.75),(-.6875,-.75))
     p.line((-.9375,-.1875),(-.25,-.1875),(-.25,-.6875))
     bridge_v(p,-.5,.0625,-.6875,-.1875);p.dot(-.5,.0625)
-    p.line((.0625,-.6875),(.0625,-.5));p.text(.0625,-.4375,'Ck5')
+    p.line((.0625,-.6875),(.0625,-.5));p.text(.0625,-.4375,'Ck<5>')
     p.line((.9375,.5),(1.125,.5),(1.125,-.625),(.3125,-.625),(.3125,-.8125),(.1875,-.8125));p.dot(.9375,.5)
     p.block(.75,-.875,.75,.25,'delay')
     p.line((.75,-.625),(.75,-.75));p.dot(.75,-.625)
@@ -423,9 +429,12 @@ def frontend(data):
     for sign,prefix in [(-1,'Bp'),(1,'Bn')]:
         for bit in range(9,0,-1):
             y=.25-(9-bit)*.1875;x=sign*.875;cap(p,x,y,True)
-            port(p,prefix+str(bit),(sign*1.875,y),'left' if sign<0 else 'right',(x+sign*.125,y))
+            p.line((x+sign*.125,y),(sign*1.3125,y),(sign*1.375,y+.0625))
             p.line((x-sign*.125,y),(sign*.25,y));p.dot(sign*.25,y)
             p.text(sign*.5,y+.0625,str(2**(bit-1)))
+        p.bus((sign*1.375,-1.1875),(sign*1.375,.4375),(sign*1.875,.4375))
+        port(p,prefix+'<9:1>',(sign*1.875,.4375),'left' if sign<0 else 'right')
+        vertical_busmark(p,sign*1.375,-.625,9)
         cap(p,sign*.875,-1.4375,True)
         p.line((sign*.75,-1.4375),(sign*.25,-1.4375));p.text(sign*.5,-1.375,'1')
         p.line((sign*1,-1.4375),(sign*1.25,-1.4375),(sign*1.25,-1.5625),(0,-1.5625))

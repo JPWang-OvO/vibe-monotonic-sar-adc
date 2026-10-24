@@ -7,7 +7,7 @@ include "../../../logic/SAR_DRIVE/netlist/netlist.scs"
 include "../../../logic/SAR_DONE_DELAY/netlist/netlist.scs"
 include "../../../logic/SAR_SAMPLE_GUARD12/netlist/netlist.scs"
 include "../../../logic/SAR_STARTUP/netlist/netlist.scs"
-subckt SAR_ASYNC (Sample Valid ClkC Done Ck9 Ck8 Ck7 Ck6 Ck5 Ck4 Ck3 Ck2 Ck1 Ck0 VDD VSS)
+subckt SAR_ASYNC (Sample Valid ClkC Done Ck\<9\> Ck\<8\> Ck\<7\> Ck\<6\> Ck\<5\> Ck\<4\> Ck\<3\> Ck\<2\> Ck\<1\> Ck\<0\> VDD VSS)
 I_startup (Sample SampleGuard Hold ClearN VDD VSS) SAR_STARTUP
 I_seq0 (VDD Valid ClearN Raw9 VDD VSS) SAR_DFFR
 I_seq1 (Raw9 Valid ClearN Raw8 VDD VSS) SAR_DFFR
@@ -21,27 +21,27 @@ I_seq8 (Raw2 Valid ClearN Raw1 VDD VSS) SAR_DFFR
 I_seq9 (Raw1 Valid ClearN Raw0 VDD VSS) SAR_DFFR
 I_sample_guard (Sample SampleGuard VDD VSS) SAR_SAMPLE_GUARD12
 I_feedback_delay (Valid ValidDelay VDD VSS) SAR_HANDSHAKE
-I_run_nor (Hold Valid ValidDelay Ck0 CompareEnable VDD VSS) SAR_NOR4
+I_run_nor (Hold Valid ValidDelay Ck\<0\> CompareEnable VDD VSS) SAR_NOR4
 I_clock_drive (CompareEnable ClkC VDD VSS) SAR_DRIVE scale=4
-I_done_delay (Ck0 Done VDD VSS) SAR_DONE_DELAY
+I_done_delay (Ck\<0\> Done VDD VSS) SAR_DONE_DELAY
 I_cb0a (Raw0 CkB0 VDD VSS) SAR_DRIVE scale=1
-I_cb0b (CkB0 Ck0 VDD VSS) SAR_DRIVE scale=4
+I_cb0b (CkB0 Ck\<0\> VDD VSS) SAR_DRIVE scale=4
 I_cb1a (Raw1 CkB1 VDD VSS) SAR_DRIVE scale=1
-I_cb1b (CkB1 Ck1 VDD VSS) SAR_DRIVE scale=4
+I_cb1b (CkB1 Ck\<1\> VDD VSS) SAR_DRIVE scale=4
 I_cb2a (Raw2 CkB2 VDD VSS) SAR_DRIVE scale=1
-I_cb2b (CkB2 Ck2 VDD VSS) SAR_DRIVE scale=4
+I_cb2b (CkB2 Ck\<2\> VDD VSS) SAR_DRIVE scale=4
 I_cb3a (Raw3 CkB3 VDD VSS) SAR_DRIVE scale=1
-I_cb3b (CkB3 Ck3 VDD VSS) SAR_DRIVE scale=4
+I_cb3b (CkB3 Ck\<3\> VDD VSS) SAR_DRIVE scale=4
 I_cb4a (Raw4 CkB4 VDD VSS) SAR_DRIVE scale=1
-I_cb4b (CkB4 Ck4 VDD VSS) SAR_DRIVE scale=4
+I_cb4b (CkB4 Ck\<4\> VDD VSS) SAR_DRIVE scale=4
 I_cb5a (Raw5 CkB5 VDD VSS) SAR_DRIVE scale=1
-I_cb5b (CkB5 Ck5 VDD VSS) SAR_DRIVE scale=4
+I_cb5b (CkB5 Ck\<5\> VDD VSS) SAR_DRIVE scale=4
 I_cb6a (Raw6 CkB6 VDD VSS) SAR_DRIVE scale=1
-I_cb6b (CkB6 Ck6 VDD VSS) SAR_DRIVE scale=4
+I_cb6b (CkB6 Ck\<6\> VDD VSS) SAR_DRIVE scale=4
 I_cb7a (Raw7 CkB7 VDD VSS) SAR_DRIVE scale=1
-I_cb7b (CkB7 Ck7 VDD VSS) SAR_DRIVE scale=4
+I_cb7b (CkB7 Ck\<7\> VDD VSS) SAR_DRIVE scale=4
 I_cb8a (Raw8 CkB8 VDD VSS) SAR_DRIVE scale=1
-I_cb8b (CkB8 Ck8 VDD VSS) SAR_DRIVE scale=4
+I_cb8b (CkB8 Ck\<8\> VDD VSS) SAR_DRIVE scale=4
 I_cb9a (Raw9 CkB9 VDD VSS) SAR_DRIVE scale=1
-I_cb9b (CkB9 Ck9 VDD VSS) SAR_DRIVE scale=4
+I_cb9b (CkB9 Ck\<9\> VDD VSS) SAR_DRIVE scale=4
 ends SAR_ASYNC
