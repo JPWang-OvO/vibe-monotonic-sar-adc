@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 import argparse
-from concurrent.futures import ThreadPoolExecutor, wait, FIRST_COMPLETED
+from concurrent.futures import ProcessPoolExecutor, wait, FIRST_COMPLETED
 import json
 import os
 from pathlib import Path
@@ -92,7 +92,8 @@ def control(root):
     stop_time = time.monotonic() + min(batch["batch_timeout_s"], remaining_wall)
     remaining = iter(batch["cases"])
     stop_launching = False
-    with ThreadPoolExecutor(max_workers=batch["workers"]) as pool:
+    # PSF parsing is CPU-bound Python; each worker also owns its measurement.
+    with ProcessPoolExecutor(max_workers=batch["workers"]) as pool:
         running = {}
         while True:
             while not stop_launching and len(running) < batch["workers"]:
