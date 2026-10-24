@@ -2378,6 +2378,34 @@
       "orient": "R0",
       "font": "stick",
       "label_type": "normalLabel"
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "wire",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.625,
+          -0.875
+        ],
+        [
+          -0.375,
+          -0.875
+        ]
+      ],
+      "points": [
+        [
+          -0.625,
+          -0.875
+        ],
+        [
+          -0.375,
+          -0.875
+        ]
+      ],
+      "net": "SampleB"
     }
   ]
 }
