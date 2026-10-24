@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "sar_inv",
-  "testbench": "library/testbenches/blocks/logic/tb_SAR_INV/spectre/netlist.scs",
+  "testbench": "library/testbenches/blocks/logic/tb_SAR_INV/netlist/netlist.scs",
   "process": "tsmc18",
   "conditions": [
     {
@@ -11,7 +11,7 @@
         "TEMP": 25
       },
       "cell_views": {
-        "SAR_INV": "transistor"
+        "SAR_INV": "netlist"
       },
       "enrichment": true
     },
@@ -22,7 +22,7 @@
         "TEMP": 125
       },
       "cell_views": {
-        "SAR_INV": "transistor"
+        "SAR_INV": "netlist"
       },
       "enrichment": true
     },
@@ -33,7 +33,7 @@
         "TEMP": -40
       },
       "cell_views": {
-        "SAR_INV": "transistor"
+        "SAR_INV": "netlist"
       },
       "enrichment": true
     }

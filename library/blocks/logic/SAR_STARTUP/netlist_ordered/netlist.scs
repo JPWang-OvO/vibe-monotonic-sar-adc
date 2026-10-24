@@ -1,0 +1,22 @@
+simulator lang=spectre
+// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
+include "../../../../support/standard_cells/INVD1BWP7T/netlist/netlist.scs"
+include "../../SAR_DFFR/netlist/netlist.scs"
+include "../../SAR_DRIVE/netlist/netlist.scs"
+include "../../SAR_NAND2/netlist/netlist.scs"
+subckt SAR_STARTUP (Sample Guard Hold ClearN VDD VSS)
+Mp_charge (PorRamp VSS VDD VDD) pch w=0.36u l=5u nf=1 m=1
+C_por (PorRamp VSS) capacitor c=200f
+I_por0 (PorRamp Por VDD VSS) INVD1BWP7T
+I_por1 (Por PorN VDD VSS) INVD1BWP7T
+I_arm (VDD Sample PorN Ready VDD VSS) SAR_DFFR
+I_ready_inv (Ready NotReady VDD VSS) SAR_DRIVE scale=1
+Mn0 (HoldN Guard VSS VSS) nch w=2u l=0.18u nf=1 m=1
+Mn1 (HoldN NotReady VSS VSS) nch w=2u l=0.18u nf=1 m=1
+Mp0 (P0 NotReady VDD VDD) pch w=4u l=0.18u nf=1 m=1
+Mp1 (HoldN Guard P0 VDD) pch w=4u l=0.18u nf=1 m=1
+I_hold (HoldN Hold VDD VSS) SAR_DRIVE scale=1
+I_sample_inv (Sample SampleB VDD VSS) SAR_DRIVE scale=1
+I_clear (Ready SampleB ClearB VDD VSS) SAR_NAND2
+I_clear_drive (ClearB ClearN VDD VSS) SAR_DRIVE scale=8
+ends SAR_STARTUP

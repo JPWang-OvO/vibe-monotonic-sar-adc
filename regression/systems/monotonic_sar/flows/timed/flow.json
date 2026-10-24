@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "sar_timed",
-  "testbench": "library/testbenches/systems/monotonic_sar/tb_SAR_sine/spectre/netlist.scs",
+  "testbench": "library/testbenches/systems/monotonic_sar/tb_SAR_sine/netlist/netlist.scs",
   "process": null,
   "conditions": [
     {
@@ -13,8 +13,8 @@
       "cell_views": {
         "SAR_PHASE": "veriloga",
         "SAR_INV": "veriloga",
-        "SAR_CMP": "timed",
-        "SAR_ASYNC": "timed",
+        "SAR_CMP": "veriloga_timed",
+        "SAR_ASYNC": "veriloga_timed",
         "SAR_BIT": "veriloga",
         "SAR_OUT": "veriloga",
         "SAR_BIAS": "veriloga",
@@ -31,8 +31,8 @@
       "cell_views": {
         "SAR_PHASE": "veriloga",
         "SAR_INV": "veriloga",
-        "SAR_CMP": "timed",
-        "SAR_ASYNC": "timed",
+        "SAR_CMP": "veriloga_timed",
+        "SAR_ASYNC": "veriloga_timed",
         "SAR_BIT": "veriloga",
         "SAR_OUT": "veriloga",
         "SAR_BIAS": "veriloga",

@@ -26,11 +26,11 @@
     "VREFN"
   ],
   "views": {
-    "spectre": {
-      "netlist": "spectre/netlist.scs"
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     },
-    "scaled": {
-      "netlist": "scaled/netlist.scs"
+    "netlist_scaled": {
+      "netlist": "netlist_scaled/netlist.scs"
     },
     "schematic": {
       "native": "schematic/native.json",

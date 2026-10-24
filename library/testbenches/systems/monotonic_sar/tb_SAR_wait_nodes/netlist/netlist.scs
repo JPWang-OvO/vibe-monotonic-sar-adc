@@ -1,0 +1,34 @@
+simulator lang=spectre
+global 0
+@MODEL_SETUP@
+include "../../../../../systems/monotonic_sar/MONOTONIC_SAR/netlist/netlist.scs"
+parameters fin=@FIN@ tempcase=@TEMP@
+simulatorOptions options temp=tempcase
+VDD (VDD 0) vsource type=pwl wave=[0 0 10n 1.8]
+VSS (VSS 0) vsource dc=0
+VCM (VCM 0) vsource dc=0.9
+VREFP (VREFP 0) vsource dc=1.8
+VREFN (VREFN 0) vsource dc=0
+VinP (Vinp 0) vsource type=sine dc=0.9 ampl=0.802125844320371 freq=fin
+VinN (Vinn 0) vsource type=sine dc=0.9 ampl=-0.802125844320371 freq=fin
+Vclock (Clks 0) vsource type=pulse val0=0 val1=1.8 delay=20n rise=20p fall=20p width=1.98n period=4n
+I_adc (Vinp Vinn Clks D9 D8 D7 D6 D5 D4 D3 D2 D1 D0 EOC VDD VSS VCM VREFP VREFN) MONOTONIC_SAR
+CL0 (D0 VSS) capacitor c=10f
+CL1 (D1 VSS) capacitor c=10f
+CL2 (D2 VSS) capacitor c=10f
+CL3 (D3 VSS) capacitor c=10f
+CL4 (D4 VSS) capacitor c=10f
+CL5 (D5 VSS) capacitor c=10f
+CL6 (D6 VSS) capacitor c=10f
+CL7 (D7 VSS) capacitor c=10f
+CL8 (D8 VSS) capacitor c=10f
+CL9 (D9 VSS) capacitor c=10f
+tran tran stop=1.20u
+saveOptions options save=selected
+save Vinp Vinn Clks D0 D1 D2 D3 D4 D5 D6 D7 D8 D9 EOC I_adc.Sample I_adc.ClkC I_adc.Valid I_adc.Outp I_adc.Outn I_adc.Vp I_adc.Vn VDD:p VREFP:p VCM:p Vclock:p
+
+save I_adc.I_frontend.Gp I_adc.I_frontend.Gn I_adc.SampleB I_adc.Bp9 I_adc.Bp8 I_adc.Bp7 I_adc.Bp6 I_adc.Bp5 I_adc.Bp4 I_adc.Bp3 I_adc.Bp2 I_adc.Bp1 I_adc.Bn9 I_adc.Bn8 I_adc.Bn7 I_adc.Bn6 I_adc.Bn5 I_adc.Bn4 I_adc.Bn3 I_adc.Bn2 I_adc.Bn1 I_adc.I_out0.I_buf0:3 I_adc.I_out0.I_buf1:3 I_adc.I_out1.I_buf0:3 I_adc.I_out1.I_buf1:3 I_adc.I_out2.I_buf0:3 I_adc.I_out2.I_buf1:3 I_adc.I_out3.I_buf0:3 I_adc.I_out3.I_buf1:3 I_adc.I_out4.I_buf0:3 I_adc.I_out4.I_buf1:3 I_adc.I_out5.I_buf0:3 I_adc.I_out5.I_buf1:3 I_adc.I_out6.I_buf0:3 I_adc.I_out6.I_buf1:3 I_adc.I_out7.I_buf0:3 I_adc.I_out7.I_buf1:3 I_adc.I_out8.I_buf0:3 I_adc.I_out8.I_buf1:3 I_adc.I_out9.I_buf0:3 I_adc.I_out9.I_buf1:3
+
+save I_adc.Ck0 I_adc.Ck1 I_adc.Ck2 I_adc.Ck3 I_adc.Ck4 I_adc.Ck5 I_adc.Ck6 I_adc.Ck7 I_adc.Ck8 I_adc.Ck9
+
+save I_adc.I_async.I_run_nor.P2 I_adc.I_async.CompareEnable I_adc.I_async.ValidDelay I_adc.I_async.Early

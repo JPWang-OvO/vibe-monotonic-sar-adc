@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "sar_control_fast2",
-  "testbench": "library/testbenches/systems/monotonic_sar/tb_SAR_smoke/spectre/netlist.scs",
+  "testbench": "library/testbenches/systems/monotonic_sar/tb_SAR_smoke/netlist/netlist.scs",
   "process": "tsmc18",
   "conditions": [
     {
@@ -11,13 +11,13 @@
         "TEMP": 25
       },
       "cell_views": {
-        "SAR_PHASE": "drive",
-        "SAR_INV": "drive",
-        "SAR_CMP": "fast2",
-        "SAR_ASYNC": "fast2",
-        "SAR_BIT": "fast2",
-        "SAR_OUT": "transistor",
-        "SAR_BIAS": "transistor",
+        "SAR_PHASE": "netlist_drive",
+        "SAR_INV": "netlist_drive",
+        "SAR_CMP": "netlist_fast2",
+        "SAR_ASYNC": "netlist_fast2",
+        "SAR_BIT": "netlist_fast2",
+        "SAR_OUT": "netlist",
+        "SAR_BIAS": "netlist",
         "SAR_FRONTEND": "veriloga"
       },
       "enrichment": true,
@@ -30,13 +30,13 @@
         "TEMP": 25
       },
       "cell_views": {
-        "SAR_PHASE": "drive",
-        "SAR_INV": "drive",
-        "SAR_CMP": "fast2",
-        "SAR_ASYNC": "fast2",
-        "SAR_BIT": "fast2",
-        "SAR_OUT": "transistor",
-        "SAR_BIAS": "transistor",
+        "SAR_PHASE": "netlist_drive",
+        "SAR_INV": "netlist_drive",
+        "SAR_CMP": "netlist_fast2",
+        "SAR_ASYNC": "netlist_fast2",
+        "SAR_BIT": "netlist_fast2",
+        "SAR_OUT": "netlist",
+        "SAR_BIAS": "netlist",
         "SAR_FRONTEND": "veriloga"
       },
       "enrichment": true,
@@ -49,13 +49,13 @@
         "TEMP": 125
       },
       "cell_views": {
-        "SAR_PHASE": "drive",
-        "SAR_INV": "drive",
-        "SAR_CMP": "fast2",
-        "SAR_ASYNC": "fast2",
-        "SAR_BIT": "fast2",
-        "SAR_OUT": "transistor",
-        "SAR_BIAS": "transistor",
+        "SAR_PHASE": "netlist_drive",
+        "SAR_INV": "netlist_drive",
+        "SAR_CMP": "netlist_fast2",
+        "SAR_ASYNC": "netlist_fast2",
+        "SAR_BIT": "netlist_fast2",
+        "SAR_OUT": "netlist",
+        "SAR_BIAS": "netlist",
         "SAR_FRONTEND": "veriloga"
       },
       "enrichment": true,
@@ -68,13 +68,13 @@
         "TEMP": 125
       },
       "cell_views": {
-        "SAR_PHASE": "drive",
-        "SAR_INV": "drive",
-        "SAR_CMP": "fast2",
-        "SAR_ASYNC": "fast2",
-        "SAR_BIT": "fast2",
-        "SAR_OUT": "transistor",
-        "SAR_BIAS": "transistor",
+        "SAR_PHASE": "netlist_drive",
+        "SAR_INV": "netlist_drive",
+        "SAR_CMP": "netlist_fast2",
+        "SAR_ASYNC": "netlist_fast2",
+        "SAR_BIT": "netlist_fast2",
+        "SAR_OUT": "netlist",
+        "SAR_BIAS": "netlist",
         "SAR_FRONTEND": "veriloga"
       },
       "enrichment": true,

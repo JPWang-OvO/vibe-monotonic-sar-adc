@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "sar_sampler_drive",
-  "testbench": "library/testbenches/blocks/sampling/tb_SAR_SAMPLE_sine/spectre/netlist.scs",
+  "testbench": "library/testbenches/blocks/sampling/tb_SAR_SAMPLE_sine/netlist/netlist.scs",
   "process": "tsmc18",
   "conditions": [
     {
@@ -12,9 +12,9 @@
         "FIN": 585937.5
       },
       "cell_views": {
-        "SAR_SAMPLE": "single256",
-        "SAR_PHASE": "drive",
-        "SAR_INV": "drive"
+        "SAR_SAMPLE": "netlist_single256",
+        "SAR_PHASE": "netlist_drive",
+        "SAR_INV": "netlist_drive"
       },
       "enrichment": true
     },
@@ -26,9 +26,9 @@
         "FIN": 9960937.5
       },
       "cell_views": {
-        "SAR_SAMPLE": "single256",
-        "SAR_PHASE": "drive",
-        "SAR_INV": "drive"
+        "SAR_SAMPLE": "netlist_single256",
+        "SAR_PHASE": "netlist_drive",
+        "SAR_INV": "netlist_drive"
       },
       "enrichment": true
     }

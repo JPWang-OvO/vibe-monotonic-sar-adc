@@ -8,11 +8,11 @@
     "VSS"
   ],
   "views": {
-    "transistor": {
-      "netlist": "transistor/netlist.scs"
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     },
-    "quiet": {
-      "netlist": "quiet/netlist.scs"
+    "netlist_quiet": {
+      "netlist": "netlist_quiet/netlist.scs"
     }
   }
 }

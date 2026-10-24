@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "inverter_logic",
-  "testbench": "library/testbenches/blocks/inverter/tb_INV/spectre/netlist.scs",
+  "testbench": "library/testbenches/blocks/inverter/tb_INV/netlist/netlist.scs",
   "process": "tsmc28",
   "conditions": [
     {

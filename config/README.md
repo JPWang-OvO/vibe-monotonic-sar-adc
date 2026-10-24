@@ -10,6 +10,8 @@
 | `processes/` | technology、器件 master、模型 section、参数补全合约和 Calibre baseline 名 |
 | `environments/*.local.json` | Bridge profile、工具与模型路径、运行根目录、OA 库路径 |
 | 各 flow 的 `flow.json` | 条件、view 绑定、精度、线程、时限、测量和阈值 |
+| `final_design.json` | 当前设计的 view 绑定及正式 flow |
+| `acceptance_results.json` | 已完成批次的实际 view 标识、逐项测量与判定 |
 | 物理任务 JSON | layout/source 身份、电源地、提取设置和 CalibreView 目标 |
 
 从 environment 样例创建本机 `.local.json` 并替换占位值。本机配置忽略入 Git；认证沿用 Bridge 用户配置。

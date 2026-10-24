@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "sar_mixed_cmp",
-  "testbench": "library/testbenches/systems/monotonic_sar/tb_SAR_sine/spectre/netlist.scs",
+  "testbench": "library/testbenches/systems/monotonic_sar/tb_SAR_sine/netlist/netlist.scs",
   "process": "tsmc18",
   "conditions": [
     {
@@ -13,11 +13,11 @@
       "cell_views": {
         "SAR_PHASE": "veriloga",
         "SAR_INV": "veriloga",
-        "SAR_CMP": "transistor",
-        "SAR_ASYNC": "timed",
+        "SAR_CMP": "netlist",
+        "SAR_ASYNC": "veriloga_timed",
         "SAR_BIT": "veriloga",
         "SAR_OUT": "veriloga",
-        "SAR_BIAS": "transistor",
+        "SAR_BIAS": "netlist",
         "SAR_FRONTEND": "veriloga"
       },
       "enrichment": true,
@@ -32,11 +32,11 @@
       "cell_views": {
         "SAR_PHASE": "veriloga",
         "SAR_INV": "veriloga",
-        "SAR_CMP": "transistor",
-        "SAR_ASYNC": "timed",
+        "SAR_CMP": "netlist",
+        "SAR_ASYNC": "veriloga_timed",
         "SAR_BIT": "veriloga",
         "SAR_OUT": "veriloga",
-        "SAR_BIAS": "transistor",
+        "SAR_BIAS": "netlist",
         "SAR_FRONTEND": "veriloga"
       },
       "enrichment": true,

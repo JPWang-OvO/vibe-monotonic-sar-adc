@@ -28,10 +28,10 @@ def main():
             body=Path(exported['input_file']).with_name('netlist').read_text()
             ports=cdf[0] if cdf and cdf[0] else list(record['pins'])
             base=ROOT/'library/support/standard_cells'/name
-            (base/'spectre').mkdir(parents=True,exist_ok=True)
+            (base/'netlist').mkdir(parents=True,exist_ok=True)
             text='// Native standard_cells schematic export. MOS terminal order: D G S B.\nsimulator lang=spectre\nsubckt '+name+' ('+' '.join(ports)+')\n'+body+'\nends '+name+'\n'
-            (base/'spectre/netlist.scs').write_text(text,encoding='utf-8',newline='\n')
-            write_json(base/'cell.json',dict(schema_version=1,cell=name,ports=ports,reference_library='standard_cells',views={'spectre':{'netlist':'spectre/netlist.scs'}}))
+            (base/'netlist/netlist.scs').write_text(text,encoding='utf-8',newline='\n')
+            write_json(base/'cell.json',dict(schema_version=1,cell=name,ports=ports,reference_library='standard_cells',views={'netlist':{'netlist':'netlist/netlist.scs'}}))
     finally:client.close()
 
 if __name__=='__main__':main()

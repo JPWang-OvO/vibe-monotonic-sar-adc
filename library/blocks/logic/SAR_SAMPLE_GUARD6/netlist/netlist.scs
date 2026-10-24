@@ -1,0 +1,17 @@
+simulator lang=spectre
+// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
+include "../../../../support/standard_cells/INVD1BWP7T/netlist/netlist.scs"
+include "../../SAR_DRIVE/netlist/netlist.scs"
+subckt SAR_SAMPLE_GUARD6 (A Z VDD VSS)
+I_d0 (A N0 VDD VSS) INVD1BWP7T
+I_d1 (N0 N1 VDD VSS) INVD1BWP7T
+I_d2 (N1 N2 VDD VSS) INVD1BWP7T
+I_d3 (N2 N3 VDD VSS) INVD1BWP7T
+I_d4 (N3 N4 VDD VSS) INVD1BWP7T
+I_d5 (N4 Delayed VDD VSS) INVD1BWP7T
+Mn0 (HoldN A VSS VSS) nch w=2u l=0.18u nf=1 m=1
+Mn1 (HoldN Delayed VSS VSS) nch w=2u l=0.18u nf=1 m=1
+Mp0 (P0 A VDD VDD) pch w=4u l=0.18u nf=1 m=1
+Mp1 (HoldN Delayed P0 VDD) pch w=4u l=0.18u nf=1 m=1
+I_drive (HoldN Z VDD VSS) SAR_DRIVE scale=1
+ends SAR_SAMPLE_GUARD6

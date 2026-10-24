@@ -9,8 +9,8 @@
   ],
   "reference_library": "standard_cells",
   "views": {
-    "spectre": {
-      "netlist": "spectre/netlist.scs"
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     }
   }
 }

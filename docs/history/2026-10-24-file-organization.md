@@ -35,3 +35,23 @@ PDK 资格测试的标准反相器来自受维护的 library 源。
 检查通过：19 个迁移模块导入、15 个命令入口帮助、远端诊断语法、独立服务器测量包导入、
 工程检查和 Python 参考模型验证。参考模型覆盖 30 个固定输入、两个频点及 FFT 已知信号；
 四个数值模块的函数与类定义保持一致。
+
+# View 命名
+
+80 个 cell 中的 176 个 view 使用表示形式作为前缀，已有 schematic、symbol、veriloga 和 pex 保持名称。
+迁移规则如下，目录、cell 索引、相对 include、flow 绑定和当前设计配置同步更新：
+
+| 原名称 | 当前名称 |
+|---|---|
+| `transistor`、`spectre` | `netlist` |
+| `fast`、`fast36` 等文本变体 | `netlist_fast`、`netlist_fast36` 等 |
+| SAR_CMP、SAR_ASYNC 的 `timed` | `veriloga_timed` |
+
+原生 OA schematic/symbol、既有批次 deck、日志与测量结果保持原样。
+`acceptance_results.json` 中的 view 标识属于实际完成的批次记录；
+`final_design.json` 与各 flow 使用当前目录名。
+
+本地比较覆盖 216 份网表，连接、模型、参数和执行语句保持一致；相对 include 均能解析。
+118 个 flow 的 247 个 condition 依赖展开成功。正式 20 个 case 的输入网表、激励、
+模型入口、仿真设置、测量窗口和验收判据在路径对应后保持一致。
+本次验证使用本地依赖展开与语义比较，没有重新调用 PDK、启动 Spectre 或修改 OA。

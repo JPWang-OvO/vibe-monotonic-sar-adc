@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "sar_cmp_extended3",
-  "testbench": "library/testbenches/blocks/comparator/tb_SAR_CMP_extended/spectre/netlist.scs",
+  "testbench": "library/testbenches/blocks/comparator/tb_SAR_CMP_extended/netlist/netlist.scs",
   "process": "tsmc18",
   "conditions": [
     {
@@ -11,8 +11,8 @@
         "TEMP": 25
       },
       "cell_views": {
-        "SAR_CMP": "fast3",
-        "SAR_BIAS": "transistor"
+        "SAR_CMP": "netlist_fast3",
+        "SAR_BIAS": "netlist"
       },
       "enrichment": true
     },
@@ -23,8 +23,8 @@
         "TEMP": 125
       },
       "cell_views": {
-        "SAR_CMP": "fast3",
-        "SAR_BIAS": "transistor"
+        "SAR_CMP": "netlist_fast3",
+        "SAR_BIAS": "netlist"
       },
       "enrichment": true
     }

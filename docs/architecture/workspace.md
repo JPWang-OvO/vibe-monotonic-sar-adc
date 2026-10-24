@@ -2,7 +2,7 @@
 title: 工程目录与职责
 type: architecture
 status: current
-last_reviewed: 2026-10-21
+last_reviewed: 2026-10-24
 authoritative_sources:
   - ../../project.json
   - ../../regression/common/project.py

@@ -14,11 +14,11 @@
     "VREFN"
   ],
   "views": {
-    "spectre": {
-      "netlist": "spectre/netlist.scs"
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     },
-    "early_save": {
-      "netlist": "early_save/netlist.scs"
+    "netlist_early_save": {
+      "netlist": "netlist_early_save/netlist.scs"
     },
     "schematic": {
       "native": "schematic/native.json",

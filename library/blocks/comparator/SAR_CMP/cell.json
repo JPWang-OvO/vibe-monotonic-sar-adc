@@ -17,38 +17,38 @@
       "source": "veriloga/SAR_CMP.va",
       "netlist": "veriloga/netlist.scs"
     },
-    "transistor": {
-      "netlist": "transistor/netlist.scs"
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     },
-    "timed": {
-      "netlist": "timed/netlist.scs"
+    "veriloga_timed": {
+      "netlist": "veriloga_timed/netlist.scs"
     },
-    "fast2": {
-      "netlist": "fast2/netlist.scs"
+    "netlist_fast2": {
+      "netlist": "netlist_fast2/netlist.scs"
     },
-    "fast3": {
-      "netlist": "fast3/netlist.scs"
+    "netlist_fast3": {
+      "netlist": "netlist_fast3/netlist.scs"
     },
-    "fast4": {
-      "netlist": "fast4/netlist.scs"
+    "netlist_fast4": {
+      "netlist": "netlist_fast4/netlist.scs"
     },
-    "current": {
-      "netlist": "current/netlist.scs"
+    "netlist_current": {
+      "netlist": "netlist_current/netlist.scs"
     },
-    "sense": {
-      "netlist": "sense/netlist.scs"
+    "netlist_sense": {
+      "netlist": "netlist_sense/netlist.scs"
     },
-    "sense2": {
-      "netlist": "sense2/netlist.scs"
+    "netlist_sense2": {
+      "netlist": "netlist_sense2/netlist.scs"
     },
-    "sense4": {
-      "netlist": "sense4/netlist.scs"
+    "netlist_sense4": {
+      "netlist": "netlist_sense4/netlist.scs"
     },
-    "regen8": {
-      "netlist": "regen8/netlist.scs"
+    "netlist_regen8": {
+      "netlist": "netlist_regen8/netlist.scs"
     },
-    "regen12": {
-      "netlist": "regen12/netlist.scs"
+    "netlist_regen12": {
+      "netlist": "netlist_regen12/netlist.scs"
     },
     "schematic": {
       "native": "schematic/native.json",

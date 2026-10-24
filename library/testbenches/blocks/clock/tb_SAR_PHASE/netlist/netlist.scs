@@ -1,0 +1,11 @@
+simulator lang=spectre
+@MODEL_SETUP@
+include "../../../../../blocks/clock/SAR_PHASE/netlist/netlist.scs"
+VDD_SRC (VDD 0) vsource type=pwl wave=[0 0 10n 1.8]
+Vclock (Clks 0) vsource type=pulse val0=0 val1=1.8 delay=20n rise=20p fall=20p width=1.98n period=4n
+I_phase (Clks Sample VDD 0) SAR_PHASE
+Cload (Sample 0) capacitor c=500f
+simulatorOptions options temp=@TEMP@
+tran tran stop=600n
+saveOptions options save=selected
+save Sample Clks I_phase.PorRamp I_phase.PorN I_phase.R0 I_phase.R1 I_phase.R2 I_phase.R3 I_phase.R4 VDD_SRC:p

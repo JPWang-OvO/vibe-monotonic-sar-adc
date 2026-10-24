@@ -8,14 +8,14 @@
     "VSS"
   ],
   "views": {
-    "quiet": {
-      "netlist": "quiet/netlist.scs"
+    "netlist_quiet": {
+      "netlist": "netlist_quiet/netlist.scs"
     },
-    "quiet20": {
-      "netlist": "quiet20/netlist.scs"
+    "netlist_quiet20": {
+      "netlist": "netlist_quiet20/netlist.scs"
     },
-    "quiet15": {
-      "netlist": "quiet15/netlist.scs"
+    "netlist_quiet15": {
+      "netlist": "netlist_quiet15/netlist.scs"
     },
     "schematic": {
       "native": "schematic/native.json",
