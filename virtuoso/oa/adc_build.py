@@ -36,6 +36,8 @@ def transform(point, place):
     if place['orient']=='MY': x=-x
     elif place['orient']=='MX': y=-y
     elif place['orient']=='R180': x,y=-x,-y
+    elif place['orient']=='R90': x,y=-y,x
+    elif place['orient']=='R270': x,y=y,-x
     elif place['orient']!='R0': raise ValueError(place['orient'])
     return (x+place['xy'][0],y+place['xy'][1])
 

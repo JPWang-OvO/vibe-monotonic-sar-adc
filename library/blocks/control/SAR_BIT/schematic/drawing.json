@@ -921,46 +921,7 @@
       "net": "BpBuf,BnBuf",
       "parent": [
         "line",
-        29
-      ],
-      "properties": [
-        {
-          "name": "CDBA_LABEL_EXT_ATTR",
-          "type": "int",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          7.0,
-          -0.025
-        ],
-        [
-          7.58125,
-          0.0625
-        ]
-      ],
-      "xy": [
-        7.0,
-        0.0
-      ],
-      "text": "BpBuf,BnBuf",
-      "height": 0.0625,
-      "justify": "lowerLeft",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "BpBuf,BnBuf",
-      "parent": [
-        "line",
-        29
+        28
       ],
       "properties": [
         {
@@ -1027,7 +988,7 @@
       "net": "VDD",
       "parent": [
         "line",
-        25
+        24
       ]
     },
     {
@@ -1087,7 +1048,7 @@
       "net": "VSS",
       "parent": [
         "line",
-        27
+        26
       ]
     },
     {
@@ -1175,7 +1136,7 @@
       "net": "Bp,Bn",
       "parent": [
         "line",
-        30
+        29
       ],
       "properties": [
         {
@@ -1242,7 +1203,7 @@
       "net": "VREFP",
       "parent": [
         "line",
-        32
+        31
       ]
     },
     {
@@ -1302,7 +1263,7 @@
       "net": "VREFN",
       "parent": [
         "line",
-        34
+        33
       ]
     },
     {
@@ -1460,7 +1421,7 @@
       "net": "Outp",
       "parent": [
         "line",
-        39
+        38
       ]
     },
     {
@@ -1562,7 +1523,7 @@
       "net": "Capture",
       "parent": [
         "line",
-        42
+        41
       ]
     },
     {
@@ -1664,7 +1625,7 @@
       "net": "Sample",
       "parent": [
         "line",
-        45
+        44
       ]
     },
     {
@@ -1766,7 +1727,7 @@
       "net": "Q",
       "parent": [
         "line",
-        48
+        47
       ]
     },
     {
@@ -1868,7 +1829,7 @@
       "net": "Bp",
       "parent": [
         "line",
-        51
+        50
       ]
     },
     {
@@ -1970,7 +1931,7 @@
       "net": "Bn",
       "parent": [
         "line",
-        54
+        53
       ]
     },
     {
@@ -2072,7 +2033,7 @@
       "net": "VDD",
       "parent": [
         "line",
-        57
+        56
       ]
     },
     {
@@ -2174,7 +2135,7 @@
       "net": "VSS",
       "parent": [
         "line",
-        60
+        59
       ]
     },
     {
@@ -2276,7 +2237,7 @@
       "net": "VREFP",
       "parent": [
         "line",
-        63
+        62
       ]
     },
     {
@@ -2378,7 +2339,7 @@
       "net": "VREFN",
       "parent": [
         "line",
-        66
+        65
       ]
     },
     {

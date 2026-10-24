@@ -19,6 +19,8 @@ def main():
     parser.add_argument('--schematics-only',action='store_true')
     parser.add_argument('--cells',nargs='+')
     parser.add_argument('--symbols',nargs='+',help='Redraw only these selected symbols; all selected schematics are redrawn')
+    parser.add_argument('--functional',action='store_true',help='Use current captured native views as the base for functional schematic routing')
+    parser.add_argument('--prepare-only',action='store_true')
     args=parser.parse_args()
     assert read_json(ROOT/'config/acceptance_results.json')['all_electrical_pass']
     env=read_json(ROOT/'config/environments/tsmc18.local.json')
@@ -33,10 +35,22 @@ def main():
     parents={n:d for n,d in all_data.items() if n not in data and
              any(i['model'] in symbol_cells for i in d['instances'])}
     checked_data={**data,**parents}
-    plans={n:schematic(d,pictures) for n,d in data.items()}
+    folders=source_folders()
+    if args.functional:
+        from .adc_schematic import schematic as functional_schematic,REDRAW,SIMPLIFY
+        assert set(data)<=REDRAW|SIMPLIFY
+        bases={n:dict(circuit=read_json(folders[n]/'schematic/native.json')['circuit'],
+                      drawing=read_json(folders[n]/'schematic/drawing.json')) for n in data}
+        masters={n:read_json(folder/'symbol/drawing.json') for n,folder in folders.items()
+                 if (folder/'symbol/drawing.json').exists()}
+        plans={n:functional_schematic(d,bases[n],masters,pictures) for n,d in data.items()}
+    else:
+        plans={n:schematic(d,pictures) for n,d in data.items()}
+    if args.prepare_only:
+        print('Prepared',len(plans),'schematics without changing OA');return
     load_bridge_environment();client=VirtuosoClient.from_env(profile=env['profile'],log_to_ciw=False)
     assert client.library.get('MONOTONIC_SAR').path==env['oa_library_path']
-    folders=source_folders();run=artifact_root()/'oa_delivery';load_reader(client)
+    run=artifact_root()/'oa_delivery';load_reader(client)
     previous={}
     # Read every owned native view before the first mutation. A mismatch requires
     # capturing and incorporating the user's edits before this command is used.

@@ -9,17 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 1966
+        "value": 5708
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 03:58:06 2026"
+        "value": "Oct 24 21:15:12 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 9
+        "value": 3
       },
       {
         "name": "pin#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 1966
+        "value": 5708
       },
       {
         "name": "schGeometryVersion",

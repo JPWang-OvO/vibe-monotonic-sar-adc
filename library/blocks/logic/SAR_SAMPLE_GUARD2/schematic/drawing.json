@@ -2,50 +2,50 @@
   "instances": {
     "Mn1": {
       "xy": [
-        5.5,
-        -1.0
+        4.0625,
+        3.9375
       ],
       "orient": "R0"
     },
     "Mn0": {
       "xy": [
-        3.0,
-        -1.0
+        2.5,
+        3.9375
       ],
       "orient": "R0"
     },
     "Mp1": {
       "xy": [
-        3.0,
-        1.5
+        2.5,
+        5.125
       ],
       "orient": "R0"
     },
     "Mp0": {
       "xy": [
-        3.0,
-        3.0
+        2.5,
+        6.125
       ],
       "orient": "R0"
     },
     "I_drive": {
       "xy": [
-        8.0,
-        0.0
+        6.1875,
+        4.75
       ],
       "orient": "R0"
     },
     "C_delay": {
       "xy": [
-        0.0,
-        -1.0
+        1.5625,
+        4.5625
       ],
       "orient": "R0"
     },
     "I_d<1:0>": {
       "xy": [
-        0.0,
-        1.0
+        -0.5,
+        5.9375
       ],
       "orient": "R0"
     },
@@ -110,34 +110,6 @@
   ],
   "shapes": [
     {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          5.75,
-          -0.3125
-        ],
-        [
-          5.75,
-          0.0
-        ]
-      ],
-      "points": [
-        [
-          5.75,
-          -0.3125
-        ],
-        [
-          5.75,
-          0.0
-        ]
-      ],
-      "net": "HoldN"
-    },
-    {
       "type": "label",
       "lpp": [
         "wire",
@@ -145,17 +117,17 @@
       ],
       "bbox": [
         [
-          3.1875,
-          -0.5625
+          2.6875,
+          4.375
         ],
         [
-          3.25,
-          -0.2875
+          2.75,
+          4.65
         ]
       ],
       "xy": [
-        3.25,
-        -0.5625
+        2.75,
+        4.375
       ],
       "text": "HoldN",
       "height": 0.0625,
@@ -166,7 +138,7 @@
       "net": "HoldN",
       "parent": [
         "line",
-        24
+        7
       ]
     },
     {
@@ -177,22 +149,22 @@
       ],
       "bbox": [
         [
-          2.5,
-          -1.0
+          2.0,
+          3.9375
         ],
         [
-          3.0,
-          -1.0
+          2.5,
+          3.9375
         ]
       ],
       "points": [
         [
-          2.5,
-          -1.0
+          2.0,
+          3.9375
         ],
         [
-          3.0,
-          -1.0
+          2.5,
+          3.9375
         ]
       ],
       "net": "A"
@@ -205,17 +177,17 @@
       ],
       "bbox": [
         [
-          2.6875,
-          -1.0
+          2.1875,
+          3.9375
         ],
         [
-          2.75,
-          -0.9375
+          2.25,
+          4.0
         ]
       ],
       "xy": [
-        2.75,
-        -1.0
+        2.25,
+        3.9375
       ],
       "text": "A",
       "height": 0.0625,
@@ -226,7 +198,7 @@
       "net": "A",
       "parent": [
         "line",
-        2
+        1
       ]
     },
     {
@@ -237,22 +209,22 @@
       ],
       "bbox": [
         [
-          3.25,
-          -1.6875
+          2.75,
+          3.25
         ],
         [
-          3.25,
-          -1.1875
+          2.75,
+          3.75
         ]
       ],
       "points": [
         [
-          3.25,
-          -1.6875
+          2.75,
+          3.25
         ],
         [
-          3.25,
-          -1.1875
+          2.75,
+          3.75
         ]
       ],
       "net": "VSS"
@@ -265,17 +237,17 @@
       ],
       "bbox": [
         [
-          3.1875,
-          -1.61875
+          2.6875,
+          3.31875
         ],
         [
-          3.25,
-          -1.4375
+          2.75,
+          3.5
         ]
       ],
       "xy": [
-        3.25,
-        -1.4375
+        2.75,
+        3.5
       ],
       "text": "VSS",
       "height": 0.0625,
@@ -286,7 +258,7 @@
       "net": "VSS",
       "parent": [
         "line",
-        4
+        3
       ]
     },
     {
@@ -297,22 +269,22 @@
       ],
       "bbox": [
         [
-          3.25,
-          -1.0
+          2.75,
+          3.9375
         ],
         [
-          3.75,
-          -1.0
+          3.25,
+          3.9375
         ]
       ],
       "points": [
         [
-          3.25,
-          -1.0
+          2.75,
+          3.9375
         ],
         [
-          3.75,
-          -1.0
+          3.25,
+          3.9375
         ]
       ],
       "net": "VSS"
@@ -325,17 +297,17 @@
       ],
       "bbox": [
         [
-          3.5,
-          -1.0
+          3.0,
+          3.9375
         ],
         [
-          3.68125,
-          -0.9375
+          3.18125,
+          4.0
         ]
       ],
       "xy": [
-        3.5,
-        -1.0
+        3.0,
+        3.9375
       ],
       "text": "VSS",
       "height": 0.0625,
@@ -346,7 +318,7 @@
       "net": "VSS",
       "parent": [
         "line",
-        6
+        5
       ]
     },
     {
@@ -357,59 +329,27 @@
       ],
       "bbox": [
         [
-          3.25,
-          -0.3125
+          2.75,
+          4.125
         ],
         [
-          3.25,
-          1.3125
+          2.75,
+          4.625
         ]
       ],
       "points": [
         [
-          3.25,
-          -0.3125
+          2.75,
+          4.125
         ],
         [
-          3.25,
-          1.3125
+          2.75,
+          4.625
         ]
       ],
       "net": "HoldN"
     },
     {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          5.6875,
-          -0.5625
-        ],
-        [
-          5.75,
-          -0.2875
-        ]
-      ],
-      "xy": [
-        5.75,
-        -0.5625
-      ],
-      "text": "HoldN",
-      "height": 0.0625,
-      "justify": "lowerLeft",
-      "orient": "R90",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "HoldN",
-      "parent": [
-        "line",
-        52
-      ]
-    },
-    {
       "type": "line",
       "lpp": [
         "wire",
@@ -417,22 +357,22 @@
       ],
       "bbox": [
         [
-          5.0,
-          -1.0
+          3.5625,
+          3.9375
         ],
         [
-          5.5,
-          -1.0
+          4.0625,
+          3.9375
         ]
       ],
       "points": [
         [
-          5.0,
-          -1.0
+          3.5625,
+          3.9375
         ],
         [
-          5.5,
-          -1.0
+          4.0625,
+          3.9375
         ]
       ],
       "net": "Delayed"
@@ -445,17 +385,17 @@
       ],
       "bbox": [
         [
-          4.8875,
-          -1.025
+          3.45,
+          3.9125
         ],
         [
-          5.25,
-          -0.9375
+          3.8125,
+          4.0
         ]
       ],
       "xy": [
-        5.25,
-        -1.0
+        3.8125,
+        3.9375
       ],
       "text": "Delayed",
       "height": 0.0625,
@@ -464,426 +404,6 @@
       "font": "stick",
       "label_type": "normalLabel",
       "net": "Delayed",
-      "parent": [
-        "line",
-        10
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          5.75,
-          -1.6875
-        ],
-        [
-          5.75,
-          -1.1875
-        ]
-      ],
-      "points": [
-        [
-          5.75,
-          -1.6875
-        ],
-        [
-          5.75,
-          -1.1875
-        ]
-      ],
-      "net": "VSS"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          5.6875,
-          -1.61875
-        ],
-        [
-          5.75,
-          -1.4375
-        ]
-      ],
-      "xy": [
-        5.75,
-        -1.4375
-      ],
-      "text": "VSS",
-      "height": 0.0625,
-      "justify": "lowerRight",
-      "orient": "R90",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "VSS",
-      "parent": [
-        "line",
-        12
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          -0.3125,
-          -1.875
-        ],
-        [
-          0.0,
-          -1.875
-        ]
-      ],
-      "points": [
-        [
-          -0.3125,
-          -1.875
-        ],
-        [
-          0.0,
-          -1.875
-        ]
-      ],
-      "net": "VSS"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          6.0,
-          -1.0
-        ],
-        [
-          6.18125,
-          -0.9375
-        ]
-      ],
-      "xy": [
-        6.0,
-        -1.0
-      ],
-      "text": "VSS",
-      "height": 0.0625,
-      "justify": "lowerLeft",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "VSS",
-      "parent": [
-        "line",
-        58
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          3.25,
-          1.6875
-        ],
-        [
-          3.25,
-          2.8125
-        ]
-      ],
-      "points": [
-        [
-          3.25,
-          1.6875
-        ],
-        [
-          3.25,
-          2.8125
-        ]
-      ],
-      "net": "P0"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          3.1875,
-          2.43125
-        ],
-        [
-          3.25,
-          2.5625
-        ]
-      ],
-      "xy": [
-        3.25,
-        2.5625
-      ],
-      "text": "P0",
-      "height": 0.0625,
-      "justify": "lowerRight",
-      "orient": "R90",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "P0",
-      "parent": [
-        "line",
-        16
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          2.5,
-          3.0
-        ],
-        [
-          3.0,
-          3.0
-        ]
-      ],
-      "points": [
-        [
-          2.5,
-          3.0
-        ],
-        [
-          3.0,
-          3.0
-        ]
-      ],
-      "net": "A"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          2.6875,
-          3.0
-        ],
-        [
-          2.75,
-          3.0625
-        ]
-      ],
-      "xy": [
-        2.75,
-        3.0
-      ],
-      "text": "A",
-      "height": 0.0625,
-      "justify": "lowerRight",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "A",
-      "parent": [
-        "line",
-        18
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          3.25,
-          3.1875
-        ],
-        [
-          3.25,
-          3.6875
-        ]
-      ],
-      "points": [
-        [
-          3.25,
-          3.1875
-        ],
-        [
-          3.25,
-          3.6875
-        ]
-      ],
-      "net": "VDD"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          3.1875,
-          3.4375
-        ],
-        [
-          3.25,
-          3.625
-        ]
-      ],
-      "xy": [
-        3.25,
-        3.4375
-      ],
-      "text": "VDD",
-      "height": 0.0625,
-      "justify": "lowerLeft",
-      "orient": "R90",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "VDD",
-      "parent": [
-        "line",
-        20
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          3.25,
-          3.0
-        ],
-        [
-          3.75,
-          3.0
-        ]
-      ],
-      "points": [
-        [
-          3.25,
-          3.0
-        ],
-        [
-          3.75,
-          3.0
-        ]
-      ],
-      "net": "VDD"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          3.5,
-          3.0
-        ],
-        [
-          3.6875,
-          3.0625
-        ]
-      ],
-      "xy": [
-        3.5,
-        3.0
-      ],
-      "text": "VDD",
-      "height": 0.0625,
-      "justify": "lowerLeft",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "VDD",
-      "parent": [
-        "line",
-        22
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          3.25,
-          -0.8125
-        ],
-        [
-          3.25,
-          -0.3125
-        ]
-      ],
-      "points": [
-        [
-          3.25,
-          -0.8125
-        ],
-        [
-          3.25,
-          -0.3125
-        ]
-      ],
-      "net": "HoldN"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          3.1875,
-          0.7875
-        ],
-        [
-          3.25,
-          1.0625
-        ]
-      ],
-      "xy": [
-        3.25,
-        1.0625
-      ],
-      "text": "HoldN",
-      "height": 0.0625,
-      "justify": "lowerRight",
-      "orient": "R90",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "HoldN",
       "parent": [
         "line",
         8
@@ -897,382 +417,22 @@
       ],
       "bbox": [
         [
-          2.5,
-          1.5
+          4.3125,
+          3.25
         ],
         [
-          3.0,
-          1.5
+          4.3125,
+          3.75
         ]
       ],
       "points": [
         [
-          2.5,
-          1.5
+          4.3125,
+          3.25
         ],
         [
-          3.0,
-          1.5
-        ]
-      ],
-      "net": "Delayed"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          2.3875,
-          1.475
-        ],
-        [
-          2.75,
-          1.5625
-        ]
-      ],
-      "xy": [
-        2.75,
-        1.5
-      ],
-      "text": "Delayed",
-      "height": 0.0625,
-      "justify": "lowerRight",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "Delayed",
-      "parent": [
-        "line",
-        26
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          3.75,
-          1.5
-        ],
-        [
-          3.75,
-          3.0
-        ]
-      ],
-      "points": [
-        [
-          3.75,
-          1.5
-        ],
-        [
-          3.75,
-          3.0
-        ]
-      ],
-      "net": "VDD"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          3.1875,
-          1.9375
-        ],
-        [
-          3.25,
-          2.06875
-        ]
-      ],
-      "xy": [
-        3.25,
-        1.9375
-      ],
-      "text": "P0",
-      "height": 0.0625,
-      "justify": "lowerLeft",
-      "orient": "R90",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "P0",
-      "parent": [
-        "line",
-        16
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          3.25,
-          1.5
-        ],
-        [
-          3.75,
-          1.5
-        ]
-      ],
-      "points": [
-        [
-          3.25,
-          1.5
-        ],
-        [
-          3.75,
-          1.5
-        ]
-      ],
-      "net": "VDD"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          3.5,
-          1.5
-        ],
-        [
-          3.6875,
-          1.5625
-        ]
-      ],
-      "xy": [
-        3.5,
-        1.5
-      ],
-      "text": "VDD",
-      "height": 0.0625,
-      "justify": "lowerLeft",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "VDD",
-      "parent": [
-        "line",
-        30
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          6.75,
-          0.0
-        ],
-        [
-          7.25,
-          0.0
-        ]
-      ],
-      "points": [
-        [
-          6.75,
-          0.0
-        ],
-        [
-          7.25,
-          0.0
-        ]
-      ],
-      "net": "HoldN"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          6.725,
-          0.0
-        ],
-        [
-          7.0,
-          0.0625
-        ]
-      ],
-      "xy": [
-        7.0,
-        0.0
-      ],
-      "text": "HoldN",
-      "height": 0.0625,
-      "justify": "lowerRight",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "HoldN",
-      "parent": [
-        "line",
-        32
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          8.75,
-          0.0
-        ],
-        [
-          9.25,
-          0.0
-        ]
-      ],
-      "points": [
-        [
-          8.75,
-          0.0
-        ],
-        [
-          9.25,
-          0.0
-        ]
-      ],
-      "net": "Z"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          9.0,
-          0.0
-        ],
-        [
-          9.06875,
-          0.0625
-        ]
-      ],
-      "xy": [
-        9.0,
-        0.0
-      ],
-      "text": "Z",
-      "height": 0.0625,
-      "justify": "lowerLeft",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "Z",
-      "parent": [
-        "line",
-        34
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          8.0,
-          0.5
-        ],
-        [
-          8.0,
-          1.0
-        ]
-      ],
-      "points": [
-        [
-          8.0,
-          0.5
-        ],
-        [
-          8.0,
-          1.0
-        ]
-      ],
-      "net": "VDD"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          7.9375,
-          0.75
-        ],
-        [
-          8.0,
-          0.9375
-        ]
-      ],
-      "xy": [
-        8.0,
-        0.75
-      ],
-      "text": "VDD",
-      "height": 0.0625,
-      "justify": "lowerLeft",
-      "orient": "R90",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "VDD",
-      "parent": [
-        "line",
-        36
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          8.0,
-          -1.0
-        ],
-        [
-          8.0,
-          -0.5
-        ]
-      ],
-      "points": [
-        [
-          8.0,
-          -1.0
-        ],
-        [
-          8.0,
-          -0.5
+          4.3125,
+          3.75
         ]
       ],
       "net": "VSS"
@@ -1285,17 +445,17 @@
       ],
       "bbox": [
         [
-          7.9375,
-          -0.93125
+          4.25,
+          3.31875
         ],
         [
-          8.0,
-          -0.75
+          4.3125,
+          3.5
         ]
       ],
       "xy": [
-        8.0,
-        -0.75
+        4.3125,
+        3.5
       ],
       "text": "VSS",
       "height": 0.0625,
@@ -1306,36 +466,8 @@
       "net": "VSS",
       "parent": [
         "line",
-        38
+        10
       ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          0.0,
-          -1.0
-        ],
-        [
-          0.0,
-          -0.5
-        ]
-      ],
-      "points": [
-        [
-          0.0,
-          -1.0
-        ],
-        [
-          0.0,
-          -0.5
-        ]
-      ],
-      "net": "Delayed"
     },
     {
       "type": "label",
@@ -1345,279 +477,25 @@
       ],
       "bbox": [
         [
-          -0.0625,
-          -0.75
+          4.5625,
+          3.9375
         ],
         [
-          0.025,
-          -0.3875
+          4.74375,
+          4.0
         ]
       ],
       "xy": [
-        0.0,
-        -0.75
-      ],
-      "text": "Delayed",
-      "height": 0.0625,
-      "justify": "lowerLeft",
-      "orient": "R90",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "Delayed",
-      "parent": [
-        "line",
-        40
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          0.0,
-          -1.875
-        ],
-        [
-          0.0,
-          -1.375
-        ]
-      ],
-      "points": [
-        [
-          0.0,
-          -1.875
-        ],
-        [
-          0.0,
-          -1.375
-        ]
-      ],
-      "net": "VSS"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          -0.0625,
-          -1.80625
-        ],
-        [
-          0.0,
-          -1.625
-        ]
-      ],
-      "xy": [
-        0.0,
-        -1.625
+        4.5625,
+        3.9375
       ],
       "text": "VSS",
       "height": 0.0625,
-      "justify": "lowerRight",
-      "orient": "R90",
+      "justify": "lowerLeft",
+      "orient": "R0",
       "font": "stick",
       "label_type": "normalLabel",
       "net": "VSS",
-      "parent": [
-        "line",
-        42
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          -1.0,
-          0.6875
-        ],
-        [
-          -0.5,
-          0.6875
-        ]
-      ],
-      "points": [
-        [
-          -1.0,
-          0.6875
-        ],
-        [
-          -0.5,
-          0.6875
-        ]
-      ],
-      "net": "A,N0"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          -0.96875,
-          0.675
-        ],
-        [
-          -0.75,
-          0.75
-        ]
-      ],
-      "xy": [
-        -0.75,
-        0.6875
-      ],
-      "text": "A,N0",
-      "height": 0.0625,
-      "justify": "lowerRight",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "A,N0",
-      "parent": [
-        "line",
-        44
-      ],
-      "properties": [
-        {
-          "name": "CDBA_LABEL_EXT_ATTR",
-          "type": "int",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          -0.0625,
-          0.6875
-        ],
-        [
-          0.4375,
-          0.6875
-        ]
-      ],
-      "points": [
-        [
-          -0.0625,
-          0.6875
-        ],
-        [
-          0.4375,
-          0.6875
-        ]
-      ],
-      "net": "N0,Delayed"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          0.1875,
-          0.6625
-        ],
-        [
-          0.7,
-          0.75
-        ]
-      ],
-      "xy": [
-        0.1875,
-        0.6875
-      ],
-      "text": "N0,Delayed",
-      "height": 0.0625,
-      "justify": "lowerLeft",
-      "orient": "R0",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "N0,Delayed",
-      "parent": [
-        "line",
-        46
-      ],
-      "properties": [
-        {
-          "name": "CDBA_LABEL_EXT_ATTR",
-          "type": "int",
-          "value": 0
-        }
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          -0.3125,
-          0.875
-        ],
-        [
-          -0.3125,
-          1.375
-        ]
-      ],
-      "points": [
-        [
-          -0.3125,
-          0.875
-        ],
-        [
-          -0.3125,
-          1.375
-        ]
-      ],
-      "net": "VDD"
-    },
-    {
-      "type": "label",
-      "lpp": [
-        "wire",
-        "label"
-      ],
-      "bbox": [
-        [
-          -0.375,
-          1.125
-        ],
-        [
-          -0.3125,
-          1.3125
-        ]
-      ],
-      "xy": [
-        -0.3125,
-        1.125
-      ],
-      "text": "VDD",
-      "height": 0.0625,
-      "justify": "lowerLeft",
-      "orient": "R90",
-      "font": "stick",
-      "label_type": "normalLabel",
-      "net": "VDD",
       "parent": [
         "line",
         48
@@ -1631,25 +509,53 @@
       ],
       "bbox": [
         [
-          -0.3125,
-          0.0
+          2.75,
+          5.3125
         ],
         [
-          -0.3125,
-          0.5
+          2.75,
+          5.9375
         ]
       ],
       "points": [
         [
-          -0.3125,
-          0.0
+          2.75,
+          5.3125
         ],
         [
-          -0.3125,
-          0.5
+          2.75,
+          5.9375
         ]
       ],
-      "net": "VSS"
+      "net": "P0"
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "wire",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          2.0,
+          6.125
+        ],
+        [
+          2.5,
+          6.125
+        ]
+      ],
+      "points": [
+        [
+          2.0,
+          6.125
+        ],
+        [
+          2.5,
+          6.125
+        ]
+      ],
+      "net": "A"
     },
     {
       "type": "label",
@@ -1659,28 +565,88 @@
       ],
       "bbox": [
         [
-          -0.375,
-          0.06875
+          2.1875,
+          6.125
         ],
         [
-          -0.3125,
-          0.25
+          2.25,
+          6.1875
         ]
       ],
       "xy": [
-        -0.3125,
-        0.25
+        2.25,
+        6.125
       ],
-      "text": "VSS",
+      "text": "A",
       "height": 0.0625,
       "justify": "lowerRight",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel",
+      "net": "A",
+      "parent": [
+        "line",
+        14
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "wire",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          2.75,
+          6.3125
+        ],
+        [
+          2.75,
+          6.8125
+        ]
+      ],
+      "points": [
+        [
+          2.75,
+          6.3125
+        ],
+        [
+          2.75,
+          6.8125
+        ]
+      ],
+      "net": "VDD"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "wire",
+        "label"
+      ],
+      "bbox": [
+        [
+          2.6875,
+          6.5625
+        ],
+        [
+          2.75,
+          6.75
+        ]
+      ],
+      "xy": [
+        2.75,
+        6.5625
+      ],
+      "text": "VDD",
+      "height": 0.0625,
+      "justify": "lowerLeft",
       "orient": "R90",
       "font": "stick",
       "label_type": "normalLabel",
-      "net": "VSS",
+      "net": "VDD",
       "parent": [
         "line",
-        50
+        16
       ]
     },
     {
@@ -1691,69 +657,56 @@
       ],
       "bbox": [
         [
-          5.75,
-          -0.8125
+          2.75,
+          6.125
         ],
         [
-          5.75,
-          -0.3125
+          3.25,
+          6.125
         ]
       ],
       "points": [
         [
-          5.75,
-          -0.8125
+          2.75,
+          6.125
         ],
         [
-          5.75,
-          -0.3125
+          3.25,
+          6.125
         ]
       ],
-      "net": "HoldN"
+      "net": "VDD"
     },
     {
-      "type": "line",
+      "type": "label",
       "lpp": [
         "wire",
-        "drawing"
+        "label"
       ],
       "bbox": [
         [
-          3.25,
-          -0.3125
+          3.0,
+          6.125
         ],
         [
-          5.75,
-          -0.3125
+          3.1875,
+          6.1875
         ]
       ],
-      "points": [
-        [
-          3.25,
-          -0.3125
-        ],
-        [
-          5.75,
-          -0.3125
-        ]
+      "xy": [
+        3.0,
+        6.125
       ],
-      "net": "HoldN"
-    },
-    {
-      "type": "ellipse",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          3.21875,
-          -0.34375
-        ],
-        [
-          3.28125,
-          -0.28125
-        ]
+      "text": "VDD",
+      "height": 0.0625,
+      "justify": "lowerLeft",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel",
+      "net": "VDD",
+      "parent": [
+        "line",
+        18
       ]
     },
     {
@@ -1764,29 +717,12 @@
       ],
       "bbox": [
         [
-          5.71875,
-          -0.34375
+          2.71875,
+          4.59375
         ],
         [
-          5.78125,
-          -0.28125
-        ]
-      ]
-    },
-    {
-      "type": "ellipse",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          5.71875,
-          -1.71875
-        ],
-        [
-          5.78125,
-          -1.65625
+          2.78125,
+          4.65625
         ]
       ]
     },
@@ -1798,151 +734,22 @@
       ],
       "bbox": [
         [
-          5.75,
-          -1.6875
+          1.5625,
+          4.5625
         ],
         [
-          6.25,
-          -1.6875
+          1.5625,
+          5.125
         ]
       ],
       "points": [
         [
-          5.75,
-          -1.6875
+          1.5625,
+          4.5625
         ],
         [
-          6.25,
-          -1.6875
-        ]
-      ],
-      "net": "VSS"
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          5.75,
-          -1.0
-        ],
-        [
-          8.0,
-          -1.0
-        ]
-      ],
-      "points": [
-        [
-          5.75,
-          -1.0
-        ],
-        [
-          8.0,
-          -1.0
-        ]
-      ],
-      "net": "VSS"
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          3.25,
-          -1.6875
-        ],
-        [
-          5.75,
-          -1.6875
-        ]
-      ],
-      "points": [
-        [
-          3.25,
-          -1.6875
-        ],
-        [
-          5.75,
-          -1.6875
-        ]
-      ],
-      "net": "VSS"
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          3.25,
-          -1.875
-        ],
-        [
-          3.25,
-          -1.6875
-        ]
-      ],
-      "points": [
-        [
-          3.25,
-          -1.875
-        ],
-        [
-          3.25,
-          -1.6875
-        ]
-      ],
-      "net": "VSS"
-    },
-    {
-      "type": "ellipse",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          3.21875,
-          -1.71875
-        ],
-        [
-          3.28125,
-          -1.65625
-        ]
-      ]
-    },
-    {
-      "type": "line",
-      "lpp": [
-        "wire",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          2.5,
-          -0.5
-        ],
-        [
-          2.5,
-          1.5
-        ]
-      ],
-      "points": [
-        [
-          2.5,
-          -0.5
-        ],
-        [
-          2.5,
-          1.5
+          1.5625,
+          5.125
         ]
       ],
       "net": "Delayed"
@@ -1955,25 +762,89 @@
       ],
       "bbox": [
         [
-          3.25,
-          3.6875
+          1.5625,
+          5.125
         ],
         [
-          3.75,
-          3.6875
+          2.5,
+          5.125
         ]
       ],
       "points": [
         [
-          3.25,
-          3.6875
+          1.5625,
+          5.125
         ],
         [
-          3.75,
-          3.6875
+          2.5,
+          5.125
         ]
       ],
-      "net": "VDD"
+      "net": "Delayed"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "wire",
+        "label"
+      ],
+      "bbox": [
+        [
+          1.8875,
+          5.1
+        ],
+        [
+          2.25,
+          5.1875
+        ]
+      ],
+      "xy": [
+        2.25,
+        5.125
+      ],
+      "text": "Delayed",
+      "height": 0.0625,
+      "justify": "lowerRight",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel",
+      "net": "Delayed",
+      "parent": [
+        "line",
+        22
+      ]
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "wire",
+        "label"
+      ],
+      "bbox": [
+        [
+          2.6875,
+          5.5625
+        ],
+        [
+          2.75,
+          5.69375
+        ]
+      ],
+      "xy": [
+        2.75,
+        5.5625
+      ],
+      "text": "P0",
+      "height": 0.0625,
+      "justify": "lowerLeft",
+      "orient": "R90",
+      "font": "stick",
+      "label_type": "normalLabel",
+      "net": "P0",
+      "parent": [
+        "line",
+        13
+      ]
     },
     {
       "type": "line",
@@ -1983,42 +854,723 @@
       ],
       "bbox": [
         [
-          3.75,
-          1.0
+          2.75,
+          5.125
         ],
         [
-          3.75,
-          1.5
+          3.25,
+          5.125
         ]
       ],
       "points": [
         [
-          3.75,
-          1.0
+          2.75,
+          5.125
         ],
         [
-          3.75,
-          1.5
+          3.25,
+          5.125
         ]
       ],
       "net": "VDD"
     },
     {
-      "type": "ellipse",
+      "type": "label",
+      "lpp": [
+        "wire",
+        "label"
+      ],
+      "bbox": [
+        [
+          3.0,
+          5.125
+        ],
+        [
+          3.1875,
+          5.1875
+        ]
+      ],
+      "xy": [
+        3.0,
+        5.125
+      ],
+      "text": "VDD",
+      "height": 0.0625,
+      "justify": "lowerLeft",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel",
+      "net": "VDD",
+      "parent": [
+        "line",
+        25
+      ]
+    },
+    {
+      "type": "line",
       "lpp": [
         "wire",
         "drawing"
       ],
       "bbox": [
         [
-          3.71875,
-          1.46875
+          4.9375,
+          4.75
         ],
         [
-          3.78125,
-          1.53125
+          5.4375,
+          4.75
         ]
+      ],
+      "points": [
+        [
+          4.9375,
+          4.75
+        ],
+        [
+          5.4375,
+          4.75
+        ]
+      ],
+      "net": "HoldN"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "wire",
+        "label"
+      ],
+      "bbox": [
+        [
+          4.9125,
+          4.75
+        ],
+        [
+          5.1875,
+          4.8125
+        ]
+      ],
+      "xy": [
+        5.1875,
+        4.75
+      ],
+      "text": "HoldN",
+      "height": 0.0625,
+      "justify": "lowerRight",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel",
+      "net": "HoldN",
+      "parent": [
+        "line",
+        27
       ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "wire",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          6.9375,
+          4.75
+        ],
+        [
+          7.4375,
+          4.75
+        ]
+      ],
+      "points": [
+        [
+          6.9375,
+          4.75
+        ],
+        [
+          7.4375,
+          4.75
+        ]
+      ],
+      "net": "Z"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "wire",
+        "label"
+      ],
+      "bbox": [
+        [
+          7.1875,
+          4.75
+        ],
+        [
+          7.25625,
+          4.8125
+        ]
+      ],
+      "xy": [
+        7.1875,
+        4.75
+      ],
+      "text": "Z",
+      "height": 0.0625,
+      "justify": "lowerLeft",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel",
+      "net": "Z",
+      "parent": [
+        "line",
+        29
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "wire",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          6.1875,
+          5.25
+        ],
+        [
+          6.1875,
+          5.75
+        ]
+      ],
+      "points": [
+        [
+          6.1875,
+          5.25
+        ],
+        [
+          6.1875,
+          5.75
+        ]
+      ],
+      "net": "VDD"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "wire",
+        "label"
+      ],
+      "bbox": [
+        [
+          6.125,
+          5.5
+        ],
+        [
+          6.1875,
+          5.6875
+        ]
+      ],
+      "xy": [
+        6.1875,
+        5.5
+      ],
+      "text": "VDD",
+      "height": 0.0625,
+      "justify": "lowerLeft",
+      "orient": "R90",
+      "font": "stick",
+      "label_type": "normalLabel",
+      "net": "VDD",
+      "parent": [
+        "line",
+        31
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "wire",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          6.1875,
+          3.75
+        ],
+        [
+          6.1875,
+          4.25
+        ]
+      ],
+      "points": [
+        [
+          6.1875,
+          3.75
+        ],
+        [
+          6.1875,
+          4.25
+        ]
+      ],
+      "net": "VSS"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "wire",
+        "label"
+      ],
+      "bbox": [
+        [
+          6.125,
+          3.81875
+        ],
+        [
+          6.1875,
+          4.0
+        ]
+      ],
+      "xy": [
+        6.1875,
+        4.0
+      ],
+      "text": "VSS",
+      "height": 0.0625,
+      "justify": "lowerRight",
+      "orient": "R90",
+      "font": "stick",
+      "label_type": "normalLabel",
+      "net": "VSS",
+      "parent": [
+        "line",
+        33
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "wire",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          1.5625,
+          3.6875
+        ],
+        [
+          1.5625,
+          4.1875
+        ]
+      ],
+      "points": [
+        [
+          1.5625,
+          3.6875
+        ],
+        [
+          1.5625,
+          4.1875
+        ]
+      ],
+      "net": "VSS"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "wire",
+        "label"
+      ],
+      "bbox": [
+        [
+          1.5,
+          3.75625
+        ],
+        [
+          1.5625,
+          3.9375
+        ]
+      ],
+      "xy": [
+        1.5625,
+        3.9375
+      ],
+      "text": "VSS",
+      "height": 0.0625,
+      "justify": "lowerRight",
+      "orient": "R90",
+      "font": "stick",
+      "label_type": "normalLabel",
+      "net": "VSS",
+      "parent": [
+        "line",
+        35
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "wire",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.5,
+          5.625
+        ],
+        [
+          -1.0,
+          5.625
+        ]
+      ],
+      "points": [
+        [
+          -1.5,
+          5.625
+        ],
+        [
+          -1.0,
+          5.625
+        ]
+      ],
+      "net": "A,N0"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "wire",
+        "label"
+      ],
+      "bbox": [
+        [
+          -1.46875,
+          5.6125
+        ],
+        [
+          -1.25,
+          5.6875
+        ]
+      ],
+      "xy": [
+        -1.25,
+        5.625
+      ],
+      "text": "A,N0",
+      "height": 0.0625,
+      "justify": "lowerRight",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel",
+      "net": "A,N0",
+      "parent": [
+        "line",
+        37
+      ],
+      "properties": [
+        {
+          "name": "CDBA_LABEL_EXT_ATTR",
+          "type": "int",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "wire",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.5625,
+          5.625
+        ],
+        [
+          -0.0625,
+          5.625
+        ]
+      ],
+      "points": [
+        [
+          -0.5625,
+          5.625
+        ],
+        [
+          -0.0625,
+          5.625
+        ]
+      ],
+      "net": "N0,Delayed"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "wire",
+        "label"
+      ],
+      "bbox": [
+        [
+          -0.3125,
+          5.6
+        ],
+        [
+          0.2,
+          5.6875
+        ]
+      ],
+      "xy": [
+        -0.3125,
+        5.625
+      ],
+      "text": "N0,Delayed",
+      "height": 0.0625,
+      "justify": "lowerLeft",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel",
+      "net": "N0,Delayed",
+      "parent": [
+        "line",
+        39
+      ],
+      "properties": [
+        {
+          "name": "CDBA_LABEL_EXT_ATTR",
+          "type": "int",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "wire",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.8125,
+          5.8125
+        ],
+        [
+          -0.8125,
+          6.3125
+        ]
+      ],
+      "points": [
+        [
+          -0.8125,
+          5.8125
+        ],
+        [
+          -0.8125,
+          6.3125
+        ]
+      ],
+      "net": "VDD"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "wire",
+        "label"
+      ],
+      "bbox": [
+        [
+          -0.875,
+          6.0625
+        ],
+        [
+          -0.8125,
+          6.25
+        ]
+      ],
+      "xy": [
+        -0.8125,
+        6.0625
+      ],
+      "text": "VDD",
+      "height": 0.0625,
+      "justify": "lowerLeft",
+      "orient": "R90",
+      "font": "stick",
+      "label_type": "normalLabel",
+      "net": "VDD",
+      "parent": [
+        "line",
+        41
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "wire",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -0.8125,
+          4.9375
+        ],
+        [
+          -0.8125,
+          5.4375
+        ]
+      ],
+      "points": [
+        [
+          -0.8125,
+          4.9375
+        ],
+        [
+          -0.8125,
+          5.4375
+        ]
+      ],
+      "net": "VSS"
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "wire",
+        "label"
+      ],
+      "bbox": [
+        [
+          -0.875,
+          5.00625
+        ],
+        [
+          -0.8125,
+          5.1875
+        ]
+      ],
+      "xy": [
+        -0.8125,
+        5.1875
+      ],
+      "text": "VSS",
+      "height": 0.0625,
+      "justify": "lowerRight",
+      "orient": "R90",
+      "font": "stick",
+      "label_type": "normalLabel",
+      "net": "VSS",
+      "parent": [
+        "line",
+        43
+      ]
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "wire",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          4.3125,
+          4.125
+        ],
+        [
+          4.3125,
+          4.625
+        ]
+      ],
+      "points": [
+        [
+          4.3125,
+          4.125
+        ],
+        [
+          4.3125,
+          4.625
+        ]
+      ],
+      "net": "HoldN"
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "wire",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          2.75,
+          4.625
+        ],
+        [
+          2.75,
+          4.9375
+        ]
+      ],
+      "points": [
+        [
+          2.75,
+          4.625
+        ],
+        [
+          2.75,
+          4.9375
+        ]
+      ],
+      "net": "HoldN"
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "wire",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          2.75,
+          4.625
+        ],
+        [
+          4.3125,
+          4.625
+        ]
+      ],
+      "points": [
+        [
+          2.75,
+          4.625
+        ],
+        [
+          4.3125,
+          4.625
+        ]
+      ],
+      "net": "HoldN"
+    },
+    {
+      "type": "line",
+      "lpp": [
+        "wire",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          4.3125,
+          3.9375
+        ],
+        [
+          4.75,
+          3.9375
+        ]
+      ],
+      "points": [
+        [
+          4.3125,
+          3.9375
+        ],
+        [
+          4.75,
+          3.9375
+        ]
+      ],
+      "net": "VSS"
     },
     {
       "type": "textDisplay",
@@ -2119,7 +1671,7 @@
       "net": "A",
       "parent": [
         "line",
-        67
+        50
       ]
     },
     {
@@ -2221,7 +1773,7 @@
       "net": "Z",
       "parent": [
         "line",
-        70
+        53
       ]
     },
     {
@@ -2323,7 +1875,7 @@
       "net": "VDD",
       "parent": [
         "line",
-        73
+        56
       ]
     },
     {
@@ -2425,7 +1977,7 @@
       "net": "VSS",
       "parent": [
         "line",
-        76
+        59
       ]
     },
     {
