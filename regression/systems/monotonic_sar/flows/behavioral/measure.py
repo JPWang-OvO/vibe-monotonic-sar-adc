@@ -1,1 +1,1 @@
-from regression.systems.monotonic_sar.measure import measure_sar
+from regression.systems.monotonic_sar.analysis.measure import measure_sar

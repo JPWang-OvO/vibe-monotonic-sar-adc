@@ -81,8 +81,9 @@ def prepare(flow_paths, env_path, batch_id, workers=1):
                     "regression/common/server.py", "regression/common/project.py",
                     "regression/common/measure.py", "regression/common/psf.py", "regression/common/logs.py",
                     "regression/systems/__init__.py", "regression/systems/monotonic_sar/__init__.py",
-                    "regression/systems/monotonic_sar/measure.py",
-                    "regression/systems/monotonic_sar/measure_modules.py"):
+                    "regression/systems/monotonic_sar/analysis/__init__.py",
+                    "regression/systems/monotonic_sar/analysis/measure.py",
+                    "regression/systems/monotonic_sar/analysis/measure_modules.py"):
         target = destination / package
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / package, target)

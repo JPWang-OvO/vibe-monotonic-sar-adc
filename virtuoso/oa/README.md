@@ -18,3 +18,9 @@
 包含逐 view 电气与图形比较，以及网表连接和设计参数比较。图面可读性通过查看原理图和 symbol 审阅。
 
 数据格式见[源表示约定](../../docs/architecture/source-contract.md)。
+
+## 标准单元导出
+
+`python -m virtuoso.oa.export_stdcells --environment <本机配置文件>`
+读取 TSMC18 标准单元的原生连接、CDF 端序和 Spectre 网表，保存到 `library/support/standard_cells/`。
+回读与导出工作文件位于 artifact 根目录的 `stdcell_native/`。

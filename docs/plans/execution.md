@@ -6,7 +6,7 @@ last_reviewed: 2026-10-23
 authoritative_sources:
   - ../../config/run_budget.json
   - ../../config/architecture.json
-  - ../../regression/systems/monotonic_sar/validate_python.py
+  - ../../regression/systems/monotonic_sar/analysis/validate_python.py
 ---
 
 # 执行窗口

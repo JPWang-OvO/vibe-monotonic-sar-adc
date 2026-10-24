@@ -7,7 +7,7 @@ authoritative_sources:
   - ../../config/acceptance.json
   - ../../config/architecture.json
   - ../../config/physical_frontend.json
-  - ../../regression/systems/monotonic_sar/measure.py
+  - ../../regression/systems/monotonic_sar/analysis/measure.py
 ---
 
 # 固定窗口

@@ -20,7 +20,7 @@ TT 无噪声总供电功耗约 193.7 mW，包含输出缓冲，主时钟输入�
 | [开发结果](docs/verification/development-status.md) | 分层证据、候选批次、当前未完成项 |
 | [固定验收方法](docs/verification/acceptance-method.md) | 取码、FFT、噪声、时序及功耗边界 |
 | [执行窗口](docs/plans/execution.md) | 用户延长后的完成条件与资源上限 |
-| [Python 模型](regression/systems/monotonic_sar/model.py) | 显式采样、逐次比较和电荷重分配 |
+| [Python 模型](regression/systems/monotonic_sar/analysis/model.py) | 显式采样、逐次比较和电荷重分配 |
 | [电路源](library/systems/monotonic_sar/MONOTONIC_SAR/cell.json) | 顶层接口与 view；实际模块绑定由各 flow 固定 |
 | [仿真入口](regression/README.md) | prepare、execute、collect 与结果组织 |
 | [OA 源表示](docs/architecture/source-contract.md) | circuit/native/drawing 文件与原生导出核对 |
