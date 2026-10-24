@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "sar_frontend_refined_static",
-  "testbench": "library/testbenches/blocks/sampling/tb_SAR_SAMPLE_load/spectre/netlist.scs",
+  "testbench": "library/testbenches/blocks/sampling/tb_SAR_SAMPLE_load/netlist/netlist.scs",
   "process": "tsmc18",
   "conditions": [
     {
@@ -13,7 +13,7 @@
         "CCOMP": "34f"
       },
       "cell_views": {
-        "SAR_SAMPLE": "junction408"
+        "SAR_SAMPLE": "netlist_junction408"
       },
       "enrichment": true
     }

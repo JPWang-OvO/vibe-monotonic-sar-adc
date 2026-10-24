@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "sar_cmp",
-  "testbench": "library/testbenches/blocks/comparator/tb_SAR_CMP/spectre/netlist.scs",
+  "testbench": "library/testbenches/blocks/comparator/tb_SAR_CMP/netlist/netlist.scs",
   "process": "tsmc18",
   "conditions": [
     {
@@ -11,8 +11,8 @@
         "TEMP": 25
       },
       "cell_views": {
-        "SAR_CMP": "transistor",
-        "SAR_BIAS": "transistor"
+        "SAR_CMP": "netlist",
+        "SAR_BIAS": "netlist"
       },
       "enrichment": true
     }

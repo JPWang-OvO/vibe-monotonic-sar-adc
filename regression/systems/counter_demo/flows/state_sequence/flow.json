@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "counter_sequence",
-  "testbench": "library/testbenches/systems/counter_demo/tb_COUNTER_sequence/spectre/netlist.scs",
+  "testbench": "library/testbenches/systems/counter_demo/tb_COUNTER_sequence/netlist/netlist.scs",
   "process": null,
   "conditions": [
     {

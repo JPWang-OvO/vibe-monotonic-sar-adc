@@ -1,0 +1,15 @@
+simulator lang=spectre
+// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
+include "../../../logic/SAR_CAPTURE_LATCH/netlist/netlist.scs"
+include "../../../logic/SAR_SELECT/netlist/netlist.scs"
+include "../../../logic/SAR_DRIVE/netlist/netlist.scs"
+subckt SAR_BIT (Outp Capture Sample Q Bp Bn VDD VSS VREFP VREFN)
+parameters strength=1
+I_latch (Outp Capture Q QB VDD VSS) SAR_CAPTURE_LATCH
+I_select_p (Q Capture BpRaw VDD VSS) SAR_SELECT factor=max(1,strength*8)
+I_select_n (QB Capture BnRaw VDD VSS) SAR_SELECT factor=max(1,strength*8)
+I_buf_p0 (BpRaw BpBuf VDD VSS) SAR_DRIVE scale=max(1,strength*32)
+I_buf_p1 (BpBuf Bp VREFP VREFN) SAR_DRIVE scale=max(1,strength*256)
+I_buf_n0 (BnRaw BnBuf VDD VSS) SAR_DRIVE scale=max(1,strength*32)
+I_buf_n1 (BnBuf Bn VREFP VREFN) SAR_DRIVE scale=max(1,strength*256)
+ends SAR_BIT

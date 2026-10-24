@@ -29,14 +29,14 @@ RC 与 counter 使用理想器件和 Verilog-A，运行需要 Spectre。
 ## RC：解析值与仿真比较
 
 [设计网表](library/blocks/passive/RC_LOWPASS/schematic/netlist.scs)为 1 kΩ/1 pF 低通。
-[TB](library/testbenches/blocks/rc/tb_RC_response/spectre/netlist.scs)提供 1 V 激励、AC 和阶跃分析。
+[TB](library/testbenches/blocks/rc/tb_RC_response/netlist/netlist.scs)提供 1 V 激励、AC 和阶跃分析。
 测量将 AC 复数响应与 `1/(1+jωRC)` 比较，将瞬态与 `1-exp(-t/RC)` 比较，两项最大误差阈值均为 1 mV。
 该 cell 同时保存 schematic/symbol 的 native 与 drawing 文件，可用于查看 OA 保存格式及独立库回放。
 
 ## INV：一个 flow 选择 schematic 与 PEX
 
 [设计网表](library/blocks/logic/INV/schematic/netlist.scs)使用 PMOS 600n/30n、NMOS 300n/30n，保留 W/L、倍乘与 finger 数。
-`functional` flow 的两个 condition 共用 [tb_INV](library/testbenches/blocks/inverter/tb_INV/spectre/netlist.scs)：
+`functional` flow 的两个 condition 共用 [tb_INV](library/testbenches/blocks/inverter/tb_INV/netlist/netlist.scs)：
 
 | Condition | cell_views | enrichment |
 |---|---|---|
@@ -69,9 +69,9 @@ CalibreView 导入到 `IC_TEMPLATE/INV/calibre`，随后从该 OA view 导出并
 ## Counter：层次、总线与状态测量
 
 [COUNTER2](library/blocks/digital/COUNTER2/veriloga/COUNTER2.va)提供 2-bit 行为模型，
-[COUNTER_STIM](library/support/stimulus/COUNTER_STIM/spectre/netlist.scs)产生时钟、复位与使能，
+[COUNTER_STIM](library/support/stimulus/COUNTER_STIM/netlist/netlist.scs)产生时钟、复位与使能，
 系统 cell 将两者连接到总线端口。
-[TB](library/testbenches/systems/counter_demo/tb_COUNTER_sequence/spectre/netlist.scs)执行 20 ns 瞬态，
+[TB](library/testbenches/systems/counter_demo/tb_COUNTER_sequence/netlist/netlist.scs)执行 20 ns 瞬态，
 测量检查 12 个采样点的复位、计数、保持和恢复状态，要求错码数与无效位数均为零。
 Spectre 层的总线节点使用转义形式，位序以 cell 索引和测量配置为准。
 

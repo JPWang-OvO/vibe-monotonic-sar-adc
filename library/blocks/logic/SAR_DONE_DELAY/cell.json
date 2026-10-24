@@ -8,14 +8,14 @@
     "VSS"
   ],
   "views": {
-    "transistor": {
-      "netlist": "transistor/netlist.scs"
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     },
-    "short": {
-      "netlist": "short/netlist.scs"
+    "netlist_short": {
+      "netlist": "netlist_short/netlist.scs"
     },
-    "fastout": {
-      "netlist": "fastout/netlist.scs"
+    "netlist_fastout": {
+      "netlist": "netlist_fastout/netlist.scs"
     },
     "schematic": {
       "native": "schematic/native.json",

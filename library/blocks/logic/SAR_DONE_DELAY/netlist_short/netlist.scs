@@ -1,0 +1,6 @@
+simulator lang=spectre
+include "../../SAR_DRIVE/netlist/netlist.scs"
+subckt SAR_DONE_DELAY (A Z VDD VSS)
+I_b0 (A N0 VDD VSS) SAR_DRIVE scale=1
+I_b1 (N0 Z VDD VSS) SAR_DRIVE scale=4
+ends SAR_DONE_DELAY

@@ -16,7 +16,9 @@ authoritative_sources:
 Spectre 文件将尖括号转义为 `D\<9\>`；顶层测试台仍按位置连接各位信号。
 实例阵列在 `array_members` 中保存成员顺序，公共标量连接广播到每个成员。
 `netlist` 等源路径相对 cell 目录。
-View 按实际需要登记；行为电路可只提供 Verilog-A，纯网表电路可只提供 Spectre 源。
+View 名遵循 `表示形式[_变体]`，表示形式及示例见 [电路库](../../library/README.md)。
+`netlist_<variant>` 保存文本实现；`veriloga_<variant>` 保存行为变体或其参数包装。
+Spectre 文件使用 `.scs` 扩展名，仿真器由 flow 指定。View 按实际内容登记。
 
 | 文件 | 保存内容 |
 |---|---|

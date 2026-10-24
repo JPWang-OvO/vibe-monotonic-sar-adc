@@ -20,7 +20,7 @@ def main():
             length=('600n' if model=='nch_5' else '500n') if args.five_volt else '180n'
             source+=f'M_{model}_{name} (D G {rail} {rail}) {model} w={w*args.scale} l={length} nf={nf} m={m}\n'
     # Full native export must remain exactly unchanged in effective parameters.
-    native=(ROOT/'library/support/standard_cells/INVD1BWP7T/spectre/netlist.scs').read_text()
+    native=(ROOT/'library/support/standard_cells/INVD1BWP7T/netlist/netlist.scs').read_text()
     source+=native+'\nXnative_inv (G NativeOut VDD 0) INVD1BWP7T\n'
     (inputs/'input.scs').write_text(source,encoding='utf-8',newline='\n')
     staged={'entry':'input.scs','sources':['input.scs']}

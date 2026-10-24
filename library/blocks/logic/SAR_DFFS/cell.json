@@ -10,14 +10,14 @@
     "VSS"
   ],
   "views": {
-    "transistor": {
-      "netlist": "transistor/netlist.scs"
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     },
-    "quad": {
-      "netlist": "quad/netlist.scs"
+    "netlist_quad": {
+      "netlist": "netlist_quad/netlist.scs"
     },
-    "quadquiet": {
-      "netlist": "quadquiet/netlist.scs"
+    "netlist_quadquiet": {
+      "netlist": "netlist_quadquiet/netlist.scs"
     },
     "schematic": {
       "native": "schematic/native.json",

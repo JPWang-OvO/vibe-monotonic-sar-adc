@@ -3,8 +3,8 @@
   "cell": "tb_INV",
   "ports": [],
   "views": {
-    "spectre": {
-      "netlist": "spectre/netlist.scs"
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     }
   }
 }

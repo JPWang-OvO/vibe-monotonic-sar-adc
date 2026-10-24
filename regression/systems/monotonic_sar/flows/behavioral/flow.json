@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "sar_behavioral",
-  "testbench": "library/testbenches/systems/monotonic_sar/tb_SAR_sine/spectre/netlist.scs",
+  "testbench": "library/testbenches/systems/monotonic_sar/tb_SAR_sine/netlist/netlist.scs",
   "process": null,
   "conditions": [
     {

@@ -18,29 +18,29 @@
       "source": "veriloga/SAR_BIT.va",
       "netlist": "veriloga/netlist.scs"
     },
-    "transistor": {
-      "netlist": "transistor/netlist.scs"
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     },
-    "fast2": {
-      "netlist": "fast2/netlist.scs"
+    "netlist_fast2": {
+      "netlist": "netlist_fast2/netlist.scs"
     },
-    "fast6": {
-      "netlist": "fast6/netlist.scs"
+    "netlist_fast6": {
+      "netlist": "netlist_fast6/netlist.scs"
     },
-    "latch": {
-      "netlist": "latch/netlist.scs"
+    "netlist_latch": {
+      "netlist": "netlist_latch/netlist.scs"
     },
-    "drive": {
-      "netlist": "drive/netlist.scs"
+    "netlist_drive": {
+      "netlist": "netlist_drive/netlist.scs"
     },
-    "taper": {
-      "netlist": "taper/netlist.scs"
+    "netlist_taper": {
+      "netlist": "netlist_taper/netlist.scs"
     },
-    "strong2": {
-      "netlist": "strong2/netlist.scs"
+    "netlist_strong2": {
+      "netlist": "netlist_strong2/netlist.scs"
     },
-    "pullup": {
-      "netlist": "pullup/netlist.scs"
+    "netlist_pullup": {
+      "netlist": "netlist_pullup/netlist.scs"
     },
     "schematic": {
       "native": "schematic/native.json",

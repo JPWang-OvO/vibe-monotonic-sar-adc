@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "rc_response",
-  "testbench": "library/testbenches/blocks/rc/tb_RC_response/spectre/netlist.scs",
+  "testbench": "library/testbenches/blocks/rc/tb_RC_response/netlist/netlist.scs",
   "process": null,
   "conditions": [
     {

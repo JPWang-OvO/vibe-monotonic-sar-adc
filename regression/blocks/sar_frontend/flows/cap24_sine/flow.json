@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "sar_frontend_cap24_sine",
-  "testbench": "library/testbenches/blocks/sampling/tb_SAR_SAMPLE_sine_load/spectre/netlist.scs",
+  "testbench": "library/testbenches/blocks/sampling/tb_SAR_SAMPLE_sine_load/netlist/netlist.scs",
   "process": "tsmc18",
   "conditions": [
     {
@@ -14,9 +14,9 @@
         "FIN": 585937.5
       },
       "cell_views": {
-        "SAR_SAMPLE": "junction384",
-        "SAR_PHASE": "drive3",
-        "SAR_INV": "drive2"
+        "SAR_SAMPLE": "netlist_junction384",
+        "SAR_PHASE": "netlist_drive3",
+        "SAR_INV": "netlist_drive2"
       },
       "enrichment": true
     },
@@ -30,9 +30,9 @@
         "FIN": 9960937.5
       },
       "cell_views": {
-        "SAR_SAMPLE": "junction384",
-        "SAR_PHASE": "drive3",
-        "SAR_INV": "drive2"
+        "SAR_SAMPLE": "netlist_junction384",
+        "SAR_PHASE": "netlist_drive3",
+        "SAR_INV": "netlist_drive2"
       },
       "enrichment": true
     }

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "sar_physical_smoke",
-  "testbench": "library/testbenches/systems/monotonic_sar/tb_SAR_physical_smoke/spectre/netlist.scs",
+  "testbench": "library/testbenches/systems/monotonic_sar/tb_SAR_physical_smoke/netlist/netlist.scs",
   "process": "tsmc18",
   "conditions": [
     {
@@ -11,16 +11,16 @@
         "TEMP": 25
       },
       "cell_views": {
-        "SAR_PHASE": "drive4",
-        "SAR_INV": "drive2",
-        "SAR_CMP": "fast4",
-        "SAR_ASYNC": "physical",
-        "SAR_BIT": "fast6",
-        "SAR_OUT": "transistor",
-        "SAR_BIAS": "transistor",
-        "SAR_FRONTEND": "candidate",
-        "SAR_SAMPLE": "junction384",
-        "SAR_CDAC": "scaled"
+        "SAR_PHASE": "netlist_drive4",
+        "SAR_INV": "netlist_drive2",
+        "SAR_CMP": "netlist_fast4",
+        "SAR_ASYNC": "netlist_physical",
+        "SAR_BIT": "netlist_fast6",
+        "SAR_OUT": "netlist",
+        "SAR_BIAS": "netlist",
+        "SAR_FRONTEND": "netlist_candidate",
+        "SAR_SAMPLE": "netlist_junction384",
+        "SAR_CDAC": "netlist_scaled"
       },
       "enrichment": true,
       "corner": "tt"
@@ -32,16 +32,16 @@
         "TEMP": 25
       },
       "cell_views": {
-        "SAR_PHASE": "drive4",
-        "SAR_INV": "drive2",
-        "SAR_CMP": "fast4",
-        "SAR_ASYNC": "physical",
-        "SAR_BIT": "fast6",
-        "SAR_OUT": "transistor",
-        "SAR_BIAS": "transistor",
-        "SAR_FRONTEND": "candidate",
-        "SAR_SAMPLE": "junction384",
-        "SAR_CDAC": "scaled"
+        "SAR_PHASE": "netlist_drive4",
+        "SAR_INV": "netlist_drive2",
+        "SAR_CMP": "netlist_fast4",
+        "SAR_ASYNC": "netlist_physical",
+        "SAR_BIT": "netlist_fast6",
+        "SAR_OUT": "netlist",
+        "SAR_BIAS": "netlist",
+        "SAR_FRONTEND": "netlist_candidate",
+        "SAR_SAMPLE": "netlist_junction384",
+        "SAR_CDAC": "netlist_scaled"
       },
       "enrichment": true,
       "corner": "tt"

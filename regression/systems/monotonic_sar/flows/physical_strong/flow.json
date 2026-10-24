@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "sar_physical_strong",
-  "testbench": "library/testbenches/systems/monotonic_sar/tb_SAR_physical_capture/spectre/netlist.scs",
+  "testbench": "library/testbenches/systems/monotonic_sar/tb_SAR_physical_capture/netlist/netlist.scs",
   "process": "tsmc18",
   "conditions": [
     {
@@ -11,17 +11,17 @@
         "TEMP": 25
       },
       "cell_views": {
-        "SAR_PHASE": "drive4",
-        "SAR_INV": "drive2",
-        "SAR_CMP": "current",
-        "SAR_ASYNC": "fastseq",
-        "SAR_BIT": "strong2",
-        "SAR_OUT": "transistor",
-        "SAR_BIAS": "transistor",
-        "SAR_FRONTEND": "candidate",
-        "SAR_SAMPLE": "junction384",
-        "SAR_CDAC": "scaled",
-        "SAR_CAPTURE_LATCH": "drive"
+        "SAR_PHASE": "netlist_drive4",
+        "SAR_INV": "netlist_drive2",
+        "SAR_CMP": "netlist_current",
+        "SAR_ASYNC": "netlist_fastseq",
+        "SAR_BIT": "netlist_strong2",
+        "SAR_OUT": "netlist",
+        "SAR_BIAS": "netlist",
+        "SAR_FRONTEND": "netlist_candidate",
+        "SAR_SAMPLE": "netlist_junction384",
+        "SAR_CDAC": "netlist_scaled",
+        "SAR_CAPTURE_LATCH": "netlist_drive"
       },
       "enrichment": true,
       "corner": "tt"
@@ -33,17 +33,17 @@
         "TEMP": 125
       },
       "cell_views": {
-        "SAR_PHASE": "drive4",
-        "SAR_INV": "drive2",
-        "SAR_CMP": "current",
-        "SAR_ASYNC": "fastseq",
-        "SAR_BIT": "strong2",
-        "SAR_OUT": "transistor",
-        "SAR_BIAS": "transistor",
-        "SAR_FRONTEND": "candidate",
-        "SAR_SAMPLE": "junction384",
-        "SAR_CDAC": "scaled",
-        "SAR_CAPTURE_LATCH": "drive"
+        "SAR_PHASE": "netlist_drive4",
+        "SAR_INV": "netlist_drive2",
+        "SAR_CMP": "netlist_current",
+        "SAR_ASYNC": "netlist_fastseq",
+        "SAR_BIT": "netlist_strong2",
+        "SAR_OUT": "netlist",
+        "SAR_BIAS": "netlist",
+        "SAR_FRONTEND": "netlist_candidate",
+        "SAR_SAMPLE": "netlist_junction384",
+        "SAR_CDAC": "netlist_scaled",
+        "SAR_CAPTURE_LATCH": "netlist_drive"
       },
       "enrichment": true,
       "corner": "ss"

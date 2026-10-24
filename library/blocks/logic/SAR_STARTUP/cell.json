@@ -10,17 +10,17 @@
     "VSS"
   ],
   "views": {
-    "transistor": {
-      "netlist": "transistor/netlist.scs"
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     },
-    "ordered": {
-      "netlist": "ordered/netlist.scs"
+    "netlist_ordered": {
+      "netlist": "netlist_ordered/netlist.scs"
     },
-    "quiet": {
-      "netlist": "quiet/netlist.scs"
+    "netlist_quiet": {
+      "netlist": "netlist_quiet/netlist.scs"
     },
-    "quiet_arm": {
-      "netlist": "quiet_arm/netlist.scs"
+    "netlist_quiet_arm": {
+      "netlist": "netlist_quiet_arm/netlist.scs"
     },
     "schematic": {
       "native": "schematic/native.json",

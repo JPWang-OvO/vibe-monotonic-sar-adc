@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "sar_sampler_boost2p",
-  "testbench": "library/testbenches/blocks/sampling/tb_SAR_SAMPLE/spectre/netlist.scs",
+  "testbench": "library/testbenches/blocks/sampling/tb_SAR_SAMPLE/netlist/netlist.scs",
   "process": "tsmc18",
   "conditions": [
     {
@@ -12,7 +12,7 @@
         "CCOMP": "30f"
       },
       "cell_views": {
-        "SAR_SAMPLE": "boost2p"
+        "SAR_SAMPLE": "netlist_boost2p"
       },
       "enrichment": true
     },
@@ -24,7 +24,7 @@
         "CCOMP": "60f"
       },
       "cell_views": {
-        "SAR_SAMPLE": "boost2p"
+        "SAR_SAMPLE": "netlist_boost2p"
       },
       "enrichment": true
     }

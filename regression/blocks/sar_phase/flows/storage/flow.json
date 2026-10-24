@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "sar_phase_storage",
-  "testbench": "library/testbenches/blocks/clock/tb_SAR_PHASE/spectre/netlist.scs",
+  "testbench": "library/testbenches/blocks/clock/tb_SAR_PHASE/netlist/netlist.scs",
   "process": "tsmc18",
   "conditions": [
     {
@@ -11,7 +11,7 @@
         "TEMP": 25
       },
       "cell_views": {
-        "SAR_PHASE": "storage"
+        "SAR_PHASE": "netlist_storage"
       },
       "enrichment": true
     }

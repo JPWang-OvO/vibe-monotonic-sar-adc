@@ -3,8 +3,8 @@
   "cell": "tb_SAR_CDAC_cap24",
   "ports": [],
   "views": {
-    "spectre": {
-      "netlist": "spectre/netlist.scs"
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     }
   }
 }

@@ -1,0 +1,12 @@
+simulator lang=spectre
+@MODEL_SETUP@
+include "../../../../../blocks/logic/SAR_INV/netlist/netlist.scs"
+VDD_SRC (VDD 0) vsource dc=1.8
+VIN (IN 0) vsource dc=0 type=pulse val0=0 val1=1.8 delay=1n rise=20p fall=20p width=.98n period=2n
+XINV (IN OUT VDD 0) SAR_INV
+CL (OUT 0) capacitor c=10f
+simulatorOptions options temp=@TEMP@
+dc dc dev=VIN param=dc start=0 stop=1.8 step=0.1
+tran tran stop=6n
+saveOptions options save=selected
+save IN OUT VDD_SRC:p
