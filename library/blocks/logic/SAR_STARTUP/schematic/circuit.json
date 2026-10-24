@@ -81,52 +81,6 @@
       }
     },
     {
-      "name": "I_por0",
-      "nodes": [
-        "PorRamp",
-        "Por",
-        "VDD",
-        "VSS"
-      ],
-      "model": "INVD1BWP7T",
-      "parameters": {},
-      "connections": {
-        "I": "PorRamp",
-        "ZN": "Por",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "standard_cells",
-        "INVD1BWP7T",
-        "symbol"
-      ],
-      "oa_parameters": {}
-    },
-    {
-      "name": "I_por1",
-      "nodes": [
-        "Por",
-        "PorN",
-        "VDD",
-        "VSS"
-      ],
-      "model": "INVD1BWP7T",
-      "parameters": {},
-      "connections": {
-        "I": "Por",
-        "ZN": "PorN",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "standard_cells",
-        "INVD1BWP7T",
-        "symbol"
-      ],
-      "oa_parameters": {}
-    },
-    {
       "name": "I_arm",
       "nodes": [
         "VDD",
@@ -636,6 +590,33 @@
       "oa_parameters": {
         "scale": "8"
       }
+    },
+    {
+      "name": "I_por<1:0>",
+      "nodes": [
+        "PorRamp,Por",
+        "Por,PorN",
+        "VDD",
+        "VSS"
+      ],
+      "model": "INVD1BWP7T",
+      "parameters": {},
+      "connections": {
+        "I": "PorRamp,Por",
+        "ZN": "Por,PorN",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "INVD1BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {},
+      "array_members": [
+        "I_por0",
+        "I_por1"
+      ]
     }
   ],
   "staged_source": "library__blocks__logic__SAR_STARTUP__quiet_arm__netlist.scs"

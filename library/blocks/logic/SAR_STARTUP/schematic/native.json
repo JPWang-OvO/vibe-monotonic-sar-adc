@@ -9,17 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 2662
+        "value": 2562
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 03:58:20 2026"
+        "value": "Oct 24 15:31:29 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 18
+        "value": 16
       },
       {
         "name": "pin#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 2662
+        "value": 2562
       },
       {
         "name": "schGeometryVersion",
@@ -137,37 +137,20 @@
         }
       },
       {
-        "name": "I_por0",
+        "name": "I_por<1:0>",
         "master": [
           "standard_cells",
           "INVD1BWP7T",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [],
         "connections": {
-          "I": "PorRamp",
-          "ZN": "Por",
-          "VDD": "VDD",
-          "VSS": "VSS"
-        }
-      },
-      {
-        "name": "I_por1",
-        "master": [
-          "standard_cells",
-          "INVD1BWP7T",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {
-          "I": "Por",
-          "ZN": "PorN",
-          "VDD": "VDD",
-          "VSS": "VSS"
+          "I": "PorRamp,Por",
+          "ZN": "Por,PorN",
+          "VDD": "<*2>VDD",
+          "VSS": "<*2>VSS"
         }
       },
       {
@@ -1301,6 +1284,18 @@
     ],
     "nets": [
       {
+        "name": "<*2>VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*2>VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
         "name": "ClearB",
         "signal_type": "signal",
         "global_": false,
@@ -1349,7 +1344,7 @@
         "properties": []
       },
       {
-        "name": "Por",
+        "name": "Por,PorN",
         "signal_type": "signal",
         "global_": false,
         "properties": []
@@ -1362,6 +1357,12 @@
       },
       {
         "name": "PorRamp",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "PorRamp,Por",
         "signal_type": "signal",
         "global_": false,
         "properties": []

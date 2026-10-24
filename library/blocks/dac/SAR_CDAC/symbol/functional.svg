@@ -1,197 +1,187 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 896 1024">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
 <rect width="100%" height="100%" fill="white"/>
 <desc>SAR_CDAC; terminals follow the accepted Spectre declaration order.</desc>
 <g stroke="#287740" stroke-width="1.5" fill="none">
-<rect x="128" y="160" width="640" height="704"/>
-<polyline points="400,160 400,752"/>
-<polyline points="280,336 280,304"/>
-<polyline points="296,336 296,304"/>
-<polyline points="256,320 280,320"/>
-<polyline points="296,320 320,320"/>
-<polyline points="128,320 256,320"/>
-<polyline points="320,320 400,320"/>
-<polyline points="396.8,320 403.2,320" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="280,384 280,352"/>
-<polyline points="296,384 296,352"/>
-<polyline points="256,368 280,368"/>
-<polyline points="296,368 320,368"/>
-<polyline points="128,368 256,368"/>
-<polyline points="320,368 400,368"/>
-<polyline points="396.8,368 403.2,368" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="280,432 280,400"/>
-<polyline points="296,432 296,400"/>
-<polyline points="256,416 280,416"/>
-<polyline points="296,416 320,416"/>
-<polyline points="128,416 256,416"/>
-<polyline points="320,416 400,416"/>
-<polyline points="396.8,416 403.2,416" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="280,480 280,448"/>
-<polyline points="296,480 296,448"/>
-<polyline points="256,464 280,464"/>
-<polyline points="296,464 320,464"/>
-<polyline points="128,464 256,464"/>
-<polyline points="320,464 400,464"/>
-<polyline points="396.8,464 403.2,464" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="280,528 280,496"/>
-<polyline points="296,528 296,496"/>
-<polyline points="256,512 280,512"/>
-<polyline points="296,512 320,512"/>
-<polyline points="128,512 256,512"/>
-<polyline points="320,512 400,512"/>
-<polyline points="396.8,512 403.2,512" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="280,576 280,544"/>
-<polyline points="296,576 296,544"/>
-<polyline points="256,560 280,560"/>
-<polyline points="296,560 320,560"/>
-<polyline points="128,560 256,560"/>
-<polyline points="320,560 400,560"/>
-<polyline points="396.8,560 403.2,560" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="280,624 280,592"/>
-<polyline points="296,624 296,592"/>
-<polyline points="256,608 280,608"/>
-<polyline points="296,608 320,608"/>
-<polyline points="128,608 256,608"/>
-<polyline points="320,608 400,608"/>
-<polyline points="396.8,608 403.2,608" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="280,672 280,640"/>
-<polyline points="296,672 296,640"/>
-<polyline points="256,656 280,656"/>
-<polyline points="296,656 320,656"/>
-<polyline points="128,656 256,656"/>
-<polyline points="320,656 400,656"/>
-<polyline points="396.8,656 403.2,656" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="280,720 280,688"/>
-<polyline points="296,720 296,688"/>
-<polyline points="256,704 280,704"/>
-<polyline points="296,704 320,704"/>
-<polyline points="128,704 256,704"/>
-<polyline points="320,704 400,704"/>
-<polyline points="396.8,704 403.2,704" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="280,768 280,736"/>
-<polyline points="296,768 296,736"/>
-<polyline points="256,752 280,752"/>
-<polyline points="296,752 320,752"/>
-<polyline points="320,752 400,752"/>
-<polyline points="256,752 192,752 192,800 448,800"/>
-<polyline points="496,160 496,752"/>
-<polyline points="600,336 600,304"/>
-<polyline points="616,336 616,304"/>
-<polyline points="576,320 600,320"/>
-<polyline points="616,320 640,320"/>
-<polyline points="768,320 640,320"/>
-<polyline points="576,320 496,320"/>
-<polyline points="492.8,320 499.2,320" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="600,384 600,352"/>
-<polyline points="616,384 616,352"/>
-<polyline points="576,368 600,368"/>
-<polyline points="616,368 640,368"/>
-<polyline points="768,368 640,368"/>
-<polyline points="576,368 496,368"/>
-<polyline points="492.8,368 499.2,368" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="600,432 600,400"/>
-<polyline points="616,432 616,400"/>
-<polyline points="576,416 600,416"/>
-<polyline points="616,416 640,416"/>
-<polyline points="768,416 640,416"/>
-<polyline points="576,416 496,416"/>
-<polyline points="492.8,416 499.2,416" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="600,480 600,448"/>
-<polyline points="616,480 616,448"/>
-<polyline points="576,464 600,464"/>
-<polyline points="616,464 640,464"/>
-<polyline points="768,464 640,464"/>
-<polyline points="576,464 496,464"/>
-<polyline points="492.8,464 499.2,464" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="600,528 600,496"/>
-<polyline points="616,528 616,496"/>
-<polyline points="576,512 600,512"/>
-<polyline points="616,512 640,512"/>
-<polyline points="768,512 640,512"/>
-<polyline points="576,512 496,512"/>
-<polyline points="492.8,512 499.2,512" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="600,576 600,544"/>
-<polyline points="616,576 616,544"/>
-<polyline points="576,560 600,560"/>
-<polyline points="616,560 640,560"/>
-<polyline points="768,560 640,560"/>
-<polyline points="576,560 496,560"/>
-<polyline points="492.8,560 499.2,560" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="600,624 600,592"/>
-<polyline points="616,624 616,592"/>
-<polyline points="576,608 600,608"/>
-<polyline points="616,608 640,608"/>
-<polyline points="768,608 640,608"/>
-<polyline points="576,608 496,608"/>
-<polyline points="492.8,608 499.2,608" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="600,672 600,640"/>
-<polyline points="616,672 616,640"/>
-<polyline points="576,656 600,656"/>
-<polyline points="616,656 640,656"/>
-<polyline points="768,656 640,656"/>
-<polyline points="576,656 496,656"/>
-<polyline points="492.8,656 499.2,656" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="600,720 600,688"/>
-<polyline points="616,720 616,688"/>
-<polyline points="576,704 600,704"/>
-<polyline points="616,704 640,704"/>
-<polyline points="768,704 640,704"/>
-<polyline points="576,704 496,704"/>
-<polyline points="492.8,704 499.2,704" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="600,768 600,736"/>
-<polyline points="616,768 616,736"/>
-<polyline points="576,752 600,752"/>
-<polyline points="616,752 640,752"/>
-<polyline points="576,752 496,752"/>
-<polyline points="640,752 704,752 704,800 448,800"/>
-<polyline points="448,864 448,800"/>
-<polyline points="444.8,800 451.2,800" stroke-width="6.4" stroke-linecap="butt"/>
-<polyline points="224,864 224,816"/>
-<polyline points="216,824 232,808"/>
-<polyline points="216,808 232,824"/>
+<rect x="128" y="160" width="768" height="704"/>
+<polyline points="464,160 464,752"/>
+<polyline points="344,336 344,304"/>
+<polyline points="360,336 360,304"/>
+<polyline points="320,320 344,320"/>
+<polyline points="360,320 384,320"/>
+<polyline points="320,320 256,320 240,304"/>
+<polyline points="384,320 464,320"/>
+<polyline points="460.8,320 467.2,320" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="344,384 344,352"/>
+<polyline points="360,384 360,352"/>
+<polyline points="320,368 344,368"/>
+<polyline points="360,368 384,368"/>
+<polyline points="320,368 256,368 240,352"/>
+<polyline points="384,368 464,368"/>
+<polyline points="460.8,368 467.2,368" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="344,432 344,400"/>
+<polyline points="360,432 360,400"/>
+<polyline points="320,416 344,416"/>
+<polyline points="360,416 384,416"/>
+<polyline points="320,416 256,416 240,400"/>
+<polyline points="384,416 464,416"/>
+<polyline points="460.8,416 467.2,416" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="344,480 344,448"/>
+<polyline points="360,480 360,448"/>
+<polyline points="320,464 344,464"/>
+<polyline points="360,464 384,464"/>
+<polyline points="320,464 256,464 240,448"/>
+<polyline points="384,464 464,464"/>
+<polyline points="460.8,464 467.2,464" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="344,528 344,496"/>
+<polyline points="360,528 360,496"/>
+<polyline points="320,512 344,512"/>
+<polyline points="360,512 384,512"/>
+<polyline points="320,512 256,512 240,496"/>
+<polyline points="384,512 464,512"/>
+<polyline points="460.8,512 467.2,512" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="344,576 344,544"/>
+<polyline points="360,576 360,544"/>
+<polyline points="320,560 344,560"/>
+<polyline points="360,560 384,560"/>
+<polyline points="320,560 256,560 240,544"/>
+<polyline points="384,560 464,560"/>
+<polyline points="460.8,560 467.2,560" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="344,624 344,592"/>
+<polyline points="360,624 360,592"/>
+<polyline points="320,608 344,608"/>
+<polyline points="360,608 384,608"/>
+<polyline points="320,608 256,608 240,592"/>
+<polyline points="384,608 464,608"/>
+<polyline points="460.8,608 467.2,608" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="344,672 344,640"/>
+<polyline points="360,672 360,640"/>
+<polyline points="320,656 344,656"/>
+<polyline points="360,656 384,656"/>
+<polyline points="320,656 256,656 240,640"/>
+<polyline points="384,656 464,656"/>
+<polyline points="460.8,656 467.2,656" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="344,720 344,688"/>
+<polyline points="360,720 360,688"/>
+<polyline points="320,704 344,704"/>
+<polyline points="360,704 384,704"/>
+<polyline points="320,704 256,704 240,688"/>
+<polyline points="384,704 464,704"/>
+<polyline points="460.8,704 467.2,704" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="240,688 240,272 128,272" stroke-width="3.2" stroke-linecap="butt"/>
+<polyline points="224,584 256,568"/>
+<polyline points="344,768 344,736"/>
+<polyline points="360,768 360,736"/>
+<polyline points="320,752 344,752"/>
+<polyline points="360,752 384,752"/>
+<polyline points="384,752 464,752"/>
+<polyline points="320,752 256,752 256,800 512,800"/>
+<polyline points="560,160 560,752"/>
+<polyline points="664,336 664,304"/>
+<polyline points="680,336 680,304"/>
+<polyline points="640,320 664,320"/>
+<polyline points="680,320 704,320"/>
+<polyline points="704,320 768,320 784,304"/>
+<polyline points="640,320 560,320"/>
+<polyline points="556.8,320 563.2,320" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="664,384 664,352"/>
+<polyline points="680,384 680,352"/>
+<polyline points="640,368 664,368"/>
+<polyline points="680,368 704,368"/>
+<polyline points="704,368 768,368 784,352"/>
+<polyline points="640,368 560,368"/>
+<polyline points="556.8,368 563.2,368" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="664,432 664,400"/>
+<polyline points="680,432 680,400"/>
+<polyline points="640,416 664,416"/>
+<polyline points="680,416 704,416"/>
+<polyline points="704,416 768,416 784,400"/>
+<polyline points="640,416 560,416"/>
+<polyline points="556.8,416 563.2,416" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="664,480 664,448"/>
+<polyline points="680,480 680,448"/>
+<polyline points="640,464 664,464"/>
+<polyline points="680,464 704,464"/>
+<polyline points="704,464 768,464 784,448"/>
+<polyline points="640,464 560,464"/>
+<polyline points="556.8,464 563.2,464" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="664,528 664,496"/>
+<polyline points="680,528 680,496"/>
+<polyline points="640,512 664,512"/>
+<polyline points="680,512 704,512"/>
+<polyline points="704,512 768,512 784,496"/>
+<polyline points="640,512 560,512"/>
+<polyline points="556.8,512 563.2,512" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="664,576 664,544"/>
+<polyline points="680,576 680,544"/>
+<polyline points="640,560 664,560"/>
+<polyline points="680,560 704,560"/>
+<polyline points="704,560 768,560 784,544"/>
+<polyline points="640,560 560,560"/>
+<polyline points="556.8,560 563.2,560" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="664,624 664,592"/>
+<polyline points="680,624 680,592"/>
+<polyline points="640,608 664,608"/>
+<polyline points="680,608 704,608"/>
+<polyline points="704,608 768,608 784,592"/>
+<polyline points="640,608 560,608"/>
+<polyline points="556.8,608 563.2,608" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="664,672 664,640"/>
+<polyline points="680,672 680,640"/>
+<polyline points="640,656 664,656"/>
+<polyline points="680,656 704,656"/>
+<polyline points="704,656 768,656 784,640"/>
+<polyline points="640,656 560,656"/>
+<polyline points="556.8,656 563.2,656" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="664,720 664,688"/>
+<polyline points="680,720 680,688"/>
+<polyline points="640,704 664,704"/>
+<polyline points="680,704 704,704"/>
+<polyline points="704,704 768,704 784,688"/>
+<polyline points="640,704 560,704"/>
+<polyline points="556.8,704 563.2,704" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="784,688 784,272 896,272" stroke-width="3.2" stroke-linecap="butt"/>
+<polyline points="768,584 800,568"/>
+<polyline points="664,768 664,736"/>
+<polyline points="680,768 680,736"/>
+<polyline points="640,752 664,752"/>
+<polyline points="680,752 704,752"/>
+<polyline points="640,752 560,752"/>
+<polyline points="704,752 768,752 768,800 512,800"/>
+<polyline points="512,864 512,800"/>
+<polyline points="508.8,800 515.2,800" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="288,864 288,816"/>
+<polyline points="280,824 296,808"/>
+<polyline points="280,808 296,824"/>
 </g><g fill="#287740" font-family="Arial,sans-serif">
-<text x="352" y="304" font-size="16" text-anchor="middle" dominant-baseline="central">256</text>
-<text x="352" y="352" font-size="16" text-anchor="middle" dominant-baseline="central">128</text>
-<text x="352" y="400" font-size="16" text-anchor="middle" dominant-baseline="central">64</text>
-<text x="352" y="448" font-size="16" text-anchor="middle" dominant-baseline="central">32</text>
-<text x="352" y="496" font-size="16" text-anchor="middle" dominant-baseline="central">16</text>
-<text x="352" y="544" font-size="16" text-anchor="middle" dominant-baseline="central">8</text>
-<text x="352" y="592" font-size="16" text-anchor="middle" dominant-baseline="central">4</text>
-<text x="352" y="640" font-size="16" text-anchor="middle" dominant-baseline="central">2</text>
-<text x="352" y="688" font-size="16" text-anchor="middle" dominant-baseline="central">1</text>
-<text x="352" y="736" font-size="16" text-anchor="middle" dominant-baseline="central">1</text>
-<text x="544" y="304" font-size="16" text-anchor="middle" dominant-baseline="central">256</text>
-<text x="544" y="352" font-size="16" text-anchor="middle" dominant-baseline="central">128</text>
-<text x="544" y="400" font-size="16" text-anchor="middle" dominant-baseline="central">64</text>
-<text x="544" y="448" font-size="16" text-anchor="middle" dominant-baseline="central">32</text>
-<text x="544" y="496" font-size="16" text-anchor="middle" dominant-baseline="central">16</text>
-<text x="544" y="544" font-size="16" text-anchor="middle" dominant-baseline="central">8</text>
-<text x="544" y="592" font-size="16" text-anchor="middle" dominant-baseline="central">4</text>
-<text x="544" y="640" font-size="16" text-anchor="middle" dominant-baseline="central">2</text>
-<text x="544" y="688" font-size="16" text-anchor="middle" dominant-baseline="central">1</text>
-<text x="544" y="736" font-size="16" text-anchor="middle" dominant-baseline="central">1</text>
-<text x="448" y="256" font-size="16" text-anchor="middle" dominant-baseline="central">512 C / side</text>
-<text x="448" y="112" font-size="16" text-anchor="middle" dominant-baseline="central">SAR_CDAC</text>
+<text x="416" y="304" font-size="16" text-anchor="middle" dominant-baseline="central">256</text>
+<text x="416" y="352" font-size="16" text-anchor="middle" dominant-baseline="central">128</text>
+<text x="416" y="400" font-size="16" text-anchor="middle" dominant-baseline="central">64</text>
+<text x="416" y="448" font-size="16" text-anchor="middle" dominant-baseline="central">32</text>
+<text x="416" y="496" font-size="16" text-anchor="middle" dominant-baseline="central">16</text>
+<text x="416" y="544" font-size="16" text-anchor="middle" dominant-baseline="central">8</text>
+<text x="416" y="592" font-size="16" text-anchor="middle" dominant-baseline="central">4</text>
+<text x="416" y="640" font-size="16" text-anchor="middle" dominant-baseline="central">2</text>
+<text x="416" y="688" font-size="16" text-anchor="middle" dominant-baseline="central">1</text>
+<text x="192" y="576" font-size="16" text-anchor="middle" dominant-baseline="central">9</text>
+<text x="416" y="736" font-size="16" text-anchor="middle" dominant-baseline="central">1</text>
+<text x="608" y="304" font-size="16" text-anchor="middle" dominant-baseline="central">256</text>
+<text x="608" y="352" font-size="16" text-anchor="middle" dominant-baseline="central">128</text>
+<text x="608" y="400" font-size="16" text-anchor="middle" dominant-baseline="central">64</text>
+<text x="608" y="448" font-size="16" text-anchor="middle" dominant-baseline="central">32</text>
+<text x="608" y="496" font-size="16" text-anchor="middle" dominant-baseline="central">16</text>
+<text x="608" y="544" font-size="16" text-anchor="middle" dominant-baseline="central">8</text>
+<text x="608" y="592" font-size="16" text-anchor="middle" dominant-baseline="central">4</text>
+<text x="608" y="640" font-size="16" text-anchor="middle" dominant-baseline="central">2</text>
+<text x="608" y="688" font-size="16" text-anchor="middle" dominant-baseline="central">1</text>
+<text x="832" y="576" font-size="16" text-anchor="middle" dominant-baseline="central">9</text>
+<text x="608" y="736" font-size="16" text-anchor="middle" dominant-baseline="central">1</text>
+<text x="512" y="256" font-size="16" text-anchor="middle" dominant-baseline="central">512 C / side</text>
+<text x="512" y="112" font-size="16" text-anchor="middle" dominant-baseline="central">SAR_CDAC</text>
 </g><g fill="#c53e32" font-family="Arial,sans-serif" font-size="16">
-<g data-port="Vp" data-side="top"><rect x="396.8" y="156.8" width="6.4" height="6.4"/><text x="416" y="192" text-anchor="start" dominant-baseline="central">Vp</text></g>
-<g data-port="Bp9" data-side="left"><rect x="124.8" y="316.8" width="6.4" height="6.4"/><text x="144" y="304" text-anchor="start" dominant-baseline="central">Bp9</text></g>
-<g data-port="Bp8" data-side="left"><rect x="124.8" y="364.8" width="6.4" height="6.4"/><text x="144" y="352" text-anchor="start" dominant-baseline="central">Bp8</text></g>
-<g data-port="Bp7" data-side="left"><rect x="124.8" y="412.8" width="6.4" height="6.4"/><text x="144" y="400" text-anchor="start" dominant-baseline="central">Bp7</text></g>
-<g data-port="Bp6" data-side="left"><rect x="124.8" y="460.8" width="6.4" height="6.4"/><text x="144" y="448" text-anchor="start" dominant-baseline="central">Bp6</text></g>
-<g data-port="Bp5" data-side="left"><rect x="124.8" y="508.8" width="6.4" height="6.4"/><text x="144" y="496" text-anchor="start" dominant-baseline="central">Bp5</text></g>
-<g data-port="Bp4" data-side="left"><rect x="124.8" y="556.8" width="6.4" height="6.4"/><text x="144" y="544" text-anchor="start" dominant-baseline="central">Bp4</text></g>
-<g data-port="Bp3" data-side="left"><rect x="124.8" y="604.8" width="6.4" height="6.4"/><text x="144" y="592" text-anchor="start" dominant-baseline="central">Bp3</text></g>
-<g data-port="Bp2" data-side="left"><rect x="124.8" y="652.8" width="6.4" height="6.4"/><text x="144" y="640" text-anchor="start" dominant-baseline="central">Bp2</text></g>
-<g data-port="Bp1" data-side="left"><rect x="124.8" y="700.8" width="6.4" height="6.4"/><text x="144" y="688" text-anchor="start" dominant-baseline="central">Bp1</text></g>
-<g data-port="Vn" data-side="top"><rect x="492.8" y="156.8" width="6.4" height="6.4"/><text x="512" y="192" text-anchor="start" dominant-baseline="central">Vn</text></g>
-<g data-port="Bn9" data-side="right"><rect x="764.8" y="316.8" width="6.4" height="6.4"/><text x="752" y="304" text-anchor="end" dominant-baseline="central">Bn9</text></g>
-<g data-port="Bn8" data-side="right"><rect x="764.8" y="364.8" width="6.4" height="6.4"/><text x="752" y="352" text-anchor="end" dominant-baseline="central">Bn8</text></g>
-<g data-port="Bn7" data-side="right"><rect x="764.8" y="412.8" width="6.4" height="6.4"/><text x="752" y="400" text-anchor="end" dominant-baseline="central">Bn7</text></g>
-<g data-port="Bn6" data-side="right"><rect x="764.8" y="460.8" width="6.4" height="6.4"/><text x="752" y="448" text-anchor="end" dominant-baseline="central">Bn6</text></g>
-<g data-port="Bn5" data-side="right"><rect x="764.8" y="508.8" width="6.4" height="6.4"/><text x="752" y="496" text-anchor="end" dominant-baseline="central">Bn5</text></g>
-<g data-port="Bn4" data-side="right"><rect x="764.8" y="556.8" width="6.4" height="6.4"/><text x="752" y="544" text-anchor="end" dominant-baseline="central">Bn4</text></g>
-<g data-port="Bn3" data-side="right"><rect x="764.8" y="604.8" width="6.4" height="6.4"/><text x="752" y="592" text-anchor="end" dominant-baseline="central">Bn3</text></g>
-<g data-port="Bn2" data-side="right"><rect x="764.8" y="652.8" width="6.4" height="6.4"/><text x="752" y="640" text-anchor="end" dominant-baseline="central">Bn2</text></g>
-<g data-port="Bn1" data-side="right"><rect x="764.8" y="700.8" width="6.4" height="6.4"/><text x="752" y="688" text-anchor="end" dominant-baseline="central">Bn1</text></g>
-<g data-port="VREFP" data-side="bottom"><rect x="444.8" y="860.8" width="6.4" height="6.4"/><text x="464" y="832" text-anchor="start" dominant-baseline="central">VREFP</text></g>
-<g data-port="VREFN" data-side="bottom"><rect x="220.8" y="860.8" width="6.4" height="6.4"/><text x="240" y="832" text-anchor="start" dominant-baseline="central">VREFN</text></g>
+<g data-port="Vp" data-side="top"><rect x="460.8" y="156.8" width="6.4" height="6.4"/><text x="480" y="192" text-anchor="start" dominant-baseline="central">Vp</text></g>
+<g data-port="Bp&lt;9:1&gt;" data-side="left"><rect x="124.8" y="268.8" width="6.4" height="6.4"/><text x="144" y="256" text-anchor="start" dominant-baseline="central">Bp&lt;9:1&gt;</text></g>
+<g data-port="Vn" data-side="top"><rect x="556.8" y="156.8" width="6.4" height="6.4"/><text x="576" y="192" text-anchor="start" dominant-baseline="central">Vn</text></g>
+<g data-port="Bn&lt;9:1&gt;" data-side="right"><rect x="892.8" y="268.8" width="6.4" height="6.4"/><text x="880" y="256" text-anchor="end" dominant-baseline="central">Bn&lt;9:1&gt;</text></g>
+<g data-port="VREFP" data-side="bottom"><rect x="508.8" y="860.8" width="6.4" height="6.4"/><text x="528" y="832" text-anchor="start" dominant-baseline="central">VREFP</text></g>
+<g data-port="VREFN" data-side="bottom"><rect x="284.8" y="860.8" width="6.4" height="6.4"/><text x="304" y="832" text-anchor="start" dominant-baseline="central">VREFN</text></g>
 </g></svg>

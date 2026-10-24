@@ -2,7 +2,7 @@
 title: 单调切换 SAR ADC 接口与设计预算
 type: architecture
 status: active
-last_reviewed: 2026-10-23
+last_reviewed: 2026-10-24
 authoritative_sources:
   - ../../config/architecture.json
   - ../../library/systems/monotonic_sar/MONOTONIC_SAR/cell.json
@@ -31,9 +31,9 @@ authoritative_sources:
 |---|---|
 | SAR_PHASE | Clks 250 MHz 输入；Sample 高电平为采样，周期 20 ns，高电平标称 4 ns |
 | SAR_SAMPLE | Vin 至 Top 的自举采样开关；Sample/SampleB 为互补控制 |
-| SAR_CDAC | Vp/Vn 为顶板；Bp9…Bp1、Bn9…Bn1 为实际底板电压 |
+| SAR_CDAC | Vp/Vn 为顶板；Bp<9:1>、Bn<9:1> 为实际底板电压 |
 | SAR_CMP | ClkC 高电平复位，低电平比较；复位 Outp/Outn 同为高，完成后互补；Valid 高表示完成 |
-| SAR_ASYNC | Sample 结束后启动比较；每次 Valid 上升推进一位，复位比较器并等待 DAC 建立；十位后产生 Done |
+| SAR_ASYNC | Sample 结束后启动比较；每次 Valid 上升推进 Ck<9:0> 中一位，复位比较器并等待 DAC 建立；十位后产生 Done |
 | SAR_BIT | Capture 低时锁存器透明且两侧底板预充；Capture 上升后保持 Outp 判决，Bp/Bn 仅一侧下降；Sample 为保留的未用接口 |
 | SAR_OUT | Done 上升锁存十位结果；输出保持至下次 Done |
 | SAR_BIAS | 由 VDD/VSS 产生比较器 PMOS 电流源的 Bias |

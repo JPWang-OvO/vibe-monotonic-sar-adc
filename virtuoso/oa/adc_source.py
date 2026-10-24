@@ -8,6 +8,7 @@ from regression.common.project import ROOT, read_json
 from regression.common.units import numeric
 from regression.common.tsmc18_enrichment import TAIL
 from .comparison import spectre_document
+from .adc_buses import group_interfaces
 
 
 def assignments(tokens):
@@ -104,14 +105,7 @@ def prepare_source(batch_folder):
     for name, data in definitions.items():
         for inst in data['instances']:
             inst['master'], inst['oa_parameters'] = qualified.device(inst, data['parameters'])
-    # The OA output interface groups the ten accepted scalar bits into one bus.
-    top=definitions['MONOTONIC_SAR']
-    outputs={f'D{bit}':f'D<{bit}>' for bit in range(9,-1,-1)}
-    top['ports']=[p for p in top['ports'] if p not in outputs]
-    top['ports'].insert(3,'D<9:0>')
-    for inst in top['instances']:
-        inst['nodes']=[outputs.get(n,n) for n in inst['nodes']]
-        inst['connections']={k:outputs.get(v,v) for k,v in inst['connections'].items()}
+    group_interfaces(definitions)
     return definitions
 
 

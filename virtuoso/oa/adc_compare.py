@@ -10,6 +10,7 @@ from .adc_source import hierarchy, QualifiedProperties, flatten, assignments, cl
 from .adc_layout import fold_drivers
 from .comparison import spectre_document,expand_signals
 from .native import port_order
+from .adc_buses import scalar_name, FAMILIES
 
 
 def native_hierarchy(text, top_ports):
@@ -37,9 +38,10 @@ def main():
     assert set(expected)==set(actual),(set(expected)-set(actual),set(actual)-set(expected))
     output_map={f'D<{bit}>':f'D{bit}' for bit in range(9,-1,-1)}
     normalized=deepcopy(actual)
-    normalized['MONOTONIC_SAR']['ports']=[output_map.get(p,p) for p in actual['MONOTONIC_SAR']['ports']]
-    for inst in normalized['MONOTONIC_SAR']['instances']:
-        inst['nodes']=[output_map.get(n.replace('\\<','<').replace('\\>','>'),n) for n in inst['nodes']]
+    for cell,data in normalized.items():
+        data['ports']=[scalar_name(cell,p) for p in data['ports']]
+        for inst in data['instances']:
+            inst['nodes']=[scalar_name(cell,n) for n in inst['nodes']]
     interfaces={name:expected[name]['ports']==normalized[name]['ports'] for name in expected}
     aliases={}
     for name,data in prepare_source(a.batch).items():
@@ -58,7 +60,7 @@ def main():
     passed=all(interfaces.values()) and not missing and not extra
     result=dict(passed=passed,interfaces=interfaces,expected_primitive_groups=len(left),native_primitive_groups=len(right),
                 missing_or_changed=missing,extra_or_changed=extra,native_netlist=str(a.native.resolve()),accepted_batch=str(a.batch.resolve()),
-                native_top_terminals=native_ports,output_bit_mapping=output_map)
+                native_top_terminals=native_ports,output_bit_mapping=output_map,signal_families=FAMILIES)
     write_json(artifact_root()/'oa_delivery/electrical_comparison.json',result)
     assert passed,json.dumps(result,ensure_ascii=False)[:12000]
     for name,data in actual.items():

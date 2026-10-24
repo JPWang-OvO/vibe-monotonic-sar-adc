@@ -1,22 +1,22 @@
-subckt SAR_CDAC (Vp Vn Bp9 Bp8 Bp7 Bp6 Bp5 Bp4 Bp3 Bp2 Bp1 Bn9 Bn8 Bn7 Bn6 Bn5 Bn4 Bn3 Bn2 Bn1 VREFP VREFN)
-Cp9 (Vp Bp9) capacitor c=5.12e-12
-Cn9 (Vn Bn9) capacitor c=5.12e-12
-Cp8 (Vp Bp8) capacitor c=2.56e-12
-Cn8 (Vn Bn8) capacitor c=2.56e-12
-Cp7 (Vp Bp7) capacitor c=1.28e-12
-Cn7 (Vn Bn7) capacitor c=1.28e-12
-Cp6 (Vp Bp6) capacitor c=6.4e-13
-Cn6 (Vn Bn6) capacitor c=6.4e-13
-Cp5 (Vp Bp5) capacitor c=3.2e-13
-Cn5 (Vn Bn5) capacitor c=3.2e-13
-Cp4 (Vp Bp4) capacitor c=1.6e-13
-Cn4 (Vn Bn4) capacitor c=1.6e-13
-Cp3 (Vp Bp3) capacitor c=8e-14
-Cn3 (Vn Bn3) capacitor c=8e-14
-Cp2 (Vp Bp2) capacitor c=4e-14
-Cn2 (Vn Bn2) capacitor c=4e-14
-Cp1 (Vp Bp1) capacitor c=2e-14
-Cn1 (Vn Bn1) capacitor c=2e-14
+subckt SAR_CDAC (Vp Vn Bp\<9\> Bp\<8\> Bp\<7\> Bp\<6\> Bp\<5\> Bp\<4\> Bp\<3\> Bp\<2\> Bp\<1\> Bn\<9\> Bn\<8\> Bn\<7\> Bn\<6\> Bn\<5\> Bn\<4\> Bn\<3\> Bn\<2\> Bn\<1\> VREFP VREFN)
+Cp9 (Vp Bp\<9\>) capacitor c=5.12e-12
+Cn9 (Vn Bn\<9\>) capacitor c=5.12e-12
+Cp8 (Vp Bp\<8\>) capacitor c=2.56e-12
+Cn8 (Vn Bn\<8\>) capacitor c=2.56e-12
+Cp7 (Vp Bp\<7\>) capacitor c=1.28e-12
+Cn7 (Vn Bn\<7\>) capacitor c=1.28e-12
+Cp6 (Vp Bp\<6\>) capacitor c=6.4e-13
+Cn6 (Vn Bn\<6\>) capacitor c=6.4e-13
+Cp5 (Vp Bp\<5\>) capacitor c=3.2e-13
+Cn5 (Vn Bn\<5\>) capacitor c=3.2e-13
+Cp4 (Vp Bp\<4\>) capacitor c=1.6e-13
+Cn4 (Vn Bn\<4\>) capacitor c=1.6e-13
+Cp3 (Vp Bp\<3\>) capacitor c=8e-14
+Cn3 (Vn Bn\<3\>) capacitor c=8e-14
+Cp2 (Vp Bp\<2\>) capacitor c=4e-14
+Cn2 (Vn Bn\<2\>) capacitor c=4e-14
+Cp1 (Vp Bp\<1\>) capacitor c=2e-14
+Cn1 (Vn Bn\<1\>) capacitor c=2e-14
 Cp_dummy (Vp VREFP) capacitor c=2e-14
 Cn_dummy (Vn VREFP) capacitor c=2e-14
 ends SAR_CDAC

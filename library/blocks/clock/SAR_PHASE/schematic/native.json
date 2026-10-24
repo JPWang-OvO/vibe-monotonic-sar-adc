@@ -9,17 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 3016
+        "value": 2932
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 05:21:02 2026"
+        "value": "Oct 24 15:31:21 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 16
+        "value": 14
       },
       {
         "name": "pin#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 3016
+        "value": 2932
       },
       {
         "name": "schGeometryVersion",
@@ -112,7 +112,7 @@
           "VSS": "VSS",
           "VDD": "VDD",
           "Z": "SampleN0",
-          "A": "R0"
+          "A": "R<0>"
         }
       },
       {
@@ -297,37 +297,20 @@
         }
       },
       {
-        "name": "I_por0",
+        "name": "I_por<1:0>",
         "master": [
           "standard_cells",
           "INVD1BWP7T",
           "symbol"
         ],
         "purpose": "cell",
-        "multiplicity": 1,
+        "multiplicity": 2,
         "properties": [],
         "connections": {
-          "I": "PorRamp",
-          "ZN": "Por",
-          "VDD": "VDD",
-          "VSS": "VSS"
-        }
-      },
-      {
-        "name": "I_por1",
-        "master": [
-          "standard_cells",
-          "INVD1BWP7T",
-          "symbol"
-        ],
-        "purpose": "cell",
-        "multiplicity": 1,
-        "properties": [],
-        "connections": {
-          "I": "Por",
-          "ZN": "PorN",
-          "VDD": "VDD",
-          "VSS": "VSS"
+          "I": "PorRamp,Por",
+          "ZN": "Por,PorN",
+          "VDD": "<*2>VDD",
+          "VSS": "<*2>VSS"
         }
       },
       {
@@ -368,8 +351,8 @@
           "VDD": "VDD",
           "SDN": "PorN",
           "CP": "Clock",
-          "Q": "R4",
-          "D": "R3"
+          "Q": "R<4>",
+          "D": "R<3>"
         }
       },
       {
@@ -387,8 +370,8 @@
           "VDD": "<*4>VDD",
           "CDN": "<*4>PorN",
           "CP": "<*4>Clock",
-          "Q": "R3,R2,R1,R0",
-          "D": "R2,R1,R0,R4"
+          "Q": "R<3:0>",
+          "D": "R<2:0>,R<4>"
         }
       },
       {
@@ -806,6 +789,18 @@
     ],
     "nets": [
       {
+        "name": "<*2>VDD",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "<*2>VSS",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
         "name": "<*4>Clock",
         "signal_type": "signal",
         "global_": false,
@@ -920,7 +915,7 @@
         "properties": []
       },
       {
-        "name": "Por",
+        "name": "Por,PorN",
         "signal_type": "signal",
         "global_": false,
         "properties": []
@@ -938,31 +933,37 @@
         "properties": []
       },
       {
-        "name": "R0",
+        "name": "PorRamp,Por",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "R2,R1,R0,R4",
+        "name": "R<0>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "R3",
+        "name": "R<2:0>,R<4>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "R3,R2,R1,R0",
+        "name": "R<3:0>",
         "signal_type": "signal",
         "global_": false,
         "properties": []
       },
       {
-        "name": "R4",
+        "name": "R<3>",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "R<4>",
         "signal_type": "signal",
         "global_": false,
         "properties": []

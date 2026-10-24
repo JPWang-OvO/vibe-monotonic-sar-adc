@@ -1,13 +1,9 @@
 simulator lang=spectre
 subckt SAR_CMP (Vp Vn ClkC Outp Outn Valid Bias VDD VSS)
-Mp_input_n (Xn Vn Tail VDD) pch l=0.18u w=8u m=1 nf=2 sd=540.0n ad=2.16e-12 as=3.84e-12 pd=9.08u ps=17.920u nrd=0.03375 nrs=0.03375 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mp_input_p (Xp Vp Tail VDD) pch l=0.18u w=8u m=1 nf=2 sd=540.0n ad=2.16e-12 as=3.84e-12 pd=9.08u ps=17.920u nrd=0.03375 nrs=0.03375 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_input\<1\> (Xp Vp Tail VDD) pch l=0.18u w=8u m=1 nf=2 sd=540.0n ad=2.16e-12 as=3.84e-12 pd=9.08u ps=17.920u nrd=0.03375 nrs=0.03375 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_input\<0\> (Xn Vn Tail VDD) pch l=0.18u w=8u m=1 nf=2 sd=540.0n ad=2.16e-12 as=3.84e-12 pd=9.08u ps=17.920u nrd=0.03375 nrs=0.03375 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 Mp_clock (Tail ClkC BiasDrain VDD) pch l=0.18u w=48u m=1 nf=6 sd=540.0n ad=1.296e-11 as=1.632e-11 pd=51.240u ps=68.080u nrd=0.005625 nrs=0.005625 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 Mp_bias (BiasDrain Bias VDD VDD) pch l=0.36u w=48u m=1 nf=6 sd=540.0n ad=1.296e-11 as=1.632e-11 pd=51.240u ps=68.080u nrd=0.005625 nrs=0.005625 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mn_reset_n (Xn ClkC VSS VSS) nch l=0.18u w=8u m=1 nf=1 sd=540.0n ad=3.84e-12 as=3.84e-12 pd=16.960u ps=16.960u nrd=0.03375 nrs=0.03375 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mn_reset_p (Xp ClkC VSS VSS) nch l=0.18u w=8u m=1 nf=1 sd=540.0n ad=3.84e-12 as=3.84e-12 pd=16.960u ps=16.960u nrd=0.03375 nrs=0.03375 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mn_latch_n (Xn Xp VSS VSS) nch l=0.18u w=8u m=1 nf=2 sd=540.0n ad=2.16e-12 as=3.84e-12 pd=9.08u ps=17.920u nrd=0.03375 nrs=0.03375 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mn_latch_p (Xp Xn VSS VSS) nch l=0.18u w=8u m=1 nf=2 sd=540.0n ad=2.16e-12 as=3.84e-12 pd=9.08u ps=17.920u nrd=0.03375 nrs=0.03375 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 I_valid (Np0 Nn0 ValidRaw VDD VSS) SAR_NAND2
 I_out2\<1\> (Np1 Outp VDD VSS) SAR_DRIVE _par0=4
 I_out2\<0\> (Nn1 Outn VDD VSS) SAR_DRIVE _par0=4
@@ -17,4 +13,8 @@ I_vb1 (ValidB Valid VDD VSS) SAR_DRIVE _par0=4
 I_vb0 (ValidRaw ValidB VDD VSS) SAR_DRIVE _par0=1
 I_out\<1\> (Xp Np0 VDD VSS) INVD1BWP7T
 I_out\<0\> (Xn Nn0 VDD VSS) INVD1BWP7T
+Mn_reset\<1\> (Xp ClkC VSS VSS) nch l=0.18u w=8u m=1 nf=1 sd=540.0n ad=3.84e-12 as=3.84e-12 pd=16.960u ps=16.960u nrd=0.03375 nrs=0.03375 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_reset\<0\> (Xn ClkC VSS VSS) nch l=0.18u w=8u m=1 nf=1 sd=540.0n ad=3.84e-12 as=3.84e-12 pd=16.960u ps=16.960u nrd=0.03375 nrs=0.03375 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_latch\<1\> (Xp Xn VSS VSS) nch l=0.18u w=8u m=1 nf=2 sd=540.0n ad=2.16e-12 as=3.84e-12 pd=9.08u ps=17.920u nrd=0.03375 nrs=0.03375 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_latch\<0\> (Xn Xp VSS VSS) nch l=0.18u w=8u m=1 nf=2 sd=540.0n ad=2.16e-12 as=3.84e-12 pd=9.08u ps=17.920u nrd=0.03375 nrs=0.03375 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 ends SAR_CMP

@@ -3,24 +3,8 @@
   "ports": [
     "Vp",
     "Vn",
-    "Bp9",
-    "Bp8",
-    "Bp7",
-    "Bp6",
-    "Bp5",
-    "Bp4",
-    "Bp3",
-    "Bp2",
-    "Bp1",
-    "Bn9",
-    "Bn8",
-    "Bn7",
-    "Bn6",
-    "Bn5",
-    "Bn4",
-    "Bn3",
-    "Bn2",
-    "Bn1",
+    "Bp<9:1>",
+    "Bn<9:1>",
     "VREFP",
     "VREFN"
   ],
@@ -32,7 +16,7 @@
       "name": "C_weight9<1:0>",
       "nodes": [
         "Vp,Vn",
-        "Bp9,Bn9"
+        "Bp<9>,Bn<9>"
       ],
       "model": "capacitor",
       "parameters": {
@@ -40,7 +24,7 @@
       },
       "connections": {
         "PLUS": "Vp,Vn",
-        "MINUS": "Bp9,Bn9"
+        "MINUS": "Bp<9>,Bn<9>"
       },
       "master": [
         "analogLib",
@@ -59,7 +43,7 @@
       "name": "C_weight8<1:0>",
       "nodes": [
         "Vp,Vn",
-        "Bp8,Bn8"
+        "Bp<8>,Bn<8>"
       ],
       "model": "capacitor",
       "parameters": {
@@ -67,7 +51,7 @@
       },
       "connections": {
         "PLUS": "Vp,Vn",
-        "MINUS": "Bp8,Bn8"
+        "MINUS": "Bp<8>,Bn<8>"
       },
       "master": [
         "analogLib",
@@ -86,7 +70,7 @@
       "name": "C_weight7<1:0>",
       "nodes": [
         "Vp,Vn",
-        "Bp7,Bn7"
+        "Bp<7>,Bn<7>"
       ],
       "model": "capacitor",
       "parameters": {
@@ -94,7 +78,7 @@
       },
       "connections": {
         "PLUS": "Vp,Vn",
-        "MINUS": "Bp7,Bn7"
+        "MINUS": "Bp<7>,Bn<7>"
       },
       "master": [
         "analogLib",
@@ -113,7 +97,7 @@
       "name": "C_weight6<1:0>",
       "nodes": [
         "Vp,Vn",
-        "Bp6,Bn6"
+        "Bp<6>,Bn<6>"
       ],
       "model": "capacitor",
       "parameters": {
@@ -121,7 +105,7 @@
       },
       "connections": {
         "PLUS": "Vp,Vn",
-        "MINUS": "Bp6,Bn6"
+        "MINUS": "Bp<6>,Bn<6>"
       },
       "master": [
         "analogLib",
@@ -140,7 +124,7 @@
       "name": "C_weight5<1:0>",
       "nodes": [
         "Vp,Vn",
-        "Bp5,Bn5"
+        "Bp<5>,Bn<5>"
       ],
       "model": "capacitor",
       "parameters": {
@@ -148,7 +132,7 @@
       },
       "connections": {
         "PLUS": "Vp,Vn",
-        "MINUS": "Bp5,Bn5"
+        "MINUS": "Bp<5>,Bn<5>"
       },
       "master": [
         "analogLib",
@@ -167,7 +151,7 @@
       "name": "C_weight4<1:0>",
       "nodes": [
         "Vp,Vn",
-        "Bp4,Bn4"
+        "Bp<4>,Bn<4>"
       ],
       "model": "capacitor",
       "parameters": {
@@ -175,7 +159,7 @@
       },
       "connections": {
         "PLUS": "Vp,Vn",
-        "MINUS": "Bp4,Bn4"
+        "MINUS": "Bp<4>,Bn<4>"
       },
       "master": [
         "analogLib",
@@ -194,7 +178,7 @@
       "name": "C_weight3<1:0>",
       "nodes": [
         "Vp,Vn",
-        "Bp3,Bn3"
+        "Bp<3>,Bn<3>"
       ],
       "model": "capacitor",
       "parameters": {
@@ -202,7 +186,7 @@
       },
       "connections": {
         "PLUS": "Vp,Vn",
-        "MINUS": "Bp3,Bn3"
+        "MINUS": "Bp<3>,Bn<3>"
       },
       "master": [
         "analogLib",
@@ -221,7 +205,7 @@
       "name": "C_weight2<1:0>",
       "nodes": [
         "Vp,Vn",
-        "Bp2,Bn2"
+        "Bp<2>,Bn<2>"
       ],
       "model": "capacitor",
       "parameters": {
@@ -229,7 +213,7 @@
       },
       "connections": {
         "PLUS": "Vp,Vn",
-        "MINUS": "Bp2,Bn2"
+        "MINUS": "Bp<2>,Bn<2>"
       },
       "master": [
         "analogLib",
@@ -248,7 +232,7 @@
       "name": "C_weight1<1:0>",
       "nodes": [
         "Vp,Vn",
-        "Bp1,Bn1"
+        "Bp<1>,Bn<1>"
       ],
       "model": "capacitor",
       "parameters": {
@@ -256,7 +240,7 @@
       },
       "connections": {
         "PLUS": "Vp,Vn",
-        "MINUS": "Bp1,Bn1"
+        "MINUS": "Bp<1>,Bn<1>"
       },
       "master": [
         "analogLib",

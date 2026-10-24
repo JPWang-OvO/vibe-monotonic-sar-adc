@@ -79,52 +79,6 @@
       }
     },
     {
-      "name": "I_por0",
-      "nodes": [
-        "PorRamp",
-        "Por",
-        "VDD",
-        "VSS"
-      ],
-      "model": "INVD1BWP7T",
-      "parameters": {},
-      "connections": {
-        "I": "PorRamp",
-        "ZN": "Por",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "standard_cells",
-        "INVD1BWP7T",
-        "symbol"
-      ],
-      "oa_parameters": {}
-    },
-    {
-      "name": "I_por1",
-      "nodes": [
-        "Por",
-        "PorN",
-        "VDD",
-        "VSS"
-      ],
-      "model": "INVD1BWP7T",
-      "parameters": {},
-      "connections": {
-        "I": "Por",
-        "ZN": "PorN",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "standard_cells",
-        "INVD1BWP7T",
-        "symbol"
-      ],
-      "oa_parameters": {}
-    },
-    {
       "name": "I_enable",
       "nodes": [
         "PorN",
@@ -354,20 +308,20 @@
     {
       "name": "I_ring4",
       "nodes": [
-        "R3",
+        "R<3>",
         "Clock",
         "PorN",
-        "R4",
+        "R<4>",
         "VDD",
         "VSS"
       ],
       "model": "SAR_DFFS",
       "parameters": {},
       "connections": {
-        "D": "R3",
+        "D": "R<3>",
         "CP": "Clock",
         "SDN": "PorN",
-        "Q": "R4",
+        "Q": "R<4>",
         "VDD": "VDD",
         "VSS": "VSS"
       },
@@ -381,7 +335,7 @@
     {
       "name": "I_buffer0",
       "nodes": [
-        "R0",
+        "R<0>",
         "SampleN0",
         "VDD",
         "VSS"
@@ -391,7 +345,7 @@
         "scale": "1"
       },
       "connections": {
-        "A": "R0",
+        "A": "R<0>",
         "Z": "SampleN0",
         "VDD": "VDD",
         "VSS": "VSS"
@@ -619,20 +573,20 @@
     {
       "name": "I_ring<3:0>",
       "nodes": [
-        "R2,R1,R0,R4",
+        "R<2:0>,R<4>",
         "Clock",
         "PorN",
-        "R3,R2,R1,R0",
+        "R<3:0>",
         "VDD",
         "VSS"
       ],
       "model": "SAR_DFFR",
       "parameters": {},
       "connections": {
-        "D": "R2,R1,R0,R4",
+        "D": "R<2:0>,R<4>",
         "CP": "Clock",
         "CDN": "PorN",
-        "Q": "R3,R2,R1,R0",
+        "Q": "R<3:0>",
         "VDD": "VDD",
         "VSS": "VSS"
       },
@@ -647,6 +601,33 @@
         "I_ring2",
         "I_ring1",
         "I_ring0"
+      ]
+    },
+    {
+      "name": "I_por<1:0>",
+      "nodes": [
+        "PorRamp,Por",
+        "Por,PorN",
+        "VDD",
+        "VSS"
+      ],
+      "model": "INVD1BWP7T",
+      "parameters": {},
+      "connections": {
+        "I": "PorRamp,Por",
+        "ZN": "Por,PorN",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "INVD1BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {},
+      "array_members": [
+        "I_por0",
+        "I_por1"
       ]
     }
   ],

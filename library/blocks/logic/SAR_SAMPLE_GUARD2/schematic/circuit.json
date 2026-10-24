@@ -9,52 +9,6 @@
   "parameters": {},
   "instances": [
     {
-      "name": "I_d0",
-      "nodes": [
-        "A",
-        "N0",
-        "VDD",
-        "VSS"
-      ],
-      "model": "INVD1BWP7T",
-      "parameters": {},
-      "connections": {
-        "I": "A",
-        "ZN": "N0",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "standard_cells",
-        "INVD1BWP7T",
-        "symbol"
-      ],
-      "oa_parameters": {}
-    },
-    {
-      "name": "I_d1",
-      "nodes": [
-        "N0",
-        "Delayed",
-        "VDD",
-        "VSS"
-      ],
-      "model": "INVD1BWP7T",
-      "parameters": {},
-      "connections": {
-        "I": "N0",
-        "ZN": "Delayed",
-        "VDD": "VDD",
-        "VSS": "VSS"
-      },
-      "master": [
-        "standard_cells",
-        "INVD1BWP7T",
-        "symbol"
-      ],
-      "oa_parameters": {}
-    },
-    {
       "name": "Mn0",
       "nodes": [
         "HoldN",
@@ -291,6 +245,33 @@
       "oa_parameters": {
         "c": "15f"
       }
+    },
+    {
+      "name": "I_d<1:0>",
+      "nodes": [
+        "A,N0",
+        "N0,Delayed",
+        "VDD",
+        "VSS"
+      ],
+      "model": "INVD1BWP7T",
+      "parameters": {},
+      "connections": {
+        "I": "A,N0",
+        "ZN": "N0,Delayed",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "INVD1BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {},
+      "array_members": [
+        "I_d0",
+        "I_d1"
+      ]
     }
   ],
   "staged_source": "library__blocks__logic__SAR_SAMPLE_GUARD2__quiet15__netlist.scs"

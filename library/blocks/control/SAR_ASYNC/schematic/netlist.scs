@@ -1,23 +1,23 @@
 simulator lang=spectre
-subckt SAR_ASYNC (Sample Valid ClkC Done Ck9 Ck8 Ck7 Ck6 Ck5 Ck4 Ck3 Ck2 Ck1 Ck0 VDD VSS)
+subckt SAR_ASYNC (Sample Valid ClkC Done Ck\<9\> Ck\<8\> Ck\<7\> Ck\<6\> Ck\<5\> Ck\<4\> Ck\<3\> Ck\<2\> Ck\<1\> Ck\<0\> VDD VSS)
 I_startup (Sample SampleGuard Hold ClearN VDD VSS) SAR_STARTUP
+I_cp\<1\> (Valid SeqB VDD VSS) SAR_DRIVE _par0=16
+I_cp\<0\> (SeqB Seq VDD VSS) SAR_DRIVE _par0=16
 I_clock_drive (CompareEnable ClkC VDD VSS) SAR_DRIVE _par0=4
-I_early (Ck5 Early VDD VSS) SAR_DRIVE _par0=1
+I_early (Ck\<5\> Early VDD VSS) SAR_DRIVE _par0=1
 I_reset (ClearN Reset VDD VSS) SAR_DRIVE _par0=8
-I_cp1 (SeqB Seq VDD VSS) SAR_DRIVE _par0=16
-I_cp0 (Valid SeqB VDD VSS) SAR_DRIVE _par0=16
 I_sample_guard (Sample SampleGuard VDD VSS) SAR_SAMPLE_GUARD2
 I_feedback_delay (Valid ValidDelay VDD VSS) SAR_HANDSHAKE
-I_run_nor (Hold Valid Ck0 ValidDelay Early CompareEnable VDD VSS) SAR_WAIT_GATE
-I_done_delay (Ck0 Done VDD VSS) SAR_DONE_DELAY
-I_seq\<9\> (Ck1 Seq SeqB Reset Ck0 VDD VSS) SAR_FAST_SEQ
-I_seq\<8\> (Ck2 Seq SeqB Reset Ck1 VDD VSS) SAR_FAST_SEQ
-I_seq\<7\> (Ck3 Seq SeqB Reset Ck2 VDD VSS) SAR_FAST_SEQ
-I_seq\<6\> (Ck4 Seq SeqB Reset Ck3 VDD VSS) SAR_FAST_SEQ
-I_seq\<5\> (Ck5 Seq SeqB Reset Ck4 VDD VSS) SAR_FAST_SEQ
-I_seq\<4\> (Ck6 Seq SeqB Reset Ck5 VDD VSS) SAR_FAST_SEQ
-I_seq\<3\> (Ck7 Seq SeqB Reset Ck6 VDD VSS) SAR_FAST_SEQ
-I_seq\<2\> (Ck8 Seq SeqB Reset Ck7 VDD VSS) SAR_FAST_SEQ
-I_seq\<1\> (Ck9 Seq SeqB Reset Ck8 VDD VSS) SAR_FAST_SEQ
-I_seq\<0\> (VDD Seq SeqB Reset Ck9 VDD VSS) SAR_FAST_SEQ
+I_run_nor (Hold Valid Ck\<0\> ValidDelay Early CompareEnable VDD VSS) SAR_WAIT_GATE
+I_done_delay (Ck\<0\> Done VDD VSS) SAR_DONE_DELAY
+I_seq\<9\> (Ck\<1\> Seq SeqB Reset Ck\<0\> VDD VSS) SAR_FAST_SEQ
+I_seq\<8\> (Ck\<2\> Seq SeqB Reset Ck\<1\> VDD VSS) SAR_FAST_SEQ
+I_seq\<7\> (Ck\<3\> Seq SeqB Reset Ck\<2\> VDD VSS) SAR_FAST_SEQ
+I_seq\<6\> (Ck\<4\> Seq SeqB Reset Ck\<3\> VDD VSS) SAR_FAST_SEQ
+I_seq\<5\> (Ck\<5\> Seq SeqB Reset Ck\<4\> VDD VSS) SAR_FAST_SEQ
+I_seq\<4\> (Ck\<6\> Seq SeqB Reset Ck\<5\> VDD VSS) SAR_FAST_SEQ
+I_seq\<3\> (Ck\<7\> Seq SeqB Reset Ck\<6\> VDD VSS) SAR_FAST_SEQ
+I_seq\<2\> (Ck\<8\> Seq SeqB Reset Ck\<7\> VDD VSS) SAR_FAST_SEQ
+I_seq\<1\> (Ck\<9\> Seq SeqB Reset Ck\<8\> VDD VSS) SAR_FAST_SEQ
+I_seq\<0\> (VDD Seq SeqB Reset Ck\<9\> VDD VSS) SAR_FAST_SEQ
 ends SAR_ASYNC
