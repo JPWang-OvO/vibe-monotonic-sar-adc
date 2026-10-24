@@ -1,1 +1,1 @@
-from regression.systems.monotonic_sar.measure_modules import measure_comparator
+from regression.systems.monotonic_sar.analysis.measure_modules import measure_comparator

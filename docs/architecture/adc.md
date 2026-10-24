@@ -6,7 +6,7 @@ last_reviewed: 2026-10-23
 authoritative_sources:
   - ../../config/architecture.json
   - ../../library/systems/monotonic_sar/MONOTONIC_SAR/cell.json
-  - ../../regression/systems/monotonic_sar/model.py
+  - ../../regression/systems/monotonic_sar/analysis/model.py
 ---
 
 # 架构和共同约定

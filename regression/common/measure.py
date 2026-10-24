@@ -20,13 +20,13 @@ def measure(case, raw):
     kind = cfg["kind"]
     metrics = {}
     if kind in ('sar_comparator','sar_phase','sar_sampler','sar_sampler_sine','sar_cdac'):
-        from regression.systems.monotonic_sar import measure_modules
+        from regression.systems.monotonic_sar.analysis import measure_modules
         result=getattr(measure_modules, 'measure_'+kind[4:])(case,raw)
         checks={name:criterion(result['metrics'][name],rule) for name,rule in case['criteria'].items()}
         result.update(checks=checks,functional_pass=all(checks.values()),performance_pass=None)
         return result
     if kind == "sar":
-        from regression.systems.monotonic_sar.measure import measure_sar
+        from regression.systems.monotonic_sar.analysis.measure import measure_sar
         result = measure_sar(case, raw)
         checks = {name: criterion(result['metrics'][name], rule) for name, rule in case['criteria'].items()}
         result.update(checks=checks, functional_pass=all(checks.values()), performance_pass=checks.get('sndr_db'))

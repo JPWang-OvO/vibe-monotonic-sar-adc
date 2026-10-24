@@ -5,7 +5,7 @@
 
 ```powershell
 & $edaPython -m regression.common.runner prepare --environment config/environments/tsmc18.local.json --batch-id <新批次名称> --workers 2
-& $edaPython -m regression.check_final_netlist <本地批次目录> --formal
+& $edaPython -m regression.systems.monotonic_sar.acceptance.check_netlist <本地批次目录> --formal
 & $edaPython -m regression.common.runner execute --batch <本地批次目录>
 & $edaPython -m regression.common.runner collect --batch <本地批次目录>
 ```
@@ -36,9 +36,9 @@
 ## 输出与报告
 
 ```powershell
-& $edaPython -m regression.plot_candidate <本地批次目录>
-& $edaPython -m regression.plot_timing <本地批次目录>
-& $edaPython -m regression.report_acceptance <阶段1批次> <阶段2批次> <四个阶段3批次>
+& $edaPython -m regression.systems.monotonic_sar.analysis.plot_candidate <本地批次目录>
+& $edaPython -m regression.systems.monotonic_sar.analysis.plot_timing <本地批次目录>
+& $edaPython -m regression.systems.monotonic_sar.acceptance.report <阶段1批次> <阶段2批次> <四个阶段3批次>
 ```
 
 每个批次的 `figures/` 包含原始连续输出码 CSV、FFT 图和代表性转换时序。
@@ -48,3 +48,13 @@
 
 Python 与 Verilog-A 对齐记录、模块测试和失败候选见[开发结果](../docs/verification/development-status.md)。
 这些 flow 保留实际测试条件，不能与最终候选混合计为正式通过。
+
+## 工具归属
+
+公共运行、依赖解析、日志与 PSF 读取放在 `common/`。
+ADC 的参考模型、测量、绘图和诊断见 [analysis](systems/monotonic_sar/analysis/README.md)，
+正式验收见 [acceptance](systems/monotonic_sar/acceptance/README.md)。
+模块实验按 target 保存于 `studies/`，包括 [采样孔径](blocks/sar_sampler/studies/aperture/README.md)
+和 [等待门](systems/monotonic_sar/studies/wait_gate/README.md)。
+[TSMC18 参数补全资格测试](blocks/tsmc18_devices/flows/qualification/README.md) 检查原型与原生参数。
+电路源由 `library/` 管理；flow 直接引用 cell 的已有 view。
