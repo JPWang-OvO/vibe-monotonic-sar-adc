@@ -1,11 +1,11 @@
 simulator lang=spectre
 subckt AOI211D1BWP7T (A1 A2 B C ZN VDD VSS)
-MI17-M_u10 (ZN A1 net5 VSS) nch l=180.0n w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI17\-M_u10 (ZN A1 net5 VSS) nch l=180.0n w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 M_u12 (ZN C VSS VSS) nch l=180.0n w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MI17-M_u11 (net5 A2 VSS VSS) nch l=180.0n w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI17\-M_u11 (net5 A2 VSS VSS) nch l=180.0n w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 M_u13 (ZN B VSS VSS) nch l=180.0n w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MI19-MI12 (net25 B net32 VDD) pch l=180.0n w=1.37u m=1 nf=1 sd=540.0n ad=6.576e-13 as=6.576e-13 pd=3.7u ps=3.7u nrd=0.19708 nrs=0.19708 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI19\-MI12 (net25 B net32 VDD) pch l=180.0n w=1.37u m=1 nf=1 sd=540.0n ad=6.576e-13 as=6.576e-13 pd=3.7u ps=3.7u nrd=0.19708 nrs=0.19708 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 M_u3 (net25 A1 ZN VDD) pch l=180.0n w=1.37u m=1 nf=1 sd=540.0n ad=6.576e-13 as=6.576e-13 pd=3.7u ps=3.7u nrd=0.19708 nrs=0.19708 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MI19-MI13 (net32 C VDD VDD) pch l=180.0n w=1.37u m=1 nf=1 sd=540.0n ad=6.576e-13 as=6.576e-13 pd=3.7u ps=3.7u nrd=0.19708 nrs=0.19708 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI19\-MI13 (net32 C VDD VDD) pch l=180.0n w=1.37u m=1 nf=1 sd=540.0n ad=6.576e-13 as=6.576e-13 pd=3.7u ps=3.7u nrd=0.19708 nrs=0.19708 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 M_u2 (net25 A2 ZN VDD) pch l=180.0n w=1.37u m=1 nf=1 sd=540.0n ad=6.576e-13 as=6.576e-13 pd=3.7u ps=3.7u nrd=0.19708 nrs=0.19708 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 ends AOI211D1BWP7T

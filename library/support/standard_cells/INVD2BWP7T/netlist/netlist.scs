@@ -1,5 +1,5 @@
 simulator lang=spectre
 subckt INVD2BWP7T (I ZN VDD VSS)
-MU1-M_u2 (ZN I VSS VSS) nch l=180.0n w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MU1-M_u3 (ZN I VDD VDD) pch l=180.0n w=2.74u m=1 nf=1 sd=540.0n ad=1.3152e-12 as=1.3152e-12 pd=6.44u ps=6.44u nrd=0.0985402 nrs=0.0985402 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU1\-M_u2 (ZN I VSS VSS) nch l=180.0n w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU1\-M_u3 (ZN I VDD VDD) pch l=180.0n w=2.74u m=1 nf=1 sd=540.0n ad=1.3152e-12 as=1.3152e-12 pd=6.44u ps=6.44u nrd=0.0985402 nrs=0.0985402 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 ends INVD2BWP7T

@@ -1,19 +1,19 @@
 simulator lang=spectre
 subckt LNQD1BWP7T (D EN Q VDD VSS)
-MU29-M_u2 (net11 net61 VSS VSS) nch l=180.0n w=500n m=1 nf=1 sd=540.0n ad=2.4e-13 as=2.4e-13 pd=1.96u ps=1.96u nrd=0.54 nrs=0.54 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MU32-MU4 (net25 D VSS VSS) nch l=180.0n w=780.0n m=1 nf=1 sd=540.0n ad=3.744e-13 as=3.744e-13 pd=2.52u ps=2.52u nrd=0.346154 nrs=0.346154 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MU23-M_u2 (Q net9 VSS VSS) nch l=180.0n w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MI2-M_u2 (net61 EN VSS VSS) nch l=180.0n w=500n m=1 nf=1 sd=540.0n ad=2.4e-13 as=2.4e-13 pd=1.96u ps=1.96u nrd=0.54 nrs=0.54 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MU22-MU4 (net13 net5 VSS VSS) nch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MU22-MU3 (net9 net11 net13 VSS) nch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MU30-M_u2 (net5 net9 VSS VSS) nch l=180.0n w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MU32-MU3 (net9 net61 net25 VSS) nch l=180.0n w=680.0n m=1 nf=1 sd=540.0n ad=3.264e-13 as=3.264e-13 pd=2.32u ps=2.32u nrd=0.397059 nrs=0.397059 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MI2-M_u3 (net61 EN VDD VDD) pch l=180.0n w=685.00n m=1 nf=1 sd=540.0n ad=3.288e-13 as=3.288e-13 pd=2.33u ps=2.33u nrd=0.394161 nrs=0.394161 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MU22-MU1 (net57 net5 VDD VDD) pch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MU32-MU1 (net44 D VDD VDD) pch l=180.0n w=1.12u m=1 nf=1 sd=540.0n ad=5.376e-13 as=5.376e-13 pd=3.2u ps=3.2u nrd=0.241071 nrs=0.241071 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MU29-M_u3 (net11 net61 VDD VDD) pch l=180.0n w=685.00n m=1 nf=1 sd=540.0n ad=3.288e-13 as=3.288e-13 pd=2.33u ps=2.33u nrd=0.394161 nrs=0.394161 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MU23-M_u3 (Q net9 VDD VDD) pch l=180.0n w=1.37u m=1 nf=1 sd=540.0n ad=6.576e-13 as=6.576e-13 pd=3.7u ps=3.7u nrd=0.19708 nrs=0.19708 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MU32-MU2 (net9 net11 net44 VDD) pch l=180.0n w=1.12u m=1 nf=1 sd=540.0n ad=5.376e-13 as=5.376e-13 pd=3.2u ps=3.2u nrd=0.241071 nrs=0.241071 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MU22-MU2 (net9 net61 net57 VDD) pch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-MU30-M_u3 (net5 net9 VDD VDD) pch l=180.0n w=1.37u m=1 nf=1 sd=540.0n ad=6.576e-13 as=6.576e-13 pd=3.7u ps=3.7u nrd=0.19708 nrs=0.19708 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU29\-M_u2 (net11 net61 VSS VSS) nch l=180.0n w=500n m=1 nf=1 sd=540.0n ad=2.4e-13 as=2.4e-13 pd=1.96u ps=1.96u nrd=0.54 nrs=0.54 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU32\-MU4 (net25 D VSS VSS) nch l=180.0n w=780.0n m=1 nf=1 sd=540.0n ad=3.744e-13 as=3.744e-13 pd=2.52u ps=2.52u nrd=0.346154 nrs=0.346154 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU23\-M_u2 (Q net9 VSS VSS) nch l=180.0n w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI2\-M_u2 (net61 EN VSS VSS) nch l=180.0n w=500n m=1 nf=1 sd=540.0n ad=2.4e-13 as=2.4e-13 pd=1.96u ps=1.96u nrd=0.54 nrs=0.54 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU22\-MU4 (net13 net5 VSS VSS) nch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU22\-MU3 (net9 net11 net13 VSS) nch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU30\-M_u2 (net5 net9 VSS VSS) nch l=180.0n w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU32\-MU3 (net9 net61 net25 VSS) nch l=180.0n w=680.0n m=1 nf=1 sd=540.0n ad=3.264e-13 as=3.264e-13 pd=2.32u ps=2.32u nrd=0.397059 nrs=0.397059 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MI2\-M_u3 (net61 EN VDD VDD) pch l=180.0n w=685.00n m=1 nf=1 sd=540.0n ad=3.288e-13 as=3.288e-13 pd=2.33u ps=2.33u nrd=0.394161 nrs=0.394161 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU22\-MU1 (net57 net5 VDD VDD) pch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU32\-MU1 (net44 D VDD VDD) pch l=180.0n w=1.12u m=1 nf=1 sd=540.0n ad=5.376e-13 as=5.376e-13 pd=3.2u ps=3.2u nrd=0.241071 nrs=0.241071 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU29\-M_u3 (net11 net61 VDD VDD) pch l=180.0n w=685.00n m=1 nf=1 sd=540.0n ad=3.288e-13 as=3.288e-13 pd=2.33u ps=2.33u nrd=0.394161 nrs=0.394161 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU23\-M_u3 (Q net9 VDD VDD) pch l=180.0n w=1.37u m=1 nf=1 sd=540.0n ad=6.576e-13 as=6.576e-13 pd=3.7u ps=3.7u nrd=0.19708 nrs=0.19708 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU32\-MU2 (net9 net11 net44 VDD) pch l=180.0n w=1.12u m=1 nf=1 sd=540.0n ad=5.376e-13 as=5.376e-13 pd=3.2u ps=3.2u nrd=0.241071 nrs=0.241071 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU22\-MU2 (net9 net61 net57 VDD) pch l=180.0n w=420.0n m=1 nf=1 sd=540.0n ad=2.016e-13 as=2.016e-13 pd=1.8u ps=1.8u nrd=0.642857 nrs=0.642857 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU30\-M_u3 (net5 net9 VDD VDD) pch l=180.0n w=1.37u m=1 nf=1 sd=540.0n ad=6.576e-13 as=6.576e-13 pd=3.7u ps=3.7u nrd=0.19708 nrs=0.19708 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 ends LNQD1BWP7T
