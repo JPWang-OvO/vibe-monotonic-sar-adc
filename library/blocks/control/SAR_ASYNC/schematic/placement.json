@@ -1,7 +1,7 @@
 {
   "I_sample_guard": {
     "xy": [
-      0,
+      0.0,
       4.5
     ],
     "orient": "R0"
@@ -9,7 +9,7 @@
   "I_startup": {
     "xy": [
       3.375,
-      4
+      4.0
     ],
     "orient": "R0"
   },
@@ -36,7 +36,7 @@
   },
   "I_feedback_delay__I_b0": {
     "xy": [
-      0,
+      0.0,
       -0.5
     ],
     "orient": "R0"
@@ -50,7 +50,7 @@
   },
   "I_feedback_delay__I_b2": {
     "xy": [
-      3,
+      3.0,
       -0.5
     ],
     "orient": "R0"
@@ -64,7 +64,7 @@
   },
   "I_early": {
     "xy": [
-      0,
+      0.0,
       -2.5
     ],
     "orient": "R0"
@@ -72,27 +72,27 @@
   "I_run_nor__I_stop_n": {
     "xy": [
       1.25,
-      -2.5
+      -2.5625
     ],
     "orient": "R0"
   },
   "I_run_nor__I_stop": {
     "xy": [
       3.5,
-      -2.125
+      -2.1875
     ],
     "orient": "R0"
   },
   "I_run_nor__I_gate": {
     "xy": [
-      5,
+      5.0,
       -1.875
     ],
     "orient": "R0"
   },
   "I_clock_drive": {
     "xy": [
-      7,
+      7.0,
       -2.125
     ],
     "orient": "R0"
@@ -100,14 +100,14 @@
   "I_done_delay__I_b0": {
     "xy": [
       2.25,
-      -3.75
+      -3.8125
     ],
     "orient": "R0"
   },
   "I_done_delay__I_b1": {
     "xy": [
       3.75,
-      -3.75
+      -3.8125
     ],
     "orient": "R0"
   }

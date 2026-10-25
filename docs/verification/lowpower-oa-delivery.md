@@ -1,8 +1,8 @@
 ---
-title: 当前 ADC 原生 OA 及层次清理
+title: 当前 ADC 原生 OA 与源核对
 type: verification-method
 status: current
-last_reviewed: 2026-10-25
+last_reviewed: 2026-10-26
 authoritative_sources:
   - ../../config/design.json
   - ../../virtuoso/oa/adc_compare.py
@@ -23,22 +23,29 @@ authoritative_sources:
 
 `SAR_BIT` symbol 显示锁存输出后的互补反相器；`SAR_ASYNC` 标明四级反馈延时、两级完成延时及
 NOR/AOI211 控制逻辑；`SAR_PHASE` 标明锁存门控。三个 symbol 的端口位置与端序保持一致，
-其父级已重新 Check/Save。原生快照、绘图、设计语义、SVG 及导出网表已同步到各 cell。
+其父级已重新 Check/Save。
+
+2026-10-26 图面快照包含 SAR_CMP、SAR_ASYNC、SAR_STARTUP、SAR_BOOST、顶层 schematic，
+以及 SAR_BIT、SAR_SAMPLE symbol，共七个 view；调整范围均为图形对象。
+当前展示以各 view 的 `native.json` 和 `drawing.json` 为准；`functional.svg` 保留生成时的图形源。
+
+在该图面基础上，SAR_BOOST 的 Gate 复位支路补齐栅接 VDD 的串联 NMOS，下管由 SampleB 控制。
+SAR_BIT 的 strength 改为末级实际倍乘，最小为 1。参数调整保持 BIT 和顶层的图形对象，
+BOOST 仅调整复位支路及邻近 Gate 引脚。
 
 # 验证范围
 
-15 个功能 schematic 的 Check/Save 均为 0 error、0 warning，实例端口连接读回一致。
-清理前后源网表通过以顶层端口为锚点的图同构比较，检查器件模型、端序、有效参数和倍乘。
-原生 OA 网表与当前源的 26 个层次接口、1,264 组底层器件连接及有效参数逐项一致。
-源网表和原生网表比较均无缺失或新增器件。
+修改后的 BOOST、BIT 和顶层已执行 Check/Save，实例连接及参数读回一致。
+单独重定义 strength 前后的 1,264 组底层器件连接及有效参数完全相同，现有 finger/multi 保持原值。
+补齐两个采样支路的复位串管后，原生 OA 网表与当前源的 26 个层次接口、1,266 组底层器件
+连接及有效参数逐项一致；BOOST 与父级图面已审阅。
 
-本次没有重新仿真。系统性能依据仍为 flow baseline 中的 20 项已有实测；
-器件层次和内部命名变化后，重新运行的瞬态噪声数值可能不同。
-本次等价验证确认电气结构，未产生新的噪声样本。
+flow baseline 中的 20 项实测覆盖复位拓扑修改前的电路。
+复位拓扑修改后的性能待复验。
 
-核对产物位于项目 artifact 根目录的 `restructure_20261025/`：
-源等价结果为 `source_equivalence.json`，最终 OA 比较为 `electrical_comparison.json`；
-紧凑图面的检查、原生网表及截图位于 `compact_native/`，symbol 修改与回读位于 `compact_symbols/`。
+核对产物位于项目 artifact 根目录的 `reset_strength_20261026/`：
+`manual/` 保存电气修改前的手工视图，`strength_check.json` 保存参数重定义比较，
+`electrical_comparison.json` 保存当前源与 OA 的比较；原生导出位于 `native_export/`，截图位于同级目录。
 性能结果见[电气验收](lowpower-acceptance.md)。
 
 # 后续核对

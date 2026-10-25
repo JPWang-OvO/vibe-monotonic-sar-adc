@@ -3,6 +3,6 @@
   "top": "MONOTONIC_SAR",
   "view": "netlist",
   "acceptance_flow": "regression/systems/monotonic_sar/flows/acceptance/flow.json",
-  "status": "electrically_equivalent_oa_visual_reviewed",
-  "oa_electrical_comparison": "restructure_20261025\\electrical_comparison.json"
+  "status": "performance_revalidation_pending",
+  "oa_electrical_comparison": "reset_strength_20261026\\electrical_comparison.json"
 }

@@ -35,12 +35,13 @@ $run = "regression.systems.monotonic_sar.flows.acceptance.run"
 | Study | 变量与目标 |
 |---|---|
 | [比较器](systems/monotonic_sar/studies/comparator/study.json) | 输入对、再生对宽度；按系统规格检查功耗与 SNDR |
-| [采样](systems/monotonic_sar/studies/sampling/study.json) | 单位电容、采样开关宽度 |
+| [采样](systems/monotonic_sar/studies/sampling/study.json) | 采样开关宽度；CDAC 单位电容固定为 4.8 fF |
 | [控制](systems/monotonic_sar/studies/control/study.json) | 反馈反相器数量、保护电容、DAC 驱动倍率 |
 | [独立噪声](blocks/sar_cmp/studies/noise/README.md) | 比较器尺寸与 PVT 下的概率曲线、噪声、偏移和功耗 |
 
 Study 引用 flow 的测量与判据，声明变量、器件参数修改或拓扑生成规则。
 候选网表在批次 `inputs/` 中生成；正式 cell 只维护当前电路。
+控制 study 的 `dac_strength_factor=0.5/1` 表示末级驱动相对当前 strength 的倍率，保留最小 m=1。
 尺寸变体在 `prepare` 时按实际几何重新执行 PDK 参数补全。
 独立噪声 study 使用自己的固定 TB 和统计测量，结果解释其表征范围。
 
@@ -60,6 +61,7 @@ Study 汇总按参数点列出本批次选定条件的完整性、flow 判据和
 ```
 
 报告核对同一 flow 的实际条件、测量、判据、精度及 DUT 源，逐项检查执行、日志与指标。
+实际入口 TB 与按条件展开的固定 TB 比较全部可执行 token，覆盖输入、时钟、负载及噪声设置。
 报告只写 artifacts。基线晋升经审阅后写入所属 flow 的 `baselines/`。
 本次归位的是已批准的 20 项历史测量，原批次 ID 和结果路径仍记录在 baseline 中。
 

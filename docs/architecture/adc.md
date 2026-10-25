@@ -2,7 +2,7 @@
 title: 单调切换 SAR ADC 接口与设计预算
 type: architecture
 status: active
-last_reviewed: 2026-10-25
+last_reviewed: 2026-10-26
 authoritative_sources:
   - ../../config/architecture.json
   - ../../config/design.json
@@ -16,7 +16,8 @@ authoritative_sources:
 本设计复现 Liu 等人 2010 年 JSSC 论文的顶板采样、向下单调切换和异步比较完成握手。
 目标工艺为 TSMC180，电源及参考为 1.8 V，输入共模为 0.9 V。
 论文的 PMOS 输入动态比较器采用串联偏置 PMOS 稳定输入对电流；偏置在本项目内由晶体管电路产生。
-采样实现采用单级自举 NMOS 开关。
+采样实现采用单级自举 NMOS 开关。Gate 复位支路按论文 Fig. 7(a) 使用两只串联 NMOS：
+上管栅接 VDD，下管栅接 SampleB，中间节点为 ResetMid；两管均为 2/0.18 µm、nf=1、m=1。
 
 每侧 CDAC 的权重为 256、128、64、32、16、8、4、2、1，加一个保持接 VREFP 的单位电容。
 单位电容为论文规模的 4.8 fF，每侧总电容 2.4576 pF。
@@ -63,6 +64,9 @@ authoritative_sources:
 
 五分频器、上电复位、输出寄存器和内部驱动是本项目为固定 TB 边界补全的实现。
 相位和异步驱动按实际扇出选型，DAC 驱动按各位电容负载及下一次比较前的建立时间选择。
+`SAR_BIT.strength` 表示末级 MOS 的实际倍乘，最小档为 1；bit9 至 bit0 依次为
+32、16、8、4、2、1、1、1、1、1。前级倍乘为 `max(1,strength/2)`，各管 finger 保持原值。
+2026-10-26 的 strength 重定义保持全部原有有效尺寸；新增复位串管后的性能待重新验证。
 允许短时瞬态 SOA 电压超限及 2 V 自举器件的 G-B 超压，警告保留在结果中。
 这些电压提示用于观测；候选选择依据系统功能、SNDR、转换时间和功耗。
 

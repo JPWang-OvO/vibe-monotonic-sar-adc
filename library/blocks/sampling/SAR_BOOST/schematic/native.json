@@ -9,22 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 1496
+        "value": 1164
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 25 17:30:43 2026"
+        "value": "Oct 25 23:47:10 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 16
-      },
-      {
-        "name": "pin#",
-        "type": "int",
-        "value": 6
+        "value": 21
       },
       {
         "name": "portOrder",
@@ -36,7 +31,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 1496
+        "value": 1164
       },
       {
         "name": "schGeometryVersion",
@@ -67,8 +62,8 @@
           }
         ],
         "connections": {
-          "MINUS": "Cb",
-          "PLUS": "Ct"
+          "PLUS": "Ct",
+          "MINUS": "Cb"
         }
       },
       {
@@ -173,10 +168,10 @@
           }
         ],
         "connections": {
-          "D": "Cb",
-          "B": "VSS",
+          "S": "Vin",
           "G": "Gate",
-          "S": "Vin"
+          "B": "VSS",
+          "D": "Cb"
         }
       },
       {
@@ -281,10 +276,118 @@
           }
         ],
         "connections": {
-          "D": "Cb",
-          "B": "VSS",
+          "S": "VSS",
           "G": "SampleB",
-          "S": "VSS"
+          "B": "VSS",
+          "D": "Cb"
+        }
+      },
+      {
+        "name": "Mn_reset_cascode",
+        "master": [
+          "tsmc18",
+          "nmos2v",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [
+          {
+            "name": "ad",
+            "type": "string",
+            "value": "9.6e-13"
+          },
+          {
+            "name": "as",
+            "type": "string",
+            "value": "9.6e-13"
+          },
+          {
+            "name": "fingers",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "l",
+            "type": "string",
+            "value": "0.18u"
+          },
+          {
+            "name": "model",
+            "type": "string",
+            "value": "nch"
+          },
+          {
+            "name": "nrd",
+            "type": "string",
+            "value": "0.135"
+          },
+          {
+            "name": "nrs",
+            "type": "string",
+            "value": "0.135"
+          },
+          {
+            "name": "pd",
+            "type": "string",
+            "value": "4.96u"
+          },
+          {
+            "name": "ps",
+            "type": "string",
+            "value": "4.96u"
+          },
+          {
+            "name": "sa",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sb",
+            "type": "string",
+            "value": "480.0n"
+          },
+          {
+            "name": "sca",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scb",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "scc",
+            "type": "string",
+            "value": "0"
+          },
+          {
+            "name": "sd",
+            "type": "string",
+            "value": "540.0n"
+          },
+          {
+            "name": "simM",
+            "type": "string",
+            "value": "1"
+          },
+          {
+            "name": "w",
+            "type": "string",
+            "value": "0.000002"
+          },
+          {
+            "name": "wf",
+            "type": "string",
+            "value": "2u"
+          }
+        ],
+        "connections": {
+          "B": "VSS",
+          "S": "ResetMid",
+          "G": "VDD",
+          "D": "Gate"
         }
       },
       {
@@ -389,10 +492,10 @@
           }
         ],
         "connections": {
-          "D": "Gate",
-          "B": "VSS",
+          "S": "VSS",
           "G": "SampleB",
-          "S": "VSS"
+          "B": "VSS",
+          "D": "ResetMid"
         }
       },
       {
@@ -497,10 +600,10 @@
           }
         ],
         "connections": {
-          "D": "Q",
-          "B": "VSS",
+          "S": "Cb",
           "G": "Sample",
-          "S": "Cb"
+          "B": "VSS",
+          "D": "Q"
         }
       },
       {
@@ -605,10 +708,10 @@
           }
         ],
         "connections": {
-          "D": "Q",
-          "B": "VSS",
+          "S": "Cb",
           "G": "Gate",
-          "S": "Cb"
+          "B": "VSS",
+          "D": "Q"
         }
       },
       {
@@ -713,10 +816,10 @@
           }
         ],
         "connections": {
-          "D": "Ct",
-          "B": "Ct",
+          "S": "VDD",
           "G": "Gate",
-          "S": "VDD"
+          "B": "Ct",
+          "D": "Ct"
         }
       },
       {
@@ -821,10 +924,10 @@
           }
         ],
         "connections": {
-          "D": "Q",
-          "B": "Ct",
+          "S": "VDD",
           "G": "Sample",
-          "S": "VDD"
+          "B": "Ct",
+          "D": "Q"
         }
       },
       {
@@ -929,10 +1032,10 @@
           }
         ],
         "connections": {
-          "D": "Gate",
-          "B": "Ct",
+          "S": "Ct",
           "G": "Q",
-          "S": "Ct"
+          "B": "Ct",
+          "D": "Gate"
         }
       },
       {
@@ -1067,6 +1170,12 @@
       },
       {
         "name": "Q",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
+        "name": "ResetMid",
         "signal_type": "signal",
         "global_": false,
         "properties": []

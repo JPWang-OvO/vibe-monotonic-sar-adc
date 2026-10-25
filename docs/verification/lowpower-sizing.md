@@ -2,7 +2,7 @@
 title: 论文规模 CDAC 的低功耗候选记录
 type: note
 status: active
-last_reviewed: 2026-10-25
+last_reviewed: 2026-10-26
 authoritative_sources:
   - ../plans/power-and-sizing.md
   - ../../regression/systems/monotonic_sar/flows/acceptance/specification.json
@@ -21,7 +21,8 @@ authoritative_sources:
 `checkpoint/ai-autonomous-human-polish-r1-20261024` 保存。
 最终版本已完成同一 DUT 的原 20 项 PVT/噪声验收，全部通过，SNDR 为 59.223–61.880 dB。
 TT 核心功耗为 2.041–2.076 mW，最小转换余量为 0.763 ns。
-OA 已更新，原生网表与已验收 DUT 一致；[SNDR 原因诊断](sndr-diagnosis.md)记录 DAC 建立与动态判决的修正依据。
+本文结果属于补齐 SAR_BOOST 串联复位管之前的尺寸收敛批次，当前复位拓扑待重新验证。
+[SNDR 原因诊断](sndr-diagnosis.md)记录 DAC 建立与动态判决的修正依据。
 
 ## 最终尺寸及选择依据
 
@@ -132,9 +133,10 @@ SOA 警告完整保留在各批次日志中，不作为独立失败门槛。
 # 直接时钟与加权驱动
 
 `lowpower_taper_04` 让库 DFF 的 CP 直接接收 Valid，减少保存路径延迟。
-DAC 前级按 `max(0.25, 4 × strength)`、末级按 `max(0.5, 16 × strength)` 分配有效尺寸，
+该批次使用旧 strength 定义，DAC 前级按 `max(0.25, 4 × strength)`、末级按 `max(0.5, 16 × strength)` 分配有效尺寸，
 大权重级间总栅宽比约为 5.3。前级采用 N/P=0.5/1 µm 的单位管，末级采用 1/3 µm 的单位管，
 各位使用整数倍乘，保持 m≥1。PDK 补全会把 m<1 改为 1，因此小驱动档通过单位管宽度实现。
+当前 strength 已改为末级实际倍乘，前级倍乘为 `max(1,strength/2)`，原有有效尺寸保持一致。
 
 同时比较 CKLNQD1 集成时钟门控：低相位锁存 `D && !Q` 使能，只给下一待置位的状态 DFF
 传递比较边沿。门控内的锁存器防止同一个高电平期间逐位传播。该方案与直接时钟的未门控版本

@@ -103,7 +103,7 @@
       ],
       "model": "SAR_DRIVE",
       "parameters": {
-        "scale": "max(0.25,strength*4)"
+        "scale": "max(1,strength/2)/4"
       },
       "connections": {
         "A": "BpRaw,BnRaw",
@@ -117,7 +117,7 @@
         "symbol"
       ],
       "oa_parameters": {
-        "scale": "max(0.25,pPar(\"strength\")*4)"
+        "scale": "max(1,pPar(\"strength\")/2)/4"
       },
       "array_members": [
         "I_buf_p0",
@@ -134,7 +134,7 @@
       ],
       "model": "SAR_DAC_DRIVE",
       "parameters": {
-        "scale": "max(0.5,strength*16)"
+        "scale": "strength/2"
       },
       "connections": {
         "A": "BpBuf,BnBuf",
@@ -148,7 +148,7 @@
         "symbol"
       ],
       "oa_parameters": {
-        "scale": "max(0.5,pPar(\"strength\")*16)"
+        "scale": "pPar(\"strength\")/2"
       },
       "array_members": [
         "I_buf_p1",

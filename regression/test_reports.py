@@ -7,6 +7,8 @@ import unittest
 from regression.common.project import ROOT, read_json, write_json
 from regression.common.plans import load_plan
 from regression.common.study import summarize
+from regression.common.runner import case_tokens
+from regression.common.sources import stage
 from regression.systems.monotonic_sar.acceptance.report import report
 
 FLOW = ROOT/'regression/systems/monotonic_sar/flows/acceptance/flow.json'
@@ -18,17 +20,23 @@ class ReportTests(unittest.TestCase):
         baseline = {r['condition']: r['metrics'] for r in read_json(ROOT/flow['baseline'])['cases']}
         with tempfile.TemporaryDirectory() as tmp:
             folder = Path(tmp)
+            environment = {'model_files': {'tsmc18': '/pdk/models.scs'}}
             cases, results = [], []
             for condition in flow['conditions']:
                 cid = condition['id']
+                inputs = folder/'cases'/cid/'inputs'
+                staged = stage(ROOT/flow['testbench'], ROOT, inputs,
+                               case_tokens(flow, condition, environment), cell_views=condition['cell_views'])
+                entry = inputs/staged['entry']
+                entry.write_text('simulator lang=spectre\ninclude "pdk.scs"\n' + entry.read_text())
+                (inputs/'pdk.scs').write_text('same DUT')
+                staged['sources'].append('pdk.scs')
                 cases.append(dict(id=cid, flow=FLOW.relative_to(ROOT).as_posix(), condition=condition,
                                   measurement=flow['measurement'], criteria=condition['criteria'],
-                                  simulator=flow['simulator'], sources=dict(entry='tb.scs', sources=['tb.scs','dut.scs'])))
+                                  simulator=flow['simulator'], sources=staged))
                 results.append(dict(case=cid, metrics=baseline[cid], execution_pass=True,
                                     log_audit={'pass':True}, measurement_pass=True))
-                inputs = folder/'cases'/cid/'inputs'; inputs.mkdir(parents=True)
-                (inputs/'dut.scs').write_text('same DUT')
-            write_json(folder/'batch.json', {'cases':cases})
+            write_json(folder/'batch.json', {'cases':cases, 'environment':environment})
             write_json(folder/'summary.json', {'cases':results})
             self.assertTrue(report(FLOW,[folder])['all_electrical_pass'])
             for failure in ('execution_pass','measurement_pass','log_audit','metrics','missing'):
@@ -41,10 +49,10 @@ class ReportTests(unittest.TestCase):
                 with self.subTest(failure=failure):
                     self.assertFalse(report(FLOW,[folder])['all_electrical_pass'])
             write_json(folder/'summary.json', {'cases':results})
-            (inputs/'dut.scs').write_text('different DUT')
+            (inputs/'pdk.scs').write_text('different DUT')
             self.assertFalse(report(FLOW,[folder])['all_electrical_pass'])
             cases[0]['measurement']=dict(cases[0]['measurement'],read_offset_s=0)
-            write_json(folder/'batch.json', {'cases':cases})
+            write_json(folder/'batch.json', {'cases':cases, 'environment':environment})
             with self.assertRaises(AssertionError):report(FLOW,[folder])
 
     def test_study_ranks_feasible_points_by_worst_selected_case(self):

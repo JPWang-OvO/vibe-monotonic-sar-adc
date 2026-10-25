@@ -365,7 +365,7 @@
     {
       "name": "Mn_reset_gate",
       "nodes": [
-        "Gate",
+        "ResetMid",
         "SampleB",
         "VSS",
         "VSS"
@@ -378,9 +378,56 @@
         "m": "1"
       },
       "connections": {
-        "D": "Gate",
+        "D": "ResetMid",
         "G": "SampleB",
         "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "9.6e-13",
+        "as": "9.6e-13",
+        "pd": "4.96u",
+        "ps": "4.96u",
+        "nrd": "0.135",
+        "nrs": "0.135",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "2u",
+        "w": "0.000002",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mn_reset_cascode",
+      "nodes": [
+        "Gate",
+        "VDD",
+        "ResetMid",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "2u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "Gate",
+        "G": "VDD",
+        "S": "ResetMid",
         "B": "VSS"
       },
       "master": [

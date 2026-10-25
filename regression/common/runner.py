@@ -15,6 +15,17 @@ from regression.common.plans import load_plan
 from regression.common.variants import sources as variant_sources
 
 
+def case_tokens(flow, condition, env):
+    tokens = dict(condition['tokens'], MODEL_SETUP='')
+    if flow['process']:
+        process = read_json(ROOT / read_json(ROOT / 'project.json')['process'])
+        model = env['model_files'][flow['process']]
+        tokens['MODEL_SETUP'] = '\n'.join(
+            f'include "{model}" section={section}'
+            for section in process['model_sections'][condition['corner']])
+    return tokens
+
+
 def prepare(plan_paths, env_path, batch_id, workers=1, selected=None):
     identifier(batch_id)
     if workers < 1:
@@ -36,12 +47,7 @@ def prepare(plan_paths, env_path, batch_id, workers=1, selected=None):
             if any(c["id"] == case_id for c in cases):
                 raise ValueError("Duplicate case ID " + case_id)
             local_case = destination / "cases" / case_id
-            tokens = dict(condition["tokens"])
-            tokens["MODEL_SETUP"] = ""
-            if flow["process"]:
-                model = env["model_files"][flow["process"]]
-                tokens["MODEL_SETUP"] = "\n".join(
-                    f'include "{model}" section={s}' for s in process["model_sections"][condition["corner"]])
+            tokens = case_tokens(flow, condition, env)
             staged = stage(ROOT / flow["testbench"], ROOT, local_case / "inputs", tokens,
                            cell_views=condition["cell_views"], overrides=variant_sources(condition))
             sim = flow["simulator"]

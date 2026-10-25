@@ -5,70 +5,70 @@
       "terminal": "Bn",
       "name": "Bn",
       "figure_type": "rect",
-      "figure": 64,
+      "figure": 63,
       "properties": []
     },
     {
       "terminal": "Bp",
       "name": "Bp",
       "figure_type": "rect",
-      "figure": 62,
+      "figure": 61,
       "properties": []
     },
     {
       "terminal": "Capture",
       "name": "Capture",
       "figure_type": "rect",
-      "figure": 58,
+      "figure": 57,
       "properties": []
     },
     {
       "terminal": "Outp",
       "name": "Outp",
       "figure_type": "rect",
-      "figure": 56,
+      "figure": 55,
       "properties": []
     },
     {
       "terminal": "Q",
       "name": "Q",
       "figure_type": "rect",
-      "figure": 60,
+      "figure": 59,
       "properties": []
     },
     {
       "terminal": "Sample",
       "name": "Sample",
       "figure_type": "rect",
-      "figure": 70,
+      "figure": 69,
       "properties": []
     },
     {
       "terminal": "VDD",
       "name": "VDD",
       "figure_type": "rect",
-      "figure": 52,
+      "figure": 51,
       "properties": []
     },
     {
       "terminal": "VREFN",
       "name": "VREFN",
       "figure_type": "rect",
-      "figure": 68,
+      "figure": 67,
       "properties": []
     },
     {
       "terminal": "VREFP",
       "name": "VREFP",
       "figure_type": "rect",
-      "figure": 66,
+      "figure": 65,
       "properties": []
     },
     {
       "terminal": "VSS",
       "name": "VSS",
       "figure_type": "rect",
-      "figure": 54,
+      "figure": 53,
       "properties": []
     }
   ],
@@ -511,35 +511,6 @@
           0.6875
         ]
       ]
-    },
-    {
-      "type": "path",
-      "lpp": [
-        "device",
-        "drawing"
-      ],
-      "bbox": [
-        [
-          -0.2625,
-          0.3625
-        ],
-        [
-          -0.2375,
-          0.3875
-        ]
-      ],
-      "points": [
-        [
-          -0.2625,
-          0.375
-        ],
-        [
-          -0.2375,
-          0.375
-        ]
-      ],
-      "width": 0.025,
-      "style": "truncateExtend"
     },
     {
       "type": "line",

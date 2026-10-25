@@ -168,7 +168,7 @@
       ],
       "model": "SAR_BIT",
       "parameters": {
-        "strength": "1"
+        "strength": "32"
       },
       "connections": {
         "Outp": "Outp",
@@ -188,7 +188,7 @@
         "symbol"
       ],
       "oa_parameters": {
-        "strength": "1"
+        "strength": "32"
       }
     },
     {
@@ -207,7 +207,7 @@
       ],
       "model": "SAR_BIT",
       "parameters": {
-        "strength": "0.5"
+        "strength": "16"
       },
       "connections": {
         "Outp": "Outp",
@@ -227,7 +227,7 @@
         "symbol"
       ],
       "oa_parameters": {
-        "strength": "0.5"
+        "strength": "16"
       }
     },
     {
@@ -246,7 +246,7 @@
       ],
       "model": "SAR_BIT",
       "parameters": {
-        "strength": "0.25"
+        "strength": "8"
       },
       "connections": {
         "Outp": "Outp",
@@ -266,7 +266,7 @@
         "symbol"
       ],
       "oa_parameters": {
-        "strength": "0.25"
+        "strength": "8"
       }
     },
     {
@@ -285,7 +285,7 @@
       ],
       "model": "SAR_BIT",
       "parameters": {
-        "strength": "0.125"
+        "strength": "4"
       },
       "connections": {
         "Outp": "Outp",
@@ -305,7 +305,7 @@
         "symbol"
       ],
       "oa_parameters": {
-        "strength": "0.125"
+        "strength": "4"
       }
     },
     {
@@ -324,7 +324,7 @@
       ],
       "model": "SAR_BIT",
       "parameters": {
-        "strength": "0.0625"
+        "strength": "2"
       },
       "connections": {
         "Outp": "Outp",
@@ -344,7 +344,7 @@
         "symbol"
       ],
       "oa_parameters": {
-        "strength": "0.0625"
+        "strength": "2"
       }
     },
     {
@@ -363,7 +363,7 @@
       ],
       "model": "SAR_BIT",
       "parameters": {
-        "strength": "0.03125"
+        "strength": "1"
       },
       "connections": {
         "Outp": "Outp",
@@ -383,7 +383,7 @@
         "symbol"
       ],
       "oa_parameters": {
-        "strength": "0.03125"
+        "strength": "1"
       }
     },
     {
@@ -402,7 +402,7 @@
       ],
       "model": "SAR_BIT",
       "parameters": {
-        "strength": "0.015625"
+        "strength": "1"
       },
       "connections": {
         "Outp": "Outp",
@@ -422,7 +422,7 @@
         "symbol"
       ],
       "oa_parameters": {
-        "strength": "0.015625"
+        "strength": "1"
       }
     },
     {
@@ -441,7 +441,7 @@
       ],
       "model": "SAR_BIT",
       "parameters": {
-        "strength": "0.0078125"
+        "strength": "1"
       },
       "connections": {
         "Outp": "Outp",
@@ -461,7 +461,7 @@
         "symbol"
       ],
       "oa_parameters": {
-        "strength": "0.0078125"
+        "strength": "1"
       }
     },
     {
@@ -572,7 +572,7 @@
       ],
       "model": "SAR_BIT",
       "parameters": {
-        "strength": "0.00390625"
+        "strength": "1"
       },
       "connections": {
         "Outp": "Outp",
@@ -592,7 +592,7 @@
         "symbol"
       ],
       "oa_parameters": {
-        "strength": "0.00390625"
+        "strength": "1"
       },
       "array_members": [
         "I_bit1",

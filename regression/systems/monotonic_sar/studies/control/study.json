@@ -25,9 +25,9 @@
       15,
       30
     ],
-    "dac_taper": [
-      8,
-      16
+    "dac_strength_factor": [
+      0.5,
+      1
     ]
   },
   "edits": [
@@ -46,7 +46,7 @@
         "I_buf_n1"
       ],
       "parameter": "scale",
-      "value": "max(0.5,strength*{dac_taper})"
+      "value": "max(1,strength*{dac_strength_factor})/2"
     }
   ],
   "topology": {

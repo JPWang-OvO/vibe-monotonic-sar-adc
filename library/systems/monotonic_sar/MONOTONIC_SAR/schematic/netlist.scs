@@ -13,16 +13,16 @@ I_inv (Sample SampleB VDD VSS) INVD4BWP7T
 I_bias (Bias VDD VSS) SAR_BIAS
 I_cmp (Vp Vn ClkC Outp Outn Valid Bias VDD VSS) SAR_CMP
 I_async (Sample Valid ClkC EOC Ck\<9\> Ck\<8\> Ck\<7\> Ck\<6\> Ck\<5\> Ck\<4\> Ck\<3\> Ck\<2\> Ck\<1\> Ck\<0\> VDD VSS) SAR_ASYNC
-I_bit\<1\> (Outp Ck\<1\> Sample Q\<1\> Bp\<1\> Bn\<1\> VDD VSS VREFP VREFN) SAR_BIT strength=0.00390625
-I_bit\<0\> (Outp Ck\<0\> Sample Q\<0\> Bp\<0\> Bn\<0\> VDD VSS VREFP VREFN) SAR_BIT strength=0.00390625
-I_bit2 (Outp Ck\<2\> Sample Q\<2\> Bp\<2\> Bn\<2\> VDD VSS VREFP VREFN) SAR_BIT strength=0.0078125
-I_bit3 (Outp Ck\<3\> Sample Q\<3\> Bp\<3\> Bn\<3\> VDD VSS VREFP VREFN) SAR_BIT strength=0.015625
-I_bit4 (Outp Ck\<4\> Sample Q\<4\> Bp\<4\> Bn\<4\> VDD VSS VREFP VREFN) SAR_BIT strength=0.03125
-I_bit5 (Outp Ck\<5\> Sample Q\<5\> Bp\<5\> Bn\<5\> VDD VSS VREFP VREFN) SAR_BIT strength=0.0625
-I_bit6 (Outp Ck\<6\> Sample Q\<6\> Bp\<6\> Bn\<6\> VDD VSS VREFP VREFN) SAR_BIT strength=0.125
-I_bit7 (Outp Ck\<7\> Sample Q\<7\> Bp\<7\> Bn\<7\> VDD VSS VREFP VREFN) SAR_BIT strength=0.25
-I_bit8 (Outp Ck\<8\> Sample Q\<8\> Bp\<8\> Bn\<8\> VDD VSS VREFP VREFN) SAR_BIT strength=0.5
-I_bit9 (Outp Ck\<9\> Sample Q\<9\> Bp\<9\> Bn\<9\> VDD VSS VREFP VREFN) SAR_BIT strength=1
+I_bit\<1\> (Outp Ck\<1\> Sample Q\<1\> Bp\<1\> Bn\<1\> VDD VSS VREFP VREFN) SAR_BIT strength=1
+I_bit\<0\> (Outp Ck\<0\> Sample Q\<0\> Bp\<0\> Bn\<0\> VDD VSS VREFP VREFN) SAR_BIT strength=1
+I_bit2 (Outp Ck\<2\> Sample Q\<2\> Bp\<2\> Bn\<2\> VDD VSS VREFP VREFN) SAR_BIT strength=1
+I_bit3 (Outp Ck\<3\> Sample Q\<3\> Bp\<3\> Bn\<3\> VDD VSS VREFP VREFN) SAR_BIT strength=1
+I_bit4 (Outp Ck\<4\> Sample Q\<4\> Bp\<4\> Bn\<4\> VDD VSS VREFP VREFN) SAR_BIT strength=1
+I_bit5 (Outp Ck\<5\> Sample Q\<5\> Bp\<5\> Bn\<5\> VDD VSS VREFP VREFN) SAR_BIT strength=2
+I_bit6 (Outp Ck\<6\> Sample Q\<6\> Bp\<6\> Bn\<6\> VDD VSS VREFP VREFN) SAR_BIT strength=4
+I_bit7 (Outp Ck\<7\> Sample Q\<7\> Bp\<7\> Bn\<7\> VDD VSS VREFP VREFN) SAR_BIT strength=8
+I_bit8 (Outp Ck\<8\> Sample Q\<8\> Bp\<8\> Bn\<8\> VDD VSS VREFP VREFN) SAR_BIT strength=16
+I_bit9 (Outp Ck\<9\> Sample Q\<9\> Bp\<9\> Bn\<9\> VDD VSS VREFP VREFN) SAR_BIT strength=32
 I_frontend (Vinp Vinn Sample SampleB Vp Vn Bp\<9\> Bp\<8\> Bp\<7\> Bp\<6\> Bp\<5\> Bp\<4\> Bp\<3\> Bp\<2\> Bp\<1\> Bn\<9\> Bn\<8\> Bn\<7\> Bn\<6\> Bn\<5\> Bn\<4\> Bn\<3\> Bn\<2\> Bn\<1\> VREFP VREFN VDD VSS) SAR_FRONTEND unit_cap=4.8f
 I_out\<9\> (Q\<9\> EOC D\<9\> VDD VSS) SAR_OUT
 I_out\<8\> (Q\<8\> EOC D\<8\> VDD VSS) SAR_OUT

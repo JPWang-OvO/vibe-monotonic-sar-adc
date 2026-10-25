@@ -1,10 +1,29 @@
 """Evaluate collected batches against a flow; write a candidate report to artifacts."""
 import argparse
 from pathlib import Path
+from tempfile import TemporaryDirectory
 
 from regression.common.project import ROOT, read_json, write_json
 from regression.common.plans import load_plan
 from regression.common.measure import criterion
+from regression.common.runner import case_tokens
+from regression.common.sources import stage
+from virtuoso.oa.comparison import spectre_tokens
+
+
+def check_testbench(flow, condition, batch, case, inputs):
+    """Check the actual entry deck against the fixed TB and resolved condition."""
+    with TemporaryDirectory() as temporary:
+        folder = Path(temporary)
+        staged = stage(ROOT / flow['testbench'], ROOT, folder,
+                       case_tokens(flow, condition, batch['environment']),
+                       cell_views=condition['cell_views'])
+        expected = (folder / staged['entry']).read_text(encoding='utf-8')
+    if condition['enrichment']:
+        expected = 'simulator lang=spectre\ninclude "pdk.scs"\n' + expected
+    actual = (inputs / case['sources']['entry']).read_text(encoding='utf-8')
+    if spectre_tokens(actual) != spectre_tokens(expected):
+        raise ValueError('Actual testbench differs from the flow: ' + condition['id'])
 
 
 def report(flow_path, batches):
@@ -32,6 +51,7 @@ def report(flow_path, batches):
             assert case['simulator'] == flow['simulator'], condition
             seen.add(condition)
             inputs = folder/'cases'/case['id']/'inputs'
+            check_testbench(flow, contract, batch, case, inputs)
             source = {name: (inputs/name).read_text(encoding='utf-8')
                       for name in case['sources']['sources'] if name != case['sources']['entry']}
             if reference is None:

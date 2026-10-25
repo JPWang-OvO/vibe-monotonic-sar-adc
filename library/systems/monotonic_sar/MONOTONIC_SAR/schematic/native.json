@@ -9,17 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 4947
+        "value": 40787
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 25 17:30:50 2026"
+        "value": "Oct 25 23:47:39 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 22
+        "value": 11
       },
       {
         "name": "pin#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 4947
+        "value": 40787
       },
       {
         "name": "schGeometryVersion",
@@ -99,7 +99,7 @@
           {
             "name": "strength",
             "type": "string",
-            "value": "0.0078125"
+            "value": "1"
           }
         ],
         "connections": {
@@ -128,7 +128,7 @@
           {
             "name": "strength",
             "type": "string",
-            "value": "0.015625"
+            "value": "1"
           }
         ],
         "connections": {
@@ -157,7 +157,7 @@
           {
             "name": "strength",
             "type": "string",
-            "value": "0.03125"
+            "value": "1"
           }
         ],
         "connections": {
@@ -186,7 +186,7 @@
           {
             "name": "strength",
             "type": "string",
-            "value": "0.0625"
+            "value": "2"
           }
         ],
         "connections": {
@@ -215,7 +215,7 @@
           {
             "name": "strength",
             "type": "string",
-            "value": "0.125"
+            "value": "4"
           }
         ],
         "connections": {
@@ -244,7 +244,7 @@
           {
             "name": "strength",
             "type": "string",
-            "value": "0.25"
+            "value": "8"
           }
         ],
         "connections": {
@@ -273,7 +273,7 @@
           {
             "name": "strength",
             "type": "string",
-            "value": "0.5"
+            "value": "16"
           }
         ],
         "connections": {
@@ -302,7 +302,7 @@
           {
             "name": "strength",
             "type": "string",
-            "value": "1"
+            "value": "32"
           }
         ],
         "connections": {
@@ -331,7 +331,7 @@
           {
             "name": "strength",
             "type": "string",
-            "value": "0.00390625"
+            "value": "1"
           }
         ],
         "connections": {

@@ -15,25 +15,12 @@
   "constraints": "Referenced flow criteria",
   "id": "sar_sampling",
   "variables": {
-    "unit_ff": [
-      4.8,
-      9.6,
-      20
-    ],
     "sample_um": [
       8,
       16
     ]
   },
   "edits": [
-    {
-      "cell": "SAR_FRONTEND",
-      "parameter": "unit_cap",
-      "value": "{unit_ff}f",
-      "instances": [
-        "I_cdac"
-      ]
-    },
     {
       "cell": "SAR_SAMPLE",
       "instances": [

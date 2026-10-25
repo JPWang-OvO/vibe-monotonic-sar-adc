@@ -60,14 +60,8 @@
       "min": 18,
       "max": 20
     },
-    "period_error_s": {
-      "max": 5e-11
-    },
-    "width_min_s": {
-      "min": 3.5e-09
-    },
-    "width_max_s": {
-      "max": 4.5e-09
+    "clock_cycle_errors": {
+      "max": 0
     }
   },
   "condition_defaults": {

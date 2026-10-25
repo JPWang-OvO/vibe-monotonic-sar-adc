@@ -9,12 +9,12 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 1324
+        "value": 1912
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 25 17:30:13 2026"
+        "value": "Oct 25 23:47:38 2026"
       },
       {
         "name": "net#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 1324
+        "value": 1912
       },
       {
         "name": "schGeometryVersion",
@@ -63,7 +63,7 @@
           {
             "name": "scale",
             "type": "string",
-            "value": "max(0.25,pPar(\"strength\")*4)"
+            "value": "max(1,pPar(\"strength\")/2)/4"
           }
         ],
         "connections": {
@@ -86,7 +86,7 @@
           {
             "name": "scale",
             "type": "string",
-            "value": "max(0.5,pPar(\"strength\")*16)"
+            "value": "pPar(\"strength\")/2"
           }
         ],
         "connections": {
