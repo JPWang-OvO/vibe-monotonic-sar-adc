@@ -3,7 +3,8 @@ import bisect
 import math
 
 from regression.common.psf import read_psf, interpolate
-from .measure import edges, integral
+from regression.systems.monotonic_sar.analysis.measure import edges, integral
+from .stimulus import trial_points
 
 
 def fit_probability(rows):
@@ -49,10 +50,11 @@ def fit_probability(rows):
     return out
 
 
-def measure_comparator_noise(case, raw):
+def measure(case, raw):
     w=read_psf(raw/'tran.tran.tran');t=w['time'];cfg=case['measurement']
+    points=trial_points(cfg['sequence'])
     valid=edges(t,w['Valid'],.9,1);rows={};delays=[];unresolved=reset_errors=valid_late=0
-    for j,point in enumerate(cfg['points']):
+    for j,point in enumerate(points):
         start=cfg['start_s']+j*cfg['period_s'];deadline=start+cfg['decision_time_s']
         cm,diff=point['common_mode_v'],point['differential_v'];key=(cm,diff)
         row=rows.setdefault(key,dict(common_mode_v=cm,differential_v=diff,trials=0,resolved=0,ones=0,unresolved=0,valid_late=0))
@@ -72,10 +74,13 @@ def measure_comparator_noise(case, raw):
         data=sorted([v for (c,d),v in rows.items() if c==cm],key=lambda r:r['differential_v'])
         fit=fit_probability(data);fit['all_decisions_resolved']=not any(r['unresolved'] for r in data)
         curves.append(dict(common_mode_v=cm,points=data,fit=fit))
-    start=cfg['start_s'];stop=start+(len(cfg['points'])-1)*cfg['period_s']
+    start=cfg['start_s'];stop=start+(len(points)-1)*cfg['period_s']
     power=-1.8*integral(t,w['VDD_SRC:p'],start,stop)/(stop-start)
-    return dict(metrics=dict(trials=len(cfg['points']),unresolved=unresolved,valid_late=valid_late,reset_errors=reset_errors,
+    result = dict(metrics=dict(trials=len(points),unresolved=unresolved,valid_late=valid_late,reset_errors=reset_errors,
                 delay_max_s=max(delays) if delays else None,average_supply_power_w=power),curves=curves,
                 decision_time_s=cfg['decision_time_s'],loads_f=cfg['loads_f'],
                 measurement_scope='Comparator and actual bias circuit with ideal driven inputs/clock and explicit output loads; no ADC, CDAC, sampling noise, or device mismatch.',
                 validity_note='Noise probabilities use complementary output rails. Valid below 1.62 V at the deadline is counted separately; delay_max_s is the Valid 0.9 V crossing before reset. Nonzero unresolved or reset errors require review.')
+    result.update(checks={}, functional_pass=True, performance_pass=None,
+                  performance_scope='Standalone noise characterization; no added ADC acceptance threshold')
+    return result

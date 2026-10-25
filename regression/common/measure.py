@@ -2,9 +2,16 @@
 from __future__ import annotations
 
 import math
+from importlib import import_module
 from pathlib import Path
 
 
+MEASUREMENT_MODULES = {
+    'sar': 'regression.systems.monotonic_sar.flows.acceptance.measure',
+    'sar_comparator': 'regression.blocks.sar_cmp.flows.functional.measure',
+    'sar_phase': 'regression.blocks.sar_phase.flows.functional.measure',
+    'sar_comparator_noise': 'regression.blocks.sar_cmp.studies.noise.measure',
+}
 
 def criterion(value, rule):
     if not isinstance(value, (int, float)) or not math.isfinite(value):
@@ -14,25 +21,7 @@ def criterion(value, rule):
 
 
 def measure(case, raw):
-    raw = Path(raw)
-    cfg = case["measurement"]
-    kind = cfg["kind"]
-    if kind == 'sar_comparator_noise':
-        from regression.systems.monotonic_sar.analysis.measure_cmp_noise import measure_comparator_noise
-        result=measure_comparator_noise(case,raw)
-        result.update(checks={},functional_pass=True,performance_pass=None,
-                      performance_scope='Standalone noise characterization; no added ADC acceptance threshold')
-        return result
-    if kind in ('sar_comparator','sar_phase'):
-        from regression.systems.monotonic_sar.analysis import measure_modules
-        result=getattr(measure_modules, 'measure_'+kind[4:])(case,raw)
-        checks={name:criterion(result['metrics'][name],rule) for name,rule in case['criteria'].items()}
-        result.update(checks=checks,functional_pass=all(checks.values()),performance_pass=None)
-        return result
-    if kind == "sar":
-        from regression.systems.monotonic_sar.analysis.measure import measure_sar
-        result = measure_sar(case, raw)
-        checks = {name: criterion(result['metrics'][name], rule) for name, rule in case['criteria'].items()}
-        result.update(checks=checks, functional_pass=all(checks.values()), performance_pass=checks.get('sndr_db'))
-        return result
-    raise ValueError('Unknown measurement kind: '+kind)
+    kind = case['measurement']['kind']
+    if kind not in MEASUREMENT_MODULES:
+        raise ValueError('Unknown measurement kind: '+kind)
+    return import_module(MEASUREMENT_MODULES[kind]).measure(case, Path(raw))

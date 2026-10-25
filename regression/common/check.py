@@ -7,6 +7,7 @@ from pathlib import Path
 from regression.common.project import ROOT, read_json
 from regression.common.plans import load_plan
 from regression.common.variants import sources as variant_sources
+from regression.common.measure import MEASUREMENT_MODULES
 from virtuoso.oa.comparison import spectre_document,expand_signals
 
 
@@ -54,6 +55,14 @@ def check(root=ROOT):
                     if row["master"] != saved["master"] or connections != saved["connections"]:
                         problems.append(f"Native/recipe circuit differs: {recipe}:{row['name']}")
     project = read_json(root / "project.json")
+    for relative in project['flows'] + project['studies']:
+        path = root / relative
+        if not path.with_name('run.py').is_file():
+            problems.append(f'Missing plan entry: {path}')
+        kind = load_plan(path)['measurement']['kind']
+        module = MEASUREMENT_MODULES[kind]
+        if not (root / (module.replace('.', '/') + '.py')).is_file():
+            problems.append(f'Missing measurement module: {module}')
     for flow in project["flows"]:
         path = root / flow
         config = load_plan(path)

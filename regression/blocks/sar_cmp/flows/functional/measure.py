@@ -1,9 +1,10 @@
-"""Functional comparator and divider measurements."""
-from regression.common.psf import read_psf,interpolate
-from .measure import edges
+"""Measure this block and apply the functional flow criteria."""
+from regression.common.psf import read_psf, interpolate
+from regression.common.measure import criterion
+from regression.systems.monotonic_sar.analysis.measure import edges
 
 
-def measure_comparator(case,raw):
+def measure(case,raw):
     w=read_psf(raw/'tran.tran.tran');t=w['time'];cfg=case['measurement']
     valid=edges(t,w['Valid'],.9,1)
     wrong=missing=reset_errors=0;delays=[];biases=[];details=[]
@@ -19,16 +20,9 @@ def measure_comparator(case,raw):
         reset_errors+=int(interpolate(t,w['Outp'],reset_at)<1.62 or interpolate(t,w['Outn'],reset_at)<1.62 or interpolate(t,w['Valid'],reset_at)>.18)
         bias=interpolate(t,w['Bias'],start);biases.append(bias)
         details.append(dict(index=j,**point,delay_s=delay,bias_v=bias,decision=int(decision),tail_v=interpolate(t,w['I_cmp.Tail'],done),bias_drain_v=interpolate(t,w['I_cmp.BiasDrain'],done)))
-    return dict(metrics=dict(wrong_decisions=wrong,missing_valid=missing,reset_errors=reset_errors,
+    result = dict(metrics=dict(wrong_decisions=wrong,missing_valid=missing,reset_errors=reset_errors,
         delay_max_s=max(delays) if delays else 1,bias_min_v=min(biases) if biases else 0,bias_max_v=max(biases) if biases else 2),comparisons=details)
-
-
-def measure_phase(case,raw):
-    w=read_psf(raw/'tran.tran.tran');t=w['time']
-    rises=[v for v in edges(t,w['Sample'],.9,1) if 200e-9<v<580e-9]
-    falls=edges(t,w['Sample'],.9,-1)
-    widths=[next(f for f in falls if f>r)-r for r in rises]
-    periods=[b-a for a,b in zip(rises,rises[1:])]
-    return dict(metrics=dict(pulse_count=len(rises),period_error_s=max([abs(p-20e-9) for p in periods] or [1]),
-        width_min_s=min(widths or [0]),width_max_s=max(widths or [1])),rises_s=rises,widths_s=widths,
-        por_ramp_final_v=w['I_phase.PorRamp'][-1])
+    checks = {name: criterion(result['metrics'][name], rule)
+              for name, rule in case['criteria'].items()}
+    result.update(checks=checks, functional_pass=all(checks.values()), performance_pass=None)
+    return result

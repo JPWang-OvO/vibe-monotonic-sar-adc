@@ -1,8 +1,8 @@
 # ADC 建模与分析
 
 从工程根目录以 `python -m` 调用。`model.py` 实现电荷守恒的理想逐次逼近模型，
-`fft.py` 提供参考模型的频谱分析，`measure.py` 读取系统波形，
-`measure_modules.py` 处理比较器和分频器功能测量；`measure_cmp_noise.py` 处理独立噪声表征。
+`fft.py` 提供参考模型的频谱分析，`measure.py` 读取系统波形。
+各 flow 的 `measure.py` 应用验收判据；比较器、分频器功能测量和独立噪声表征位于各自 flow/study 目录。
 解析后的 flow 条件和 criteria 决定测量窗口与判据。
 
 ```text

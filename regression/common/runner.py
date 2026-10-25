@@ -85,8 +85,11 @@ def prepare(plan_paths, env_path, batch_id, workers=1, selected=None):
                     "regression/systems/__init__.py", "regression/systems/monotonic_sar/__init__.py",
                     "regression/systems/monotonic_sar/analysis/__init__.py",
                     "regression/systems/monotonic_sar/analysis/measure.py",
-                    "regression/systems/monotonic_sar/analysis/measure_cmp_noise.py",
-                    "regression/systems/monotonic_sar/analysis/measure_modules.py"):
+                    "regression/systems/monotonic_sar/flows/acceptance/measure.py",
+                    "regression/blocks/sar_cmp/flows/functional/measure.py",
+                    "regression/blocks/sar_phase/flows/functional/measure.py",
+                    "regression/blocks/sar_cmp/studies/noise/measure.py",
+                    "regression/blocks/sar_cmp/studies/noise/stimulus.py"):
         target = destination / package
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ROOT / package, target)
@@ -195,17 +198,23 @@ def compile_plan(path, output, selected=None):
     return output
 
 
-def main():
+def main(default_plan=None):
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="action", required=True)
     prep = commands.add_parser("prepare")
-    prep.add_argument("--plan", action="append", type=Path, required=True)
+    if default_plan is None:
+        prep.add_argument("--plan", action="append", type=Path, required=True)
+    else:
+        prep.set_defaults(plan=[default_plan])
     prep.add_argument("--condition", action="append")
     prep.add_argument("--environment", type=Path, required=True)
     prep.add_argument("--batch-id", default="run_" + datetime.now().strftime("%Y%m%d_%H%M%S"))
     prep.add_argument("--workers", type=int, default=1)
     compile_parser = commands.add_parser('compile')
-    compile_parser.add_argument('--plan', type=Path, required=True)
+    if default_plan is None:
+        compile_parser.add_argument('--plan', type=Path, required=True)
+    else:
+        compile_parser.set_defaults(plan=default_plan)
     compile_parser.add_argument('--output', type=Path, required=True)
     compile_parser.add_argument('--condition', action='append')
     execute = commands.add_parser("execute")

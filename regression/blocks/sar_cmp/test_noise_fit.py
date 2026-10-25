@@ -1,7 +1,7 @@
 """Focused checks of the standalone binomial noise estimator."""
 import math
 import unittest
-from regression.systems.monotonic_sar.analysis.measure_cmp_noise import fit_probability
+from regression.blocks.sar_cmp.studies.noise.measure import fit_probability
 
 
 class ProbabilityFitTest(unittest.TestCase):

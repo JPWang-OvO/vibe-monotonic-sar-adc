@@ -4,15 +4,20 @@
 `project.json` 登记三个规格 flow：系统验收、比较器功能、分频器功能；
 系统 flow 持有 20 项已有实测 baseline。两个模块 flow 的当前实现尚未在本次清理中仿真，未建立新 baseline。
 
+每个 flow 目录保存 `flow.json`、`run.py`、`measure.py` 和使用说明，已有基线放在 `baselines/`。
+`run.py` 绑定本目录配置；`measure.py` 定义测量及判定，公共 runner 负责准备、提交和收集。
+Study 的 `run.py` 绑定 `study.json`，系统优化复用所属 flow 的测量；独立噪声表征维护自己的测量。
+
 ## 编译和仿真
 
 ```powershell
 $plan = "regression/systems/monotonic_sar/flows/acceptance/flow.json"
-& $edaPython -m regression.common.runner compile --plan $plan --output <新的产物目录>
-& $edaPython -m regression.common.runner prepare --plan $plan --environment config/environments/tsmc18.local.json --batch-id <新批次名称> --workers 2
+$run = "regression.systems.monotonic_sar.flows.acceptance.run"
+& $edaPython -m $run compile --output <新的产物目录>
+& $edaPython -m $run prepare --environment config/environments/tsmc18.local.json --batch-id <新批次名称> --workers 2
 & $edaPython -m regression.systems.monotonic_sar.acceptance.check_netlist <本地批次目录> --formal
-& $edaPython -m regression.common.runner execute --batch <本地批次目录>
-& $edaPython -m regression.common.runner collect --batch <本地批次目录>
+& $edaPython -m $run execute --batch <本地批次目录>
+& $edaPython -m $run collect --batch <本地批次目录>
 ```
 
 `compile` 只展开本地配置、变体和相对 include，生成 `plan.json` 及输入文件。
@@ -20,7 +25,8 @@ $plan = "regression/systems/monotonic_sar/flows/acceptance/flow.json"
 执行前审阅实际输入、条件、测量、阈值与资源。全部仿真使用 Spectre X AX、每 worker 8 线程。
 `cancel --batch <目录>` 停止指定批次；原始波形保留在服务器。
 
-`--plan` 接受 `flow.json` 或 `study.json`。重复 `--condition` 可选择该计划中的明确条件，
+公共入口 `regression.common.runner` 通过 `--plan` 接受 `flow.json` 或 `study.json`，各目录的入口已绑定计划。
+重复 `--condition` 可选择该计划中的明确条件，
 例如系统验收的 `tt_25_k3_quiet`；省略时展开所选计划全部条件。
 正式系统 flow 在同一 TB 下表达 PVT、频点和噪声矩阵，SNDR 门槛按 k 选择，功耗门槛仅用于 TT。
 
@@ -39,7 +45,7 @@ Study 引用 flow 的测量与判据，声明变量、器件参数修改或拓�
 独立噪声 study 使用自己的固定 TB 和统计测量，结果解释其表征范围。
 
 ```powershell
-& $edaPython -m regression.common.runner compile --plan regression/systems/monotonic_sar/studies/comparator/study.json --output <新的产物目录>
+& $edaPython -m regression.systems.monotonic_sar.studies.comparator.run compile --output <新的产物目录>
 & $edaPython -m regression.common.study <study批次目录> --output <产物目录>/study-results.json
 ```
 
@@ -59,3 +65,9 @@ Study 汇总按参数点列出本批次选定条件的完整性、flow 判据和
 
 波形诊断与绘图见 [analysis](systems/monotonic_sar/analysis/README.md)，固定测量边界见
 [验收方法](../docs/verification/acceptance-method.md)。
+
+## 入口验证范围
+
+`regression.test_execution` 检查全部 7 个入口的离线展开、批次准备后的独立导入，以及噪声序列与固定 TB 的逐点一致性。
+准备测试替换远端 enrichment 调用，因此不代表当前实现已完成 Spectre/PDK 的端到端运行。
+真实准备仍需可用的 Bridge、PDK 和 Spectre 环境，实际性能结论来自完成仿真并审阅的结果。
