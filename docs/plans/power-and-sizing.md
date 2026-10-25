@@ -6,9 +6,9 @@ last_reviewed: 2026-10-25
 authoritative_sources:
   - ../history/2026-10-24-ai-autonomous-human-polish-r1.md
   - ../../config/architecture.json
-  - ../../config/acceptance.json
-  - ../../config/acceptance_results.json
-  - ../../config/final_design.json
+  - git:checkpoint/ai-autonomous-human-polish-r1-20261024:config/acceptance.json
+  - git:checkpoint/ai-autonomous-human-polish-r1-20261024:config/acceptance_results.json
+  - git:checkpoint/ai-autonomous-human-polish-r1-20261024:config/final_design.json
   - ../../regression/systems/monotonic_sar/analysis/measure.py
   - ../../regression/systems/monotonic_sar/flows/final_stage1_tt_k3/flow.json
   - ../verification/development-status.md
@@ -44,8 +44,8 @@ Checkpoint 的验收记录功耗但未设上限。其局部误差、边沿和零
 
 # 验收条件与诊断量
 
-低功耗验收条件由 `config/acceptance_lowpower.json` 固定。下表说明从 checkpoint 继承的系统规格，
-以及局部诊断量的用途；checkpoint 的旧配置保留在 `config/acceptance.json`。
+低功耗验收条件由 `regression/systems/monotonic_sar/flows/acceptance/specification.json` 固定。下表说明从 checkpoint 继承的系统规格，
+以及局部诊断量的用途；checkpoint 的旧配置保留在 `checkpoint/ai-autonomous-human-polish-r1-20261024:config/acceptance.json`。
 
 | Checkpoint 判据或选择 | 依据与适用范围 | 低功耗设计使用方式 |
 |---|---|---|

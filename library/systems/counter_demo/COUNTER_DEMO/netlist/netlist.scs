@@ -1,5 +1,0 @@
-simulator lang=spectre
-ahdl_include "../../../../blocks/digital/COUNTER2/veriloga/COUNTER2.va"
-subckt COUNTER_DEMO (CLK RST EN Q\<1\> Q\<0\> VDD VSS)
-XCOUNT (CLK RST EN Q\<1\> Q\<0\> VDD VSS) COUNTER2
-ends COUNTER_DEMO

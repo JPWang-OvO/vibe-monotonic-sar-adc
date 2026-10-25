@@ -11,9 +11,11 @@ import tarfile
 
 from regression.common.project import ROOT, read_json, write_json, environment, artifact_root, identifier
 from regression.common.sources import stage
+from regression.common.plans import load_plan
+from regression.common.variants import sources as variant_sources
 
 
-def prepare(flow_paths, env_path, batch_id, workers=1):
+def prepare(plan_paths, env_path, batch_id, workers=1, selected=None):
     identifier(batch_id)
     if workers < 1:
         raise ValueError("workers must be positive")
@@ -26,9 +28,9 @@ def prepare(flow_paths, env_path, batch_id, workers=1):
     remote = str(PurePosixPath(env["remote_runs"]) / batch_id)
     process = read_json(ROOT / read_json(ROOT / "project.json")["process"])
     cases = []
-    for flow_path in flow_paths:
+    for flow_path in plan_paths:
         flow_path = Path(flow_path).resolve()
-        flow = read_json(flow_path)
+        flow = load_plan(flow_path, selected)
         for condition in flow["conditions"]:
             case_id = identifier(flow["id"] + "__" + condition["id"])
             if any(c["id"] == case_id for c in cases):
@@ -41,7 +43,7 @@ def prepare(flow_paths, env_path, batch_id, workers=1):
                 tokens["MODEL_SETUP"] = "\n".join(
                     f'include "{model}" section={s}' for s in process["model_sections"][condition["corner"]])
             staged = stage(ROOT / flow["testbench"], ROOT, local_case / "inputs", tokens,
-                           cell_views=condition["cell_views"])
+                           cell_views=condition["cell_views"], overrides=variant_sources(condition))
             sim = flow["simulator"]
             if sim['threads'] != 8 or '+preset=ax' not in sim['arguments']:
                 raise ValueError('This project requires AX and 8 threads per simulation')
@@ -61,7 +63,7 @@ def prepare(flow_paths, env_path, batch_id, workers=1):
             case = {"id": case_id, "flow": flow_path.relative_to(ROOT).as_posix(),
                     "testbench": flow["testbench"], "condition": condition, "sources": staged,
                     "simulator": sim, "command": command, "timeout_s": sim["timeout_s"],
-                    "measurement": flow["measurement"], "criteria": flow["criteria"],
+                    "measurement": flow["measurement"], "criteria": condition["criteria"],
                     "enrichment": enrichment}
             cases.append(case)
             write_json(local_case / "settings.json", case)
@@ -176,14 +178,36 @@ def collect(folder):
     return state
 
 
-def main(default_flow=None):
+def compile_plan(path, output, selected=None):
+    """Stage a local inspection package without invoking Spectre or PDK callbacks."""
+    path, output = Path(path).resolve(), Path(output).resolve()
+    output.mkdir(exist_ok=False, parents=True)
+    plan = load_plan(path, selected)
+    cases = []
+    for condition in plan['conditions']:
+        tokens = dict(condition['tokens'], MODEL_SETUP='// Model setup is supplied during prepare')
+        staged = stage(ROOT / plan['testbench'], ROOT, output / condition['id'], tokens,
+                       cell_views=condition['cell_views'], overrides=variant_sources(condition))
+        cases.append(dict(id=condition['id'], condition=condition, sources=staged,
+                          measurement=plan['measurement'], criteria=condition['criteria']))
+    write_json(output / 'plan.json', dict(plan=str(path), cases=cases,
+               status='offline inspection only; model setup and PDK preparation required before execution'))
+    return output
+
+
+def main():
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest="action", required=True)
     prep = commands.add_parser("prepare")
-    prep.add_argument("--flow", action="append", type=Path)
+    prep.add_argument("--plan", action="append", type=Path, required=True)
+    prep.add_argument("--condition", action="append")
     prep.add_argument("--environment", type=Path, required=True)
     prep.add_argument("--batch-id", default="run_" + datetime.now().strftime("%Y%m%d_%H%M%S"))
     prep.add_argument("--workers", type=int, default=1)
+    compile_parser = commands.add_parser('compile')
+    compile_parser.add_argument('--plan', type=Path, required=True)
+    compile_parser.add_argument('--output', type=Path, required=True)
+    compile_parser.add_argument('--condition', action='append')
     execute = commands.add_parser("execute")
     execute.add_argument("--batch", type=Path, required=True)
     get = commands.add_parser("collect")
@@ -192,8 +216,9 @@ def main(default_flow=None):
     cancel.add_argument("--batch", type=Path, required=True)
     args = parser.parse_args()
     if args.action == "prepare":
-        paths = args.flow or ([default_flow] if default_flow else [ROOT / p for p in read_json(ROOT / "project.json")["flows"]])
-        print(prepare(paths, args.environment, args.batch_id, args.workers))
+        print(prepare(args.plan, args.environment, args.batch_id, args.workers, args.condition))
+    elif args.action == 'compile':
+        print(compile_plan(args.plan, args.output, args.condition))
     elif args.action == "execute":
         print(submit(args.batch))
     elif args.action == "collect":

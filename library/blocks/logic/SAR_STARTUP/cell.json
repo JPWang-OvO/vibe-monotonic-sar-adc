@@ -10,18 +10,6 @@
     "VSS"
   ],
   "views": {
-    "netlist": {
-      "netlist": "netlist/netlist.scs"
-    },
-    "netlist_ordered": {
-      "netlist": "netlist_ordered/netlist.scs"
-    },
-    "netlist_quiet": {
-      "netlist": "netlist_quiet/netlist.scs"
-    },
-    "netlist_quiet_arm": {
-      "netlist": "netlist_quiet_arm/netlist.scs"
-    },
     "schematic": {
       "native": "schematic/native.json",
       "drawing": "schematic/drawing.json",
@@ -30,6 +18,9 @@
     "symbol": {
       "native": "symbol/native.json",
       "drawing": "symbol/drawing.json"
+    },
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     }
   }
 }

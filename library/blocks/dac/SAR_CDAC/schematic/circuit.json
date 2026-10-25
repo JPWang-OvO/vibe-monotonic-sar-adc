@@ -283,5 +283,5 @@
       ]
     }
   ],
-  "staged_source": "library__blocks__dac__SAR_CDAC__scaled__netlist.scs"
+  "schema": "ic-circuit-v1"
 }

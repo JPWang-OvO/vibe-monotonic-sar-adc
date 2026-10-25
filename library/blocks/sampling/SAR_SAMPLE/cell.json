@@ -11,37 +11,6 @@
     "VSS"
   ],
   "views": {
-    "veriloga": {
-      "source": "veriloga/SAR_SAMPLE.va",
-      "netlist": "veriloga/netlist.scs"
-    },
-    "netlist": {
-      "netlist": "netlist/netlist.scs"
-    },
-    "netlist_boost2": {
-      "netlist": "netlist_boost2/netlist.scs"
-    },
-    "netlist_single256": {
-      "netlist": "netlist_single256/netlist.scs"
-    },
-    "netlist_boost2p": {
-      "netlist": "netlist_boost2p/netlist.scs"
-    },
-    "netlist_junction192": {
-      "netlist": "netlist_junction192/netlist.scs"
-    },
-    "netlist_junction256": {
-      "netlist": "netlist_junction256/netlist.scs"
-    },
-    "netlist_junction320": {
-      "netlist": "netlist_junction320/netlist.scs"
-    },
-    "netlist_junction384": {
-      "netlist": "netlist_junction384/netlist.scs"
-    },
-    "netlist_junction408": {
-      "netlist": "netlist_junction408/netlist.scs"
-    },
     "schematic": {
       "native": "schematic/native.json",
       "drawing": "schematic/drawing.json",
@@ -51,14 +20,8 @@
       "native": "symbol/native.json",
       "drawing": "symbol/drawing.json"
     },
-    "netlist_lowpower8": {
-      "netlist": "netlist_lowpower8/netlist.scs"
-    },
-    "netlist_lowpower16": {
-      "netlist": "netlist_lowpower16/netlist.scs"
-    },
-    "netlist_lowpower32": {
-      "netlist": "netlist_lowpower32/netlist.scs"
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     }
   }
 }

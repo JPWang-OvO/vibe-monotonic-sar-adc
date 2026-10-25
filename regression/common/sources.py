@@ -9,7 +9,7 @@ from regression.common.project import read_json
 INCLUDE = re.compile(r'^\s*(include|ahdl_include)\s+"([^"]+)"(.*)$')
 
 
-def stage(entry, root, output, substitutions, *, cell_views):
+def stage(entry, root, output, substitutions, *, cell_views, overrides=None):
     root, output = Path(root).resolve(), Path(output).resolve()
     visiting, visited, sources = set(), {}, []
 
@@ -42,7 +42,11 @@ def stage(entry, root, output, substitutions, *, cell_views):
             return None
         visiting.add(path)
         name = '__'.join(relative.parts)
-        text = path.read_text(encoding='utf-8')
+        metadata = path.parent.parent / 'cell.json'
+        cell = read_json(metadata)['cell'] if metadata.exists() else None
+        text = (overrides or {}).get(cell)
+        if text is None:
+            text = path.read_text(encoding='utf-8')
         for key, value in substitutions.items():
             text = text.replace('@' + key + '@', str(value))
         missing = re.findall(r'@[A-Z][A-Z0-9_]*@', text)

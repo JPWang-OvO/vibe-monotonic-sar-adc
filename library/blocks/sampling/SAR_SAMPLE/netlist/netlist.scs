@@ -1,14 +1,6 @@
 simulator lang=spectre
-// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
+include "../../SAR_BOOST/netlist/netlist.scs"
 subckt SAR_SAMPLE (Vin Top Sample SampleB Gate VDD VSS)
-C_boot (Ct Cb) capacitor c=80p
-Mp_precharge (Ct Gate VDD Ct) pch_5 w=1024u l=0.5u nf=128 m=1
-Mp_transfer (Gate Q Ct Ct) pch_5 w=1024u l=0.5u nf=128 m=1
-Mp_start (Q Sample VDD VDD) pch_5 w=256u l=0.5u nf=32 m=1
-Mn_start (Q Sample Cb VSS) nch_5 w=256u l=0.6u nf=32 m=1
-Mn_trackq (Q Gate Cb VSS) nch_5 w=256u l=0.6u nf=32 m=1
-Mn_bottom (Cb Gate Vin VSS) nch_5 w=2048u l=0.6u nf=256 m=1
-Mn_reset_bottom (Cb SampleB VSS VSS) nch_5 w=2048u l=0.6u nf=256 m=1
-Mn_reset_gate (Gate SampleB VSS VSS) nch_5 w=1024u l=0.6u nf=128 m=1
-Mn_sample (Top Gate Vin VSS) nch_5 w=1024u l=0.6u nf=128 m=1
+I_boost (Vin Gate Sample SampleB VDD VSS) SAR_BOOST
+Mn_sample (Top Gate Vin VSS) nch w=16u l=0.18u nf=4 m=1
 ends SAR_SAMPLE

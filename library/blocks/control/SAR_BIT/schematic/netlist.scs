@@ -1,11 +1,17 @@
 simulator lang=spectre
+include "../../../../support/standard_cells/INVD1BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/LNQD1BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/ND2D1BWP7T/netlist/netlist.scs"
+include "../../../logic/SAR_DAC_DRIVE/netlist/netlist.scs"
+include "../../../logic/SAR_DRIVE/netlist/netlist.scs"
 subckt SAR_BIT (Outp Capture Sample Q Bp Bn VDD VSS VREFP VREFN)
 parameters strength=1
+I_latch__I_latch (Outp Capture Q VDD VSS) LNQD1BWP7T
+I_latch__I_qb (Q QB VDD VSS) INVD1BWP7T
+I_select\<1\> (Q Capture BpRaw VDD VSS) ND2D1BWP7T
+I_select\<0\> (QB Capture BnRaw VDD VSS) ND2D1BWP7T
 I_buf0\<1\> (BpRaw BpBuf VDD VSS) SAR_DRIVE _par0=max(0.25,strength*4)
 I_buf0\<0\> (BnRaw BnBuf VDD VSS) SAR_DRIVE _par0=max(0.25,strength*4)
 I_buf1\<1\> (BpBuf Bp VREFP VREFN) SAR_DAC_DRIVE _par0=max(0.5,strength*16)
 I_buf1\<0\> (BnBuf Bn VREFP VREFN) SAR_DAC_DRIVE _par0=max(0.5,strength*16)
-I_latch (Outp Capture Q QB VDD VSS) SAR_CAPTURE_LATCH
-I_select\<1\> (Q Capture BpRaw VDD VSS) SAR_SELECT
-I_select\<0\> (QB Capture BnRaw VDD VSS) SAR_SELECT
 ends SAR_BIT

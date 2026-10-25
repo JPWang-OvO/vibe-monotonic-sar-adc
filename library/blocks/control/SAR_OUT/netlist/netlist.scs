@@ -1,5 +1,4 @@
 simulator lang=spectre
-// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
 include "../../../../support/standard_cells/DFQD1BWP7T/netlist/netlist.scs"
 include "../../../logic/SAR_DRIVE/netlist/netlist.scs"
 subckt SAR_OUT (D Done Q VDD VSS)

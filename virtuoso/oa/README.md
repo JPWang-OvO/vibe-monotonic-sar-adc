@@ -19,6 +19,21 @@
 
 数据格式见[源表示约定](../../docs/architecture/source-contract.md)。
 
+## 层次电气核对
+
+`adc_source` 读取当前 canonical netlist；`adc_compare` 将原生层次导出与当前源比较，
+核对端口、标准单元依赖、阵列展开、模型、有效尺寸和 PDK 参数。
+`--qualification` 指定已有 PDK 资格批次，只有匹配几何的参数可复用。
+
+```text
+python -m virtuoso.oa.adc_compare --qualification <资格批次> --native <原生导出目录>/netlist --run-id <核对名称>
+```
+
+原生对象与图面可用 `cells replay` 在独立库重建。
+`adc_schematic` 提供明确布局下的端口布线，`geometry` 处理几何和阵列连接；
+图面更新后需检查实际端口回读与原生导出。
+`adc_render` 仅渲染已有 `functional.svg`；当前原生图面以 `drawing.json` 和 OA 窗口为准。
+
 ## 标准单元导出
 
 `python -m virtuoso.oa.export_stdcells --environment <本机配置文件>`

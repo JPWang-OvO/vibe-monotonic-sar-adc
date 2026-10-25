@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "flow": "regression/systems/monotonic_sar/flows/acceptance/flow.json",
+  "conditions": [
+    "tt_25_k3_quiet",
+    "tt_25_k3_noise"
+  ],
+  "objective": {
+    "minimize": "core_power_w",
+    "target_sndr_db": [
+      59,
+      60
+    ]
+  },
+  "constraints": "Referenced flow criteria",
+  "id": "sar_control",
+  "variables": {
+    "feedback_stages": [
+      2,
+      4,
+      6
+    ],
+    "guard_ff": [
+      5,
+      15,
+      30
+    ],
+    "dac_taper": [
+      8,
+      16
+    ]
+  },
+  "edits": [
+    {
+      "cell": "SAR_SAMPLE_GUARD",
+      "instances": [
+        "C_delay"
+      ],
+      "parameter": "c",
+      "value": "{guard_ff}f"
+    },
+    {
+      "cell": "SAR_BIT",
+      "instances": [
+        "I_buf_p1",
+        "I_buf_n1"
+      ],
+      "parameter": "scale",
+      "value": "max(0.5,strength*{dac_taper})"
+    }
+  ],
+  "topology": {
+    "feedback_stages": "feedback_stages"
+  }
+}

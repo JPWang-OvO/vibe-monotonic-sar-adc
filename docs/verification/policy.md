@@ -11,11 +11,12 @@ authoritative_sources:
 
 # 验证与运行产物
 
-Flow 配置规定条件和验收阈值；分析与精度语句来自 TB，flow 中的精度描述与 TB 同步。
+Flow 配置规定规格、条件、验收阈值和 baseline；study 规定优化变量与目标。分析与精度语句来自 TB，flow 中的精度描述与 TB 同步。
 每项结论注明实际运行的设计、view、条件和测量范围。
 
 ## 仿真批次
 
+`compile` 只进行本地展开，不调用仿真器或 PDK 回调。
 `prepare` 是 runner 的批次准备子命令。它创建唯一批次目录，展开条件、依赖和视图绑定，
 生成输入 deck、命令和 `preview.md`。启用 enrichment 时，它还调用 Spectre 参数报告和原生 PDK CDF 完成参数补全。
 正式分析由后续 `execute` 子命令启动。

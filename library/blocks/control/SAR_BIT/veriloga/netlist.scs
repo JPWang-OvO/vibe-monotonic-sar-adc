@@ -1,5 +1,0 @@
-ahdl_include "SAR_BIT.va"
-subckt SAR_BIT (Outp Capture Sample Q Bp Bn VDD VSS VREFP VREFN)
-parameters strength=1
-I_model (Outp Capture Sample Q Bp Bn VDD VSS VREFP VREFN) SAR_BIT_va
-ends SAR_BIT

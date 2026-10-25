@@ -45,17 +45,17 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_INV",
+      "model": "INVD4BWP7T",
       "parameters": {},
       "connections": {
-        "A": "Sample",
-        "Z": "SampleB",
+        "I": "Sample",
+        "ZN": "SampleB",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_INV",
+        "standard_cells",
+        "INVD4BWP7T",
         "symbol"
       ],
       "oa_parameters": {}
@@ -600,5 +600,5 @@
       ]
     }
   ],
-  "staged_source": "library__systems__monotonic_sar__MONOTONIC_SAR__spectre__netlist.scs"
+  "schema": "ic-circuit-v1"
 }

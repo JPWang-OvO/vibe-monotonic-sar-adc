@@ -1,21 +1,45 @@
 simulator lang=spectre
+include "../../../../support/standard_cells/AOI211D1BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/DFCNQD1BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/INVD1BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/INVD2BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/INVD4BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/NR2D1BWP7T/netlist/netlist.scs"
+include "../../../logic/SAR_SAMPLE_GUARD/netlist/netlist.scs"
+include "../../../logic/SAR_STARTUP/netlist/netlist.scs"
 subckt SAR_ASYNC (Sample Valid ClkC Done Ck\<9\> Ck\<8\> Ck\<7\> Ck\<6\> Ck\<5\> Ck\<4\> Ck\<3\> Ck\<2\> Ck\<1\> Ck\<0\> VDD VSS)
 I_startup (Sample SampleGuard Hold ClearN VDD VSS) SAR_STARTUP
+I_done_delay__I_b1 (I_done_delay__N0 Done VDD VSS) INVD4BWP7T
 I_reset (ClearN Reset VDD VSS) INVD4BWP7T
-I_sample_guard (Sample SampleGuard VDD VSS) SAR_SAMPLE_GUARD2
-I_feedback_delay (Valid ValidDelay VDD VSS) SAR_HANDSHAKE
+I_sample_guard (Sample SampleGuard VDD VSS) SAR_SAMPLE_GUARD
+I_seq_reset\<9\> (Reset ResetN\<9\> VDD VSS) INVD1BWP7T
+I_seq_reset\<8\> (Reset ResetN\<8\> VDD VSS) INVD1BWP7T
+I_seq_reset\<7\> (Reset ResetN\<7\> VDD VSS) INVD1BWP7T
+I_seq_reset\<6\> (Reset ResetN\<6\> VDD VSS) INVD1BWP7T
+I_seq_reset\<5\> (Reset ResetN\<5\> VDD VSS) INVD1BWP7T
+I_seq_reset\<4\> (Reset ResetN\<4\> VDD VSS) INVD1BWP7T
+I_seq_reset\<3\> (Reset ResetN\<3\> VDD VSS) INVD1BWP7T
+I_seq_reset\<2\> (Reset ResetN\<2\> VDD VSS) INVD1BWP7T
+I_seq_reset\<1\> (Reset ResetN\<1\> VDD VSS) INVD1BWP7T
+I_seq_reset\<0\> (Reset ResetN\<0\> VDD VSS) INVD1BWP7T
+I_done_delay__I_b0 (Ck\<0\> I_done_delay__N0 VDD VSS) INVD1BWP7T
+I_run_nor__I_stop (I_run_nor__StopN I_run_nor__Stop VDD VSS) INVD1BWP7T
 I_early (Ck\<5\> Early VDD VSS) INVD1BWP7T
-I_run_nor (Hold Valid Ck\<0\> ValidDelay Early CompareEnable VDD VSS) SAR_WAIT_GATE
+I_feedback_delay__I_b3 (I_feedback_delay__N2 ValidDelay VDD VSS) INVD1BWP7T
+I_feedback_delay__I_b2 (I_feedback_delay__N1 I_feedback_delay__N2 VDD VSS) INVD1BWP7T
+I_feedback_delay__I_b1 (I_feedback_delay__N0 I_feedback_delay__N1 VDD VSS) INVD1BWP7T
+I_feedback_delay__I_b0 (Valid I_feedback_delay__N0 VDD VSS) INVD1BWP7T
+I_run_nor__I_stop_n (Hold Ck\<0\> I_run_nor__StopN VDD VSS) NR2D1BWP7T
+I_run_nor__I_gate (ValidDelay Early Valid I_run_nor__Stop CompareEnable VDD VSS) AOI211D1BWP7T
 I_clock_drive (CompareEnable ClkC VDD VSS) INVD2BWP7T
-I_done_delay (Ck\<0\> Done VDD VSS) SAR_DONE_DELAY
-I_seq\<9\> (Ck\<1\> Valid VSS Reset Ck\<0\> VDD VSS) SAR_FAST_SEQ
-I_seq\<8\> (Ck\<2\> Valid VSS Reset Ck\<1\> VDD VSS) SAR_FAST_SEQ
-I_seq\<7\> (Ck\<3\> Valid VSS Reset Ck\<2\> VDD VSS) SAR_FAST_SEQ
-I_seq\<6\> (Ck\<4\> Valid VSS Reset Ck\<3\> VDD VSS) SAR_FAST_SEQ
-I_seq\<5\> (Ck\<5\> Valid VSS Reset Ck\<4\> VDD VSS) SAR_FAST_SEQ
-I_seq\<4\> (Ck\<6\> Valid VSS Reset Ck\<5\> VDD VSS) SAR_FAST_SEQ
-I_seq\<3\> (Ck\<7\> Valid VSS Reset Ck\<6\> VDD VSS) SAR_FAST_SEQ
-I_seq\<2\> (Ck\<8\> Valid VSS Reset Ck\<7\> VDD VSS) SAR_FAST_SEQ
-I_seq\<1\> (Ck\<9\> Valid VSS Reset Ck\<8\> VDD VSS) SAR_FAST_SEQ
-I_seq\<0\> (VDD Valid VSS Reset Ck\<9\> VDD VSS) SAR_FAST_SEQ
+I_seq_ff\<9\> (Ck\<1\> Valid ResetN\<9\> Ck\<0\> VDD VSS) DFCNQD1BWP7T
+I_seq_ff\<8\> (Ck\<2\> Valid ResetN\<8\> Ck\<1\> VDD VSS) DFCNQD1BWP7T
+I_seq_ff\<7\> (Ck\<3\> Valid ResetN\<7\> Ck\<2\> VDD VSS) DFCNQD1BWP7T
+I_seq_ff\<6\> (Ck\<4\> Valid ResetN\<6\> Ck\<3\> VDD VSS) DFCNQD1BWP7T
+I_seq_ff\<5\> (Ck\<5\> Valid ResetN\<5\> Ck\<4\> VDD VSS) DFCNQD1BWP7T
+I_seq_ff\<4\> (Ck\<6\> Valid ResetN\<4\> Ck\<5\> VDD VSS) DFCNQD1BWP7T
+I_seq_ff\<3\> (Ck\<7\> Valid ResetN\<3\> Ck\<6\> VDD VSS) DFCNQD1BWP7T
+I_seq_ff\<2\> (Ck\<8\> Valid ResetN\<2\> Ck\<7\> VDD VSS) DFCNQD1BWP7T
+I_seq_ff\<1\> (Ck\<9\> Valid ResetN\<1\> Ck\<8\> VDD VSS) DFCNQD1BWP7T
+I_seq_ff\<0\> (VDD Valid ResetN\<0\> Ck\<9\> VDD VSS) DFCNQD1BWP7T
 ends SAR_ASYNC

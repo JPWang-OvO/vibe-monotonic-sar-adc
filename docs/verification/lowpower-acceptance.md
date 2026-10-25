@@ -1,17 +1,18 @@
 ---
-title: 低功耗候选电气验收
+title: 当前 ADC 已批准电气基线
 type: verification-method
 status: active
 last_reviewed: 2026-10-25
 authoritative_sources:
-  - ../../config/acceptance_lowpower_results.json
-  - ../../config/lowpower_design.json
-  - ../../config/acceptance_lowpower.json
+  - ../../regression/systems/monotonic_sar/flows/acceptance/baselines/accepted.json
+  - ../../config/design.json
+  - ../../regression/systems/monotonic_sar/flows/acceptance/specification.json
 ---
 
 # 验收结果
 
-同一 DUT 完成 20/20 项，20 项通过。
+已有同一 DUT 的 20/20 项测量通过验收，现保存于系统 flow 的 baseline。
+本次层次及目录清理通过电气等价检查，未重新仿真。
 全部电气验收通过。原生网表及图面核对见 [低功耗 OA 交付](lowpower-oa-delivery.md)。
 
 每项采用丢弃 16 周期后的连续 256 个原始输出码，统一在 Sample 下降后 18 ns 读码。

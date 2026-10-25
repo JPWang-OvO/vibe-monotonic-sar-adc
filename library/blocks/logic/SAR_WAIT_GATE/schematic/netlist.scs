@@ -1,6 +1,0 @@
-simulator lang=spectre
-subckt SAR_WAIT_GATE (Hold Valid Done Delayed Early Z VDD VSS)
-I_stop_n (Hold Done StopN VDD VSS) NR2D1BWP7T
-I_stop (StopN Stop VDD VSS) INVD1BWP7T
-I_gate (Delayed Early Valid Stop Z VDD VSS) AOI211D1BWP7T
-ends SAR_WAIT_GATE

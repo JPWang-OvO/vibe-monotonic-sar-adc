@@ -1,4 +1,0 @@
-ahdl_include "SAR_INV.va"
-subckt SAR_INV (A Z VDD VSS)
-I_model (A Z VDD VSS) SAR_INV_va
-ends SAR_INV

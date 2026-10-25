@@ -9,17 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 11725
+        "value": 4947
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 23:18:20 2026"
+        "value": "Oct 25 17:30:50 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 2
+        "value": 22
       },
       {
         "name": "pin#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 11725
+        "value": 4947
       },
       {
         "name": "schGeometryVersion",
@@ -61,13 +61,13 @@
         "multiplicity": 1,
         "properties": [],
         "connections": {
-          "ClkC": "ClkC",
-          "Done": "EOC",
-          "Sample": "Sample",
           "Valid": "Valid",
-          "Ck<9:0>": "Ck<9:0>",
           "VSS": "VSS",
-          "VDD": "VDD"
+          "VDD": "VDD",
+          "Sample": "Sample",
+          "Done": "EOC",
+          "ClkC": "ClkC",
+          "Ck<9:0>": "Ck<9:0>"
         }
       },
       {
@@ -103,16 +103,16 @@
           }
         ],
         "connections": {
-          "Sample": "Sample",
-          "VREFN": "VREFN",
-          "VREFP": "VREFP",
-          "Bn": "Bn<2>",
-          "Bp": "Bp<2>",
-          "Q": "Q<2>",
-          "Capture": "Ck<2>",
-          "Outp": "Outp",
           "VSS": "VSS",
-          "VDD": "VDD"
+          "VREFP": "VREFP",
+          "VREFN": "VREFN",
+          "VDD": "VDD",
+          "Sample": "Sample",
+          "Q": "Q<2>",
+          "Outp": "Outp",
+          "Capture": "Ck<2>",
+          "Bp": "Bp<2>",
+          "Bn": "Bn<2>"
         }
       },
       {
@@ -132,16 +132,16 @@
           }
         ],
         "connections": {
-          "Sample": "Sample",
-          "VREFN": "VREFN",
-          "VREFP": "VREFP",
-          "Bn": "Bn<3>",
-          "Bp": "Bp<3>",
-          "Q": "Q<3>",
-          "Capture": "Ck<3>",
-          "Outp": "Outp",
           "VSS": "VSS",
-          "VDD": "VDD"
+          "VREFP": "VREFP",
+          "VREFN": "VREFN",
+          "VDD": "VDD",
+          "Sample": "Sample",
+          "Q": "Q<3>",
+          "Outp": "Outp",
+          "Capture": "Ck<3>",
+          "Bp": "Bp<3>",
+          "Bn": "Bn<3>"
         }
       },
       {
@@ -161,16 +161,16 @@
           }
         ],
         "connections": {
-          "Sample": "Sample",
-          "VREFN": "VREFN",
-          "VREFP": "VREFP",
-          "Bn": "Bn<4>",
-          "Bp": "Bp<4>",
-          "Q": "Q<4>",
-          "Capture": "Ck<4>",
-          "Outp": "Outp",
           "VSS": "VSS",
-          "VDD": "VDD"
+          "VREFP": "VREFP",
+          "VREFN": "VREFN",
+          "VDD": "VDD",
+          "Sample": "Sample",
+          "Q": "Q<4>",
+          "Outp": "Outp",
+          "Capture": "Ck<4>",
+          "Bp": "Bp<4>",
+          "Bn": "Bn<4>"
         }
       },
       {
@@ -190,16 +190,16 @@
           }
         ],
         "connections": {
-          "Sample": "Sample",
-          "VREFN": "VREFN",
-          "VREFP": "VREFP",
-          "Bn": "Bn<5>",
-          "Bp": "Bp<5>",
-          "Q": "Q<5>",
-          "Capture": "Ck<5>",
-          "Outp": "Outp",
           "VSS": "VSS",
-          "VDD": "VDD"
+          "VREFP": "VREFP",
+          "VREFN": "VREFN",
+          "VDD": "VDD",
+          "Sample": "Sample",
+          "Q": "Q<5>",
+          "Outp": "Outp",
+          "Capture": "Ck<5>",
+          "Bp": "Bp<5>",
+          "Bn": "Bn<5>"
         }
       },
       {
@@ -219,16 +219,16 @@
           }
         ],
         "connections": {
-          "Sample": "Sample",
-          "VREFN": "VREFN",
-          "VREFP": "VREFP",
-          "Bn": "Bn<6>",
-          "Bp": "Bp<6>",
-          "Q": "Q<6>",
-          "Capture": "Ck<6>",
-          "Outp": "Outp",
           "VSS": "VSS",
-          "VDD": "VDD"
+          "VREFP": "VREFP",
+          "VREFN": "VREFN",
+          "VDD": "VDD",
+          "Sample": "Sample",
+          "Q": "Q<6>",
+          "Outp": "Outp",
+          "Capture": "Ck<6>",
+          "Bp": "Bp<6>",
+          "Bn": "Bn<6>"
         }
       },
       {
@@ -248,16 +248,16 @@
           }
         ],
         "connections": {
-          "Sample": "Sample",
-          "VREFN": "VREFN",
-          "VREFP": "VREFP",
-          "Bn": "Bn<7>",
-          "Bp": "Bp<7>",
-          "Q": "Q<7>",
-          "Capture": "Ck<7>",
-          "Outp": "Outp",
           "VSS": "VSS",
-          "VDD": "VDD"
+          "VREFP": "VREFP",
+          "VREFN": "VREFN",
+          "VDD": "VDD",
+          "Sample": "Sample",
+          "Q": "Q<7>",
+          "Outp": "Outp",
+          "Capture": "Ck<7>",
+          "Bp": "Bp<7>",
+          "Bn": "Bn<7>"
         }
       },
       {
@@ -277,16 +277,16 @@
           }
         ],
         "connections": {
-          "Sample": "Sample",
-          "VREFN": "VREFN",
-          "VREFP": "VREFP",
-          "Bn": "Bn<8>",
-          "Bp": "Bp<8>",
-          "Q": "Q<8>",
-          "Capture": "Ck<8>",
-          "Outp": "Outp",
           "VSS": "VSS",
-          "VDD": "VDD"
+          "VREFP": "VREFP",
+          "VREFN": "VREFN",
+          "VDD": "VDD",
+          "Sample": "Sample",
+          "Q": "Q<8>",
+          "Outp": "Outp",
+          "Capture": "Ck<8>",
+          "Bp": "Bp<8>",
+          "Bn": "Bn<8>"
         }
       },
       {
@@ -306,16 +306,16 @@
           }
         ],
         "connections": {
-          "Sample": "Sample",
-          "VREFN": "VREFN",
-          "VREFP": "VREFP",
-          "Bn": "Bn<9>",
-          "Bp": "Bp<9>",
-          "Q": "Q<9>",
-          "Capture": "Ck<9>",
-          "Outp": "Outp",
           "VSS": "VSS",
-          "VDD": "VDD"
+          "VREFP": "VREFP",
+          "VREFN": "VREFN",
+          "VDD": "VDD",
+          "Sample": "Sample",
+          "Q": "Q<9>",
+          "Outp": "Outp",
+          "Capture": "Ck<9>",
+          "Bp": "Bp<9>",
+          "Bn": "Bn<9>"
         }
       },
       {
@@ -335,16 +335,16 @@
           }
         ],
         "connections": {
-          "Sample": "<*2>Sample",
-          "VREFN": "<*2>VREFN",
-          "VREFP": "<*2>VREFP",
-          "Bn": "Bn<1:0>",
-          "Bp": "Bp<1:0>",
-          "Q": "Q<1:0>",
-          "Capture": "Ck<1:0>",
-          "Outp": "<*2>Outp",
           "VSS": "<*2>VSS",
-          "VDD": "<*2>VDD"
+          "VREFP": "<*2>VREFP",
+          "VREFN": "<*2>VREFN",
+          "VDD": "<*2>VDD",
+          "Sample": "<*2>Sample",
+          "Q": "Q<1:0>",
+          "Outp": "<*2>Outp",
+          "Capture": "Ck<1:0>",
+          "Bp": "Bp<1:0>",
+          "Bn": "Bn<1:0>"
         }
       },
       {
@@ -397,18 +397,18 @@
       {
         "name": "I_inv",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_INV",
+          "standard_cells",
+          "INVD4BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 1,
         "properties": [],
         "connections": {
-          "VSS": "VSS",
+          "I": "Sample",
+          "ZN": "SampleB",
           "VDD": "VDD",
-          "Z": "SampleB",
-          "A": "Sample"
+          "VSS": "VSS"
         }
       },
       {
@@ -440,10 +440,10 @@
         "multiplicity": 1,
         "properties": [],
         "connections": {
-          "Sample": "Sample",
-          "Clks": "Clks",
           "VSS": "VSS",
-          "VDD": "VDD"
+          "VDD": "VDD",
+          "Sample": "Sample",
+          "Clks": "Clks"
         }
       },
       {
@@ -485,7 +485,7 @@
         "multiplicity": 2,
         "properties": [],
         "connections": {
-          "noConn": "Bp<0>,Bn<0>"
+          "noConn": "Bn<0>,Bp<0>"
         }
       },
       {
@@ -733,6 +733,12 @@
         "properties": []
       },
       {
+        "name": "Bn<0>,Bp<0>",
+        "signal_type": "signal",
+        "global_": false,
+        "properties": []
+      },
+      {
         "name": "Bn<1:0>",
         "signal_type": "signal",
         "global_": false,
@@ -788,12 +794,6 @@
       },
       {
         "name": "Bn<9>",
-        "signal_type": "signal",
-        "global_": false,
-        "properties": []
-      },
-      {
-        "name": "Bp<0>,Bn<0>",
         "signal_type": "signal",
         "global_": false,
         "properties": []

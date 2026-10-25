@@ -9,17 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 1180
+        "value": 650
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 24 23:18:23 2026"
+        "value": "Oct 25 17:30:16 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 0
+        "value": 5
       },
       {
         "name": "pin#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 1180
+        "value": 650
       },
       {
         "name": "schGeometryVersion",
@@ -99,19 +99,19 @@
       {
         "name": "I_latch",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_OUTPUT_FF",
+          "standard_cells",
+          "DFQD1BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 1,
         "properties": [],
         "connections": {
-          "VSS": "VSS",
-          "VDD": "VDD",
           "CP": "Done",
+          "D": "D",
           "Q": "Stored",
-          "D": "D"
+          "VDD": "VDD",
+          "VSS": "VSS"
         }
       },
       {

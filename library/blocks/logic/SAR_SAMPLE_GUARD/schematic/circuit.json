@@ -1,0 +1,278 @@
+{
+  "cell": "SAR_SAMPLE_GUARD",
+  "ports": [
+    "A",
+    "Z",
+    "VDD",
+    "VSS"
+  ],
+  "parameters": {},
+  "instances": [
+    {
+      "name": "Mn0",
+      "nodes": [
+        "HoldN",
+        "A",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "2u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "HoldN",
+        "G": "A",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "9.6e-13",
+        "as": "9.6e-13",
+        "pd": "4.96u",
+        "ps": "4.96u",
+        "nrd": "0.135",
+        "nrs": "0.135",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "2u",
+        "w": "0.000002",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mn1",
+      "nodes": [
+        "HoldN",
+        "Delayed",
+        "VSS",
+        "VSS"
+      ],
+      "model": "nch",
+      "parameters": {
+        "w": "2u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "HoldN",
+        "G": "Delayed",
+        "S": "VSS",
+        "B": "VSS"
+      },
+      "master": [
+        "tsmc18",
+        "nmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "9.6e-13",
+        "as": "9.6e-13",
+        "pd": "4.96u",
+        "ps": "4.96u",
+        "nrd": "0.135",
+        "nrs": "0.135",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "nch",
+        "wf": "2u",
+        "w": "0.000002",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mp0",
+      "nodes": [
+        "P0",
+        "A",
+        "VDD",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "4u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "P0",
+        "G": "A",
+        "S": "VDD",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "1.92e-12",
+        "as": "1.92e-12",
+        "pd": "8.96u",
+        "ps": "8.96u",
+        "nrd": "0.0675",
+        "nrs": "0.0675",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "4u",
+        "w": "0.000004",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "Mp1",
+      "nodes": [
+        "HoldN",
+        "Delayed",
+        "P0",
+        "VDD"
+      ],
+      "model": "pch",
+      "parameters": {
+        "w": "4u",
+        "l": "0.18u",
+        "nf": "1",
+        "m": "1"
+      },
+      "connections": {
+        "D": "HoldN",
+        "G": "Delayed",
+        "S": "P0",
+        "B": "VDD"
+      },
+      "master": [
+        "tsmc18",
+        "pmos2v",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "sd": "540.0n",
+        "ad": "1.92e-12",
+        "as": "1.92e-12",
+        "pd": "8.96u",
+        "ps": "8.96u",
+        "nrd": "0.0675",
+        "nrs": "0.0675",
+        "sa": "480.0n",
+        "sb": "480.0n",
+        "sca": "0",
+        "scb": "0",
+        "scc": "0",
+        "model": "pch",
+        "wf": "4u",
+        "w": "0.000004",
+        "l": "0.18u",
+        "fingers": "1",
+        "simM": "1"
+      }
+    },
+    {
+      "name": "I_drive",
+      "nodes": [
+        "HoldN",
+        "Z",
+        "VDD",
+        "VSS"
+      ],
+      "model": "SAR_DRIVE",
+      "parameters": {
+        "scale": "1"
+      },
+      "connections": {
+        "A": "HoldN",
+        "Z": "Z",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "MONOTONIC_SAR",
+        "SAR_DRIVE",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "scale": "1"
+      }
+    },
+    {
+      "name": "C_delay",
+      "nodes": [
+        "Delayed",
+        "VSS"
+      ],
+      "model": "capacitor",
+      "parameters": {
+        "c": "15f"
+      },
+      "connections": {
+        "PLUS": "Delayed",
+        "MINUS": "VSS"
+      },
+      "master": [
+        "analogLib",
+        "cap",
+        "symbol"
+      ],
+      "oa_parameters": {
+        "c": "15f"
+      }
+    },
+    {
+      "name": "I_d<1:0>",
+      "nodes": [
+        "A,N0",
+        "N0,Delayed",
+        "VDD",
+        "VSS"
+      ],
+      "model": "INVD1BWP7T",
+      "parameters": {},
+      "connections": {
+        "I": "A,N0",
+        "ZN": "N0,Delayed",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "INVD1BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {},
+      "array_members": [
+        "I_d0",
+        "I_d1"
+      ]
+    }
+  ],
+  "schema": "ic-circuit-v1"
+}

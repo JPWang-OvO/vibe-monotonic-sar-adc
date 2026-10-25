@@ -15,12 +15,18 @@ FAMILIES = {
 
 def signal_name(cell, name):
     name = name.replace('\\<', '<').replace('\\>', '>')
+    reset = re.fullmatch(r'I_seq(\d+)__ResetN', name)
+    if cell == 'SAR_ASYNC' and reset:
+        return f'ResetN<{reset[1]}>'
     match = re.fullmatch(r'([A-Za-z_]\w*?)(\d+)', name)
     return f'{match[1]}<{match[2]}>' if match and match[1] in FAMILIES.get(cell, ()) else name
 
 
 def scalar_name(cell, name):
     name = name.replace('\\<', '<').replace('\\>', '>')
+    reset = re.fullmatch(r'ResetN<(\d+)>', name)
+    if cell == 'SAR_ASYNC' and reset:
+        return f'I_seq{reset[1]}__ResetN'
     match = re.fullmatch(r'(\w+)<(\d+)>', name)
     return match[1]+match[2] if match and match[1] in FAMILIES.get(cell, ()) else name
 

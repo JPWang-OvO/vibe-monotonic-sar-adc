@@ -1,5 +1,0 @@
-simulator lang=spectre
-subckt SAR_FAST_SEQ (D CP CPB Reset Q VDD VSS)
-I_reset (Reset ResetN VDD VSS) INVD1BWP7T
-I_cell (D CP ResetN Q VDD VSS) DFCNQD1BWP7T
-ends SAR_FAST_SEQ

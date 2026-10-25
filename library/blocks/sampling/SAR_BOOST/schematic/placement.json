@@ -1,106 +1,64 @@
 {
-  "C_boot": {
-    "xy": [
-      4.0,
-      1.1875
-    ],
-    "orient": "R0"
-  },
   "Mp_start": {
     "xy": [
-      0.0,
-      1.875
-    ],
-    "orient": "R0"
-  },
-  "Mp_transfer": {
-    "xy": [
-      7.0,
-      3.0
-    ],
-    "orient": "R90"
-  },
-  "Mp_precharge": {
-    "xy": [
-      3.75,
-      4.0
-    ],
-    "orient": "R0"
-  },
-  "Mn_reset_gate": {
-    "xy": [
-      9.0,
-      -1.5
-    ],
-    "orient": "R0"
-  },
-  "Mn_reset_bottom": {
-    "xy": [
-      6.0,
-      -1.5
-    ],
-    "orient": "R0"
-  },
-  "Mn_bottom": {
-    "xy": [
-      3.0,
-      -1.5
-    ],
-    "orient": "R270"
-  },
-  "Mn_trackq": {
-    "xy": [
-      2.0,
-      0.125
+      0,
+      1.25
     ],
     "orient": "R0"
   },
   "Mn_start": {
     "xy": [
-      0.0,
+      0,
       0.125
     ],
     "orient": "R0"
   },
-  "PIN5": {
+  "Mn_trackq": {
     "xy": [
-      -3.0,
-      0.0
+      1.25,
+      0.125
     ],
     "orient": "R0"
   },
-  "PIN4": {
+  "C_boot": {
     "xy": [
-      -3.0,
-      0.5
+      2.5,
+      1.1875
     ],
     "orient": "R0"
   },
-  "PIN0": {
+  "Mp_precharge": {
     "xy": [
-      -3.0,
-      2.5
+      2.25,
+      2.75
     ],
     "orient": "R0"
   },
-  "PIN1": {
+  "Mp_transfer": {
     "xy": [
-      -3.0,
-      2.0
+      4.25,
+      2
+    ],
+    "orient": "R90"
+  },
+  "Mn_bottom": {
+    "xy": [
+      2,
+      -1
+    ],
+    "orient": "R270"
+  },
+  "Mn_reset_bottom": {
+    "xy": [
+      3.75,
+      -1
     ],
     "orient": "R0"
   },
-  "PIN3": {
+  "Mn_reset_gate": {
     "xy": [
-      -3.0,
-      1.0
-    ],
-    "orient": "R0"
-  },
-  "PIN2": {
-    "xy": [
-      -3.0,
-      1.5
+      5.25,
+      -1
     ],
     "orient": "R0"
   }

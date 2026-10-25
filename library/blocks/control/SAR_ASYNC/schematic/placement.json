@@ -1,64 +1,113 @@
 {
+  "I_sample_guard": {
+    "xy": [
+      0,
+      4.5
+    ],
+    "orient": "R0"
+  },
   "I_startup": {
     "xy": [
-      4.0,
-      3.0
-    ],
-    "orient": "R0"
-  },
-  "I_clock_drive": {
-    "xy": [
-      8.25,
-      -2.75
-    ],
-    "orient": "R0"
-  },
-  "I_early": {
-    "xy": [
-      1.5,
-      -3.625
+      3.375,
+      4
     ],
     "orient": "R0"
   },
   "I_reset": {
     "xy": [
-      7.0625,
-      2.625
+      5.75,
+      3.9375
     ],
     "orient": "R0"
   },
-  "I_sample_guard": {
+  "I_seq_reset<9:0>": {
     "xy": [
-      0.25,
-      3.5
+      5.125,
+      0.875
+    ],
+    "orient": "R90"
+  },
+  "I_seq_ff<9:0>": {
+    "xy": [
+      4.5,
+      1.75
     ],
     "orient": "R0"
   },
-  "I_feedback_delay": {
+  "I_feedback_delay__I_b0": {
     "xy": [
-      -0.8125,
-      -2.8125
+      0,
+      -0.5
     ],
     "orient": "R0"
   },
-  "I_run_nor": {
+  "I_feedback_delay__I_b1": {
     "xy": [
-      4.9375,
-      -2.9375
+      1.5,
+      -0.5
     ],
     "orient": "R0"
   },
-  "I_done_delay": {
+  "I_feedback_delay__I_b2": {
     "xy": [
-      11.5,
-      -2.75
+      3,
+      -0.5
     ],
     "orient": "R0"
   },
-  "I_seq<9:0>": {
+  "I_feedback_delay__I_b3": {
     "xy": [
-      7.125,
-      -0.0625
+      4.5,
+      -0.5
+    ],
+    "orient": "R0"
+  },
+  "I_early": {
+    "xy": [
+      0,
+      -2.5
+    ],
+    "orient": "R0"
+  },
+  "I_run_nor__I_stop_n": {
+    "xy": [
+      1.25,
+      -2.5
+    ],
+    "orient": "R0"
+  },
+  "I_run_nor__I_stop": {
+    "xy": [
+      3.5,
+      -2.125
+    ],
+    "orient": "R0"
+  },
+  "I_run_nor__I_gate": {
+    "xy": [
+      5,
+      -1.875
+    ],
+    "orient": "R0"
+  },
+  "I_clock_drive": {
+    "xy": [
+      7,
+      -2.125
+    ],
+    "orient": "R0"
+  },
+  "I_done_delay__I_b0": {
+    "xy": [
+      2.25,
+      -3.75
+    ],
+    "orient": "R0"
+  },
+  "I_done_delay__I_b1": {
+    "xy": [
+      3.75,
+      -3.75
     ],
     "orient": "R0"
   }

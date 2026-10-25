@@ -9,16 +9,6 @@
     "VSS"
   ],
   "views": {
-    "veriloga": {
-      "source": "veriloga/SAR_OUT.va",
-      "netlist": "veriloga/netlist.scs"
-    },
-    "netlist": {
-      "netlist": "netlist/netlist.scs"
-    },
-    "netlist_fast": {
-      "netlist": "netlist_fast/netlist.scs"
-    },
     "schematic": {
       "native": "schematic/native.json",
       "drawing": "schematic/drawing.json",
@@ -27,6 +17,9 @@
     "symbol": {
       "native": "symbol/native.json",
       "drawing": "symbol/drawing.json"
+    },
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     }
   }
 }

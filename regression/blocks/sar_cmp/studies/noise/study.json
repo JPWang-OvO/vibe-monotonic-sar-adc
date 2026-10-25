@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "id": "sar_cmp_noise",
+  "experiment": {
+    "schema_version": 2,
+    "id": "sar_cmp_noise_regen2",
+    "testbench": "library/testbenches/blocks/comparator/tb_SAR_CMP_noise/netlist/netlist.scs",
+    "process": "tsmc18",
+    "conditions": [
+      {
+        "id": "tt_25",
+        "corner": "tt",
+        "tokens": {
+          "TEMP": 25
+        }
+      },
+      {
+        "id": "ss_m40",
+        "corner": "ss",
+        "tokens": {
+          "TEMP": -40
+        }
+      },
+      {
+        "id": "ss_125",
+        "corner": "ss",
+        "tokens": {
+          "TEMP": 125
+        }
+      },
+      {
+        "id": "ff_m40",
+        "corner": "ff",
+        "tokens": {
+          "TEMP": -40
+        }
+      },
+      {
+        "id": "ff_125",
+        "corner": "ff",
+        "tokens": {
+          "TEMP": 125
+        }
+      }
+    ],
+    "simulator": {
+      "arguments": [
+        "-64",
+        "+preset=ax"
+      ],
+      "threads": 8,
+      "timeout_s": 2400,
+      "analyses": "Standalone comparator transient-noise characterization",
+      "precision": {
+        "preset": "AX"
+      }
+    },
+    "criteria": {},
+    "condition_defaults": {
+      "enrichment": true,
+      "cell_views": {}
+    },
+    "measurement_file": "regression/blocks/sar_cmp/studies/noise/measurement.json"
+  },
+  "variables": {
+    "input_um": [
+      1,
+      2,
+      4
+    ],
+    "regen_um": [
+      1,
+      2
+    ]
+  },
+  "edits": [
+    {
+      "cell": "SAR_CMP",
+      "instances": [
+        "Mp_input_p",
+        "Mp_input_n"
+      ],
+      "parameter": "w",
+      "value": "{input_um}u"
+    },
+    {
+      "cell": "SAR_CMP",
+      "instances": [
+        "Mn_latch_p",
+        "Mn_latch_n"
+      ],
+      "parameter": "w",
+      "value": "{regen_um}u"
+    }
+  ],
+  "objective": {
+    "characterize": [
+      "input-referred probability curves",
+      "offset and noise sigma",
+      "average_supply_power_w",
+      "unresolved",
+      "valid_late"
+    ]
+  },
+  "constraints": "Characterization; ADC acceptance remains in the referenced system flow"
+}

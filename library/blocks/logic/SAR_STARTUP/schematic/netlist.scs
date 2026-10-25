@@ -1,4 +1,7 @@
 simulator lang=spectre
+include "../../../../support/standard_cells/DFCNQD1BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/INVD1BWP7T/netlist/netlist.scs"
+include "../../SAR_DRIVE/netlist/netlist.scs"
 subckt SAR_STARTUP (Sample Guard Hold ClearN VDD VSS)
 Mp_clear1 (ClearB SampleB VDD VDD) pch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 Mp_clear0 (ClearB Ready VDD VDD) pch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
@@ -6,7 +9,7 @@ Mp1 (HoldN Guard P0 VDD) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92
 Mp0 (P0 NotReady VDD VDD) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 Mp_charge (PorRamp VSS VDD VDD) pch l=5u w=0.36u m=1 nf=1 sd=620.0n ad=2.124e-13 as=2.124e-13 pd=1.88u ps=1.88u nrd=0.861111 nrs=0.861111 sa=520.0n sb=520.0n sca=0 scb=0 scc=0
 C_por (PorRamp VSS) capacitor c=200f
-I_arm (VDD Sample PorN Ready VDD VSS) SAR_ARM
+I_arm (VDD Sample PorN Ready VDD VSS) DFCNQD1BWP7T
 I_clear_drive (ClearB ClearN VDD VSS) SAR_DRIVE _par0=8
 I_sample_inv (Sample SampleB VDD VSS) SAR_DRIVE _par0=1
 I_hold (HoldN Hold VDD VSS) SAR_DRIVE _par0=1

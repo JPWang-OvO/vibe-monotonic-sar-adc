@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 832 640">
+<rect width="100%" height="100%" fill="white"/>
+<desc>SAR_SAMPLE_GUARD; terminals follow the accepted Spectre declaration order.</desc>
+<g stroke="#287740" stroke-width="1.5" fill="none">
+<rect x="128" y="160" width="576" height="320"/>
+<polyline points="640,160 640,208"/>
+<polyline points="640,480 640,432"/>
+<polyline points="264,304 312,272 264,240 264,304"/>
+<ellipse cx="320" cy="272" rx="8" ry="8"/>
+<polyline points="376,304 424,272 376,240 376,304"/>
+<ellipse cx="432" cy="272" rx="8" ry="8"/>
+<path d="M496,384 A42.6667,64 0 0 0 496,256"/>
+<polyline points="496,256 560,256"/>
+<polyline points="496,384 560,384"/>
+<path d="M624.255,319.859 A65.0667,97.6 0 0 0 560,256.118"/>
+<path d="M560,383.786 A64,96 0 0 0 624.538,320.288"/>
+<polyline points="464,288 532.8,288"/>
+<polyline points="464,352 532.8,352"/>
+<polyline points="128,320 192,320"/>
+<polyline points="192,320 192,272 264,272"/>
+<polyline points="328,272 376,272"/>
+<polyline points="440,272 464,272 464,288"/>
+<polyline points="192,320 192,352 464,352"/>
+<polyline points="188.8,320 195.2,320" stroke-width="6.4" stroke-linecap="butt"/>
+<polyline points="704,320 624,320"/>
+</g><g fill="#287740" font-family="Arial,sans-serif">
+<text x="336" y="208" font-size="16" text-anchor="middle" dominant-baseline="central">delay + C</text>
+<text x="416" y="112" font-size="16" text-anchor="middle" dominant-baseline="central">SAR_SAMPLE_GUARD</text>
+</g><g fill="#c53e32" font-family="Arial,sans-serif" font-size="16">
+<g data-port="VDD" data-side="top"><rect x="636.8" y="156.8" width="6.4" height="6.4"/><text x="656" y="192" text-anchor="start" dominant-baseline="central">VDD</text></g>
+<g data-port="VSS" data-side="bottom"><rect x="636.8" y="476.8" width="6.4" height="6.4"/><text x="656" y="448" text-anchor="start" dominant-baseline="central">VSS</text></g>
+<g data-port="A" data-side="left"><rect x="124.8" y="316.8" width="6.4" height="6.4"/><text x="144" y="304" text-anchor="start" dominant-baseline="central">A</text></g>
+<g data-port="Z" data-side="right"><rect x="700.8" y="316.8" width="6.4" height="6.4"/><text x="688" y="304" text-anchor="end" dominant-baseline="central">Z</text></g>
+</g></svg>

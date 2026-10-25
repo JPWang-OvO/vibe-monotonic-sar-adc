@@ -1,4 +1,0 @@
-simulator lang=spectre
-subckt SAR_DFFR (D CP CDN Q VDD VSS)
-I_cell (D CP CDN Q VDD VSS) DFCNQD1BWP7T
-ends SAR_DFFR

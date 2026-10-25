@@ -1,20 +1,43 @@
 {
-  "schema_version": 1,
-  "id": "sar_cmp",
+  "schema_version": 2,
+  "id": "sar_cmp_functional",
   "testbench": "library/testbenches/blocks/comparator/tb_SAR_CMP/netlist/netlist.scs",
   "process": "tsmc18",
   "conditions": [
     {
-      "id": "tt",
+      "id": "tt_25",
       "corner": "tt",
       "tokens": {
         "TEMP": 25
-      },
-      "cell_views": {
-        "SAR_CMP": "netlist",
-        "SAR_BIAS": "netlist"
-      },
-      "enrichment": true
+      }
+    },
+    {
+      "id": "ss_m40",
+      "corner": "ss",
+      "tokens": {
+        "TEMP": -40
+      }
+    },
+    {
+      "id": "ss_125",
+      "corner": "ss",
+      "tokens": {
+        "TEMP": 125
+      }
+    },
+    {
+      "id": "ff_m40",
+      "corner": "ff",
+      "tokens": {
+        "TEMP": -40
+      }
+    },
+    {
+      "id": "ff_125",
+      "corner": "ff",
+      "tokens": {
+        "TEMP": 125
+      }
     }
   ],
   "simulator": {
@@ -125,15 +148,12 @@
     },
     "reset_errors": {
       "max": 0
-    },
-    "delay_max_s": {
-      "max": 1.3e-09
-    },
-    "bias_min_v": {
-      "min": 0.75
-    },
-    "bias_max_v": {
-      "max": 1.4
     }
-  }
+  },
+  "condition_defaults": {
+    "enrichment": true,
+    "cell_views": {}
+  },
+  "baseline": null,
+  "validation_status": "Current implementation not simulated in this cleanup"
 }

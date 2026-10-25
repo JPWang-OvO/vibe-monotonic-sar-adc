@@ -10,12 +10,6 @@
     "VREFN"
   ],
   "views": {
-    "netlist": {
-      "netlist": "netlist/netlist.scs"
-    },
-    "netlist_scaled": {
-      "netlist": "netlist_scaled/netlist.scs"
-    },
     "schematic": {
       "native": "schematic/native.json",
       "drawing": "schematic/drawing.json",
@@ -24,6 +18,9 @@
     "symbol": {
       "native": "symbol/native.json",
       "drawing": "symbol/drawing.json"
+    },
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     }
   },
   "cdf": "cdf.il"

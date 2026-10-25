@@ -6,6 +6,7 @@ import math
 import argparse
 from .model import PARAMS,ROOT,convert,ideal_reference
 from .fft import spectrum,validate_known_signals
+from regression.common.plans import load_plan
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,default=ROOT/'artifacts/python_reference')
@@ -29,6 +30,8 @@ def main():
         fixed.append(dict(differential=float(d),code=code,expected=expected,trace=trace))
     (out/'fixed_inputs.json').write_text(json.dumps(fixed,indent=2)+'\n')
     results=[]
+    flow=load_plan(ROOT/'regression/systems/monotonic_sar/flows/acceptance/flow.json')
+    thresholds={c['k']:c['criteria']['sndr_db']['min'] for c in flow['conditions']}
     for k in PARAMS['fft_bins']:
         codes=[]
         rows=[]
@@ -45,7 +48,7 @@ def main():
         (out/f'codes_k{k}.json').write_text(json.dumps(codes)+'\n')
         result=spectrum(codes,PARAMS['fs_hz'],k)
         (out/f'spectrum_k{k}.json').write_text(json.dumps(result,indent=2)+'\n')
-        assert result['sndr_db']>=PARAMS['sndr_threshold_db'][len(results)]
+        assert result['sndr_db']>=thresholds[k]
         results.append(dict(k=k,sndr_db=result['sndr_db'],code_alignment=True))
     summary=dict(fixed_input_count=len(fixed),fft_self_test=validate_known_signals(),sines=results,pass_all=True)
     (out/'summary.json').write_text(json.dumps(summary,indent=2)+'\n')

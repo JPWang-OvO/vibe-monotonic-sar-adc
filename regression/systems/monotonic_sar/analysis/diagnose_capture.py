@@ -25,7 +25,6 @@ for j,v in enumerate(valid[:9]):
  bit=9-j;side='p' if interpolate(t,w['I_adc.Outp'],v+5e-12)>.9 else 'n';b='I_adc.B'+side+str(bit)
  first=lambda name,level,direction:next(x for x in edges(t,w[name],level,direction) if x>v)
  row=dict(bit=bit,valid_s=v,capture_delay_ns=(first('I_adc.Ck'+str(bit),.9,1)-v)*1e9,evaluate_delay_ns=(next(x for x in ev if x>v)-v)*1e9)
- if 'I_adc.I_async.Raw'+str(bit) in w:row['raw_delay_ns']=(first('I_adc.I_async.Raw'+str(bit),.9,1)-v)*1e9
  for level in (1.62,.9,.18,.0018):row['bottom_'+str(level)+'_delay_ns']=(first(b,level,-1)-v)*1e9
  rows.append(row)
 print(json.dumps(rows))

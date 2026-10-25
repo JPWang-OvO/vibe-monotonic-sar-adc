@@ -49,7 +49,8 @@
 <polyline points="1088,560 872,560"/>
 </g><g fill="#287740" font-family="Arial,sans-serif">
 <text x="256" y="272" font-size="16" text-anchor="middle" dominant-baseline="central">POR</text>
-<text x="256" y="496" font-size="16" text-anchor="middle" dominant-baseline="central">gate</text>
+<text x="256" y="480" font-size="16" text-anchor="middle" dominant-baseline="central">latch</text>
+<text x="256" y="512" font-size="16" text-anchor="middle" dominant-baseline="central">NAND</text>
 <text x="416" y="368" font-size="16" text-anchor="middle" dominant-baseline="central">R0</text>
 <text x="528" y="368" font-size="16" text-anchor="middle" dominant-baseline="central">R1</text>
 <text x="640" y="368" font-size="16" text-anchor="middle" dominant-baseline="central">R2</text>

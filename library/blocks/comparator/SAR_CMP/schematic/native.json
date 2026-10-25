@@ -9,17 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 2320
+        "value": 2313
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 25 06:06:51 2026"
+        "value": "Oct 25 17:30:04 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 10
+        "value": 18
       },
       {
         "name": "pin#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 2320
+        "value": 2313
       },
       {
         "name": "schGeometryVersion",
@@ -104,19 +104,19 @@
       {
         "name": "I_valid",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_NAND2",
+          "standard_cells",
+          "ND2D1BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 1,
         "properties": [],
         "connections": {
-          "VSS": "VSS",
+          "A2": "Nn0",
+          "A1": "Np0",
           "VDD": "VDD",
-          "Z": "ValidRaw",
-          "B": "Nn0",
-          "A": "Np0"
+          "VSS": "VSS",
+          "ZN": "ValidRaw"
         }
       },
       {

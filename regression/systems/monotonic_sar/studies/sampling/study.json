@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "flow": "regression/systems/monotonic_sar/flows/acceptance/flow.json",
+  "conditions": [
+    "tt_25_k3_quiet",
+    "tt_25_k3_noise"
+  ],
+  "objective": {
+    "minimize": "core_power_w",
+    "target_sndr_db": [
+      59,
+      60
+    ]
+  },
+  "constraints": "Referenced flow criteria",
+  "id": "sar_sampling",
+  "variables": {
+    "unit_ff": [
+      4.8,
+      9.6,
+      20
+    ],
+    "sample_um": [
+      8,
+      16
+    ]
+  },
+  "edits": [
+    {
+      "cell": "SAR_FRONTEND",
+      "parameter": "unit_cap",
+      "value": "{unit_ff}f",
+      "instances": [
+        "I_cdac"
+      ]
+    },
+    {
+      "cell": "SAR_SAMPLE",
+      "instances": [
+        "Mn_sample"
+      ],
+      "parameter": "w",
+      "value": "{sample_um}u"
+    }
+  ]
+}

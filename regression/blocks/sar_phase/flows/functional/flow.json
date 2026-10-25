@@ -1,17 +1,43 @@
 {
-  "schema_version": 1,
-  "id": "sar_phase",
+  "schema_version": 2,
+  "id": "sar_phase_functional",
   "testbench": "library/testbenches/blocks/clock/tb_SAR_PHASE/netlist/netlist.scs",
   "process": "tsmc18",
   "conditions": [
     {
-      "id": "tt",
+      "id": "tt_25",
       "corner": "tt",
       "tokens": {
         "TEMP": 25
-      },
-      "cell_views": {},
-      "enrichment": true
+      }
+    },
+    {
+      "id": "ss_m40",
+      "corner": "ss",
+      "tokens": {
+        "TEMP": -40
+      }
+    },
+    {
+      "id": "ss_125",
+      "corner": "ss",
+      "tokens": {
+        "TEMP": 125
+      }
+    },
+    {
+      "id": "ff_m40",
+      "corner": "ff",
+      "tokens": {
+        "TEMP": -40
+      }
+    },
+    {
+      "id": "ff_125",
+      "corner": "ff",
+      "tokens": {
+        "TEMP": 125
+      }
     }
   ],
   "simulator": {
@@ -43,5 +69,11 @@
     "width_max_s": {
       "max": 4.5e-09
     }
-  }
+  },
+  "condition_defaults": {
+    "enrichment": true,
+    "cell_views": {}
+  },
+  "baseline": null,
+  "validation_status": "Current implementation not simulated in this cleanup"
 }

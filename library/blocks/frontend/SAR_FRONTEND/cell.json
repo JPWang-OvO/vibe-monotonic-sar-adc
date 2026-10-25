@@ -16,19 +16,6 @@
     "VSS"
   ],
   "views": {
-    "veriloga": {
-      "netlist": "veriloga/netlist.scs",
-      "source": "veriloga/SAR_FRONTEND.va"
-    },
-    "netlist": {
-      "netlist": "netlist/netlist.scs"
-    },
-    "netlist_parametric": {
-      "netlist": "netlist_parametric/netlist.scs"
-    },
-    "netlist_candidate": {
-      "netlist": "netlist_candidate/netlist.scs"
-    },
     "schematic": {
       "native": "schematic/native.json",
       "drawing": "schematic/drawing.json",
@@ -38,8 +25,8 @@
       "native": "symbol/native.json",
       "drawing": "symbol/drawing.json"
     },
-    "netlist_paper": {
-      "netlist": "netlist_paper/netlist.scs"
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     }
   },
   "cdf": "cdf.il"

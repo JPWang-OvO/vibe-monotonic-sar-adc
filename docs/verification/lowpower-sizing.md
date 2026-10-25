@@ -5,7 +5,7 @@ status: active
 last_reviewed: 2026-10-25
 authoritative_sources:
   - ../plans/power-and-sizing.md
-  - ../../config/acceptance_lowpower.json
+  - ../../regression/systems/monotonic_sar/flows/acceptance/specification.json
   - ../../regression/systems/monotonic_sar/flows/lowpower_front/flow.json
   - ../../regression/systems/monotonic_sar/flows/lowpower_digital/flow.json
   - ../../regression/systems/monotonic_sar/flows/lowpower_analog/flow.json
@@ -234,7 +234,7 @@ SS/125°C 低频含噪声为 58.438 dB，但 FF/125°C 低频无噪声为 56.863
 ## 独立噪声表征
 
 比较器噪声通过独立 flow 测量，以区分器件噪声与系统确定性失真。
-`regression/blocks/sar_cmp/flows/noise/flow.json` 包含输入对尺寸候选、`netlist_lowpower1_mirror` 偏置、理想输入/时钟和显式输出负载。
+这组历史实验使用当时的输入对尺寸候选及偏置电路，理想驱动输入与时钟并施加显式输出负载。对应配置可在 Git 367a550 中查阅；当前实验入口为 `regression/blocks/sar_cmp/studies/noise/study.json`。
 在三个共模点与九个差分电压下各重复 128 次，通过二项分布最大似然拟合判决概率，提取输入等效噪声与偏移。
 同时报告未决次数、复位错误与延迟；这些测量用于尺寸选择，不新增系统验收门槛。
 ADC 的含噪声 flow 继续验证系统 SNDR。旧批次的 2 mW 判据保留，最终报告按当前 3 mW 门槛复核实测功耗。

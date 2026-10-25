@@ -21,7 +21,7 @@ Flow 通过 cell/view 选择这个网表，沿用已有 TB 和测量。
 
 工艺 baseline 和映射文件由 Calibre Bridge 工艺包提供，process 配置引用其 baseline 名。
 输入 GDS/CDL、规则和映射路径需要在相应执行主机上可读。直接提供文件时，这些路径使用远端绝对路径。
-具体配置示例集中在 [README-TEMPLATE](../README-TEMPLATE.md)。
+机器与工具路径见[配置说明](../config/README.md)，任务字段以本目录的配置样例为准。
 
 ## 准备、运行和收集
 

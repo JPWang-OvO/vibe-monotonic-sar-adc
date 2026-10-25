@@ -1,19 +1,27 @@
 simulator lang=spectre
+include "../../../../support/standard_cells/DFCNQD1BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/DFSNQD1BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/INVD1BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/INVD2BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/INVD8BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/LNQD1BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/ND2D1BWP7T/netlist/netlist.scs"
 subckt SAR_PHASE (Clks Sample VDD VSS)
 Mp_charge (PorRamp VSS VDD VDD) pch l=5u w=0.36u m=1 nf=1 sd=620.0n ad=2.124e-13 as=2.124e-13 pd=1.88u ps=1.88u nrd=0.861111 nrs=0.861111 sa=520.0n sb=520.0n sca=0 scb=0 scc=0
 C_por (PorRamp VSS) capacitor c=200f
-I_enable (PorN Clks ClockEnable ClockEnableB VDD VSS) SAR_CAPTURE_LATCH
-I_gate (Clks ClockEnable ClockGatedB VDD VSS) SAR_SELECT
+I_enable__I_latch (PorN Clks ClockEnable VDD VSS) LNQD1BWP7T
+I_por\<1\> (PorRamp Por VDD VSS) INVD1BWP7T
+I_por\<0\> (Por PorN VDD VSS) INVD1BWP7T
+I_enable__I_qb (ClockEnable ClockEnableB VDD VSS) INVD1BWP7T
+I_gate (Clks ClockEnable ClockGatedB VDD VSS) ND2D1BWP7T
 I_buffer0 (R\<0\> SampleN0 VDD VSS) INVD2BWP7T
 I_clock (ClksB Clock VDD VSS) INVD2BWP7T
 I_clk0 (ClockGated ClksB VDD VSS) INVD2BWP7T
 I_gatebuf (ClockGatedB ClockGated VDD VSS) INVD2BWP7T
-I_ring4 (R\<3\> Clock PorN R\<4\> VDD VSS) SAR_DFFS
+I_ring4 (R\<3\> Clock PorN R\<4\> VDD VSS) DFSNQD1BWP7T
 I_buffer1 (SampleN0 Sample VDD VSS) INVD8BWP7T
-I_ring\<3\> (R\<2\> Clock PorN R\<3\> VDD VSS) SAR_DFFR
-I_ring\<2\> (R\<1\> Clock PorN R\<2\> VDD VSS) SAR_DFFR
-I_ring\<1\> (R\<0\> Clock PorN R\<1\> VDD VSS) SAR_DFFR
-I_ring\<0\> (R\<4\> Clock PorN R\<0\> VDD VSS) SAR_DFFR
-I_por\<1\> (PorRamp Por VDD VSS) INVD1BWP7T
-I_por\<0\> (Por PorN VDD VSS) INVD1BWP7T
+I_ring\<3\> (R\<2\> Clock PorN R\<3\> VDD VSS) DFCNQD1BWP7T
+I_ring\<2\> (R\<1\> Clock PorN R\<2\> VDD VSS) DFCNQD1BWP7T
+I_ring\<1\> (R\<0\> Clock PorN R\<1\> VDD VSS) DFCNQD1BWP7T
+I_ring\<0\> (R\<4\> Clock PorN R\<0\> VDD VSS) DFCNQD1BWP7T
 ends SAR_PHASE

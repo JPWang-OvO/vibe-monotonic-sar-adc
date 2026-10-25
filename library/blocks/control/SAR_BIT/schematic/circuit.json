@@ -17,28 +17,49 @@
   },
   "instances": [
     {
-      "name": "I_latch",
+      "name": "I_latch__I_latch",
       "nodes": [
         "Outp",
         "Capture",
+        "Q",
+        "VDD",
+        "VSS"
+      ],
+      "model": "LNQD1BWP7T",
+      "parameters": {},
+      "connections": {
+        "D": "Outp",
+        "EN": "Capture",
+        "Q": "Q",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "LNQD1BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_latch__I_qb",
+      "nodes": [
         "Q",
         "QB",
         "VDD",
         "VSS"
       ],
-      "model": "SAR_CAPTURE_LATCH",
+      "model": "INVD1BWP7T",
       "parameters": {},
       "connections": {
-        "D": "Outp",
-        "Hold": "Capture",
-        "Q": "Q",
-        "QB": "QB",
+        "I": "Q",
+        "ZN": "QB",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_CAPTURE_LATCH",
+        "standard_cells",
+        "INVD1BWP7T",
         "symbol"
       ],
       "oa_parameters": {}
@@ -52,18 +73,18 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_SELECT",
+      "model": "ND2D1BWP7T",
       "parameters": {},
       "connections": {
-        "A": "Q,QB",
-        "B": "Capture",
-        "Z": "BpRaw,BnRaw",
+        "A1": "Q,QB",
+        "A2": "Capture",
+        "ZN": "BpRaw,BnRaw",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_SELECT",
+        "standard_cells",
+        "ND2D1BWP7T",
         "symbol"
       ],
       "oa_parameters": {},
@@ -135,5 +156,5 @@
       ]
     }
   ],
-  "staged_source": "library__blocks__control__SAR_BIT__netlist_taper16__netlist.scs"
+  "schema": "ic-circuit-v1"
 }

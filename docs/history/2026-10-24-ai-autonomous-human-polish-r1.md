@@ -4,8 +4,8 @@ type: checkpoint
 status: frozen
 last_reviewed: 2026-10-25
 authoritative_sources:
-  - ../../config/final_design.json
-  - ../../config/acceptance_results.json
+  - git:checkpoint/ai-autonomous-human-polish-r1-20261024:config/final_design.json
+  - git:checkpoint/ai-autonomous-human-polish-r1-20261024:config/acceptance_results.json
   - ../verification/electrical-acceptance.md
   - ../verification/oa-delivery.md
 ---

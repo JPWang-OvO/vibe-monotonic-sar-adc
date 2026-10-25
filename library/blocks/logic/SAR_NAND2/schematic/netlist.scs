@@ -1,4 +1,0 @@
-simulator lang=spectre
-subckt SAR_NAND2 (A B Z VDD VSS)
-I_cell (A B Z VDD VSS) ND2D1BWP7T
-ends SAR_NAND2

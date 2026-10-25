@@ -14,34 +14,6 @@
     "VREFN"
   ],
   "views": {
-    "veriloga": {
-      "source": "veriloga/SAR_BIT.va",
-      "netlist": "veriloga/netlist.scs"
-    },
-    "netlist": {
-      "netlist": "netlist/netlist.scs"
-    },
-    "netlist_fast2": {
-      "netlist": "netlist_fast2/netlist.scs"
-    },
-    "netlist_fast6": {
-      "netlist": "netlist_fast6/netlist.scs"
-    },
-    "netlist_latch": {
-      "netlist": "netlist_latch/netlist.scs"
-    },
-    "netlist_drive": {
-      "netlist": "netlist_drive/netlist.scs"
-    },
-    "netlist_taper": {
-      "netlist": "netlist_taper/netlist.scs"
-    },
-    "netlist_strong2": {
-      "netlist": "netlist_strong2/netlist.scs"
-    },
-    "netlist_pullup": {
-      "netlist": "netlist_pullup/netlist.scs"
-    },
     "schematic": {
       "native": "schematic/native.json",
       "drawing": "schematic/drawing.json",
@@ -51,35 +23,8 @@
       "native": "symbol/native.json",
       "drawing": "symbol/drawing.json"
     },
-    "netlist_paper16": {
-      "netlist": "netlist_paper16/netlist.scs"
-    },
-    "netlist_paper32": {
-      "netlist": "netlist_paper32/netlist.scs"
-    },
-    "netlist_paper64": {
-      "netlist": "netlist_paper64/netlist.scs"
-    },
-    "netlist_dac16_pre2": {
-      "netlist": "netlist_dac16_pre2/netlist.scs"
-    },
-    "netlist_dac16_pre4": {
-      "netlist": "netlist_dac16_pre4/netlist.scs"
-    },
-    "netlist_dac32_pre2": {
-      "netlist": "netlist_dac32_pre2/netlist.scs"
-    },
-    "netlist_dac32_pre4": {
-      "netlist": "netlist_dac32_pre4/netlist.scs"
-    },
-    "netlist_taper16": {
-      "netlist": "netlist_taper16/netlist.scs"
-    },
-    "netlist_taper8": {
-      "netlist": "netlist_taper8/netlist.scs"
-    },
-    "netlist_taper4": {
-      "netlist": "netlist_taper4/netlist.scs"
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     }
   },
   "cdf": "cdf.il"

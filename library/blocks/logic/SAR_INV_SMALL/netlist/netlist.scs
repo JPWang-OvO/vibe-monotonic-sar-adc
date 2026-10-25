@@ -1,6 +1,0 @@
-simulator lang=spectre
-// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
-subckt SAR_INV_SMALL (A Z VDD VSS)
-Mn (Z A VSS VSS) nch w=1u l=0.18u nf=1 m=1
-Mp (Z A VDD VDD) pch w=2u l=0.18u nf=1 m=1
-ends SAR_INV_SMALL

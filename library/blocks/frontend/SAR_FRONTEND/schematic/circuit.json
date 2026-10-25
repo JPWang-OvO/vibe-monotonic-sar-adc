@@ -99,5 +99,5 @@
       ]
     }
   ],
-  "staged_source": "library__blocks__frontend__SAR_FRONTEND__netlist_paper__netlist.scs"
+  "schema": "ic-circuit-v1"
 }

@@ -18,7 +18,7 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_OUTPUT_FF",
+      "model": "DFQD1BWP7T",
       "parameters": {},
       "connections": {
         "D": "D",
@@ -28,8 +28,8 @@
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_OUTPUT_FF",
+        "standard_cells",
+        "DFQD1BWP7T",
         "symbol"
       ],
       "oa_parameters": {}
@@ -89,5 +89,5 @@
       }
     }
   ],
-  "staged_source": "library__blocks__control__SAR_OUT__fast__netlist.scs"
+  "schema": "ic-circuit-v1"
 }

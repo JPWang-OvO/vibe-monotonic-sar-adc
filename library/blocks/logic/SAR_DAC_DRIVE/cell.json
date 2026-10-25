@@ -8,9 +8,6 @@
     "VSS"
   ],
   "views": {
-    "netlist": {
-      "netlist": "netlist/netlist.scs"
-    },
     "schematic": {
       "native": "schematic/native.json",
       "drawing": "schematic/drawing.json",
@@ -20,11 +17,8 @@
       "native": "symbol/native.json",
       "drawing": "symbol/drawing.json"
     },
-    "netlist_taper": {
-      "netlist": "netlist_taper/netlist.scs"
-    },
-    "netlist_taper_p15": {
-      "netlist": "netlist_taper_p15/netlist.scs"
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     }
   },
   "cdf": "cdf.il"

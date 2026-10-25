@@ -1,4 +1,4 @@
-"""Read the frozen ADC hierarchy and its qualified native device properties."""
+"""Read the current ADC hierarchy and qualified native device properties."""
 from pathlib import Path
 import ast
 from collections import defaultdict
@@ -67,6 +67,30 @@ def reference_libraries():
             for record in [read_json(path)]}
 
 
+def current_hierarchy():
+    definitions = {}
+    for name, folder in source_folders().items():
+        metadata = read_json(folder/'cell.json')
+        if not metadata['ports']:
+            continue
+        source = folder/metadata['views']['netlist']['netlist']
+        data = spectre_document(source.read_text(encoding='utf-8'))['subcircuits'][name]
+        instances = []
+        for instance, tokens in data['statements'].items():
+            end = tokens.index(')')
+            instances.append(dict(name=clean_name(instance), nodes=tokens[1:end], model=tokens[end+1],
+                                  parameters=assignments(tokens[end+2:])))
+        definitions[name] = dict(cell=name, ports=[p for p in data['ports'] if p not in ('(', ')')],
+                                 parameters={k: ''.join(v) for k,v in data['parameters'].items()}, instances=instances)
+    for data in definitions.values():
+        for inst in data['instances']:
+            model = inst['model']
+            ports = definitions[model]['ports'] if model in definitions else (
+                ['PLUS', 'MINUS'] if model == 'capacitor' else ['D', 'G', 'S', 'B'])
+            inst['connections'] = dict(zip(ports, inst['nodes'], strict=True))
+    return definitions
+
+
 class QualifiedProperties:
     """Reuse properties computed by the accepted batch's PDK callbacks.
 
@@ -107,9 +131,11 @@ class QualifiedProperties:
 
 
 def prepare_source(batch_folder):
-    definitions, enrichment = hierarchy(batch_folder)
+    definitions = current_hierarchy()
+    _, enrichment = hierarchy(batch_folder)
     qualified = QualifiedProperties(enrichment)
     for name, data in definitions.items():
+        data['schema']='ic-circuit-v1'
         for inst in data['instances']:
             inst['master'], inst['oa_parameters'] = qualified.device(inst, data['parameters'])
     group_interfaces(definitions)

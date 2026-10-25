@@ -1,4 +1,0 @@
-ahdl_include "../veriloga/SAR_ASYNC.va"
-subckt SAR_ASYNC (Sample Valid ClkC Done Ck\<9\> Ck\<8\> Ck\<7\> Ck\<6\> Ck\<5\> Ck\<4\> Ck\<3\> Ck\<2\> Ck\<1\> Ck\<0\> VDD VSS)
-I_model (Sample Valid ClkC Done Ck\<9\> Ck\<8\> Ck\<7\> Ck\<6\> Ck\<5\> Ck\<4\> Ck\<3\> Ck\<2\> Ck\<1\> Ck\<0\> VDD VSS) SAR_ASYNC_va tsettle=600p
-ends SAR_ASYNC

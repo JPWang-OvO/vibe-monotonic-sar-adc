@@ -5,6 +5,7 @@ from virtuoso_bridge import VirtuosoClient
 from regression.common.bridge_environment import load_bridge_environment
 from virtuoso_bridge.virtuoso.skill_output import parse_sexpr
 from regression.common.project import ROOT,read_json,write_json,artifact_root
+from .adc_source import reference_libraries
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -12,7 +13,7 @@ def main():
     args=parser.parse_args()
     load_bridge_environment()
     env=read_json(args.environment)
-    names=['DFCNQD1BWP7T','DFSNQD1BWP7T','DFQD1BWP7T','INVD1BWP7T','ND2D1BWP7T','NR2D1BWP7T','NR3D1BWP7T','DEL0BWP7T']
+    names=sorted(reference_libraries())
     out=artifact_root()/'stdcell_native';out.mkdir(parents=True,exist_ok=True)
     client=VirtuosoClient.from_env(profile=env['profile'],log_to_ciw=False)
     try:

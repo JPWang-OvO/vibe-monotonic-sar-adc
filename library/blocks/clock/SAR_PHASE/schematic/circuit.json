@@ -79,28 +79,49 @@
       }
     },
     {
-      "name": "I_enable",
+      "name": "I_enable__I_latch",
       "nodes": [
         "PorN",
         "Clks",
+        "ClockEnable",
+        "VDD",
+        "VSS"
+      ],
+      "model": "LNQD1BWP7T",
+      "parameters": {},
+      "connections": {
+        "D": "PorN",
+        "EN": "Clks",
+        "Q": "ClockEnable",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "LNQD1BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_enable__I_qb",
+      "nodes": [
         "ClockEnable",
         "ClockEnableB",
         "VDD",
         "VSS"
       ],
-      "model": "SAR_CAPTURE_LATCH",
+      "model": "INVD1BWP7T",
       "parameters": {},
       "connections": {
-        "D": "PorN",
-        "Hold": "Clks",
-        "Q": "ClockEnable",
-        "QB": "ClockEnableB",
+        "I": "ClockEnable",
+        "ZN": "ClockEnableB",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_CAPTURE_LATCH",
+        "standard_cells",
+        "INVD1BWP7T",
         "symbol"
       ],
       "oa_parameters": {}
@@ -114,18 +135,18 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_SELECT",
+      "model": "ND2D1BWP7T",
       "parameters": {},
       "connections": {
-        "A": "Clks",
-        "B": "ClockEnable",
-        "Z": "ClockGatedB",
+        "A1": "Clks",
+        "A2": "ClockEnable",
+        "ZN": "ClockGatedB",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_SELECT",
+        "standard_cells",
+        "ND2D1BWP7T",
         "symbol"
       ],
       "oa_parameters": {}
@@ -209,7 +230,7 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_DFFS",
+      "model": "DFSNQD1BWP7T",
       "parameters": {},
       "connections": {
         "D": "R<3>",
@@ -220,8 +241,8 @@
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_DFFS",
+        "standard_cells",
+        "DFSNQD1BWP7T",
         "symbol"
       ],
       "oa_parameters": {}
@@ -282,7 +303,7 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_DFFR",
+      "model": "DFCNQD1BWP7T",
       "parameters": {},
       "connections": {
         "D": "R<2:0>,R<4>",
@@ -293,8 +314,8 @@
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_DFFR",
+        "standard_cells",
+        "DFCNQD1BWP7T",
         "symbol"
       ],
       "oa_parameters": {},
@@ -333,5 +354,5 @@
       ]
     }
   ],
-  "staged_source": "library__blocks__clock__SAR_PHASE__netlist_cells__netlist.scs"
+  "schema": "ic-circuit-v1"
 }

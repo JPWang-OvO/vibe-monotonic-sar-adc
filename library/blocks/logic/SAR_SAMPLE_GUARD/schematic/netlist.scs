@@ -1,0 +1,13 @@
+simulator lang=spectre
+include "../../../../support/standard_cells/INVD1BWP7T/netlist/netlist.scs"
+include "../../SAR_DRIVE/netlist/netlist.scs"
+subckt SAR_SAMPLE_GUARD (A Z VDD VSS)
+Mn1 (HoldN Delayed VSS VSS) nch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn0 (HoldN A VSS VSS) nch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp1 (HoldN Delayed P0 VDD) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp0 (P0 A VDD VDD) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+I_drive (HoldN Z VDD VSS) SAR_DRIVE _par0=1
+C_delay (Delayed VSS) capacitor c=15f
+I_d\<1\> (A N0 VDD VSS) INVD1BWP7T
+I_d\<0\> (N0 Delayed VDD VSS) INVD1BWP7T
+ends SAR_SAMPLE_GUARD

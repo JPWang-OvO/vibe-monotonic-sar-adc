@@ -9,17 +9,22 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 575
+        "value": 527
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 25 06:07:17 2026"
+        "value": "Oct 25 17:29:53 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 2
+        "value": 6
+      },
+      {
+        "name": "pin#",
+        "type": "int",
+        "value": 3
       },
       {
         "name": "portOrder",
@@ -31,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 575
+        "value": 527
       },
       {
         "name": "schGeometryVersion",
@@ -62,8 +67,8 @@
           }
         ],
         "connections": {
-          "PLUS": "Bias",
-          "MINUS": "VSS"
+          "MINUS": "VSS",
+          "PLUS": "Bias"
         }
       },
       {
@@ -168,10 +173,10 @@
           }
         ],
         "connections": {
-          "S": "VSS",
-          "G": "VDD",
+          "D": "Bias",
           "B": "VSS",
-          "D": "Bias"
+          "G": "VDD",
+          "S": "VSS"
         }
       },
       {
@@ -276,10 +281,10 @@
           }
         ],
         "connections": {
-          "S": "VDD",
-          "G": "Bias",
+          "D": "Bias",
           "B": "VDD",
-          "D": "Bias"
+          "G": "Bias",
+          "S": "VDD"
         }
       },
       {

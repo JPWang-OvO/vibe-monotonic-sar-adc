@@ -9,17 +9,17 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 2630
+        "value": 4365
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 25 06:12:16 2026"
+        "value": "Oct 25 17:42:45 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 4
+        "value": 7
       },
       {
         "name": "pin#",
@@ -36,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 2630
+        "value": 4365
       },
       {
         "name": "schGeometryVersion",
@@ -140,40 +140,56 @@
         }
       },
       {
-        "name": "I_enable",
+        "name": "I_enable__I_latch",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_CAPTURE_LATCH",
+          "standard_cells",
+          "LNQD1BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 1,
         "properties": [],
         "connections": {
-          "Hold": "Clks",
-          "QB": "ClockEnableB",
-          "Q": "ClockEnable",
+          "EN": "Clks",
           "D": "PorN",
+          "Q": "ClockEnable",
           "VSS": "VSS",
           "VDD": "VDD"
         }
       },
       {
-        "name": "I_gate",
+        "name": "I_enable__I_qb",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_SELECT",
+          "standard_cells",
+          "INVD1BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 1,
         "properties": [],
         "connections": {
-          "VSS": "VSS",
+          "I": "ClockEnable",
+          "ZN": "ClockEnableB",
           "VDD": "VDD",
-          "Z": "ClockGatedB",
-          "B": "ClockEnable",
-          "A": "Clks"
+          "VSS": "VSS"
+        }
+      },
+      {
+        "name": "I_gate",
+        "master": [
+          "standard_cells",
+          "ND2D1BWP7T",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {
+          "A2": "ClockEnable",
+          "A1": "Clks",
+          "VDD": "VDD",
+          "VSS": "VSS",
+          "ZN": "ClockGatedB"
         }
       },
       {
@@ -213,39 +229,39 @@
       {
         "name": "I_ring4",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_DFFS",
+          "standard_cells",
+          "DFSNQD1BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 1,
         "properties": [],
         "connections": {
-          "VSS": "VSS",
-          "VDD": "VDD",
           "SDN": "PorN",
           "CP": "Clock",
+          "D": "R<3>",
           "Q": "R<4>",
-          "D": "R<3>"
+          "VDD": "VDD",
+          "VSS": "VSS"
         }
       },
       {
         "name": "I_ring<3:0>",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_DFFR",
+          "standard_cells",
+          "DFCNQD1BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 4,
         "properties": [],
         "connections": {
-          "VSS": "<*4>VSS",
-          "VDD": "<*4>VDD",
           "CDN": "<*4>PorN",
           "CP": "<*4>Clock",
+          "D": "R<2:0>,R<4>",
           "Q": "R<3:0>",
-          "D": "R<2:0>,R<4>"
+          "VDD": "<*4>VDD",
+          "VSS": "<*4>VSS"
         }
       },
       {

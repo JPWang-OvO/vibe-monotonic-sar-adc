@@ -1,25 +1,45 @@
 simulator lang=spectre
-// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
+include "../../../../support/standard_cells/AOI211D1BWP7T/netlist/netlist.scs"
 include "../../../../support/standard_cells/DFCNQD1BWP7T/netlist/netlist.scs"
-include "../../../../support/standard_cells/NR3D1BWP7T/netlist/netlist.scs"
-include "../../../logic/SAR_DRIVE/netlist/netlist.scs"
-include "../../../logic/SAR_DELAY/netlist/netlist.scs"
-include "../../../logic/SAR_DELAY4/netlist/netlist.scs"
+include "../../../../support/standard_cells/INVD1BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/INVD2BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/INVD4BWP7T/netlist/netlist.scs"
+include "../../../../support/standard_cells/NR2D1BWP7T/netlist/netlist.scs"
+include "../../../logic/SAR_SAMPLE_GUARD/netlist/netlist.scs"
+include "../../../logic/SAR_STARTUP/netlist/netlist.scs"
 subckt SAR_ASYNC (Sample Valid ClkC Done Ck\<9\> Ck\<8\> Ck\<7\> Ck\<6\> Ck\<5\> Ck\<4\> Ck\<3\> Ck\<2\> Ck\<1\> Ck\<0\> VDD VSS)
-I_sample_inv (Sample ClearN VDD VSS) SAR_DRIVE scale=8
-I_seq0 (VDD Valid ClearN Ck\<9\> VDD VSS) DFCNQD1BWP7T
-I_seq1 (Ck\<9\> Valid ClearN Ck\<8\> VDD VSS) DFCNQD1BWP7T
-I_seq2 (Ck\<8\> Valid ClearN Ck\<7\> VDD VSS) DFCNQD1BWP7T
-I_seq3 (Ck\<7\> Valid ClearN Ck\<6\> VDD VSS) DFCNQD1BWP7T
-I_seq4 (Ck\<6\> Valid ClearN Ck\<5\> VDD VSS) DFCNQD1BWP7T
-I_seq5 (Ck\<5\> Valid ClearN Ck\<4\> VDD VSS) DFCNQD1BWP7T
-I_seq6 (Ck\<4\> Valid ClearN Ck\<3\> VDD VSS) DFCNQD1BWP7T
-I_seq7 (Ck\<3\> Valid ClearN Ck\<2\> VDD VSS) DFCNQD1BWP7T
-I_seq8 (Ck\<2\> Valid ClearN Ck\<1\> VDD VSS) DFCNQD1BWP7T
-I_seq9 (Ck\<1\> Valid ClearN Ck\<0\> VDD VSS) DFCNQD1BWP7T
-I_sample_guard (Sample SampleGuard VDD VSS) SAR_DELAY4
-I_feedback_delay (Valid ValidDelay VDD VSS) SAR_DELAY4
-I_run_nor (SampleGuard ValidDelay Ck\<0\> CompareEnable VDD VSS) NR3D1BWP7T
-I_clock_drive (CompareEnable ClkC VDD VSS) SAR_DRIVE scale=1
-I_done_delay (Ck\<0\> Done VDD VSS) SAR_DELAY
+I_startup (Sample SampleGuard Hold ClearN VDD VSS) SAR_STARTUP
+I_reset (ClearN Reset VDD VSS) INVD4BWP7T
+I_seq0__I_reset (Reset I_seq0__ResetN VDD VSS) INVD1BWP7T
+I_seq0__I_cell (VDD Valid I_seq0__ResetN Ck\<9\> VDD VSS) DFCNQD1BWP7T
+I_seq1__I_reset (Reset I_seq1__ResetN VDD VSS) INVD1BWP7T
+I_seq1__I_cell (Ck\<9\> Valid I_seq1__ResetN Ck\<8\> VDD VSS) DFCNQD1BWP7T
+I_seq2__I_reset (Reset I_seq2__ResetN VDD VSS) INVD1BWP7T
+I_seq2__I_cell (Ck\<8\> Valid I_seq2__ResetN Ck\<7\> VDD VSS) DFCNQD1BWP7T
+I_seq3__I_reset (Reset I_seq3__ResetN VDD VSS) INVD1BWP7T
+I_seq3__I_cell (Ck\<7\> Valid I_seq3__ResetN Ck\<6\> VDD VSS) DFCNQD1BWP7T
+I_seq4__I_reset (Reset I_seq4__ResetN VDD VSS) INVD1BWP7T
+I_seq4__I_cell (Ck\<6\> Valid I_seq4__ResetN Ck\<5\> VDD VSS) DFCNQD1BWP7T
+I_seq5__I_reset (Reset I_seq5__ResetN VDD VSS) INVD1BWP7T
+I_seq5__I_cell (Ck\<5\> Valid I_seq5__ResetN Ck\<4\> VDD VSS) DFCNQD1BWP7T
+I_seq6__I_reset (Reset I_seq6__ResetN VDD VSS) INVD1BWP7T
+I_seq6__I_cell (Ck\<4\> Valid I_seq6__ResetN Ck\<3\> VDD VSS) DFCNQD1BWP7T
+I_seq7__I_reset (Reset I_seq7__ResetN VDD VSS) INVD1BWP7T
+I_seq7__I_cell (Ck\<3\> Valid I_seq7__ResetN Ck\<2\> VDD VSS) DFCNQD1BWP7T
+I_seq8__I_reset (Reset I_seq8__ResetN VDD VSS) INVD1BWP7T
+I_seq8__I_cell (Ck\<2\> Valid I_seq8__ResetN Ck\<1\> VDD VSS) DFCNQD1BWP7T
+I_seq9__I_reset (Reset I_seq9__ResetN VDD VSS) INVD1BWP7T
+I_seq9__I_cell (Ck\<1\> Valid I_seq9__ResetN Ck\<0\> VDD VSS) DFCNQD1BWP7T
+I_sample_guard (Sample SampleGuard VDD VSS) SAR_SAMPLE_GUARD
+I_feedback_delay__I_b0 (Valid I_feedback_delay__N0 VDD VSS) INVD1BWP7T
+I_feedback_delay__I_b1 (I_feedback_delay__N0 I_feedback_delay__N1 VDD VSS) INVD1BWP7T
+I_feedback_delay__I_b2 (I_feedback_delay__N1 I_feedback_delay__N2 VDD VSS) INVD1BWP7T
+I_feedback_delay__I_b3 (I_feedback_delay__N2 ValidDelay VDD VSS) INVD1BWP7T
+I_early (Ck\<5\> Early VDD VSS) INVD1BWP7T
+I_run_nor__I_stop_n (Hold Ck\<0\> I_run_nor__StopN VDD VSS) NR2D1BWP7T
+I_run_nor__I_stop (I_run_nor__StopN I_run_nor__Stop VDD VSS) INVD1BWP7T
+I_run_nor__I_gate (ValidDelay Early Valid I_run_nor__Stop CompareEnable VDD VSS) AOI211D1BWP7T
+I_clock_drive (CompareEnable ClkC VDD VSS) INVD2BWP7T
+I_done_delay__I_b0 (Ck\<0\> I_done_delay__N0 VDD VSS) INVD1BWP7T
+I_done_delay__I_b1 (I_done_delay__N0 Done VDD VSS) INVD4BWP7T
 ends SAR_ASYNC

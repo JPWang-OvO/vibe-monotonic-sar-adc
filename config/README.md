@@ -6,13 +6,13 @@
 | 配置 | 内容 |
 |---|---|
 | 根目录 `.env` | `VIRTUOSO_BRIDGE_ROOT`、`CALIBRE_BRIDGE_ROOT` 指向本机工具目录 |
-| `project.json` | 项目 ID、设计库名、工艺配置和 flow 索引 |
+| `project.json` | 项目 ID、设计库名、工艺配置、flow 与 study 索引 |
 | `processes/` | technology、器件 master、模型 section、参数补全合约和 Calibre baseline 名 |
 | `environments/*.local.json` | Bridge profile、工具与模型路径、运行根目录、OA 库路径 |
 | 各 flow 的 `flow.json` | 条件、view 绑定、精度、线程、时限、测量和阈值 |
-| `lowpower_design.json`、`acceptance_lowpower.json` | 当前低功耗设计的 view 绑定、正式 flow 和验收条件 |
-| `acceptance_lowpower_results.json` | 当前设计已完成批次的实际 view 标识、逐项测量与判定 |
-| `final_design.json`、`acceptance.json`、`acceptance_results.json` | 优化前 checkpoint 的绑定、验收条件与结果 |
+| `design.json` | 当前顶层、默认电路表示与正式验收 flow |
+| flow 的 `specification.json`、`baselines/` | 规格说明与已批准的测量结果 |
+| study 的 `study.json` | 变量、参数修改、拓扑规则与优化目标 |
 | 物理任务 JSON | layout/source 身份、电源地、提取设置和 CalibreView 目标 |
 
 从 environment 样例创建本机 `.local.json` 并替换占位值。本机配置忽略入 Git；认证沿用 Bridge 用户配置。
@@ -39,4 +39,4 @@ license 与调度配额按实际获得的信息记录。
 
 更换工艺时更新 project 引用及 process 配置，核对模型 section、器件 master、CDF 版本与回调顺序。
 Enrichment 使用 Spectre 原生参数报告、SpiceIn、CDF 和原生 netlister，所选 Bridge profile 的 SSH 环境需能运行 Spectre。
-具体配置示例见 [README-TEMPLATE](../README-TEMPLATE.md)。
+运行命令见 [Regression](../regression/README.md)。

@@ -4,18 +4,18 @@ type: verification-method
 status: active
 last_reviewed: 2026-10-24
 authoritative_sources:
-  - ../../config/final_design.json
-  - ../../config/acceptance_results.json
+  - git:checkpoint/ai-autonomous-human-polish-r1-20261024:config/final_design.json
+  - git:checkpoint/ai-autonomous-human-polish-r1-20261024:config/acceptance_results.json
   - ../../virtuoso/oa/adc_source.py
   - ../../virtuoso/oa/adc_buses.py
-  - ../../virtuoso/oa/adc_build.py
+  - git:checkpoint/ai-autonomous-human-polish-r1-20261024:virtuoso/oa/adc_build.py
   - ../../virtuoso/oa/adc_schematic.py
   - ../../virtuoso/oa/adc_compare.py
 ---
 
 # 适用版本
 
-本文记录优化前 checkpoint 的 28-cell OA 交付及其复现方法，电气绑定由 `config/final_design.json` 固定。
+本文记录优化前 checkpoint 的 28-cell OA 交付及其复现方法，电气绑定由 `checkpoint/ai-autonomous-human-polish-r1-20261024:config/final_design.json` 固定。
 当前低功耗版本见 [低功耗 OA 交付](lowpower-oa-delivery.md)。复现本记录时使用 checkpoint 源文件。
 
 # 原生库与源文件
@@ -108,6 +108,7 @@ SAR_PHASE 的两条 shorted-output 警告来自上述两组并联驱动器。
 功能重绘读取捕获的器件属性和子模块实际 pin 坐标，保留所选修改范围以外的视图。
 
 ```text
+# 以下接口仅适用于该 checkpoint 的工作树。
 python -m virtuoso.oa.adc_build --batch BATCH --prepare-only
 python -m virtuoso.oa.adc_redraw --batch BATCH --functional --cells CELL ... --schematics-only
 python -m virtuoso.oa.adc_compare --batch BATCH --native ARTIFACTS/oa_delivery/native_netlist/netlist

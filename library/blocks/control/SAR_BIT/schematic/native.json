@@ -9,17 +9,22 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 1480
+        "value": 1324
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 25 06:07:13 2026"
+        "value": "Oct 25 17:30:13 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 2
+        "value": 10
+      },
+      {
+        "name": "pin#",
+        "type": "int",
+        "value": 10
       },
       {
         "name": "portOrder",
@@ -31,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 1480
+        "value": 1324
       },
       {
         "name": "schGeometryVersion",
@@ -62,10 +67,10 @@
           }
         ],
         "connections": {
-          "A": "BpRaw,BnRaw",
-          "Z": "BpBuf,BnBuf",
+          "VSS": "<*2>VSS",
           "VDD": "<*2>VDD",
-          "VSS": "<*2>VSS"
+          "Z": "BpBuf,BnBuf",
+          "A": "BpRaw,BnRaw"
         }
       },
       {
@@ -85,47 +90,63 @@
           }
         ],
         "connections": {
-          "A": "BpBuf,BnBuf",
-          "Z": "Bp,Bn",
+          "VSS": "<*2>VREFN",
           "VDD": "<*2>VREFP",
-          "VSS": "<*2>VREFN"
+          "Z": "Bp,Bn",
+          "A": "BpBuf,BnBuf"
         }
       },
       {
-        "name": "I_latch",
+        "name": "I_latch__I_latch",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_CAPTURE_LATCH",
+          "standard_cells",
+          "LNQD1BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 1,
         "properties": [],
         "connections": {
-          "VDD": "VDD",
-          "VSS": "VSS",
+          "EN": "Capture",
           "D": "Outp",
           "Q": "Q",
-          "QB": "QB",
-          "Hold": "Capture"
+          "VSS": "VSS",
+          "VDD": "VDD"
+        }
+      },
+      {
+        "name": "I_latch__I_qb",
+        "master": [
+          "standard_cells",
+          "INVD1BWP7T",
+          "symbol"
+        ],
+        "purpose": "cell",
+        "multiplicity": 1,
+        "properties": [],
+        "connections": {
+          "I": "Q",
+          "ZN": "QB",
+          "VDD": "VDD",
+          "VSS": "VSS"
         }
       },
       {
         "name": "I_select<1:0>",
         "master": [
-          "MONOTONIC_SAR",
-          "SAR_SELECT",
+          "standard_cells",
+          "ND2D1BWP7T",
           "symbol"
         ],
         "purpose": "cell",
         "multiplicity": 2,
         "properties": [],
         "connections": {
-          "A": "Q,QB",
-          "B": "<*2>Capture",
-          "Z": "BpRaw,BnRaw",
+          "A2": "<*2>Capture",
+          "A1": "Q,QB",
           "VDD": "<*2>VDD",
-          "VSS": "<*2>VSS"
+          "VSS": "<*2>VSS",
+          "ZN": "BpRaw,BnRaw"
         }
       },
       {

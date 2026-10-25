@@ -11,82 +11,6 @@
     "VSS"
   ],
   "views": {
-    "veriloga": {
-      "source": "veriloga/SAR_ASYNC.va",
-      "netlist": "veriloga/netlist.scs"
-    },
-    "netlist": {
-      "netlist": "netlist/netlist.scs"
-    },
-    "veriloga_timed": {
-      "netlist": "veriloga_timed/netlist.scs"
-    },
-    "netlist_fast": {
-      "netlist": "netlist_fast/netlist.scs"
-    },
-    "netlist_fast2": {
-      "netlist": "netlist_fast2/netlist.scs"
-    },
-    "netlist_fast3": {
-      "netlist": "netlist_fast3/netlist.scs"
-    },
-    "netlist_fast5": {
-      "netlist": "netlist_fast5/netlist.scs"
-    },
-    "netlist_physical": {
-      "netlist": "netlist_physical/netlist.scs"
-    },
-    "netlist_fast7": {
-      "netlist": "netlist_fast7/netlist.scs"
-    },
-    "netlist_startup": {
-      "netlist": "netlist_startup/netlist.scs"
-    },
-    "netlist_direct": {
-      "netlist": "netlist_direct/netlist.scs"
-    },
-    "netlist_startup_direct": {
-      "netlist": "netlist_startup_direct/netlist.scs"
-    },
-    "netlist_direct_buffered": {
-      "netlist": "netlist_direct_buffered/netlist.scs"
-    },
-    "netlist_startup_buffered": {
-      "netlist": "netlist_startup_buffered/netlist.scs"
-    },
-    "netlist_startup_direct_buffered": {
-      "netlist": "netlist_startup_direct_buffered/netlist.scs"
-    },
-    "netlist_fastseq": {
-      "netlist": "netlist_fastseq/netlist.scs"
-    },
-    "netlist_weighted4": {
-      "netlist": "netlist_weighted4/netlist.scs"
-    },
-    "netlist_weighted5": {
-      "netlist": "netlist_weighted5/netlist.scs"
-    },
-    "netlist_weighted4_fast": {
-      "netlist": "netlist_weighted4_fast/netlist.scs"
-    },
-    "netlist_weighted4_g6": {
-      "netlist": "netlist_weighted4_g6/netlist.scs"
-    },
-    "netlist_weighted4_g8": {
-      "netlist": "netlist_weighted4_g8/netlist.scs"
-    },
-    "netlist_weighted4_g4": {
-      "netlist": "netlist_weighted4_g4/netlist.scs"
-    },
-    "netlist_weighted4_g2_quiet": {
-      "netlist": "netlist_weighted4_g2_quiet/netlist.scs"
-    },
-    "netlist_weighted4_g4_quiet": {
-      "netlist": "netlist_weighted4_g4_quiet/netlist.scs"
-    },
-    "netlist_weighted5_g2_quiet": {
-      "netlist": "netlist_weighted5_g2_quiet/netlist.scs"
-    },
     "schematic": {
       "native": "schematic/native.json",
       "drawing": "schematic/drawing.json",
@@ -96,23 +20,8 @@
       "native": "symbol/native.json",
       "drawing": "symbol/drawing.json"
     },
-    "netlist_library": {
-      "netlist": "netlist_library/netlist.scs"
-    },
-    "netlist_cells": {
-      "netlist": "netlist_cells/netlist.scs"
-    },
-    "netlist_early3": {
-      "netlist": "netlist_early3/netlist.scs"
-    },
-    "netlist_bank2": {
-      "netlist": "netlist_bank2/netlist.scs"
-    },
-    "netlist_direct_small": {
-      "netlist": "netlist_direct_small/netlist.scs"
-    },
-    "netlist_direct_small_early6": {
-      "netlist": "netlist_direct_small_early6/netlist.scs"
+    "netlist": {
+      "netlist": "netlist/netlist.scs"
     }
   }
 }

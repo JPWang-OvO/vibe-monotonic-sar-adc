@@ -2,20 +2,6 @@
   "instances": {},
   "pins": [
     {
-      "terminal": "VDD",
-      "name": "VDD",
-      "figure_type": "rect",
-      "figure": 54,
-      "properties": []
-    },
-    {
-      "terminal": "VSS",
-      "name": "VSS",
-      "figure_type": "rect",
-      "figure": 56,
-      "properties": []
-    },
-    {
       "terminal": "Clks",
       "name": "Clks",
       "figure_type": "rect",
@@ -27,6 +13,20 @@
       "name": "Sample",
       "figure_type": "rect",
       "figure": 60,
+      "properties": []
+    },
+    {
+      "terminal": "VDD",
+      "name": "VDD",
+      "figure_type": "rect",
+      "figure": 54,
+      "properties": []
+    },
+    {
+      "terminal": "VSS",
+      "name": "VSS",
+      "figure_type": "rect",
+      "figure": 56,
       "properties": []
     }
   ],
@@ -171,19 +171,19 @@
       ],
       "bbox": [
         [
-          -1.48125,
-          -0.43125
+          -1.49375,
+          -0.34375
         ],
         [
-          -1.26875,
-          -0.34375
+          -1.25625,
+          -0.28125
         ]
       ],
       "xy": [
         -1.375,
-        -0.375
+        -0.3125
       ],
-      "text": "gate",
+      "text": "latch",
       "height": 0.0625,
       "justify": "centerCenter",
       "orient": "R0",
@@ -1707,6 +1707,33 @@
           1.0625
         ]
       ]
+    },
+    {
+      "type": "label",
+      "lpp": [
+        "device",
+        "drawing"
+      ],
+      "bbox": [
+        [
+          -1.50625,
+          -0.46875
+        ],
+        [
+          -1.24375,
+          -0.40625
+        ]
+      ],
+      "xy": [
+        -1.375,
+        -0.4375
+      ],
+      "text": "NAND",
+      "height": 0.0625,
+      "justify": "centerCenter",
+      "orient": "R0",
+      "font": "stick",
+      "label_type": "normalLabel"
     }
   ]
 }

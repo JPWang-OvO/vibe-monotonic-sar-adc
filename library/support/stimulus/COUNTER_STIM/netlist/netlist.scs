@@ -1,7 +1,0 @@
-simulator lang=spectre
-subckt COUNTER_STIM (CLK RST EN VDD VSS)
-parameters vdd=0.9
-VCLK (CLK VSS) vsource type=pulse val0=0 val1=vdd delay=1n rise=10p fall=10p width=1n period=2n
-VRST (RST VSS) vsource type=pwl wave=[0 vdd 0.5n vdd 0.51n 0 14n 0 14.01n vdd 14.5n vdd 14.51n 0]
-VEN (EN VSS) vsource type=pwl wave=[0 vdd 8n vdd 8.01n 0 12n 0 12.01n vdd]
-ends COUNTER_STIM

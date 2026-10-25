@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "flow": "regression/systems/monotonic_sar/flows/acceptance/flow.json",
+  "conditions": [
+    "tt_25_k3_quiet",
+    "tt_25_k3_noise"
+  ],
+  "objective": {
+    "minimize": "core_power_w",
+    "target_sndr_db": [
+      59,
+      60
+    ]
+  },
+  "constraints": "Referenced flow criteria",
+  "id": "sar_comparator",
+  "variables": {
+    "input_um": [
+      1,
+      2,
+      4
+    ],
+    "regen_um": [
+      1,
+      2
+    ]
+  },
+  "edits": [
+    {
+      "cell": "SAR_CMP",
+      "instances": [
+        "Mp_input_p",
+        "Mp_input_n"
+      ],
+      "parameter": "w",
+      "value": "{input_um}u"
+    },
+    {
+      "cell": "SAR_CMP",
+      "instances": [
+        "Mn_latch_p",
+        "Mn_latch_n"
+      ],
+      "parameter": "w",
+      "value": "{regen_um}u"
+    }
+  ]
+}

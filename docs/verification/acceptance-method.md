@@ -4,8 +4,8 @@ type: verification-method
 status: active
 last_reviewed: 2026-10-25
 authoritative_sources:
-  - ../../config/acceptance_lowpower.json
-  - ../../config/lowpower_design.json
+  - ../../regression/systems/monotonic_sar/flows/acceptance/specification.json
+  - ../../config/design.json
   - ../../config/architecture.json
   - ../../regression/systems/monotonic_sar/analysis/measure.py
 ---

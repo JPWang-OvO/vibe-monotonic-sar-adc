@@ -5,6 +5,8 @@ import re
 from pathlib import Path
 
 from regression.common.project import ROOT, read_json
+from regression.common.plans import load_plan
+from regression.common.variants import sources as variant_sources
 from virtuoso.oa.comparison import spectre_document,expand_signals
 
 
@@ -54,14 +56,23 @@ def check(root=ROOT):
     project = read_json(root / "project.json")
     for flow in project["flows"]:
         path = root / flow
-        config = read_json(path)
+        config = load_plan(path)
         if not (root / config["testbench"]).is_file():
             problems.append(f"Missing TB in {path}")
-        for relative in ("run.py", "measure.py"):
-            if not (path.parent / relative).is_file():
-                problems.append(f"Missing flow entry: {path.parent / relative}")
         if not config["criteria"]:
             problems.append(f"Missing criteria: {path}")
+        if config.get('baseline'):
+            baseline = read_json(root/config['baseline'])
+            if {r['condition'] for r in baseline['cases']} != {c['id'] for c in config['conditions']}:
+                problems.append(f'Baseline conditions differ: {path}')
+    for study in project['studies']:
+        plan = load_plan(root/study)
+        for condition in plan['conditions']:
+            variant_sources(condition, root)
+    registered = set(project['flows'])
+    actual = {p.relative_to(root).as_posix() for p in (root/'regression').rglob('flow.json')}
+    if registered != actual:
+        problems.append(f'Unregistered or missing flows: {registered ^ actual}')
     for path in root.rglob("*.md"):
         if any(p in (".git", "artifacts", ".pytest_cache") for p in path.parts):
             continue

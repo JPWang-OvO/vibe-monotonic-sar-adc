@@ -1,4 +1,0 @@
-ahdl_include "SAR_FRONTEND.va"
-subckt SAR_FRONTEND (Vinp Vinn Sample SampleB Vp Vn Bp\<9\> Bp\<8\> Bp\<7\> Bp\<6\> Bp\<5\> Bp\<4\> Bp\<3\> Bp\<2\> Bp\<1\> Bn\<9\> Bn\<8\> Bn\<7\> Bn\<6\> Bn\<5\> Bn\<4\> Bn\<3\> Bn\<2\> Bn\<1\> VREFP VREFN VDD VSS)
-I_model (Vinp Vinn Sample SampleB Vp Vn Bp\<9\> Bp\<8\> Bp\<7\> Bp\<6\> Bp\<5\> Bp\<4\> Bp\<3\> Bp\<2\> Bp\<1\> Bn\<9\> Bn\<8\> Bn\<7\> Bn\<6\> Bn\<5\> Bn\<4\> Bn\<3\> Bn\<2\> Bn\<1\> VREFP VREFN VDD VSS) SAR_FRONTEND_va
-ends SAR_FRONTEND

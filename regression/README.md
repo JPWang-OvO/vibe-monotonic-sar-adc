@@ -1,79 +1,61 @@
-# ADC 验证复现
+# 规格验证与优化实验
 
-从项目根目录运行。`$edaPython` 使用已有 Bridge Python，设置见[配置说明](../config/README.md)。
-本机环境文件为 `config/environments/tsmc18.local.json`；实际产物根目录由该环境和项目配置解析。
+从项目根目录运行，`$edaPython` 使用[已有 Bridge Python](../config/README.md)。
+`project.json` 登记三个规格 flow：系统验收、比较器功能、分频器功能；
+系统 flow 持有 20 项已有实测 baseline。两个模块 flow 的当前实现尚未在本次清理中仿真，未建立新 baseline。
+
+## 编译和仿真
 
 ```powershell
-& $edaPython -m regression.common.runner prepare --environment config/environments/tsmc18.local.json --batch-id <新批次名称> --workers 2
-& $edaPython -m regression.systems.monotonic_sar.acceptance.check_netlist <本地批次目录> --formal --acceptance config/acceptance_lowpower.json
+$plan = "regression/systems/monotonic_sar/flows/acceptance/flow.json"
+& $edaPython -m regression.common.runner compile --plan $plan --output <新的产物目录>
+& $edaPython -m regression.common.runner prepare --plan $plan --environment config/environments/tsmc18.local.json --batch-id <新批次名称> --workers 2
+& $edaPython -m regression.systems.monotonic_sar.acceptance.check_netlist <本地批次目录> --formal
 & $edaPython -m regression.common.runner execute --batch <本地批次目录>
 & $edaPython -m regression.common.runner collect --batch <本地批次目录>
 ```
 
-默认 `project.json` 指向两个 TT 无噪声频点。`prepare` 打包实际 view 绑定、模型和 TB，
-通过 PDK CDF 回调及原生导出补全器件参数，生成 `preview.md`、`batch.json`、`settings.json`、
-`pdk.scs` 和 `changes.json`。审阅这些文件及网表边界后，按已确认的批次范围执行。
+`compile` 只展开本地配置、变体和相对 include，生成 `plan.json` 及输入文件。
+`prepare` 还配置模型、调用 Spectre 参数报告及 PDK CDF 补全，生成可执行的 `batch.json` 和 `preview.md`。
+执行前审阅实际输入、条件、测量、阈值与资源。全部仿真使用 Spectre X AX、每 worker 8 线程。
+`cancel --batch <目录>` 停止指定批次；原始波形保留在服务器。
 
-`collect` 在作业结束后下载指标、汇总和完整日志；原始波形保留在服务器。
-`cancel --batch <本地批次目录>` 停止指定批次。全部仿真使用 Spectre X AX、每 worker 8 线程，
-所有批次及准备阶段合计不超过 14 worker，不添加精度、积分步长或收敛控制。
+`--plan` 接受 `flow.json` 或 `study.json`。重复 `--condition` 可选择该计划中的明确条件，
+例如系统验收的 `tt_25_k3_quiet`；省略时展开所选计划全部条件。
+正式系统 flow 在同一 TB 下表达 PVT、频点和噪声矩阵，SNDR 门槛按 k 选择，功耗门槛仅用于 TT。
 
-## 当前低功耗设计
+## Study
 
-`config/lowpower_design.json` 固定当前 DUT 的全部绑定和 14 个复现 flow，覆盖原来的 20 个条件。
-TT/25°C 以及 SS/FF 的 −40/125°C 各运行低、中两个频点及关闭/开启瞬态噪声。
-使用重复的 `--flow` 参数选择其中的 flow；不同噪声条件可在已批准的资源限额内并行。
-当前 TT 功耗上限为 3 mW，SNDR 下限沿用 57/56.5 dB，并单列向 59–60 dB 优化的结果。
+| Study | 变量与目标 |
+|---|---|
+| [比较器](systems/monotonic_sar/studies/comparator/study.json) | 输入对、再生对宽度；按系统规格检查功耗与 SNDR |
+| [采样](systems/monotonic_sar/studies/sampling/study.json) | 单位电容、采样开关宽度 |
+| [控制](systems/monotonic_sar/studies/control/study.json) | 反馈反相器数量、保护电容、DAC 驱动倍率 |
+| [独立噪声](blocks/sar_cmp/studies/noise/README.md) | 比较器尺寸与 PVT 下的概率曲线、噪声、偏移和功耗 |
 
-已验收矩阵由 `lowpower_final_remaining_05` 的 17 项，以及 `lowpower_regen2_adc_01` 的三项复测组成。
-复用条件为 TT 低频无噪声、SS/125°C 低频含噪声及 SS/−40°C 中频含噪声；两批次属于同一 DUT：
-
-```text
-python -m regression.systems.monotonic_sar.acceptance.lowpower_report <剩余17项批次> <三项复测批次>
-```
-
-从上述 14 个 flow 全新复现时，可把全部同一 DUT 批次作为位置参数传给 `lowpower_report`。
-脚本核对全部实际源、固定窗口、频点和噪声，更新 `config/acceptance_lowpower_results.json`
-及 [低功耗验收](../docs/verification/lowpower-acceptance.md)。独立比较器测试见
-[比较器噪声 flow](blocks/sar_cmp/flows/noise_regen2/README.md)，系统失真定位见 [SNDR 诊断](../docs/verification/sndr-diagnosis.md)。
-
-## 冻结 checkpoint 的阶段
-
-`config/final_design.json` 保留优化前 checkpoint 的全部绑定和 12 个 flow。使用重复的 `--flow` 参数合并同一阶段的频点。
-
-| 阶段 | flow 文件夹 | 启动条件 |
-|---|---|---|
-| 1 | `final_stage1_tt_k3`、`final_stage1_tt_k51` | 完整晶体管集成及边界检查通过 |
-| 2 | `final_stage2_tt_k3`、`final_stage2_tt_k51` | 阶段 1 两项全部通过 |
-| 3 | `final_stage3_{ss_m40,ss_125,ff_m40,ff_125}_{k3,k51}` | 阶段 2 两项全部通过 |
-
-以上文件夹均位于 `regression/systems/monotonic_sar/flows/`，每个使用其中的 `flow.json`。
-阶段 3 每个 flow 同时包含关闭/开启瞬态噪声两个 case，总计 16 项。
-执行窗口记录于 `config/run_budget.json`；`deadline_utc` 为 null，表示未设置绝对截止时间。
-每个批次受其 flow 的执行时限约束。配置了绝对截止时间的批次会在收集预留窗口前停止启动新作业。
-
-## 绘图与 checkpoint 报告
+Study 引用 flow 的测量与判据，声明变量、器件参数修改或拓扑生成规则。
+候选网表在批次 `inputs/` 中生成；正式 cell 只维护当前电路。
+尺寸变体在 `prepare` 时按实际几何重新执行 PDK 参数补全。
+独立噪声 study 使用自己的固定 TB 和统计测量，结果解释其表征范围。
 
 ```powershell
-& $edaPython -m regression.systems.monotonic_sar.analysis.plot_candidate <本地批次目录>
-& $edaPython -m regression.systems.monotonic_sar.analysis.plot_timing <本地批次目录>
-& $edaPython -m regression.systems.monotonic_sar.acceptance.report <阶段1批次> <阶段2批次> <四个阶段3批次>
+& $edaPython -m regression.common.runner compile --plan regression/systems/monotonic_sar/studies/comparator/study.json --output <新的产物目录>
+& $edaPython -m regression.common.study <study批次目录> --output <产物目录>/study-results.json
 ```
 
-每个批次的 `figures/` 包含原始连续输出码 CSV、FFT 图和代表性转换时序。
-上述 `report` 用于冻结 checkpoint，检查固定窗口、频点、门槛、实际噪声频带、模块绑定及各批次 DUT 源文件一致性，
-更新 `config/acceptance_results.json` 和 `docs/verification/electrical-acceptance.md`。
-仅同一版本的 20 项全部通过后进入 OA 收尾。
+Study 汇总按参数点列出本批次选定条件的完整性、flow 判据和最坏功耗，再对合格点排序。
+59–60 dB 是优化目标；验收 SNDR 下限仍由 flow 规定。
+候选晋升时，将选定电路更新到正式源、同步 OA 并完成相应验证。
 
-Python 与 Verilog-A 对齐记录、模块测试和失败候选见[开发结果](../docs/verification/development-status.md)。
-这些 flow 保留实际测试条件，不能与最终候选混合计为正式通过。
+## 报告与基线
 
-## 工具归属
+```powershell
+& $edaPython -m regression.systems.monotonic_sar.acceptance.report --flow $plan --output <产物目录>/acceptance.json <批次目录> ...
+```
 
-公共运行、依赖解析、日志与 PSF 读取放在 `common/`。
-ADC 的参考模型、测量、绘图和诊断见 [analysis](systems/monotonic_sar/analysis/README.md)，
-正式验收见 [acceptance](systems/monotonic_sar/acceptance/README.md)。
-模块实验按 target 保存于 `studies/`，包括 [采样孔径](blocks/sar_sampler/studies/aperture/README.md)
-和 [等待门](systems/monotonic_sar/studies/wait_gate/README.md)。
-[TSMC18 参数补全资格测试](blocks/tsmc18_devices/flows/qualification/README.md) 检查原型与原生参数。
-电路源由 `library/` 管理；flow 直接引用 cell 的已有 view。
+报告核对同一 flow 的实际条件、测量、判据、精度及 DUT 源，逐项检查执行、日志与指标。
+报告只写 artifacts。基线晋升经审阅后写入所属 flow 的 `baselines/`。
+本次归位的是已批准的 20 项历史测量，原批次 ID 和结果路径仍记录在 baseline 中。
+
+波形诊断与绘图见 [analysis](systems/monotonic_sar/analysis/README.md)，固定测量边界见
+[验收方法](../docs/verification/acceptance-method.md)。

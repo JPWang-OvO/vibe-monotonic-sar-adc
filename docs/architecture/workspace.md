@@ -2,42 +2,43 @@
 title: 工程目录与职责
 type: architecture
 status: current
-last_reviewed: 2026-10-24
+last_reviewed: 2026-10-25
 authoritative_sources:
   - ../../project.json
-  - ../../regression/common/project.py
+  - ../../regression/common/plans.py
   - ../../regression/common/runner.py
+  - ../../regression/common/variants.py
 ---
 
 # 工程目录与职责
 
-电路实现由 cell/view 标识，验证任务由 flow 标识。Testbench 提供激励、供电、负载和分析，
-flow 规定运行条件、视图绑定、测量及验收标准。同一 flow 可以在相同 TB 下比较多个 view。
+Cell 表达实际功能，view 表达电路的不同表示。Flow 管理固定目标的规格、测试条件、测量和已批准 baseline。
+Study 管理参数及拓扑探索，复用 flow 的验收约束。Batch 是计划展开后的一次实际运行。
 
 ```text
-library/blocks|systems|support/<category>/<CELL>/<view>/
-library/testbenches/<blocks|systems>/<target>/<TB_CELL>/<view>/
-regression/blocks|systems/<target>/flows/<flow>/
-regression/blocks|systems/<target>/analysis/
-regression/systems/<target>/acceptance/
-regression/blocks|systems/<target>/studies/<study>/
+library/{blocks,systems,support}/<category>/<CELL>/<view>/
+library/testbenches/{blocks,systems}/<target>/<TB_CELL>/<view>/
+regression/{blocks,systems}/<target>/flows/<flow>/flow.json
+regression/{blocks,systems}/<target>/flows/<flow>/baselines/
+regression/{blocks,systems}/<target>/studies/<study>/study.json
+regression/{blocks,systems}/<target>/analysis/
 regression/common/
-virtuoso/oa/ 和 virtuoso/ade/
+virtuoso/{oa,ade}/
 physical/
-config/environments/ 和 config/processes/
+config/{environments,processes}/
 docs/{architecture,verification,notes,plans,history}/
 ```
 
-`blocks` 保存可复用模块，`systems` 表达层次组合，`support` 保存激励与辅助电路。
-每个 flow 保持自己的 TB 身份；其各个 condition 用 `cell_views` 选择端口顺序一致的实现。
-接口或功能身份变化时建立独立 cell。探索性实验放在所属 target 的 `studies/`，选定设计经审阅后纳入正式源。
+同一目标的 PVT、频点、噪声与表示选择放在一个 flow 的 conditions 中。
+`condition_defaults` 保存共同准备设置，`criteria_rules` 将条件相关门槛解析为每 case 的实际 criteria。
+Flow 直接引用固定 TB；TB 的相对 include 决定当前电路依赖。
 
-各 target 的 `analysis/` 保存参考模型、测量、绘图与日常诊断；`acceptance/` 保存系统正式验收检查与报告。
-`studies/<study>/` 保存有明确问题、输入和方法的实验工具。`regression/` 顶层保存索引与包入口。
+Study 用 `variables` 展开参数点，`edits` 指定实际 cell、实例与参数，`topology` 引用明确的拓扑生成规则。
+变体只写入 batch 的输入目录。系统优化 study 引用正式 flow；独立表征 study 自带固定实验。
+执行与测量共用 runner，各 flow 不再维护转发脚本。
 
-`regression/common` 从 TB 的相对 include 收集依赖、绑定 view、补全 PDK 参数并调度 Spectre。
-`virtuoso/oa` 保存和回放原生电路与图形。`physical` 从已有版图导出 GDS/CDL，调用 Calibre 验证、提取，
-将 CalibreView 导入 OA，再导出纳入 Git 的 PEX view 网表。这些操作通过外部 Virtuoso Bridge 和 Calibre Bridge 使用已有 EDA 安装。
+`analysis/` 保存参考模型、测量及诊断；`acceptance/` 检查规格矩阵并输出候选报告。
+原始波形、准备 deck 和工具输出保存在项目独立 artifacts。已批准的小型 baseline 与 flow 一起纳入 Git。
 
-Environment 提供机器连接和安装路径，process 提供工艺器件、模型 section 和参数补全配置。
-每个仿真批次保存实际展开的输入与设置，项目 ID 决定外部 artifact 子目录。
+`virtuoso/oa` 捕获、回放和比较原生电路及图面。`physical` 负责已有版图的 DRC/LVS/PEX 与寄生 view 接入。
+Environment 提供机器连接和安装路径；process 提供器件、模型 section 及 PDK 参数补全设置。

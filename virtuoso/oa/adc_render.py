@@ -6,22 +6,19 @@ import subprocess
 
 from PIL import Image
 from regression.common.project import ROOT,artifact_root,read_json,write_json
-from .adc_source import prepare_source,source_folders
-from .adc_drawing import functional_symbol,svg
+from .adc_source import source_folders,reference_libraries
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--batch',type=Path,required=True)
+    parser=argparse.ArgumentParser()
     parser.add_argument('--inkscape',default=shutil.which('inkscape'));args=parser.parse_args()
-    assert read_json(ROOT/'config/acceptance_results.json')['all_electrical_pass']
     assert args.inkscape,'Specify the installed Inkscape executable'
-    definitions=prepare_source(args.batch);folders=source_folders()
+    folders=source_folders();references=reference_libraries()
     output=artifact_root()/'oa_delivery/symbol_previews';output.mkdir(exist_ok=True,parents=True)
     actions=[];images=[]
-    for name,data in sorted(definitions.items()):
-        if name=='INVD1BWP7T':continue
+    for name,folder in sorted(folders.items()):
+        if name in references or name.startswith('tb_'):continue
         source=folders[name]/'symbol/functional.svg'
-        source.write_text(svg(functional_symbol(data)),encoding='utf-8',newline='\n')
         target=output/(name+'.png');images.append(target)
         actions.extend(['file-open:'+source.as_posix(),'export-filename:'+target.as_posix(),
                         'export-type:png','export-do','file-close'])

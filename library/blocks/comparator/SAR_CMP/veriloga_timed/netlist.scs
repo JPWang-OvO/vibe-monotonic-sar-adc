@@ -1,4 +1,0 @@
-ahdl_include "../veriloga/SAR_CMP.va"
-subckt SAR_CMP (Vp Vn ClkC Outp Outn Valid Bias VDD VSS)
-I_model (Vp Vn ClkC Outp Outn Valid Bias VDD VSS) SAR_CMP_va tcompare=600p
-ends SAR_CMP

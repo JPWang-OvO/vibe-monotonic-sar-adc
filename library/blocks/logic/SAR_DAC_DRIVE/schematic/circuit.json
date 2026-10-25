@@ -105,5 +105,5 @@
       }
     }
   ],
-  "staged_source": "library__blocks__logic__SAR_DAC_DRIVE__netlist_taper__netlist.scs"
+  "schema": "ic-circuit-v1"
 }

@@ -4,7 +4,14 @@
   "design_library": "MONOTONIC_SAR",
   "process": "config/processes/tsmc18.json",
   "flows": [
-    "regression/systems/monotonic_sar/flows/lowpower_reused_tt_25_k3_quiet/flow.json",
-    "regression/systems/monotonic_sar/flows/lowpower_final_s1_tt_25_k51/flow.json"
+    "regression/systems/monotonic_sar/flows/acceptance/flow.json",
+    "regression/blocks/sar_cmp/flows/functional/flow.json",
+    "regression/blocks/sar_phase/flows/functional/flow.json"
+  ],
+  "studies": [
+    "regression/systems/monotonic_sar/studies/comparator/study.json",
+    "regression/systems/monotonic_sar/studies/sampling/study.json",
+    "regression/systems/monotonic_sar/studies/control/study.json",
+    "regression/blocks/sar_cmp/studies/noise/study.json"
   ]
 }

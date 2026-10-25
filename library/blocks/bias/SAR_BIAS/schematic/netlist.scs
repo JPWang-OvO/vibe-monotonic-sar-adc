@@ -1,6 +1,6 @@
 simulator lang=spectre
 subckt SAR_BIAS (Bias VDD VSS)
-C_bias (Bias VSS) capacitor c=100f
-Mn_sink (Bias VDD VSS VSS) nch l=8u w=0.3u m=1 nf=1 sd=620.0n ad=2.064e-13 as=2.064e-13 pd=1.88u ps=1.88u nrd=1.03333 nrs=1.03333 sa=520.0n sb=520.0n sca=0 scb=0 scc=0
 Mp_diode (Bias Bias VDD VDD) pch l=0.36u w=0.25u m=1 nf=1 sd=620.0n ad=2.014e-13 as=2.014e-13 pd=1.88u ps=1.88u nrd=1.24 nrs=1.24 sa=520.0n sb=520.0n sca=0 scb=0 scc=0
+Mn_sink (Bias VDD VSS VSS) nch l=8u w=0.3u m=1 nf=1 sd=620.0n ad=2.064e-13 as=2.064e-13 pd=1.88u ps=1.88u nrd=1.03333 nrs=1.03333 sa=520.0n sb=520.0n sca=0 scb=0 scc=0
+C_bias (Bias VSS) capacitor c=100f
 ends SAR_BIAS

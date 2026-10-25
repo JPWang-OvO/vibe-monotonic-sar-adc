@@ -4,19 +4,19 @@ type: verification-method
 status: active
 last_reviewed: 2026-10-23
 authoritative_sources:
-  - ../../config/acceptance_results.json
-  - ../../config/final_design.json
+  - git:checkpoint/ai-autonomous-human-polish-r1-20261024:config/acceptance_results.json
+  - git:checkpoint/ai-autonomous-human-polish-r1-20261024:config/final_design.json
 ---
 
 # 晶体管 ADC 正式电气验收
 
-本文记录优化前 checkpoint 的电气结果，电路由 `config/final_design.json` 固定；当前版本见 [低功耗验收](lowpower-acceptance.md)。
+本文记录优化前 checkpoint 的电气结果，电路由 `checkpoint/ai-autonomous-human-polish-r1-20261024:config/final_design.json` 固定；当前版本见 [低功耗验收](lowpower-acceptance.md)。
 
 同一 DUT 已完成 20/20 个 case，其中 20 个通过。全部电气验收通过。OA 核对结果见 [OA 交付](oa-delivery.md)。
 
 各批次的 DUT 源文件一致性：通过。
 
-本版本按 `config/acceptance.json` 在采样结束后 14 ns 读码，每项使用丢弃 16 周期后的连续 256 个实际输出码。FFT 与供电计算方法见 [验收与功耗测量](acceptance-method.md)；含噪声请求 1 Hz–50 GHz、seed=1。Spectre 19.1 将下限自动设为 1/5.8 µs，实际约 172.414 kHz；上限保持 50 GHz。
+本版本按 `checkpoint/ai-autonomous-human-polish-r1-20261024:config/acceptance.json` 在采样结束后 14 ns 读码，每项使用丢弃 16 周期后的连续 256 个实际输出码。FFT 与供电计算方法见 [验收与功耗测量](acceptance-method.md)；含噪声请求 1 Hz–50 GHz、seed=1。Spectre 19.1 将下限自动设为 1/5.8 µs，实际约 172.414 kHz；上限保持 50 GHz。
 
 | 工艺 | 温度 °C | 噪声 | k | SNDR dB | EOC 最小余量 ns | 逐位 RMS mV | 通过 |
 |---|---:|---|---:|---:|---:|---:|---|
@@ -70,6 +70,6 @@ authoritative_sources:
 
 ## 复查入口
 
-`config/final_design.json` 固定模块绑定与 flow；`config/acceptance_results.json` 保存逐项指标、失败项及批次路径。
+`checkpoint/ai-autonomous-human-polish-r1-20261024:config/final_design.json` 固定模块绑定与 flow；`checkpoint/ai-autonomous-human-polish-r1-20261024:config/acceptance_results.json` 保存逐项指标、失败项及批次路径。
 每批 `summary.json`、`cases/*/results.json` 和完整日志保留实际码、逐位轨迹、频谱、功耗及执行状态。
 结果覆盖固定 256 点、单种子的原理图仿真；失配 Monte Carlo 和统计良率尚未验证。

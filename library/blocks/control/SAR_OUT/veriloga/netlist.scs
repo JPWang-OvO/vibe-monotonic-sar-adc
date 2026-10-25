@@ -1,4 +1,0 @@
-ahdl_include "SAR_OUT.va"
-subckt SAR_OUT (D Done Q VDD VSS)
-I_model (D Done Q VDD VSS) SAR_OUT_va
-ends SAR_OUT

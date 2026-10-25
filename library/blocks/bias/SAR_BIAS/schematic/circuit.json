@@ -125,5 +125,5 @@
       }
     }
   ],
-  "staged_source": "library__blocks__bias__SAR_BIAS__netlist_lowpower1_mirror__netlist.scs"
+  "schema": "ic-circuit-v1"
 }

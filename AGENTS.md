@@ -8,7 +8,7 @@
 ## 源与工具
 
 - 电路在 `library/{blocks,systems,support,testbenches}`；每个 cell 独立维护 `cell.json`，每个 view 独立保存源与已有绘图。
-- Flow 引用固定 TB；TB 的相对 include 决定依赖，各 condition 通过 cell_views 选择实现。
+- Flow 管规格、固定 TB、conditions 和 baseline；study 管扫参优化。TB 的相对 include 决定当前依赖，cell_views 仅选择电路表示。
 - `circuit.json` 的设计语义与 `native.json` 的原生 OA 保存格式分别声明 schema。电气修改须同步相关表示，并检查原生网表。
 - 手工 OA 修改先捕获、审阅，再继续重建。已有目标 view 不自动覆盖；只有集成工作目录写共享 OA 库。
 - Virtuoso Bridge 和 Calibre Bridge 是外部只读依赖，分别由 `VIRTUOSO_BRIDGE_ROOT`、`CALIBRE_BRIDGE_ROOT` 定位，使用各自已有的 Python 环境。

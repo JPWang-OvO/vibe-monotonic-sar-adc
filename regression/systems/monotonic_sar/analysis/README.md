@@ -2,8 +2,8 @@
 
 从工程根目录以 `python -m` 调用。`model.py` 实现电荷守恒的理想逐次逼近模型，
 `fft.py` 提供参考模型的频谱分析，`measure.py` 读取系统波形，
-`measure_modules.py` 处理比较器、分频器、采样器与 CDAC 测量。
-各 flow 的条件和 criteria 决定测量窗口与判据。
+`measure_modules.py` 处理比较器和分频器功能测量；`measure_cmp_noise.py` 处理独立噪声表征。
+解析后的 flow 条件和 criteria 决定测量窗口与判据。
 
 ```text
 python -m regression.systems.monotonic_sar.analysis.validate_python --output <输出目录>
@@ -24,8 +24,8 @@ python -m regression.systems.monotonic_sar.analysis.peek_batch <批次目录>
 | `diagnose_system` | Sample、Valid、ClkC、EOC、输出码及顶板电压；检查转换次数和握手时序 |
 | `diagnose_capture` | 逐位 Ck、Outp、底板及比较器时钟；测量捕获、底板建立与再比较间隔 |
 | `diagnose_output` | 已测转换记录和各输出位；测量 EOC 后的建立时间与读取余量 |
-| `diagnose_period` | 主时钟、采样沿及分频器内部节点；定位最大采样周期误差 |
+| `diagnose_period` | 主时钟与采样沿；定位最大采样周期误差 |
 
 例如 `python -m regression.systems.monotonic_sar.analysis.diagnose_capture <批次目录> <case-id>`。
 内部节点应由所选 TB 的 `save` 语句保存。诊断脚本携带所用的局部测量函数，
-PSF 读取器使用批次内的 `regression.common.psf`；正式结果由 flow 测量入口产生。
+PSF 读取器使用批次内的 `regression.common.psf`；正式结果由公共 runner 调用测量实现。

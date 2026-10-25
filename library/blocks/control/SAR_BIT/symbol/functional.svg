@@ -32,7 +32,7 @@
 <ellipse cx="616" cy="416" rx="8" ry="8"/>
 <polyline points="480,392 512,392"/>
 <polyline points="480,440 512,440"/>
-<polyline points="416,352 432,352 432,392 480,392"/>
+<polyline points="440,288 440,336"/>
 <polyline points="464,440 480,440"/>
 <polyline points="648,448 696,416 648,384 648,448"/>
 <ellipse cx="704" cy="416" rx="8" ry="8"/>
@@ -51,6 +51,10 @@
 <polyline points="128,496 224,496"/>
 <polyline points="216,504 232,488"/>
 <polyline points="216,488 232,504"/>
+<polyline points="424,336 456,336 440,360 424,336"/>
+<polyline points="440,366.4 440,392 480,392"/>
+<ellipse cx="440" cy="363.2" rx="3.2" ry="3.2"/>
+<polyline points="436.8,288 443.2,288" stroke-width="6.4" stroke-linecap="butt"/>
 </g><g fill="#287740" font-family="Arial,sans-serif">
 <text x="336" y="320" font-size="16" text-anchor="middle" dominant-baseline="central">latch</text>
 <text x="336" y="368" font-size="16" text-anchor="middle" dominant-baseline="central">EN</text>

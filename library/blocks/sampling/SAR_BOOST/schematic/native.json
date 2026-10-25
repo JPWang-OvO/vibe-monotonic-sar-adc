@@ -9,17 +9,22 @@
       {
         "name": "connectivityLastUpdated",
         "type": "int",
-        "value": 2190
+        "value": 1496
       },
       {
         "name": "lastSchematicExtraction",
         "type": "time",
-        "value": "Oct 25 06:06:24 2026"
+        "value": "Oct 25 17:30:43 2026"
       },
       {
         "name": "net#",
         "type": "int",
-        "value": 8
+        "value": 16
+      },
+      {
+        "name": "pin#",
+        "type": "int",
+        "value": 6
       },
       {
         "name": "portOrder",
@@ -31,7 +36,7 @@
       {
         "name": "schGeometryLastUpdated",
         "type": "int",
-        "value": 2190
+        "value": 1496
       },
       {
         "name": "schGeometryVersion",
@@ -62,8 +67,8 @@
           }
         ],
         "connections": {
-          "PLUS": "Ct",
-          "MINUS": "Cb"
+          "MINUS": "Cb",
+          "PLUS": "Ct"
         }
       },
       {
@@ -168,10 +173,10 @@
           }
         ],
         "connections": {
-          "S": "Vin",
-          "G": "Gate",
+          "D": "Cb",
           "B": "VSS",
-          "D": "Cb"
+          "G": "Gate",
+          "S": "Vin"
         }
       },
       {
@@ -276,10 +281,10 @@
           }
         ],
         "connections": {
-          "S": "VSS",
-          "G": "SampleB",
+          "D": "Cb",
           "B": "VSS",
-          "D": "Cb"
+          "G": "SampleB",
+          "S": "VSS"
         }
       },
       {
@@ -384,10 +389,10 @@
           }
         ],
         "connections": {
-          "S": "VSS",
-          "G": "SampleB",
+          "D": "Gate",
           "B": "VSS",
-          "D": "Gate"
+          "G": "SampleB",
+          "S": "VSS"
         }
       },
       {
@@ -492,10 +497,10 @@
           }
         ],
         "connections": {
-          "S": "Cb",
-          "G": "Sample",
+          "D": "Q",
           "B": "VSS",
-          "D": "Q"
+          "G": "Sample",
+          "S": "Cb"
         }
       },
       {
@@ -600,10 +605,10 @@
           }
         ],
         "connections": {
-          "S": "Cb",
-          "G": "Gate",
+          "D": "Q",
           "B": "VSS",
-          "D": "Q"
+          "G": "Gate",
+          "S": "Cb"
         }
       },
       {
@@ -708,10 +713,10 @@
           }
         ],
         "connections": {
-          "S": "VDD",
-          "G": "Gate",
+          "D": "Ct",
           "B": "Ct",
-          "D": "Ct"
+          "G": "Gate",
+          "S": "VDD"
         }
       },
       {
@@ -816,10 +821,10 @@
           }
         ],
         "connections": {
-          "S": "VDD",
-          "G": "Sample",
+          "D": "Q",
           "B": "Ct",
-          "D": "Q"
+          "G": "Sample",
+          "S": "VDD"
         }
       },
       {
@@ -924,10 +929,10 @@
           }
         ],
         "connections": {
-          "S": "Ct",
-          "G": "Q",
+          "D": "Gate",
           "B": "Ct",
-          "D": "Gate"
+          "G": "Q",
+          "S": "Ct"
         }
       },
       {

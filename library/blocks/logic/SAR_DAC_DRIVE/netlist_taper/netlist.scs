@@ -1,8 +1,0 @@
-simulator lang=spectre
-// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
-subckt SAR_DAC_DRIVE (A Z VDD VSS)
-// Narrow unit fingers keep every selected multiplicity integral and >= 1.
-parameters scale=1
-Mn (Z A VSS VSS) nch w=1u l=180n nf=1 m=2*scale
-Mp (Z A VDD VDD) pch w=3u l=180n nf=1 m=2*scale
-ends SAR_DAC_DRIVE

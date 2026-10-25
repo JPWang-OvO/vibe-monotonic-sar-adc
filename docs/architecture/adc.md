@@ -5,8 +5,8 @@ status: active
 last_reviewed: 2026-10-25
 authoritative_sources:
   - ../../config/architecture.json
-  - ../../config/lowpower_design.json
-  - ../../config/acceptance_lowpower.json
+  - ../../config/design.json
+  - ../../regression/systems/monotonic_sar/flows/acceptance/specification.json
   - ../../library/systems/monotonic_sar/MONOTONIC_SAR/cell.json
   - ../../regression/systems/monotonic_sar/analysis/model.py
 ---
@@ -41,11 +41,11 @@ authoritative_sources:
 | SAR_BIAS | 由 VDD/VSS 产生比较器 PMOS 电流源的 Bias |
 
 全部数字节点电源域为 VDD/VSS。最终输入及偏置节点的工作范围按晶体管实测记录。
-行为层的理想偏置和理想开关仅用于逐模块替换过程。
+算法参考模型保存在 analysis；当前正式电路为晶体管与标准单元实现。
 
 ## 当前低功耗参数
 
-view 绑定由 `config/lowpower_design.json` 固定，完整验收结果见
+当前顶层与验收入口由 `config/design.json` 固定，各 cell 的 `netlist/` 保存当前实现，完整验收结果见
 [低功耗验收](../verification/lowpower-acceptance.md)。尺寸选择与对照结果见
 [尺寸收敛记录](../verification/lowpower-sizing.md)。此前实现保存在
 `checkpoint/ai-autonomous-human-polish-r1-20261024`。
@@ -75,7 +75,7 @@ LSB 为 3.515625 mV。量化噪声约为 0.289 LSB RMS，−1 dBFS 输入差分 
 
 局部 RC、逐位顶板残差、比较器动态误差和完成余量用于定位限制支路。
 尺寸调整通过真实输出码、原系统 SNDR 及 PVT 条件判断，不另设固定边沿、顶板残差或额外周期裕量门槛。
-Python/Verilog-A 算法层沿用此前已验证实现。
+Python 算法参考模型保留电荷守恒与原始输出码约定。
 
 # 正式验收激励
 
@@ -84,5 +84,5 @@ VDD 从 0 V 在 10 ns 内线性升至 1.8 V；外部时钟在 20 ns 开始，周
 晶体管分频器通过自身上电复位启动；正式矩阵覆盖 TT/25°C 和 SS/FF、−40/125°C，各有/无噪声两频点共 20 项。
 输出每位负载为 10 fF。丢弃前 16 个转换，在其后连续 256 个周期的采样结束后 18 ns 读取输出。
 数字低电平判据为 ≤0.18 V，高电平为 ≥1.62 V，中间电平计为无效位。
-正式测量设置已固定于 `config/acceptance_lowpower.json`：瞬态噪声 1 Hz–50 GHz、seed=1，
+正式测量设置已固定于 `regression/systems/monotonic_sar/flows/acceptance/specification.json`：瞬态噪声 1 Hz–50 GHz、seed=1，
 输出使用两级 SAR_DRIVE（scale=1/2）。频带依据和功耗边界见 `docs/verification/acceptance-method.md`。

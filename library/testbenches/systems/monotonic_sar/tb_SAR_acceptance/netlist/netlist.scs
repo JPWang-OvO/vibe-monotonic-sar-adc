@@ -23,7 +23,7 @@ CL6 (D6 VSS) capacitor c=10f
 CL7 (D7 VSS) capacitor c=10f
 CL8 (D8 VSS) capacitor c=10f
 CL9 (D9 VSS) capacitor c=10f
-tran tran stop=5.8e-06 @NOISE@
+tran tran stop=5.8u @NOISE@
 saveOptions options save=selected
 save Vinp Vinn Clks D0 D1 D2 D3 D4 D5 D6 D7 D8 D9 EOC I_adc.Sample I_adc.ClkC I_adc.Valid I_adc.Outp I_adc.Outn I_adc.Vp I_adc.Vn VDD:p VREFP:p VCM:p Vclock:p
 
@@ -31,6 +31,7 @@ save I_adc.I_frontend.Gp I_adc.I_frontend.Gn I_adc.SampleB I_adc.Bp9 I_adc.Bp8 I
 
 save I_adc.Ck0 I_adc.Ck1 I_adc.Ck2 I_adc.Ck3 I_adc.Ck4 I_adc.Ck5 I_adc.Ck6 I_adc.Ck7 I_adc.Ck8 I_adc.Ck9
 
-save I_adc.I_async.I_run_nor.P2 I_adc.I_async.CompareEnable I_adc.I_async.ValidDelay I_adc.I_async.Early
+save I_adc.I_async.CompareEnable I_adc.I_async.ValidDelay I_adc.I_async.Early
 
-save I_adc.I_phase.Clock I_adc.I_phase.R0 I_adc.I_phase.SampleN0 I_adc.I_phase.SampleN1 I_adc.I_phase.SampleN2 I_adc.I_phase.SampleN3 I_adc.I_phase.SampleN4
+save I_adc.I_phase:3 I_adc.I_inv:3 I_adc.I_bias:2 I_adc.I_cmp:8 I_adc.I_async:15 I_adc.I_bit0:7 I_adc.I_bit1:7 I_adc.I_bit2:7 I_adc.I_bit3:7 I_adc.I_bit4:7 I_adc.I_bit5:7 I_adc.I_bit6:7 I_adc.I_bit7:7 I_adc.I_bit8:7 I_adc.I_bit9:7 I_adc.I_bit0:9 I_adc.I_bit1:9 I_adc.I_bit2:9 I_adc.I_bit3:9 I_adc.I_bit4:9 I_adc.I_bit5:9 I_adc.I_bit6:9 I_adc.I_bit7:9 I_adc.I_bit8:9 I_adc.I_bit9:9 I_adc.I_out0:4 I_adc.I_out1:4 I_adc.I_out2:4 I_adc.I_out3:4 I_adc.I_out4:4 I_adc.I_out5:4 I_adc.I_out6:4 I_adc.I_out7:4 I_adc.I_out8:4 I_adc.I_out9:4 I_adc.I_frontend:27
+save I_adc.I_frontend:25

@@ -1,6 +1,0 @@
-simulator lang=spectre
-include "../../../../support/standard_cells/INVD1BWP7T/netlist/netlist.scs"
-subckt SAR_HANDSHAKE (A Z VDD VSS)
-I_b0 (A N0 VDD VSS) INVD1BWP7T
-I_b1 (N0 Z VDD VSS) INVD1BWP7T
-ends SAR_HANDSHAKE

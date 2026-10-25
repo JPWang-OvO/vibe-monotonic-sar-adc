@@ -1,16 +1,16 @@
 {
-  "Mn_sample": {
-    "xy": [
-      4,
-      0
-    ],
-    "orient": "R270"
-  },
   "I_boost": {
     "xy": [
       0,
-      2
+      1
     ],
     "orient": "R0"
+  },
+  "Mn_sample": {
+    "xy": [
+      1.5,
+      -0.5
+    ],
+    "orient": "R270"
   }
 }

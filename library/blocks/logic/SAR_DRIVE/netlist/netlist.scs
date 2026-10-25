@@ -1,7 +1,6 @@
 simulator lang=spectre
-// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
 subckt SAR_DRIVE (A Z VDD VSS)
 parameters scale=1
-Mn (Z A VSS VSS) nch w=2u l=180n nf=1 m=scale
-Mp (Z A VDD VDD) pch w=4u l=180n nf=1 m=scale
+Mn (Z A VSS VSS) nch w=0.5u l=180n nf=1 m=4*scale
+Mp (Z A VDD VDD) pch w=1u l=180n nf=1 m=4*scale
 ends SAR_DRIVE

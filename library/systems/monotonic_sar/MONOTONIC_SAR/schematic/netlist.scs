@@ -1,7 +1,15 @@
 simulator lang=spectre
+include "../../../../support/standard_cells/INVD4BWP7T/netlist/netlist.scs"
+include "../../../../blocks/control/SAR_ASYNC/netlist/netlist.scs"
+include "../../../../blocks/bias/SAR_BIAS/netlist/netlist.scs"
+include "../../../../blocks/control/SAR_BIT/netlist/netlist.scs"
+include "../../../../blocks/comparator/SAR_CMP/netlist/netlist.scs"
+include "../../../../blocks/frontend/SAR_FRONTEND/netlist/netlist.scs"
+include "../../../../blocks/control/SAR_OUT/netlist/netlist.scs"
+include "../../../../blocks/clock/SAR_PHASE/netlist/netlist.scs"
 subckt MONOTONIC_SAR (Vinp Vinn Clks D\<9\> D\<8\> D\<7\> D\<6\> D\<5\> D\<4\> D\<3\> D\<2\> D\<1\> D\<0\> EOC VDD VSS VCM VREFP VREFN)
 I_phase (Clks Sample VDD VSS) SAR_PHASE
-I_inv (Sample SampleB VDD VSS) SAR_INV
+I_inv (Sample SampleB VDD VSS) INVD4BWP7T
 I_bias (Bias VDD VSS) SAR_BIAS
 I_cmp (Vp Vn ClkC Outp Outn Valid Bias VDD VSS) SAR_CMP
 I_async (Sample Valid ClkC EOC Ck\<9\> Ck\<8\> Ck\<7\> Ck\<6\> Ck\<5\> Ck\<4\> Ck\<3\> Ck\<2\> Ck\<1\> Ck\<0\> VDD VSS) SAR_ASYNC

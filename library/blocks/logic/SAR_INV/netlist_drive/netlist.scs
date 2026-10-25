@@ -1,8 +1,0 @@
-simulator lang=spectre
-// MOS D G S B; Spectre W = CDF wf = total width; CDF w = W/nf.
-include "../../SAR_DRIVE/netlist/netlist.scs"
-subckt SAR_INV (A Z VDD VSS)
-I_b0 (A N0 VDD VSS) SAR_DRIVE scale=1
-I_b1 (N0 N1 VDD VSS) SAR_DRIVE scale=16
-I_b2 (N1 Z VDD VSS) SAR_DRIVE scale=256
-ends SAR_INV

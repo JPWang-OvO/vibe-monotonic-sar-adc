@@ -1,5 +1,0 @@
-simulator lang=spectre
-include "../../../../support/standard_cells/INVD4BWP7T/netlist/netlist.scs"
-subckt SAR_INV (A Z VDD VSS)
-I_cell (A Z VDD VSS) INVD4BWP7T
-ends SAR_INV

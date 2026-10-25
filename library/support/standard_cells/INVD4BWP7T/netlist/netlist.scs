@@ -1,15 +1,5 @@
-// Native standard_cells schematic export. MOS terminal order: D G S B.
 simulator lang=spectre
 subckt INVD4BWP7T (I ZN VDD VSS)
-
-// Library name: standard_cells
-// Cell name: INVD4BWP7T
-// View name: schematic
-MU1\-M_u2 (ZN I VSS VSS) nch l=180.0n w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 \
-        as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n \
-        sb=480.0n sca=0 scb=0 scc=0
-MU1\-M_u3 (ZN I VDD VDD) pch l=180.0n w=5.48u m=1 nf=1 sd=540.0n \
-        ad=2.6304e-12 as=2.6304e-12 pd=11.92u ps=11.92u nrd=0.0492701 \
-        nrs=0.0492701 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-
+MU1-M_u2 (ZN I VSS VSS) nch l=180.0n w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+MU1-M_u3 (ZN I VDD VDD) pch l=180.0n w=5.48u m=1 nf=1 sd=540.0n ad=2.6304e-12 as=2.6304e-12 pd=11.92u ps=11.92u nrd=0.0492701 nrs=0.0492701 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 ends INVD4BWP7T

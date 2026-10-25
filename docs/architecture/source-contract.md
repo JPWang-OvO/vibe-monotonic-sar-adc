@@ -16,8 +16,8 @@ authoritative_sources:
 Spectre 文件将尖括号转义为 `D\<9\>`；顶层测试台仍按位置连接各位信号。
 实例阵列在 `array_members` 中保存成员顺序，公共标量连接广播到每个成员。
 `netlist` 等源路径相对 cell 目录。
-View 名遵循 `表示形式[_变体]`，表示形式及示例见 [电路库](../../library/README.md)。
-`netlist_<variant>` 保存文本实现；`veriloga_<variant>` 保存行为变体或其参数包装。
+当前电路使用 `netlist`，原生 OA 使用 `schematic` 和 `symbol`，寄生表示使用 `pex`。
+扫参及短期拓扑由 study 生成到批次目录，表示约定见[电路库](../../library/README.md)。
 Spectre 文件使用 `.scs` 扩展名，仿真器由 flow 指定。View 按实际内容登记。
 
 | 文件 | 保存内容 |
@@ -30,7 +30,7 @@ Spectre 文件使用 `.scs` 扩展名，仿真器由 flow 指定。View 按实�
 | `veriloga/<CELL>.va` | 行为定义 |
 | `pex/netlist.scs` | 从 OA CalibreView 导出的电路及完整寄生参数，纳入 Git |
 
-`ic-circuit-v1` 和 `native-oa-v1` 是模板定义的两个 JSON 格式名称，`v1` 表示第一版格式。
+`ic-circuit-v1` 和 `native-oa-v1` 是设计语义与原生快照的 JSON 格式名称，`v1` 表示第一版格式。
 前者标记 `circuit.json` 的设计字段，后者标记 `native.json` 的来源库和原生读取结果。
 这些名称用于让读写工具识别数据结构；字段以对应工具的读写接口为准。
 

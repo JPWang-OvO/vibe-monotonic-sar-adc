@@ -1,4 +1,0 @@
-ahdl_include "SAR_SAMPLE.va"
-subckt SAR_SAMPLE (Vin Top Sample SampleB Gate VDD VSS)
-I_model (Vin Top Sample SampleB Gate VDD VSS) SAR_SAMPLE_va
-ends SAR_SAMPLE

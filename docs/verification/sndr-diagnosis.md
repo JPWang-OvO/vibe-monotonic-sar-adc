@@ -4,9 +4,9 @@ type: note
 status: active
 last_reviewed: 2026-10-25
 authoritative_sources:
-  - ../../config/acceptance_lowpower.json
-  - ../../regression/blocks/sar_cmp/flows/noise/flow.json
-  - ../../regression/blocks/sar_cmp/flows/noise_ff125/flow.json
+  - ../../regression/systems/monotonic_sar/flows/acceptance/specification.json
+  - git:367a550:regression/blocks/sar_cmp/flows/noise/flow.json
+  - git:367a550:regression/blocks/sar_cmp/flows/noise_ff125/flow.json
   - ../../regression/systems/monotonic_sar/flows/lowpower_sndr_ff125/flow.json
   - ../../regression/systems/monotonic_sar/flows/lowpower_sndr_tt/flow.json
 ---
@@ -149,4 +149,4 @@ SS 下 1/2/4 µm 各有 14/1/1 次 Valid 在 1.8 ns 时尚未达到 1.62 V；对
 全部 13824 次判决在截止时刻完成，Valid 延迟和复位检查均无错误。拟合 sigma 的统计标准误为约 0.022–0.035 mV。
 该表验证改变再生尺寸后的噪声水平；实际 ADC 的反馈复位与捕获关系由系统复测核对。
 数据及概率图见 `lowpower_regen2_cmp_01/`，复现入口为
-[2 µm 再生对噪声 flow](../../regression/blocks/sar_cmp/flows/noise_regen2/README.md)。
+[2 µm 再生对噪声 flow](../../regression/blocks/sar_cmp/studies/noise/README.md)。

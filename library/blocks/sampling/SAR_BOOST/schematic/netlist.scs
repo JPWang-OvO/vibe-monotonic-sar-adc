@@ -1,12 +1,12 @@
 simulator lang=spectre
 subckt SAR_BOOST (Vin Gate Sample SampleB VDD VSS)
 C_boot (Ct Cb) capacitor c=500f
-Mn_trackq (Q Gate Cb VSS) nch l=0.18u w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mn_start (Q Sample Cb VSS) nch l=0.18u w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_start (Q Sample VDD Ct) pch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_transfer (Gate Q Ct Ct) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mp_precharge (Ct Gate VDD Ct) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 Mn_reset_gate (Gate SampleB VSS VSS) nch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 Mn_reset_bottom (Cb SampleB VSS VSS) nch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 Mn_bottom (Cb Gate Vin VSS) nch l=0.18u w=8u m=1 nf=2 sd=540.0n ad=2.16e-12 as=3.84e-12 pd=9.08u ps=17.920u nrd=0.03375 nrs=0.03375 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mp_transfer (Gate Q Ct Ct) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mp_start (Q Sample VDD Ct) pch l=0.18u w=2u m=1 nf=1 sd=540.0n ad=9.6e-13 as=9.6e-13 pd=4.96u ps=4.96u nrd=0.135 nrs=0.135 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
-Mp_precharge (Ct Gate VDD Ct) pch l=0.18u w=4u m=1 nf=1 sd=540.0n ad=1.92e-12 as=1.92e-12 pd=8.96u ps=8.96u nrd=0.0675 nrs=0.0675 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_trackq (Q Gate Cb VSS) nch l=0.18u w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
+Mn_start (Q Sample Cb VSS) nch l=0.18u w=1u m=1 nf=1 sd=540.0n ad=4.8e-13 as=4.8e-13 pd=2.96u ps=2.96u nrd=0.27 nrs=0.27 sa=480.0n sb=480.0n sca=0 scb=0 scc=0
 ends SAR_BOOST

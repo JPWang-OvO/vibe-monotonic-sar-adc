@@ -398,18 +398,18 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_NAND2",
+      "model": "ND2D1BWP7T",
       "parameters": {},
       "connections": {
-        "A": "Np0",
-        "B": "Nn0",
-        "Z": "ValidRaw",
+        "A1": "Np0",
+        "A2": "Nn0",
+        "ZN": "ValidRaw",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_NAND2",
+        "standard_cells",
+        "ND2D1BWP7T",
         "symbol"
       ],
       "oa_parameters": {}
@@ -542,5 +542,5 @@
       ]
     }
   ],
-  "staged_source": "library__blocks__comparator__SAR_CMP__netlist_lowpower1_in4_regen2__netlist.scs"
+  "schema": "ic-circuit-v1"
 }

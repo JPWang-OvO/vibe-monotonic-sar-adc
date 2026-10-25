@@ -1,4 +1,0 @@
-ahdl_include "SAR_PHASE.va"
-subckt SAR_PHASE (Clks Sample VDD VSS)
-I_model (Clks Sample VDD VSS) SAR_PHASE_va
-ends SAR_PHASE

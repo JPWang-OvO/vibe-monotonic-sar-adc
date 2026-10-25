@@ -90,7 +90,7 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_ARM",
+      "model": "DFCNQD1BWP7T",
       "parameters": {},
       "connections": {
         "D": "VDD",
@@ -101,8 +101,8 @@
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_ARM",
+        "standard_cells",
+        "DFCNQD1BWP7T",
         "symbol"
       ],
       "oa_parameters": {}
@@ -619,5 +619,5 @@
       ]
     }
   ],
-  "staged_source": "library__blocks__logic__SAR_STARTUP__quiet_arm__netlist.scs"
+  "schema": "ic-circuit-v1"
 }

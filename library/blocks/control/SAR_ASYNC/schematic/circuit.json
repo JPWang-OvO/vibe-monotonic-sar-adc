@@ -69,7 +69,7 @@
         "VDD",
         "VSS"
       ],
-      "model": "SAR_SAMPLE_GUARD2",
+      "model": "SAR_SAMPLE_GUARD",
       "parameters": {},
       "connections": {
         "A": "Sample",
@@ -79,30 +79,99 @@
       },
       "master": [
         "MONOTONIC_SAR",
-        "SAR_SAMPLE_GUARD2",
+        "SAR_SAMPLE_GUARD",
         "symbol"
       ],
       "oa_parameters": {}
     },
     {
-      "name": "I_feedback_delay",
+      "name": "I_feedback_delay__I_b0",
       "nodes": [
         "Valid",
-        "ValidDelay",
+        "I_feedback_delay__N0",
         "VDD",
         "VSS"
       ],
-      "model": "SAR_HANDSHAKE",
+      "model": "INVD1BWP7T",
       "parameters": {},
       "connections": {
-        "A": "Valid",
-        "Z": "ValidDelay",
+        "I": "Valid",
+        "ZN": "I_feedback_delay__N0",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_HANDSHAKE",
+        "standard_cells",
+        "INVD1BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_feedback_delay__I_b1",
+      "nodes": [
+        "I_feedback_delay__N0",
+        "I_feedback_delay__N1",
+        "VDD",
+        "VSS"
+      ],
+      "model": "INVD1BWP7T",
+      "parameters": {},
+      "connections": {
+        "I": "I_feedback_delay__N0",
+        "ZN": "I_feedback_delay__N1",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "INVD1BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_feedback_delay__I_b2",
+      "nodes": [
+        "I_feedback_delay__N1",
+        "I_feedback_delay__N2",
+        "VDD",
+        "VSS"
+      ],
+      "model": "INVD1BWP7T",
+      "parameters": {},
+      "connections": {
+        "I": "I_feedback_delay__N1",
+        "ZN": "I_feedback_delay__N2",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "INVD1BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_feedback_delay__I_b3",
+      "nodes": [
+        "I_feedback_delay__N2",
+        "ValidDelay",
+        "VDD",
+        "VSS"
+      ],
+      "model": "INVD1BWP7T",
+      "parameters": {},
+      "connections": {
+        "I": "I_feedback_delay__N2",
+        "ZN": "ValidDelay",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "INVD1BWP7T",
         "symbol"
       ],
       "oa_parameters": {}
@@ -131,32 +200,78 @@
       "oa_parameters": {}
     },
     {
-      "name": "I_run_nor",
+      "name": "I_run_nor__I_stop_n",
       "nodes": [
         "Hold",
-        "Valid",
         "Ck<0>",
-        "ValidDelay",
-        "Early",
-        "CompareEnable",
+        "I_run_nor__StopN",
         "VDD",
         "VSS"
       ],
-      "model": "SAR_WAIT_GATE",
+      "model": "NR2D1BWP7T",
       "parameters": {},
       "connections": {
-        "Hold": "Hold",
-        "Valid": "Valid",
-        "Done": "Ck<0>",
-        "Delayed": "ValidDelay",
-        "Early": "Early",
-        "Z": "CompareEnable",
+        "A1": "Hold",
+        "A2": "Ck<0>",
+        "ZN": "I_run_nor__StopN",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_WAIT_GATE",
+        "standard_cells",
+        "NR2D1BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_run_nor__I_stop",
+      "nodes": [
+        "I_run_nor__StopN",
+        "I_run_nor__Stop",
+        "VDD",
+        "VSS"
+      ],
+      "model": "INVD1BWP7T",
+      "parameters": {},
+      "connections": {
+        "I": "I_run_nor__StopN",
+        "ZN": "I_run_nor__Stop",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "INVD1BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_run_nor__I_gate",
+      "nodes": [
+        "ValidDelay",
+        "Early",
+        "Valid",
+        "I_run_nor__Stop",
+        "CompareEnable",
+        "VDD",
+        "VSS"
+      ],
+      "model": "AOI211D1BWP7T",
+      "parameters": {},
+      "connections": {
+        "A1": "ValidDelay",
+        "A2": "Early",
+        "B": "Valid",
+        "C": "I_run_nor__Stop",
+        "ZN": "CompareEnable",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "AOI211D1BWP7T",
         "symbol"
       ],
       "oa_parameters": {}
@@ -185,69 +300,125 @@
       "oa_parameters": {}
     },
     {
-      "name": "I_done_delay",
+      "name": "I_done_delay__I_b0",
       "nodes": [
         "Ck<0>",
-        "Done",
+        "I_done_delay__N0",
         "VDD",
         "VSS"
       ],
-      "model": "SAR_DONE_DELAY",
+      "model": "INVD1BWP7T",
       "parameters": {},
       "connections": {
-        "A": "Ck<0>",
-        "Z": "Done",
+        "I": "Ck<0>",
+        "ZN": "I_done_delay__N0",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_DONE_DELAY",
+        "standard_cells",
+        "INVD1BWP7T",
         "symbol"
       ],
       "oa_parameters": {}
     },
     {
-      "name": "I_seq<9:0>",
+      "name": "I_done_delay__I_b1",
+      "nodes": [
+        "I_done_delay__N0",
+        "Done",
+        "VDD",
+        "VSS"
+      ],
+      "model": "INVD4BWP7T",
+      "parameters": {},
+      "connections": {
+        "I": "I_done_delay__N0",
+        "ZN": "Done",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "INVD4BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {}
+    },
+    {
+      "name": "I_seq_reset<9:0>",
+      "nodes": [
+        "Reset",
+        "ResetN<9:0>",
+        "VDD",
+        "VSS"
+      ],
+      "model": "INVD1BWP7T",
+      "parameters": {},
+      "connections": {
+        "I": "Reset",
+        "ZN": "ResetN<9:0>",
+        "VDD": "VDD",
+        "VSS": "VSS"
+      },
+      "master": [
+        "standard_cells",
+        "INVD1BWP7T",
+        "symbol"
+      ],
+      "oa_parameters": {},
+      "array_members": [
+        "I_seq9__I_reset",
+        "I_seq8__I_reset",
+        "I_seq7__I_reset",
+        "I_seq6__I_reset",
+        "I_seq5__I_reset",
+        "I_seq4__I_reset",
+        "I_seq3__I_reset",
+        "I_seq2__I_reset",
+        "I_seq1__I_reset",
+        "I_seq0__I_reset"
+      ]
+    },
+    {
+      "name": "I_seq_ff<9:0>",
       "nodes": [
         "Ck<1:9>,VDD",
         "Valid",
-        "VSS",
-        "Reset",
+        "ResetN<9:0>",
         "Ck<0:9>",
         "VDD",
         "VSS"
       ],
-      "model": "SAR_FAST_SEQ",
+      "model": "DFCNQD1BWP7T",
       "parameters": {},
       "connections": {
         "D": "Ck<1:9>,VDD",
         "CP": "Valid",
-        "CPB": "VSS",
-        "Reset": "Reset",
+        "CDN": "ResetN<9:0>",
         "Q": "Ck<0:9>",
         "VDD": "VDD",
         "VSS": "VSS"
       },
       "master": [
-        "MONOTONIC_SAR",
-        "SAR_FAST_SEQ",
+        "standard_cells",
+        "DFCNQD1BWP7T",
         "symbol"
       ],
       "oa_parameters": {},
       "array_members": [
-        "I_seq9",
-        "I_seq8",
-        "I_seq7",
-        "I_seq6",
-        "I_seq5",
-        "I_seq4",
-        "I_seq3",
-        "I_seq2",
-        "I_seq1",
-        "I_seq0"
+        "I_seq9__I_cell",
+        "I_seq8__I_cell",
+        "I_seq7__I_cell",
+        "I_seq6__I_cell",
+        "I_seq5__I_cell",
+        "I_seq4__I_cell",
+        "I_seq3__I_cell",
+        "I_seq2__I_cell",
+        "I_seq1__I_cell",
+        "I_seq0__I_cell"
       ]
     }
   ],
-  "staged_source": "library__blocks__control__SAR_ASYNC__netlist_direct_small__netlist.scs"
+  "schema": "ic-circuit-v1"
 }

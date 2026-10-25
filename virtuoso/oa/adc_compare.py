@@ -2,11 +2,12 @@
 import argparse
 import json
 import re
+import os
 from copy import deepcopy
 from pathlib import Path
 
 from regression.common.project import ROOT, read_json, write_json, artifact_root
-from .adc_source import hierarchy, QualifiedProperties, flatten, assignments, clean_name, source_folders,prepare_source,reference_libraries
+from .adc_source import hierarchy, current_hierarchy, QualifiedProperties, flatten, assignments, clean_name, source_folders,prepare_source,reference_libraries
 from .adc_layout import fold_drivers
 from .comparison import spectre_document,expand_signals
 from .native import port_order
@@ -29,11 +30,11 @@ def native_hierarchy(text, top_ports):
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--batch',type=Path,required=True)
+    p=argparse.ArgumentParser();p.add_argument('--qualification',type=Path,required=True)
     p.add_argument('--native',type=Path,required=True)
-    p.add_argument('--run-id',default='oa_delivery')
-    p.add_argument('--design-config',type=Path,default=ROOT/'config/final_design.json');a=p.parse_args()
-    expected,enrichment=hierarchy(a.batch)
+    p.add_argument('--run-id',required=True);a=p.parse_args()
+    expected=current_hierarchy()
+    _,enrichment=hierarchy(a.qualification)
     folders=source_folders()
     native_ports=port_order(read_json(folders['MONOTONIC_SAR']/'schematic/native.json')['circuit'])
     actual=native_hierarchy(a.native.read_text(),expand_signals(native_ports))
@@ -48,7 +49,7 @@ def main():
     interfaces={name:expected[name]['ports']==normalized[name]['ports'] for name in expected}
     aliases={}
     references=reference_libraries()
-    for name,data in prepare_source(a.batch).items():
+    for name,data in prepare_source(a.qualification).items():
         if name in references:continue
         aliases[name]={}
         for inst in fold_drivers(data)['instances']:
@@ -63,7 +64,7 @@ def main():
     extra={str(k):v for k,v in right.items() if left.get(k)!=v}
     passed=all(interfaces.values()) and not missing and not extra
     result=dict(passed=passed,interfaces=interfaces,expected_primitive_groups=len(left),native_primitive_groups=len(right),
-                missing_or_changed=missing,extra_or_changed=extra,native_netlist=str(a.native.resolve()),accepted_batch=str(a.batch.resolve()),
+                missing_or_changed=missing,extra_or_changed=extra,native_netlist=str(a.native.resolve()),qualification_batch=str(a.qualification.resolve()),
                 native_top_terminals=native_ports,output_bit_mapping=output_map,signal_families=FAMILIES)
     report=artifact_root()/a.run_id/'electrical_comparison.json'
     write_json(report,result)
@@ -71,16 +72,20 @@ def main():
     for name,data in actual.items():
         if name in references:continue
         ports=[p.replace('<','\\<').replace('>','\\>') if '\\' not in p else p for p in data['ports']]
-        lines=['simulator lang=spectre','subckt '+name+' ('+' '.join(ports)+')']
+        lines=['simulator lang=spectre']
+        for dep in sorted({i['model'] for i in data['instances'] if i['model'] in folders}):
+            relative=os.path.relpath(folders[dep]/'netlist/netlist.scs',folders[name]/'schematic').replace('\\','/')
+            lines.append('include "'+relative+'"')
+        lines.append('subckt '+name+' ('+' '.join(ports)+')')
         if data['parameters']:lines.append('parameters '+' '.join(k+'='+v for k,v in data['parameters'].items()))
         lines += [i['name']+' ('+' '.join(i['nodes'])+') '+i['model']+' '+
                   ' '.join(k+'='+v for k,v in i['parameters'].items()) for i in data['instances']]
         lines.append('ends '+name)
         folder=folders[name];(folder/'schematic/netlist.scs').write_text('\n'.join(line.rstrip() for line in lines)+'\n',encoding='utf-8',newline='\n')
         meta=read_json(folder/'cell.json');meta['views']['schematic']['netlist']='schematic/netlist.scs';write_json(folder/'cell.json',meta)
-    final=read_json(a.design_config);final['status']='electrical_pass_oa_visual_review_pending'
-    final['oa_electrical_comparison']=str(report);write_json(a.design_config,final)
-    print('Native models, effective parameters, hierarchy ports and expanded connectivity match the accepted DUT.')
+    final=read_json(ROOT/'config/design.json');final['status']='electrically_equivalent_oa_visual_review_pending'
+    final['oa_electrical_comparison']=str(report);write_json(ROOT/'config/design.json',final)
+    print('Native models, effective parameters, hierarchy ports and expanded connectivity match the current source.')
 
 
 if __name__=='__main__':main()
