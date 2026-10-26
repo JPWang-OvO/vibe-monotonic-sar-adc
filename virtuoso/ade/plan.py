@@ -9,6 +9,11 @@ from regression.common.plans import load_plan
 from regression.common.project import ROOT, read_json, identifier
 
 
+def job_timeout_s(plan):
+    """Budget an ICRP job that can execute multiple flow conditions."""
+    return sum(point['simulator']['timeout_s'] for point in plan['points'])
+
+
 def assignments(text):
     pairs = re.findall(r'(\w+)=(\[[^\]]*\]|[^\s]+)', text)
     remainder = re.sub(r'(\w+)=(\[[^\]]*\]|[^\s]+)', '', text).strip()

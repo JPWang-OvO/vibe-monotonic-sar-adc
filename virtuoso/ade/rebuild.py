@@ -11,7 +11,7 @@ from regression.common.plans import load_plan
 from regression.common.runner import case_tokens, checked
 from regression.common.sources import stage
 from virtuoso.oa.native import execute, evaluate, q
-from .plan import compile_flow
+from .plan import compile_flow, job_timeout_s
 from .native import build_tb, strings
 
 
@@ -65,6 +65,7 @@ def prepare(flow_path, run_id, env_path, library, library_path, workers=4):
                f'Tests: {len(plan["tests"])}; corners: {len(plan["corners"])}; points: {len(plan["points"])}',
                f'Precision: {plan["simulator"]["precision"]}; threads/job: {plan["simulator"]["threads"]}',
                f'Maximum jobs: {workers}',
+               f'ICRP job timeout: {job_timeout_s(plan)} seconds (aggregate condition budget)',
                '', '| Case | Test | Corner | Variables | Criteria |', '|---|---|---|---|---|']
     for point in plan['points']:
         preview.append(f'| {point["id"]} | {point["test"]} | {point["corner"]} | {point["variables"]} | {point["criteria"]} |')
@@ -116,7 +117,7 @@ def configure(client, record, session):
     execute(client, f'''let((policy) policy=maeGetJobPolicy(?session {q(session)})
         policy->name={q(record['library']+'_'+plan['cell'])}
         policy->maxjobs={q(str(record['workers']))}
-        policy->runtimeout={q(str(plan['simulator']['timeout_s']))}
+        policy->runtimeout={q(str(job_timeout_s(plan)))}
         maeSetJobPolicy(policy ?session {q(session)}))''')
     mae.save_setup(record['library'], plan['cell'], session=session)
 

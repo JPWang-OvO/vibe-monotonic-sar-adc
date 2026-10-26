@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET
 
 from regression.common.project import read_json, write_json
 from regression.common.units import numeric
-from .plan import assignments
+from .plan import assignments, job_timeout_s
 
 
 def same_value(expected, actual):
@@ -88,7 +88,7 @@ def verify(client, run):
         policy = dict(zip(policy[1::2], policy[2::2]))
         expected_policy = dict(name=record['library']+'_'+plan['cell'],
                                maxjobs=str(record['workers']),
-                               runtimeout=str(plan['simulator']['timeout_s']))
+                               runtimeout=str(job_timeout_s(plan)))
         if any(policy.get(k) != v for k, v in expected_policy.items()):
             raise ValueError('Saved job policy differs from the prepared resource budget')
         for test in plan['tests']:
