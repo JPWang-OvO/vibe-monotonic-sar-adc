@@ -84,6 +84,13 @@ def verify(client, run):
         tests = {node.text.strip(): node for node in active.findall('tests/test')}
         if set(tests) != {t['name'] for t in plan['tests']}:
             raise ValueError('Saved test set differs')
+        policy = evaluate(client, f'maeGetJobPolicy(?session {q(session)})')
+        policy = dict(zip(policy[1::2], policy[2::2]))
+        expected_policy = dict(name=record['library']+'_'+plan['cell'],
+                               maxjobs=str(record['workers']),
+                               runtimeout=str(plan['simulator']['timeout_s']))
+        if any(policy.get(k) != v for k, v in expected_policy.items()):
+            raise ValueError('Saved job policy differs from the prepared resource budget')
         for test in plan['tests']:
             name = test['name']
             saved_variables = {node.text.strip(): node.findtext('value').strip().split(',')
@@ -112,7 +119,7 @@ def verify(client, run):
                 verify_point(plan, test, corner, local.read_text(encoding='utf-8'), record['remote'])
                 reports.append(dict(test=name, corner=corner['name'], pass_=True))
         report = dict(pass_=True, tests=len(tests), corners=len(enabled),
-                      points=len(plan['points']), native_netlists=reports)
+                      points=len(plan['points']), workers=record['workers'], native_netlists=reports)
         write_json(run/'verification.json', report)
         return report
     finally:

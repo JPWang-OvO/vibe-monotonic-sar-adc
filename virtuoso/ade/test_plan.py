@@ -54,6 +54,13 @@ class MaestroPlanTests(unittest.TestCase):
             self.assertEqual(len(pairs), 82)
             self.assertEqual(pairs[-2], '2.4002e-07')
 
+    def test_worker_budget_is_checked_before_preparation(self):
+        from virtuoso.ade.rebuild import prepare
+        limit = read_json(ROOT/'config/run_budget.json')['max_workers']
+        for workers in (0, limit+1):
+            with self.subTest(workers=workers), self.assertRaisesRegex(ValueError, 'run budget'):
+                prepare(self.system, 'invalid_budget', None, 'UNUSED', '/unused', workers)
+
 
 if __name__ == '__main__':
     unittest.main()

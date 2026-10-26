@@ -31,7 +31,8 @@ python -m virtuoso.ade.run collect --run-id ade_cmp_run
 TB 的激励和负载使用 analogLib，DUT 符号绑定该批次所选 view 的 Spectre 定义。
 重建结果包含原生连接读回、PVT 模型 section、温度、变量 sweep、分析和顶层波形输出。
 `verify` 从已保存的 Maestro 导出各 test/corner 网表，核对 TB 与 flow，并检查 Spectre X、AX 和每 job 8 线程设置。
-每个 Maestro 最多并行 4 个 jobs。运行时保持其 GUI session 打开，提前关闭会取消仿真。
+`prepare --workers N` 设置并行 jobs，默认 4，上限由 `config/run_budget.json` 指定。
+运行时保持其 GUI session 打开，提前关闭会取消仿真。
 
 `start` 记录明确的 `Interactive.N` history；`collect` 在服务器解析该 history 的 ASCII 波形，
 核对实际 PVT/变量展开、命令和日志，然后复用 flow 的测量器与判据。

@@ -3,6 +3,7 @@ import bisect
 import cmath
 import math
 import re
+from pathlib import Path
 from regression.common.psf import read_psf,interpolate
 
 def edges(t,v,level,direction):
@@ -32,7 +33,7 @@ def integral(t,v,start,stop):
     yy=[interpolate(t,v,start)]+v[left:right]+[interpolate(t,v,stop)]
     return sum((b-a)*(x+y)/2 for a,b,x,y in zip(tt,tt[1:],yy,yy[1:]))
 
-def measure_sar(case,raw):
+def measure_sar(case,raw,*,log_path=None):
     cfg=case['measurement'];wave=read_psf(raw/'tran.tran.tran');t=wave['time']
     sample=wave['I_adc.Sample'];starts=edges(t,sample,.9,1);ends=edges(t,sample,.9,-1)
     completes=edges(t,wave['I_adc.Valid'],.9,1)
@@ -147,7 +148,8 @@ def measure_sar(case,raw):
         metrics.pop('code_mismatches')
         metrics['decision_errors_far_boundary']=far_errors
     if physical:
-        soa_warnings=len(re.findall(r'WARNING \(CMI-275[1-6]\)',(raw.parent/'logs/spectre.log').read_text()))
+        log = Path(log_path) if log_path is not None else raw.parent/'logs/spectre.log'
+        soa_warnings=len(re.findall(r'WARNING \(CMI-275[1-6]\)',log.read_text()))
         metrics.update(step_diff_error_rms_v=math.sqrt(sum(e*e for e in diff_errors)/len(diff_errors)),
             wrong_bottom_states=switch_errors,output_capture_errors=code_capture_errors,
             output_hold_errors=hold_errors,

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import ProcessPoolExecutor
 import json
 from pathlib import Path
 import re
@@ -14,11 +15,18 @@ from regression.common.measure import measure
 from .verify import verify_point, same_value
 
 
+def measure_point(task):
+    point, raw, output = task
+    result = measure(point, raw, log_path=raw/'spectre.out')
+    write_json(output, result)
+    return {k: result[k] for k in ('metrics', 'checks', 'functional_pass', 'performance_pass')}
+
+
 def process_results(setup_path, history_path, output):
     record, history = read_json(setup_path), read_json(history_path)
     plan = record['plan']
     directory = Path(history['results_root'])/history['history']
-    reports, seen = [], set()
+    reports, seen, measurements = [], set(), []
     for test in plan['tests']:
         for raw in sorted(directory.glob('[0-9]*/'+test['name']+'/psf')):
             variables = dict(re.findall(r'"([^"]+)"\s+"variable"\s*\(\s*([^\s)]+)',
@@ -49,11 +57,19 @@ def process_results(setup_path, history_path, output):
                         execution_pass=(raw/'.simDone').exists() and log_audit['clean_completion'],
                         log_audit=log_audit, native_netlist_pass=True, remote_waveforms=str(raw))
             if item['execution_pass'] and log_audit['pass']:
-                item.update(measure(point, raw), measurement_pass=True)
-            item['pass'] = bool(item['execution_pass'] and log_audit['pass']
-                                and item.get('measurement_pass') and item.get('functional_pass')
-                                and item.get('performance_pass') is not False)
+                detail = output.resolve().parent/'cases'/(point['id']+'.json')
+                item['remote_measurement'] = str(detail)
+                measurements.append((len(reports), point, raw, detail))
             reports.append(item)
+    if measurements:
+        with ProcessPoolExecutor(max_workers=min(record['workers'], len(measurements))) as pool:
+            results = pool.map(measure_point, [task[1:] for task in measurements])
+            for (index, _, _, _), result in zip(measurements, results):
+                reports[index].update(result, measurement_pass=True)
+    for item in reports:
+        item['pass'] = bool(item['execution_pass'] and item['log_audit']['pass']
+                            and item.get('measurement_pass') and item.get('functional_pass')
+                            and item.get('performance_pass') is not False)
     missing = sorted({p['id'] for p in plan['points']} - seen)
     report = dict(history=history['history'], cases=reports, not_run=missing,
                   data_processing='server', waveforms_downloaded=False,

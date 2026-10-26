@@ -20,8 +20,11 @@ def criterion(value, rule):
             and ("max" not in rule or value <= rule["max"]))
 
 
-def measure(case, raw):
+def measure(case, raw, *, log_path=None):
     kind = case['measurement']['kind']
     if kind not in MEASUREMENT_MODULES:
         raise ValueError('Unknown measurement kind: '+kind)
-    return import_module(MEASUREMENT_MODULES[kind]).measure(case, Path(raw))
+    module = import_module(MEASUREMENT_MODULES[kind])
+    if kind == 'sar':
+        return module.measure(case, Path(raw), log_path=log_path)
+    return module.measure(case, Path(raw))

@@ -19,9 +19,13 @@ def alist(values):
     return '(' + ' '.join('(' + q(k) + ' ' + q(str(v)) + ')' for k, v in values.items()) + ')'
 
 
-def prepare(flow_path, run_id, env_path, library, library_path):
+def prepare(flow_path, run_id, env_path, library, library_path, workers=4):
     """Resolve the actual package once; all generated data stays in artifacts."""
     plan = compile_flow(flow_path)
+    budget = read_json(ROOT/'config/run_budget.json')
+    if not 1 <= workers <= budget['max_workers']:
+        raise ValueError('workers must be within the project run budget')
+    workers = min(workers, len(plan['points']))
     identifier(run_id); identifier(library)
     env = environment(env_path)
     if not library_path.startswith('/'):
@@ -29,7 +33,8 @@ def prepare(flow_path, run_id, env_path, library, library_path):
     run = artifact_root() / run_id
     run.mkdir(exist_ok=False)
     remote = str(PurePosixPath(env['remote_runs']) / run_id)
-    record = dict(plan=plan, environment=env, library=library, library_path=library_path, remote=remote)
+    record = dict(plan=plan, environment=env, library=library, library_path=library_path,
+                  remote=remote, workers=workers)
     write_json(run/'setup.json', record)
     flow = load_plan(flow_path)
     process = read_json(ROOT / read_json(ROOT/'project.json')['process'])
@@ -59,7 +64,7 @@ def prepare(flow_path, run_id, env_path, library, library_path):
                f'OA: `{library}/{plan["cell"]}/maestro`',
                f'Tests: {len(plan["tests"])}; corners: {len(plan["corners"])}; points: {len(plan["points"])}',
                f'Precision: {plan["simulator"]["precision"]}; threads/job: {plan["simulator"]["threads"]}',
-               f'Maximum jobs: {min(4, len(plan["points"]))}',
+               f'Maximum jobs: {workers}',
                '', '| Case | Test | Corner | Variables | Criteria |', '|---|---|---|---|---|']
     for point in plan['points']:
         preview.append(f'| {point["id"]} | {point["test"]} | {point["corner"]} | {point["variables"]} | {point["criteria"]} |')
@@ -109,7 +114,8 @@ def configure(client, record, session):
     mae.set_current_run_mode('Single Run, Sweeps and Corners', session=session)
     mae.set_job_control_mode('Local', session=session)
     execute(client, f'''let((policy) policy=maeGetJobPolicy(?session {q(session)})
-        policy->maxjobs={q(str(min(4, len(plan['points']))))}
+        policy->name={q(record['library']+'_'+plan['cell'])}
+        policy->maxjobs={q(str(record['workers']))}
         policy->runtimeout={q(str(plan['simulator']['timeout_s']))}
         maeSetJobPolicy(policy ?session {q(session)}))''')
     mae.save_setup(record['library'], plan['cell'], session=session)
@@ -154,6 +160,7 @@ def main():
     parser.add_argument('--environment', type=Path)
     parser.add_argument('--library')
     parser.add_argument('--library-path')
+    parser.add_argument('--workers', type=int, default=4)
     args = parser.parse_args()
     if args.action == 'preview':
         plan = compile_flow(args.flow)
@@ -163,7 +170,7 @@ def main():
     from regression.common.bridge_environment import load_bridge_environment
     load_bridge_environment()
     if args.action == 'prepare':
-        print(prepare(args.flow, args.run_id, args.environment, args.library, args.library_path))
+        print(prepare(args.flow, args.run_id, args.environment, args.library, args.library_path, args.workers))
     else:
         from virtuoso_bridge import VirtuosoClient
         run = artifact_root()/identifier(args.run_id)

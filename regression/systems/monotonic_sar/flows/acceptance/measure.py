@@ -3,8 +3,8 @@ from regression.common.measure import criterion
 from regression.systems.monotonic_sar.analysis.measure import measure_sar
 
 
-def measure(case, raw):
-    result = measure_sar(case, raw)
+def measure(case, raw, *, log_path=None):
+    result = measure_sar(case, raw, log_path=log_path)
     checks = {name: criterion(result['metrics'][name], rule)
               for name, rule in case['criteria'].items()}
     result.update(checks=checks, functional_pass=all(checks.values()),
