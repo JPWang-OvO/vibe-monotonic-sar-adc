@@ -417,5 +417,24 @@
   ],
   "specification": "regression/systems/monotonic_sar/flows/acceptance/specification.json",
   "baseline": "regression/systems/monotonic_sar/flows/acceptance/baselines/accepted.json",
-  "validation_status": "2026-10-26：20/20 项 PVT、频点及瞬态噪声条件通过，完整系统基线审核通过。"
+  "validation_status": "2026-10-26：20/20 项 PVT、频点及瞬态噪声条件通过，完整系统基线审核通过。",
+  "ade": {
+    "tests": [
+      {
+        "name": "quiet",
+        "when": {
+          "noise": false
+        }
+      },
+      {
+        "name": "noise",
+        "when": {
+          "noise": true
+        }
+      }
+    ],
+    "sweep_variables": {
+      "fin": "FIN"
+    }
+  }
 }
