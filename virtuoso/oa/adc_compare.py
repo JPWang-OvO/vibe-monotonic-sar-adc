@@ -84,7 +84,7 @@ def main():
         folder=folders[name];(folder/'schematic/netlist.scs').write_text('\n'.join(line.rstrip() for line in lines)+'\n',encoding='utf-8',newline='\n')
         meta=read_json(folder/'cell.json');meta['views']['schematic']['netlist']='schematic/netlist.scs';write_json(folder/'cell.json',meta)
     final=read_json(ROOT/'config/design.json');final['status']='electrically_equivalent_oa_visual_review_pending'
-    final['oa_electrical_comparison']=str(report);write_json(ROOT/'config/design.json',final)
+    final['oa_electrical_comparison']=report.relative_to(artifact_root()).as_posix();write_json(ROOT/'config/design.json',final)
     print('Native models, effective parameters, hierarchy ports and expanded connectivity match the current source.')
 
 

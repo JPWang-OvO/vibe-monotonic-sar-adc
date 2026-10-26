@@ -1,0 +1,11 @@
+{
+  "profile": "<bridge-profile>",
+  "remote_runs": "<absolute-remote-project-scratch>",
+  "server_python": "<absolute-remote-python3>",
+  "spectre": "<absolute-spectre-executable>",
+  "cadence_setup": null,
+  "model_files": {
+    "tsmc18": "<absolute-model-file>"
+  },
+  "oa_library_path": "<absolute-project-oa-library-path>"
+}

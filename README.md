@@ -28,6 +28,6 @@ TT 核心功耗为 2.0424 至 2.0786 mW，包含参考供电并扣除输出缓�
 | 原生网表和图面核对 | [OA 交付](docs/verification/lowpower-oa-delivery.md) |
 | 优化前的冻结设计 | [Checkpoint](docs/history/2026-10-24-ai-autonomous-human-polish-r1.md) |
 
-本机产物根目录为 `<artifact-root>`，连接配置见
-`config/environments/tsmc18.local.json`。历史候选及旧 flow 由 Git 和既有 artifacts 保存。
+产物根目录由 `regression/common/project.py` 的 `artifact_root()` 在运行时解析，
+连接配置见 `config/environments/tsmc18.local.json`。历史候选及旧 flow 由 Git 和既有 artifacts 保存。
 Bridge、PDK 和标准单元源库为外部依赖；本项目当前验证范围为原理图及仿真。

@@ -15,7 +15,7 @@
 | study 的 `study.json` | 变量、参数修改、拓扑规则与优化目标 |
 | 物理任务 JSON | layout/source 身份、电源地、提取设置和 CalibreView 目标 |
 
-从 environment 样例创建本机 `.local.json` 并替换占位值。本机配置忽略入 Git；认证沿用 Bridge 用户配置。
+从 [TSMC18 样例](environments/tsmc18.example.json) 创建本机 `.local.json` 并替换占位值。本机配置忽略入 Git；认证沿用 Bridge 用户配置。
 `cadence_setup` 指向远端 csh 环境脚本；SSH 环境已经能运行工具时设为 null。
 `remote_runs` 与 `oa_library_path` 分别指向项目独立的运行根目录和 OA 库。
 
@@ -40,3 +40,6 @@ license 与调度配额按实际获得的信息记录。
 更换工艺时更新 project 引用及 process 配置，核对模型 section、器件 master、CDF 版本与回调顺序。
 Enrichment 使用 Spectre 原生参数报告、SpiceIn、CDF 和原生 netlister，所选 Bridge profile 的 SSH 环境需能运行 Spectre。
 运行命令见 [Regression](../regression/README.md)。
+
+Baseline 的 `evidence` 及 `design.json` 的 `oa_electrical_comparison` 使用相对产物根目录的路径。
+读取时以 `artifact_root() / relative_path` 定位，批次名称与 case 内文件名保持稳定。

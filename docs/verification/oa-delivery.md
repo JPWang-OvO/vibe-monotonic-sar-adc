@@ -21,11 +21,7 @@ authoritative_sources:
 # 原生库与源文件
 
 交付库名为 `MONOTONIC_SAR`，包含 28 个自研 cell 的 schematic 和 symbol。
-目标路径由本机 `config/environments/tsmc18.local.json` 的 `oa_library_path` 指定：
-
-```text
-<oa-library-path>
-```
+目标路径由本机 `config/environments/tsmc18.local.json` 的 `oa_library_path` 指定。
 
 原生库绑定 `tsmc18`，PDK 器件和标准单元引用其既有库。
 交付时 CIW 使用的 `cds.lib` 映射及原映射记录位于产物目录 `oa_delivery/library_mapping.json`；

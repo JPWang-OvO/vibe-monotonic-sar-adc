@@ -4,5 +4,5 @@
   "view": "netlist",
   "acceptance_flow": "regression/systems/monotonic_sar/flows/acceptance/flow.json",
   "status": "electrically_accepted",
-  "oa_electrical_comparison": "reset_strength_20261026\\electrical_comparison.json"
+  "oa_electrical_comparison": "reset_strength_20261026/electrical_comparison.json"
 }
