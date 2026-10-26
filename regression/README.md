@@ -2,7 +2,7 @@
 
 从项目根目录运行，`$edaPython` 使用[已有 Bridge Python](../config/README.md)。
 `project.json` 登记三个规格 flow：系统验收、比较器功能、分频器功能；
-系统 flow 持有 20 项已有实测 baseline。两个模块 flow 的当前实现尚未在本次清理中仿真，未建立新 baseline。
+系统 flow 保存当前电路 20/20 项通过的完整实测 baseline；比较器和分频器的功能 flow 各保存 5/5 项 PVT 条件通过的 baseline。
 
 每个 flow 目录保存 `flow.json`、`run.py`、`measure.py` 和使用说明，已有基线放在 `baselines/`。
 `run.py` 绑定本目录配置；`measure.py` 定义测量及判定，公共 runner 负责准备、提交和收集。

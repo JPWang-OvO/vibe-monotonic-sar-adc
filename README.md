@@ -8,15 +8,15 @@ CDAC 单位电容 4.8 fF，每侧 512 个单位、总计 2.4576 pF。
 电路源位于各 cell 的 `netlist/`，原生 schematic、symbol 及绘图独立保存。
 规格、条件和基线归所属 flow；参数与拓扑探索归 study。项目入口见 [project.json](project.json)。
 
-已有 20 项验收结果保存在 [系统 flow 的 baseline](regression/systems/monotonic_sar/flows/acceptance/baselines/accepted.json)：
+当前电路的 20 项验收结果全部通过，保存在 [系统 flow 的 baseline](regression/systems/monotonic_sar/flows/acceptance/baselines/accepted.json)：
 TT/25°C 及 SS/FF、−40/125°C，各覆盖两个频点和关闭/开启 seed=1 的瞬态噪声。
-TT 无噪声低/中频 SNDR 为 61.196/60.542 dB，含噪声为 60.227/59.586 dB；
-全矩阵最低 SNDR 为 59.223 dB，最小转换余量为 0.763 ns。
-TT 核心功耗为 2.0410–2.0765 mW，包含参考供电并扣除输出缓冲，满足 3 mW 上限。
+TT 无噪声低/中频 SNDR 为 61.441/61.371 dB，含噪声为 60.474/60.790 dB；
+全矩阵最低 SNDR 为 59.320 dB，最小转换余量为 0.810 ns。
+TT 核心功耗为 2.0424 至 2.0786 mW，包含参考供电并扣除输出缓冲，满足 3 mW 上限。
 
 当前已按论文 Fig. 7(a) 补齐 SAR_BOOST 的串联复位管，并将 SAR_BIT strength 改为从 1 开始的末级倍乘。
 原生 OA 与当前源的 1,266 组底层器件比较通过；strength 调整保持原有器件的 finger/multi。
-复位拓扑修改后尚未重新仿真，上面的 20 项性能数值属于修改前的已批准基线。
+系统基线覆盖上述复位拓扑；比较器与分频器的独立功能验收分别为 5/5 项通过。
 
 | 任务 | 入口 |
 |---|---|

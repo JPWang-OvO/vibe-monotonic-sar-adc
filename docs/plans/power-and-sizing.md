@@ -2,7 +2,7 @@
 title: SAR ADC 降低功耗与消除过设计方案
 type: plan
 status: active
-last_reviewed: 2026-10-25
+last_reviewed: 2026-10-26
 authoritative_sources:
   - ../history/2026-10-24-ai-autonomous-human-polish-r1.md
   - ../../config/architecture.json
@@ -176,7 +176,7 @@ Checkpoint 的 SAR_PHASE 和 SAR_INV 分别使用 1/8/64/512/4096/32768 倍链�
 优化问题写为：在论文规模 CDAC、上述系统性能和功能约束下，将 TT 核心功耗降至 ≤3 mW，
 并继续比较每次转换能量。3 mW 在 50 MS/s 下对应 60 pJ/转换；论文为约 16.52 pJ/转换。
 Checkpoint 的 TT 基线约 193.7 mW，即约 3.87 nJ/转换。模块分解显示主要功耗来自前端和相位驱动；
-收敛版本 TT 核心功耗为 2.041–2.076 mW，全部 20 项结果见[低功耗验收](../verification/lowpower-acceptance.md)。
+当前基线 TT 核心功耗为 2.042 至 2.079 mW，全部 20 项结果见[低功耗验收](../verification/lowpower-acceptance.md)。
 
 模块测试用于缩小问题范围，最终系统结果决定候选去留。保留功耗—性能曲线中有意义的少量候选，
 避免把每个内部电压、每个边沿和每项局部误差都变成新的规格。

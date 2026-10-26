@@ -2,7 +2,7 @@
 title: 低功耗候选 SNDR 限制项诊断
 type: note
 status: active
-last_reviewed: 2026-10-25
+last_reviewed: 2026-10-26
 authoritative_sources:
   - ../../regression/systems/monotonic_sar/flows/acceptance/specification.json
   - git:367a550:regression/blocks/sar_cmp/flows/noise/flow.json
@@ -18,7 +18,8 @@ SNDR 优化目标为 59–60 dB，TT 核心功耗上限为 3 mW，低频/中频�
 以下以 4 µm 输入对、DAC8 驱动及四级前五位建立延时的候选为诊断起点。
 最终采用 DAC16 驱动、四级前五位建立延时、4 µm 输入对和 2 µm 再生对。
 同一版本的全部 20 项通过，SNDR 为 59.223–61.880 dB，TT 核心功耗为 2.041–2.076 mW；
-最小转换余量为 0.763 ns，OA 原生网表与验收电路一致。
+最小转换余量为 0.763 ns，OA 原生网表与该验收电路一致。
+这些诊断与尺寸收敛结果对应串联复位管补齐前的版本；当前复位拓扑的 20/20 项验收结果见[正式基线](lowpower-acceptance.md)。
 
 # 59–60 dB 所需的误差水平
 
@@ -106,7 +107,7 @@ SS/125°C 低频含噪声为 59.471 dB、最小转换余量 0.850 ns；TT 低频
 该版本的其余 17 项已在 `lowpower_final_remaining_05` 中完成，全部通过。
 最终 20 项的最低 SNDR 为 FF/−40°C 中频含噪声的 59.223 dB；
 TT 无噪声两频点为 61.196/60.542 dB，含噪声为 60.227/59.586 dB。
-全部结果见 [低功耗验收](lowpower-acceptance.md)。
+上述结果保存在 `lowpower_final_remaining_05/` 与 `lowpower_regen2_adc_01/`；当前电路结果见 [低功耗验收](lowpower-acceptance.md)。
 同一序号转换的原始波形显示，2 µm 再生对版本在 Valid 到达 0.9 V 时，Outp/Outn 已为约 0.010/1.800 V，
 捕获和输出均保存判决 0。对照波形位于
 `lowpower_regen2_adc_01/capture_wave.json` 和 `capture_wave.png`；输入扰动随电路改变，结论以整项捕获检查为准。

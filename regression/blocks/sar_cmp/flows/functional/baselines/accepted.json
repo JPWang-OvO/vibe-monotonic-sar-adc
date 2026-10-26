@@ -1,0 +1,448 @@
+{
+  "flow": "regression/blocks/sar_cmp/flows/functional/flow.json",
+  "all_electrical_pass": true,
+  "dut_sources_equal": true,
+  "required_cases": 5,
+  "completed_cases": 5,
+  "passed_cases": 5,
+  "cases": [
+    {
+      "condition": "tt_25",
+      "batch": "baseline_20261026_02_cmp",
+      "case": "sar_cmp_functional__tt_25",
+      "passed": true,
+      "metrics": {
+        "wrong_decisions": 0,
+        "missing_valid": 0,
+        "reset_errors": 0,
+        "delay_max_s": 8.755973202351602e-10,
+        "bias_min_v": 0.8251615739412049,
+        "bias_max_v": 0.829070523224277
+      },
+      "checks": {
+        "wrong_decisions": true,
+        "missing_valid": true,
+        "reset_errors": true
+      },
+      "power": null,
+      "resolved_condition": {
+        "enrichment": true,
+        "cell_views": {},
+        "id": "tt_25",
+        "corner": "tt",
+        "tokens": {
+          "TEMP": 25
+        },
+        "criteria": {
+          "wrong_decisions": {
+            "max": 0
+          },
+          "missing_valid": {
+            "max": 0
+          },
+          "reset_errors": {
+            "max": 0
+          }
+        }
+      },
+      "cell_views": {},
+      "default_view": "netlist",
+      "analysis_statements": [
+        "simulatorOptions options temp=25",
+        "tran tran stop=252n"
+      ],
+      "execution_pass": true,
+      "log_audit": {
+        "pass": true,
+        "clean_completion": true,
+        "errors": [],
+        "warning_count": 6
+      },
+      "measurement_pass": true,
+      "functional_pass": true,
+      "performance_pass": null,
+      "evidence": {
+        "settings": "cases/sar_cmp_functional__tt_25/settings.json",
+        "inputs": "cases/sar_cmp_functional__tt_25/inputs",
+        "results": "cases/sar_cmp_functional__tt_25/results.json",
+        "spectre_log": "cases/sar_cmp_functional__tt_25/logs/spectre.log",
+        "console_log": "cases/sar_cmp_functional__tt_25/logs/console.log"
+      }
+    },
+    {
+      "condition": "ss_m40",
+      "batch": "baseline_20261026_02_cmp",
+      "case": "sar_cmp_functional__ss_m40",
+      "passed": true,
+      "metrics": {
+        "wrong_decisions": 0,
+        "missing_valid": 0,
+        "reset_errors": 0,
+        "delay_max_s": 1.0083506425562198e-09,
+        "bias_min_v": 0.718334438746402,
+        "bias_max_v": 0.7228318422640558
+      },
+      "checks": {
+        "wrong_decisions": true,
+        "missing_valid": true,
+        "reset_errors": true
+      },
+      "power": null,
+      "resolved_condition": {
+        "enrichment": true,
+        "cell_views": {},
+        "id": "ss_m40",
+        "corner": "ss",
+        "tokens": {
+          "TEMP": -40
+        },
+        "criteria": {
+          "wrong_decisions": {
+            "max": 0
+          },
+          "missing_valid": {
+            "max": 0
+          },
+          "reset_errors": {
+            "max": 0
+          }
+        }
+      },
+      "cell_views": {},
+      "default_view": "netlist",
+      "analysis_statements": [
+        "simulatorOptions options temp=-40",
+        "tran tran stop=252n"
+      ],
+      "execution_pass": true,
+      "log_audit": {
+        "pass": true,
+        "clean_completion": true,
+        "errors": [],
+        "warning_count": 6
+      },
+      "measurement_pass": true,
+      "functional_pass": true,
+      "performance_pass": null,
+      "evidence": {
+        "settings": "cases/sar_cmp_functional__ss_m40/settings.json",
+        "inputs": "cases/sar_cmp_functional__ss_m40/inputs",
+        "results": "cases/sar_cmp_functional__ss_m40/results.json",
+        "spectre_log": "cases/sar_cmp_functional__ss_m40/logs/spectre.log",
+        "console_log": "cases/sar_cmp_functional__ss_m40/logs/console.log"
+      }
+    },
+    {
+      "condition": "ss_125",
+      "batch": "baseline_20261026_02_cmp",
+      "case": "sar_cmp_functional__ss_125",
+      "passed": true,
+      "metrics": {
+        "wrong_decisions": 0,
+        "missing_valid": 0,
+        "reset_errors": 0,
+        "delay_max_s": 1.2453769882646497e-09,
+        "bias_min_v": 0.8386339837316521,
+        "bias_max_v": 0.844311680389971
+      },
+      "checks": {
+        "wrong_decisions": true,
+        "missing_valid": true,
+        "reset_errors": true
+      },
+      "power": null,
+      "resolved_condition": {
+        "enrichment": true,
+        "cell_views": {},
+        "id": "ss_125",
+        "corner": "ss",
+        "tokens": {
+          "TEMP": 125
+        },
+        "criteria": {
+          "wrong_decisions": {
+            "max": 0
+          },
+          "missing_valid": {
+            "max": 0
+          },
+          "reset_errors": {
+            "max": 0
+          }
+        }
+      },
+      "cell_views": {},
+      "default_view": "netlist",
+      "analysis_statements": [
+        "simulatorOptions options temp=125",
+        "tran tran stop=252n"
+      ],
+      "execution_pass": true,
+      "log_audit": {
+        "pass": true,
+        "clean_completion": true,
+        "errors": [],
+        "warning_count": 6
+      },
+      "measurement_pass": true,
+      "functional_pass": true,
+      "performance_pass": null,
+      "evidence": {
+        "settings": "cases/sar_cmp_functional__ss_125/settings.json",
+        "inputs": "cases/sar_cmp_functional__ss_125/inputs",
+        "results": "cases/sar_cmp_functional__ss_125/results.json",
+        "spectre_log": "cases/sar_cmp_functional__ss_125/logs/spectre.log",
+        "console_log": "cases/sar_cmp_functional__ss_125/logs/console.log"
+      }
+    },
+    {
+      "condition": "ff_m40",
+      "batch": "baseline_20261026_02_cmp",
+      "case": "sar_cmp_functional__ff_m40",
+      "passed": true,
+      "metrics": {
+        "wrong_decisions": 0,
+        "missing_valid": 0,
+        "reset_errors": 0,
+        "delay_max_s": 6.317555469862627e-10,
+        "bias_min_v": 0.832265547428693,
+        "bias_max_v": 0.8349709364489086
+      },
+      "checks": {
+        "wrong_decisions": true,
+        "missing_valid": true,
+        "reset_errors": true
+      },
+      "power": null,
+      "resolved_condition": {
+        "enrichment": true,
+        "cell_views": {},
+        "id": "ff_m40",
+        "corner": "ff",
+        "tokens": {
+          "TEMP": -40
+        },
+        "criteria": {
+          "wrong_decisions": {
+            "max": 0
+          },
+          "missing_valid": {
+            "max": 0
+          },
+          "reset_errors": {
+            "max": 0
+          }
+        }
+      },
+      "cell_views": {},
+      "default_view": "netlist",
+      "analysis_statements": [
+        "simulatorOptions options temp=-40",
+        "tran tran stop=252n"
+      ],
+      "execution_pass": true,
+      "log_audit": {
+        "pass": true,
+        "clean_completion": true,
+        "errors": [],
+        "warning_count": 6
+      },
+      "measurement_pass": true,
+      "functional_pass": true,
+      "performance_pass": null,
+      "evidence": {
+        "settings": "cases/sar_cmp_functional__ff_m40/settings.json",
+        "inputs": "cases/sar_cmp_functional__ff_m40/inputs",
+        "results": "cases/sar_cmp_functional__ff_m40/results.json",
+        "spectre_log": "cases/sar_cmp_functional__ff_m40/logs/spectre.log",
+        "console_log": "cases/sar_cmp_functional__ff_m40/logs/console.log"
+      }
+    },
+    {
+      "condition": "ff_125",
+      "batch": "baseline_20261026_02_cmp",
+      "case": "sar_cmp_functional__ff_125",
+      "passed": true,
+      "metrics": {
+        "wrong_decisions": 0,
+        "missing_valid": 0,
+        "reset_errors": 0,
+        "delay_max_s": 8.888081486529858e-10,
+        "bias_min_v": 0.9626593984353515,
+        "bias_max_v": 0.968272312460855
+      },
+      "checks": {
+        "wrong_decisions": true,
+        "missing_valid": true,
+        "reset_errors": true
+      },
+      "power": null,
+      "resolved_condition": {
+        "enrichment": true,
+        "cell_views": {},
+        "id": "ff_125",
+        "corner": "ff",
+        "tokens": {
+          "TEMP": 125
+        },
+        "criteria": {
+          "wrong_decisions": {
+            "max": 0
+          },
+          "missing_valid": {
+            "max": 0
+          },
+          "reset_errors": {
+            "max": 0
+          }
+        }
+      },
+      "cell_views": {},
+      "default_view": "netlist",
+      "analysis_statements": [
+        "simulatorOptions options temp=125",
+        "tran tran stop=252n"
+      ],
+      "execution_pass": true,
+      "log_audit": {
+        "pass": true,
+        "clean_completion": true,
+        "errors": [],
+        "warning_count": 6
+      },
+      "measurement_pass": true,
+      "functional_pass": true,
+      "performance_pass": null,
+      "evidence": {
+        "settings": "cases/sar_cmp_functional__ff_125/settings.json",
+        "inputs": "cases/sar_cmp_functional__ff_125/inputs",
+        "results": "cases/sar_cmp_functional__ff_125/results.json",
+        "spectre_log": "cases/sar_cmp_functional__ff_125/logs/spectre.log",
+        "console_log": "cases/sar_cmp_functional__ff_125/logs/console.log"
+      }
+    }
+  ],
+  "missing_conditions": [],
+  "status": "accepted_measurements",
+  "design_version": "90c6f6a",
+  "approval": {
+    "date": "2026-10-26",
+    "timezone": "Asia/Tokyo",
+    "decision": "已完成且通过验收的条件纳入基线。",
+    "scope": "已完成并通过的条件"
+  },
+  "simulator": {
+    "arguments": [
+      "-64",
+      "+preset=ax"
+    ],
+    "threads": 8,
+    "timeout_s": 300,
+    "analyses": "20 comparisons at five common modes and both polarities; transistor bias startup",
+    "precision": {
+      "preset": "AX"
+    }
+  },
+  "measurement": {
+    "kind": "sar_comparator",
+    "points": [
+      {
+        "common_mode_v": 0.9,
+        "differential_v": 0.00087890625
+      },
+      {
+        "common_mode_v": 0.9,
+        "differential_v": -0.00087890625
+      },
+      {
+        "common_mode_v": 0.9,
+        "differential_v": 0.003515625
+      },
+      {
+        "common_mode_v": 0.9,
+        "differential_v": -0.003515625
+      },
+      {
+        "common_mode_v": 0.45,
+        "differential_v": 0.00087890625
+      },
+      {
+        "common_mode_v": 0.45,
+        "differential_v": -0.00087890625
+      },
+      {
+        "common_mode_v": 0.45,
+        "differential_v": 0.003515625
+      },
+      {
+        "common_mode_v": 0.45,
+        "differential_v": -0.003515625
+      },
+      {
+        "common_mode_v": 0.1125,
+        "differential_v": 0.00087890625
+      },
+      {
+        "common_mode_v": 0.1125,
+        "differential_v": -0.00087890625
+      },
+      {
+        "common_mode_v": 0.1125,
+        "differential_v": 0.003515625
+      },
+      {
+        "common_mode_v": 0.1125,
+        "differential_v": -0.003515625
+      },
+      {
+        "common_mode_v": 0.0140625,
+        "differential_v": 0.00087890625
+      },
+      {
+        "common_mode_v": 0.0140625,
+        "differential_v": -0.00087890625
+      },
+      {
+        "common_mode_v": 0.0140625,
+        "differential_v": 0.003515625
+      },
+      {
+        "common_mode_v": 0.0140625,
+        "differential_v": -0.003515625
+      },
+      {
+        "common_mode_v": 0.0017578125,
+        "differential_v": 0.00087890625
+      },
+      {
+        "common_mode_v": 0.0017578125,
+        "differential_v": -0.00087890625
+      },
+      {
+        "common_mode_v": 0.0017578125,
+        "differential_v": 0.003515625
+      },
+      {
+        "common_mode_v": 0.0017578125,
+        "differential_v": -0.003515625
+      }
+    ],
+    "start_s": 5.201e-08,
+    "period_s": 1e-08
+  },
+  "evidence": {
+    "batch_directory": "baseline_20261026_02_cmp",
+    "candidate_report": "baseline_preview_20261026_01/cmp_candidate.json",
+    "results": "summary.json",
+    "retained_locally": [
+      "batch.json",
+      "preview.md",
+      "summary.json",
+      "cases/*/settings.json",
+      "cases/*/inputs/",
+      "cases/*/logs/",
+      "cases/*/results.json"
+    ],
+    "raw_waveforms_retained_locally": false
+  }
+}

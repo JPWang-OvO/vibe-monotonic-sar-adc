@@ -1,0 +1,344 @@
+{
+  "flow": "regression/blocks/sar_phase/flows/functional/flow.json",
+  "all_electrical_pass": true,
+  "dut_sources_equal": true,
+  "required_cases": 5,
+  "completed_cases": 5,
+  "passed_cases": 5,
+  "cases": [
+    {
+      "condition": "tt_25",
+      "batch": "baseline_20261026_02_phase",
+      "case": "sar_phase_functional__tt_25",
+      "passed": true,
+      "metrics": {
+        "pulse_count": 19,
+        "period_error_s": 1.4541411453685252e-15,
+        "clock_cycle_errors": 0,
+        "width_min_s": 3.926028653433853e-09,
+        "width_max_s": 3.926058330417445e-09
+      },
+      "checks": {
+        "pulse_count": true,
+        "clock_cycle_errors": true
+      },
+      "power": null,
+      "resolved_condition": {
+        "enrichment": true,
+        "cell_views": {},
+        "id": "tt_25",
+        "corner": "tt",
+        "tokens": {
+          "TEMP": 25
+        },
+        "criteria": {
+          "pulse_count": {
+            "min": 18,
+            "max": 20
+          },
+          "clock_cycle_errors": {
+            "max": 0
+          }
+        }
+      },
+      "cell_views": {},
+      "default_view": "netlist",
+      "analysis_statements": [
+        "simulatorOptions options temp=25",
+        "tran tran stop=600n"
+      ],
+      "execution_pass": true,
+      "log_audit": {
+        "pass": true,
+        "clean_completion": true,
+        "errors": [],
+        "warning_count": 24
+      },
+      "measurement_pass": true,
+      "functional_pass": true,
+      "performance_pass": null,
+      "evidence": {
+        "settings": "cases/sar_phase_functional__tt_25/settings.json",
+        "inputs": "cases/sar_phase_functional__tt_25/inputs",
+        "results": "cases/sar_phase_functional__tt_25/results.json",
+        "spectre_log": "cases/sar_phase_functional__tt_25/logs/spectre.log",
+        "console_log": "cases/sar_phase_functional__tt_25/logs/console.log"
+      }
+    },
+    {
+      "condition": "ss_m40",
+      "batch": "baseline_20261026_02_phase",
+      "case": "sar_phase_functional__ss_m40",
+      "passed": true,
+      "metrics": {
+        "pulse_count": 19,
+        "period_error_s": 8.357420708592944e-16,
+        "clock_cycle_errors": 0,
+        "width_min_s": 3.91728324772028e-09,
+        "width_max_s": 3.917290861268938e-09
+      },
+      "checks": {
+        "pulse_count": true,
+        "clock_cycle_errors": true
+      },
+      "power": null,
+      "resolved_condition": {
+        "enrichment": true,
+        "cell_views": {},
+        "id": "ss_m40",
+        "corner": "ss",
+        "tokens": {
+          "TEMP": -40
+        },
+        "criteria": {
+          "pulse_count": {
+            "min": 18,
+            "max": 20
+          },
+          "clock_cycle_errors": {
+            "max": 0
+          }
+        }
+      },
+      "cell_views": {},
+      "default_view": "netlist",
+      "analysis_statements": [
+        "simulatorOptions options temp=-40",
+        "tran tran stop=600n"
+      ],
+      "execution_pass": true,
+      "log_audit": {
+        "pass": true,
+        "clean_completion": true,
+        "errors": [],
+        "warning_count": 29
+      },
+      "measurement_pass": true,
+      "functional_pass": true,
+      "performance_pass": null,
+      "evidence": {
+        "settings": "cases/sar_phase_functional__ss_m40/settings.json",
+        "inputs": "cases/sar_phase_functional__ss_m40/inputs",
+        "results": "cases/sar_phase_functional__ss_m40/results.json",
+        "spectre_log": "cases/sar_phase_functional__ss_m40/logs/spectre.log",
+        "console_log": "cases/sar_phase_functional__ss_m40/logs/console.log"
+      }
+    },
+    {
+      "condition": "ss_125",
+      "batch": "baseline_20261026_02_phase",
+      "case": "sar_phase_functional__ss_125",
+      "passed": true,
+      "metrics": {
+        "pulse_count": 19,
+        "period_error_s": 2.534919398922991e-15,
+        "clock_cycle_errors": 0,
+        "width_min_s": 3.902571071898973e-09,
+        "width_max_s": 3.902581933468021e-09
+      },
+      "checks": {
+        "pulse_count": true,
+        "clock_cycle_errors": true
+      },
+      "power": null,
+      "resolved_condition": {
+        "enrichment": true,
+        "cell_views": {},
+        "id": "ss_125",
+        "corner": "ss",
+        "tokens": {
+          "TEMP": 125
+        },
+        "criteria": {
+          "pulse_count": {
+            "min": 18,
+            "max": 20
+          },
+          "clock_cycle_errors": {
+            "max": 0
+          }
+        }
+      },
+      "cell_views": {},
+      "default_view": "netlist",
+      "analysis_statements": [
+        "simulatorOptions options temp=125",
+        "tran tran stop=600n"
+      ],
+      "execution_pass": true,
+      "log_audit": {
+        "pass": true,
+        "clean_completion": true,
+        "errors": [],
+        "warning_count": 9
+      },
+      "measurement_pass": true,
+      "functional_pass": true,
+      "performance_pass": null,
+      "evidence": {
+        "settings": "cases/sar_phase_functional__ss_125/settings.json",
+        "inputs": "cases/sar_phase_functional__ss_125/inputs",
+        "results": "cases/sar_phase_functional__ss_125/results.json",
+        "spectre_log": "cases/sar_phase_functional__ss_125/logs/spectre.log",
+        "console_log": "cases/sar_phase_functional__ss_125/logs/console.log"
+      }
+    },
+    {
+      "condition": "ff_m40",
+      "batch": "baseline_20261026_02_phase",
+      "case": "sar_phase_functional__ff_m40",
+      "passed": true,
+      "metrics": {
+        "pulse_count": 19,
+        "period_error_s": 2.407118485506111e-15,
+        "clock_cycle_errors": 0,
+        "width_min_s": 3.9424371293757794e-09,
+        "width_max_s": 3.942516382937496e-09
+      },
+      "checks": {
+        "pulse_count": true,
+        "clock_cycle_errors": true
+      },
+      "power": null,
+      "resolved_condition": {
+        "enrichment": true,
+        "cell_views": {},
+        "id": "ff_m40",
+        "corner": "ff",
+        "tokens": {
+          "TEMP": -40
+        },
+        "criteria": {
+          "pulse_count": {
+            "min": 18,
+            "max": 20
+          },
+          "clock_cycle_errors": {
+            "max": 0
+          }
+        }
+      },
+      "cell_views": {},
+      "default_view": "netlist",
+      "analysis_statements": [
+        "simulatorOptions options temp=-40",
+        "tran tran stop=600n"
+      ],
+      "execution_pass": true,
+      "log_audit": {
+        "pass": true,
+        "clean_completion": true,
+        "errors": [],
+        "warning_count": 29
+      },
+      "measurement_pass": true,
+      "functional_pass": true,
+      "performance_pass": null,
+      "evidence": {
+        "settings": "cases/sar_phase_functional__ff_m40/settings.json",
+        "inputs": "cases/sar_phase_functional__ff_m40/inputs",
+        "results": "cases/sar_phase_functional__ff_m40/results.json",
+        "spectre_log": "cases/sar_phase_functional__ff_m40/logs/spectre.log",
+        "console_log": "cases/sar_phase_functional__ff_m40/logs/console.log"
+      }
+    },
+    {
+      "condition": "ff_125",
+      "batch": "baseline_20261026_02_phase",
+      "case": "sar_phase_functional__ff_125",
+      "passed": true,
+      "metrics": {
+        "pulse_count": 19,
+        "period_error_s": 3.4699637744003373e-17,
+        "clock_cycle_errors": 0,
+        "width_min_s": 3.938259447011214e-09,
+        "width_max_s": 3.938259895467514e-09
+      },
+      "checks": {
+        "pulse_count": true,
+        "clock_cycle_errors": true
+      },
+      "power": null,
+      "resolved_condition": {
+        "enrichment": true,
+        "cell_views": {},
+        "id": "ff_125",
+        "corner": "ff",
+        "tokens": {
+          "TEMP": 125
+        },
+        "criteria": {
+          "pulse_count": {
+            "min": 18,
+            "max": 20
+          },
+          "clock_cycle_errors": {
+            "max": 0
+          }
+        }
+      },
+      "cell_views": {},
+      "default_view": "netlist",
+      "analysis_statements": [
+        "simulatorOptions options temp=125",
+        "tran tran stop=600n"
+      ],
+      "execution_pass": true,
+      "log_audit": {
+        "pass": true,
+        "clean_completion": true,
+        "errors": [],
+        "warning_count": 9
+      },
+      "measurement_pass": true,
+      "functional_pass": true,
+      "performance_pass": null,
+      "evidence": {
+        "settings": "cases/sar_phase_functional__ff_125/settings.json",
+        "inputs": "cases/sar_phase_functional__ff_125/inputs",
+        "results": "cases/sar_phase_functional__ff_125/results.json",
+        "spectre_log": "cases/sar_phase_functional__ff_125/logs/spectre.log",
+        "console_log": "cases/sar_phase_functional__ff_125/logs/console.log"
+      }
+    }
+  ],
+  "missing_conditions": [],
+  "status": "accepted_measurements",
+  "design_version": "90c6f6a",
+  "approval": {
+    "date": "2026-10-26",
+    "timezone": "Asia/Tokyo",
+    "decision": "已完成且通过验收的条件纳入基线。",
+    "scope": "已完成并通过的条件"
+  },
+  "simulator": {
+    "arguments": [
+      "-64",
+      "+preset=ax"
+    ],
+    "threads": 8,
+    "timeout_s": 300,
+    "analyses": "sar_phase transistor module functional transient",
+    "precision": {
+      "preset": "AX"
+    }
+  },
+  "measurement": {
+    "kind": "sar_phase"
+  },
+  "evidence": {
+    "batch_directory": "baseline_20261026_02_phase",
+    "candidate_report": "baseline_preview_20261026_01/phase_candidate.json",
+    "results": "summary.json",
+    "retained_locally": [
+      "batch.json",
+      "preview.md",
+      "summary.json",
+      "cases/*/settings.json",
+      "cases/*/inputs/",
+      "cases/*/logs/",
+      "cases/*/results.json"
+    ],
+    "raw_waveforms_retained_locally": false
+  }
+}

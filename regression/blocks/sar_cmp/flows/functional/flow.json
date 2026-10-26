@@ -154,6 +154,6 @@
     "enrichment": true,
     "cell_views": {}
   },
-  "baseline": null,
-  "validation_status": "Current implementation not simulated in this cleanup"
+  "baseline": "regression/blocks/sar_cmp/flows/functional/baselines/accepted.json",
+  "validation_status": "2026-10-26：5/5 PVT 条件通过，基线审核通过。"
 }

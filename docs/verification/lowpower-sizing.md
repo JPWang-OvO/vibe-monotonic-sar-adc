@@ -19,9 +19,9 @@ authoritative_sources:
 在每侧 512 × 4.8 fF CDAC 下，尺寸优化依次解决采样驱动功耗、判决保存、DAC 建立和比较器噪声问题。
 各节保留候选的控制变量、实测结果与取舍依据。优化前设计由
 `checkpoint/ai-autonomous-human-polish-r1-20261024` 保存。
-最终版本已完成同一 DUT 的原 20 项 PVT/噪声验收，全部通过，SNDR 为 59.223–61.880 dB。
+尺寸收敛批次完成了同一 DUT 的原 20 项 PVT/噪声验收，全部通过，SNDR 为 59.223–61.880 dB。
 TT 核心功耗为 2.041–2.076 mW，最小转换余量为 0.763 ns。
-本文结果属于补齐 SAR_BOOST 串联复位管之前的尺寸收敛批次，当前复位拓扑待重新验证。
+本文保留补齐 SAR_BOOST 串联复位管之前的尺寸实验及其结果。当前复位拓扑已完成 20/20 项验收，最新指标见[正式基线](lowpower-acceptance.md)。
 [SNDR 原因诊断](sndr-diagnosis.md)记录 DAC 建立与动态判决的修正依据。
 
 ## 最终尺寸及选择依据
@@ -36,7 +36,7 @@ SNDR 优化目标为 59–60 dB。逐位波形显示，DAC8 在 FF/125°C
 2 µm 再生对的 TT 低频无噪声为 61.196 dB、2.0765 mW；原失败的 SS/−40°C 中频含噪声为 60.864 dB，
 SS/125°C 低频含噪声为 59.471 dB，三项功能检查均通过。
 完整对照与独立噪声结果见 [SNDR 诊断](sndr-diagnosis.md)，
-同一 DUT 的全部 20 项结果由 [低功耗验收](lowpower-acceptance.md) 记录。
+当前电路的完整 20 项结果由 [低功耗验收](lowpower-acceptance.md) 记录。
 
 # 测量条件
 
