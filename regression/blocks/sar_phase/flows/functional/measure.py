@@ -6,7 +6,7 @@ from regression.systems.monotonic_sar.analysis.measure import edges
 
 
 def measure(case,raw):
-    w=read_psf(raw/'tran.tran.tran');t=w['time']
+    w=read_psf(raw/'tran.tran.tran', name_map=case.get('waveform_names'));t=w['time']
     rises=[v for v in edges(t,w['Sample'],.9,1) if 200e-9<v<580e-9]
     falls=edges(t,w['Sample'],.9,-1)
     widths=[next(f for f in falls if f>r)-r for r in rises]

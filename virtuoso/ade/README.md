@@ -1,6 +1,6 @@
 # ADE 重建与运行
 
-`rebuild` 将已登记 flow 的固定 TB 重建为原生 schematic，并在环境配置指定的服务器 OA 库中保存 Maestro view。
+`rebuild` 将已登记 flow 的固定 TB 重建为原生 schematic，并在已有 `MONOTONIC_SAR` 库中保存 TB schematic 和 Maestro view。
 Flow 继续负责条件、精度和判据；Maestro 使用 corner 和 design variable 展开运行点。
 
 | Flow | Maestro cell | Tests | 展开条件 |
@@ -17,20 +17,26 @@ Flow 继续负责条件、精度和判据；Maestro 使用 corner 和 design var
 使用安装 Virtuoso Bridge 的 Python 环境，在工程根目录依次执行：
 
 ```powershell
-python -m virtuoso.ade.rebuild prepare --flow regression/blocks/sar_cmp/flows/functional/flow.json --run-id ade_cmp_run --environment config/environments/tsmc18.local.json --library MY_ADE_LIBRARY --library-path /path/to/oa/library
+python -m virtuoso.ade.rebuild prepare --flow regression/blocks/sar_cmp/flows/functional/flow.json --run-id ade_cmp_run --environment config/environments/tsmc18.local.json --library MONOTONIC_SAR --library-path /path/to/oa/library
 python -m virtuoso.ade.rebuild rebuild --run-id ade_cmp_run
 python -m virtuoso.ade.run verify --run-id ade_cmp_run
 python -m virtuoso.ade.run start --run-id ade_cmp_run
 python -m virtuoso.ade.run collect --run-id ade_cmp_run
 ```
 
-`prepare` 解析所选电路 view、生成 PDK 几何修正，并写出实际 `preview.md`；按项目验证规则审阅后继续。
+`prepare` 解析 flow 条件与固定 TB，将内部保存信号映射到 schematic 的原生命名，并写出 `preview.md`。
+`rebuild` 要求目标库及 DUT 的 schematic、symbol 已存在；`prepare`、`rebuild` 和 `verify` 均不启动仿真。
+启动仿真前按项目验证规则审阅 preview。
 多 flow 共用目标库时，先完成全部 `prepare` 和 `rebuild`，再启动 Maestro 仿真。
 已有目标 TB 不会被覆盖。各批次使用独立 run ID；同一批次只允许 `start` 一次。
 
-TB 的激励和负载使用 analogLib，DUT 符号绑定该批次所选 view 的 Spectre 定义。
+TB 的激励和负载使用 analogLib，DUT 直接实例化目标库中已有的 symbol。
+Maestro 通过 `spectre schematic` view list 展开现有 schematic，PDK 器件停在 `spectre`。
+ADE 的设计表示固定为 schematic；flow 提供 PVT、激励、精度及判据。
+`presentation.json` 保存三个 TB 的功能分组、位置及关键路径连线。
+与网名重名的电源实例增加 `_SRC` 后缀，波形名在测量前映射回固定 TB 的名称。
 重建结果包含原生连接读回、PVT 模型 section、温度、变量 sweep、分析和顶层波形输出。
-`verify` 从已保存的 Maestro 导出各 test/corner 网表，核对 TB 与 flow，并检查 Spectre X、AX 和每 job 8 线程设置。
+`verify` 从已保存的 Maestro 导出各 test/corner 网表，核对 schematic 绑定、TB 与 flow，并检查 Spectre X、AX 和每 job 8 线程设置。
 `prepare --workers N` 设置并行 jobs，默认 4，上限由 `config/run_budget.json` 指定。
 ADE 的运行超时覆盖整个 ICRP 作业；一个作业可连续运行多个条件，因此使用各条件超时的总和作为作业上限。
 运行时保持其 GUI session 打开，提前关闭会取消仿真。

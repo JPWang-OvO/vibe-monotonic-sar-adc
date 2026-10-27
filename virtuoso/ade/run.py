@@ -43,8 +43,10 @@ def process_results(setup_path, history_path, output):
                           and all(same_value(str(v), variables.get(k, '')) for k, v in p['variables'].items())]
             if len(candidates) != 1 or candidates[0]['id'] in seen:
                 raise ValueError('Native sweep point is missing, extra or duplicated: '+str(raw))
-            point = candidates[0]; seen.add(point['id'])
-            verify_point(plan, test, corner, text, record['remote'])
+            point = dict(candidates[0]); seen.add(point['id'])
+            point['waveform_names'] = {native.replace('\\', ''): source
+                for source, native in zip(plan['tb']['save'], plan['native_save']) if native != source}
+            verify_point(plan, test, corner, text, record['remote'], record['library'])
             command = (raw.parent/'netlist/runSimulation').read_text()
             if f'+mt={plan["simulator"]["threads"]}' not in command:
                 raise ValueError('Native command does not request the flow thread count')

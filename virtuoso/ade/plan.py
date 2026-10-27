@@ -53,6 +53,46 @@ def testbench(path):
     return result
 
 
+def native_saves(tb, instance_names=None):
+    """Resolve fixed-TB trace paths through the committed schematic hierarchy."""
+    from virtuoso.oa.comparison import spectre_document
+    instance_names = instance_names or {}
+    definitions = {}
+    for path in (ROOT/'library').rglob('schematic/netlist.scs'):
+        definitions.update(spectre_document(path.read_text())['subcircuits'])
+    top = {r['name']: r['model'] for r in tb['instances']}
+
+    def resolve(name, choices):
+        matches = [v for v in choices if v.replace('\\', '').replace('<', '').replace('>', '') == name]
+        if len(matches) != 1:
+            raise ValueError('Cannot bind saved signal to schematic: ' + name)
+        return matches[0]
+
+    result = []
+    for signal in tb['save']:
+        path, colon, terminal = signal.partition(':')
+        parts = path.split('.')
+        if len(parts) == 1:
+            result.append(instance_names.get(path, path)+colon+terminal if colon else signal); continue
+        cell = top[parts[0]]; native = [instance_names.get(parts[0], parts[0])]
+        for index, part in enumerate(parts[1:], 1):
+            definition = definitions[cell]
+            statements = definition['statements']
+            if index < len(parts)-1 or colon:
+                actual = resolve(part, statements)
+                row = statements[actual]
+                cell = row[row.index(')')+1]
+            else:
+                nodes = set(definition['ports']) - {'(', ')'}
+                for row in statements.values():
+                    if '(' in row:
+                        nodes.update(row[row.index('(')+1:row.index(')')])
+                actual = resolve(part, nodes)
+            native.append(actual)
+        result.append('.'.join(native) + (colon+terminal if colon else ''))
+    return result
+
+
 def compile_flow(path):
     path = Path(path).resolve()
     project = read_json(ROOT / 'project.json')
@@ -91,7 +131,7 @@ def compile_flow(path):
                 raise ValueError('Unmapped TB tokens: ' + str(set(c['tokens']) - known))
         test = dict(name=identifier(definition['name']), variables=variables,
                     analysis={**tb['analysis'], **assignments(noise)},
-                    cell_views=first['cell_views'], enrichment=first['enrichment'])
+                    design_view='schematic')
         tests.append(test)
         # Require the selected cases to be exactly the native corner × sweep product.
         expanded = []
@@ -112,8 +152,14 @@ def compile_flow(path):
             raise ValueError('Unrepresented cases in test ' + test['name'])
     if assigned != {c['id'] for c in flow['conditions']}:
         raise ValueError('ADE tests do not cover every flow condition')
+    signal_names = {node for row in tb['instances'] for node in row['nodes']}
+    instance_names = {row['name']: row['name']+'_SRC' for row in tb['instances']
+                      if row['name'] in signal_names}
+    saves = native_saves(tb, instance_names)
+    tb['instances'] = [{**row, 'name': instance_names.get(row['name'], row['name'])}
+                       for row in tb['instances']]
     return dict(schema_version=1, flow=relative, id=flow['id'],
                 cell=identifier('ade_' + flow['id']),
-                testbench=flow['testbench'], tb=tb, process=flow['process'],
+                testbench=flow['testbench'], tb=tb, native_save=saves, instance_names=instance_names, process=flow['process'],
                 tests=tests, corners=list(corner_map.values()), points=points,
                 simulator=flow['simulator'])

@@ -34,7 +34,7 @@ def integral(t,v,start,stop):
     return sum((b-a)*(x+y)/2 for a,b,x,y in zip(tt,tt[1:],yy,yy[1:]))
 
 def measure_sar(case,raw,*,log_path=None):
-    cfg=case['measurement'];wave=read_psf(raw/'tran.tran.tran');t=wave['time']
+    cfg=case['measurement'];wave=read_psf(raw/'tran.tran.tran', name_map=case.get('waveform_names'));t=wave['time']
     sample=wave['I_adc.Sample'];starts=edges(t,sample,.9,1);ends=edges(t,sample,.9,-1)
     completes=edges(t,wave['I_adc.Valid'],.9,1)
     evaluates=edges(t,wave['I_adc.ClkC'],.9,-1)

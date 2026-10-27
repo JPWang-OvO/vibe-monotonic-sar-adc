@@ -3,7 +3,8 @@ import bisect
 import re
 
 
-def read_psf(path, axis="time"):
+def read_psf(path, axis="time", name_map=None):
+    aliases = name_map or {}
     names, groups, values, traces, sweep = [], {}, {}, {}, []
     section, group, in_property = None, None, False
     quoted = re.compile(r'^"([^"]+)"\s+(.+)$')
@@ -54,6 +55,9 @@ def read_psf(path, axis="time"):
     if not sweep or any(b <= a for a, b in zip(sweep, sweep[1:])):
         raise ValueError("Missing or unordered sweep axis: " + axis)
     traces[axis] = sweep
+    for source, target in aliases.items():
+        if source != target:
+            traces[target] = traces.pop(source)
     return traces
 
 

@@ -1,5 +1,7 @@
 import copy
 import unittest
+import tempfile
+from pathlib import Path
 from unittest.mock import patch
 
 from regression.common.plans import load_plan
@@ -60,6 +62,36 @@ class MaestroPlanTests(unittest.TestCase):
         for workers in (0, limit+1):
             with self.subTest(workers=workers), self.assertRaisesRegex(ValueError, 'run budget'):
                 prepare(self.system, 'invalid_budget', None, 'UNUSED', '/unused', workers)
+
+    def test_bus_ports_keep_fixed_tb_bit_order(self):
+        from virtuoso.ade.native import connections
+        self.assertEqual(connections(['A', 'D<2:0>', 'VSS'], ['a', 'D2', 'D1', 'D0', '0']),
+                         {'A':'a', 'D<2:0>':'D2,D1,D0', 'VSS':'gnd!'})
+
+    def test_native_save_paths_cover_buses_and_renamed_sources(self):
+        plan = compile_flow(self.system)
+        mapping = dict(zip(plan['tb']['save'], plan['native_save']))
+        self.assertEqual(mapping['VDD:p'], 'VDD_SRC:p')
+        self.assertEqual(mapping['I_adc.Bp9'], r'I_adc.Bp\<9\>')
+        self.assertEqual(mapping['I_adc.I_out0:4'], r'I_adc.I_out\<0\>:4')
+        nodes = {node for row in plan['tb']['instances'] for node in row['nodes']}
+        self.assertFalse({row['name'] for row in plan['tb']['instances']} & nodes)
+
+    def test_tb_comparison_ignores_descended_subcircuits(self):
+        from virtuoso.ade.verify import verify_tb
+        tb = dict(instances=[dict(name='I_dut', nodes=['in','out'], model='DUT', parameters={})])
+        verify_tb(tb, 'subckt DUT in out\nR (in out) resistor r=1k\nends DUT\nI_dut (in out) DUT\n')
+        with self.assertRaisesRegex(ValueError, 'connection/model'):
+            verify_tb(tb, 'I_dut (out in) DUT\n')
+
+    def test_psf_names_map_native_traces_to_measurement_names(self):
+        from regression.common.psf import read_psf
+        text = 'TRACE\n"I_adc.Bp<9>" "V"\nVALUE\n"time" 0\n"I_adc.Bp<9>" 1.8\nEND\n'
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder)/'tran'
+            path.write_text(text)
+            self.assertEqual(read_psf(path, name_map={'I_adc.Bp<9>':'I_adc.Bp9'}),
+                             {'time':[0.0], 'I_adc.Bp9':[1.8]})
 
 
 if __name__ == '__main__':

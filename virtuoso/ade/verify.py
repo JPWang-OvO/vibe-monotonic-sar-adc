@@ -21,7 +21,8 @@ def same_value(expected, actual):
 
 def verify_tb(tb, text):
     instances = {}
-    for line in re.sub(r'\\\r?\n', ' ', text).splitlines():
+    top = re.sub(r'^subckt\b.*?^ends[^\n]*', '', text, flags=re.M | re.S)
+    for line in re.sub(r'\\\r?\n', ' ', top).splitlines():
         match = re.fullmatch(r'(\w+)\s+\(([^)]*)\)\s+(\w+)\s*(.*)', line.strip())
         if match:
             name, nodes, model, params = match.groups()
@@ -39,7 +40,7 @@ def verify_tb(tb, text):
                 raise ValueError('Native TB parameter differs: ' + row['name'] + '.' + key)
 
 
-def verify_point(plan, test, corner, text, remote):
+def verify_point(plan, test, corner, text, remote, library):
     verify_tb(plan['tb'], text)
     flattened = re.sub(r'\\\r?\n', ' ', text)
     option = re.search(r'\btemp=([^\s]+)', flattened)
@@ -52,9 +53,16 @@ def verify_point(plan, test, corner, text, remote):
     sections = re.findall(r'\bsection="?([\w]+)', flattened)
     if sections != corner['model_sections']:
         raise ValueError('Exported model sections differ')
-    for file in ('definitions.scs', 'saves.scs'):
+    for file in ('saves.scs',):
         if f'include "{remote}/{test["name"]}/inputs/{file}"' not in text:
-            raise ValueError('Missing fixed TB definitions/saves')
+            raise ValueError('Missing fixed TB saves')
+    for row in plan['tb']['instances']:
+        if row['model'] not in ('vsource', 'capacitor'):
+            binding = '// Library name: '+library+'\n// Cell name: '+row['model']+'\n// View name: schematic\nsubckt '+row['model']
+            if binding not in text:
+                raise ValueError('DUT schematic hierarchy was not netlisted: ' + row['model'])
+    if 'definitions.scs' in text:
+        raise ValueError('Staged circuit wrapper is still included')
     tran = re.search(r'^tran tran (.*)$', flattened, re.M)
     actual = assignments(tran[1]) if tran else {}
     for key, value in test['analysis'].items():
@@ -91,8 +99,18 @@ def verify(client, run):
                                runtimeout=str(job_timeout_s(plan)))
         if any(policy.get(k) != v for k, v in expected_policy.items()):
             raise ValueError('Saved job policy differs from the prepared resource budget')
+        state = ET.parse(run/'active.state').getroot()
+        for option, value in (('switchViewList', '("spectre" "schematic")'),
+                              ('stopViewList', '("spectre")')):
+            saved = [field.text for field in state.iter('field') if field.get('Name') == option]
+            if saved != [value]*len(tests):
+                raise ValueError('Saved hierarchy view selection differs: ' + option)
         for test in plan['tests']:
             name = test['name']
+            binding = {node.text.strip(): node.findtext('value').strip()
+                       for node in tests[name].findall('tooloptions/option')}
+            if any(binding.get(k) != v for k,v in dict(lib=record['library'], cell=plan['cell'], view='schematic').items()):
+                raise ValueError('Saved test design binding differs: ' + name)
             saved_variables = {node.text.strip(): node.findtext('value').strip().split(',')
                                for node in tests[name].findall('vars/var')}
             expected_variables = {k: list(map(str, v)) for k, v in test['variables'].items()}
@@ -116,7 +134,7 @@ def verify(client, run):
                 result = client.download_file(destination+'/netlist/input.scs', local)
                 if not result.ok:
                     raise RuntimeError(str(result))
-                verify_point(plan, test, corner, local.read_text(encoding='utf-8'), record['remote'])
+                verify_point(plan, test, corner, local.read_text(encoding='utf-8'), record['remote'], record['library'])
                 reports.append(dict(test=name, corner=corner['name'], pass_=True))
         report = dict(pass_=True, tests=len(tests), corners=len(enabled),
                       points=len(plan['points']), workers=record['workers'], native_netlists=reports)

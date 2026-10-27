@@ -3,13 +3,10 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path, PurePosixPath
-import re
 import shlex
 
 from regression.common.project import ROOT, artifact_root, environment, identifier, read_json, write_json
-from regression.common.plans import load_plan
-from regression.common.runner import case_tokens, checked
-from regression.common.sources import stage
+from regression.common.runner import checked
 from virtuoso.oa.native import execute, evaluate, q
 from .plan import compile_flow, job_timeout_s
 from .native import build_tb, strings
@@ -20,7 +17,7 @@ def alist(values):
 
 
 def prepare(flow_path, run_id, env_path, library, library_path, workers=4):
-    """Resolve the actual package once; all generated data stays in artifacts."""
+    """Prepare native schematic settings and saved traces without running Spectre."""
     plan = compile_flow(flow_path)
     budget = read_json(ROOT/'config/run_budget.json')
     if not 1 <= workers <= budget['max_workers']:
@@ -36,30 +33,11 @@ def prepare(flow_path, run_id, env_path, library, library_path, workers=4):
     record = dict(plan=plan, environment=env, library=library, library_path=library_path,
                   remote=remote, workers=workers)
     write_json(run/'setup.json', record)
-    flow = load_plan(flow_path)
-    process = read_json(ROOT / read_json(ROOT/'project.json')['process'])
     for test in plan['tests']:
-        representative = next(p for p in plan['points'] if p['test'] == test['name'])
-        condition = representative['condition']
         inputs = run/test['name']/'inputs'
-        staged = stage(ROOT/flow['testbench'], ROOT, inputs, case_tokens(flow, condition, env),
-                       cell_views=test['cell_views'])
-        if test['enrichment']:
-            from regression.common.enrichment import enrich
-            enrich(inputs, staged, run/test['name']/'enrichment', env, process,
-                   remote+'/preparation/'+test['name'],
-                   [*flow['simulator']['arguments'], '+mt='+str(flow['simulator']['threads'])])
-        entry = (inputs/staged['entry']).read_text(encoding='utf-8')
-        # The native TB owns sources, variables and analysis. Keep the selected
-        # circuit definitions and native CDF geometry corrections as includes.
-        includes = [line for line in entry.splitlines()
-                    if re.match(r'include "[^/][^"]*"', line)]
-        (inputs/'definitions.scs').write_text('simulator lang=spectre\n'+'\n'.join(includes)+'\n',
-                                            encoding='utf-8', newline='\n')
-        (inputs/'saves.scs').write_text('simulator lang=spectre\nsave '+' '.join(plan['tb']['save'])+'\n',
+        inputs.mkdir(parents=True)
+        (inputs/'saves.scs').write_text('simulator lang=spectre\nsave '+' '.join(plan['native_save'])+'\n',
                                       encoding='utf-8', newline='\n')
-        test['staged'] = staged
-    write_json(run/'setup.json', record)
     preview = [f'# {run_id}', '', f'Flow: `{plan["flow"]}`',
                f'OA: `{library}/{plan["cell"]}/maestro`',
                f'Tests: {len(plan["tests"])}; corners: {len(plan["corners"])}; points: {len(plan["points"])}',
@@ -83,9 +61,9 @@ def configure(client, record, session):
         if 'noisefmax' in analysis:
             analysis['tranNoise'] = 'Transient Noise'
         mae.set_analysis(name, 'tran', options=alist(analysis), session=session)
-        definitions = strings(remote+'/'+name+'/inputs/'+file for file in ('definitions.scs', 'saves.scs'))
-        mae.set_env_option(name, options='(("switchViewList" ("spectre" "symbol")) '
-                           '("stopViewList" ("spectre" "symbol")) ("modelFiles" nil) '
+        definitions = strings(remote+'/'+name+'/inputs/'+file for file in ('saves.scs',))
+        mae.set_env_option(name, options='(("switchViewList" ("spectre" "schematic")) '
+                           '("stopViewList" ("spectre")) ("modelFiles" nil) '
                            '("definitionFiles" '+definitions+') ("cmd64bit" t) '
                            '("userCmdLineOption" "-format psfascii") '
                            '("simExecName" '+q(env['spectre'])+'))', session=session)
@@ -126,13 +104,10 @@ def rebuild(client, run):
     record = read_json(run/'setup.json')
     plan, library = record['plan'], record['library']
     expected = compile_flow(ROOT/plan['flow'])
-    actual = {**plan, 'tests': [{k:v for k,v in t.items() if k != 'staged'} for t in plan['tests']]}
-    if actual != expected:
+    if plan != expected:
         raise ValueError('Flow changed since prepare; prepare a new run')
     if library not in client.library.list():
-        checked(client.ssh_runner.run_command(shlex.join(['mkdir', '-p', str(PurePosixPath(record['library_path']).parent)])))
-        client.library.create(library, record['library_path'], technology_library=
-                              read_json(ROOT/read_json(ROOT/'project.json')['process'])['technology_library'])
+        raise ValueError('Target library must already exist: ' + library)
     info = client.library.get(library)
     resolved = checked(client.ssh_runner.run_command(shlex.join(['readlink', '-f', record['library_path']]))).strip()
     if info.path != resolved:

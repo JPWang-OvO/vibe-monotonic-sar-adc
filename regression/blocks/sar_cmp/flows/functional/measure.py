@@ -5,7 +5,7 @@ from regression.systems.monotonic_sar.analysis.measure import edges
 
 
 def measure(case,raw):
-    w=read_psf(raw/'tran.tran.tran');t=w['time'];cfg=case['measurement']
+    w=read_psf(raw/'tran.tran.tran', name_map=case.get('waveform_names'));t=w['time'];cfg=case['measurement']
     valid=edges(t,w['Valid'],.9,1)
     wrong=missing=reset_errors=0;delays=[];biases=[];details=[]
     for j,point in enumerate(cfg['points']):
