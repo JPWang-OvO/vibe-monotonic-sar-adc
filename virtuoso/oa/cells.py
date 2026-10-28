@@ -12,6 +12,7 @@ from regression.common.units import numeric
 from .native import execute, evaluate, q, load_reader, read_view
 from .replay import view_code, write_and_load
 from .comparison import circuit_semantics, drawing_objects, spectre_document, design_equivalent
+from .libraries import installed_library, canonical_circuit
 
 
 def check(client, library, cell):
@@ -22,13 +23,14 @@ def check(client, library, cell):
     return result
 
 
-def assert_spec(client, library, folder):
+def assert_spec(client, library, folder, *, library_map=None):
     spec = read_json(folder / "schematic/circuit.json")
     actual = client.schematic.read(library, spec["cell"], include_positions=True, param_filters=None)
     instances = {row["name"]: row for row in actual["instances"]}
     for expected in spec["instances"]:
         row = instances[expected["name"]]
-        if [row["lib"], row["cell"], row["view"]] != expected["master"]:
+        lib, cell, view = expected["master"]
+        if [row["lib"], row["cell"], row["view"]] != [installed_library(lib, library_map), cell, view]:
             raise ValueError("Master mismatch for " + row["name"])
         if row["terms"] != expected["connections"]:
             raise ValueError(f"Connection mismatch: {row['name']}: {row['terms']}")
@@ -41,12 +43,13 @@ def assert_spec(client, library, folder):
     return actual
 
 
-def capture(client, library, folder, run, remote):
+def capture(client, library, folder, run, remote, *, library_map=None):
     metadata = read_json(folder / "cell.json")
     cell = metadata["cell"]
     load_reader(client)
     for view in ("schematic", "symbol"):
         circuit, drawing = read_view(client, library, cell, view)
+        circuit = canonical_circuit(circuit, library_map)
         write_json(folder / view / "native.json", {"schema":"native-oa-v1", "source_library":library, "circuit":circuit})
         write_json(folder / view / "drawing.json", drawing)
         files = metadata["views"].setdefault(view, {})
@@ -64,19 +67,19 @@ def capture(client, library, folder, run, remote):
     write_json(folder / "cell.json", metadata)
 
 
-def export_leaf(client, library, folder, run):
+def export_leaf(client, library, folder, run, *, library_map=None):
     cell = read_json(folder / "cell.json")["cell"]
-    assert_spec(client, library, folder)
+    assert_spec(client, library, folder, library_map=library_map)
     result = client.schematic.export_netlist(library, cell, run / "netlist" / library / cell,
                                               simulator="spectre", netlist_only=True)
     text = (Path(result["output_dir"]) / "netlist").read_text(encoding="utf-8")
     return text
 
 
-def publish_leaf(client, library, folder, run):
+def publish_leaf(client, library, folder, run, *, library_map=None):
     """Publish native connections and the declared design parameters."""
     metadata = read_json(folder / "cell.json")
-    text = export_leaf(client, library, folder, run)
+    text = export_leaf(client, library, folder, run, library_map=library_map)
     document = spectre_document(text)
     spec = read_json(folder / "schematic/circuit.json")
     if document["subcircuits"] or set(document["top"]["statements"]) != {i["name"] for i in spec["instances"]}:
@@ -95,14 +98,14 @@ def publish_leaf(client, library, folder, run):
     (folder / metadata["views"]["schematic"]["netlist"]).write_text(body, encoding="utf-8", newline="\n")
 
 
-def replay(client, library, folder, run, remote):
+def replay(client, library, folder, run, remote, *, library_map=None):
     metadata = read_json(folder / "cell.json")
     for view in ("symbol", "schematic"):
         files = metadata["views"][view]
         native = read_json(folder / files["native"])
         drawing = read_json(folder / files["drawing"])
         source_library = native["source_library"]
-        code = view_code(library, source_library, native["circuit"], drawing)
+        code = view_code(library, source_library, native["circuit"], drawing, library_map=library_map)
         name = metadata["cell"] + "__" + view + ".il"
         write_and_load(client, code, run / name, remote + "/" + name)
     if "cdf" in metadata:
@@ -112,10 +115,10 @@ def replay(client, library, folder, run, remote):
         if count != 1:
             raise ValueError("Expected one saved CDF library declaration")
         write_and_load(client, cdf, run / (metadata["cell"] + ".cdf.il"), remote + "/" + metadata["cell"] + ".cdf.il")
-    return verify(client, library, folder, run)
+    return verify(client, library, folder, run, library_map=library_map)
 
 
-def verify(client, library, folder, run):
+def verify(client, library, folder, run, *, library_map=None):
     metadata = read_json(folder / "cell.json")
     check(client, library, metadata["cell"])
     load_reader(client)
@@ -124,11 +127,12 @@ def verify(client, library, folder, run):
         files = metadata["views"][view]
         saved = read_json(folder / files["native"])
         circuit, drawing = read_view(client, library, metadata["cell"], view)
+        circuit = canonical_circuit(circuit, library_map)
         write_json(run / (metadata["cell"] + "__" + view + "__readback.json"), {"circuit":circuit,"drawing":drawing})
         report["views"].append({"view":view,
             "electrical_equal":circuit_semantics(saved["circuit"],{}) == circuit_semantics(circuit,{library:saved["source_library"]}),
             "drawing_equal":drawing_objects(read_json(folder / files["drawing"])) == drawing_objects(drawing)})
-    native_text = export_leaf(client, library, folder, run)
+    native_text = export_leaf(client, library, folder, run, library_map=library_map)
     expected = spectre_document((folder / metadata["views"]["schematic"]["netlist"]).read_text())["subcircuits"][metadata["cell"]]
     actual = spectre_document(native_text)["top"]
     report["netlist_equal"] = design_equivalent(expected, actual)
@@ -166,14 +170,15 @@ def main():
         raise ValueError(f"Library identity differs from requested path/technology: {info}")
     print({"workdir":evaluate(client,"getWorkingDir()"),"library":vars(info)})
     folder = args.cell.resolve()
+    library_map = env.get("library_map", {})
     if args.action == "capture":
-        capture(client, args.library, folder, run, remote)
+        capture(client, args.library, folder, run, remote, library_map=library_map)
     elif args.action == "publish-netlist":
-        publish_leaf(client, args.library, folder, run)
+        publish_leaf(client, args.library, folder, run, library_map=library_map)
     elif args.action == "verify":
-        print(verify(client, args.library, folder, run))
+        print(verify(client, args.library, folder, run, library_map=library_map))
     else:
-        print(replay(client, args.library, folder, run, remote))
+        print(replay(client, args.library, folder, run, remote, library_map=library_map))
 
 
 if __name__ == "__main__":

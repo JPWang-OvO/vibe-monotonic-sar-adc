@@ -9,6 +9,7 @@ from .adc_drawing import direction
 from .comparison import expand_signals
 from .native import q
 from .replay import props
+from .libraries import installed_library
 
 
 def symbol_anchors(drawing):
@@ -91,7 +92,7 @@ def prune(lines, terminals):
     return components
 
 
-def schematic(data, master_drawings, *, layout):
+def schematic(data, master_drawings, *, layout, library_map=None):
     """Route the selected view from its current native semantic/drawing base."""
     pos,notes=deepcopy(layout)
     assert set(pos)=={i['name'] for i in data['instances']},data['cell']
@@ -103,7 +104,8 @@ def schematic(data, master_drawings, *, layout):
     for inst in data['instances']:
         name=inst['name'];p=pos[name];model=inst['model'];x,y=p['xy']
         values=[dict(name=k,type='string',value=v) for k,v in inst['oa_parameters'].items()]
-        commands.append('let((obj) obj='+instance(*inst['master'],name,x,y,p['orient'])+' '+props('obj',values)+')')
+        lib,cell,view=inst['master']
+        commands.append('let((obj) obj='+instance(installed_library(lib,library_map),cell,view,name,x,y,p['orient'])+' '+props('obj',values)+')')
         if model in master_drawings:
             pinmap=symbol_anchors(master_drawings[model])
             coords=[a for a,d in pinmap.values()]

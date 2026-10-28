@@ -16,6 +16,8 @@
 | 物理任务 JSON | layout/source 身份、电源地、提取设置和 CalibreView 目标 |
 
 从 [TSMC18 样例](environments/tsmc18.example.json) 创建本机 `.local.json` 并替换占位值。本机配置忽略入 Git；认证沿用 Bridge 用户配置。
+`library_map.standard_cells` 填写已安装的标准单元库名。仓库中的 master 使用 `standard_cells` 别名；
+OA 回放和导出时解析为本机库名，捕获与核对时转换回别名。
 `cadence_setup` 指向远端 csh 环境脚本；SSH 环境已经能运行工具时设为 null。
 `remote_runs` 与 `oa_library_path` 分别指向项目独立的运行根目录和 OA 库。
 

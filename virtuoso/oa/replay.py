@@ -9,6 +9,7 @@ from math import floor, pi
 from pathlib import Path
 
 from .native import execute, q
+from .libraries import installed_library
 
 
 def literal(value):
@@ -68,7 +69,7 @@ def graphic(s):
     return f'{function}(cv {layer} {points(s.get("points",s["bbox"]))})'
 
 
-def view_code(library, source_library, circuit, drawing, *, within_editor=False):
+def view_code(library, source_library, circuit, drawing, *, within_editor=False, library_map=None):
     cell,view = circuit['cell'],circuit['view']
     opening = ['let((ns ts ins figs obj master pin)'] if within_editor else [f'let((cv ns ts ins figs obj master pin) '
             f'when(ddGetObj({q(library)} {q(cell)} {q(view)}) error("Destination view already exists"))',
@@ -90,6 +91,8 @@ def view_code(library, source_library, circuit, drawing, *, within_editor=False)
         lib,master,master_view=i['master']
         if lib==source_library:
             lib=library
+        else:
+            lib=installed_library(lib, library_map)
         pos=drawing['instances'][i['name']]
         name=q(i['name'])
         code += [f'master=dbOpenCellViewByType({q(lib)} {q(master)} {q(master_view)} "" "r")',

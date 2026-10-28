@@ -7,5 +7,8 @@
   "model_files": {
     "tsmc18": "<absolute-model-file>"
   },
-  "oa_library_path": "<absolute-project-oa-library-path>"
+  "oa_library_path": "<absolute-project-oa-library-path>",
+  "library_map": {
+    "standard_cells": "<installed-standard-cell-library>"
+  }
 }

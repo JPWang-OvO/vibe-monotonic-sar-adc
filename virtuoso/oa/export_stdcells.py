@@ -6,6 +6,8 @@ from regression.common.bridge_environment import load_bridge_environment
 from virtuoso_bridge.virtuoso.skill_output import parse_sexpr
 from regression.common.project import ROOT,read_json,write_json,artifact_root
 from .adc_source import reference_libraries
+from .libraries import installed_library
+from .native import q
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
@@ -13,20 +15,22 @@ def main():
     args=parser.parse_args()
     load_bridge_environment()
     env=read_json(args.environment)
+    library=installed_library('standard_cells',env.get('library_map',{}))
     names=sorted(reference_libraries())
     out=artifact_root()/'stdcell_native';out.mkdir(parents=True,exist_ok=True)
     client=VirtuosoClient.from_env(profile=env['profile'],log_to_ciw=False)
     try:
         for name in names:
-            record=client.schematic.read('standard_cells',name,include_positions=False,param_filters=None)
+            record=client.schematic.read(library,name,include_positions=False,param_filters=None)
             write_json(out/(name+'_readback.json'),record)
-            query='let((c s) c=cdfGetBaseCellCDF(ddGetObj("standard_cells" "'+name+'")) s=getq(c->simInfo spectre) list(getq(s termOrder) getq(s componentName)))'
+            query='let((c s) c=cdfGetBaseCellCDF(ddGetObj('+q(library)+' '+q(name)+')) s=getq(c->simInfo spectre) list(getq(s termOrder) getq(s componentName)))'
             r=client.execute_skill(query)
             if not r.ok:raise RuntimeError(r.errors)
             cdf=parse_sexpr(r.output)
             print(name,'pins',record['pins'],'CDF',cdf,flush=True)
-            exported=client.schematic.export_netlist('standard_cells',name,out/name,timeout=180,netlist_only=True)
+            exported=client.schematic.export_netlist(library,name,out/name,timeout=180,netlist_only=True)
             body=Path(exported['input_file']).with_name('netlist').read_text()
+            body=body.replace(library,'standard_cells')
             ports=cdf[0] if cdf and cdf[0] else list(record['pins'])
             base=ROOT/'library/support/standard_cells'/name
             (base/'netlist').mkdir(parents=True,exist_ok=True)
